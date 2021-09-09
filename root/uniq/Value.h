@@ -18,6 +18,6 @@ public:
 
 };
 
-} // namespace Unique
+} // namespace uniq
 
 #endif // VALUE_H
