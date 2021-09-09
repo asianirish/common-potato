@@ -2,4 +2,5 @@ TEMPLATE = subdirs
 
 SUBDIRS += \
     hi \
-    uniq
+    uniq \
+    util
