@@ -1,4 +1,5 @@
 TEMPLATE = lib
+TARGET = uniq
 
 QT -= gui
 
@@ -12,8 +13,7 @@ CONFIG += staticlib
 
 SOURCES += \
         TimeStringValue.cpp \
-        TimeValue.cpp \
-        main.cpp
+        TimeValue.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
