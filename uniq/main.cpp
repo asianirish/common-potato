@@ -1,5 +1,6 @@
 #include "TimeStringValue.h"
 #include "UuidValue.h"
+#include "CompactUuidValue.h"
 
 #include <iostream>
 
@@ -32,6 +33,12 @@ int main(int argc, char *argv[])
     for (int i = 0; i < 100; i++) {
         QString s = uuv;
         qDebug() << "Unique qstring value:" << s;
+    }
+
+    CompactUuidValue cuuv;
+    for (int i = 0; i < 100; i++) {
+        QString s = cuuv;
+        qDebug() << "Unique compact qstring value:" << s;
     }
 
     return a.exec();
