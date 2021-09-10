@@ -1,4 +1,6 @@
-#include "TimeValue.h"
+#include "TimeStringValue.h"
+
+#include <iostream>
 
 #include <QCoreApplication>
 #include <QDebug>
@@ -14,8 +16,14 @@ int main(int argc, char *argv[])
     TimeValue tv;
     auto n = tv;
 
-    for (int i = 0; i < 1000000; i++) {
+    for (int i = 0; i < 100; i++) {
         qDebug() << "Unique value:" << n;
+    }
+
+    TimeStringValue tsv;
+    for (int i = 0; i < 100; i++) {
+        string s = tsv;
+        cout << "Unique string value:" << s << "\n";
     }
 
     return a.exec();
