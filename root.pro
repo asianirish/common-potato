@@ -4,4 +4,5 @@ SUBDIRS += \
     hi \
     uniq \
     uniq/uniqlib.pro \
-    util
+    util \
+    util/utillib.pro
