@@ -4,7 +4,7 @@ namespace util
 {
 
 // maximum radix - base36
-std::string int64_t2string(int64_t value, int64_t radix) {
+std::string int64_t2string(uint64_t value, uint64_t radix) {
     const char base36[] = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     std::string result;
     while (value > 0) {
@@ -15,7 +15,7 @@ std::string int64_t2string(int64_t value, int64_t radix) {
     return result;
 }
 
-QString int64_t2qstring(int64_t value, int64_t radix)
+QString int64_t2qstring(uint64_t value, uint64_t radix)
 {
     const char base36[] = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     QString result;
@@ -28,7 +28,7 @@ QString int64_t2qstring(int64_t value, int64_t radix)
 }
 
 //max 36+26 = 62
-QString int64_t2qstring_ext(int64_t value, int64_t radix)
+QString int64_t2qstring_ext(uint64_t value, uint64_t radix)
 {
     //
     const char base62[] = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";

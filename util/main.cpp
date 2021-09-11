@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
     QString qstr = int64_t2qstring(129197106131337, 36);
     qDebug() << "util test qstring:" << qstr;
 
-    QString qstr1 = int64_t2qstring_ext(129197106131337);
+    QString qstr1 = int64_t2qstring_ext(14593521163454661818);
     qDebug() << "util test qstring (base62):" << qstr1;
 
     return a.exec();
