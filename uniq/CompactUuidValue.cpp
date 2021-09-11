@@ -1,5 +1,8 @@
 #include "CompactUuidValue.h"
 
+#include <util/gfunc.h>
+
+//#include <QDebug>
 #include <QUuid>
 
 namespace uniq {
@@ -20,7 +23,9 @@ QString CompactUuidValue::value() const
     auto leftNum = left.toULongLong(&ok, 16);
     auto rightNum = right.toULongLong(&ok, 16);
 
-    return QString::number(leftNum, 36) + QString::number(rightNum, 36);
+//    qDebug() << "leftNum:" << leftNum << "rightNum:" << rightNum;
+
+    return util::int64_t2qstring_ext(leftNum) + util::int64_t2qstring_ext(rightNum);
 }
 
 } // namespace uniq
