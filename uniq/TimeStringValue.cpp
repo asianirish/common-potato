@@ -13,7 +13,7 @@ TimeStringValue::TimeStringValue()
 
 string TimeStringValue::value() const
 {
-    return int64_t2string(_tv.value(), 36);
+    return uint64_t2string(_tv.value(), 36);
 }
 
 } // namespace uniq

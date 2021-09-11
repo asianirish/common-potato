@@ -10,11 +10,11 @@ namespace util
 {
 
 // maximum radix - base36
-std::string int64_t2string(uint64_t value, uint64_t radix);
+std::string uint64_t2string(uint64_t value, uint64_t radix);
 
-QString int64_t2qstring(uint64_t value, uint64_t radix);
+QString uint64_t2qstring(uint64_t value, uint64_t radix);
 
-QString int64_t2qstring_ext(uint64_t value, uint64_t radix = 62);
+QString uint64_t2qstring_ext(uint64_t value, uint64_t radix = 62);
 
 } // namespace util
 

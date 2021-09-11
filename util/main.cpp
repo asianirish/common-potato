@@ -11,13 +11,13 @@ int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
 
-    string str = int64_t2string(129197106131337, 36);
+    string str = uint64_t2string(129197106131337, 36);
     cout << "util test string: " << str << "\n";
 
-    QString qstr = int64_t2qstring(129197106131337, 36);
+    QString qstr = uint64_t2qstring(129197106131337, 36);
     qDebug() << "util test qstring:" << qstr;
 
-    QString qstr1 = int64_t2qstring_ext(14593521163454661818);
+    QString qstr1 = uint64_t2qstring_ext(14593521163454661818);
     qDebug() << "util test qstring (base62):" << qstr1;
 
     return a.exec();
