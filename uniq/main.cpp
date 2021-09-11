@@ -19,24 +19,24 @@ int main(int argc, char *argv[])
     TimeValue tv;
     auto n = tv;
 
-    for (int i = 0; i < 100; i++) {
+    for (int i = 0; i < 10; i++) {
         qDebug() << "Unique value:" << n;
     }
 
     TimeStringValue tsv;
-    for (int i = 0; i < 100; i++) {
+    for (int i = 0; i < 10; i++) {
         string s = tsv;
         cout << "Unique string value:" << s << "\n";
     }
 
     UuidValue uuv;
-    for (int i = 0; i < 100; i++) {
+    for (int i = 0; i < 10; i++) {
         QString s = uuv;
         qDebug() << "Unique qstring value:" << s;
     }
 
     CompactUuidValue cuuv;
-    for (int i = 0; i < 100; i++) {
+    for (int i = 0; i < 10; i++) {
         QString s = cuuv;
         qDebug() << "Unique compact qstring value:" << s;
     }
