@@ -27,4 +27,18 @@ QString int64_t2qstring(int64_t value, int64_t radix)
     return result;
 }
 
+//max 36+26 = 62
+QString int64_t2qstring_ext(int64_t value, int64_t radix)
+{
+    //
+    const char base62[] = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+    QString result;
+    while (value > 0) {
+        int64_t remainder = value % radix;
+        value /= radix;
+        result.prepend(base62[remainder]);
+    }
+    return result;
+}
+
 } // namespace util
