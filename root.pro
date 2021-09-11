@@ -1,8 +1,8 @@
 TEMPLATE = subdirs
 
 SUBDIRS += \
+    util/utillib.pro \
+    uniq/uniqlib.pro \
     hi \
     uniq \
-    uniq/uniqlib.pro \
-    util \
-    util/utillib.pro
+    util
