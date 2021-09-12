@@ -18,6 +18,10 @@ public:
 
     virtual bool isGlobal() const = 0;
 
+    bool isLocal() const {
+        return !isGlobal();
+    }
+
 };
 
 } // namespace uniq
