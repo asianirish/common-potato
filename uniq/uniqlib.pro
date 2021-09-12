@@ -18,6 +18,7 @@ DESTDIR = $$PWD/../build/lib/
 
 SOURCES += \
         CompactUuidValue.cpp \
+        TimeQStringValue.cpp \
         TimeStringValue.cpp \
         TimeValue.cpp \
         UuidValue.cpp
@@ -29,6 +30,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     CompactUuidValue.h \
+    TimeQStringValue.h \
     TimeStringValue.h \
     TimeValue.h \
     UuidValue.h \
