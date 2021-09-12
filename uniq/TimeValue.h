@@ -18,8 +18,8 @@ public:
     int64_t value() const override;
 
 private:
-    mutable int64_t _curValue;
-    mutable int64_t _lastValue;
+    static int64_t _curValue;
+    static int64_t _lastValue;
 
     void correctCurValue() const;
 };

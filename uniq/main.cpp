@@ -17,34 +17,29 @@ int main(int argc, char *argv[])
 
     qDebug() << "uniq";
 
-    TimeValue tv;
-    auto n = tv;
 
     for (int i = 0; i < 10; i++) {
+        auto n = TimeValue();
         qDebug() << "Unique value:" << n;
     }
 
-    TimeStringValue tsv;
     for (int i = 0; i < 10; i++) {
-        string s = tsv;
+        string s = TimeStringValue();
         cout << "Unique string value:" << s << "\n";
     }
 
-    UuidValue uuv;
     for (int i = 0; i < 10; i++) {
-        QString s = uuv;
+        QString s = UuidValue();
         qDebug() << "Unique qstring value:" << s;
     }
 
-    CompactUuidValue cuuv;
     for (int i = 0; i < 10; i++) {
-        QString s = cuuv;
+        QString s = CompactUuidValue();
         qDebug() << "Unique compact qstring value:" << s;
     }
 
-    TimeQStringValue tqsv;
     for (int i = 0; i < 10; i++) {
-        QString s = tqsv;
+        QString s = TimeQStringValue();
         qDebug() << "Unique qstring value:" << s;
     }
 

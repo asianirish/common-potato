@@ -2,7 +2,10 @@
 
 namespace uniq {
 
-TimeValue::TimeValue() : _lastValue(0)
+int64_t TimeValue::_curValue = 0;
+int64_t TimeValue::_lastValue = 0;
+
+TimeValue::TimeValue()
 {
 
 }
