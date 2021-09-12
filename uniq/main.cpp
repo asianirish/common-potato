@@ -45,7 +45,7 @@ int main(int argc, char *argv[])
     TimeQStringValue tqsv;
     for (int i = 0; i < 10; i++) {
         QString s = tqsv;
-        qDebug() << "Unique qstring value:" << s << "\n";
+        qDebug() << "Unique qstring value:" << s;
     }
 
     return a.exec();
