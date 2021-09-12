@@ -13,6 +13,11 @@ public:
     CompactUuidValue();
 
     QString value() const override;
+
+    bool isGlobal() const override {
+        return true;
+    }
+
 };
 
 } // namespace uniq

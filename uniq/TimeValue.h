@@ -17,6 +17,10 @@ public:
 
     int64_t value() const override;
 
+    bool isGlobal() const override {
+        return false;
+    }
+
 private:
     static int64_t _curValue;
     static int64_t _lastValue;

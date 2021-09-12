@@ -17,6 +17,10 @@ public:
 
     string value() const override;
 
+    bool isGlobal() const override {
+        return false;
+    }
+
 private:
     TimeValue _tv;
 };

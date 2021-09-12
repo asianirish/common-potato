@@ -16,6 +16,8 @@ public:
         return value();
     }
 
+    virtual bool isGlobal() const = 0;
+
 };
 
 } // namespace uniq
