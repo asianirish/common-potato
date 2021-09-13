@@ -4,12 +4,7 @@
 #include <QCoreApplication>
 #include <QDebug>
 
-int main(int argc, char *argv[])
-{
-    QCoreApplication a(argc, argv);
-
-    qDebug() << "Hi";
-
+void simpleTest() {
     SimpleObject *master = new SimpleObject();
     SimpleObject *slave = new SimpleObject(master);
     QSharedPointer<SimpleObject> sharedSlave = QSharedPointer<SimpleObject>(slave);
@@ -20,6 +15,15 @@ int main(int argc, char *argv[])
 //TRY IT:    delete master;
 
     qDebug() << "The name of the slave is:" << slave->simpleName();
+}
+
+int main(int argc, char *argv[])
+{
+    QCoreApplication a(argc, argv);
+
+    qDebug() << "Hi";
+
+//TRY IT: simpleTest();
 
     return a.exec();
 }
