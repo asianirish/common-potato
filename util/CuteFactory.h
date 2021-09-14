@@ -70,9 +70,9 @@ CuteCreator<BaseClass, DerClass>::CuteCreator()
 /*
  * using:
  * //register:
-    util::CuteCreator<QObject, Hi::TestA>();
-    util::CuteCreator<QObject, Hi::TestB>();
-    util::CuteCreator<QObject, Hi::TestC>();
+    util::CuteCreator<QObject, Hi::TestA> cra;
+    util::CuteCreator<QObject, Hi::TestB> crb;
+    util::CuteCreator<QObject, Hi::TestC> crc;
 
     //create:
     auto obj = util::CuteFactory<QObject>::create("Hi::TestA");

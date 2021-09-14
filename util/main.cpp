@@ -28,14 +28,29 @@ int main(int argc, char *argv[])
     qDebug() << "util test qstring (base62):" << qstr1;
 
 
-    util::CuteCreator<QObject, Hi::TestA>();
-    util::CuteCreator<QObject, Hi::TestB>();
-    util::CuteCreator<QObject, Hi::TestC>();
+    util::CuteCreator<QObject, Hi::TestA> cra;
+    util::CuteCreator<QObject, Hi::TestB> crb;
+    util::CuteCreator<QObject, Hi::TestC> crc;
+    {
+        auto obj = util::CuteFactory<QObject>::create("Hi::TestA");
+        qDebug() << "Object:" << obj;
 
-    auto obj = util::CuteFactory<QObject>::create("Hi::TestA");
-    qDebug() << "Object:" << obj;
+        qDebug() << "Class name:" << obj->metaObject()->className();
+    }
 
-    qDebug() << "Class name:" << obj->metaObject()->className();
+    {
+        auto obj = util::CuteFactory<QObject>::create("Hi::TestB");
+        qDebug() << "Object:" << obj;
+
+        qDebug() << "Class name:" << obj->metaObject()->className();
+    }
+
+    {
+        auto obj = util::CuteFactory<QObject>::create("Hi::TestC");
+        qDebug() << "Object:" << obj;
+
+        qDebug() << "Class name:" << obj->metaObject()->className();
+    }
 
     return a.exec();
 }
