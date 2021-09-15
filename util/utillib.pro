@@ -23,4 +23,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     CuteFactory.h \
+    Factory.h \
     gfunc.h

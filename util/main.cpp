@@ -4,12 +4,14 @@
 #include "Test/TestC.h"
 
 #include <util/CuteFactory.h>
+#include <util/Factory.h>
 
 #include <QCoreApplication>
 #include <iostream>
 #include <QDebug>
 
 #include <QObject>
+
 
 using namespace std;
 using namespace util;
@@ -50,6 +52,19 @@ int main(int argc, char *argv[])
         qDebug() << "Object:" << obj;
 
         qDebug() << "Class name:" << obj->metaObject()->className();
+    }
+
+    qDebug() << "--------------------------------------------------------------";
+    {
+        Factory<QObject>::registerClass<Hi::TestA>("Hi::TestA");
+        Factory<QObject>::registerClass<Hi::TestB>("Hi::TestB");
+        Factory<QObject>::registerClass<Hi::TestC>("Hi::TestC");
+
+        auto objB = Factory<QObject>::create("Hi::TestB");
+        qDebug() << "Object:" << objB;
+        qDebug() << "Class name:" << objB->metaObject()->className();
+
+        Factory<QObject>::clear();
     }
 
     return a.exec();
