@@ -73,7 +73,7 @@ private:
 template <typename BaseClass>
 map<string, AbstractCreator<BaseClass>*> Factory<BaseClass>::_creators;
 
-
+#define REGISTER_CLASS_FOR_UTIL_FACTORY(BaseClass, DevClass) Factory<BaseClass>::registerClass<DevClass>(#DevClass);
 
 } // namespace util
 

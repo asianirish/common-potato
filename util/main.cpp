@@ -56,13 +56,25 @@ int main(int argc, char *argv[])
 
     qDebug() << "--------------------------------------------------------------";
     {
-        Factory<QObject>::registerClass<Hi::TestA>("Hi::TestA");
-        Factory<QObject>::registerClass<Hi::TestB>("Hi::TestB");
-        Factory<QObject>::registerClass<Hi::TestC>("Hi::TestC");
+        REGISTER_CLASS_FOR_UTIL_FACTORY(QObject, Hi::TestA);
+        REGISTER_CLASS_FOR_UTIL_FACTORY(QObject, Hi::TestB);
+        REGISTER_CLASS_FOR_UTIL_FACTORY(QObject, Hi::TestC);
 
-        auto objB = Factory<QObject>::create("Hi::TestB");
-        qDebug() << "Object:" << objB;
-        qDebug() << "Class name:" << objB->metaObject()->className();
+        {
+            auto obj = Factory<QObject>::create("Hi::TestA");
+            qDebug() << "Object:" << obj;
+            qDebug() << "Class name:" << obj->metaObject()->className();
+        }
+        {
+            auto obj = Factory<QObject>::create("Hi::TestB");
+            qDebug() << "Object:" << obj;
+            qDebug() << "Class name:" << obj->metaObject()->className();
+        }
+        {
+            auto obj = Factory<QObject>::create("Hi::TestC");
+            qDebug() << "Object:" << obj;
+            qDebug() << "Class name:" << obj->metaObject()->className();
+        }
 
         Factory<QObject>::clear();
     }
