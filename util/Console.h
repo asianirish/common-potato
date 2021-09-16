@@ -12,6 +12,8 @@
 #include <QSocketNotifier>
 #endif
 
+namespace util {
+
 class Console : public QObject
 {
     Q_OBJECT;
@@ -34,4 +36,6 @@ private:
 private slots:
     void readCommand();
 };
+
+} // namespace util
 

@@ -1,6 +1,8 @@
 #include <iostream>
 #include "Console.h"
 
+namespace util {
+
 Console::Console()
 {
 #ifdef Q_OS_WIN
@@ -34,3 +36,5 @@ void Console::readCommand()
         std::cout << "> " << std::flush;
     }
 }
+
+} // namespace util
