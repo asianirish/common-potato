@@ -25,6 +25,9 @@ void Console::readCommand()
     std::getline(std::cin, line);
     if (std::cin.eof() || line == "quit") {
         std::cout << "Good bye!" << std::endl;
+
+        delete m_notifier;
+
         emit quit();
     } else {
         std::cout << "Echo: " << line << std::endl;
