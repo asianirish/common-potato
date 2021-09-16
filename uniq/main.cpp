@@ -3,6 +3,8 @@
 #include "CompactUuidValue.h"
 #include "TimeQStringValue.h"
 
+#include <util/Factory.h>
+
 #include <iostream>
 
 #include <QCoreApplication>
@@ -17,6 +19,13 @@ int main(int argc, char *argv[])
 
     qDebug() << "uniq";
 
+    REGISTER_CLASS_FOR_UTIL_FACTORY(Value<QString>, UuidValue);
+    REGISTER_CLASS_FOR_UTIL_FACTORY(Value<QString>, CompactUuidValue);
+    REGISTER_CLASS_FOR_UTIL_FACTORY(Value<QString>, TimeQStringValue);
+
+    const QVector<string> ValueClassNames{"UuidValue", "CompactUuidValue", "TimeQStringValue"};
+
+
 
     for (int i = 0; i < 10; i++) {
         auto n = TimeValue();
@@ -28,19 +37,16 @@ int main(int argc, char *argv[])
         cout << "Unique string value:" << s << "\n";
     }
 
-    for (int i = 0; i < 10; i++) {
-        QString s = UuidValue();
-        qDebug() << "Unique qstring value:" << s;
-    }
+    qDebug() << "..........................................";
 
-    for (int i = 0; i < 10; i++) {
-        QString s = CompactUuidValue();
-        qDebug() << "Unique compact qstring value:" << s;
-    }
+    for (auto &className : ValueClassNames) {
 
-    for (int i = 0; i < 10; i++) {
-        QString s = TimeQStringValue();
-        qDebug() << "Unique qstring value:" << s;
+        auto value = util::Factory<Value<QString>>::create(className);
+        for (int i = 0; i < 10; i++) {
+            QString s = *value;
+            qDebug() << "Unique qstring value:" << s;
+        }
+
     }
 
     return a.exec();
