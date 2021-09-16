@@ -14,6 +14,8 @@ public:
 
     virtual void act(const QVariantList &args) = 0;
 
+    virtual const char *alias() const = 0;
+
 signals:
     void ready(const QVariant &result);
 
