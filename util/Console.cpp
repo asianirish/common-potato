@@ -1,7 +1,7 @@
 #include <iostream>
 #include "Console.h"
 
-inline Console::Console()
+Console::Console()
 {
     m_notifier = new QSocketNotifier(fileno(stdin), QSocketNotifier::Read, this);
 }
