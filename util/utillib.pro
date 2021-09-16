@@ -16,6 +16,7 @@ DESTDIR = $$PWD/../build/lib/
 SOURCES += \
         Action.cpp \
         Console.cpp \
+        SimpleAction.cpp \
         gfunc.cpp
 
 # Default rules for deployment.
@@ -28,4 +29,5 @@ HEADERS += \
     Console.h \
     CuteFactory.h \
     Factory.h \
+    SimpleAction.h \
     gfunc.h
