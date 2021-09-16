@@ -3,6 +3,8 @@
 #include "Test/TestB.h"
 #include "Test/TestC.h"
 
+#include "Console.h"
+
 #include <util/CuteFactory.h>
 #include <util/Factory.h>
 
@@ -78,6 +80,11 @@ int main(int argc, char *argv[])
 
         Factory<QObject>::clear();
     }
+
+    qDebug() << "--------------------------------------------------------------";
+    Console console;
+    console.run();
+    QObject::connect(&console, SIGNAL(quit()), &a, SLOT(quit()));
 
     return a.exec();
 }
