@@ -4,8 +4,13 @@
 #pragma once
 
 #include <QObject>
+
+#ifdef Q_OS_WIN
+#include <QWinEventNotifier>
+#include <windows.h>
+#else
 #include <QSocketNotifier>
-#include <iostream>
+#endif
 
 class Console : public QObject
 {
@@ -20,7 +25,11 @@ signals:
     void quit();
 
 private:
+#ifdef Q_OS_WIN
+    QWinEventNotifier *m_notifier;
+#else
     QSocketNotifier *m_notifier;
+#endif
 
 private slots:
     void readCommand();
