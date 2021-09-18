@@ -3,7 +3,7 @@
 #include "Test/TestB.h"
 #include "Test/TestC.h"
 
-#include "Console.h"
+#include <menu/Console.h>
 
 #include <util/CuteFactory.h>
 #include <util/Factory.h>
@@ -17,6 +17,7 @@
 
 using namespace std;
 using namespace util;
+using namespace menu;
 
 int main(int argc, char *argv[])
 {
