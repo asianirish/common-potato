@@ -4,6 +4,8 @@
 #include <QObject>
 #include <QVariantList>
 
+#include "Result.h"
+
 namespace menu {
 
 class Action : public QObject
@@ -12,7 +14,7 @@ class Action : public QObject
 public:
     explicit Action(QObject *parent = nullptr);
 
-    virtual void act(const QVariantList &args) = 0;
+    virtual Result act(const QVariantList &args) = 0;
 
     virtual const char *alias() const = 0;
 

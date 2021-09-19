@@ -10,7 +10,7 @@ class SimpleAction : public Action
 public:
     SimpleAction();
 
-    void act(const QVariantList &args) final;
+    Result act(const QVariantList &args) final;
 
 protected:
     virtual QVariant simplyAct(const QVariantList &args) = 0;
