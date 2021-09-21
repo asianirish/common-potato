@@ -45,6 +45,9 @@ void Console::readCommand()
         delete m_notifier;
 
         emit quit();
+    } else if (line == "uniq") {
+        std::cout << taskIdGenerator()->value().toStdString() << std::endl;
+        std::cout << "> " << std::flush;
     } else {
         std::cout << "Echo: " << line << std::endl;
         std::cout << "> " << std::flush;
