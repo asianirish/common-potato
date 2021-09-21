@@ -23,6 +23,8 @@ class Console : public QObject
 public:
     Console();
 
+    ~Console();
+
     void run();
 
 signals:

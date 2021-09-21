@@ -14,7 +14,13 @@ Console::Console() : _menu(new Menu(this))
     m_notifier = new QSocketNotifier(fileno(stdin), QSocketNotifier::Read, this);
     connect(m_notifier, &QSocketNotifier::activated
 #endif
-        , this, &Console::readCommand);
+            , this, &Console::readCommand);
+}
+
+Console::~Console()
+{
+    std::cout << "destruct Console\n";
+
 }
 
 void Console::run()
