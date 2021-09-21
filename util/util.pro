@@ -3,7 +3,7 @@ QT -= gui
 CONFIG += c++11 console
 CONFIG -= app_bundle
 
-LIBS +=  -L$$PWD/../build/lib/ -lpotato-util -lmenu
+LIBS +=  -L$$PWD/../build/lib/ -lpotato-util -lmenu -luniq
 INCLUDEPATH += $$PWD/../
 
 # You can make your code fail to compile if it uses deprecated APIs.
