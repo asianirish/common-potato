@@ -1,9 +1,11 @@
-#include <iostream>
 #include "Console.h"
+#include "Menu.h"
+
+#include <iostream>
 
 namespace menu {
 
-Console::Console()
+Console::Console() : _menu(new Menu(this))
 {
 #ifdef Q_OS_WIN
     m_notifier = new QWinEventNotifier(GetStdHandle(STD_INPUT_HANDLE));
@@ -36,5 +38,6 @@ void Console::readCommand()
         std::cout << "> " << std::flush;
     }
 }
+
 
 } // namespace menu

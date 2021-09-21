@@ -25,12 +25,14 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 HEADERS += \
     Action.h \
     Console.h \
+    Menu.h \
     Result.h \
     SimpleAction.h
 
 SOURCES += \
     Action.cpp \
     Console.cpp \
+    Menu.cpp \
     Result.cpp \
     SimpleAction.cpp
 

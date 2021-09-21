@@ -14,6 +14,8 @@
 
 namespace menu {
 
+class Menu;
+
 class Console : public QObject
 {
     Q_OBJECT;
@@ -35,6 +37,10 @@ private:
 
 private slots:
     void readCommand();
+
+private:
+    Menu *_menu;
+
 };
 
 } // namespace menu
