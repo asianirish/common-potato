@@ -5,7 +5,11 @@
 
 namespace menu {
 
-Console::Console() : _menu(new Menu(this))
+QString Console::DEFAULT_TASK_ID_GENERATOR_CLASS_NAME("uniq::TimeQStringValue");
+
+Console::Console() : _menu(new Menu(this)),
+    _taskIdGenerator(nullptr),
+    _uniqValueClassName(DEFAULT_TASK_ID_GENERATOR_CLASS_NAME)
 {
 #ifdef Q_OS_WIN
     m_notifier = new QWinEventNotifier(GetStdHandle(STD_INPUT_HANDLE));
@@ -15,6 +19,8 @@ Console::Console() : _menu(new Menu(this))
     connect(m_notifier, &QSocketNotifier::activated
 #endif
             , this, &Console::readCommand);
+
+    registerUniqValue();
 }
 
 Console::~Console()
@@ -44,6 +50,41 @@ void Console::readCommand()
         std::cout << "> " << std::flush;
     }
 }
+
+uniq::Value<QString> *Console::taskIdGenerator() const
+{
+    if (_taskIdGenerator == nullptr) {
+        _taskIdGenerator = createTaskIdGenerator();
+    }
+
+    return _taskIdGenerator;
+}
+
+QString Console::uniqValueClassName() const
+{
+    return _uniqValueClassName;
+}
+
+void Console::setUniqValueClassName(const QString &uniqValueClassName)
+{
+    _uniqValueClassName = uniqValueClassName;
+}
+
+void Console::registerUniqValue() const
+{
+    REGISTER_CLASS_FOR_UTIL_FACTORY(uniq::Value<QString>, uniq::UuidValue)
+    REGISTER_CLASS_FOR_UTIL_FACTORY(uniq::Value<QString>, uniq::CompactUuidValue)
+    REGISTER_CLASS_FOR_UTIL_FACTORY(uniq::Value<QString>, uniq::TimeQStringValue)
+}
+
+uniq::Value<QString> *Console::createTaskIdGenerator() const
+{
+    return util::Factory<uniq::Value<QString>>::create(_uniqValueClassName.toStdString());
+}
+
+//_taskIdGenerator =
+
+
 
 
 } // namespace menu

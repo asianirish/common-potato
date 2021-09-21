@@ -3,6 +3,11 @@
  * */
 #pragma once
 
+#include <uniq/UuidValue.h>
+#include <uniq/CompactUuidValue.h>
+#include <uniq/TimeQStringValue.h>
+#include <util/Factory.h>
+
 #include <QObject>
 
 #ifdef Q_OS_WIN
@@ -21,11 +26,18 @@ class Console : public QObject
     Q_OBJECT;
 
 public:
+    static QString DEFAULT_TASK_ID_GENERATOR_CLASS_NAME;
+
     Console();
 
     ~Console();
 
     void run();
+
+    QString uniqValueClassName() const;
+    void setUniqValueClassName(const QString &uniqValueClassName);
+
+    uniq::Value<QString> *taskIdGenerator() const;
 
 signals:
     void quit();
@@ -42,7 +54,12 @@ private slots:
 
 private:
     Menu *_menu;
+    mutable uniq::Value<QString> *_taskIdGenerator;
+    QString _uniqValueClassName;
 
+    void registerUniqValue() const;
+
+    uniq::Value<QString> *createTaskIdGenerator() const;
 };
 
 } // namespace menu
