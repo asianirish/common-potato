@@ -34,10 +34,10 @@ public:
 
     void run();
 
-    QString uniqValueClassName() const;
-    void setUniqValueClassName(const QString &uniqValueClassName);
+    QString uniqValueClassName() const; //TODO: use Action class instead
+    void setUniqValueClassName(const QString &uniqValueClassName); //TODO: use Action class instead
 
-    uniq::Value<QString> *taskIdGenerator() const;
+    uniq::Value<QString> *taskIdGenerator() const; //TODO: use Action class instead
 
 signals:
     void quit();
