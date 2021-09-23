@@ -32,6 +32,9 @@ public:
 
     operator QVariant();
 
+    QString taskId() const;
+    void setTaskId(const QString &taskId);
+
 private:
     QVariant _value;
 

@@ -65,12 +65,22 @@ Result &Result::operator =(const QVariant &value)
     return *this;
 }
 
+QString Result::taskId() const
+{
+    return _taskId;
+}
+
+void Result::setTaskId(const QString &taskId)
+{
+    _taskId = taskId;
+}
+
 menu::Result::operator QVariant()
 {
     if (_errorCode == SUCCESSFUL_RESULT) {
         return _value;
     }
-
+    
     return QVariant();
 }
 
