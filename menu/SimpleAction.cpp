@@ -7,9 +7,10 @@ SimpleAction::SimpleAction()
 
 }
 
-Result SimpleAction::act(const QVariantList &args)
+Result SimpleAction::act(const QVariantList &args, const QString &taskId)
 {
-    auto result = simplyAct(args);
+    Result result(simplyAct(args));
+    result.setTaskId(taskId);
     emit ready(result);
     return result;
 }
