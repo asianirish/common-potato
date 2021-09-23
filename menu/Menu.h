@@ -3,6 +3,8 @@
 
 #include "Action.h"
 
+#include <uniq/Value.h>
+
 #include <QObject>
 #include <QMap>
 #include <QString>
@@ -25,11 +27,16 @@ public:
     QString taskIdGeneratorClassName() const;
     void setTaskIdGeneratorClassName(const QString &taskIdGeneratorClassName);
 
+    uniq::Value<QString> *taskIdGenerator() const;
+
 signals:
 
 private:
     QMap<QString, ActionPtr> _items;
     QString _taskIdGeneratorClassName;
+    mutable uniq::Value<QString> *_taskIdGenerator;
+
+    uniq::Value<QString> *createTaskIdGenerator() const;
 };
 
 } // namespace menu
