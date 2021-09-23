@@ -38,6 +38,11 @@ uniq::Value<QString> *Menu::taskIdGenerator() const
     return _taskIdGenerator;
 }
 
+QString Menu::newTaskId() const
+{
+    return taskIdGenerator()->value();
+}
+
 uniq::Value<QString> *Menu::createTaskIdGenerator() const
 {
     return util::Factory<uniq::Value<QString>>::create(_taskIdGeneratorClassName.toStdString());

@@ -29,6 +29,8 @@ public:
 
     uniq::Value<QString> *taskIdGenerator() const;
 
+    QString newTaskId() const;
+
 signals:
 
 private:

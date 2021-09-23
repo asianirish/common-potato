@@ -43,7 +43,7 @@ void Console::readCommand()
 
         emit quit();
     } else if (line == "uniq") {
-        std::cout << "Unique value: " << _menu->taskIdGenerator()->value().toStdString() << std::endl;
+        std::cout << "Unique value: " << _menu->newTaskId().toStdString() << std::endl;
         std::cout << "> " << std::flush;
     } else {
         std::cout << "Echo: " << line << std::endl;
