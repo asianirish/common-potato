@@ -22,10 +22,14 @@ public:
 
     void registerAction(const QString &itemKey, ActionPtr action);
 
+    QString taskIdGeneratorClassName() const;
+    void setTaskIdGeneratorClassName(const QString &taskIdGeneratorClassName);
+
 signals:
 
 private:
     QMap<QString, ActionPtr> _items;
+    QString _taskIdGeneratorClassName;
 };
 
 } // namespace menu
