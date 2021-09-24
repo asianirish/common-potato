@@ -7,13 +7,12 @@
 
 namespace util {
 
-template <class Base, const char *>
+template <class Base>
 class LazyPointer
 {
 public:
-    static const QString DEFAULT_CLASS_NAME;
 
-    LazyPointer() : _className(DEFAULT_CLASS_NAME),
+    LazyPointer(const QString &defaultClassName) : _className(defaultClassName),
         _ptr(nullptr) {}
 
     ~LazyPointer() {
@@ -49,9 +48,6 @@ private:
     }
 
 };
-
-template <class Base, const char *defaultClassName>
-const QString LazyPointer<Base, defaultClassName>::DEFAULT_CLASS_NAME(defaultClassName);
 
 } // namespace util
 

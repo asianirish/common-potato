@@ -130,18 +130,15 @@ int main(int argc, char *argv[])
     qDebug() << "--------------------------------------------------------------";
 
     {
-        static char defaultClassName[] = "uniq::TimeQStringValue";
-        LazyPointer<uniq::Value<QString>,defaultClassName> lp;
+        LazyPointer<uniq::Value<QString>> lp("uniq::TimeQStringValue");
         qDebug() << "LAZY UNIQUE VALUE:" << lp.ptr()->value();
     }
     {
-        static char defaultClassName[] = "uniq::UuidValue";
-        LazyPointer<uniq::Value<QString>,defaultClassName> lp;
+        LazyPointer<uniq::Value<QString>> lp("uniq::UuidValue");
         qDebug() << "LAZY UNIQUE VALUE:" << lp.ptr()->value();
     }
     {
-        static char defaultClassName[] = "uniq::CompactUuidValue";
-        LazyPointer<uniq::Value<QString>,defaultClassName> lp;
+        LazyPointer<uniq::Value<QString>> lp("uniq::CompactUuidValue");
         qDebug() << "LAZY UNIQUE VALUE:" << lp.ptr()->value();
     }
 
