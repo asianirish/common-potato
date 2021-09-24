@@ -10,6 +10,8 @@ class CommandTranslator
 public:
     CommandTranslator();
 
+    virtual ~CommandTranslator() = default;
+
     virtual CommandInfo translate(const QString &commandString) const = 0;
 };
 
