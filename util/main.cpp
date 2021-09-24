@@ -131,15 +131,15 @@ int main(int argc, char *argv[])
 
     {
         LazyPointer<uniq::Value<QString>> lp("uniq::TimeQStringValue");
-        qDebug() << "LAZY UNIQUE VALUE:" << lp.ptr()->value();
+        qDebug() << "LAZY UNIQUE VALUE:" << lp->value();
     }
     {
         LazyPointer<uniq::Value<QString>> lp("uniq::UuidValue");
-        qDebug() << "LAZY UNIQUE VALUE:" << lp.ptr()->value();
+        qDebug() << "LAZY UNIQUE VALUE:" << lp->value();
     }
     {
         LazyPointer<uniq::Value<QString>> lp("uniq::CompactUuidValue");
-        qDebug() << "LAZY UNIQUE VALUE:" << lp.ptr()->value();
+        qDebug() << "LAZY UNIQUE VALUE:" << lp->value();
     }
 
     return a.exec();

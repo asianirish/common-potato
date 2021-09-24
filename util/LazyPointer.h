@@ -37,7 +37,9 @@ public:
         return _ptr;
     }
 
-    //TODO: operator ->
+    Base *operator ->() {
+        return ptr();
+    }
 
 private:
     QString _className;
