@@ -4,6 +4,7 @@
 #include "Test/TestC.h"
 
 #include <menu/Console.h>
+#include <menu/LineCommandTranslator.h>
 
 #include <util/CuteFactory.h>
 #include <util/Factory.h>
@@ -81,6 +82,14 @@ int main(int argc, char *argv[])
 
         Factory<QObject>::clear();
     }
+
+    qDebug() << "--------------------------------------------------------------";
+    {
+       LineCommandTranslator trans;
+       CommandInfo ci = trans.translate("add 12 13 14 15");
+       qDebug() << ci.name() << ci.args();
+    }
+
 
     qDebug() << "--------------------------------------------------------------";
     Console console;
