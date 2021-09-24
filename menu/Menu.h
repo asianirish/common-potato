@@ -22,7 +22,7 @@ public:
 
     explicit Menu(QObject *parent=nullptr);
 
-    void registerAction(const QString &itemKey, ActionPtr action);
+    void registerCommand(const QString &itemKey, ActionPtr action);
 
     QString taskIdGeneratorClassName() const;
     void setTaskIdGeneratorClassName(const QString &taskIdGeneratorClassName);
