@@ -8,6 +8,7 @@
 
 #include <util/CuteFactory.h>
 #include <util/Factory.h>
+#include <util/LazyPointer.h>
 
 #include <QCoreApplication>
 #include <iostream>
@@ -37,6 +38,9 @@ private:
     QList<T> _data;
     int _index;
 };
+
+template <const char*>
+struct A{};
 
 
 using namespace std;
@@ -123,6 +127,23 @@ int main(int argc, char *argv[])
     Console console;
     console.run();
     QObject::connect(&console, SIGNAL(quit()), &a, SLOT(quit()));
+    qDebug() << "--------------------------------------------------------------";
+
+    {
+        static char defaultClassName[] = "uniq::TimeQStringValue";
+        LazyPointer<uniq::Value<QString>,defaultClassName> lp;
+        qDebug() << "LAZY UNIQUE VALUE:" << lp.ptr()->value();
+    }
+    {
+        static char defaultClassName[] = "uniq::UuidValue";
+        LazyPointer<uniq::Value<QString>,defaultClassName> lp;
+        qDebug() << "LAZY UNIQUE VALUE:" << lp.ptr()->value();
+    }
+    {
+        static char defaultClassName[] = "uniq::CompactUuidValue";
+        LazyPointer<uniq::Value<QString>,defaultClassName> lp;
+        qDebug() << "LAZY UNIQUE VALUE:" << lp.ptr()->value();
+    }
 
     return a.exec();
 }
