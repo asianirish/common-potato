@@ -24,6 +24,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     Action.h \
+    CommandInfo.h \
     Console.h \
     Menu.h \
     Result.h \
@@ -31,6 +32,7 @@ HEADERS += \
 
 SOURCES += \
     Action.cpp \
+    CommandInfo.cpp \
     Console.cpp \
     Menu.cpp \
     Result.cpp \
