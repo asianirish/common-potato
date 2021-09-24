@@ -15,6 +15,29 @@
 
 #include <QObject>
 
+template<class T, int I>
+class TestT
+{
+public:
+    static const int INDEX = I;
+
+    TestT() : _index(INDEX) {
+
+    }
+
+    void setData(const QList<T> &data) {
+        _data = data;
+    }
+
+    T value() {
+        return _data.at(_index);
+    }
+
+private:
+    QList<T> _data;
+    int _index;
+};
+
 
 using namespace std;
 using namespace util;
@@ -90,6 +113,11 @@ int main(int argc, char *argv[])
        qDebug() << ci.name() << ci.args();
     }
 
+    qDebug() << "--------------------------------------------------------------";
+    TestT<QString, 1> tt;
+    tt.setData({"first","second","third"});
+
+    qDebug() << "TT VALUE:" << tt.value();
 
     qDebug() << "--------------------------------------------------------------";
     Console console;
