@@ -2,6 +2,7 @@
 #define MENU_MENU_H
 
 #include "Action.h"
+#include "CommandTranslator.h"
 
 #include <uniq/Value.h>
 #include <util/LazyPointer.h>
@@ -35,7 +36,7 @@ signals:
 private:
     QMap<QString, ActionPtr> _items;
     util::LazyPointer<uniq::Value<QString>> _taskIdGen;
-
+    util::LazyPointer<menu::CommandTranslator> _commandTranslator;
 
 };
 
