@@ -4,6 +4,7 @@
 #include "Action.h"
 
 #include <uniq/Value.h>
+#include <util/LazyPointer.h>
 
 #include <QObject>
 #include <QMap>
@@ -24,21 +25,15 @@ public:
 
     void registerCommand(const QString &itemKey, ActionPtr action);
 
-    QString taskIdGeneratorClassName() const;
-    void setTaskIdGeneratorClassName(const QString &taskIdGeneratorClassName);
-
-    uniq::Value<QString> *taskIdGenerator() const;
-
     QString newTaskId() const;
 
 signals:
 
 private:
     QMap<QString, ActionPtr> _items;
-    QString _taskIdGeneratorClassName;
-    mutable uniq::Value<QString> *_taskIdGenerator;
+    util::LazyPointer<uniq::Value<QString>> _taskIdGen;
 
-    uniq::Value<QString> *createTaskIdGenerator() const;
+
 };
 
 } // namespace menu
