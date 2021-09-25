@@ -25,6 +25,8 @@ public:
 
     void registerCommand(const QString &itemKey, ActionPtr action);
 
+    void setTaskIdGenClassName(const QString &className);
+
     QString newTaskId() const;
 
 signals:

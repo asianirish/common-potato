@@ -18,6 +18,11 @@ void Menu::registerCommand(const QString &itemKey, ActionPtr action)
     //TODO: connect
 }
 
+void Menu::setTaskIdGenClassName(const QString &className)
+{
+    _taskIdGen.setClassName(className);
+}
+
 QString Menu::newTaskId() const
 {
     return _taskIdGen->value();
