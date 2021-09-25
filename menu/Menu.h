@@ -20,6 +20,7 @@ class Menu : public QObject
     Q_OBJECT
 public:
     static const QString DEFAULT_TASK_ID_GENERATOR_CLASS_NAME;
+    static const QString DEFAULT_COMMAND_TRANSLATOR_CLASS_NAME;
 
     explicit Menu(QObject *parent=nullptr);
 
