@@ -4,7 +4,7 @@
 
 namespace menu {
 
-QString Menu::DEFAULT_TASK_ID_GENERATOR_CLASS_NAME("uniq::TimeQStringValue");
+const QString Menu::DEFAULT_TASK_ID_GENERATOR_CLASS_NAME("uniq::TimeQStringValue");
 
 Menu::Menu(QObject *parent) : QObject(parent),
     _taskIdGen(DEFAULT_TASK_ID_GENERATOR_CLASS_NAME)

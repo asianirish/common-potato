@@ -19,7 +19,7 @@ class Menu : public QObject
 {
     Q_OBJECT
 public:
-    static QString DEFAULT_TASK_ID_GENERATOR_CLASS_NAME;
+    static const QString DEFAULT_TASK_ID_GENERATOR_CLASS_NAME;
 
     explicit Menu(QObject *parent=nullptr);
 
