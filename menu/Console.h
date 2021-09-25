@@ -32,6 +32,8 @@ public:
 
     void run();
 
+    Menu *menu() const;
+
 signals:
     void quit();
 

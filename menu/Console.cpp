@@ -51,6 +51,11 @@ void Console::readCommand()
     }
 }
 
+Menu *Console::menu() const
+{
+    return _menu;
+}
+
 
 
 void Console::registerUniqValue() const

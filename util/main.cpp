@@ -4,6 +4,7 @@
 #include "Test/TestC.h"
 
 #include <menu/Console.h>
+#include <menu/Menu.h>
 #include <menu/LineCommandTranslator.h>
 
 #include <util/CuteFactory.h>
@@ -125,6 +126,9 @@ int main(int argc, char *argv[])
 
     qDebug() << "--------------------------------------------------------------";
     Console console;
+
+    console.menu()->setTaskIdGenClassName("uniq::CompactUuidValue");
+
     console.run();
     QObject::connect(&console, SIGNAL(quit()), &a, SLOT(quit()));
     qDebug() << "--------------------------------------------------------------";
