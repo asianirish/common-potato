@@ -41,6 +41,10 @@ public:
         return ptr();
     }
 
+    const Base *operator ->() const {
+        return ptr();
+    }
+
 private:
     QString _className;
     mutable Base *_ptr;
