@@ -30,4 +30,18 @@ QString Menu::newTaskId() const
     return _taskIdGen->value();
 }
 
+void Menu::exec(const QString &command) const
+{
+    auto commandInfo = _commandTranslator->translate(command);
+    exec(commandInfo);
+}
+
+void Menu::exec(const CommandInfo &commandInfo) const
+{
+    auto taskId = newTaskId();
+    QString commandName = commandInfo.name();
+    auto action = _items.value(commandName);
+    action->act(commandInfo.args(), taskId);
+}
+
 } // namespace menu

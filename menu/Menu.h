@@ -31,12 +31,16 @@ public:
 
     QString newTaskId() const;
 
+    void exec(const QString &command) const;
+
 signals:
 
 private:
     QMap<QString, ActionPtr> _items;
     util::LazyPointer<uniq::Value<QString>> _taskIdGen;
     util::LazyPointer<menu::CommandTranslator> _commandTranslator;
+
+    void exec(const CommandInfo &commandInfo) const;
 
 };
 
