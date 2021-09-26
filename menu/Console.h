@@ -52,6 +52,7 @@ private slots:
 private:
     Menu *_menu;
     void registerUniqValue() const;
+    void registerCommandTranslatorClasses() const;
 
 };
 

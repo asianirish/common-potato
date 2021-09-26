@@ -1,8 +1,11 @@
 #include "Console.h"
 
+#include "LineCommandTranslator.h"
+
 #include <uniq/UuidValue.h>
 #include <uniq/CompactUuidValue.h>
 #include <uniq/TimeQStringValue.h>
+
 #include <util/Factory.h>
 
 #include <iostream>
@@ -34,6 +37,7 @@ Console::Console(const QString &taskIdGenClassName, const QString &commandTransl
             , this, &Console::readCommand);
 
     registerUniqValue();
+    registerCommandTranslatorClasses();
 }
 
 Console::~Console()
@@ -79,6 +83,11 @@ void Console::registerUniqValue() const
     REGISTER_CLASS_FOR_UTIL_FACTORY(uniq::Value<QString>, uniq::UuidValue)
     REGISTER_CLASS_FOR_UTIL_FACTORY(uniq::Value<QString>, uniq::CompactUuidValue)
     REGISTER_CLASS_FOR_UTIL_FACTORY(uniq::Value<QString>, uniq::TimeQStringValue)
+}
+
+void Console::registerCommandTranslatorClasses() const
+{
+    REGISTER_CLASS_FOR_UTIL_FACTORY(menu::CommandTranslator, menu::LineCommandTranslator)
 }
 
 
