@@ -28,6 +28,11 @@ class Console : public QObject
 public:
     Console();
 
+    Console(const QString &taskIdGenClassName);
+
+    Console(const QString &taskIdGenClassName,
+    const QString &commandTranslatorClassName);
+
     ~Console();
 
     void run();

@@ -125,10 +125,7 @@ int main(int argc, char *argv[])
     qDebug() << "TT VALUE:" << tt.value();
 
     qDebug() << "--------------------------------------------------------------";
-    Console console;
-
-    console.menu()->setTaskIdGenClassName("uniq::CompactUuidValue");
-
+    Console console("uniq::UuidValue");
     console.run();
     QObject::connect(&console, SIGNAL(quit()), &a, SLOT(quit()));
     qDebug() << "--------------------------------------------------------------";
