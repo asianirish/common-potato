@@ -5,11 +5,6 @@
 
 #include "Menu.h"
 
-#include <uniq/UuidValue.h>
-#include <uniq/CompactUuidValue.h>
-#include <uniq/TimeQStringValue.h>
-#include <util/Factory.h>
-
 #include <QObject>
 
 #ifdef Q_OS_WIN

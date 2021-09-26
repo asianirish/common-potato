@@ -1,5 +1,10 @@
 #include "Console.h"
 
+#include <uniq/UuidValue.h>
+#include <uniq/CompactUuidValue.h>
+#include <uniq/TimeQStringValue.h>
+#include <util/Factory.h>
+
 #include <iostream>
 
 namespace menu {
