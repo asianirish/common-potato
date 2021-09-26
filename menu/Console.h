@@ -39,8 +39,6 @@ public:
 
     void run();
 
-    Menu *menu() const;
-
     void addMenuItem(const QString &command, ActionPtr action);
 
 signals:
