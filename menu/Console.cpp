@@ -36,7 +36,7 @@ Console::Console(const QString &taskIdGenClassName, const QString &commandTransl
 #endif
             , this, &Console::readCommand);
 
-    registerUniqValue();
+    registerUniqValueClasses();
     registerCommandTranslatorClasses();
 }
 
@@ -78,7 +78,7 @@ void Console::addMenuItem(const QString &command, ActionPtr action)
 
 
 
-void Console::registerUniqValue() const
+void Console::registerUniqValueClasses() const
 {
     REGISTER_CLASS_FOR_UTIL_FACTORY(uniq::Value<QString>, uniq::UuidValue)
     REGISTER_CLASS_FOR_UTIL_FACTORY(uniq::Value<QString>, uniq::CompactUuidValue)
