@@ -37,6 +37,8 @@ public:
 
     void exec(const QString &command) const;
 
+    void addItem(const QString &command, ActionPtr action);
+
 signals:
 
 private:

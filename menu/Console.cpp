@@ -1,5 +1,4 @@
 #include "Console.h"
-#include "Menu.h"
 
 #include <iostream>
 
@@ -66,6 +65,11 @@ void Console::readCommand()
 Menu *Console::menu() const
 {
     return _menu;
+}
+
+void Console::addMenuItem(const QString &command, ActionPtr action)
+{
+    _menu->addItem(command, action);
 }
 
 

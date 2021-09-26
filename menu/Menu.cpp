@@ -46,6 +46,11 @@ void Menu::exec(const QString &command) const
     exec(commandInfo);
 }
 
+void Menu::addItem(const QString &command, ActionPtr action)
+{
+    _items.insert(command, action);
+}
+
 void Menu::exec(const CommandInfo &commandInfo) const
 {
     auto taskId = newTaskId();

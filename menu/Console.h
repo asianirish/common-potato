@@ -3,6 +3,8 @@
  * */
 #pragma once
 
+#include "Menu.h"
+
 #include <uniq/UuidValue.h>
 #include <uniq/CompactUuidValue.h>
 #include <uniq/TimeQStringValue.h>
@@ -38,6 +40,8 @@ public:
     void run();
 
     Menu *menu() const;
+
+    void addMenuItem(const QString &command, ActionPtr action);
 
 signals:
     void quit();
