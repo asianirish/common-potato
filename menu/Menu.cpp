@@ -7,9 +7,19 @@ namespace menu {
 const QString Menu::DEFAULT_TASK_ID_GENERATOR_CLASS_NAME("uniq::TimeQStringValue");
 const QString Menu::DEFAULT_COMMAND_TRANSLATOR_CLASS_NAME("menu::LineCommandTranslator");
 
-Menu::Menu(QObject *parent) : QObject(parent),
-    _taskIdGen(DEFAULT_TASK_ID_GENERATOR_CLASS_NAME),
-    _commandTranslator(DEFAULT_TASK_ID_GENERATOR_CLASS_NAME)
+Menu::Menu(QObject *parent) : Menu(DEFAULT_TASK_ID_GENERATOR_CLASS_NAME,
+                                   DEFAULT_COMMAND_TRANSLATOR_CLASS_NAME,
+                                   parent)
+{
+
+}
+
+Menu::Menu(const QString &taskIdGenClassName,
+           const QString &commandTranslatorClassName,
+           QObject *parent) :
+    QObject(parent),
+    _taskIdGen(taskIdGenClassName),
+    _commandTranslator(commandTranslatorClassName)
 {
 
 }

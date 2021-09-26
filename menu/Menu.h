@@ -25,6 +25,10 @@ public:
 
     explicit Menu(QObject *parent=nullptr);
 
+    explicit Menu(const QString &taskIdGenClassName,
+                  const QString &commandTranslatorClassName,
+                  QObject *parent=nullptr);
+
     void registerCommand(const QString &itemKey, ActionPtr action);
 
     void setTaskIdGenClassName(const QString &className);
