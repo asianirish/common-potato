@@ -7,6 +7,8 @@
 #include <menu/Menu.h>
 #include <menu/LineCommandTranslator.h>
 
+#include <menu/math/Inc.h>
+
 #include <util/CuteFactory.h>
 #include <util/Factory.h>
 #include <util/LazyPointer.h>
@@ -126,6 +128,9 @@ int main(int argc, char *argv[])
 
     qDebug() << "--------------------------------------------------------------";
     Console console("uniq::UuidValue");
+
+    console.addMenuItem("inc", menu::ActionPtr(new menu::math::Inc()));
+
     console.run();
     QObject::connect(&console, SIGNAL(quit()), &a, SLOT(quit()));
     qDebug() << "--------------------------------------------------------------";

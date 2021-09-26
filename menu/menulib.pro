@@ -30,7 +30,8 @@ HEADERS += \
     LineCommandTranslator.h \
     Menu.h \
     Result.h \
-    SimpleAction.h
+    SimpleAction.h \
+    math/Inc.h
 
 SOURCES += \
     Action.cpp \
@@ -40,6 +41,7 @@ SOURCES += \
     LineCommandTranslator.cpp \
     Menu.cpp \
     Result.cpp \
-    SimpleAction.cpp
+    SimpleAction.cpp \
+    math/Inc.cpp
 
 
