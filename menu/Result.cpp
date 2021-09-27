@@ -9,8 +9,7 @@ Result::Result() : Result(QVariant())
 
 }
 
-Result::Result(const QVariant &value) : _value(value),
-    _errorCode(SUCCESSFUL_RESULT)
+Result::Result(const QVariant &value) : _value(value)
 {
 
 }
@@ -27,40 +26,38 @@ void Result::setValue(const QVariant &value)
 
 int Result::errorCode() const
 {
-    return _errorCode;
+    return _error.code();
 }
 
 void Result::setErrorCode(int errorCode)
 {
-    _errorCode = errorCode;
+    _error.setCode(errorCode);
 }
 
 QString Result::errorDescription() const
 {
-    return _errorDescription;
+    return _error.description();
 }
 
 void Result::setErrorDescription(const QString &errorDescription)
 {
-    _errorDescription = errorDescription;
+    _error.setDescription(errorDescription);
 }
 
 QVariantMap Result::errorContext() const
 {
-    return _errorContext;
+    return _error.context();
 }
 
 void Result::setErrorContext(const QVariantMap &errorContext)
 {
-    _errorContext = errorContext;
+    _error.setContext(errorContext);
 }
 
 Result &Result::operator =(const QVariant &value)
 {
     _value = value;
-    _errorCode = SUCCESSFUL_RESULT;
-    _errorDescription.clear();
-    _errorContext.clear();
+    _error.clear();
 
     return *this;
 }
@@ -77,7 +74,7 @@ void Result::setTaskId(const QString &taskId)
 
 menu::Result::operator QVariant()
 {
-    if (_errorCode == SUCCESSFUL_RESULT) {
+    if (!_error) {
         return _value;
     }
     

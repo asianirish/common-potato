@@ -42,11 +42,7 @@ private:
 
     QString _taskId; //TODO: implement
 
-    int _errorCode;
-    QString _errorDescription;
-    QVariantMap _errorContext;
-
-    //TODO: Error _error;
+    Error _error;
 };
 
 
