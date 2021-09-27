@@ -36,7 +36,7 @@ public:
 
     QString newTaskId() const;
 
-    void exec(const QString &command) const;
+    void exec(const QString &command);
 
     void addItem(const QString &command, ActionPtr action);
 
@@ -44,9 +44,9 @@ private:
     QMap<QString, ActionPtr> _items;
     util::LazyPointer<uniq::Value<QString>> _taskIdGen;
     util::LazyPointer<menu::CommandTranslator> _commandTranslator;
-    mutable QSet<QString> _pendingTasks;
+    QSet<QString> _pendingTasks;
 
-    void exec(const CommandInfo &commandInfo) const;
+    void exec(const CommandInfo &commandInfo);
 
 signals:
     void ready(const QVariant &result);

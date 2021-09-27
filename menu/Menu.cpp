@@ -40,7 +40,7 @@ QString Menu::newTaskId() const
     return _taskIdGen->value();
 }
 
-void Menu::exec(const QString &command) const
+void Menu::exec(const QString &command)
 {
     auto commandInfo = _commandTranslator->translate(command);
     exec(commandInfo);
@@ -53,13 +53,24 @@ void Menu::addItem(const QString &command, ActionPtr action)
     connect(action.get(), &Action::ready, this, &Menu::onTaskComplete);
 }
 
-void Menu::exec(const CommandInfo &commandInfo) const
+void Menu::exec(const CommandInfo &commandInfo)
 {
     auto taskId = newTaskId();
     _pendingTasks.insert(taskId);
     QString commandName = commandInfo.name();
     auto action = _items.value(commandName);
-    action->act(commandInfo.args(), taskId);
+
+    if (action) {
+        action->act(commandInfo.args(), taskId);
+    } else {
+        Result errResult;
+        errResult.setErrorCode(-1);
+        errResult.setErrorDescription("no such a command");
+        QVariantMap mp;
+        mp.insert("action", commandName);
+        errResult.setErrorContext(mp);
+        emit error(errResult);
+    }
 }
 
 void Menu::onTaskComplete(const Result &result)
