@@ -27,6 +27,8 @@ Console::Console(const QString &taskIdGenClassName) : Console(taskIdGenClassName
 Console::Console(const QString &taskIdGenClassName, const QString &commandTranslatorClassName) :
     _menu(new Menu(taskIdGenClassName, commandTranslatorClassName, this))
 {
+    qRegisterMetaType<menu::Result>();
+
 #ifdef Q_OS_WIN
     m_notifier = new QWinEventNotifier(GetStdHandle(STD_INPUT_HANDLE));
     connect(m_notifier, &QWinEventNotifier::activated

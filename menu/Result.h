@@ -45,6 +45,10 @@ private:
     QVariantMap _errorContext;
 };
 
+
+
 } // namespace menu
+
+Q_DECLARE_METATYPE(menu::Result)
 
 #endif // MENU_RESULT_H
