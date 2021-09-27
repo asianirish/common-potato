@@ -40,6 +40,9 @@ Console::Console(const QString &taskIdGenClassName, const QString &commandTransl
 
     registerUniqValueClasses();
     registerCommandTranslatorClasses();
+
+    connect(_menu, &Menu::ready, this, &Console::onReady);
+    //TODO: connect error
 }
 
 Console::~Console()
@@ -68,9 +71,14 @@ void Console::readCommand()
         std::cout << "Unique value: " << _menu->newTaskId().toStdString() << std::endl;
         std::cout << "> " << std::flush;
     } else {
-        std::cout << "Echo: " << line << std::endl;
-        std::cout << "> " << std::flush;
+        _menu->exec(QString(line.data()));
     }
+}
+
+void Console::onReady(const QVariant &result)
+{
+    std::cout << result.toString().toStdString() << std::endl;
+    std::cout << "> " << std::flush;
 }
 
 void Console::addMenuItem(const QString &command, ActionPtr action)

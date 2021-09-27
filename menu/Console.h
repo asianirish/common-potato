@@ -49,6 +49,8 @@ private:
 private slots:
     void readCommand();
 
+    void onReady(const QVariant &result);
+
 private:
     Menu *_menu;
     void registerUniqValueClasses() const;
