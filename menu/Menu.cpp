@@ -49,6 +49,8 @@ void Menu::exec(const QString &command) const
 void Menu::addItem(const QString &command, ActionPtr action)
 {
     _items.insert(command, action);
+
+    connect(action.get(), &Action::ready, this, &Menu::onTaskComplete);
 }
 
 void Menu::exec(const CommandInfo &commandInfo) const
@@ -58,6 +60,23 @@ void Menu::exec(const CommandInfo &commandInfo) const
     QString commandName = commandInfo.name();
     auto action = _items.value(commandName);
     action->act(commandInfo.args(), taskId);
+}
+
+void Menu::onTaskComplete(const Result &result)
+{
+    auto taskId = result.taskId();
+
+    if (_pendingTasks.contains(taskId)) {
+        _pendingTasks.remove(taskId);
+
+        if (result.errorCode() == Result::SUCCESSFUL_RESULT) {
+            emit ready(result.value());
+        } else {
+            emit error(result);
+        }
+
+
+    }
 }
 
 } // namespace menu

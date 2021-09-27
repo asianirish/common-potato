@@ -40,8 +40,6 @@ public:
 
     void addItem(const QString &command, ActionPtr action);
 
-signals:
-
 private:
     QMap<QString, ActionPtr> _items;
     util::LazyPointer<uniq::Value<QString>> _taskIdGen;
@@ -50,6 +48,12 @@ private:
 
     void exec(const CommandInfo &commandInfo) const;
 
+signals:
+    void ready(const QVariant &result);
+    void error(const Result &result);
+
+public slots:
+    void onTaskComplete(const Result &result);
 };
 
 } // namespace menu
