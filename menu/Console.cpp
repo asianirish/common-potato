@@ -42,7 +42,7 @@ Console::Console(const QString &taskIdGenClassName, const QString &commandTransl
     registerCommandTranslatorClasses();
 
     connect(_menu, &Menu::ready, this, &Console::onReady);
-    //TODO: connect error
+    connect(_menu, &Menu::error, this, &Console::onError);
 }
 
 Console::~Console()
@@ -78,6 +78,12 @@ void Console::readCommand()
 void Console::onReady(const QVariant &result)
 {
     std::cout << result.toString().toStdString() << std::endl;
+    std::cout << "> " << std::flush;
+}
+
+void Console::onError(const Result &result)
+{
+    std::cout << "Error: " << result.errorDescription().toStdString() << std::endl; //TODO: use error context
     std::cout << "> " << std::flush;
 }
 

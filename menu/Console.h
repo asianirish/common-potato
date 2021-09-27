@@ -50,6 +50,7 @@ private slots:
     void readCommand();
 
     void onReady(const QVariant &result);
+    void onError(const Result &result);
 
 private:
     Menu *_menu;
