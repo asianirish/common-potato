@@ -25,6 +25,8 @@ public:
 
     void clear();
 
+    operator bool() const;
+
 private:
     int _code;
     QString _description;

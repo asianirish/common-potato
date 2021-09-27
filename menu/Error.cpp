@@ -46,4 +46,9 @@ void Error::clear()
     _context.clear();
 }
 
+menu::Error::operator bool() const
+{
+    return !(_code == NO_ERROR);
+}
+
 } // namespace menu
