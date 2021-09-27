@@ -27,6 +27,7 @@ HEADERS += \
     CommandInfo.h \
     CommandTranslator.h \
     Console.h \
+    Error.h \
     LineCommandTranslator.h \
     Menu.h \
     Result.h \
@@ -39,6 +40,7 @@ SOURCES += \
     CommandInfo.cpp \
     CommandTranslator.cpp \
     Console.cpp \
+    Error.cpp \
     LineCommandTranslator.cpp \
     Menu.cpp \
     Result.cpp \

@@ -1,6 +1,8 @@
 #ifndef MENU_RESULT_H
 #define MENU_RESULT_H
 
+#include "Error.h"
+
 #include <QVariant>
 #include <QString>
 #include <QMap>
@@ -43,6 +45,8 @@ private:
     int _errorCode;
     QString _errorDescription;
     QVariantMap _errorContext;
+
+    //TODO: Error _error;
 };
 
 
