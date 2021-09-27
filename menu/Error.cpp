@@ -4,7 +4,7 @@ namespace menu {
 
 const int Error::NO_ERROR = 0;
 
-Error::Error()
+Error::Error() : _code(NO_ERROR)
 {
 
 }
