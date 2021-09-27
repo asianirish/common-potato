@@ -10,6 +10,8 @@ namespace menu {
 class Error
 {
 public:
+    static const int NO_ERROR;
+
     Error();
 
     int code() const;
