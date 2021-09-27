@@ -39,4 +39,11 @@ void Error::setContext(const QVariantMap &context)
     _context = context;
 }
 
+void Error::clear()
+{
+    _code = NO_ERROR;
+    _description.clear();
+    _context.clear();
+}
+
 } // namespace menu

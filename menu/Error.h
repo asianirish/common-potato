@@ -23,6 +23,8 @@ public:
     QVariantMap context() const;
     void setContext(const QVariantMap &context);
 
+    void clear();
+
 private:
     int _code;
     QString _description;
