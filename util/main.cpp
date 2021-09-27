@@ -8,6 +8,7 @@
 #include <menu/LineCommandTranslator.h>
 
 #include <menu/math/Inc.h>
+#include <menu/math/Div.h>
 
 #include <util/CuteFactory.h>
 #include <util/Factory.h>
@@ -130,6 +131,7 @@ int main(int argc, char *argv[])
     Console console("uniq::UuidValue");
 
     console.addMenuItem("inc", menu::ActionPtr(new menu::math::Inc()));
+    console.addMenuItem("div", menu::ActionPtr(new menu::math::Div()));
 
     console.run();
     QObject::connect(&console, SIGNAL(quit()), &a, SLOT(quit()));

@@ -31,6 +31,7 @@ HEADERS += \
     Menu.h \
     Result.h \
     SimpleAction.h \
+    math/Div.h \
     math/Inc.h
 
 SOURCES += \
@@ -42,6 +43,7 @@ SOURCES += \
     Menu.cpp \
     Result.cpp \
     SimpleAction.cpp \
+    math/Div.cpp \
     math/Inc.cpp
 
 
