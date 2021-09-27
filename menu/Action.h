@@ -19,7 +19,7 @@ public:
     virtual const char *alias() const = 0;
 
 signals:
-    void ready(const QVariant &result);
+    void ready(const Result &result);
 
 };
 
