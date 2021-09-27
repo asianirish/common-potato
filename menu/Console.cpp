@@ -82,9 +82,9 @@ void Console::onReady(const QVariant &result)
     std::cout << "> " << std::flush;
 }
 
-void Console::onError(const Result &result)
+void Console::onError(const Error &err)
 {
-    std::cout << "Error: " << result.errorDescription().toStdString() << std::endl; //TODO: use error context
+    std::cout << "Error: " << err.description().toStdString() << std::endl; //TODO: use error context
     std::cout << "> " << std::flush;
 }
 

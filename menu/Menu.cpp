@@ -63,13 +63,13 @@ void Menu::exec(const CommandInfo &commandInfo)
     if (action) {
         action->act(commandInfo.args(), taskId);
     } else {
-        Result errResult;
-        errResult.setErrorCode(-1);
-        errResult.setErrorDescription("no such a command");
+        Error err;
+        err.setCode(-1);
+        err.setDescription("no such a command");
         QVariantMap mp;
         mp.insert("action", commandName);
-        errResult.setErrorContext(mp);
-        emit error(errResult);
+        err.setContext(mp);
+        emit error(err);
     }
 }
 
@@ -83,7 +83,7 @@ void Menu::onTaskComplete(const Result &result)
         if (result.errorCode() == Result::SUCCESSFUL_RESULT) {
             emit ready(result.value());
         } else {
-            emit error(result);
+            emit error(result.error());
         }
 
 

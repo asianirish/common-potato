@@ -50,7 +50,7 @@ private:
 
 signals:
     void ready(const QVariant &result);
-    void error(const Result &result);
+    void error(const Error &error);
 
 public slots:
     void onTaskComplete(const Result &result);
