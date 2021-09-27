@@ -54,6 +54,7 @@ void Menu::addItem(const QString &command, ActionPtr action)
 void Menu::exec(const CommandInfo &commandInfo) const
 {
     auto taskId = newTaskId();
+    _pendingTasks.insert(taskId);
     QString commandName = commandInfo.name();
     auto action = _items.value(commandName);
     action->act(commandInfo.args(), taskId);

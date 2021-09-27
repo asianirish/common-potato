@@ -11,6 +11,7 @@
 #include <QMap>
 #include <QString>
 #include <QSharedPointer>
+#include <QSet>
 
 namespace menu {
 
@@ -45,6 +46,7 @@ private:
     QMap<QString, ActionPtr> _items;
     util::LazyPointer<uniq::Value<QString>> _taskIdGen;
     util::LazyPointer<menu::CommandTranslator> _commandTranslator;
+    mutable QSet<QString> _pendingTasks;
 
     void exec(const CommandInfo &commandInfo) const;
 
