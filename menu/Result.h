@@ -37,6 +37,9 @@ public:
     QString taskId() const;
     void setTaskId(const QString &taskId);
 
+    Error error() const;
+    void setError(const Error &error);
+
 private:
     QVariant _value;
 

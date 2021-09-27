@@ -72,6 +72,16 @@ void Result::setTaskId(const QString &taskId)
     _taskId = taskId;
 }
 
+Error Result::error() const
+{
+    return _error;
+}
+
+void Result::setError(const Error &error)
+{
+    _error = error;
+}
+
 menu::Result::operator QVariant()
 {
     if (!_error) {
