@@ -14,7 +14,7 @@ class Action : public QObject
 public:
     explicit Action(QObject *parent = nullptr);
 
-    virtual Result act(const QVariantList &args, const QString &taskId) = 0;
+    virtual void act(const QVariantList &args, const QString &taskId) = 0;
 
     virtual const char *alias() const = 0;
 
