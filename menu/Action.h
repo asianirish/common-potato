@@ -1,10 +1,11 @@
 #ifndef MENU_ACTION_H
 #define MENU_ACTION_H
 
+#include "Result.h"
+#include "def/ActionDef.h"
+
 #include <QObject>
 #include <QVariantList>
-
-#include "Result.h"
 
 namespace menu {
 
@@ -18,8 +19,13 @@ public:
 
     virtual const char *alias() const = 0;
 
+    void addDef(const def::ActionDef &actionDef);
+
 signals:
     void ready(const Result &result);
+
+private:
+    QList<def::ActionDef> _defs;
 
 };
 
