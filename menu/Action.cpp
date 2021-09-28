@@ -18,6 +18,7 @@ void Action::act(const QVariantList &args, const QString &taskId)
             result.setTaskId(taskId);
             result.setError(err);
             emit ready(result);
+            return;
         }
     }
 
