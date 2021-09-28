@@ -33,6 +33,7 @@ HEADERS += \
     Result.h \
     SimpleAction.h \
     def/ActionDef.h \
+    def/ArgDef.h \
     math/Div.h \
     math/Inc.h
 
@@ -47,6 +48,7 @@ SOURCES += \
     Result.cpp \
     SimpleAction.cpp \
     def/ActionDef.cpp \
+    def/ArgDef.cpp \
     math/Div.cpp \
     math/Inc.cpp
 

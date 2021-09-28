@@ -62,5 +62,10 @@ Error ActionDef::validate(const QVariantList &args) const
     return Error();
 }
 
+void ActionDef::addArgDef(const ArgDef &argDef)
+{
+    _argDefs.append(argDef);
+}
+
 } // namespace def
 } // namespace menu

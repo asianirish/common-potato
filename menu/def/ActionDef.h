@@ -2,6 +2,7 @@
 #define DEF_ACTIONDEF_H
 
 #include "../Error.h"
+#include "ArgDef.h"
 
 #include <QList>
 
@@ -24,10 +25,12 @@ public:
 
     Error validate(const QVariantList &args) const;
 
+    void addArgDef(const ArgDef &argDef);
+
 private:
     int _argMinNum;
     int _argMaxNum; //-1 means unlimited
-//TODO:    QList<ArgDef> _argDefs;
+    QList<ArgDef> _argDefs;
 };
 
 } // namespace def
