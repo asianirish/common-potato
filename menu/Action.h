@@ -19,16 +19,14 @@ public:
 
     virtual const char *alias() const = 0;
 
-    void addDef(const def::ActionDef &actionDef);
-
 signals:
     void ready(const Result &result);
 
 private:
-    QList<def::ActionDef> _defs;
-
-
     virtual void actSpecific(const QVariantList &args, const QString &taskId) = 0;
+
+    virtual QList<def::ActionDef> defs() const = 0;
+
 };
 
 } // namespace menu

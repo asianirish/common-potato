@@ -9,7 +9,9 @@ Action::Action(QObject *parent) : QObject(parent)
 
 void Action::act(const QVariantList &args, const QString &taskId)
 {
-    for (auto &actionDef : _defs) {
+    auto actionDefs = defs();
+
+    for (auto &actionDef : actionDefs) {
         auto err = actionDef.validate(args);
         if (!err) {
             Result result;
@@ -20,12 +22,6 @@ void Action::act(const QVariantList &args, const QString &taskId)
     }
 
     actSpecific(args, taskId);
-
-}
-
-void Action::addDef(const def::ActionDef &actionDef)
-{
-    _defs.append(actionDef);
 
 }
 

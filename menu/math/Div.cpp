@@ -15,5 +15,14 @@ QVariant Div::simplyAct(const QVariantList &args)
 
 }
 
+QList<def::ActionDef> Div::defs() const
+{
+    def::ActionDef adf;
+    adf.setArgMinNum(2);
+    adf.setArgMaxNum(2);
+
+    return {adf};
+}
+
 } // namespace math
 } // namespace menu

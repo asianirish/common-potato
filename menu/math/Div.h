@@ -17,6 +17,9 @@ public:
 
 protected:
     QVariant simplyAct(const QVariantList &args) final;
+
+private:
+    QList<def::ActionDef> defs() const final;
 };
 
 } // namespace math
