@@ -3,24 +3,35 @@
 namespace menu {
 namespace def {
 
-ActionDef::ActionDef() : _argNum(1)
+ActionDef::ActionDef() : _argMinNum(0),
+    _argMaxNum(UNLIMITED_MAX)
 {
 
-}
-
-int ActionDef::argNum() const
-{
-    return _argNum;
-}
-
-void ActionDef::setArgNum(int argNum)
-{
-    _argNum = argNum;
 }
 
 bool ActionDef::isUnlimitedArgNum() const
 {
-    return (_argNum < 0);
+    return (_argMaxNum == UNLIMITED_MAX);
+}
+
+int ActionDef::argMinNum() const
+{
+    return _argMinNum;
+}
+
+void ActionDef::setArgMinNum(int argMinNum)
+{
+    _argMinNum = argMinNum;
+}
+
+int ActionDef::argMaxNum() const
+{
+    return _argMaxNum;
+}
+
+void ActionDef::setArgMaxNum(int argMaxNum)
+{
+    _argMaxNum = argMaxNum;
 }
 
 } // namespace def
