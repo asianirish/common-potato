@@ -13,7 +13,7 @@ void Action::act(const QVariantList &args, const QString &taskId)
 
     for (auto &actionDef : actionDefs) {
         auto err = actionDef.validate(args);
-        if (!err) {
+        if (err) {
             Result result;
             result.setTaskId(taskId);
             result.setError(err);
