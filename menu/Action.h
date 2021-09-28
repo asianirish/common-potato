@@ -15,7 +15,7 @@ class Action : public QObject
 public:
     explicit Action(QObject *parent = nullptr);
 
-    virtual void act(const QVariantList &args, const QString &taskId) = 0;
+    void act(const QVariantList &args, const QString &taskId);
 
     virtual const char *alias() const = 0;
 
@@ -27,6 +27,8 @@ signals:
 private:
     QList<def::ActionDef> _defs;
 
+
+    virtual void actSpecific(const QVariantList &args, const QString &taskId) = 0;
 };
 
 } // namespace menu

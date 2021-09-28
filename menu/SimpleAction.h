@@ -10,10 +10,12 @@ class SimpleAction : public Action
 public:
     SimpleAction();
 
-    void act(const QVariantList &args, const QString &taskId) final;
-
 protected:
     virtual QVariant simplyAct(const QVariantList &args) = 0;
+
+private:
+    void actSpecific(const QVariantList &args, const QString &taskId) final;
+
 };
 
 } // namespace menu
