@@ -1,6 +1,8 @@
 #ifndef DEF_ACTIONDEF_H
 #define DEF_ACTIONDEF_H
 
+#include "../Error.h"
+
 #include <QList>
 
 namespace menu {
@@ -19,6 +21,8 @@ public:
 
     int argMaxNum() const;
     void setArgMaxNum(int argMaxNum);
+
+    Error validate(const QVariantList &args) const;
 
 private:
     int _argMinNum;
