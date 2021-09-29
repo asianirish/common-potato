@@ -1,5 +1,17 @@
 # common-potato
 
+## libs
+
+* util
+  * Factory template
+  * LazyPointer template
+  * uint to string global functions
+* uniq
+  * unique value generators
+* menu
+  * command menu and Console
+* hi
+  * *coming soon*
 
 ## donate
 
