@@ -84,6 +84,16 @@ void ActionDef::addDefaultArgs(const QVariantList &args, QVariantList &outArgs) 
             }
         }
     }
+
+    int diff = args.size() - outArgs.size();
+
+    if (diff) {
+        for (; argIt != args.end(); ++argIt) {
+            outArgs.append(*argIt);
+        }
+    }
+
+
 }
 
 } // namespace def
