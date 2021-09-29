@@ -14,6 +14,8 @@ public:
     QVariant defaultValue() const;
     void setDefaultValue(const QVariant &defaultValue);
 
+    bool isDefaultValue() const;
+
 private:
     QVariant _defaultValue;
 };
