@@ -13,6 +13,8 @@ class Constraint
 public:
     Constraint();
 
+    virtual ~Constraint() = default;
+
     Error validate(const QVariant &arg) const;
 
 private:
