@@ -34,6 +34,7 @@ HEADERS += \
     SimpleAction.h \
     def/ActionDef.h \
     def/ArgDef.h \
+    def/Constraint.h \
     math/Div.h \
     math/Inc.h
 
@@ -49,6 +50,7 @@ SOURCES += \
     SimpleAction.cpp \
     def/ActionDef.cpp \
     def/ArgDef.cpp \
+    def/Constraint.cpp \
     math/Div.cpp \
     math/Inc.cpp
 
