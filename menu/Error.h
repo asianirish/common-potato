@@ -12,6 +12,8 @@ class Error
 public:
     static const int NO_ERROR;
 
+    enum class ERROR_TYPE{UNDEFINED, MENU, ARG_NUM, ARG_VAL};
+
     Error();
 
     int code() const;
@@ -27,8 +29,12 @@ public:
 
     operator bool() const;
 
+    ERROR_TYPE type() const;
+    void setType(const ERROR_TYPE &type);
+
 private:
     int _code;
+    ERROR_TYPE _type;
     QString _description;
     QVariantMap _context;
 };

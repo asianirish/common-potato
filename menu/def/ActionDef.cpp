@@ -43,6 +43,7 @@ Error ActionDef::validate(const QVariantList &args) const
     if (localArgs.size() < _argMinNum) {
         Error err;
         err.setCode(1); //TODO: const
+        err.setType(Error::ERROR_TYPE::ARG_NUM);
         err.setDescription("arg number must be greater than or equal to");
         QVariantMap cntx;
         cntx.insert("number", _argMinNum);
@@ -53,6 +54,7 @@ Error ActionDef::validate(const QVariantList &args) const
     if (!isUnlimitedArgNum() && localArgs.size() > _argMaxNum) {
         Error err;
         err.setCode(2); //TODO: const
+        err.setType(Error::ERROR_TYPE::ARG_NUM);
         err.setDescription("arg number must be less than or equal to");
         QVariantMap cntx;
         cntx.insert("number", _argMaxNum);
