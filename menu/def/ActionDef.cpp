@@ -62,7 +62,19 @@ Error ActionDef::validate(const QVariantList &args) const
         return err;
     }
 
-    //TODO: validate every arg
+    auto argDefIt = _argDefs.begin();
+
+    for (auto &arg : localArgs) {
+        if (argDefIt == _argDefs.end()) {
+            break;
+        }
+
+        Error err = argDefIt->validate(arg);
+
+        if (err) {
+            return err;
+        }
+    }
 
     return Error();
 }
