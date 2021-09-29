@@ -19,7 +19,6 @@ protected:
     QVariant simplyAct(const QVariantList &args) final;
 
 private:
-    QList<def::ActionDef> defs() const final;
 
     def::ActionDef actionDef() const final;
 };
