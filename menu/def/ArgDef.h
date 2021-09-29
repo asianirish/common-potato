@@ -4,6 +4,7 @@
 #include "Constraint.h"
 
 #include <QVariant>
+#include <QSharedPointer>
 
 namespace menu {
 namespace def {

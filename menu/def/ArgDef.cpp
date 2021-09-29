@@ -1,7 +1,5 @@
 #include "ArgDef.h"
 
-#include <QSharedPointer>
-
 namespace menu {
 namespace def {
 
