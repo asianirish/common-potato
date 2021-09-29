@@ -24,6 +24,7 @@ public:
 
     QVariantMap context() const;
     void setContext(const QVariantMap &context);
+    void addContext(const QString &key, const QVariant &value);
 
     void clear();
 

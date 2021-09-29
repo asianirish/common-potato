@@ -40,6 +40,11 @@ void Error::setContext(const QVariantMap &context)
     _context = context;
 }
 
+void Error::addContext(const QString &key, const QVariant &value)
+{
+    _context.insert(key, value);
+}
+
 void Error::clear()
 {
     _code = NO_ERROR;
