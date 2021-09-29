@@ -21,6 +21,8 @@ public:
 
     void addConstraint(QSharedPointer<Constraint> constraint);
 
+    Error validate(const QVariant &arg) const;
+
 private:
     QVariant _defaultValue;
     QList<QSharedPointer<Constraint>> _constraints;

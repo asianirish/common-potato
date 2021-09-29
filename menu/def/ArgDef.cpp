@@ -28,5 +28,17 @@ void ArgDef::addConstraint(QSharedPointer<Constraint> constraint)
     _constraints.append(constraint);
 }
 
+Error ArgDef::validate(const QVariant &arg) const
+{
+    for (auto &cn : _constraints) {
+        Error err = cn->validate(arg);
+        if (err) {
+            return err;
+        }
+    }
+
+    return Error();
+}
+
 } // namespace def
 } // namespace menu
