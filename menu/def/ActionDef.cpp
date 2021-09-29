@@ -36,8 +36,22 @@ void ActionDef::setArgMaxNum(int argMaxNum)
 
 Error ActionDef::validate(const QVariantList &args) const
 {
+    QVariantList localArgs;
 
-    if (args.size() < _argMinNum) {
+    auto argIt = args.begin();
+
+    for (auto &argDef : _argDefs) {
+        if (argIt != args.end()) {
+            localArgs.append(*argIt);
+            ++argIt;
+        } else {
+            if (argDef.isDefaultValue()) {
+                localArgs.append(argDef.defaultValue());
+            }
+        }
+    }
+
+    if (localArgs.size() < _argMinNum) {
         Error err;
         err.setCode(1); //TODO: const
         err.setDescription("arg number must be greater than or equal to");
@@ -47,7 +61,7 @@ Error ActionDef::validate(const QVariantList &args) const
         return err;
     }
 
-    if (!isUnlimitedArgNum() && args.size() > _argMaxNum) {
+    if (!isUnlimitedArgNum() && localArgs.size() > _argMaxNum) {
         Error err;
         err.setCode(2); //TODO: const
         err.setDescription("arg number must be less than or equal to");
