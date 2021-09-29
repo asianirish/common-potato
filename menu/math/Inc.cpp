@@ -1,4 +1,5 @@
 #include "Inc.h"
+#include "def/NotEqualConstraint.h"
 
 namespace menu {
 namespace math {
@@ -20,8 +21,12 @@ QVariant Inc::simplyAct(const QVariantList &args)
 
 def::ActionDef Inc::actionDef() const
 {
+    QSharedPointer<def::Constraint> notEq(new def::NotEqualConstraint());
+    notEq.dynamicCast<def::NotEqualConstraint>()->setValue(-1);
+
     def::ArgDef argDef;
     argDef.setDefaultValue(12);
+    argDef.addConstraint(notEq);
 
     def::ActionDef adf;
     adf.setArgMinNum(1);

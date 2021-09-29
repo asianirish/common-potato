@@ -35,6 +35,7 @@ HEADERS += \
     def/ActionDef.h \
     def/ArgDef.h \
     def/Constraint.h \
+    def/NotEqualConstraint.h \
     math/Div.h \
     math/Inc.h
 
@@ -51,6 +52,7 @@ SOURCES += \
     def/ActionDef.cpp \
     def/ArgDef.cpp \
     def/Constraint.cpp \
+    def/NotEqualConstraint.cpp \
     math/Div.cpp \
     math/Inc.cpp
 
