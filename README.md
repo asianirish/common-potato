@@ -11,7 +11,7 @@
 * menu
   * command menu and Console
 * hi
-  * *coming soon*
+  * hierarchical object cloning and serialization *(coming soon)*
 
 ## donate
 
