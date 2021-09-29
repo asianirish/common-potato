@@ -25,7 +25,11 @@ signals:
 private:
     virtual void actSpecific(const QVariantList &args, const QString &taskId) = 0;
 
+    [[deprecated]]
     virtual QList<def::ActionDef> defs() const = 0;
+
+    virtual def::ActionDef actionDef() const = 0;
+
 
 };
 

@@ -20,11 +20,28 @@ QVariant Inc::simplyAct(const QVariantList &args)
 
 QList<def::ActionDef> Inc::defs() const
 {
+    def::ArgDef argDef;
+    argDef.setDefaultValue(12);
+
     def::ActionDef adf;
     adf.setArgMinNum(1);
     adf.setArgMaxNum(1);
+    adf.addArgDef(argDef);
 
     return {adf};
+}
+
+def::ActionDef Inc::actionDef() const
+{
+    def::ArgDef argDef;
+    argDef.setDefaultValue(12);
+
+    def::ActionDef adf;
+    adf.setArgMinNum(1);
+    adf.setArgMaxNum(1);
+    adf.addArgDef(argDef);
+
+    return adf;
 }
 
 } // namespace math

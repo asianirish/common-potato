@@ -24,5 +24,14 @@ QList<def::ActionDef> Div::defs() const
     return {adf};
 }
 
+def::ActionDef Div::actionDef() const
+{
+    def::ActionDef adf;
+    adf.setArgMinNum(2);
+    adf.setArgMaxNum(2);
+
+    return adf;
+}
+
 } // namespace math
 } // namespace menu
