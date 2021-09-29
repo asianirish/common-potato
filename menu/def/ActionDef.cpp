@@ -38,18 +38,7 @@ Error ActionDef::validate(const QVariantList &args) const
 {
     QVariantList localArgs;
 
-    auto argIt = args.begin();
-
-    for (auto &argDef : _argDefs) {
-        if (argIt != args.end()) {
-            localArgs.append(*argIt);
-            ++argIt;
-        } else {
-            if (argDef.isDefaultValue()) {
-                localArgs.append(argDef.defaultValue());
-            }
-        }
-    }
+    addDefaultArgs(args, localArgs);
 
     if (localArgs.size() < _argMinNum) {
         Error err;
@@ -79,6 +68,22 @@ Error ActionDef::validate(const QVariantList &args) const
 void ActionDef::addArgDef(const ArgDef &argDef)
 {
     _argDefs.append(argDef);
+}
+
+void ActionDef::addDefaultArgs(const QVariantList &args, QVariantList &outArgs) const
+{
+    auto argIt = args.begin();
+
+    for (auto &argDef : _argDefs) {
+        if (argIt != args.end()) {
+            outArgs.append(*argIt);
+            ++argIt;
+        } else {
+            if (argDef.isDefaultValue()) {
+                outArgs.append(argDef.defaultValue());
+            }
+        }
+    }
 }
 
 } // namespace def

@@ -20,9 +20,11 @@ void Action::act(const QVariantList &args, const QString &taskId)
         return;
     }
 
-    //TODO: use defauilt values of the actionDef
+    QVariantList localArgs;
 
-    actSpecific(args, taskId);
+    actionDef.addDefaultArgs(args, localArgs);
+
+    actSpecific(localArgs, taskId);
 
 }
 
