@@ -59,7 +59,9 @@ Error::ERROR_TYPE Error::type() const
 
 void Error::setType(const ERROR_TYPE &type)
 {
-    _type = type;
+    if (_type == ERROR_TYPE::UNDEFINED) {
+        _type = type; //do it once
+    }
 }
 
 menu::Error::operator bool() const
