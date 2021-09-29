@@ -1,5 +1,7 @@
 #include "ArgDef.h"
 
+#include <QSharedPointer>
+
 namespace menu {
 namespace def {
 
@@ -21,6 +23,11 @@ void ArgDef::setDefaultValue(const QVariant &defaultValue)
 bool ArgDef::isDefaultValue() const
 {
     return _defaultValue.isValid();
+}
+
+void ArgDef::addConstraint(QSharedPointer<Constraint> constraint)
+{
+    _constraints.append(constraint);
 }
 
 } // namespace def
