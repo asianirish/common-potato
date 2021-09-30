@@ -28,12 +28,12 @@ def::ActionDef Inc::actionDef() const
     argDef.setDefaultValue(12);
     argDef.addConstraint(notEq);
 
-    def::ActionDef adf;
-    adf.setArgMinNum(1);
-    adf.setArgMaxNum(1);
-    adf.addArgDef(argDef);
+    def::ActionDef actionDef;
+    actionDef.setArgMinNum(1);
+    actionDef.setArgMaxNum(1);
+    actionDef.addArgDef(argDef);
 
-    return adf;
+    return actionDef;
 }
 
 } // namespace math
