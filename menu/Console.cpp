@@ -109,6 +109,10 @@ void Console::showMenu() const
         std::cout << key.toStdString() << std::endl;
     }
 
+    std::cout << "menu" << std::endl;
+    std::cout << "quit" << std::endl;
+//TODO:     std::cout << "quit" << std::endl;
+
     std::cout << "> " << std::flush;
 }
 
