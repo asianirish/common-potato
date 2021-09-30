@@ -68,6 +68,8 @@ void Console::readCommand()
         delete m_notifier;
 
         emit quit();
+    } else if(line == "menu") {
+        showMenu();
     } else if (line == "uniq") {
         std::cout << "Unique value: " << _menu->newTaskId().toStdString() << std::endl;
         std::cout << "> " << std::flush;
@@ -95,6 +97,17 @@ void Console::onError(const Error &err)
 void Console::addMenuItem(const QString &command, ActionPtr action)
 {
     _menu->addItem(command, action);
+}
+
+void Console::showMenu() const
+{
+    auto itemKeys = _menu->itemKeys();
+
+    for (auto &key : itemKeys) {
+        std::cout << key.toStdString() << std::endl;
+    }
+
+    std::cout << "> " << std::flush;
 }
 
 
