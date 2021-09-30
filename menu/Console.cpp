@@ -54,8 +54,10 @@ Console::~Console()
 
 void Console::run()
 {
-    std::cout << "First message" << std::endl;
-    std::cout << "> " << std::flush;
+    std::cout << "Console menu:" << std::endl;
+//    std::cout << "> " << std::flush;
+
+    showMenu();
 }
 
 void Console::readCommand()
@@ -68,6 +70,8 @@ void Console::readCommand()
         delete m_notifier;
 
         emit quit();
+    } else if(line == "menu") {
+        showMenu();
     } else if (line == "uniq") {
         std::cout << "Unique value: " << _menu->newTaskId().toStdString() << std::endl;
         std::cout << "> " << std::flush;
@@ -97,6 +101,21 @@ void Console::addMenuItem(const QString &command, ActionPtr action)
     _menu->addItem(command, action);
 }
 
+void Console::showMenu() const
+{
+    auto itemKeys = _menu->itemKeys();
+
+    for (auto &key : itemKeys) {
+        std::cout << key.toStdString() << std::endl;
+    }
+
+    std::cout << "menu" << std::endl;
+    std::cout << "quit" << std::endl;
+//TODO:     std::cout << "quit" << std::endl;
+
+    std::cout << "> " << std::flush;
+}
+
 
 
 void Console::registerUniqValueClasses() const
@@ -109,6 +128,7 @@ void Console::registerUniqValueClasses() const
 void Console::registerCommandTranslatorClasses() const
 {
     REGISTER_CLASS_FOR_UTIL_FACTORY(menu::CommandTranslator, menu::LineCommandTranslator)
+            //TODO: register JsonCommandTranslator
 }
 
 

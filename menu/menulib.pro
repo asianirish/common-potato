@@ -28,6 +28,7 @@ HEADERS += \
     CommandTranslator.h \
     Console.h \
     Error.h \
+    JsonCommandTranslator.h \
     LineCommandTranslator.h \
     Menu.h \
     Result.h \
@@ -45,6 +46,7 @@ SOURCES += \
     CommandTranslator.cpp \
     Console.cpp \
     Error.cpp \
+    JsonCommandTranslator.cpp \
     LineCommandTranslator.cpp \
     Menu.cpp \
     Result.cpp \

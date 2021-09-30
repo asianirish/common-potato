@@ -53,6 +53,11 @@ void Menu::addItem(const QString &command, ActionPtr action)
     connect(action.get(), &Action::ready, this, &Menu::onTaskComplete);
 }
 
+QList<QString> Menu::itemKeys() const
+{
+    return _items.keys();
+}
+
 void Menu::exec(const CommandInfo &commandInfo)
 {
     auto taskId = newTaskId();

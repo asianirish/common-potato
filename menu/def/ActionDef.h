@@ -27,12 +27,16 @@ public:
 
     void addArgDef(const ArgDef &argDef);
 
+    void insertArgDef(int index, const ArgDef &argDef);
+
     void addDefaultArgs(const QVariantList &args, QVariantList &outArgs) const;
 
 private:
     int _argMinNum;
     int _argMaxNum; //-1 means unlimited
-    QList<ArgDef> _argDefs;
+    QMap<int, ArgDef> _argDefs;
+
+    void addDefaultArgs(QVariantList &outArgs) const; //TODO: for future use (for named args)
 };
 
 } // namespace def

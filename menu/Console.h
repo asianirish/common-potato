@@ -36,6 +36,8 @@ public:
 
     void addMenuItem(const QString &command, ActionPtr action);
 
+    void showMenu() const;
+
 signals:
     void quit();
 

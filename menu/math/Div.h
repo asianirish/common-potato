@@ -11,10 +11,6 @@ class Div : public SimpleAction
 public:
     Div();
 
-    const char *alias() const final {
-        return "div";
-    }
-
 protected:
     QVariant simplyAct(const QVariantList &args) final;
 

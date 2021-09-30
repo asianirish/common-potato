@@ -1,4 +1,5 @@
 #include "Div.h"
+#include "def/NotEqualConstraint.h"
 
 namespace menu {
 namespace math {
@@ -10,18 +11,24 @@ Div::Div()
 
 QVariant Div::simplyAct(const QVariantList &args)
 {
-    //TODO: check arg num & divide by zero;
     return args.at(0).toFloat() / args.at(1).toFloat();
-
 }
 
 def::ActionDef Div::actionDef() const
 {
-    def::ActionDef adf;
-    adf.setArgMinNum(2);
-    adf.setArgMaxNum(2);
+    QSharedPointer<def::Constraint> notEq(new def::NotEqualConstraint());
+    notEq.dynamicCast<def::NotEqualConstraint>()->setValue(0);
 
-    return adf;
+    def::ArgDef argDef;
+    argDef.setDefaultValue(1);
+    argDef.addConstraint(notEq);
+
+    def::ActionDef actionDef;
+    actionDef.setArgMinNum(2);
+    actionDef.setArgMaxNum(2);
+    actionDef.insertArgDef(1, argDef);
+
+    return actionDef;
 }
 
 } // namespace math

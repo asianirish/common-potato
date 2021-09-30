@@ -17,8 +17,6 @@ public:
 
     void act(const QVariantList &args, const QString &taskId);
 
-    virtual const char *alias() const = 0;
-
 signals:
     void ready(const Result &result);
 
