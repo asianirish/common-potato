@@ -54,8 +54,10 @@ Console::~Console()
 
 void Console::run()
 {
-    std::cout << "First message" << std::endl;
-    std::cout << "> " << std::flush;
+    std::cout << "Console menu:" << std::endl;
+//    std::cout << "> " << std::flush;
+
+    showMenu();
 }
 
 void Console::readCommand()
