@@ -40,6 +40,8 @@ public:
 
     void addItem(const QString &command, ActionPtr action);
 
+    QList<QString> itemKeys() const;
+
 private:
     QMap<QString, ActionPtr> _items;
     util::LazyPointer<uniq::Value<QString>> _taskIdGen;
