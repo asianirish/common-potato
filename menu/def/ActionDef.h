@@ -34,7 +34,7 @@ private:
     int _argMaxNum; //-1 means unlimited
     QMap<int, ArgDef> _argDefs;
 
-    void addDefaultArgs(QVariantList &outArgs) const;
+    void addDefaultArgs(QVariantList &outArgs) const; //TODO: for future use (for named args)
 };
 
 } // namespace def

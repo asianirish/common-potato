@@ -91,15 +91,19 @@ void ActionDef::addDefaultArgs(const QVariantList &args, QVariantList &outArgs) 
 {
     outArgs = args;
 
-    int diff = _argMinNum - args.size();
+    int last = args.size();
+    int diff = _argMinNum - last;
 
     if (diff > 0) {
         for (int i = 0; i < diff; i++) {
-            outArgs.append(QVariant()); //add an invalid value
+            int index = last + i;
+            if (!_argDefs.contains(index)) {
+                break;
+            }
+
+            outArgs.append(_argDefs.value(index).defaultValue());
         }
     }
-
-    addDefaultArgs(outArgs);
 
 }
 
