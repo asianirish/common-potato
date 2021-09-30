@@ -23,9 +23,13 @@ public:
 
     Error validate(const QVariant &arg) const;
 
+    QString name() const;
+    void setName(const QString &name);
+
 private:
     QVariant _defaultValue;
     QList<QSharedPointer<Constraint>> _constraints;
+    QString _name;
 };
 
 } // namespace def

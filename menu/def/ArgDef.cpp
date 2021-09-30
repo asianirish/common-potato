@@ -40,5 +40,15 @@ Error ArgDef::validate(const QVariant &arg) const
     return Error();
 }
 
+QString ArgDef::name() const
+{
+    return _name;
+}
+
+void ArgDef::setName(const QString &name)
+{
+    _name = name;
+}
+
 } // namespace def
 } // namespace menu
