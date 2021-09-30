@@ -11,8 +11,6 @@ class Inc : public SimpleAction
 public:
     Inc();
 
-    const char *alias() const final;
-
 protected:
     QVariant simplyAct(const QVariantList &args) final;
 
