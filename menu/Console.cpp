@@ -128,6 +128,7 @@ void Console::registerUniqValueClasses() const
 void Console::registerCommandTranslatorClasses() const
 {
     REGISTER_CLASS_FOR_UTIL_FACTORY(menu::CommandTranslator, menu::LineCommandTranslator)
+            //TODO: register JsonCommandTranslator
 }
 
 
