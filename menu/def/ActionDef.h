@@ -27,6 +27,8 @@ public:
 
     void addArgDef(const ArgDef &argDef);
 
+    void insertArgDef(int index, const ArgDef &argDef);
+
     void addDefaultArgs(const QVariantList &args, QVariantList &outArgs) const;
 
 private:

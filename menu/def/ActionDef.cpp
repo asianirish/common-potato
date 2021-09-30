@@ -87,6 +87,11 @@ void ActionDef::addArgDef(const ArgDef &argDef)
     _argDefs.insert(_argDefs.size(), argDef);
 }
 
+void ActionDef::insertArgDef(int index, const ArgDef &argDef)
+{
+    _argDefs.insert(index, argDef);
+}
+
 void ActionDef::addDefaultArgs(const QVariantList &args, QVariantList &outArgs) const
 {
     outArgs = args;
