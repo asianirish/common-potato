@@ -26,10 +26,14 @@ public:
     QString name() const;
     void setName(const QString &name);
 
+    QString description() const;
+    void setDescription(const QString &description);
+
 private:
     QVariant _defaultValue;
     QList<QSharedPointer<Constraint>> _constraints;
     QString _name;
+    QString _description;
 };
 
 } // namespace def

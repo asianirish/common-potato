@@ -50,5 +50,15 @@ void ArgDef::setName(const QString &name)
     _name = name;
 }
 
+QString ArgDef::description() const
+{
+    return _description;
+}
+
+void ArgDef::setDescription(const QString &description)
+{
+    _description = description;
+}
+
 } // namespace def
 } // namespace menu
