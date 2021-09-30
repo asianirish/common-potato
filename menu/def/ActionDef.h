@@ -32,7 +32,9 @@ public:
 private:
     int _argMinNum;
     int _argMaxNum; //-1 means unlimited
-    QList<ArgDef> _argDefs;
+    QMap<int, ArgDef> _argDefs;
+
+    void addDefaultArgs(QVariantList &outArgs) const;
 };
 
 } // namespace def

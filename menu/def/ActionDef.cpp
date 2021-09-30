@@ -62,18 +62,21 @@ Error ActionDef::validate(const QVariantList &args) const
         return err;
     }
 
-    auto argDefIt = _argDefs.begin();
+    int index = 0;
 
     for (auto &arg : localArgs) {
-        if (argDefIt == _argDefs.end()) {
-            break;
+
+        if (_argDefs.contains(index)) {
+            ArgDef argDef = _argDefs.value(index);
+            Error err = argDef.validate(arg);
+
+            if (err) {
+                return err;
+            }
+
         }
 
-        Error err = argDefIt->validate(arg);
-
-        if (err) {
-            return err;
-        }
+        index++;
     }
 
     return Error();
@@ -81,33 +84,39 @@ Error ActionDef::validate(const QVariantList &args) const
 
 void ActionDef::addArgDef(const ArgDef &argDef)
 {
-    _argDefs.append(argDef);
+    _argDefs.insert(_argDefs.size(), argDef);
 }
 
 void ActionDef::addDefaultArgs(const QVariantList &args, QVariantList &outArgs) const
 {
-    auto argIt = args.begin();
+    outArgs = args;
 
-    for (auto &argDef : _argDefs) {
-        if (argIt != args.end()) {
-            outArgs.append(*argIt);
-            ++argIt;
-        } else {
-            if (argDef.isDefaultValue()) {
-                outArgs.append(argDef.defaultValue());
+    int diff = _argMinNum - args.size();
+
+    if (diff > 0) {
+        for (int i = 0; i < diff; i++) {
+            outArgs.append(QVariant()); //add an invalid value
+        }
+    }
+
+    addDefaultArgs(outArgs);
+
+}
+
+void ActionDef::addDefaultArgs(QVariantList &outArgs) const
+{
+    int index = 0;
+
+    for (auto &arg : outArgs) {
+        if (_argDefs.contains(index)) {
+            //replace ALL INVALID values with default ones
+            if (!arg.isValid()) {
+                arg = _argDefs.value(index).defaultValue();
             }
         }
+
+        index++;
     }
-
-    int diff = args.size() - outArgs.size();
-
-    if (diff) {
-        for (; argIt != args.end(); ++argIt) {
-            outArgs.append(*argIt);
-        }
-    }
-
-
 }
 
 } // namespace def
