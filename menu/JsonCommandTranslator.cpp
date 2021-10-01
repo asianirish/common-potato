@@ -40,7 +40,8 @@ CommandInfo JsonCommandTranslator::translate(const QString &commandString) const
     } else if (argsValue.isObject()) {
         //TODO: emplement
     } else {
-        return CommandInfo(); //TODO: use Error
+        auto arg = argsValue.toVariant();
+        ci.setArgs({arg});
     }
 
     return ci;
