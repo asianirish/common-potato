@@ -23,6 +23,8 @@ public:
     QVariantMap namedArgs() const;
     void setNamedArgs(const QVariantMap &namedArgs);
 
+    bool isNamedArgs() const;
+
 private:
     QString _name;
     QVariantList _args;

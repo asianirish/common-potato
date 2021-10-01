@@ -42,4 +42,9 @@ void CommandInfo::setNamedArgs(const QVariantMap &namedArgs)
     _namedArgs = namedArgs;
 }
 
+bool CommandInfo::isNamedArgs() const
+{
+    return !_namedArgs.isEmpty();
+}
+
 } // namespace menu
