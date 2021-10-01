@@ -32,4 +32,14 @@ void CommandInfo::setArgs(const QVariantList &args)
     _args = args;
 }
 
+QVariantMap CommandInfo::namedArgs() const
+{
+    return _namedArgs;
+}
+
+void CommandInfo::setNamedArgs(const QVariantMap &namedArgs)
+{
+    _namedArgs = namedArgs;
+}
+
 } // namespace menu

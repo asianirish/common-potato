@@ -3,6 +3,7 @@
 
 #include <QString>
 #include <QVariantList>
+#include <QVariantMap>
 
 namespace menu {
 
@@ -19,9 +20,13 @@ public:
     QVariantList args() const;
     void setArgs(const QVariantList &args);
 
+    QVariantMap namedArgs() const;
+    void setNamedArgs(const QVariantMap &namedArgs);
+
 private:
     QString _name;
     QVariantList _args;
+    QVariantMap _namedArgs;
 };
 
 } // namespace menu

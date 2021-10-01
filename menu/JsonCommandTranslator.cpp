@@ -41,7 +41,8 @@ CommandInfo JsonCommandTranslator::translate(const QString &commandString) const
         auto args = argsValue.toArray().toVariantList();
         ci.setArgs(args);
     } else if (argsValue.isObject()) {
-        //TODO: emplement
+        auto namedArgs = argsValue.toObject().toVariantMap();
+        ci.setNamedArgs(namedArgs);
     } else {
         auto arg = argsValue.toVariant();
         ci.setArgs({arg});
