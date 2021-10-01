@@ -66,7 +66,11 @@ void Menu::exec(const CommandInfo &commandInfo)
     auto action = _items.value(commandName);
 
     if (action) {
-        action->act(commandInfo.args(), taskId);
+        if (commandInfo.isNamedArgs()) {
+            action->act(commandInfo.namedArgs(), taskId);
+        } else {
+            action->act(commandInfo.args(), taskId);
+        }
     } else {
         Error err;
         err.setCode(-1);
