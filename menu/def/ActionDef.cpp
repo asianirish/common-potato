@@ -122,21 +122,6 @@ void ActionDef::setDescription(const QString &description)
     _description = description;
 }
 
-void ActionDef::addDefaultArgs(QVariantList &outArgs) const
-{
-    int index = 0;
-    
-    for (auto &arg : outArgs) {
-        if (_argDefs.contains(index)) {
-            //replace ALL INVALID values with default ones
-            if (!arg.isValid()) {
-                arg = _argDefs.value(index).defaultValue();
-            }
-        }
-
-        index++;
-    }
-}
 
 } // namespace def
 } // namespace menu

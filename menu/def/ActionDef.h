@@ -40,7 +40,6 @@ private:
     QMap<int, ArgDef> _argDefs;
     QString _description;
 
-    void addDefaultArgs(QVariantList &outArgs) const; //TODO: for future use (for named args)
 };
 
 } // namespace def
