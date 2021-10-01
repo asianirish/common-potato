@@ -31,10 +31,14 @@ public:
 
     void addDefaultArgs(const QVariantList &args, QVariantList &outArgs) const;
 
+    QString description() const;
+    void setDescription(const QString &description);
+
 private:
     int _argMinNum;
     int _argMaxNum; //-1 means unlimited
     QMap<int, ArgDef> _argDefs;
+    QString _description;
 
     void addDefaultArgs(QVariantList &outArgs) const; //TODO: for future use (for named args)
 };
