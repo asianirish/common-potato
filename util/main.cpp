@@ -11,6 +11,8 @@
 #include <menu/math/Inc.h>
 #include <menu/math/Div.h>
 
+#include <menu/test/BuildPhrase.h>
+
 #include <util/CuteFactory.h>
 #include <util/Factory.h>
 #include <util/LazyPointer.h>
@@ -134,6 +136,7 @@ int main(int argc, char *argv[])
 
     console.addMenuItem("inc", menu::ActionPtr(new menu::math::Inc()));
     console.addMenuItem("div", menu::ActionPtr(new menu::math::Div()));
+    console.addMenuItem("phrase", menu::ActionPtr(new menu::test::BuildPhrase()));
 
     console.run();
     QObject::connect(&console, SIGNAL(quit()), &a, SLOT(quit()));
