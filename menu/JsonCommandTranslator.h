@@ -10,6 +10,8 @@ namespace menu {
 class JsonCommandTranslator : public CommandTranslator
 {
 public:
+    static const QString ACTION_JSON_KEY;
+    static const QString ARGS_JSON_KEY;
     JsonCommandTranslator();
 
     CommandInfo translate(const QString &commandString) const override;

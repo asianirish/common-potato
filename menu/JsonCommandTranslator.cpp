@@ -6,6 +6,9 @@
 
 namespace menu {
 
+const QString JsonCommandTranslator::ACTION_JSON_KEY("action");
+const QString JsonCommandTranslator::ARGS_JSON_KEY("action");
+
 JsonCommandTranslator::JsonCommandTranslator()
 {
 
@@ -28,11 +31,11 @@ CommandInfo JsonCommandTranslator::translate(const QString &commandString) const
         return CommandInfo(); //TODO: use Error
     }
 
-    QJsonValue action = rootObject.value("action"); //TODO: const
+    QJsonValue action = rootObject.value(JsonCommandTranslator::ACTION_JSON_KEY);
 
     ci.setName(action.toString());
 
-    QJsonValue argsValue = rootObject.value("args"); //TODO: const
+    QJsonValue argsValue = rootObject.value(JsonCommandTranslator::ARGS_JSON_KEY);
 
     if (argsValue.isArray()) {
         auto args = argsValue.toArray().toVariantList();
