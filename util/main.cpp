@@ -5,7 +5,8 @@
 
 #include <menu/Console.h>
 #include <menu/Menu.h>
-#include <menu/LineCommandTranslator.h>
+//#include <menu/LineCommandTranslator.h>
+//#include <menu/JsonCommandTranslator.h>
 
 #include <menu/math/Inc.h>
 #include <menu/math/Div.h>
@@ -116,9 +117,10 @@ int main(int argc, char *argv[])
 
     qDebug() << "--------------------------------------------------------------";
     {
-       LineCommandTranslator trans;
-       CommandInfo ci = trans.translate("add 12 13 14 15");
-       qDebug() << ci.name() << ci.args();
+//       LineCommandTranslator trans;
+////       JsonCommandTranslator trans;
+//       CommandInfo ci = trans.translate("add 12 13 14 15");
+//       qDebug() << ci.name() << ci.args();
     }
 
     qDebug() << "--------------------------------------------------------------";
