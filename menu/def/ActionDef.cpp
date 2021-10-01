@@ -122,6 +122,28 @@ void ActionDef::setDescription(const QString &description)
     _description = description;
 }
 
+void ActionDef::toPositionalArguments(const QVariantMap &namedArgs, QVariantList &posArgs)
+{
+    for (int i = 0; i < _argMinNum; i++) {
+        if (!_argDefs.contains(i)) {
+            break; //all arg definitions should be defined for named args
+        }
+
+        auto argDef = _argDefs.value(i);
+
+        if (!namedArgs.contains(argDef.name())) { //if no such a named arg
+            if (argDef.isDefaultValue()) {
+                posArgs.append(argDef.defaultValue()); //add a default value
+            } else {
+                break;
+            }
+        } else {
+            posArgs.append(namedArgs.value(argDef.name()));
+        }
+
+    }
+}
+
 
 } // namespace def
 } // namespace menu

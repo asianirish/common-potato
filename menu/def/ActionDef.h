@@ -34,6 +34,8 @@ public:
     QString description() const;
     void setDescription(const QString &description);
 
+    void toPositionalArguments(const QVariantMap &namedArgs, QVariantList &posArgs);
+
 private:
     int _argMinNum;
     int _argMaxNum; //-1 means unlimited
