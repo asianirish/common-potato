@@ -12,7 +12,7 @@ class JsonCommandTranslator : public CommandTranslator
 public:
     JsonCommandTranslator();
 
-//TODO:    CommandInfo translate(const QString &commandString) const override;
+    CommandInfo translate(const QString &commandString) const override;
 };
 
 } // namespace menu
