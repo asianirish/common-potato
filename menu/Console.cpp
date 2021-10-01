@@ -1,6 +1,7 @@
 #include "Console.h"
 
 #include "LineCommandTranslator.h"
+#include "JsonCommandTranslator.h"
 
 #include <uniq/UuidValue.h>
 #include <uniq/CompactUuidValue.h>
@@ -128,7 +129,7 @@ void Console::registerUniqValueClasses() const
 void Console::registerCommandTranslatorClasses() const
 {
     REGISTER_CLASS_FOR_UTIL_FACTORY(menu::CommandTranslator, menu::LineCommandTranslator)
-            //TODO: register JsonCommandTranslator
+    REGISTER_CLASS_FOR_UTIL_FACTORY(menu::CommandTranslator, menu::JsonCommandTranslator)
 }
 
 
