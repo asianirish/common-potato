@@ -27,8 +27,6 @@ private:
 
     virtual def::ActionDef actionDef() const = 0;
 
-    void toPositionalArguments(const QVariantMap &namedArgs, QVariantList &posArgs);
-
 };
 
 } // namespace menu

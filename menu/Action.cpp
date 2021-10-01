@@ -31,14 +31,10 @@ void Action::act(const QVariantList &args, const QString &taskId)
 void Action::act(const QVariantMap &namedArgs, const QString &taskId)
 {
     QVariantList args;
-    toPositionalArguments(namedArgs, args);
+    actionDef().toPositionalArguments(namedArgs, args);
 
     act(args, taskId);
 }
 
-void Action::toPositionalArguments(const QVariantMap &namedArgs, QVariantList &posArgs)
-{
-    //TODO: implement
-}
 
 } // namespace menu
