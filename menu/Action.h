@@ -17,6 +17,8 @@ public:
 
     void act(const QVariantList &args, const QString &taskId);
 
+    void act(const QVariantMap &namedArgs, const QString &taskId);
+
 signals:
     void ready(const Result &result);
 
@@ -25,6 +27,7 @@ private:
 
     virtual def::ActionDef actionDef() const = 0;
 
+    void toPositionalArguments(const QVariantMap &namedArgs, QVariantList &posArgs);
 
 };
 
