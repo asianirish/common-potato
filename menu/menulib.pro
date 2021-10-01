@@ -38,7 +38,8 @@ HEADERS += \
     def/Constraint.h \
     def/NotEqualConstraint.h \
     math/Div.h \
-    math/Inc.h
+    math/Inc.h \
+    test/BuildPhrase.h
 
 SOURCES += \
     Action.cpp \
@@ -56,6 +57,7 @@ SOURCES += \
     def/Constraint.cpp \
     def/NotEqualConstraint.cpp \
     math/Div.cpp \
-    math/Inc.cpp
+    math/Inc.cpp \
+    test/BuildPhrase.cpp
 
 
