@@ -1,5 +1,8 @@
 # common-potato
 
+bunch of general purpose libraries in qt+stl c++ \
+you are welcome to use them in your project as a submodule
+
 ## libs
 
 * util
