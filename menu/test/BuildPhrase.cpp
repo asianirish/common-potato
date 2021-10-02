@@ -23,11 +23,11 @@ def::ActionDef BuildPhrase::actionDef() const
     def::ArgDef nameDef;
     nameDef.setName("name");
     def::ArgDef ageDef;
-    nameDef.setName("age");
+    ageDef.setName("age");
     def::ArgDef cityDef;
-    nameDef.setName("city");
+    cityDef.setName("city");
     def::ArgDef foodDef;
-    nameDef.setName("food");
+    foodDef.setName("food");
 
     def::ActionDef actionDef;
     actionDef.setArgMinNum(4);
