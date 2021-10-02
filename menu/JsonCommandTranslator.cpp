@@ -7,7 +7,7 @@
 namespace menu {
 
 const QString JsonCommandTranslator::ACTION_JSON_KEY("action");
-const QString JsonCommandTranslator::ARGS_JSON_KEY("action");
+const QString JsonCommandTranslator::ARGS_JSON_KEY("args");
 
 JsonCommandTranslator::JsonCommandTranslator()
 {
