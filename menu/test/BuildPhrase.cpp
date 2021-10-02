@@ -33,10 +33,10 @@ def::ActionDef BuildPhrase::actionDef() const
     actionDef.setArgMinNum(4);
     actionDef.setArgMaxNum(4);
 
-    actionDef.insertArgDef(0, nameDef);
-    actionDef.insertArgDef(1, ageDef);
-    actionDef.insertArgDef(2, cityDef);
-    actionDef.insertArgDef(3, foodDef);
+    actionDef.addArgDef(nameDef);
+    actionDef.addArgDef(ageDef);
+    actionDef.addArgDef(cityDef);
+    actionDef.addArgDef(foodDef);
 
     return actionDef;
 }
