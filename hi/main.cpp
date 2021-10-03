@@ -5,6 +5,7 @@
 #include <uniq/UuidValue.h>
 #include <uniq/CompactUuidValue.h>
 #include <uniq/TimeQStringValue.h>
+#include <util/gfunc.h>
 
 
 #include <QSharedPointer>
