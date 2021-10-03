@@ -24,6 +24,9 @@ void Menu::registerCommand(const QString &itemKey, ActionPtr action)
 
 void Menu::setTaskIdGenClassName(const QString &className)
 {
+    if (_taskIdGen) {
+        return; //do not set if already exists
+    }
     _taskIdGen.setClassName(className);
 }
 
