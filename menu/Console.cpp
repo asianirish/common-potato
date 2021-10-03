@@ -26,7 +26,7 @@ Console::Console(const QString &taskIdGenClassName) : Console(taskIdGenClassName
 }
 
 Console::Console(const QString &taskIdGenClassName, const QString &commandTranslatorClassName) :
-    _menu(new Menu(taskIdGenClassName, commandTranslatorClassName, this))
+    _menu(new Menu(this)) //TODO: do not use class name args
 {
     qRegisterMetaType<menu::Result>();
     qRegisterMetaType<menu::Error>();

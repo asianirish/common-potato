@@ -132,7 +132,7 @@ int main(int argc, char *argv[])
     qDebug() << "TT VALUE:" << tt.value();
 
     qDebug() << "--------------------------------------------------------------";
-    Console console("uniq::UuidValue");
+    Console console;
 
     console.addMenuItem("inc", menu::ActionPtr(new menu::math::Inc()));
     console.addMenuItem("div", menu::ActionPtr(new menu::math::Div()));

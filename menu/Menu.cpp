@@ -9,18 +9,9 @@ const QString Menu::DEFAULT_COMMAND_TRANSLATOR_CLASS_NAME("menu::LineCommandTran
 
 util::LazyPointer<uniq::Value<QString>> Menu::_taskIdGen(Menu::DEFAULT_TASK_ID_GENERATOR_CLASS_NAME);
 
-Menu::Menu(QObject *parent) : Menu(DEFAULT_TASK_ID_GENERATOR_CLASS_NAME,
-                                   DEFAULT_COMMAND_TRANSLATOR_CLASS_NAME,
-                                   parent)
-{
+util::LazyPointer<menu::CommandTranslator> Menu::_commandTranslator(Menu::DEFAULT_COMMAND_TRANSLATOR_CLASS_NAME);
 
-}
-
-Menu::Menu(const QString &taskIdGenClassName, //TODO: delete the arg
-           const QString &commandTranslatorClassName, //TODO: delete the arg
-           QObject *parent) :
-    QObject(parent),
-    _commandTranslator(commandTranslatorClassName)
+Menu::Menu(QObject *parent) : QObject(parent)
 {
 
 }
@@ -43,7 +34,7 @@ QString Menu::newTaskId()
 
 void Menu::exec(const QString &command)
 {
-    auto commandInfo = _commandTranslator->translate(command);
+    auto commandInfo = Menu::_commandTranslator->translate(command);
     exec(commandInfo);
 }
 

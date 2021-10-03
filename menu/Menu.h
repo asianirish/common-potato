@@ -45,7 +45,7 @@ public:
 private:
     QMap<QString, ActionPtr> _items;
     static util::LazyPointer<uniq::Value<QString>> _taskIdGen;
-    util::LazyPointer<menu::CommandTranslator> _commandTranslator;
+    static util::LazyPointer<menu::CommandTranslator> _commandTranslator;
     QSet<QString> _pendingTasks;
 
     void exec(const CommandInfo &commandInfo);
