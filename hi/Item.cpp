@@ -5,6 +5,10 @@ namespace hi {
 
 const QString Item::DEFAULT_ID_GEN_CLASS_NAME("uniq::TimeQStringValue");
 
+const QString Item::CLASS_NAME_KEY("class");
+const QString Item::ID_KEY("id");
+const QString Item::FIELDS_KEY("fields");
+
 util::LazyPointer<uniq::Value<QString>> Item::_idGen(Item::DEFAULT_ID_GEN_CLASS_NAME);
 
 Item::Item(QObject *parent) : QObject(parent)
@@ -17,7 +21,7 @@ Node *Item::parentNode() const
     return qobject_cast<Node *>(parent());
 }
 
-QString Item::className()
+QString Item::className() const
 {
     return this->metaObject()->className();
 }
@@ -54,6 +58,18 @@ void Item::setId(const QString &id)
     if (_id.isEmpty()) {
         _id = id; //set once
     }
+}
+
+QVariantMap Item::toMap() const
+{
+    QVariantMap mp;
+    mp.insert(CLASS_NAME_KEY, className());
+    mp.insert(ID_KEY, id());
+    mp.insert(FIELDS_KEY, _fields);
+
+    //TODO: toMapSpecific();
+
+    return mp;
 }
 
 } // namespace hi

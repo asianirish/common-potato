@@ -16,12 +16,16 @@ class Item : public QObject
     Q_OBJECT
 public:
     static const QString DEFAULT_ID_GEN_CLASS_NAME;
+    static const QString CLASS_NAME_KEY;
+    static const QString ID_KEY;
+    static const QString FIELDS_KEY;
+
 
     explicit Item(QObject *parent = nullptr);
 
     Node *parentNode() const;
 
-    QString className();
+    QString className() const;
 
     static void setIdGenClassName(const QString &className);
 
@@ -30,7 +34,8 @@ public:
 
     //TODO: ItemDef
 
-    //TODO: toMap and fromMap
+    QVariantMap toMap() const;
+    //TODO: fromMap
 
     QVariant field(const QString &name) const;
 
