@@ -43,6 +43,10 @@ public:
         return ptr();
     }
 
+    operator bool() const {
+        return _ptr;
+    }
+
 private:
     QString _className;
     mutable QSharedPointer<Base> _ptr;
