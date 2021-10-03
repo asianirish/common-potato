@@ -7,6 +7,8 @@ namespace menu {
 const QString Menu::DEFAULT_TASK_ID_GENERATOR_CLASS_NAME("uniq::TimeQStringValue");
 const QString Menu::DEFAULT_COMMAND_TRANSLATOR_CLASS_NAME("menu::LineCommandTranslator");
 
+util::LazyPointer<uniq::Value<QString>> Menu::_taskIdGen(Menu::DEFAULT_TASK_ID_GENERATOR_CLASS_NAME);
+
 Menu::Menu(QObject *parent) : Menu(DEFAULT_TASK_ID_GENERATOR_CLASS_NAME,
                                    DEFAULT_COMMAND_TRANSLATOR_CLASS_NAME,
                                    parent)
@@ -14,11 +16,10 @@ Menu::Menu(QObject *parent) : Menu(DEFAULT_TASK_ID_GENERATOR_CLASS_NAME,
 
 }
 
-Menu::Menu(const QString &taskIdGenClassName,
-           const QString &commandTranslatorClassName,
+Menu::Menu(const QString &taskIdGenClassName, //TODO: delete the arg
+           const QString &commandTranslatorClassName, //TODO: delete the arg
            QObject *parent) :
     QObject(parent),
-    _taskIdGen(taskIdGenClassName),
     _commandTranslator(commandTranslatorClassName)
 {
 
@@ -35,7 +36,7 @@ void Menu::setTaskIdGenClassName(const QString &className)
     _taskIdGen.setClassName(className);
 }
 
-QString Menu::newTaskId() const
+QString Menu::newTaskId()
 {
     return _taskIdGen->value();
 }
@@ -60,7 +61,7 @@ QList<QString> Menu::itemKeys() const
 
 void Menu::exec(const CommandInfo &commandInfo)
 {
-    auto taskId = newTaskId();
+    auto taskId = Menu::newTaskId();
     _pendingTasks.insert(taskId);
     QString commandName = commandInfo.name();
     auto action = _items.value(commandName);

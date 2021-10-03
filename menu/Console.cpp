@@ -74,7 +74,7 @@ void Console::readCommand()
     } else if(line == "menu") {
         showMenu();
     } else if (line == "uniq") {
-        std::cout << "Unique value: " << _menu->newTaskId().toStdString() << std::endl;
+        std::cout << "Unique value: " << Menu::newTaskId().toStdString() << std::endl;
         std::cout << "> " << std::flush;
     } else {
         _menu->exec(QString(line.data()));

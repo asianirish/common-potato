@@ -32,9 +32,9 @@ public:
 
     void registerCommand(const QString &itemKey, ActionPtr action);
 
-    void setTaskIdGenClassName(const QString &className);
+    static void setTaskIdGenClassName(const QString &className);
 
-    QString newTaskId() const;
+    static QString newTaskId();
 
     void exec(const QString &command);
 
@@ -44,7 +44,7 @@ public:
 
 private:
     QMap<QString, ActionPtr> _items;
-    util::LazyPointer<uniq::Value<QString>> _taskIdGen;
+    static util::LazyPointer<uniq::Value<QString>> _taskIdGen;
     util::LazyPointer<menu::CommandTranslator> _commandTranslator;
     QSet<QString> _pendingTasks;
 
