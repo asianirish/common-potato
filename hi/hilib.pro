@@ -6,7 +6,7 @@ QT -= gui
 CONFIG += c++11 console
 CONFIG -= app_bundle
 
-LIBS +=  -L$$PWD/../build/lib/ -luniq
+LIBS +=  -L$$PWD/../build/lib/ -lpotato-util -luniq
 INCLUDEPATH += $$PWD/../
 
 DESTDIR = $$PWD/../build/lib/
