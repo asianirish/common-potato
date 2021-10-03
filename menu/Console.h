@@ -23,7 +23,7 @@ class Console : public QObject
     Q_OBJECT;
 
 public:
-    explicit Console(QObject *parent);
+    explicit Console(QObject *parent = nullptr);
     ~Console();
 
     void run();
