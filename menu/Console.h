@@ -23,13 +23,7 @@ class Console : public QObject
     Q_OBJECT;
 
 public:
-    Console();
-
-    Console(const QString &taskIdGenClassName);
-
-    Console(const QString &taskIdGenClassName,
-    const QString &commandTranslatorClassName);
-
+    explicit Console(QObject *parent);
     ~Console();
 
     void run();

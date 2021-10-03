@@ -14,19 +14,8 @@
 namespace menu {
 
 
-Console::Console() : Console(Menu::DEFAULT_TASK_ID_GENERATOR_CLASS_NAME, Menu::DEFAULT_COMMAND_TRANSLATOR_CLASS_NAME)
-{
-
-}
-
-Console::Console(const QString &taskIdGenClassName) : Console(taskIdGenClassName,
-                                                              Menu::DEFAULT_COMMAND_TRANSLATOR_CLASS_NAME)
-{
-
-}
-
-Console::Console(const QString &taskIdGenClassName, const QString &commandTranslatorClassName) :
-    _menu(new Menu(this)) //TODO: do not use class name args
+Console::Console(QObject *parent) : QObject(parent),
+    _menu(new Menu(this))
 {
     qRegisterMetaType<menu::Result>();
     qRegisterMetaType<menu::Error>();
