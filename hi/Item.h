@@ -14,6 +14,8 @@ class Item : public QObject
 public:
     explicit Item(QObject *parent = nullptr);
 
+    virtual QString alias() const = 0;
+
     //TODO: parent node
 
     //TODO: uniq id generator
