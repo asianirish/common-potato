@@ -19,7 +19,7 @@ public:
 
     explicit Item(QObject *parent = nullptr);
 
-    //TODO: parent node
+    Node *parentNode() const;
 
     static void setIdGenClassName(const QString &className);
 

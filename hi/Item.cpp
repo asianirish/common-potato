@@ -1,4 +1,5 @@
 #include "Item.h"
+#include "Node.h"
 
 namespace hi {
 
@@ -9,6 +10,11 @@ util::LazyPointer<uniq::Value<QString>> Item::_idGen(Item::DEFAULT_ID_GEN_CLASS_
 Item::Item(QObject *parent) : QObject(parent)
 {
 
+}
+
+Node *Item::parentNode() const
+{
+    return qobject_cast<Node *>(parent());
 }
 
 void Item::setIdGenClassName(const QString &className)
