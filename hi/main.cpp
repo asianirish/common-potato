@@ -1,5 +1,7 @@
 #include "SimpleObject.h"
 
+#include "Item.h"
+
 #include <QSharedPointer>
 #include <QCoreApplication>
 #include <QDebug>
@@ -22,6 +24,12 @@ int main(int argc, char *argv[])
     QCoreApplication a(argc, argv);
 
     qDebug() << "Hi";
+
+    hi::Item *item = new hi::Item();
+    qDebug() << "ITEM CLASS NAME: " << item->className();
+
+
+
 
 //TRY IT: simpleTest();
 

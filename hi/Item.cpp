@@ -17,6 +17,11 @@ Node *Item::parentNode() const
     return qobject_cast<Node *>(parent());
 }
 
+QString Item::className()
+{
+    return this->metaObject()->className();
+}
+
 void Item::setIdGenClassName(const QString &className)
 {
     if (_idGen) {

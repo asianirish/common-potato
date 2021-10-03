@@ -21,6 +21,8 @@ public:
 
     Node *parentNode() const;
 
+    QString className();
+
     static void setIdGenClassName(const QString &className);
 
     QString id() const;
