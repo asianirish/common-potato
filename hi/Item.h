@@ -1,6 +1,9 @@
 #ifndef HI_ITEM_H
 #define HI_ITEM_H
 
+#include <util/LazyPointer.h>
+#include <uniq/Value.h>
+
 #include <QObject>
 #include <QVariantMap>
 
@@ -12,13 +15,18 @@ class Item : public QObject
 {
     Q_OBJECT
 public:
+    static const QString DEFAULT_ID_GEN_CLASS_NAME;
+
     explicit Item(QObject *parent = nullptr);
 
     virtual QString alias() const = 0;
 
     //TODO: parent node
 
-    //TODO: uniq id generator
+    static void setIdGenClassName(const QString &className);
+
+    QString id() const;
+    void setId(const QString &id);
 
     //TODO: ItemDef
 
@@ -31,8 +39,9 @@ public:
 signals:
 
 private:
-    QString _id;
+    mutable QString _id;
     QVariantMap _fields;
+    static util::LazyPointer<uniq::Value<QString>> _idGen;
 
 };
 
