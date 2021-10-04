@@ -67,8 +67,6 @@ QVariantMap Item::toMap() const
     mp.insert(ID_KEY, id());
     mp.insert(FIELDS_KEY, _fields);
 
-    //TODO: toMapSpecific();
-
     return mp;
 }
 
