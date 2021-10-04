@@ -35,7 +35,7 @@ public:
     //TODO: ItemDef
 
     QVariantMap toMap() const;
-    //TODO: fromMap
+    void fromMap(const QVariantMap &mp);
 
     QVariant field(const QString &name) const;
 

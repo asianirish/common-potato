@@ -77,4 +77,23 @@ QVariantMap Item::toMap() const
     return mp;
 }
 
+void Item::fromMap(const QVariantMap &mp)
+{
+    QVariant idVar = mp.value(ID_KEY);
+    setId(idVar.toString());
+
+    QVariant fieldsVar = mp.value(FIELDS_KEY);
+    QVariantMap fieldMap = fieldsVar.toMap();
+
+    auto keys = fieldMap.keys();
+    for (auto &key : keys) {
+        setField(key, fieldMap.value(key));
+    }
+
+    //TODO: nodeFromMap
+
+    //TODO: fromMapSpecific
+
+}
+
 } // namespace hi

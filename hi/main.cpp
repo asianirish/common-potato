@@ -38,12 +38,15 @@ int main(int argc, char *argv[])
     REGISTER_CLASS_FOR_UTIL_FACTORY(uniq::Value<QString>, uniq::TimeQStringValue)
 
     hi::Item *item = new test::Currency();
-//    item->setField("code", "ETH");
+    item->setField("code", "ETH");
 
     qDebug() << "ITEM CLASS NAME:" << item->className();
     qDebug() << "ITEM TO MAP:" << item->toMap();
 
+    hi::Item *itemClone = new test::Currency();
 
+    itemClone->fromMap(item->toMap());
+    qDebug() << "CLONE ITEM TO MAP:" << item->toMap();
 
 
 //TRY IT: simpleTest();
