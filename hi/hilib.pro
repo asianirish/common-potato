@@ -1,5 +1,6 @@
 TEMPLATE = lib
 TARGET = hi
+DEFINES += HILIB_LIBRARY
 
 QT -= gui
 
@@ -26,4 +27,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     Item.h \
-    Node.h
+    Node.h \
+    hi_global.h

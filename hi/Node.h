@@ -5,7 +5,7 @@
 
 namespace hi {
 
-class Node : public Item
+class HILIB_EXPORT Node : public Item
 {
     Q_OBJECT
 public:

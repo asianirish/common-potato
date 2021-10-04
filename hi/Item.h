@@ -1,6 +1,8 @@
 #ifndef HI_ITEM_H
 #define HI_ITEM_H
 
+#include "hi_global.h"
+
 #include <util/LazyPointer.h>
 #include <uniq/Value.h>
 
@@ -11,7 +13,7 @@ namespace hi {
 
 class Node;
 
-class Item : public QObject
+class HILIB_EXPORT Item : public QObject
 {
     Q_OBJECT
 public:
