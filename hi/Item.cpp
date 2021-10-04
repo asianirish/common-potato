@@ -65,7 +65,10 @@ QVariantMap Item::toMap() const
     QVariantMap mp;
     mp.insert(CLASS_NAME_KEY, className());
     mp.insert(ID_KEY, id());
-    mp.insert(FIELDS_KEY, _fields);
+
+    if (!_fields.isEmpty()) {
+        mp.insert(FIELDS_KEY, _fields);
+    }
 
     toMapNodeSpecific(mp);
 
