@@ -5,7 +5,6 @@ QT -= gui
 
 CONFIG += c++11 console
 CONFIG -= app_bundle
-CONFIG += staticlib
 
 DESTDIR = $$PWD/../build/lib/
 
