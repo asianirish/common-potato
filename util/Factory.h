@@ -4,6 +4,8 @@
 #include <string>
 #include <map>
 
+#include <QDebug>
+
 using namespace std;
 
 namespace util {
@@ -42,6 +44,9 @@ public:
 
     template<typename T>
     static void registerClass(const string &className) {
+        qDebug() << "REGISTER CREATORS ADDRESS:\t" << &_creators;
+        qDebug() << "REGISTER CREATORS SIZE:\t" << _creators.size() << className.data();
+
         if (_creators.count(className)) {
             return;
         }
@@ -52,6 +57,8 @@ public:
     }
 
     static BaseClass *create(const string &className) {
+        qDebug() << "CREATE CREATORS ADDRESS:\t" << &_creators;
+        qDebug() << "CREATE CREATORS SIZE:\t" << _creators.size() << className.data();
         if (_creators.count(className) == 0) {
             return nullptr;
         }

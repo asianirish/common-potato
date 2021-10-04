@@ -10,7 +10,7 @@ using namespace std;
 
 namespace uniq {
 
-class TimeStringValue : public Value<string>
+class UNIQLIB_EXPORT TimeStringValue : public Value<string>
 {
 public:
     TimeStringValue();

@@ -1,10 +1,12 @@
 #ifndef VALUE_H
 #define VALUE_H
 
+#include "uniq_global.h"
+
 namespace uniq {
 
 template<typename T>
-class Value
+class UNIQLIB_EXPORT Value
 {
 public:
     Value() = default;

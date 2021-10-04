@@ -1,13 +1,13 @@
 #ifndef UUIDVALUE_H
 #define UUIDVALUE_H
 
-#include <QString>
-
 #include "Value.h"
+
+#include <QString>
 
 namespace uniq {
 
-class UuidValue : public Value<QString>
+class UNIQLIB_EXPORT UuidValue : public Value<QString>
 {
 public:
     UuidValue();

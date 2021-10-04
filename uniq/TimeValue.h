@@ -1,16 +1,16 @@
 #ifndef UNIQ_TIMEVALUE_H
 #define UNIQ_TIMEVALUE_H
 
+#include "Value.h"
+
 #include <chrono>
 #include <ctime>
-
-#include "Value.h"
 
 using namespace std;
 
 namespace uniq {
 
-class TimeValue : public Value<int64_t>
+class UNIQLIB_EXPORT TimeValue : public Value<int64_t>
 {
 public:
     TimeValue();

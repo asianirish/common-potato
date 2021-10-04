@@ -7,7 +7,7 @@
 
 namespace uniq {
 
-class CompactUuidValue : public Value<QString>
+class UNIQLIB_EXPORT CompactUuidValue : public Value<QString>
 {
 public:
     CompactUuidValue();

@@ -7,7 +7,7 @@
 
 namespace uniq {
 
-class TimeQStringValue : public Value<QString>
+class UNIQLIB_EXPORT TimeQStringValue : public Value<QString>
 {
 public:
     TimeQStringValue();

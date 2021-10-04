@@ -1,5 +1,6 @@
 TEMPLATE = lib
 TARGET = uniq
+DEFINES += UNIQLIB_LIBRARY
 
 QT -= gui
 
@@ -33,4 +34,5 @@ HEADERS += \
     TimeStringValue.h \
     TimeValue.h \
     UuidValue.h \
-    Value.h
+    Value.h \
+    uniq_global.h
