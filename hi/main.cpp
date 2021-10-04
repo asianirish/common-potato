@@ -2,6 +2,8 @@
 
 #include "Item.h"
 
+#include "test/Currency.h"
+
 #include <uniq/UuidValue.h>
 #include <uniq/CompactUuidValue.h>
 #include <uniq/TimeQStringValue.h>
@@ -30,15 +32,17 @@ int main(int argc, char *argv[])
     QCoreApplication a(argc, argv);
 
     qDebug() << "Hi";
-/*
+
     REGISTER_CLASS_FOR_UTIL_FACTORY(uniq::Value<QString>, uniq::UuidValue)
     REGISTER_CLASS_FOR_UTIL_FACTORY(uniq::Value<QString>, uniq::CompactUuidValue)
     REGISTER_CLASS_FOR_UTIL_FACTORY(uniq::Value<QString>, uniq::TimeQStringValue)
 
-    hi::Item *item = new hi::Item();
+    hi::Item *item = new test::Currency();
+    item->setField("code", "ETH");
+
     qDebug() << "ITEM CLASS NAME:" << item->className();
     qDebug() << "ITEM TO MAP:" << item->toMap();
-*/
+
 
 
 

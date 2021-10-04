@@ -12,7 +12,8 @@ INCLUDEPATH += $$PWD/../
 
 SOURCES += \
         SimpleObject.cpp \
-        main.cpp
+        main.cpp \
+        test/Currency.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -20,4 +21,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
-    SimpleObject.h
+    SimpleObject.h \
+    test/Currency.h
