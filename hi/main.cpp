@@ -31,13 +31,13 @@ int main(int argc, char *argv[])
 
     qDebug() << "Hi";
 
-//    REGISTER_CLASS_FOR_UTIL_FACTORY(uniq::Value<QString>, uniq::UuidValue)
-//    REGISTER_CLASS_FOR_UTIL_FACTORY(uniq::Value<QString>, uniq::CompactUuidValue)
-//    REGISTER_CLASS_FOR_UTIL_FACTORY(uniq::Value<QString>, uniq::TimeQStringValue)
+    REGISTER_CLASS_FOR_UTIL_FACTORY(uniq::Value<QString>, uniq::UuidValue)
+    REGISTER_CLASS_FOR_UTIL_FACTORY(uniq::Value<QString>, uniq::CompactUuidValue)
+    REGISTER_CLASS_FOR_UTIL_FACTORY(uniq::Value<QString>, uniq::TimeQStringValue)
 
     hi::Item *item = new hi::Item();
     qDebug() << "ITEM CLASS NAME:" << item->className();
-//    qDebug() << "ITEM TO MAP:" << item->toMap();
+    qDebug() << "ITEM TO MAP:" << item->toMap();
 
 
 
