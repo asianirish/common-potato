@@ -11,10 +11,6 @@ class Currency : public hi::Item
 public:
     explicit Currency(QObject *parent = nullptr);
 
-private:
-    void nodeToMap(QVariantMap &mp) const override {
-        Q_UNUSED(mp);
-    }
 };
 
 } // namespace test
