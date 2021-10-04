@@ -13,7 +13,7 @@ public:
 
 private:
 
-    void toMapNodeSpecific(QVariantMap &mp) const final;
+    void nodeToMap(QVariantMap &mp) const final;
 
 signals:
 

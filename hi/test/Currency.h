@@ -12,7 +12,7 @@ public:
     explicit Currency(QObject *parent = nullptr);
 
 private:
-    void toMapNodeSpecific(QVariantMap &mp) const override {
+    void nodeToMap(QVariantMap &mp) const override {
         Q_UNUSED(mp);
     }
 };

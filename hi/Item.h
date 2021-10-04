@@ -46,7 +46,7 @@ private:
     QVariantMap _fields;
     static util::LazyPointer<uniq::Value<QString>> _idGen;
 
-    virtual void toMapNodeSpecific(QVariantMap &mp) const {
+    virtual void nodeToMap(QVariantMap &mp) const {
         Q_UNUSED(mp);
     }
 

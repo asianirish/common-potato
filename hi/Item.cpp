@@ -70,7 +70,7 @@ QVariantMap Item::toMap() const
         mp.insert(FIELDS_KEY, _fields);
     }
 
-    toMapNodeSpecific(mp);
+    nodeToMap(mp);
 
     toMapClassSpecific(mp);
 
