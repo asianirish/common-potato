@@ -34,19 +34,25 @@ public:
 
     //TODO: ItemDef
 
-    virtual QVariantMap toMap() const;
+    QVariantMap toMap() const;
     //TODO: fromMap
 
     QVariant field(const QString &name) const;
 
     void setField(const QString &name, const QVariant &value);
 
-signals:
-
 private:
     mutable QString _id;
     QVariantMap _fields;
     static util::LazyPointer<uniq::Value<QString>> _idGen;
+
+    virtual void toMapNodeSpecific(QVariantMap &mp) const = 0;
+
+    virtual void toMapClassSpecific(QVariantMap &mp) const {
+        Q_UNUSED(mp);
+    }
+
+signals:
 
 };
 

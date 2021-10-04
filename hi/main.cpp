@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
     QCoreApplication a(argc, argv);
 
     qDebug() << "Hi";
-
+/*
     REGISTER_CLASS_FOR_UTIL_FACTORY(uniq::Value<QString>, uniq::UuidValue)
     REGISTER_CLASS_FOR_UTIL_FACTORY(uniq::Value<QString>, uniq::CompactUuidValue)
     REGISTER_CLASS_FOR_UTIL_FACTORY(uniq::Value<QString>, uniq::TimeQStringValue)
@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
     hi::Item *item = new hi::Item();
     qDebug() << "ITEM CLASS NAME:" << item->className();
     qDebug() << "ITEM TO MAP:" << item->toMap();
-
+*/
 
 
 

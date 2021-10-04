@@ -11,6 +11,10 @@ class Node : public Item
 public:
     explicit Node(QObject *parent = nullptr);
 
+private:
+
+    void toMapNodeSpecific(QVariantMap &mp) const final;
+
 signals:
 
 };
