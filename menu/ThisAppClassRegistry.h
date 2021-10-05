@@ -10,6 +10,8 @@ class ThisAppClassRegistry
 public:
     ThisAppClassRegistry();
 
+    virtual ~ThisAppClassRegistry() = default;
+
     virtual void registerAllClasses() const = 0;
 };
 
