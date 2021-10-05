@@ -14,6 +14,7 @@ SOURCES += \
         Test/TestA.cpp \
         Test/TestB.cpp \
         Test/TestC.cpp \
+        Test/TestClassRegistry.cpp \
         main.cpp
 
 # Default rules for deployment.
@@ -24,4 +25,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 HEADERS += \
     Test/TestA.h \
     Test/TestB.h \
-    Test/TestC.h
+    Test/TestC.h \
+    Test/TestClassRegistry.h

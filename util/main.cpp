@@ -1,7 +1,5 @@
 #include "gfunc.h"
-#include "Test/TestA.h"
-#include "Test/TestB.h"
-#include "Test/TestC.h"
+#include "Test/TestClassRegistry.h"
 
 #include <menu/Console.h>
 #include <menu/Menu.h>
@@ -68,63 +66,6 @@ int main(int argc, char *argv[])
     qDebug() << "util test qstring (base62):" << qstr1;
 
 
-    util::CuteCreator<QObject, Hi::TestA> cra;
-    util::CuteCreator<QObject, Hi::TestB> crb;
-    util::CuteCreator<QObject, Hi::TestC> crc;
-    {
-        auto obj = util::CuteFactory<QObject>::create("Hi::TestA");
-        qDebug() << "Object:" << obj;
-
-        qDebug() << "Class name:" << obj->metaObject()->className();
-    }
-
-    {
-        auto obj = util::CuteFactory<QObject>::create("Hi::TestB");
-        qDebug() << "Object:" << obj;
-
-        qDebug() << "Class name:" << obj->metaObject()->className();
-    }
-
-    {
-        auto obj = util::CuteFactory<QObject>::create("Hi::TestC");
-        qDebug() << "Object:" << obj;
-
-        qDebug() << "Class name:" << obj->metaObject()->className();
-    }
-
-    qDebug() << "--------------------------------------------------------------";
-    {
-        REGISTER_CLASS_FOR_UTIL_FACTORY(QObject, Hi::TestA);
-        REGISTER_CLASS_FOR_UTIL_FACTORY(QObject, Hi::TestB);
-        REGISTER_CLASS_FOR_UTIL_FACTORY(QObject, Hi::TestC);
-
-        {
-            auto obj = Factory<QObject>::create("Hi::TestA");
-            qDebug() << "Object:" << obj;
-            qDebug() << "Class name:" << obj->metaObject()->className();
-        }
-        {
-            auto obj = Factory<QObject>::create("Hi::TestB");
-            qDebug() << "Object:" << obj;
-            qDebug() << "Class name:" << obj->metaObject()->className();
-        }
-        {
-            auto obj = Factory<QObject>::create("Hi::TestC");
-            qDebug() << "Object:" << obj;
-            qDebug() << "Class name:" << obj->metaObject()->className();
-        }
-
-        Factory<QObject>::clear();
-    }
-
-    qDebug() << "--------------------------------------------------------------";
-    {
-//       LineCommandTranslator trans;
-////       JsonCommandTranslator trans;
-//       CommandInfo ci = trans.translate("add 12 13 14 15");
-//       qDebug() << ci.name() << ci.args();
-    }
-
     qDebug() << "--------------------------------------------------------------";
     TestT<QString, 1> tt;
     tt.setData({"first","second","third"});
@@ -132,11 +73,12 @@ int main(int argc, char *argv[])
     qDebug() << "TT VALUE:" << tt.value();
 
     qDebug() << "--------------------------------------------------------------";
-    Console console;
+    Console console(new TestClassRegistry());
 
     console.addMenuItem("inc", menu::ActionPtr(new menu::math::Inc()));
     console.addMenuItem("div", menu::ActionPtr(new menu::math::Div()));
     console.addMenuItem("phrase", menu::ActionPtr(new menu::test::BuildPhrase()));
+    //TODO: test Factory<QObject> menu item
 
     console.run();
     QObject::connect(&console, SIGNAL(quit()), &a, SLOT(quit()));
