@@ -4,6 +4,7 @@
 #pragma once
 
 #include "Menu.h"
+#include "ThisAppClassRegistry.h"
 
 #include <QObject>
 
@@ -23,7 +24,7 @@ class Console : public QObject
     Q_OBJECT;
 
 public:
-    explicit Console(QObject *parent = nullptr);
+    explicit Console(const ThisAppClassRegistry* registry, QObject *parent = nullptr);
     ~Console();
 
     void run();
