@@ -32,6 +32,7 @@ HEADERS += \
     Menu.h \
     Result.h \
     SimpleAction.h \
+    ThisAppClassRegistry.h \
     def/ActionDef.h \
     def/ArgDef.h \
     def/Constraint.h \
@@ -51,6 +52,7 @@ SOURCES += \
     Menu.cpp \
     Result.cpp \
     SimpleAction.cpp \
+    ThisAppClassRegistry.cpp \
     def/ActionDef.cpp \
     def/ArgDef.cpp \
     def/Constraint.cpp \
