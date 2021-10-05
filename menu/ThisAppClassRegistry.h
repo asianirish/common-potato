@@ -9,7 +9,7 @@ class ThisAppClassRegistry
 public:
     ThisAppClassRegistry();
 
-    virtual void registerAllClasses() = 0;
+    virtual void registerAllClasses() const = 0;
 };
 
 } // namespace menu
