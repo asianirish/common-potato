@@ -1,16 +1,18 @@
 #ifndef TESTFACTORY_H
 #define TESTFACTORY_H
 
-#include <menu/Action.h>
+#include <menu/SimpleAction.h>
 
-class TestFactory : public menu::Action
+class TestFactory : public menu::SimpleAction
 {
 public:
     TestFactory();
 
-    // Action interface
+protected:
+    QVariant simplyAct(const QVariantList &args) override;
+
 private:
-    void actSpecific(const QVariantList &args, const QString &taskId) override;
+
     menu::def::ActionDef actionDef() const override;
 };
 

@@ -8,26 +8,24 @@ TestFactory::TestFactory()
 
 }
 
-void TestFactory::actSpecific(const QVariantList &args, const QString &taskId)
+QVariant TestFactory::simplyAct(const QVariantList &args)
 {
     Q_UNUSED(args);
-    Q_UNUSED(taskId);
+    QString ret("GENERATING TEST OBJECTS:\n\n");
 
     {
         auto obj = util::Factory<QObject>::create("Hi::TestA");
-        qDebug() << "Object:" << obj;
-        qDebug() << "Class name:" << obj->metaObject()->className();
+        ret += QString("Class name:") + obj->metaObject()->className() + "\n";
     }
     {
         auto obj = util::Factory<QObject>::create("Hi::TestB");
-        qDebug() << "Object:" << obj;
-        qDebug() << "Class name:" << obj->metaObject()->className();
+        ret += QString("Class name:") + obj->metaObject()->className() + "\n";
     }
     {
         auto obj = util::Factory<QObject>::create("Hi::TestC");
-        qDebug() << "Object:" << obj;
-        qDebug() << "Class name:" << obj->metaObject()->className();
+        ret += QString("Class name:")+ obj->metaObject()->className() + "\n";
     }
+    return ret;
 }
 
 menu::def::ActionDef TestFactory::actionDef() const
