@@ -1,5 +1,6 @@
 #include "gfunc.h"
 #include "Test/TestClassRegistry.h"
+#include "Test/TestFactory.h"
 
 #include <menu/Console.h>
 #include <menu/Menu.h>
@@ -78,7 +79,7 @@ int main(int argc, char *argv[])
     console.addMenuItem("inc", menu::ActionPtr(new menu::math::Inc()));
     console.addMenuItem("div", menu::ActionPtr(new menu::math::Div()));
     console.addMenuItem("phrase", menu::ActionPtr(new menu::test::BuildPhrase()));
-    //TODO: test Factory<QObject> menu item
+    console.addMenuItem("factory", menu::ActionPtr(new TestFactory()));
 
     console.run();
     QObject::connect(&console, SIGNAL(quit()), &a, SLOT(quit()));

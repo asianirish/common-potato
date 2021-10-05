@@ -15,6 +15,7 @@ SOURCES += \
         Test/TestB.cpp \
         Test/TestC.cpp \
         Test/TestClassRegistry.cpp \
+        Test/TestFactory.cpp \
         main.cpp
 
 # Default rules for deployment.
@@ -26,4 +27,5 @@ HEADERS += \
     Test/TestA.h \
     Test/TestB.h \
     Test/TestC.h \
-    Test/TestClassRegistry.h
+    Test/TestClassRegistry.h \
+    Test/TestFactory.h
