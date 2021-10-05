@@ -8,6 +8,8 @@ class TestClassRegistry : public menu::ThisAppClassRegistry
 public:
     TestClassRegistry();
 
+    ~TestClassRegistry();
+
     void registerAllClasses() const override;
 };
 

@@ -11,6 +11,11 @@ TestClassRegistry::TestClassRegistry()
 
 }
 
+TestClassRegistry::~TestClassRegistry()
+{
+    util::Factory<QObject>::clear();
+}
+
 void TestClassRegistry::registerAllClasses() const
 {
     REGISTER_CLASS_FOR_UTIL_FACTORY(QObject, Hi::TestA);
