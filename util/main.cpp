@@ -1,6 +1,7 @@
 #include "gfunc.h"
 #include "Test/TestClassRegistry.h"
 #include "Test/TestFactory.h"
+#include "Test/TestLazy.h"
 
 #include <menu/Console.h>
 #include <menu/Menu.h>
@@ -80,23 +81,10 @@ int main(int argc, char *argv[])
     console.addMenuItem("div", menu::ActionPtr(new menu::math::Div()));
     console.addMenuItem("phrase", menu::ActionPtr(new menu::test::BuildPhrase()));
     console.addMenuItem("factory", menu::ActionPtr(new TestFactory()));
+    console.addMenuItem("lazy", menu::ActionPtr(new TestLazy()));
 
     console.run();
     QObject::connect(&console, SIGNAL(quit()), &a, SLOT(quit()));
-    qDebug() << "--------------------------------------------------------------";
-
-    {
-        LazyPointer<uniq::Value<QString>> lp("uniq::TimeQStringValue");
-        qDebug() << "LAZY UNIQUE VALUE:" << lp->value();
-    }
-    {
-        LazyPointer<uniq::Value<QString>> lp("uniq::UuidValue");
-        qDebug() << "LAZY UNIQUE VALUE:" << lp->value();
-    }
-    {
-        LazyPointer<uniq::Value<QString>> lp("uniq::CompactUuidValue");
-        qDebug() << "LAZY UNIQUE VALUE:" << lp->value();
-    }
 
     return a.exec();
 }

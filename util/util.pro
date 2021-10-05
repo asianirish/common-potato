@@ -16,6 +16,7 @@ SOURCES += \
         Test/TestC.cpp \
         Test/TestClassRegistry.cpp \
         Test/TestFactory.cpp \
+        Test/TestLazy.cpp \
         main.cpp
 
 # Default rules for deployment.
@@ -28,4 +29,5 @@ HEADERS += \
     Test/TestB.h \
     Test/TestC.h \
     Test/TestClassRegistry.h \
-    Test/TestFactory.h
+    Test/TestFactory.h \
+    Test/TestLazy.h
