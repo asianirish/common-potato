@@ -1,6 +1,7 @@
 #ifndef MENU_THISAPPCLASSREGISTRY_H
 #define MENU_THISAPPCLASSREGISTRY_H
 
+#include <util/Factory.h>
 
 namespace menu {
 
