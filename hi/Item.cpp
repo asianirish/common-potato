@@ -75,6 +75,11 @@ ItemPtr Item::newItem(const QVariantMap &mp)
     return ItemPtr(ptr);
 }
 
+NodePtr Item::newNode(const QVariantMap &mp)
+{
+    return newItem(mp).dynamicCast<Node>();
+}
+
 ItemPtr Item::clone() const
 {
     return newItem(this->toMap());

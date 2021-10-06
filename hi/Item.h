@@ -49,6 +49,7 @@ public:
     void setField(const QString &name, const QVariant &value);
 
     static ItemPtr newItem(const QVariantMap &mp);
+    static NodePtr newNode(const QVariantMap &mp);
 
     ItemPtr clone() const;
 
