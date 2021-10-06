@@ -5,6 +5,8 @@
 #include "test/Currency.h"
 #include "HiClassRegistry.h"
 
+#include "test/NewItem.h"
+
 #include <uniq/UuidValue.h>
 #include <uniq/CompactUuidValue.h>
 #include <uniq/TimeQStringValue.h>
@@ -38,6 +40,7 @@ int main(int argc, char *argv[])
     menu::Console console(new HiClassRegistry());
 
     //TODO: add items here
+    console.addMenuItem("newitem", menu::ActionPtr(new test::NewItem()));
 
     console.run();
     QObject::connect(&console, SIGNAL(quit()), &a, SLOT(quit()));

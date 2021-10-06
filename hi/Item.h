@@ -8,6 +8,7 @@
 
 #include <QObject>
 #include <QVariantMap>
+#include <QSharedPointer>
 
 namespace hi {
 
@@ -43,6 +44,7 @@ public:
 
     void setField(const QString &name, const QVariant &value);
 
+    static QSharedPointer<Item> newItem(const QVariantMap &mp);
 private:
     mutable QString _id;
     QVariantMap _fields;

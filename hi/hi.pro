@@ -14,7 +14,8 @@ SOURCES += \
         HiClassRegistry.cpp \
         SimpleObject.cpp \
         main.cpp \
-        test/Currency.cpp
+        test/Currency.cpp \
+        test/NewItem.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -24,4 +25,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 HEADERS += \
     HiClassRegistry.h \
     SimpleObject.h \
-    test/Currency.h
+    test/Currency.h \
+    test/NewItem.h
