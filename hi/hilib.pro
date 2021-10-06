@@ -18,7 +18,8 @@ DESTDIR = $$PWD/../build/lib/
 SOURCES += \
         FieldDef.cpp \
         Item.cpp \
-        Node.cpp
+        Node.cpp \
+        Serializer.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -28,4 +29,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 HEADERS += \
     FieldDef.h \
     Item.h \
-    Node.h
+    Node.h \
+    Serializer.h
