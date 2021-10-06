@@ -75,6 +75,11 @@ ItemPtr Item::newItem(const QVariantMap &mp)
     return ItemPtr(ptr);
 }
 
+ItemPtr Item::clone() const
+{
+    return newItem(this->toMap());
+}
+
 QString Item::id() const
 {
     if (_id.isEmpty()) {

@@ -22,7 +22,7 @@ QVariant NewItem::simplyAct(const QVariantList &args)
     qDebug() << "ITEM CLASS NAME:" << item->className();
     qDebug() << "ITEM TO MAP:" << item->toMap();
 
-    auto itemClone = hi::Item::newItem(item->toMap());
+    auto itemClone = item->clone();
     qDebug() << "NEW ITEM CLASS NAME:" << item->className();
     qDebug() << "NEW ITEM TO MAP:" << item->toMap();
 

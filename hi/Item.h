@@ -50,6 +50,8 @@ public:
 
     static ItemPtr newItem(const QVariantMap &mp);
 
+    ItemPtr clone() const;
+
 private:
     mutable QString _id;
     QVariantMap _fields;
