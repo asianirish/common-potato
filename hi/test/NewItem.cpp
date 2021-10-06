@@ -15,18 +15,20 @@ QVariant NewItem::simplyAct(const QVariantList &args)
 {
     Q_UNUSED(args);
 
+    QString result;
+
     hi::Item *item = new test::Currency();
     item->setField("code", "ETH");
     item->setField("usdPrice", 3391.03);
 
-    qDebug() << "ITEM CLASS NAME:" << item->className();
-    qDebug() << "ITEM TO MAP:" << item->toMap();
+    result += "ITEM CLASS NAME: " + item->className() + "\n";
+//    result += "ITEM TO MAP: " + item->toMap(); TODO: toJson
 
     auto itemClone = item->clone();
-    qDebug() << "NEW ITEM CLASS NAME:" << item->className();
-    qDebug() << "NEW ITEM TO MAP:" << item->toMap();
+    result += "NEW ITEM CLASS NAME: " + item->className() + "\n";
+//    result += "NEW ITEM TO MAP: " + item->toMap();
 
-    return QVariant();
+    return result;
 }
 
 } // namespace test
