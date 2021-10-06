@@ -24,7 +24,7 @@ QVariant NewItem::simplyAct(const QVariantList &args)
     result += "ITEM CLASS NAME: " + item->className() + "\n";
 //    result += "ITEM TO MAP: " + item->toMap(); TODO: toJson
 
-    auto itemClone = item->clone();
+    auto itemClone = item->cloneItem();
     result += "NEW ITEM CLASS NAME: " + item->className() + "\n";
 //    result += "NEW ITEM TO MAP: " + item->toMap();
 

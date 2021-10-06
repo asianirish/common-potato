@@ -51,7 +51,7 @@ public:
     static ItemPtr newItem(const QVariantMap &mp);
     static NodePtr newNode(const QVariantMap &mp);
 
-    ItemPtr clone() const;
+    ItemPtr cloneItem() const;
 
 private:
     mutable QString _id;
