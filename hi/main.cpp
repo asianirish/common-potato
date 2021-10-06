@@ -55,6 +55,9 @@ int main(int argc, char *argv[])
     qDebug() << "ANOTHER ITEM CLASS NAME:" << anotherItem->className();
     qDebug() << "ANOTHER ITEM TO MAP:" << anotherItem->toMap();
 
+    qDebug() << "ANOTHER ITEM USD_PRICE:" << anotherItem->field("usdPrice");
+    qDebug() << "ANOTHER ITEM EU_PRICE:" << anotherItem->field("euPrice");
+
 
 //TRY IT: simpleTest();
 
