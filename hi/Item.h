@@ -12,6 +12,10 @@
 
 namespace hi {
 
+class Item;
+
+typedef QSharedPointer<Item> ItemPtr;
+
 class Node;
 
 class Item : public QObject
@@ -44,7 +48,8 @@ public:
 
     void setField(const QString &name, const QVariant &value);
 
-    static QSharedPointer<Item> newItem(const QVariantMap &mp);
+    static ItemPtr newItem(const QVariantMap &mp);
+
 private:
     mutable QString _id;
     QVariantMap _fields;

@@ -65,14 +65,14 @@ void Item::setField(const QString &name, const QVariant &value)
     _fields.insert(name, value);
 }
 
-QSharedPointer<Item> Item::newItem(const QVariantMap &mp)
+ItemPtr Item::newItem(const QVariantMap &mp)
 {
     QString className = mp.value(CLASS_NAME_KEY).toString();
     Item *ptr = util::Factory<Item>::create(className.toStdString());
 
     ptr->fromMap(mp);
 
-    return QSharedPointer<Item>(ptr);
+    return ItemPtr(ptr);
 }
 
 QString Item::id() const
