@@ -3,11 +3,13 @@
 #include "Item.h"
 
 #include "test/Currency.h"
+#include "HiClassRegistry.h"
 
 #include <uniq/UuidValue.h>
 #include <uniq/CompactUuidValue.h>
 #include <uniq/TimeQStringValue.h>
 #include <util/gfunc.h>
+#include <menu/Console.h>
 
 
 #include <QSharedPointer>
@@ -33,6 +35,14 @@ int main(int argc, char *argv[])
 
     qDebug() << "Hi";
 
+    menu::Console console(new HiClassRegistry());
+
+    //TODO: add items here
+
+    console.run();
+    QObject::connect(&console, SIGNAL(quit()), &a, SLOT(quit()));
+
+    /*
     REGISTER_CLASS_FOR_UTIL_FACTORY(uniq::Value<QString>, uniq::UuidValue)
     REGISTER_CLASS_FOR_UTIL_FACTORY(uniq::Value<QString>, uniq::CompactUuidValue)
     REGISTER_CLASS_FOR_UTIL_FACTORY(uniq::Value<QString>, uniq::TimeQStringValue)
@@ -60,9 +70,10 @@ int main(int argc, char *argv[])
 
     anotherItem->setField("usdPrice", QVariant());
     qDebug() << "ANOTHER ITEM USD_PRICE:" << anotherItem->field("usdPrice");
-
+*/
 
 //TRY IT: simpleTest();
+
 
     return a.exec();
 }

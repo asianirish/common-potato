@@ -11,6 +11,7 @@ INCLUDEPATH += $$PWD/../
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+        HiClassRegistry.cpp \
         SimpleObject.cpp \
         main.cpp \
         test/Currency.cpp
@@ -21,5 +22,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
+    HiClassRegistry.h \
     SimpleObject.h \
     test/Currency.h
