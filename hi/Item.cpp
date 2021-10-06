@@ -50,6 +50,10 @@ QVariant Item::field(const QString &name) const
 
 void Item::setField(const QString &name, const QVariant &value)
 {
+    if (!value.isValid()) {
+        return; //do not set invalid one
+    }
+
     auto fieldDefs = this->fieldDefs();
     if (!fieldDefs.contains(name)) {
         return;

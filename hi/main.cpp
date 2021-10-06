@@ -58,6 +58,9 @@ int main(int argc, char *argv[])
     qDebug() << "ANOTHER ITEM USD_PRICE:" << anotherItem->field("usdPrice");
     qDebug() << "ANOTHER ITEM EU_PRICE:" << anotherItem->field("euPrice");
 
+    anotherItem->setField("usdPrice", QVariant());
+    qDebug() << "ANOTHER ITEM USD_PRICE:" << anotherItem->field("usdPrice");
+
 
 //TRY IT: simpleTest();
 
