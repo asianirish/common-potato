@@ -11,6 +11,9 @@ class Currency : public hi::Item
 public:
     explicit Currency(QObject *parent = nullptr);
 
+private:
+    QMap<QString, hi::FieldDef> fieldDefs() const override;
+
 };
 
 } // namespace test

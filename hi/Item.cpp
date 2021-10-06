@@ -37,11 +37,27 @@ void Item::setIdGenClassName(const QString &className)
 
 QVariant Item::field(const QString &name) const
 {
+    if (!_fields.contains(name)) {
+        if (fieldDefs().contains(name)) { //TODO: isDefaultValue()?
+            return fieldDefs().value(name).defaultValue();
+        }
+
+        return QVariant();
+    }
+
     return _fields.value(name);
 }
 
 void Item::setField(const QString &name, const QVariant &value)
 {
+    auto fieldDefs = this->fieldDefs();
+    if (!fieldDefs.contains(name)) {
+        return;
+    }
+
+    auto fieldDef = fieldDefs.value(name);
+    //TODO: check constraints
+
     _fields.insert(name, value);
 }
 

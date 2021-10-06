@@ -1,6 +1,8 @@
 #ifndef HI_ITEM_H
 #define HI_ITEM_H
 
+#include "FieldDef.h"
+
 #include <util/LazyPointer.h>
 #include <uniq/Value.h>
 
@@ -53,6 +55,8 @@ private:
     virtual void toMapClassSpecific(QVariantMap &mp) const {
         Q_UNUSED(mp);
     }
+
+    virtual QMap<QString, FieldDef> fieldDefs() const = 0;
 
 signals:
 

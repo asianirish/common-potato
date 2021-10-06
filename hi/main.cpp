@@ -39,6 +39,7 @@ int main(int argc, char *argv[])
 
     hi::Item *item = new test::Currency();
     item->setField("code", "ETH");
+    item->setField("rate", 0.43); //the field is not defined just for test
 
     qDebug() << "ITEM CLASS NAME:" << item->className();
     qDebug() << "ITEM TO MAP:" << item->toMap();
