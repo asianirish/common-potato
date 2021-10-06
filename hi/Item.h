@@ -13,10 +13,10 @@
 namespace hi {
 
 class Item;
+class Node;
 
 typedef QSharedPointer<Item> ItemPtr;
-
-class Node;
+typedef QSharedPointer<Node> NodePtr;
 
 class Item : public QObject
 {
