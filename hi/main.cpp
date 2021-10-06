@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
 
     hi::Item *item = new test::Currency();
     item->setField("code", "ETH");
-    item->setField("rate", 0.43); //the field is not defined just for test
+    item->setField("usdPrice", 3391.03);
 
     qDebug() << "ITEM CLASS NAME:" << item->className();
     qDebug() << "ITEM TO MAP:" << item->toMap();
@@ -48,6 +48,12 @@ int main(int argc, char *argv[])
 
     itemClone->fromMap(item->toMap());
     qDebug() << "CLONE ITEM TO MAP:" << item->toMap();
+
+    qDebug() << "-------------------------------------------------------";
+    hi::Item *anotherItem = new test::Currency();
+    anotherItem->setField("code", "TRASH");
+    qDebug() << "ANOTHER ITEM CLASS NAME:" << anotherItem->className();
+    qDebug() << "ANOTHER ITEM TO MAP:" << anotherItem->toMap();
 
 
 //TRY IT: simpleTest();
