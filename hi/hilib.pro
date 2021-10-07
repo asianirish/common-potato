@@ -18,12 +18,12 @@ DESTDIR = $$PWD/../build/lib/
 SOURCES += \
         Exception.cpp \
         FieldDef.cpp \
+        FieldException.cpp \
         InvalidValueException.cpp \
         Item.cpp \
         NoSuchField.cpp \
         Node.cpp \
-        Serializer.cpp \
-        SetFieldException.cpp
+        Serializer.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -33,9 +33,9 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 HEADERS += \
     Exception.h \
     FieldDef.h \
+    FieldException.h \
     InvalidValueException.h \
     Item.h \
     NoSuchField.h \
     Node.h \
-    Serializer.h \
-    SetFieldException.h
+    Serializer.h

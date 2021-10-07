@@ -1,14 +1,14 @@
-#ifndef SETFIELDEXCEPTION_H
-#define SETFIELDEXCEPTION_H
+#ifndef FIELDEXCEPTION_H
+#define FIELDEXCEPTION_H
 
 #include "Exception.h"
 
 namespace hi {
 
-class SetFieldException : public hi::Exception
+class FieldException : public hi::Exception
 {
 public:
-    SetFieldException(const QString &fieldName);
+    FieldException(const QString &fieldName);
 
     QByteArray cause() const override {
         return QByteArray("unknown set field exception");
@@ -23,4 +23,4 @@ private:
 
 } // namespace hi
 
-#endif // SETFIELDEXCEPTION_H
+#endif // FIELDEXCEPTION_H

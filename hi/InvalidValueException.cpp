@@ -2,7 +2,7 @@
 
 namespace hi {
 
-InvalidValueException::InvalidValueException(const QString &fieldName) : hi::SetFieldException(fieldName)
+InvalidValueException::InvalidValueException(const QString &fieldName) : hi::FieldException(fieldName)
 {
 
 }
