@@ -1,8 +1,8 @@
 #include "Item.h"
 #include "Node.h"
 
-#include "InvalidValueException.h"
-#include "NoSuchField.h"
+#include "ex/InvalidValueException.h"
+#include "ex/NoSuchField.h"
 
 namespace hi {
 
