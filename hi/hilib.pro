@@ -18,6 +18,7 @@ DESTDIR = $$PWD/../build/lib/
 SOURCES += \
         Exception.cpp \
         FieldDef.cpp \
+        InvalidValueException.cpp \
         Item.cpp \
         Node.cpp \
         Serializer.cpp \
@@ -31,6 +32,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 HEADERS += \
     Exception.h \
     FieldDef.h \
+    InvalidValueException.h \
     Item.h \
     Node.h \
     Serializer.h \
