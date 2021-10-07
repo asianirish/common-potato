@@ -20,7 +20,8 @@ SOURCES += \
         FieldDef.cpp \
         Item.cpp \
         Node.cpp \
-        Serializer.cpp
+        Serializer.cpp \
+        SetFieldException.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -32,4 +33,5 @@ HEADERS += \
     FieldDef.h \
     Item.h \
     Node.h \
-    Serializer.h
+    Serializer.h \
+    SetFieldException.h
