@@ -4,7 +4,7 @@
 
 #include <hi/ex/InvalidValueException.h>
 #include <hi/ex/NoSuchField.h>
-#include <hi/ex/JsonSerializer.h>
+#include <hi/JsonSerializer.h>
 
 #include <QDebug>
 
