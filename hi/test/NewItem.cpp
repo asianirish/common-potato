@@ -2,6 +2,9 @@
 
 #include "Currency.h"
 
+#include <hi/InvalidValueException.h>
+#include <hi/NoSuchField.h>
+
 #include <QDebug>
 
 namespace test {
@@ -17,16 +20,29 @@ QVariant NewItem::simplyAct(const QVariantList &args)
 
     QString result;
 
-    hi::Item *item = new test::Currency();
-    item->setField("code", "ETH");
-    item->setField("usdPrice", 3391.03);
+    try {
+        hi::Item *item = new test::Currency();
+        item->setField("code", "ETH");
+        item->setField("usdPrice", 3391.03);
 
-    result += "ITEM CLASS NAME: " + item->className() + "\n";
-//    result += "ITEM TO MAP: " + item->toMap(); TODO: toJson
+        result += "ITEM CLASS NAME: " + item->className() + "\n";
+    //    result += "ITEM TO MAP: " + item->toMap(); TODO: toJson
 
-    auto itemClone = item->cloneItem();
-    result += "NEW ITEM CLASS NAME: " + item->className() + "\n";
-//    result += "NEW ITEM TO MAP: " + item->toMap();
+        auto itemClone = item->cloneItem();
+        result += "NEW ITEM CLASS NAME: " + item->className() + "\n";
+    //    result += "NEW ITEM TO MAP: " + item->toMap();
+
+//TEST:        item->setField("euPrice", 999.99);
+//TEST:        item->setField("usdPrice", QVariant());
+
+    }  catch (hi::SetFieldException &e) {
+        qDebug() << "error:" << e.cause();
+        qDebug() << "field:" << e.fieldName();
+        return QVariant();
+    } catch (hi::Exception &e) {
+        qDebug() << "error:" << e.cause();
+        return QVariant();
+    }
 
     return result;
 }
