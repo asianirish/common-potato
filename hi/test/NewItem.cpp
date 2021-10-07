@@ -4,6 +4,7 @@
 
 #include <hi/InvalidValueException.h>
 #include <hi/NoSuchField.h>
+#include <hi/JsonSerializer.h>
 
 #include <QDebug>
 
@@ -21,20 +22,21 @@ QVariant NewItem::simplyAct(const QVariantList &args)
     QString result;
 
     try {
-        hi::Item *item = new test::Currency();
+        hi::Serializer *srl = new hi::JsonSerializer();
+        hi::ItemPtr item = hi::ItemPtr(new test::Currency());
         item->setField("code", "ETH");
         item->setField("usdPrice", 3391.03);
 
         result += "ITEM CLASS NAME: " + item->className() + "\n";
-    //    result += "ITEM TO MAP: " + item->toMap(); TODO: toJson
+        result += "ITEM TO MAP: " + srl->serialize(item);
 
         auto itemClone = item->cloneItem();
-        result += "NEW ITEM CLASS NAME: " + item->className() + "\n";
-    //    result += "NEW ITEM TO MAP: " + item->toMap();
+        result += "CLONE CLASS NAME: " + itemClone->className() + "\n";
+        result += "CLONE TO MAP: " + srl->serialize(itemClone);
 
 //TEST:        item->setField("euPrice", 999.99);
 //TEST:        item->setField("usdPrice", QVariant());
-        qDebug() << "USD PRICE:" << item->field("usdPrice");
+        result += "USD PRICE: " + QString::number(item->field("usdPrice").toDouble());
 //TEST:        qDebug() << "EU PRICE:" << item->field("euPrice");
 
     }  catch (hi::FieldException &e) {
