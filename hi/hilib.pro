@@ -25,6 +25,7 @@ SOURCES += \
         ex/NoSuchField.cpp \
         Node.cpp \
         Serializer.cpp \
+        val/NotEqualTo.cpp \
         val/Validator.cpp
 
 # Default rules for deployment.
@@ -42,4 +43,5 @@ HEADERS += \
     ex/NoSuchField.h \
     Node.h \
     Serializer.h \
+    val/NotEqualTo.h \
     val/Validator.h
