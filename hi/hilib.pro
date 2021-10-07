@@ -24,7 +24,8 @@ SOURCES += \
         Item.cpp \
         ex/NoSuchField.cpp \
         Node.cpp \
-        Serializer.cpp
+        Serializer.cpp \
+        val/Validator.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -40,4 +41,5 @@ HEADERS += \
     Item.h \
     ex/NoSuchField.h \
     Node.h \
-    Serializer.h
+    Serializer.h \
+    val/Validator.h
