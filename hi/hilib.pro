@@ -20,6 +20,7 @@ SOURCES += \
         FieldDef.cpp \
         InvalidValueException.cpp \
         Item.cpp \
+        NoSuchField.cpp \
         Node.cpp \
         Serializer.cpp \
         SetFieldException.cpp
@@ -34,6 +35,7 @@ HEADERS += \
     FieldDef.h \
     InvalidValueException.h \
     Item.h \
+    NoSuchField.h \
     Node.h \
     Serializer.h \
     SetFieldException.h
