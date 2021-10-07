@@ -21,6 +21,7 @@ SOURCES += \
         FieldException.cpp \
         InvalidValueException.cpp \
         Item.cpp \
+        JsonSerializer.cpp \
         NoSuchField.cpp \
         Node.cpp \
         Serializer.cpp
@@ -36,6 +37,7 @@ HEADERS += \
     FieldException.h \
     InvalidValueException.h \
     Item.h \
+    JsonSerializer.h \
     NoSuchField.h \
     Node.h \
     Serializer.h
