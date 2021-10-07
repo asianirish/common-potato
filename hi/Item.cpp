@@ -1,6 +1,9 @@
 #include "Item.h"
 #include "Node.h"
 
+#include "InvalidValueException.h"
+#include "NoSuchField.h"
+
 namespace hi {
 
 const QString Item::DEFAULT_ID_GEN_CLASS_NAME("uniq::TimeQStringValue");
@@ -51,12 +54,12 @@ QVariant Item::field(const QString &name) const
 void Item::setField(const QString &name, const QVariant &value)
 {
     if (!value.isValid()) {
-        return; //do not set invalid one
+        throw InvalidValueException(name);
     }
 
     auto fieldDefs = this->fieldDefs();
     if (!fieldDefs.contains(name)) {
-        return;
+        throw NoSuchField(name);
     }
 
     auto fieldDef = fieldDefs.value(name);
