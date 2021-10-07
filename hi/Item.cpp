@@ -45,7 +45,7 @@ QVariant Item::field(const QString &name) const
             return fieldDefs().value(name).defaultValue();
         }
 
-        return QVariant();
+        throw NoSuchField(name);
     }
 
     return _fields.value(name);
