@@ -8,7 +8,7 @@ namespace hi {
 class InvalidValueException : public hi::SetFieldException
 {
 public:
-    InvalidValueException();
+    InvalidValueException(const QString &fieldName);
 
     QByteArray cause() const override {
         return QByteArray("invalid value");

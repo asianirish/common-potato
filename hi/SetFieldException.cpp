@@ -2,7 +2,7 @@
 
 namespace hi {
 
-SetFieldException::SetFieldException()
+SetFieldException::SetFieldException(const QString &fieldName) : _fieldName(fieldName)
 {
 
 }

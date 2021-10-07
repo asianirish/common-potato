@@ -8,7 +8,7 @@ namespace hi {
 class SetFieldException : public hi::Exception
 {
 public:
-    SetFieldException();
+    SetFieldException(const QString &fieldName);
 
     QByteArray cause() const override {
         return QByteArray("unknown set field exception");

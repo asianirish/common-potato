@@ -8,7 +8,7 @@ namespace hi {
 class NoSuchField : public hi::SetFieldException
 {
 public:
-    NoSuchField();
+    NoSuchField(const QString &fieldName);
 
     QByteArray cause() const override {
         return QByteArray("no such field");

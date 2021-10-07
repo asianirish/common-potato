@@ -2,7 +2,7 @@
 
 namespace hi {
 
-NoSuchField::NoSuchField()
+NoSuchField::NoSuchField(const QString &fieldName) : hi::SetFieldException(fieldName)
 {
 
 }
