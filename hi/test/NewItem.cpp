@@ -35,7 +35,7 @@ QVariant NewItem::simplyAct(const QVariantList &args)
 //TEST:        item->setField("euPrice", 999.99);
 //TEST:        item->setField("usdPrice", QVariant());
         qDebug() << "USD PRICE:" << item->field("usdPrice");
-        qDebug() << "EU PRICE:" << item->field("euPrice");
+//TEST:        qDebug() << "EU PRICE:" << item->field("euPrice");
 
     }  catch (hi::FieldException &e) {
         qDebug() << "error:" << e.cause();
