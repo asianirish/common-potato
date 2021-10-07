@@ -45,7 +45,7 @@ QVariant Item::field(const QString &name) const
             return fieldDefs().value(name).defaultValue();
         }
 
-        throw NoSuchField(name);
+        throw ex::NoSuchField(name);
     }
 
     return _fields.value(name);
@@ -54,12 +54,12 @@ QVariant Item::field(const QString &name) const
 void Item::setField(const QString &name, const QVariant &value)
 {
     if (!value.isValid()) {
-        throw InvalidValueException(name);
+        throw ex::InvalidValueException(name);
     }
 
     auto fieldDefs = this->fieldDefs();
     if (!fieldDefs.contains(name)) {
-        throw NoSuchField(name);
+        throw ex::NoSuchField(name);
     }
 
     auto fieldDef = fieldDefs.value(name);

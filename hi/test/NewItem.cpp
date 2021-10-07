@@ -39,11 +39,11 @@ QVariant NewItem::simplyAct(const QVariantList &args)
         result += "USD PRICE: " + QString::number(item->field("usdPrice").toDouble());
 //TEST:        qDebug() << "EU PRICE:" << item->field("euPrice");
 
-    }  catch (hi::FieldException &e) {
+    }  catch (hi::ex::FieldException &e) {
         qDebug() << "error:" << e.cause();
         qDebug() << "field:" << e.fieldName();
         return QVariant();
-    } catch (hi::Exception &e) {
+    } catch (hi::ex::Exception &e) {
         qDebug() << "error:" << e.cause();
         return QVariant();
     }

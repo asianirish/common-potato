@@ -4,8 +4,9 @@
 #include "FieldException.h"
 
 namespace hi {
+namespace ex {
 
-class InvalidValueException : public hi::FieldException
+class InvalidValueException : public FieldException
 {
 public:
     InvalidValueException(const QString &fieldName);
@@ -15,6 +16,7 @@ public:
     }
 };
 
+} // namespace ex
 } // namespace hi
 
 #endif // HI_INVALIDVALUEEXCEPTION_H

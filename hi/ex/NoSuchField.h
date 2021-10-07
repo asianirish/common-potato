@@ -4,8 +4,9 @@
 #include "FieldException.h"
 
 namespace hi {
+namespace ex {
 
-class NoSuchField : public hi::FieldException
+class NoSuchField : public FieldException
 {
 public:
     NoSuchField(const QString &fieldName);
@@ -15,6 +16,7 @@ public:
     }
 };
 
+} // namespace ex
 } // namespace hi
 
 #endif // HI_NOSUCHFIELD_H

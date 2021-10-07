@@ -4,6 +4,7 @@
 #include <QException>
 
 namespace hi {
+namespace ex {
 
 class Exception : public QException
 {
@@ -18,6 +19,7 @@ public:
     }
 };
 
+} // namespace ex
 } // namespace hi
 
 #endif // HI_EXCEPTION_H

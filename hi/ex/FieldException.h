@@ -4,8 +4,9 @@
 #include "Exception.h"
 
 namespace hi {
+namespace ex {
 
-class FieldException : public hi::Exception
+class FieldException : public Exception
 {
 public:
     FieldException(const QString &fieldName);
@@ -21,6 +22,7 @@ private:
     QString _fieldName;
 };
 
+} // namespace ex
 } // namespace hi
 
 #endif // FIELDEXCEPTION_H
