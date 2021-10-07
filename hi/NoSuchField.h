@@ -1,7 +1,7 @@
 #ifndef HI_NOSUCHFIELD_H
 #define HI_NOSUCHFIELD_H
 
-#include "SetFieldException.h"
+#include "FieldException.h"
 
 namespace hi {
 

@@ -1,7 +1,7 @@
 #ifndef HI_INVALIDVALUEEXCEPTION_H
 #define HI_INVALIDVALUEEXCEPTION_H
 
-#include "SetFieldException.h"
+#include "FieldException.h"
 
 namespace hi {
 
