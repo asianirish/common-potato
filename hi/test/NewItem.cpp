@@ -2,9 +2,9 @@
 
 #include "Currency.h"
 
-#include <hi/ex/InvalidValueException.h>
-#include <hi/ex/NoSuchField.h>
-#include <hi/ex/JsonSerializer.h>
+#include <hi/InvalidValueException.h>
+#include <hi/NoSuchField.h>
+#include <hi/JsonSerializer.h>
 
 #include <QDebug>
 

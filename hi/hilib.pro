@@ -16,15 +16,15 @@ DESTDIR = $$PWD/../build/lib/
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+        Exception.cpp \
         FieldDef.cpp \
+        FieldException.cpp \
+        InvalidValueException.cpp \
         Item.cpp \
+        JsonSerializer.cpp \
+        NoSuchField.cpp \
         Node.cpp \
-        Serializer.cpp \
-        ex/Exception.cpp \
-        ex/FieldException.cpp \
-        ex/InvalidValueException.cpp \
-        ex/JsonSerializer.cpp \
-        ex/NoSuchField.cpp
+        Serializer.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -32,12 +32,12 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
+    Exception.h \
     FieldDef.h \
+    FieldException.h \
+    InvalidValueException.h \
     Item.h \
+    JsonSerializer.h \
+    NoSuchField.h \
     Node.h \
-    Serializer.h \
-    ex/Exception.h \
-    ex/FieldException.h \
-    ex/InvalidValueException.h \
-    ex/JsonSerializer.h \
-    ex/NoSuchField.h
+    Serializer.h
