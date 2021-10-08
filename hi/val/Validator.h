@@ -12,6 +12,8 @@ class Validator
 public:
     Validator();
 
+    virtual ~Validator() = default;
+
     virtual bool validate(const QVariant &value) const = 0;
 
     virtual QString errorMessage() const = 0;
