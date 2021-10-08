@@ -35,6 +35,7 @@ SOURCES += \
         val/MoreThan.cpp \
         val/MoreThanOrEqualTo.cpp \
         val/NotEqualTo.cpp \
+        val/Phone.cpp \
         val/Range.cpp \
         val/Validator.cpp
 
@@ -63,5 +64,6 @@ HEADERS += \
     val/MoreThan.h \
     val/MoreThanOrEqualTo.h \
     val/NotEqualTo.h \
+    val/Phone.h \
     val/Range.h \
     val/Validator.h
