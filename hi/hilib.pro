@@ -26,6 +26,7 @@ SOURCES += \
         Node.cpp \
         Serializer.cpp \
         ex/ValidatorException.cpp \
+        val/AbstractRegex.cpp \
         val/Length.cpp \
         val/LessThan.cpp \
         val/LessThanOrEqualTo.cpp \
@@ -52,6 +53,7 @@ HEADERS += \
     Node.h \
     Serializer.h \
     ex/ValidatorException.h \
+    val/AbstractRegex.h \
     val/Length.h \
     val/LessThan.h \
     val/LessThanOrEqualTo.h \
