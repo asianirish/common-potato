@@ -14,6 +14,9 @@ public:
     bool validate(const QVariant &value) const override;
     QString errorMessage() const override;
 
+    QVariant value() const;
+    void setValue(const QVariant &value);
+
 private:
     QVariant _value;
 };
