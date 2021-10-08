@@ -27,6 +27,7 @@ SOURCES += \
         Serializer.cpp \
         ex/ValidatorException.cpp \
         val/LessThan.cpp \
+        val/LessThanOrEqualTo.cpp \
         val/MoreThan.cpp \
         val/MoreThanOrEqualTo.cpp \
         val/NotEqualTo.cpp \
@@ -49,6 +50,7 @@ HEADERS += \
     Serializer.h \
     ex/ValidatorException.h \
     val/LessThan.h \
+    val/LessThanOrEqualTo.h \
     val/MoreThan.h \
     val/MoreThanOrEqualTo.h \
     val/NotEqualTo.h \
