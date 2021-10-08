@@ -27,6 +27,7 @@ SOURCES += \
         Serializer.cpp \
         ex/ValidatorException.cpp \
         val/AbstractRegex.cpp \
+        val/Email.cpp \
         val/Length.cpp \
         val/LessThan.cpp \
         val/LessThanOrEqualTo.cpp \
@@ -54,6 +55,7 @@ HEADERS += \
     Serializer.h \
     ex/ValidatorException.h \
     val/AbstractRegex.h \
+    val/Email.h \
     val/Length.h \
     val/LessThan.h \
     val/LessThanOrEqualTo.h \
