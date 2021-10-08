@@ -7,6 +7,7 @@
 #include <hi/JsonSerializer.h>
 
 #include <QDebug>
+#include <iostream>
 
 namespace test {
 
@@ -39,12 +40,15 @@ QVariant NewItem::simplyAct(const QVariantList &args)
         result += "USD PRICE: " + QString::number(item->field("usdPrice").toDouble());
 //TEST:        qDebug() << "EU PRICE:" << item->field("euPrice");
 
-/* TEST:
+
         {
             hi::ItemPtr item = hi::ItemPtr(new test::Currency());
-            item->setField("code", "USD");
+            qDebug() << "ENTER A CURRENCY CODE  (try USD to test exception): ";
+            QTextStream qtin(stdin);
+            QString code = qtin.readLine();
+            item->setField("code", code);
         }
-*/
+
 
     }  catch (hi::ex::FieldException &e) {
         qDebug() << "error:" << e.cause();
