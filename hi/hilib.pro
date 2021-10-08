@@ -31,6 +31,7 @@ SOURCES += \
         val/MoreThan.cpp \
         val/MoreThanOrEqualTo.cpp \
         val/NotEqualTo.cpp \
+        val/Range.cpp \
         val/Validator.cpp
 
 # Default rules for deployment.
@@ -54,4 +55,5 @@ HEADERS += \
     val/MoreThan.h \
     val/MoreThanOrEqualTo.h \
     val/NotEqualTo.h \
+    val/Range.h \
     val/Validator.h
