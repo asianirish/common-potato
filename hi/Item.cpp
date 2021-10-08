@@ -3,6 +3,7 @@
 
 #include "ex/InvalidValueException.h"
 #include "ex/NoSuchField.h"
+#include "ex/ValidatorException.h"
 
 namespace hi {
 
@@ -63,7 +64,13 @@ void Item::setField(const QString &name, const QVariant &value)
     }
 
     auto fieldDef = fieldDefs.value(name);
-    //TODO: check constraints
+    auto validators = fieldDef.validators();
+
+    for (auto &validator : validators) {
+        if (!validator->validate(value)) {
+            throw ex::ValidatorException(name, validator->errorMessage());
+        }
+    }
 
     _fields.insert(name, value);
 }
