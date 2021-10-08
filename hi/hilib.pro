@@ -25,6 +25,7 @@ SOURCES += \
         ex/NoSuchField.cpp \
         Node.cpp \
         Serializer.cpp \
+        ex/ValidatorException.cpp \
         val/NotEqualTo.cpp \
         val/Validator.cpp
 
@@ -43,5 +44,6 @@ HEADERS += \
     ex/NoSuchField.h \
     Node.h \
     Serializer.h \
+    ex/ValidatorException.h \
     val/NotEqualTo.h \
     val/Validator.h
