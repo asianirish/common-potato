@@ -28,6 +28,7 @@ SOURCES += \
         ex/ValidatorException.cpp \
         val/LessThan.cpp \
         val/LessThanOrEqualTo.cpp \
+        val/List.cpp \
         val/MoreThan.cpp \
         val/MoreThanOrEqualTo.cpp \
         val/NotEqualTo.cpp \
@@ -52,6 +53,7 @@ HEADERS += \
     ex/ValidatorException.h \
     val/LessThan.h \
     val/LessThanOrEqualTo.h \
+    val/List.h \
     val/MoreThan.h \
     val/MoreThanOrEqualTo.h \
     val/NotEqualTo.h \
