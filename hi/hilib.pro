@@ -26,6 +26,8 @@ SOURCES += \
         Node.cpp \
         Serializer.cpp \
         ex/ValidatorException.cpp \
+        val/MoreThan.cpp \
+        val/MoreThanOrEqualTo.cpp \
         val/NotEqualTo.cpp \
         val/Validator.cpp
 
@@ -45,5 +47,7 @@ HEADERS += \
     Node.h \
     Serializer.h \
     ex/ValidatorException.h \
+    val/MoreThan.h \
+    val/MoreThanOrEqualTo.h \
     val/NotEqualTo.h \
     val/Validator.h
