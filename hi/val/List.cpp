@@ -8,6 +8,11 @@ List::List()
 
 }
 
+List::List(const QVariantList &values) : _values(values)
+{
+
+}
+
 bool List::validate(const QVariant &value) const
 {
     return _values.contains(value);

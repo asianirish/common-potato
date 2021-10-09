@@ -11,6 +11,8 @@ class List : public Validator
 public:
     List();
 
+    List(const QVariantList &values);
+
     bool validate(const QVariant &value) const override;
     QString errorMessage() const override;
 
