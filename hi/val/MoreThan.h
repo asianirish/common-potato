@@ -11,6 +11,8 @@ class MoreThan : public Validator
 public:
     MoreThan();
 
+    MoreThan(int value);
+
     bool validate(const QVariant &value) const override;
     QString errorMessage() const override;
 

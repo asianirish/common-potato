@@ -8,6 +8,11 @@ MoreThan::MoreThan()
 
 }
 
+MoreThan::MoreThan(int value) : _value(value)
+{
+
+}
+
 bool MoreThan::validate(const QVariant &value) const
 {
     return (value > _value);
