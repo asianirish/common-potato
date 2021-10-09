@@ -12,7 +12,7 @@ public:
     explicit Currency(QObject *parent = nullptr);
 
 private:
-    QMap<QString, hi::FieldDef> fieldDefs() const override;
+    QMap<QString, hi::FieldDef> fieldDefsSpecific() const override;
 
 };
 

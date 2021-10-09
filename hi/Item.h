@@ -65,7 +65,12 @@ private:
         Q_UNUSED(mp);
     }
 
-    virtual QMap<QString, FieldDef> fieldDefs() const = 0;
+    QMap<QString, FieldDef> fieldDefs() const {
+        //TODO: insert fieldDefSpecific() (filtered by inheritable) into __fieldDefs
+        return fieldDefsSpecific();
+    }
+
+    virtual QMap<QString, FieldDef> fieldDefsSpecific() const = 0;
 
 signals:
 
