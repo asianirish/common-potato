@@ -2,7 +2,7 @@
 
 namespace hi {
 
-FieldDef::FieldDef()
+FieldDef::FieldDef() : _inheritable(false)
 {
 
 }
@@ -30,6 +30,16 @@ void FieldDef::setValidators(const QList<ValidatorPtr> &validators)
 void FieldDef::addValidator(const ValidatorPtr &vptr)
 {
     _validators.append(vptr);
+}
+
+bool FieldDef::inheritable() const
+{
+    return _inheritable;
+}
+
+void FieldDef::setInheritable(bool inheritable)
+{
+    _inheritable = inheritable;
 }
 
 } // namespace hi

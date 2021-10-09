@@ -22,10 +22,14 @@ public:
     void setValidators(const QList<ValidatorPtr> &validators);
     void addValidator(const ValidatorPtr &vptr);
 
+    bool inheritable() const;
+    void setInheritable(bool inheritable);
+
 private:
     QVariant _defaultValue;
     //TODO: QMetaType _metaType;?
     QList<ValidatorPtr> _validators;
+    bool _inheritable;
 };
 
 } // namespace hi
