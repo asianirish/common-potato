@@ -11,6 +11,10 @@ class NotEqualTo : public Validator
 public:
     NotEqualTo();
 
+    NotEqualTo(int value);
+
+    NotEqualTo(double value);
+
     bool validate(const QVariant &value) const override;
     QString errorMessage() const override;
 

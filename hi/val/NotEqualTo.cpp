@@ -8,6 +8,16 @@ NotEqualTo::NotEqualTo()
 
 }
 
+NotEqualTo::NotEqualTo(int value) : _value(value)
+{
+
+}
+
+NotEqualTo::NotEqualTo(double value) : _value(value)
+{
+
+}
+
 bool NotEqualTo::validate(const QVariant &value) const
 {
     if (value == this->value()) {
