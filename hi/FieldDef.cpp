@@ -32,7 +32,7 @@ void FieldDef::addValidator(const ValidatorPtr &vptr)
     _validators.append(vptr);
 }
 
-bool FieldDef::inheritable() const
+bool FieldDef::isInheritable() const
 {
     return _inheritable;
 }

@@ -22,7 +22,7 @@ public:
     void setValidators(const QList<ValidatorPtr> &validators);
     void addValidator(const ValidatorPtr &vptr);
 
-    bool inheritable() const;
+    bool isInheritable() const;
     void setInheritable(bool inheritable);
 
 private:
