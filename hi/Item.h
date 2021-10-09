@@ -39,8 +39,6 @@ public:
     QString id() const;
     void setId(const QString &id);
 
-    //TODO: ItemDef
-
     QVariantMap toMap() const;
     void fromMap(const QVariantMap &mp);
 
@@ -66,6 +64,7 @@ private:
         Q_UNUSED(mp);
     }
 
+    //TODO: opportunity to "inherit" field defs from the parent class
     virtual QMap<QString, FieldDef> fieldDefs() const = 0;
 
 signals:
