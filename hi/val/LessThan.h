@@ -11,6 +11,8 @@ class LessThan : public Validator
 public:
     LessThan();
 
+    LessThan(int value);
+
     bool validate(const QVariant &value) const override;
     QString errorMessage() const override;
 

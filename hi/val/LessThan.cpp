@@ -8,6 +8,11 @@ LessThan::LessThan()
 
 }
 
+LessThan::LessThan(int value) : _value(value)
+{
+
+}
+
 bool LessThan::validate(const QVariant &value) const
 {
     return (value < _value);
