@@ -13,6 +13,8 @@ public:
 
     LessThanOrEqualTo(int value);
 
+    LessThanOrEqualTo(double value)
+
     bool validate(const QVariant &value) const override;
     QString errorMessage() const override;
 

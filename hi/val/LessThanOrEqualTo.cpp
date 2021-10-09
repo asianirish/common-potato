@@ -13,6 +13,11 @@ LessThanOrEqualTo::LessThanOrEqualTo(int value) : _value(value)
 
 }
 
+LessThanOrEqualTo::LessThanOrEqualTo(double value) : _value(value)
+{
+
+}
+
 bool LessThanOrEqualTo::validate(const QVariant &value) const
 {
     return (value <= _value);
