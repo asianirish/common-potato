@@ -13,6 +13,8 @@ public:
 
     Range(int minValue, int maxValue);
 
+    Range(double minValue, double maxValue);
+
     bool validate(const QVariant &value) const override;
     QString errorMessage() const override;
 
