@@ -8,6 +8,18 @@ Range::Range()
 
 }
 
+Range::Range(int minValue, int maxValue) : _minValue(minValue),
+    _maxValue(maxValue)
+{
+
+}
+
+Range::Range(double minValue, double maxValue) : _minValue(minValue),
+    _maxValue(maxValue)
+{
+
+}
+
 bool Range::validate(const QVariant &value) const
 {
     return (value >= _minValue && value <= _maxValue);

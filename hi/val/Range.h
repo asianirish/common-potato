@@ -11,6 +11,8 @@ class Range : public Validator
 public:
     Range();
 
+    Range(int minValue, int maxValue);
+
     bool validate(const QVariant &value) const override;
     QString errorMessage() const override;
 
