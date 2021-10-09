@@ -11,6 +11,10 @@ class MoreThanOrEqualTo : public Validator
 public:
     MoreThanOrEqualTo();
 
+    MoreThanOrEqualTo(int value);
+
+    MoreThanOrEqualTo(double value);
+
     bool validate(const QVariant &value) const override;
     QString errorMessage() const override;
 

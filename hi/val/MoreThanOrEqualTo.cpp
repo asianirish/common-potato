@@ -8,6 +8,16 @@ MoreThanOrEqualTo::MoreThanOrEqualTo()
 
 }
 
+MoreThanOrEqualTo::MoreThanOrEqualTo(int value) : _value(value)
+{
+
+}
+
+MoreThanOrEqualTo::MoreThanOrEqualTo(double value) : _value(value)
+{
+
+}
+
 bool MoreThanOrEqualTo::validate(const QVariant &value) const
 {
     return (value >= _value);
