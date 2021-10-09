@@ -11,6 +11,8 @@ class Length : public Validator
 public:
     Length();
 
+    Length(int minLenght, int maxLength);
+
     bool validate(const QVariant &value) const override;
     QString errorMessage() const override;
 

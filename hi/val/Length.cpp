@@ -8,6 +8,12 @@ Length::Length()
 
 }
 
+Length::Length(int minLenght, int maxLength) : _minLength(minLenght),
+    _maxLength(maxLength)
+{
+
+}
+
 bool Length::validate(const QVariant &value) const
 {
     int length = value.toString().length();
