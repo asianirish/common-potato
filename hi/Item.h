@@ -55,7 +55,7 @@ private:
     mutable QString _id;
     QVariantMap _fields;
     static util::LazyPointer<uniq::Value<QString>> _idGen;
-    QMap<QString, FieldDef> _fieldDefs;
+    mutable QMap<QString, FieldDef> _fieldDefs;
 
     virtual void nodeToMap(QVariantMap &mp) const {
         Q_UNUSED(mp);
@@ -65,10 +65,10 @@ private:
         Q_UNUSED(mp);
     }
 
-    QMap<QString, FieldDef> fieldDefs() const {
+    QMap<QString, FieldDef> fieldDefs() const;/* {
         //TODO: insert fieldDefSpecific() (filtered by inheritable) into __fieldDefs
         return fieldDefsSpecific();
-    }
+    }*/
 
     virtual QMap<QString, FieldDef> fieldDefsSpecific() const = 0;
 
