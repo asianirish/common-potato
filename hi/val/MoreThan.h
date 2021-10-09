@@ -13,6 +13,8 @@ public:
 
     MoreThan(int value);
 
+    MoreThan(double value);
+
     bool validate(const QVariant &value) const override;
     QString errorMessage() const override;
 
