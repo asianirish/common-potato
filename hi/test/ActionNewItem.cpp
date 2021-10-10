@@ -47,6 +47,8 @@ QVariant ActionNewItem::simplyAct(const QVariantList &args)
             QTextStream qtin(stdin);
             QString code = qtin.readLine();
             item->setField("code", code);
+
+            qDebug() << "YOUR CURRENCY CODE IS" << item.dynamicCast<test::Currency>()->code();
         }
 
 

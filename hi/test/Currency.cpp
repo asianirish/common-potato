@@ -9,6 +9,11 @@ Currency::Currency(QObject *parent) : hi::Item(parent)
 
 }
 
+QString Currency::code() const
+{
+    return field("code").toString();
+}
+
 QMap<QString, hi::FieldDef> Currency::fieldDefsSpecific() const
 {
     hi::FieldDef codeDef;

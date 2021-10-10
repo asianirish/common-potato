@@ -11,6 +11,8 @@ class Currency : public hi::Item
 public:
     explicit Currency(QObject *parent = nullptr);
 
+    virtual QString code() const;
+
 private:
     QMap<QString, hi::FieldDef> fieldDefsSpecific() const override;
 
