@@ -1,4 +1,4 @@
-#include "NewItem.h"
+#include "ActionNewItem.h"
 
 #include "Currency.h"
 
@@ -11,12 +11,12 @@
 
 namespace test {
 
-NewItem::NewItem()
+ActionNewItem::ActionNewItem()
 {
 
 }
 
-QVariant NewItem::simplyAct(const QVariantList &args)
+QVariant ActionNewItem::simplyAct(const QVariantList &args)
 {
     Q_UNUSED(args);
 

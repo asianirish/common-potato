@@ -5,10 +5,10 @@
 
 namespace test {
 
-class NewItem : public menu::SimpleAction
+class ActionNewItem : public menu::SimpleAction
 {
 public:
-    NewItem();
+    ActionNewItem();
 
 protected:
     QVariant simplyAct(const QVariantList &args) override;

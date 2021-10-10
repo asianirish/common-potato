@@ -5,7 +5,7 @@
 #include "test/Currency.h"
 #include "HiClassRegistry.h"
 
-#include "test/NewItem.h"
+#include "test/ActionNewItem.h"
 #include "test/ValidateUser.h"
 
 #include <uniq/UuidValue.h>
@@ -41,7 +41,7 @@ int main(int argc, char *argv[])
     menu::Console console(new HiClassRegistry());
 
     //TODO: add items here
-    console.addMenuItem("newitem", menu::ActionPtr(new test::NewItem()));
+    console.addMenuItem("newitem", menu::ActionPtr(new test::ActionNewItem()));
     console.addMenuItem("validate", menu::ActionPtr(new test::ValidateUser()));
 
     console.run();

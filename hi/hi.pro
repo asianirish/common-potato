@@ -14,8 +14,8 @@ SOURCES += \
         HiClassRegistry.cpp \
         SimpleObject.cpp \
         main.cpp \
+        test/ActionNewItem.cpp \
         test/Currency.cpp \
-        test/NewItem.cpp \
         test/User.cpp \
         test/ValidateUser.cpp
 
@@ -27,7 +27,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 HEADERS += \
     HiClassRegistry.h \
     SimpleObject.h \
+    test/ActionNewItem.h \
     test/Currency.h \
-    test/NewItem.h \
     test/User.h \
     test/ValidateUser.h
