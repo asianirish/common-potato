@@ -6,7 +6,7 @@
 #include "HiClassRegistry.h"
 
 #include "test/ActionNewItem.h"
-#include "test/ValidateUser.h"
+#include "test/ActionValidateUser.h"
 
 #include <uniq/UuidValue.h>
 #include <uniq/CompactUuidValue.h>
@@ -42,7 +42,7 @@ int main(int argc, char *argv[])
 
     //TODO: add items here
     console.addMenuItem("newitem", menu::ActionPtr(new test::ActionNewItem()));
-    console.addMenuItem("validate", menu::ActionPtr(new test::ValidateUser()));
+    console.addMenuItem("validate", menu::ActionPtr(new test::ActionValidateUser()));
 
     console.run();
     QObject::connect(&console, SIGNAL(quit()), &a, SLOT(quit()));

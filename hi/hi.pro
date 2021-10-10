@@ -15,9 +15,9 @@ SOURCES += \
         SimpleObject.cpp \
         main.cpp \
         test/ActionNewItem.cpp \
+        test/ActionValidateUser.cpp \
         test/Currency.cpp \
-        test/User.cpp \
-        test/ValidateUser.cpp
+        test/User.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -28,6 +28,6 @@ HEADERS += \
     HiClassRegistry.h \
     SimpleObject.h \
     test/ActionNewItem.h \
+    test/ActionValidateUser.h \
     test/Currency.h \
-    test/User.h \
-    test/ValidateUser.h
+    test/User.h

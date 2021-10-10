@@ -1,14 +1,14 @@
-#ifndef VALIDATEUSER_H
-#define VALIDATEUSER_H
+#ifndef ACTIONVALIDATEUSER_H
+#define ACTIONVALIDATEUSER_H
 
 #include <menu/SimpleAction.h>
 
 namespace test {
 
-class ValidateUser : public menu::SimpleAction
+class ActionValidateUser : public menu::SimpleAction
 {
 public:
-    ValidateUser();
+    ActionValidateUser();
 
 protected:
     QVariant simplyAct(const QVariantList &args) override;
@@ -22,4 +22,4 @@ private:
 
 } // namespace test
 
-#endif // VALIDATEUSER_H
+#endif // ACTIONVALIDATEUSER_H

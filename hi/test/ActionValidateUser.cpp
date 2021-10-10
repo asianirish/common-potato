@@ -1,4 +1,4 @@
-#include "ValidateUser.h"
+#include "ActionValidateUser.h"
 #include "User.h"
 
 #include "hi/JsonSerializer.h"
@@ -9,12 +9,12 @@
 
 namespace test {
 
-ValidateUser::ValidateUser()
+ActionValidateUser::ActionValidateUser()
 {
 
 }
 
-QVariant ValidateUser::simplyAct(const QVariantList &args)
+QVariant ActionValidateUser::simplyAct(const QVariantList &args)
 {
     Q_UNUSED(args);
 
