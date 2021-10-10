@@ -16,6 +16,7 @@ SOURCES += \
         main.cpp \
         test/ActionNewItem.cpp \
         test/ActionValidateUser.cpp \
+        test/Bitcoin.cpp \
         test/Currency.cpp \
         test/User.cpp
 
@@ -29,5 +30,6 @@ HEADERS += \
     SimpleObject.h \
     test/ActionNewItem.h \
     test/ActionValidateUser.h \
+    test/Bitcoin.h \
     test/Currency.h \
     test/User.h
