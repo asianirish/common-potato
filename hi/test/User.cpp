@@ -36,7 +36,7 @@ QMap<QString, hi::FieldDef> User::fieldDefs() const
     }
     {
         FieldDef def;
-        ValidatorPtr val = ValidatorPtr(new LessThan(36.9));
+        ValidatorPtr val = ValidatorPtr(new LessThan<double>(36.9));
         def.addValidator(val);
         def.setDefaultValue(36.6);
         defMap.insert("temperature", def);
