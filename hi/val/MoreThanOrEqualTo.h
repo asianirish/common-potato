@@ -6,6 +6,7 @@
 namespace hi {
 namespace val {
 
+template <typename T>
 class MoreThanOrEqualTo : public Validator
 {
 public:
@@ -24,6 +25,48 @@ public:
 private:
     QVariant _value;
 };
+
+template <typename T>
+MoreThanOrEqualTo<T>::MoreThanOrEqualTo()
+{
+
+}
+
+template <typename T>
+MoreThanOrEqualTo<T>::MoreThanOrEqualTo(int value) : _value(value)
+{
+
+}
+
+template <typename T>
+MoreThanOrEqualTo<T>::MoreThanOrEqualTo(double value) : _value(value)
+{
+
+}
+
+template <typename T>
+bool MoreThanOrEqualTo<T>::validate(const QVariant &value) const
+{
+    return (value.value<T>() >= _value.value<T>());
+}
+
+template <typename T>
+QString MoreThanOrEqualTo<T>::errorMessage() const
+{
+    return QString("should more than or equal to %1").arg(_value.toString());
+}
+
+template <typename T>
+QVariant MoreThanOrEqualTo<T>::value() const
+{
+    return _value;
+}
+
+template <typename T>
+void MoreThanOrEqualTo<T>::setValue(const QVariant &value)
+{
+    _value = value;
+}
 
 } // namespace val
 } // namespace hi

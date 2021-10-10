@@ -30,7 +30,7 @@ QMap<QString, hi::FieldDef> User::fieldDefs() const
     }
     {
         FieldDef def;
-        ValidatorPtr val = ValidatorPtr(new MoreThanOrEqualTo(18));
+        ValidatorPtr val = ValidatorPtr(new MoreThanOrEqualTo<int>(18));
         def.addValidator(val);
         defMap.insert("age", def);
     }
