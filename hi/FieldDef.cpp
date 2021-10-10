@@ -2,7 +2,7 @@
 
 namespace hi {
 
-FieldDef::FieldDef() : _inheritable(false)
+FieldDef::FieldDef() : _inheritable(true)
 {
 
 }
