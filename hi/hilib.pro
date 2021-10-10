@@ -29,7 +29,6 @@ SOURCES += \
         val/AbstractRegex.cpp \
         val/Email.cpp \
         val/Length.cpp \
-        val/LessThanOrEqualTo.cpp \
         val/List.cpp \
         val/MoreThan.cpp \
         val/MoreThanOrEqualTo.cpp \

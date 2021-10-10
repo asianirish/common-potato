@@ -6,14 +6,13 @@
 namespace hi {
 namespace val {
 
+template <typename T>
 class LessThanOrEqualTo : public Validator
 {
 public:
     LessThanOrEqualTo();
 
-    LessThanOrEqualTo(int value);
-
-    LessThanOrEqualTo(double value);
+    LessThanOrEqualTo(T value);
 
     bool validate(const QVariant &value) const override;
     QString errorMessage() const override;
@@ -24,6 +23,42 @@ public:
 private:
     QVariant _value;
 };
+
+template <typename T>
+LessThanOrEqualTo<T>::LessThanOrEqualTo()
+{
+
+}
+
+template <typename T>
+LessThanOrEqualTo<T>::LessThanOrEqualTo(T value) : _value(value)
+{
+
+}
+
+template <typename T>
+bool LessThanOrEqualTo<T>::validate(const QVariant &value) const
+{
+    return (value.value<T>() <= _value.value<T>());
+}
+
+template <typename T>
+QString LessThanOrEqualTo<T>::errorMessage() const
+{
+    return QString("should less than or equal to %1").arg(_value.toString());
+}
+
+template <typename T>
+QVariant LessThanOrEqualTo<T>::value() const
+{
+    return _value;
+}
+
+template <typename T>
+void LessThanOrEqualTo<T>::setValue(const QVariant &value)
+{
+    _value = value;
+}
 
 } // namespace val
 } // namespace hi
