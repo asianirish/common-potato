@@ -32,7 +32,6 @@ SOURCES += \
         val/List.cpp \
         val/NotEqualTo.cpp \
         val/Phone.cpp \
-        val/Range.cpp \
         val/Validator.cpp
 
 # Default rules for deployment.
