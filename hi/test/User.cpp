@@ -17,7 +17,7 @@ User::User(QObject *parent) : hi::Item(parent)
 
 }
 
-QMap<QString, hi::FieldDef> User::fieldDefs() const
+QMap<QString, hi::FieldDef> User::fieldDefsSpecific() const
 {
     QMap<QString, FieldDef> defMap;
 
