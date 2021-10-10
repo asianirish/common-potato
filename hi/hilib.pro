@@ -30,7 +30,6 @@ SOURCES += \
         val/Email.cpp \
         val/Length.cpp \
         val/List.cpp \
-        val/MoreThan.cpp \
         val/MoreThanOrEqualTo.cpp \
         val/NotEqualTo.cpp \
         val/Phone.cpp \

@@ -6,6 +6,7 @@
 namespace hi {
 namespace val {
 
+template <typename T>
 class MoreThan : public Validator
 {
 public:
@@ -24,6 +25,48 @@ public:
 private:
     QVariant _value;
 };
+
+template <typename T>
+MoreThan<T>::MoreThan()
+{
+
+}
+
+template <typename T>
+MoreThan<T>::MoreThan(int value) : _value(value)
+{
+
+}
+
+template <typename T>
+MoreThan<T>::MoreThan(double value) : _value(value)
+{
+
+}
+
+template <typename T>
+bool MoreThan<T>::validate(const QVariant &value) const
+{
+    return (value.value<T>() > _value.value<T>());
+}
+
+template <typename T>
+QString MoreThan<T>::errorMessage() const
+{
+    return QString("should more than %1").arg(_value.toString());
+}
+
+template <typename T>
+QVariant MoreThan<T>::value() const
+{
+    return _value;
+}
+
+template <typename T>
+void MoreThan<T>::setValue(const QVariant &value)
+{
+    _value = value;
+}
 
 } // namespace val
 } // namespace hi
