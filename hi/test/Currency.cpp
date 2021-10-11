@@ -16,13 +16,13 @@ QString Currency::code() const
 
 QMap<QString, hi::FieldDef> Currency::fieldDefsSpecific() const
 {
-    hi::FieldDef codeDef;
+    hi::FieldDef codeDef(this);
     hi::ValidatorPtr notUsd = hi::ValidatorPtr(new hi::val::NotEqualTo());
     notUsd.dynamicCast<hi::val::NotEqualTo>()->setValue(QString("USD"));
     codeDef.setIsInheritable(false);
     codeDef.addValidator(notUsd);
 
-    hi::FieldDef usdPriceDef;
+    hi::FieldDef usdPriceDef(this);
     usdPriceDef.setDefaultValue(0);
     return {{"code", codeDef}, {"usdPrice", usdPriceDef}};
 }

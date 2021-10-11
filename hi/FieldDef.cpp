@@ -1,10 +1,27 @@
 #include "FieldDef.h"
+#include "Item.h"
 
 namespace hi {
 
-FieldDef::FieldDef() : _isInheritable(true)
+FieldDef::FieldDef() : FieldDef(nullptr)
 {
 
+}
+
+//FieldDef::FieldDef(const FieldDef &fieldDef) :
+//    _defaultValue(fieldDef._defaultValue),
+//    _validators(fieldDef._validators),
+//    _isInheritable(fieldDef._isInheritable),
+//    _itemClassName(fieldDef._itemClassName)
+//{
+
+//}
+
+FieldDef::FieldDef(const Item *item) : _isInheritable(true)
+{
+    if (item) {
+        _itemClassName = item->className();
+    }
 }
 
 QVariant FieldDef::defaultValue() const
@@ -40,6 +57,11 @@ bool FieldDef::isInheritable() const
 void FieldDef::setIsInheritable(bool inheritable)
 {
     _isInheritable = inheritable;
+}
+
+QString FieldDef::itemClassName() const
+{
+    return _itemClassName;
 }
 
 } // namespace hi

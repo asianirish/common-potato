@@ -10,10 +10,16 @@ namespace hi {
 
 typedef QSharedPointer<val::Validator> ValidatorPtr;
 
+class Item;
+
 class FieldDef
 {
 public:
     FieldDef();
+
+//    FieldDef(const FieldDef &fieldDef);
+
+    FieldDef(const Item *item);
 
     QVariant defaultValue() const;
     void setDefaultValue(const QVariant &defaultValue);
@@ -25,11 +31,14 @@ public:
     bool isInheritable() const;
     void setIsInheritable(bool inheritable);
 
+    QString itemClassName() const;
+
 private:
     QVariant _defaultValue;
     //TODO: QMetaType _metaType;?
     QList<ValidatorPtr> _validators;
     bool _isInheritable;
+    QString _itemClassName;
 };
 
 } // namespace hi

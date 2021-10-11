@@ -5,6 +5,8 @@
 #include "ex/NoSuchField.h"
 #include "ex/ValidatorException.h"
 
+#include <QDebug>
+
 namespace hi {
 
 const QString Item::DEFAULT_ID_GEN_CLASS_NAME("uniq::TimeQStringValue");
@@ -64,6 +66,7 @@ void Item::setField(const QString &name, const QVariant &value)
     }
 
     auto fieldDef = fieldDefs.value(name);
+    qDebug() << "FIELD ITEM_CLASS_NAME:" << fieldDef.itemClassName();
     auto validators = fieldDef.validators();
 
     for (auto &validator : validators) {
