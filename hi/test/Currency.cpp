@@ -19,6 +19,7 @@ QMap<QString, hi::FieldDef> Currency::fieldDefsSpecific() const
     hi::FieldDef codeDef;
     hi::ValidatorPtr notUsd = hi::ValidatorPtr(new hi::val::NotEqualTo());
     notUsd.dynamicCast<hi::val::NotEqualTo>()->setValue(QString("USD"));
+    codeDef.setInheritable(false);
     codeDef.addValidator(notUsd);
 
     hi::FieldDef usdPriceDef;
