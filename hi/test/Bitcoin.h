@@ -7,6 +7,7 @@ namespace test {
 
 class Bitcoin : public test::Currency
 {
+    Q_OBJECT
 public:
     Bitcoin();
 
