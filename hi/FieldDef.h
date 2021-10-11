@@ -23,7 +23,7 @@ public:
     void addValidator(const ValidatorPtr &vptr);
 
     bool isInheritable() const;
-    void setInheritable(bool inheritable);
+    void setIsInheritable(bool inheritable);
 
 private:
     QVariant _defaultValue;

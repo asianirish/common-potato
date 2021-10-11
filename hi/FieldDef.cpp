@@ -37,7 +37,7 @@ bool FieldDef::isInheritable() const
     return _isInheritable;
 }
 
-void FieldDef::setInheritable(bool inheritable)
+void FieldDef::setIsInheritable(bool inheritable)
 {
     _isInheritable = inheritable;
 }
