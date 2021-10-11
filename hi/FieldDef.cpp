@@ -2,7 +2,7 @@
 
 namespace hi {
 
-FieldDef::FieldDef() : _inheritable(true)
+FieldDef::FieldDef() : _isInheritable(true)
 {
 
 }
@@ -34,12 +34,12 @@ void FieldDef::addValidator(const ValidatorPtr &vptr)
 
 bool FieldDef::isInheritable() const
 {
-    return _inheritable;
+    return _isInheritable;
 }
 
 void FieldDef::setInheritable(bool inheritable)
 {
-    _inheritable = inheritable;
+    _isInheritable = inheritable;
 }
 
 } // namespace hi

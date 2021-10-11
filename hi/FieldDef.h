@@ -29,7 +29,7 @@ private:
     QVariant _defaultValue;
     //TODO: QMetaType _metaType;?
     QList<ValidatorPtr> _validators;
-    bool _inheritable;
+    bool _isInheritable;
 };
 
 } // namespace hi
