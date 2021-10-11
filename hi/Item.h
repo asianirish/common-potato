@@ -51,6 +51,11 @@ public:
 
     ItemPtr cloneItem() const;
 
+protected:
+
+    //can be called from child classes like Parent::inheritedFieldDefs (unlike fieldDefsSpecific)
+    QMap<QString, FieldDef> inheritedFieldDefs() const;
+
 private:
     mutable QString _id;
     QVariantMap _fields;

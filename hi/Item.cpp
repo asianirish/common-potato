@@ -98,6 +98,29 @@ ItemPtr Item::cloneItem() const
     return newItem(this->toMap());
 }
 
+QMap<QString, FieldDef> Item::inheritedFieldDefs() const
+{
+    auto tmpMap = fieldDefsSpecific();
+    QMap<QString, FieldDef> mp;
+    auto keys = tmpMap.keys();
+
+    for (auto &key : keys) {
+        FieldDef fieldDef = tmpMap.value(key);
+        QString itemClassName = fieldDef.itemClassName();
+
+        if (this->className() != itemClassName) {
+            if (fieldDef.isInheritable()) {
+                mp.insert(key, fieldDef);
+            }
+        } else {
+            mp.insert(key, fieldDef);
+        }
+    }
+
+    return mp;
+
+}
+
 QMap<QString, FieldDef> Item::fieldDefs() const
 {
     QStringList keys = _fieldDefs.keys();
