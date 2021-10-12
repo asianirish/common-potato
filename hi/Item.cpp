@@ -109,16 +109,13 @@ QMap<QString, FieldDef> Item::fieldDefs() const
         QString itemClassName = fieldDef.itemClassName();
 
         if (!itemClassName.isEmpty()) {
-            if (this->className() != itemClassName) {
+            if (this->className() == itemClassName) {
                 newFieldDefs.insert(key, fieldDef);
             }
         } else {
             newFieldDefs.insert(key, fieldDef);
         }
     }
-
-    //from QT 5.15
-    newFieldDefs.insert(myFieldDefs);
 
     return newFieldDefs;
 }
