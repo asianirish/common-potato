@@ -41,16 +41,16 @@ QVariant ActionNewItem::simplyAct(const QVariantList &args)
 ////TEST:        qDebug() << "EU PRICE:" << item->field("euPrice");
 
 
-//        {
-//            hi::ItemPtr item = hi::ItemPtr(new test::Currency());
-//            qDebug() << "ENTER A CURRENCY CODE  (try USD to test exception): ";
-//            QTextStream qtin(stdin);
-//            QString code = qtin.readLine();
-//            item->setField("code", code);
+        {
+            hi::ItemPtr item = hi::ItemPtr(new test::Currency());
+            qDebug() << "ENTER A CURRENCY CODE  (try USD to test exception): ";
+            QTextStream qtin(stdin);
+            QString code = qtin.readLine();
+            item->setField("code", code);
 
-//            result += "YOUR CURRENCY CODE IS " + item.dynamicCast<test::Currency>()->code() + "\n";
-//            result += "YOUR ITEM TO MAP: " + srl->serialize(item) + "\n";
-//        }
+            result += "YOUR CURRENCY CODE IS " + item.dynamicCast<test::Currency>()->code() + "\n";
+            result += "YOUR ITEM TO MAP: " + srl->serialize(item) + "\n";
+        }
 
         {
             hi::ItemPtr btc = hi::ItemPtr(new test::Bitcoin());
