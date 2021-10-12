@@ -28,16 +28,12 @@ public:
     void setValidators(const QList<ValidatorPtr> &validators);
     void addValidator(const ValidatorPtr &vptr);
 
-    bool isInheritable() const;
-    void setIsInheritable(bool inheritable);
-
     QString itemClassName() const;
 
 private:
     QVariant _defaultValue;
     //TODO: QMetaType _metaType;?
     QList<ValidatorPtr> _validators;
-    bool _isInheritable;
     QString _itemClassName;
 };
 

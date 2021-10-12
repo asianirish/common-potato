@@ -17,8 +17,7 @@ FieldDef::FieldDef() : FieldDef(QString())
 
 //}
 
-FieldDef::FieldDef(const QString &itemClassName) : _isInheritable(true),
-    _itemClassName(itemClassName)
+FieldDef::FieldDef(const QString &itemClassName) : _itemClassName(itemClassName)
 {
 
 }
@@ -46,16 +45,6 @@ void FieldDef::setValidators(const QList<ValidatorPtr> &validators)
 void FieldDef::addValidator(const ValidatorPtr &vptr)
 {
     _validators.append(vptr);
-}
-
-bool FieldDef::isInheritable() const
-{
-    return _isInheritable;
-}
-
-void FieldDef::setIsInheritable(bool inheritable)
-{
-    _isInheritable = inheritable;
 }
 
 QString FieldDef::itemClassName() const

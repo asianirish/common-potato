@@ -16,10 +16,9 @@ QString Currency::code() const
 
 QMap<QString, hi::FieldDef> Currency::fieldDefsSpecific() const
 {
-    hi::FieldDef codeDef("test::Currency"); //TODO: does the presence of className mean that the field is not inheritable?
+    hi::FieldDef codeDef("test::Currency"); //the presence of className means that the field is not inheritable
     hi::ValidatorPtr notUsd = hi::ValidatorPtr(new hi::val::NotEqualTo());
     notUsd.dynamicCast<hi::val::NotEqualTo>()->setValue(QString("USD"));
-    codeDef.setIsInheritable(false);
     codeDef.addValidator(notUsd);
 
     hi::FieldDef usdPriceDef;
