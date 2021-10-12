@@ -15,7 +15,7 @@ QString Bitcoin::code() const
 QMap<QString, hi::FieldDef> Bitcoin::fieldDefsSpecific() const
 {
     QMap<QString, hi::FieldDef> myFieldDefs;
-    QMap<QString, hi::FieldDef> parentFieldDefs = inheritedFieldDefs(); //ERROR: recursion
+    QMap<QString, hi::FieldDef> parentFieldDefs = Currency::fieldDefsSpecific();
 
     //from QT 5.15
     myFieldDefs.insert(parentFieldDefs);
