@@ -22,7 +22,7 @@ QMap<QString, hi::FieldDef> Currency::fieldDefsSpecific() const
     codeDef.setIsInheritable(false);
     codeDef.addValidator(notUsd);
 
-    hi::FieldDef usdPriceDef("test::Currency");
+    hi::FieldDef usdPriceDef;
     usdPriceDef.setDefaultValue(0);
     return {{"code", codeDef}, {"usdPrice", usdPriceDef}};
 }
