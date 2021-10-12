@@ -108,7 +108,7 @@ QMap<QString, FieldDef> Item::inheritedFieldDefs() const
         FieldDef fieldDef = tmpMap.value(key);
         QString itemClassName = fieldDef.itemClassName();
 
-        if (this->className() != itemClassName) {
+        if (!itemClassName.isEmpty() && this->className() != itemClassName) {
             if (fieldDef.isInheritable()) {
                 mp.insert(key, fieldDef);
             }
