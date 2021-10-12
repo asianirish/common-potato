@@ -54,8 +54,10 @@ QVariant ActionNewItem::simplyAct(const QVariantList &args)
 
         {
             hi::ItemPtr btc = hi::ItemPtr(new test::Bitcoin());
+            qDebug() << "BTC CLASS NAMA:" << btc->className();
             btc->setField("usdPrice", 55100);
-            btc->setField("code", QString("BTC"));
+//            btc->setField("code", QString("BTC"));
+            btc->setField("specialBitcoinValue", 1337);
             result += "BTC ITEM TO MAP: " + srl->serialize(btc) + "\n";
         }
 
