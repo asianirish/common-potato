@@ -98,29 +98,6 @@ ItemPtr Item::cloneItem() const
     return newItem(this->toMap());
 }
 
-QMap<QString, FieldDef> Item::inheritedFieldDefs() const
-{
-    auto tmpMap = fieldDefsSpecific(); //ERROR: implies recursion
-    QMap<QString, FieldDef> mp;
-    auto keys = tmpMap.keys();
-
-    for (auto &key : keys) {
-        FieldDef fieldDef = tmpMap.value(key);
-        QString itemClassName = fieldDef.itemClassName();
-
-        if (!itemClassName.isEmpty() && this->className() != itemClassName) {
-            if (fieldDef.isInheritable()) {
-                mp.insert(key, fieldDef);
-            }
-        } else {
-            mp.insert(key, fieldDef);
-        }
-    }
-
-    return mp;
-
-}
-
 QMap<QString, FieldDef> Item::fieldDefs() const
 {
     QMap<QString, FieldDef> newFieldDefs;
