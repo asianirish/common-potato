@@ -53,8 +53,10 @@ public:
 
 protected:
 
+    virtual QMap<QString, FieldDef> fieldDefsSpecific() const = 0;
+
     //can be called from child classes like Parent::inheritedFieldDefs (unlike fieldDefsSpecific)
-    QMap<QString, FieldDef> inheritedFieldDefs() const;
+    [[deprecated]] QMap<QString, FieldDef> inheritedFieldDefs() const;
 
 private:
     mutable QString _id;
@@ -73,8 +75,6 @@ private:
         //TODO: insert fieldDefSpecific() (filtered by inheritable) into __fieldDefs
         return fieldDefsSpecific();
     }*/
-
-    virtual QMap<QString, FieldDef> fieldDefsSpecific() const = 0;
 
 signals:
 

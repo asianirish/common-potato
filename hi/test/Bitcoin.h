@@ -13,7 +13,7 @@ public:
 
     QString code() const override;
 
-private:
+protected:
     QMap<QString, hi::FieldDef> fieldDefsSpecific() const override;
 };
 
