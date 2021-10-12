@@ -123,22 +123,13 @@ QMap<QString, FieldDef> Item::inheritedFieldDefs() const
 
 QMap<QString, FieldDef> Item::fieldDefs() const
 {
-    QStringList keys = _fieldDefs.keys();
     QMap<QString, FieldDef> newFieldDefs;
-
-    for (auto &key : keys) {
-        auto fd = _fieldDefs.value(key);
-        if (fd.isInheritable()) {
-            newFieldDefs.insert(key, fd);
-        }
-    }
-    QMap<QString, FieldDef> myFieldDefs = fieldDefsSpecific();
+    QMap<QString, FieldDef> myFieldDefs = inheritedFieldDefs();
 
     //from QT 5.15
     newFieldDefs.insert(myFieldDefs);
 
-    _fieldDefs = newFieldDefs;
-    return _fieldDefs;
+    return newFieldDefs;
 }
 
 QString Item::id() const
