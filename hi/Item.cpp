@@ -124,7 +124,21 @@ QMap<QString, FieldDef> Item::inheritedFieldDefs() const
 QMap<QString, FieldDef> Item::fieldDefs() const
 {
     QMap<QString, FieldDef> newFieldDefs;
-    QMap<QString, FieldDef> myFieldDefs = inheritedFieldDefs();
+    QMap<QString, FieldDef> myFieldDefs = fieldDefsSpecific();
+    auto keys = myFieldDefs.keys();
+
+    for (auto &key : keys) {
+        FieldDef fieldDef = myFieldDefs.value(key);
+        QString itemClassName = fieldDef.itemClassName();
+
+        if (!itemClassName.isEmpty()) {
+            if (this->className() != itemClassName) {
+                newFieldDefs.insert(key, fieldDef);
+            }
+        } else {
+            newFieldDefs.insert(key, fieldDef);
+        }
+    }
 
     //from QT 5.15
     newFieldDefs.insert(myFieldDefs);
