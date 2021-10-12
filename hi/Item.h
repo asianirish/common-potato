@@ -60,7 +60,6 @@ private:
     mutable QString _id;
     QVariantMap _fields;
     static util::LazyPointer<uniq::Value<QString>> _idGen;
-    [[deprecated]] mutable QMap<QString, FieldDef> _fieldDefs;
 
     virtual void nodeToMap(QVariantMap &mp) const {
         Q_UNUSED(mp);
