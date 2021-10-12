@@ -12,6 +12,9 @@ public:
     Bitcoin();
 
     QString code() const override;
+
+private:
+    QMap<QString, hi::FieldDef> fieldDefsSpecific() const override;
 };
 
 } // namespace test

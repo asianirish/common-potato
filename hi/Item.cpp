@@ -100,7 +100,7 @@ ItemPtr Item::cloneItem() const
 
 QMap<QString, FieldDef> Item::inheritedFieldDefs() const
 {
-    auto tmpMap = fieldDefsSpecific();
+    auto tmpMap = fieldDefsSpecific(); //ERROR: implies recursion
     QMap<QString, FieldDef> mp;
     auto keys = tmpMap.keys();
 
