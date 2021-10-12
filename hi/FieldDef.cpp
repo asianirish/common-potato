@@ -3,7 +3,7 @@
 
 namespace hi {
 
-FieldDef::FieldDef() : FieldDef(nullptr)
+FieldDef::FieldDef() : FieldDef(QString())
 {
 
 }
@@ -17,11 +17,10 @@ FieldDef::FieldDef() : FieldDef(nullptr)
 
 //}
 
-FieldDef::FieldDef(const Item *item) : _isInheritable(true)
+FieldDef::FieldDef(const QString &itemClassName) : _isInheritable(true),
+    _itemClassName(itemClassName)
 {
-    if (item) {
-        _itemClassName = item->className();
-    }
+
 }
 
 QVariant FieldDef::defaultValue() const

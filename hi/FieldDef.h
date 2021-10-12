@@ -19,7 +19,7 @@ public:
 
 //    FieldDef(const FieldDef &fieldDef);
 
-    FieldDef(const Item *item);
+    FieldDef(const QString &itemClassName);
 
     QVariant defaultValue() const;
     void setDefaultValue(const QVariant &defaultValue);
