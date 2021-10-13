@@ -17,7 +17,8 @@ const QString Item::FIELDS_KEY("fields");
 
 util::LazyPointer<uniq::Value<QString>> Item::_idGen(Item::DEFAULT_ID_GEN_CLASS_NAME);
 
-Item::Item(QObject *parent) : QObject(parent)
+Item::Item(QObject *parent) : QObject(parent),
+    _parentNode(nullptr)
 {
 
 }
@@ -96,6 +97,16 @@ NodePtr Item::newNode(const QVariantMap &mp)
 ItemPtr Item::cloneItem() const
 {
     return newItem(this->toMap());
+}
+
+Node *Item::parentNode() const
+{
+    return _parentNode;
+}
+
+void Item::setParentNode(Node *parentNode)
+{
+    _parentNode = parentNode;
 }
 
 QMap<QString, FieldDef> Item::fieldDefs() const

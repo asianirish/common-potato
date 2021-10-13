@@ -51,6 +51,9 @@ public:
 
     ItemPtr cloneItem() const;
 
+    Node *parentNode() const;
+    void setParentNode(Node *parentNode);
+
 protected:
 
     virtual QMap<QString, FieldDef> fieldDefsSpecific() const = 0;
@@ -59,6 +62,7 @@ private:
     mutable QString _id;
     QVariantMap _fields;
     static util::LazyPointer<uniq::Value<QString>> _idGen;
+    Node *_parentNode; //parent Node is not necessary QObject parent
 
     virtual void nodeToMap(QVariantMap &mp) const {
         Q_UNUSED(mp);
