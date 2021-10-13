@@ -20,6 +20,8 @@ Item *Node::child(const QString &id) const
 
 void Node::addChild(Item *item)
 {
+    //TODO: check if child compatible
+
     auto itemId = item->id();
     _children.insert(itemId, {itemId, item});
 /* TODO:
