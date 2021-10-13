@@ -11,7 +11,12 @@ class Node : public Item
 public:
     explicit Node(QObject *parent = nullptr);
 
+    Item *child(const QString &id) const;
+
+    void addChild(Item *item);
+
 private:
+    QMap<QString, Item *> _children;
 
     void nodeToMap(QVariantMap &mp) const final;
 
