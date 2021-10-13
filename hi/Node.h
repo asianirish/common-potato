@@ -2,6 +2,7 @@
 #define HI_NODE_H
 
 #include "Item.h"
+#include "ItemRef.h"
 
 namespace hi {
 
@@ -16,7 +17,7 @@ public:
     void addChild(Item *item);
 
 private:
-    QMap<QString, Item *> _children;
+    QMap<QString, ItemRef> _children;
 
     void nodeToMap(QVariantMap &mp) const final;
 

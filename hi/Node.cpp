@@ -9,18 +9,23 @@ Node::Node(QObject *parent) : Item(parent)
 
 Item *Node::child(const QString &id) const
 {
-    return _children.value(id, nullptr);
+    ItemRef itemRef = _children.value(id, ItemRef(id));
+
+    if (itemRef.item()) {
+        return itemRef.item();
+    }
+
+    return nullptr; //TODO: else return fromRoot(id);
 }
 
 void Node::addChild(Item *item)
 {
     auto itemId = item->id();
-    _children.insert(itemId, item);
+    _children.insert(itemId, {itemId, item});
 /* TODO:
-    if (!isInHierarchy(itemId)) {
-        item->setParent(this);
-    }
+    addToRoot(item);
     */
+
 }
 
 void Node::nodeToMap(QVariantMap &mp) const
