@@ -30,7 +30,7 @@ public:
 
     explicit Item(QObject *parent = nullptr);
 
-    Node *parentNode() const;
+    Node *rootNode() const;
 
     QString className() const;
 

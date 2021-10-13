@@ -22,7 +22,7 @@ Item::Item(QObject *parent) : QObject(parent)
 
 }
 
-Node *Item::parentNode() const
+Node *Item::rootNode() const
 {
     return qobject_cast<Node *>(parent());
 }
