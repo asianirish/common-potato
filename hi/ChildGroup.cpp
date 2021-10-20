@@ -23,6 +23,13 @@ void ChildGroup::setOwner(const Node *owner)
     _owner = owner;
 }
 
+bool ChildGroup::containsChild(const QString &id) const
+{
+    Q_UNUSED(id);
+    //TODO: implement depending on where to hold children
+    return false;
+}
+
 QMap<QString, Item *> ChildGroup::children() const
 {
     //TODO: implement depending on where to hold children

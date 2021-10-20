@@ -19,6 +19,8 @@ public:
     const Node *owner() const;
     void setOwner(const Node *owner);
 
+    bool containsChild(const QString &id) const;
+
     Item *child(const QString &id) const;
 
     void addChild(Item *child);
