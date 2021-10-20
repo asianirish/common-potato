@@ -21,16 +21,16 @@ public:
 
     void addChild(Item *child, const QString &childGroup = DEFAULT_CHILD_GROUP_NAME);
 
-    QMap<QString, ChildGroup> childGroups() const;
+    QMap<QString, ChildGroupPtr> childGroups() const;
 
 protected:
-    ChildGroup defaultChildGroup() const;
+    ChildGroupPtr defaultChildGroup() const;
 
-    virtual QMap<QString, ChildGroup> createChildGroups() const;
+    virtual QMap<QString, ChildGroupPtr> createChildGroups() const;
 
 private:
     [[deprecated]] QMap<QString, ItemRef> _children;
-    mutable QMap<QString, ChildGroup> _childGroups;
+    mutable QMap<QString, ChildGroupPtr> _childGroups;
 
     void nodeToMap(QVariantMap &mp) const final;
 

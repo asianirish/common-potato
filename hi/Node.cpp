@@ -16,8 +16,8 @@ Item *Node::child(const QString &id, const QString &childGroup) const
         return nullptr;
     }
 
-    ChildGroup cg = _childGroups.value(childGroup);
-    auto children = cg.children();
+    auto cg = _childGroups.value(childGroup);
+    auto children = cg->children();
 
     if (!children.contains(id)) {
         //TODO: throw NoSuchAChild
@@ -36,7 +36,7 @@ void Node::addChild(Item *item, const QString &childGroup)
         return;
     }
 
-    ChildGroup cg = _childGroups.value(childGroup);
+    auto cg = _childGroups.value(childGroup);
 
     //TODO: check if child compatible
 
@@ -48,7 +48,7 @@ void Node::addChild(Item *item, const QString &childGroup)
 
 }
 
-QMap<QString, ChildGroup> Node::childGroups() const
+QMap<QString, ChildGroupPtr> Node::childGroups() const
 {
     if (_childGroups.isEmpty()) {
         _childGroups = createChildGroups();
@@ -57,16 +57,16 @@ QMap<QString, ChildGroup> Node::childGroups() const
     return _childGroups;
 }
 
-ChildGroup Node::defaultChildGroup() const
+ChildGroupPtr Node::defaultChildGroup() const
 {
-    ChildGroup cg(this);
-    cg.setChildItemClass(Item::staticMetaObject.className()); //hi::Item
+    auto cg = ChildGroupPtr::create(this);
+    cg->setChildItemClass(Item::staticMetaObject.className()); //hi::Item
     return cg;
 }
 
-QMap<QString, ChildGroup> Node::createChildGroups() const
+QMap<QString, ChildGroupPtr> Node::createChildGroups() const
 {
-    return QMap<QString, ChildGroup>{{Node::DEFAULT_CHILD_GROUP_NAME, defaultChildGroup()}};
+    return QMap<QString, ChildGroupPtr>{{Node::DEFAULT_CHILD_GROUP_NAME, defaultChildGroup()}};
 }
 
 void Node::nodeToMap(QVariantMap &mp) const
