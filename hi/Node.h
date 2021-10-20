@@ -29,7 +29,6 @@ protected:
     virtual QMap<QString, ChildGroupPtr> createChildGroups() const;
 
 private:
-    [[deprecated]] QMap<QString, ItemRef> _children;
     mutable QMap<QString, ChildGroupPtr> _childGroups;
 
     void nodeToMap(QVariantMap &mp) const final;
