@@ -23,17 +23,17 @@ void ChildGroup::setOwner(const Node *owner)
     _owner = owner;
 }
 
+QMap<QString, Item *> ChildGroup::children() const
+{
+    //TODO: implement depending on where to hold children
+    return {};
+}
+
 Item *ChildGroup::child(const QString &id) const
 {
     //TODO: implement
     Q_UNUSED(id);
     return nullptr;
-}
-
-QMap<QString, Item *> ChildGroup::children() const
-{
-    //TODO: implement
-    return {};
 }
 
 void ChildGroup::addChild(Item *child)

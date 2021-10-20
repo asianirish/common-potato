@@ -21,8 +21,6 @@ public:
 
     Item *child(const QString &id) const;
 
-    QMap<QString, Item *> children() const;
-
     void addChild(Item *child);
 
     QString childItemClass() const;
@@ -31,6 +29,8 @@ public:
 private:
     const Node *_owner;
     QString _childItemClass; //allowable child item class name (including inherited classes)
+
+    QMap<QString, Item *> children() const;
 };
 
 } // namespace hi
