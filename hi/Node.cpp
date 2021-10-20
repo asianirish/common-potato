@@ -40,8 +40,7 @@ void Node::addChild(Item *item, const QString &childGroup)
 
     //TODO: check if child compatible
 
-    auto itemId = item->id();
-    _children.insert(itemId, {itemId, item});
+    cg->addChild(item);
 /* TODO:
     addToRoot(item);
     */
