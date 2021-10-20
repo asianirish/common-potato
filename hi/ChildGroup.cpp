@@ -1,5 +1,5 @@
 #include "ChildGroup.h"
-#
+#include "Item.h"
 
 namespace hi {
 
@@ -58,6 +58,17 @@ QString ChildGroup::childItemClass() const
 void ChildGroup::setChildItemClass(const QString &childItemClass)
 {
     _childItemClass = childItemClass;
+}
+
+QVariantMap ChildGroup::toMap() const
+{
+    QVariantMap mp;
+
+    foreach (Item *item, children()) {
+        mp.insert(item->id(), item->toMap());
+    }
+
+    return mp;
 }
 
 } // namespace hi

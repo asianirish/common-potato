@@ -2,7 +2,7 @@
 #define HI_CHILDGROUP_H
 
 #include <QString>
-#include <QMap>
+#include <QVariantMap>
 
 namespace hi {
 
@@ -27,6 +27,8 @@ public:
 
     QString childItemClass() const;
     void setChildItemClass(const QString &childItemClass);
+
+    QVariantMap toMap() const;
 
 private:
     const Node *_owner;
