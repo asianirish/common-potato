@@ -7,6 +7,8 @@
 
 namespace hi {
 
+typedef QSharedPointer<ChildGroup> ChildGroupPtr;
+
 class Node : public Item
 {
     Q_OBJECT
