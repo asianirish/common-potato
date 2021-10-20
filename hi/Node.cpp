@@ -17,16 +17,13 @@ Item *Node::child(const QString &id, const QString &childGroup) const
     }
 
     auto cg = _childGroups.value(childGroup);
-    auto children = cg->children();
 
-    if (!children.contains(id)) {
+    if (!cg->containsChild(id)) {
         //TODO: throw NoSuchAChild
         return nullptr;
     }
 
-
-    //TODO: implement
-    return nullptr;
+    return cg->child(id);
 }
 
 void Node::addChild(Item *item, const QString &childGroup)
