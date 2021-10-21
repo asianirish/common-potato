@@ -24,6 +24,8 @@ public:
     QString id() const;
     void setId(const QString &id);
 
+    static void setIdGenClassName(const QString &className);
+
 private:
     mutable QString _id;
     QVariantMap _properties;

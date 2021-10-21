@@ -26,4 +26,13 @@ void Item::setId(const QString &id)
     }
 }
 
+void Item::setIdGenClassName(const QString &className)
+{
+    if (_idGen) {
+        return;  //do not set if it already exists (ptr set)
+    }
+
+    _idGen.setClassName(className);
+}
+
 } // namespace hierhin
