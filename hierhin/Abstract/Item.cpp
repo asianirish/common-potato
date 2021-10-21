@@ -3,10 +3,11 @@
 namespace hierhin {
 
 const QString Item::DEFAULT_ID_GEN_CLASS_NAME("uniq::TimeQStringValue");
+const QString Item::DEFAULT_ESSENCE_CLASS_NAME("hierhin::SimpleEssence");
 
 util::LazyPointer<uniq::Value<QString>> Item::_idGen(Item::DEFAULT_ID_GEN_CLASS_NAME);
 
-Item::Item()
+Item::Item() : _essence(DEFAULT_ESSENCE_CLASS_NAME)
 {
 
 }
@@ -33,6 +34,20 @@ void Item::setIdGenClassName(const QString &className)
     }
 
     _idGen.setClassName(className);
+}
+
+void Item::setEssenceClassName(const QString &className)
+{
+    if (_essence) {
+        return; //do not set if it already exists
+    }
+
+    _essence.setClassName(className);
+}
+
+EssencePtr Item::essencePtr() const
+{
+    return _essence.ptr();
 }
 
 } // namespace hierhin

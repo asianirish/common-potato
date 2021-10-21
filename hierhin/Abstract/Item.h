@@ -14,10 +14,13 @@ namespace hierhin {
 
 class Essence;
 
+typedef QSharedPointer<Essence> EssencePtr;
+
 class Item
 {
 public:
     static const QString DEFAULT_ID_GEN_CLASS_NAME;
+    static const QString DEFAULT_ESSENCE_CLASS_NAME;
 
     Item();
 
@@ -26,11 +29,15 @@ public:
 
     static void setIdGenClassName(const QString &className);
 
+    void setEssenceClassName(const QString &className);
+
+    EssencePtr essencePtr() const;
+
 private:
     mutable QString _id;
     QVariantMap _properties;
     static util::LazyPointer<uniq::Value<QString>> _idGen;
-//TODO:    LazyPointer<Essence> _essence;
+    LazyPointer<Essence> _essence;
 };
 
 } // namespace hierhin
