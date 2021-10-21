@@ -5,4 +5,5 @@ SUBDIRS += \
     uniq/uniqlib.pro \
     menu/menulib.pro \
     hi/hilib.pro \
-    hi
+    hierhin/hierhin.pro \
+    hierhin/hierhinlib.pro
