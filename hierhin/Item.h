@@ -55,6 +55,8 @@ public:
         return false;
     }
 
+    static ItemPtr create(QVariantMap &mp, NODE_IMPL nodeImpl); //TODO: default value for nodeImpl (?)
+
 private:
     mutable QString _id;
     QVariantMap _properties;

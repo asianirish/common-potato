@@ -68,6 +68,22 @@ QVariantMap Item::toMap() const
     return mp;
 }
 
+ItemPtr Item::create(QVariantMap &mp, Item::NODE_IMPL nodeImpl)
+{
+    auto isNodeVar = mp.value(IS_NODE_KEY);
+    ItemPtr itemPtr;
+
+    if (isNodeVar.toBool()) {
+        itemPtr = create(nodeImpl); //TODO: err
+    } else {
+        itemPtr = ItemPtr::create();
+    }
+
+//TODO:    itemPtr->fromMap();
+
+    return itemPtr;
+}
+
 NodePtr Item::create(Item::NODE_IMPL nodeImpl)
 {
     //TODO: implement
