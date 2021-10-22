@@ -1,6 +1,6 @@
 #include "TestItem.h"
 
-#include <hierhin/Abstract/Item.h>
+#include <hierhin/Item.h>
 
 #include <QDebug>
 

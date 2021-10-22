@@ -23,11 +23,11 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
-    Abstract/Essence.h \
-    Abstract/Item.h
+    Essence.h \
+    Item.h
 
 SOURCES += \
-    Abstract/Essence.cpp \
-    Abstract/Item.cpp
+    Essence.cpp \
+    Item.cpp
 
 
