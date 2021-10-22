@@ -15,6 +15,8 @@ public:
 
     explicit Essence(Item *item, QObject *parent = nullptr);
 
+    virtual ~Essence() = default;
+
     Item *item() const;
     void setItem(Item *item);
 
