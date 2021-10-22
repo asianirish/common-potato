@@ -23,6 +23,7 @@ public:
     static const QString DEFAULT_ESSENCE_CLASS_NAME;
     static const QString ID_KEY;
     static const QString ESSENCE_CLASS_KEY;
+    static const QString PROPERTIES_KEY;
 
     Item();
 
