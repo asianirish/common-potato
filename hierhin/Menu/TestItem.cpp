@@ -15,8 +15,8 @@ QVariant TestItem::simplyAct(const QVariantList &args)
 {
     Q_UNUSED(args);
     Item::setIdGenClassName("uniq::UuidValue");
-//    Item item;
+    Item item;
 
-    QString value;// = "ID: " + item.id();
+    QString value = "ID: " + item.id();
     return value;
 }

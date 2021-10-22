@@ -41,7 +41,9 @@ private:
     static util::LazyPointer<uniq::Value<QString>> _idGen;
     LazyPointer<Essence> _essence;
 
-    virtual void toMapSpecific(QVariantMap &mp) const = 0;
+    virtual void toMapSpecific(QVariantMap &mp) const {
+        Q_UNUSED(mp);
+    }
 };
 
 } // namespace hierhin
