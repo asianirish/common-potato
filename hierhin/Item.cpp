@@ -68,7 +68,7 @@ QVariantMap Item::toMap() const
     return mp;
 }
 
-ItemPtr Item::create(Item::NODE_IMPL nodeImpl)
+NodePtr Item::create(Item::NODE_IMPL nodeImpl)
 {
     //TODO: implement
     Q_UNUSED(nodeImpl);

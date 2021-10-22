@@ -65,7 +65,7 @@ private:
         Q_UNUSED(mp);
     }
 
-    static ItemPtr create(NODE_IMPL nodeImpl);
+    static NodePtr create(NODE_IMPL nodeImpl);
 };
 
 } // namespace hierhin
