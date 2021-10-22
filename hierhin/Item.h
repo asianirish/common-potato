@@ -19,6 +19,9 @@ typedef QSharedPointer<Essence> EssencePtr;
 class Item;
 typedef QSharedPointer<Item> ItemPtr;
 
+class Node;
+typedef QSharedPointer<Node> NodePtr;
+
 class Item
 {
 public:
@@ -28,6 +31,12 @@ public:
     static const QString ESSENCE_CLASS_KEY;
     static const QString PROPERTIES_KEY;
     static const QString IS_NODE_KEY;
+
+    enum NODE_IMPL {
+        DIRECT_IMPL,
+        ROOT_CONTAINS_ALL_IMPL,
+        CHILDREN_OR_ID_IMPL
+    };
 
     Item();
 
@@ -55,6 +64,8 @@ private:
     virtual void toMapSpecific(QVariantMap &mp) const {
         Q_UNUSED(mp);
     }
+
+    static ItemPtr create(NODE_IMPL nodeImpl);
 };
 
 } // namespace hierhin
