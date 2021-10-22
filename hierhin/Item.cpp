@@ -1,4 +1,5 @@
 #include "Item.h"
+#include "Essence.h"
 
 namespace hierhin {
 
