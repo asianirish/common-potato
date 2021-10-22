@@ -5,6 +5,7 @@ namespace hierhin {
 
 const QString Item::DEFAULT_ID_GEN_CLASS_NAME("uniq::TimeQStringValue");
 const QString Item::DEFAULT_ESSENCE_CLASS_NAME("hierhin::SimpleEssence");
+const QString Item::ID_KEY("id");
 
 util::LazyPointer<uniq::Value<QString>> Item::_idGen(Item::DEFAULT_ID_GEN_CLASS_NAME);
 
@@ -54,6 +55,8 @@ EssencePtr Item::essencePtr() const
 QVariantMap Item::toMap() const
 {
     QVariantMap mp;
+    mp.insert(ID_KEY, id());
+
     //TODO: implement
     toMapSpecific(mp);
     return mp;
