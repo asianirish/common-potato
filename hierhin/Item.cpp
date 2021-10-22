@@ -8,6 +8,7 @@ const QString Item::DEFAULT_ESSENCE_CLASS_NAME("hierhin::SimpleEssence");
 const QString Item::ID_KEY("id");
 const QString Item::ESSENCE_CLASS_KEY("essenceClass");
 const QString Item::PROPERTIES_KEY("prop");
+const QString Item::IS_NODE_KEY("isNode");
 
 util::LazyPointer<uniq::Value<QString>> Item::_idGen(Item::DEFAULT_ID_GEN_CLASS_NAME);
 
@@ -60,6 +61,7 @@ QVariantMap Item::toMap() const
     mp.insert(ID_KEY, id());
     mp.insert(ESSENCE_CLASS_KEY, _essence.className());
     mp.insert(PROPERTIES_KEY, _properties);
+    mp.insert(IS_NODE_KEY, isNode());
 
     //TODO: implement
     toMapSpecific(mp);
