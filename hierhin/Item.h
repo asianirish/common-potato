@@ -38,6 +38,10 @@ public:
 
     QVariantMap toMap() const;
 
+    virtual bool isNode() const {
+        return false;
+    }
+
 private:
     mutable QString _id;
     QVariantMap _properties;
