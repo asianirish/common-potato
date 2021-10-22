@@ -16,6 +16,9 @@ class Essence;
 
 typedef QSharedPointer<Essence> EssencePtr;
 
+class Item;
+typedef QSharedPointer<Item> ItemPtr;
+
 class Item
 {
 public:
