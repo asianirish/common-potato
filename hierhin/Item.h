@@ -33,11 +33,15 @@ public:
 
     EssencePtr essencePtr() const;
 
+    QVariantMap toMap() const;
+
 private:
     mutable QString _id;
     QVariantMap _properties;
     static util::LazyPointer<uniq::Value<QString>> _idGen;
     LazyPointer<Essence> _essence;
+
+    virtual void toMapSpecific(QVariantMap &mp) const = 0;
 };
 
 } // namespace hierhin

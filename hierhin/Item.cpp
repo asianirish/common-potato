@@ -51,4 +51,12 @@ EssencePtr Item::essencePtr() const
     return _essence.ptr();
 }
 
+QVariantMap Item::toMap() const
+{
+    QVariantMap mp;
+    //TODO: implement
+    toMapSpecific(mp);
+    return mp;
+}
+
 } // namespace hierhin
