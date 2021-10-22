@@ -13,6 +13,9 @@ class Essence : public QObject
 public:
     explicit Essence(Item *item, QObject *parent = nullptr);
 
+    Item *item() const;
+    void setItem(Item *item);
+
 private:
     Item *_item;
 signals:
