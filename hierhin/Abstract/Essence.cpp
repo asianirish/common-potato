@@ -2,6 +2,11 @@
 
 namespace hierhin {
 
+Essence::Essence() : Essence(nullptr, nullptr)
+{
+
+}
+
 Essence::Essence(Item *item, QObject *parent) : QObject(parent),
     _item(item)
 {

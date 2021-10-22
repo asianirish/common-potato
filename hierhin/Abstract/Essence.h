@@ -11,6 +11,8 @@ class Essence : public QObject
 {
     Q_OBJECT
 public:
+    Essence();
+
     explicit Essence(Item *item, QObject *parent = nullptr);
 
     Item *item() const;
