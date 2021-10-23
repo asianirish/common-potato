@@ -24,10 +24,12 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     Essence.h \
-    Item.h
+    Item.h \
+    Node.h
 
 SOURCES += \
     Essence.cpp \
-    Item.cpp
+    Item.cpp \
+    Node.cpp
 
 
