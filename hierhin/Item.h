@@ -35,7 +35,8 @@ public:
     static const QString IS_NODE_KEY;
 
     enum NODE_IMPL {
-        DIRECT_IMPL,
+        DIRECT_MAP_IMPL,
+        DIRECT_HASH_IMPL,
         ROOT_CONTAINS_ALL_IMPL,
         CHILDREN_OR_ID_IMPL
     };
