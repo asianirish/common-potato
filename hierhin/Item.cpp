@@ -1,5 +1,6 @@
 #include "Item.h"
 #include "Essence.h"
+#include "Node.h"
 
 namespace hierhin {
 
@@ -74,7 +75,7 @@ ItemPtr Item::create(QVariantMap &mp, Item::NODE_IMPL nodeImpl)
     ItemPtr itemPtr;
 
     if (isNodeVar.toBool()) {
-        itemPtr = create(nodeImpl); //TODO: err
+        itemPtr = create(nodeImpl).staticCast<Item>();
     } else {
         itemPtr = ItemPtr::create();
     }
