@@ -11,14 +11,14 @@ const QString Item::ESSENCE_CLASS_KEY("essenceClass");
 const QString Item::PROPERTIES_KEY("prop");
 const QString Item::IS_NODE_KEY("isNode");
 
-util::LazyPointer<uniq::Value<QString>> Item::_idGen(Item::DEFAULT_ID_GEN_CLASS_NAME);
+util::LazyPointer<uniq::Value<Id>> Item::_idGen(Item::DEFAULT_ID_GEN_CLASS_NAME);
 
 Item::Item() : _essence(DEFAULT_ESSENCE_CLASS_NAME)
 {
 
 }
 
-QString Item::id() const
+Id Item::id() const
 {
     if (_id.isEmpty()) {
         _id = _idGen->value();
@@ -26,7 +26,7 @@ QString Item::id() const
     return _id;
 }
 
-void Item::setId(const QString &id)
+void Item::setId(const Id &id)
 {
     if (_id.isEmpty()) {
         _id = id; //set once

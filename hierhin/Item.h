@@ -22,6 +22,8 @@ typedef QSharedPointer<Item> ItemPtr;
 class Node;
 typedef QSharedPointer<Node> NodePtr;
 
+typedef QString Id;
+
 class Item
 {
 public:
@@ -40,8 +42,8 @@ public:
 
     Item();
 
-    QString id() const;
-    void setId(const QString &id);
+    Id id() const;
+    void setId(const Id &id);
 
     static void setIdGenClassName(const QString &className);
 
@@ -58,9 +60,9 @@ public:
     static ItemPtr create(QVariantMap &mp, NODE_IMPL nodeImpl); //TODO: default value for nodeImpl (?)
 
 private:
-    mutable QString _id;
+    mutable Id _id;
     QVariantMap _properties;
-    static util::LazyPointer<uniq::Value<QString>> _idGen;
+    static util::LazyPointer<uniq::Value<Id>> _idGen;
     LazyPointer<Essence> _essence;
 
     virtual void toMapSpecific(QVariantMap &mp) const {
