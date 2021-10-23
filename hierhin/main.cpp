@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
     menu::Console console(new HierhinClassRegistry());
 
     //TODO: add items here
-    console.addMenuItem("testitem", menu::ActionPtr(new TestItem()));
+    console.addMenuItem("testi", menu::ActionPtr(new TestItem()));
 
     console.run();
     QObject::connect(&console, SIGNAL(quit()), &a, SLOT(quit()));
