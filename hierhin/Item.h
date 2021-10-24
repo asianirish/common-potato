@@ -51,8 +51,6 @@ public:
         return false;
     }
 
-    static ItemPtr create(QVariantMap &mp);
-
 private:
     mutable Id _id;
     QVariantMap _properties;
@@ -63,7 +61,6 @@ private:
         Q_UNUSED(mp);
     }
 
-    static NodePtr create();
 };
 
 } // namespace hierhin

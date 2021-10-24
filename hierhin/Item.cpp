@@ -69,26 +69,4 @@ QVariantMap Item::toMap() const
     return mp;
 }
 
-ItemPtr Item::create(QVariantMap &mp)
-{
-    auto isNodeVar = mp.value(IS_NODE_KEY);
-    ItemPtr itemPtr;
-
-    if (isNodeVar.toBool()) {
-        itemPtr = create().staticCast<Item>();
-    } else {
-        itemPtr = ItemPtr::create();
-    }
-
-//TODO:    itemPtr->fromMap();
-
-    return itemPtr;
-}
-
-NodePtr Item::create()
-{
-    //TODO: implement
-    return {};
-}
-
 } // namespace hierhin
