@@ -16,7 +16,6 @@ public:
     void setParentNode(NodePtr parentNode) override;
 
 private:
-    C _childrent;
     NodePtr _parentNode;
 };
 
