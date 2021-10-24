@@ -65,7 +65,7 @@ QVariantMap Item::toMap() const
     mp.insert(IS_NODE_KEY, isNode());
 
     //TODO: implement
-    toMapSpecific(mp);
+    toMapNodeSpecific(mp);
     return mp;
 }
 
