@@ -34,13 +34,6 @@ public:
     static const QString PROPERTIES_KEY;
     static const QString IS_NODE_KEY;
 
-    enum NODE_IMPL {
-        DIRECT_MAP_IMPL,
-        DIRECT_HASH_IMPL,
-        ROOT_CONTAINS_ALL_IMPL,
-        CHILDREN_OR_ID_IMPL
-    };
-
     Item();
 
     Id id() const;
@@ -58,7 +51,7 @@ public:
         return false;
     }
 
-    static ItemPtr create(QVariantMap &mp, NODE_IMPL nodeImpl); //TODO: default value for nodeImpl (?)
+    static ItemPtr create(QVariantMap &mp);
 
 private:
     mutable Id _id;
@@ -70,7 +63,7 @@ private:
         Q_UNUSED(mp);
     }
 
-    static NodePtr create(NODE_IMPL nodeImpl);
+    static NodePtr create();
 };
 
 } // namespace hierhin

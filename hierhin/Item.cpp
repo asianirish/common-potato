@@ -69,13 +69,13 @@ QVariantMap Item::toMap() const
     return mp;
 }
 
-ItemPtr Item::create(QVariantMap &mp, Item::NODE_IMPL nodeImpl)
+ItemPtr Item::create(QVariantMap &mp)
 {
     auto isNodeVar = mp.value(IS_NODE_KEY);
     ItemPtr itemPtr;
 
     if (isNodeVar.toBool()) {
-        itemPtr = create(nodeImpl).staticCast<Item>();
+        itemPtr = create().staticCast<Item>();
     } else {
         itemPtr = ItemPtr::create();
     }
@@ -85,10 +85,9 @@ ItemPtr Item::create(QVariantMap &mp, Item::NODE_IMPL nodeImpl)
     return itemPtr;
 }
 
-NodePtr Item::create(Item::NODE_IMPL nodeImpl)
+NodePtr Item::create()
 {
     //TODO: implement
-    Q_UNUSED(nodeImpl);
     return {};
 }
 
