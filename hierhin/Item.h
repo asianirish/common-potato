@@ -51,6 +51,10 @@ public:
         return false;
     }
 
+    virtual NodePtr parentNode() const = 0;
+
+    virtual void setParentNode(NodePtr parentNode) = 0;
+
 private:
     mutable Id _id;
     QVariantMap _properties;
