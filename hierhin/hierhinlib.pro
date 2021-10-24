@@ -25,7 +25,8 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 HEADERS += \
     Essence.h \
     Item.h \
-    Node.h
+    Node.h \
+    direct/ItemImpl.h
 
 SOURCES += \
     Essence.cpp \

@@ -1,6 +1,6 @@
 #include "TestItem.h"
 
-#include <hierhin/Item.h>
+#include <hierhin/direct/ItemImpl.h>
 
 #include <QDebug>
 
@@ -15,8 +15,8 @@ QVariant TestItem::simplyAct(const QVariantList &args)
 {
     Q_UNUSED(args);
     Item::setIdGenClassName("uniq::UuidValue");
-//    Item item;
+    direct::ItemMapImpl item;
 
-    QString value;// = "ID: " + item.id();
+    QString value = "ID: " + item.id();
     return value;
 }
