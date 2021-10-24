@@ -32,6 +32,7 @@ HEADERS += \
 SOURCES += \
     Essence.cpp \
     Item.cpp \
-    Node.cpp
+    Node.cpp \
+    direct/ItemImpl.cpp
 
 

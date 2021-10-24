@@ -8,7 +8,6 @@
 namespace hierhin {
 namespace direct {
 
-template <typename C>
 class ItemImpl : public Item
 {
 public:
@@ -18,21 +17,6 @@ public:
 private:
     NodePtr _parentNode;
 };
-
-template<typename C>
-NodePtr ItemImpl<C>::parentNode() const
-{
-    return _parentNode;
-}
-
-template<typename C>
-void ItemImpl<C>::setParentNode(NodePtr parentNode)
-{
-    _parentNode = parentNode;
-}
-
-typedef ItemImpl<QMap<Id, ItemPtr> > ItemMapImpl;
-typedef ItemImpl<QHash<Id, ItemPtr> > ItemHashImpl;
 
 } // namespace direct
 } // namespace hierhin
