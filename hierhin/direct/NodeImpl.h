@@ -14,6 +14,9 @@ private:
     C _childrent;
 };
 
+typedef NodeImpl<QMap<Id, ItemPtr> > NodeMapImpl;
+typedef NodeImpl<QHash<Id, ItemPtr> > NodeHashImpl;
+
 } // namespace direct
 } // namespace hierhin
 
