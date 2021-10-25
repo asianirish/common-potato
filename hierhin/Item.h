@@ -57,6 +57,8 @@ public:
 
     virtual void setParentNode(Node *parentNode) = 0;
 
+    QVariant property(const QString &name);
+
 private:
     mutable Id _id;
     QVariantMap _properties;

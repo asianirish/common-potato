@@ -82,4 +82,9 @@ QByteArray Item::toJson()
     return QJsonDocument(jObj).toJson();
 }
 
+QVariant Item::property(const QString &name)
+{
+    return _properties.value(name);
+}
+
 } // namespace hierhin
