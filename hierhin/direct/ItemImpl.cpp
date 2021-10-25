@@ -1,4 +1,5 @@
 #include "ItemImpl.h"
+#include "Node.h"
 
 namespace hierhin {
 namespace direct {
@@ -15,7 +16,9 @@ Node *ItemImpl::parentNode() const
 
 void ItemImpl::setParentNode(Node *parentNode)
 {
-    _parentNode = parentNode;
+    if (parentNode && parentNode->containsId(this->id())) {
+        _parentNode = parentNode;
+    }
 }
 
 } // namespace direct
