@@ -82,7 +82,7 @@ QByteArray Item::toJson()
     return QJsonDocument(jObj).toJson();
 }
 
-QVariant Item::property(const QString &name)
+QVariant Item::property(const QString &name) const
 {
     return _properties.value(name);
 }
