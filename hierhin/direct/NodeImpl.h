@@ -13,8 +13,10 @@ namespace direct {
 template <typename C>
 class NodeImpl : public virtual Node, public ItemImpl
 {
-
 public:
+
+    bool containsId(const QString &id) final;
+
     ItemPtr child(const QString &id) const final;
 
     void addChild(ItemPtr item) final;
@@ -25,6 +27,12 @@ private:
 
 typedef NodeImpl<QMap<Id, ItemPtr> > NodeMapImpl;
 typedef NodeImpl<QHash<Id, ItemPtr> > NodeHashImpl;
+
+template<typename C>
+bool NodeImpl<C>::containsId(const QString &id)
+{
+    return _childrent.contains(id);
+}
 
 template<typename C>
 ItemPtr NodeImpl<C>::child(const QString &id) const

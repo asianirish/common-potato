@@ -13,6 +13,8 @@ class Node : public virtual Item
 public:
     Node();
 
+    virtual bool containsId(const QString &id) = 0;
+
     virtual ItemPtr child(const QString &id) const = 0;
 
     virtual void addChild(ItemPtr item) = 0;

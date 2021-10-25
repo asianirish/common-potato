@@ -30,6 +30,10 @@ QVariant TestItem::simplyAct(const QVariantList &args)
     value += "NODE2 ID: " + nd2->id() + "\n";
     value += "NODE2'S PARENT ID: " + nd2->parentNode()->id() + "\n";
 
+    if (nd1->containsId(nd2->id())) {
+        value += "NODE1 CONTAINS NODE2";
+    }
+
 
 
     return value;
