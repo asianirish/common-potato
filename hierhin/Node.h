@@ -27,8 +27,8 @@ public:
 
 //    virtual NameList nameList() const = 0;
 
-//protected:
-//    virtual void toMapNodeImplSpecific(QVariantMap &mp) const = 0;
+protected:
+    virtual void toMapNodeImplSpecific(QVariantMap &mp) const = 0;
 
 private:
     void toMapNodeSpecific(QVariantMap &mp) const final;

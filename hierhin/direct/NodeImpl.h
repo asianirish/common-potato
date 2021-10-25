@@ -24,6 +24,9 @@ public:
 
     IdList idList() const final;
 
+protected:
+    void toMapNodeImplSpecific(QVariantMap &mp) const final;
+
 private:
     C _children;
 };
@@ -57,6 +60,16 @@ template<typename C>
 IdList NodeImpl<C>::idList() const
 {
     return _children.keys();
+}
+
+template<typename C>
+void NodeImpl<C>::toMapNodeImplSpecific(QVariantMap &mp) const
+{
+    QVariantMap childrenMap;
+    for (auto child : _children) {
+        childrenMap.insert(child->id(), child->toMap());
+    }
+    mp.insert(CHILDREN_KEY, childrenMap);
 }
 
 } // namespace direct
