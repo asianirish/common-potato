@@ -2,12 +2,16 @@
 #define DIRECT_NODEIMPL_H
 
 #include "Node.h"
+#include "ItemImpl.h"
+
+#include <QMap>
+#include <QHash>
 
 namespace hierhin {
 namespace direct {
 
 template <typename C>
-class NodeImpl : public Node
+class NodeImpl : public virtual Node, public ItemImpl
 {
 
 private:

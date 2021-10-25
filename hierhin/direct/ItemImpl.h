@@ -8,7 +8,7 @@
 namespace hierhin {
 namespace direct {
 
-class ItemImpl : public Item
+class ItemImpl : public virtual Item
 {
 public:
     NodePtr parentNode() const override;
