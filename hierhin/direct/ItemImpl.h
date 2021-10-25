@@ -11,11 +11,13 @@ namespace direct {
 class ItemImpl : public virtual Item
 {
 public:
-    NodePtr parentNode() const override;
-    void setParentNode(NodePtr parentNode) override;
+    ItemImpl();
+
+    Node *parentNode() const override;
+    void setParentNode(Node *parentNode) override;
 
 private:
-    NodePtr _parentNode;
+    Node *_parentNode;
 };
 
 } // namespace direct

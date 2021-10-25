@@ -3,12 +3,17 @@
 namespace hierhin {
 namespace direct {
 
-NodePtr ItemImpl::parentNode() const
+ItemImpl::ItemImpl() : _parentNode(nullptr)
+{
+
+}
+
+Node *ItemImpl::parentNode() const
 {
     return _parentNode;
 }
 
-void ItemImpl::setParentNode(NodePtr parentNode)
+void ItemImpl::setParentNode(Node *parentNode)
 {
     _parentNode = parentNode;
 }
