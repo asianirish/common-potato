@@ -19,11 +19,12 @@ public:
 
     virtual void addChild(ItemPtr item) = 0;
 
+    virtual IdList idList() const = 0;
+
 //    virtual ItemPtr namedChild(const QString &name) = 0;
 
 //    virtual void addNamedChild(const QString &id) = 0;
 
-//    virtual IdList idList() const = 0;
 //    virtual NameList nameList() const = 0;
 
 //protected:

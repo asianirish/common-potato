@@ -21,6 +21,8 @@ public:
 
     void addChild(ItemPtr item) final;
 
+    IdList idList() const final;
+
 private:
     C _children;
 };
@@ -45,6 +47,12 @@ void NodeImpl<C>::addChild(ItemPtr item)
 {
     _children.insert(item->id(), item);
     item->setParentNode(this);
+}
+
+template<typename C>
+IdList NodeImpl<C>::idList() const
+{
+    return _children.keys();
 }
 
 } // namespace direct
