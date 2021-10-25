@@ -15,7 +15,7 @@ public:
 
 //    virtual ItemPtr child(const QString &id) const = 0;
 
-//    virtual void addChild(const QString &id) = 0;
+//    virtual void addChild(ItemPtr item) = 0;
 
 //    virtual ItemPtr namedChild(const QString &name) = 0;
 
