@@ -27,6 +27,10 @@ public:
 
 //    virtual NameList nameList() const = 0;
 
+    bool isNode() const {
+        return true;
+    }
+
 protected:
     virtual void toMapNodeImplSpecific(QVariantMap &mp) const = 0;
 
