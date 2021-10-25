@@ -13,6 +13,8 @@ class ItemImpl : public virtual Item
 public:
     ItemImpl();
 
+    virtual ~ItemImpl() = default;
+
     Node *parentNode() const override;
     void setParentNode(Node *parentNode) override;
 
