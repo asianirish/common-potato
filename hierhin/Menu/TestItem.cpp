@@ -31,6 +31,7 @@ QVariant TestItem::simplyAct(const QVariantList &args)
     value += "NODE2'S PARENT ID: " + nd2->parentNode()->id() + "\n";
 
     auto nd3 = NodePtr(new direct::NodeHashImpl());
+    nd3->setProperty("value", 1337);
     nd1->addChild(nd3);
 
     if (nd1->containsId(nd2->id())) {

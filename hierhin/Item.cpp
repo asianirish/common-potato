@@ -87,4 +87,10 @@ QVariant Item::property(const QString &name) const
     return _properties.value(name);
 }
 
+void Item::setProperty(const QString &name, const QVariant &value)
+{
+    //TODO: check constraints
+    _properties.insert(name, value);
+}
+
 } // namespace hierhin

@@ -59,6 +59,8 @@ public:
 
     QVariant property(const QString &name) const;
 
+    void setProperty(const QString &name, const QVariant &value);
+
 private:
     mutable Id _id;
     QVariantMap _properties;
