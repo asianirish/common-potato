@@ -13,9 +13,9 @@ class Node : public virtual Item
 public:
     Node();
 
-//    virtual ItemPtr child(const QString &id) const = 0;
+    virtual ItemPtr child(const QString &id) const = 0;
 
-//    virtual void addChild(ItemPtr item) = 0;
+    virtual void addChild(ItemPtr item) = 0;
 
 //    virtual ItemPtr namedChild(const QString &name) = 0;
 

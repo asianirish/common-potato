@@ -23,7 +23,8 @@ QVariant TestItem::simplyAct(const QVariantList &args)
     auto nd1 = NodePtr(new direct::NodeHashImpl());
     auto nd2 = NodePtr(new direct::NodeHashImpl());
 
-    nd2->setParentNode(nd1.data());
+//    nd2->setParentNode(nd1.data());
+    nd1->addChild(nd2);
 
     value += "NODE1 ID: " + nd1->id() + "\n";
     value += "NODE2 ID: " + nd2->id() + "\n";
