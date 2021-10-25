@@ -22,7 +22,7 @@ public:
     void addChild(ItemPtr item) final;
 
 private:
-    C _childrent;
+    C _children;
 };
 
 typedef NodeImpl<QMap<Id, ItemPtr> > NodeMapImpl;
@@ -31,19 +31,19 @@ typedef NodeImpl<QHash<Id, ItemPtr> > NodeHashImpl;
 template<typename C>
 bool NodeImpl<C>::containsId(const QString &id)
 {
-    return _childrent.contains(id);
+    return _children.contains(id);
 }
 
 template<typename C>
 ItemPtr NodeImpl<C>::child(const QString &id) const
 {
-    return _childrent.value(id);
+    return _children.value(id);
 }
 
 template<typename C>
 void NodeImpl<C>::addChild(ItemPtr item)
 {
-    _childrent.insert(item->id(), item);
+    _children.insert(item->id(), item);
     item->setParentNode(this);
 }
 
