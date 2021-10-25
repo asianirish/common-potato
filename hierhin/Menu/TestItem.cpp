@@ -47,6 +47,8 @@ QVariant TestItem::simplyAct(const QVariantList &args)
         value += id + "\n";
     }
 
+    value += "NODE1 AS A JSON: " + nd1->toJson();
+
 
     return value;
 }

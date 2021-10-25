@@ -47,6 +47,8 @@ public:
 
     QVariantMap toMap() const;
 
+    QByteArray toJson();
+
     virtual bool isNode() const {
         return false;
     }

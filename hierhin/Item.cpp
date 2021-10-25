@@ -2,6 +2,9 @@
 #include "Essence.h"
 #include "Node.h"
 
+#include <QJsonDocument>
+#include <QJsonObject>
+
 namespace hierhin {
 
 const QString Item::DEFAULT_ID_GEN_CLASS_NAME("uniq::TimeQStringValue");
@@ -67,6 +70,12 @@ QVariantMap Item::toMap() const
     //TODO: implement
     toMapNodeSpecific(mp);
     return mp;
+}
+
+QByteArray Item::toJson()
+{
+    QJsonObject jObj = QJsonObject::fromVariantMap(toMap());
+    return QJsonDocument(jObj).toJson();
 }
 
 } // namespace hierhin
