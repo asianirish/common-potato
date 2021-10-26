@@ -26,6 +26,7 @@ HEADERS += \
     Essence.h \
     Item.h \
     Node.h \
+    def/ItemDef.h \
     direct/ItemImpl.h \
     direct/NodeImpl.h
 
@@ -33,6 +34,7 @@ SOURCES += \
     Essence.cpp \
     Item.cpp \
     Node.cpp \
+    def/ItemDef.cpp \
     direct/ItemImpl.cpp
 
 
