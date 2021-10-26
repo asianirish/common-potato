@@ -6,7 +6,7 @@ QT -= gui
 CONFIG += c++11 console
 CONFIG -= app_bundle
 
-LIBS +=  -L$$PWD/../build/lib/ -lpotato-util -luniq
+LIBS +=  -L$$PWD/../build/lib/ -lpotato-util -luniq -lval
 INCLUDEPATH += $$PWD/../
 
 DESTDIR = $$PWD/../build/lib/
@@ -27,14 +27,7 @@ SOURCES += \
         ex/NoSuchField.cpp \
         Node.cpp \
         Serializer.cpp \
-        ex/ValidatorException.cpp \
-        val/AbstractRegex.cpp \
-        val/Email.cpp \
-        val/Length.cpp \
-        val/List.cpp \
-        val/NotEqualTo.cpp \
-        val/Phone.cpp \
-        val/Validator.cpp
+        ex/ValidatorException.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -53,16 +46,4 @@ HEADERS += \
     ex/NoSuchField.h \
     Node.h \
     Serializer.h \
-    ex/ValidatorException.h \
-    val/AbstractRegex.h \
-    val/Email.h \
-    val/Length.h \
-    val/LessThan.h \
-    val/LessThanOrEqualTo.h \
-    val/List.h \
-    val/MoreThan.h \
-    val/MoreThanOrEqualTo.h \
-    val/NotEqualTo.h \
-    val/Phone.h \
-    val/Range.h \
-    val/Validator.h
+    ex/ValidatorException.h
