@@ -28,5 +28,15 @@ void ItemDef::setIsLimitedPropertyList(bool isLimitedPropertyList)
     _isLimitedPropertyList = isLimitedPropertyList;
 }
 
+QMap<QString, PropertyDef> ItemDef::propertyDefs() const
+{
+    return _propertyDefs;
+}
+
+void ItemDef::setPropertyDefs(const QMap<QString, PropertyDef> &propertyDefs)
+{
+    _propertyDefs = propertyDefs;
+}
+
 } // namespace def
 } // namespace hierhin
