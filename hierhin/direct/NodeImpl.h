@@ -65,11 +65,13 @@ IdList NodeImpl<C>::idList() const
 template<typename C>
 void NodeImpl<C>::toMapNodeImplSpecific(QVariantMap &mp) const
 {
-    QVariantMap childrenMap;
-    for (auto child : _children) {
-        childrenMap.insert(child->id(), child->toMap());
+    if (!_children.isEmpty()) {
+        QVariantMap childrenMap;
+        for (auto child : _children) {
+            childrenMap.insert(child->id(), child->toMap());
+        }
+        mp.insert(CHILDREN_KEY, childrenMap);
     }
-    mp.insert(CHILDREN_KEY, childrenMap);
 }
 
 } // namespace direct
