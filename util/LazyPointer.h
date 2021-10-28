@@ -13,6 +13,8 @@ class LazyPointer
 {
 public:
 
+    LazyPointer() = default;
+
     LazyPointer(const QString &defaultClassName) : _className(defaultClassName) {}
 
 //    ~LazyPointer() {
