@@ -1,11 +1,11 @@
 #ifndef HIERHIN_ESSENCE_H
 #define HIERHIN_ESSENCE_H
 
-#include "Item.h"
-
 #include <QObject>
 
 namespace hierhin {
+
+class Item;
 
 class Essence : public QObject
 {
@@ -15,6 +15,7 @@ public:
 
     virtual ~Essence() = default;
 
+    virtual void execute(Item *item) = 0;
 private:
 
 signals:
