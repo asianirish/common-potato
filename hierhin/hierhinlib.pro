@@ -27,6 +27,7 @@ HEADERS += \
     Item.h \
     Node.h \
     def/ItemDef.h \
+    def/NodeDef.h \
     def/PropertyDef.h \
     direct/ItemImpl.h \
     direct/NodeImpl.h
@@ -36,6 +37,7 @@ SOURCES += \
     Item.cpp \
     Node.cpp \
     def/ItemDef.cpp \
+    def/NodeDef.cpp \
     def/PropertyDef.cpp \
     direct/ItemImpl.cpp
 
