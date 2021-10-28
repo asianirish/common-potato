@@ -13,15 +13,10 @@ class Essence : public QObject
 public:
     Essence();
 
-    explicit Essence(Item *item, QObject *parent = nullptr);
-
     virtual ~Essence() = default;
 
-    Item *item() const;
-    void setItem(Item *item);
-
 private:
-    Item *_item;
+
 signals:
 
 };
