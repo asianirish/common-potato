@@ -1,5 +1,8 @@
 #include "TestItem.h"
+#include "Test/TestEssenceA.h"
+#include "Test/TestEssenceB.h"
 
+#include <util/SingletonRegistry.h>
 #include <hierhin/direct/NodeImpl.h>
 
 #include <QDebug>
@@ -50,6 +53,11 @@ QVariant TestItem::simplyAct(const QVariantList &args)
 
     value += "NODE1 AS A JSON: " + nd1->toJson();
 
+    auto testA = util::SingletonRegistry<hierhin::Essence>::ptr("TestEssenceA");
+    testA->execute(nd1.data());
+
+    auto testB = util::SingletonRegistry<hierhin::Essence>::ptr("TestEssenceB");
+    testB->execute(nd2.data());
 
     return value;
 }
