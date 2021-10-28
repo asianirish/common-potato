@@ -13,7 +13,8 @@ INCLUDEPATH += $$PWD/../
 SOURCES += main.cpp \
     HierhinClassRegistry.cpp \
     Menu/TestItem.cpp \
-    Test/TestEssenceA.cpp
+    Test/TestEssenceA.cpp \
+    Test/TestEssenceB.cpp
 
 
 # Default rules for deployment.
@@ -24,6 +25,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 HEADERS += \
     HierhinClassRegistry.h \
     Menu/TestItem.h \
-    Test/TestEssenceA.h
+    Test/TestEssenceA.h \
+    Test/TestEssenceB.h
 
 
