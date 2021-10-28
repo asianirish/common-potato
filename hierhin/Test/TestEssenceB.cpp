@@ -1,5 +1,7 @@
 #include "TestEssenceB.h"
 
+#include <hierhin/Item.h>
+
 #include <QDebug>
 
 TestEssenceB::TestEssenceB()
@@ -9,6 +11,5 @@ TestEssenceB::TestEssenceB()
 
 void TestEssenceB::execute(hierhin::Item *item)
 {
-    Q_UNUSED(item);
-    qDebug() << "THIS IS TEST_ESSENCE_B";
+    item->setProperty("pi", 3.1415926535);
 }
