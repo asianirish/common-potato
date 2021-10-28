@@ -11,6 +11,7 @@ namespace util {
 template <typename Base>
 class SingletonRegistry
 {
+public:
     static QSharedPointer<Base> ptr(const QString className);
 private:
     static QMap<QString, LazyPointer<Base> > _objects;
