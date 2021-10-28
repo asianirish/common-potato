@@ -26,6 +26,9 @@ QVariant TestItem::simplyAct(const QVariantList &args)
     auto nd1 = NodePtr(new direct::NodeHashImpl());
     auto nd2 = NodePtr(new direct::NodeHashImpl());
 
+    nd1->setProperty("value", 13);
+    nd2->setProperty("value", 37);
+
 //    nd2->setParentNode(nd1.data());
     nd1->addChild(nd2);
 
@@ -51,13 +54,15 @@ QVariant TestItem::simplyAct(const QVariantList &args)
         value += id + "\n";
     }
 
-    value += "NODE1 AS A JSON: " + nd1->toJson();
-
     auto testA = util::SingletonRegistry<hierhin::Essence>::ptr("TestEssenceA");
     testA->execute(nd1.data());
 
     auto testB = util::SingletonRegistry<hierhin::Essence>::ptr("TestEssenceB");
     testB->execute(nd2.data());
+
+    value += "NODE1 AS A JSON: " + nd1->toJson();
+
+
 
     return value;
 }
