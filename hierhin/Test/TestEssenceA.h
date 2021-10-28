@@ -7,6 +7,8 @@ class TestEssenceA : public hierhin::Essence
 {
 public:
     TestEssenceA();
+
+    void execute(hierhin::Item *item) override;
 };
 
 #endif // TESTESSENCEA_H
