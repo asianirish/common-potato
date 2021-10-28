@@ -56,7 +56,7 @@ void Console::readCommand()
 {
     std::string line;
     std::getline(std::cin, line);
-    if (std::cin.eof() || line == "quit") {
+    if (std::cin.eof() || line == "quit" || line.empty()) { //TODO: just eof doesn't work to quit on Enter. Why?
         std::cout << "Good bye!" << std::endl;
 
         delete m_notifier;
