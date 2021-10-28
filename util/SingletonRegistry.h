@@ -18,6 +18,9 @@ private:
 };
 
 template<typename Base>
+QMap<QString, LazyPointer<Base> > SingletonRegistry<Base>::_objects;
+
+template<typename Base>
 QSharedPointer<Base> SingletonRegistry<Base>::ptr(const QString className)
 {
     if (!_objects.contains(className)) {
