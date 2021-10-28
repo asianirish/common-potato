@@ -24,4 +24,5 @@ HEADERS += \
     CuteFactory.h \
     Factory.h \
     LazyPointer.h \
+    SingletonRegistry.h \
     gfunc.h
