@@ -54,11 +54,13 @@ QVariant TestItem::simplyAct(const QVariantList &args)
         value += id + "\n";
     }
 
-    auto testA = util::SingletonRegistry<hierhin::Essence>::ptr("TestEssenceA");
-    testA->execute(nd1.data());
+    nd1->setEssenceClassName("TestEssenceA");
+    nd2->setEssenceClassName("TestEssenceB");
+    nd3->setEssenceClassName("TestEssenceA");
 
-    auto testB = util::SingletonRegistry<hierhin::Essence>::ptr("TestEssenceB");
-    testB->execute(nd2.data());
+    nd1->execute();
+    nd2->execute();
+    nd3->execute();
 
     value += "NODE1 AS A JSON: " + nd1->toJson();
 

@@ -93,4 +93,9 @@ void Item::setProperty(const QString &name, const QVariant &value)
     _properties.insert(name, value);
 }
 
+void Item::execute()
+{
+    essencePtr()->execute(this);
+}
+
 } // namespace hierhin
