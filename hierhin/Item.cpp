@@ -100,6 +100,7 @@ void Item::execute()
 
 NodeDef Item::definition() const
 {
+    //TODO: empty NodeDef
     return essencePtr()->nodeDef();
 }
 
