@@ -43,8 +43,6 @@ public:
 
     void setEssenceClassName(const QString &className);
 
-    EssencePtr essencePtr() const;
-
     QVariantMap toMap() const;
 
     QByteArray toJson();
@@ -73,6 +71,7 @@ private:
         Q_UNUSED(mp);
     }
 
+    EssencePtr essencePtr() const;
 };
 
 } // namespace hierhin
