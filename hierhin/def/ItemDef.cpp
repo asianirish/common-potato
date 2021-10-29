@@ -38,5 +38,10 @@ void ItemDef::setPropertyDefs(const QMap<QString, PropertyDef> &propertyDefs)
     _propertyDefs = propertyDefs;
 }
 
+void ItemDef::insertPropertyDef(const QString &name, const PropertyDef &propertyDef)
+{
+    _propertyDefs.insert(name, propertyDef);
+}
+
 } // namespace def
 } // namespace hierhin
