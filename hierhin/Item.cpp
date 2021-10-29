@@ -95,7 +95,11 @@ void Item::setProperty(const QString &name, const QVariant &value)
 
 void Item::execute()
 {
-    essencePtr()->execute(this);
+    auto ptr = essencePtr();
+
+    if (ptr) {
+        ptr->execute(this);
+    }
 }
 
 NodeDef Item::definition() const
