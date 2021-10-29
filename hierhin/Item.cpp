@@ -2,13 +2,15 @@
 #include "Essence.h"
 #include "Node.h"
 
+#include <util/SingletonRegistry.h>
+
 #include <QJsonDocument>
 #include <QJsonObject>
 
 namespace hierhin {
 
 const QString Item::DEFAULT_ID_GEN_CLASS_NAME("uniq::TimeQStringValue");
-const QString Item::DEFAULT_ESSENCE_CLASS_NAME("hierhin::SimpleEssence");
+//const QString Item::DEFAULT_ESSENCE_CLASS_NAME("hierhin::SimpleEssence");
 const QString Item::ID_KEY("id");
 const QString Item::ESSENCE_CLASS_KEY("essenceClass");
 const QString Item::PROPERTIES_KEY("prop");
@@ -16,7 +18,7 @@ const QString Item::IS_NODE_KEY("isNode");
 
 util::LazyPointer<uniq::Value<Id>> Item::_idGen(Item::DEFAULT_ID_GEN_CLASS_NAME);
 
-Item::Item() : _essence(DEFAULT_ESSENCE_CLASS_NAME)
+Item::Item()
 {
 
 }
@@ -47,23 +49,21 @@ void Item::setIdGenClassName(const QString &className)
 
 void Item::setEssenceClassName(const QString &className)
 {
-    if (_essence) {
-        return; //do not set if it already exists
+    if (_essenceClassName.isEmpty()) {
+        _essenceClassName = className;
     }
-
-    _essence.setClassName(className);
 }
 
 EssencePtr Item::essencePtr() const
 {
-    return _essence.ptr();
+    return util::SingletonRegistry<hierhin::Essence>::ptr(_essenceClassName);
 }
 
 QVariantMap Item::toMap() const
 {
     QVariantMap mp;
     mp.insert(ID_KEY, id());
-    mp.insert(ESSENCE_CLASS_KEY, _essence.className());
+    mp.insert(ESSENCE_CLASS_KEY, _essenceClassName);
 
     if (!_properties.isEmpty()) {
         mp.insert(PROPERTIES_KEY, _properties);
