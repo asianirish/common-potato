@@ -1,9 +1,13 @@
 #ifndef HIERHIN_ESSENCE_H
 #define HIERHIN_ESSENCE_H
 
+#include "def/NodeDef.h"
+
 #include <QObject>
 
 namespace hierhin {
+
+using namespace def;
 
 class Item;
 
@@ -16,6 +20,8 @@ public:
     virtual ~Essence() = default;
 
     virtual void execute(Item *item) = 0;
+
+    virtual NodeDef nodeDef() const = 0;
 private:
 
 signals:

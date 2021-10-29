@@ -14,3 +14,13 @@ void TestEssenceA::execute(hierhin::Item *item)
     int value = item->property("value").toInt();
     item->setProperty("value", value * 2);
 }
+
+NodeDef TestEssenceA::nodeDef() const
+{
+    NodeDef nd;
+
+    PropertyDef propDefValue;
+    nd.insertPropertyDef("value", propDefValue);
+
+    return nd;
+}
