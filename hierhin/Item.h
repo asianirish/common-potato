@@ -1,6 +1,8 @@
 #ifndef HIERHIN_ITEM_H
 #define HIERHIN_ITEM_H
 
+#include "def/NodeDef.h"
+
 #include <util/LazyPointer.h>
 #include <uniq/Value.h>
 
@@ -60,6 +62,8 @@ public:
     void setProperty(const QString &name, const QVariant &value);
 
     void execute();
+
+    def::NodeDef definition() const;
 
 private:
     mutable Id _id;

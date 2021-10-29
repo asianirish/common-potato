@@ -98,4 +98,9 @@ void Item::execute()
     essencePtr()->execute(this);
 }
 
+NodeDef Item::definition() const
+{
+    return essencePtr()->nodeDef();
+}
+
 } // namespace hierhin
