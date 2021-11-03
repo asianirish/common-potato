@@ -1,7 +1,7 @@
 #ifndef FIELDDEF_H
 #define FIELDDEF_H
 
-#include "val/Validator.h"
+#include <val/Validator.h>
 
 #include <QVariant>
 #include <QSharedPointer>
