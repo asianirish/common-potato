@@ -31,7 +31,8 @@ HEADERS += \
     def/PropertyDef.h \
     direct/ItemImpl.h \
     direct/NodeImpl.h \
-    ex/Exception.h
+    ex/Exception.h \
+    ex/PropertyException.h
 
 SOURCES += \
     Essence.cpp \
@@ -41,6 +42,7 @@ SOURCES += \
     def/NodeDef.cpp \
     def/PropertyDef.cpp \
     direct/ItemImpl.cpp \
-    ex/Exception.cpp
+    ex/Exception.cpp \
+    ex/PropertyException.cpp
 
 
