@@ -30,7 +30,8 @@ HEADERS += \
     def/NodeDef.h \
     def/PropertyDef.h \
     direct/ItemImpl.h \
-    direct/NodeImpl.h
+    direct/NodeImpl.h \
+    ex/Exception.h
 
 SOURCES += \
     Essence.cpp \
@@ -39,6 +40,7 @@ SOURCES += \
     def/ItemDef.cpp \
     def/NodeDef.cpp \
     def/PropertyDef.cpp \
-    direct/ItemImpl.cpp
+    direct/ItemImpl.cpp \
+    ex/Exception.cpp
 
 
