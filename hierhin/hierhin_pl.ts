@@ -4,9 +4,18 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="main.cpp" line="14"/>
+        <location filename="main.cpp" line="16"/>
         <source>hi</source>
         <translation type="unfinished">cześć</translation>
+    </message>
+    <message numerus="yes">
+        <location filename="main.cpp" line="21"/>
+        <source>%n object(s)</source>
+        <translation type="unfinished">
+            <numerusform>%n obiekt</numerusform>
+            <numerusform>%n obiekty</numerusform>
+            <numerusform>%n obiektów</numerusform>
+        </translation>
     </message>
 </context>
 </TS>
