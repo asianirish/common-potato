@@ -4,10 +4,13 @@
 #include <QVariant>
 #include <QString>
 
+#include <QCoreApplication>
+
 namespace val {
 
 class Validator
 {
+    Q_DECLARE_TR_FUNCTIONS(Validator)
 public:
     Validator();
 
