@@ -11,7 +11,8 @@ int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
 
-    qDebug() << "Hierhin";
+    QString hi(QObject::tr("hi"));
+    qDebug() << hi;
     menu::Console console(new HierhinClassRegistry());
 
     //TODO: add items here
