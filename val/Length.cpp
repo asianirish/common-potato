@@ -43,20 +43,22 @@ bool Length::validate(const QVariant &value) const
 
 QString Length::errorMessage() const
 {
+    //TODO: what if it's a float?
     if (_minLength.isValid() && !_maxLength.isValid()) {
-        return QString("the string must contain more than %1 characters").arg(_minLength.toString());
+        return QString(tr("the string must contain more than %n characters", "", _minLength.toInt()));
     }
 
     if (!_minLength.isValid() && _maxLength.isValid()) {
-        return QString("the string must contain less than %1 characters").arg(_maxLength.toString());
+        return QString(tr("the string must contain less than %n characters", "", _maxLength.toInt()));
     }
 
     if (_minLength.isValid() && _maxLength.isValid()) {
-        return QString("the string must contain more than %1 and less then %2 characters").
-                arg(_minLength.toString(),_maxLength.toString());
+        QString firstPart(tr("the string must contain more than %n ", "", _minLength.toInt()));
+        QString secondPart(tr("and less then %n characters", "", _maxLength.toInt()));
+        return firstPart + secondPart;
     }
 
-    return QString("wrong length validator format");
+    return QString(tr("wrong length validator format"));
 }
 
 QVariant Length::minLength() const
