@@ -24,6 +24,7 @@ message($$install_it.files)
 
 TRANSLATIONS += hierhin_ru.ts
 TRANSLATIONS += hierhin_pl.ts
+TRANSLATIONS += hierhin_en.ts
 
 SOURCES += main.cpp \
     HierhinClassRegistry.cpp \
