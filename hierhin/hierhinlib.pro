@@ -33,6 +33,7 @@ HEADERS += \
     direct/NodeImpl.h \
     ex/Exception.h \
     ex/InvalidValueException.h \
+    ex/NoSuchProperty.h \
     ex/PropertyException.h
 
 SOURCES += \
@@ -45,6 +46,7 @@ SOURCES += \
     direct/ItemImpl.cpp \
     ex/Exception.cpp \
     ex/InvalidValueException.cpp \
+    ex/NoSuchProperty.cpp \
     ex/PropertyException.cpp
 
 
