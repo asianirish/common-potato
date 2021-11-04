@@ -6,6 +6,18 @@ CONFIG -= app_bundle
 LIBS +=  -L$$PWD/../build/lib/ -lpotato-util -lmenu -luniq -lhierhin
 INCLUDEPATH += $$PWD/../
 
+
+copydata.commands = $(COPY_DIR) $$PWD/*.qm $$OUT_PWD
+first.depends = $(first) copydata
+export(first.depends)
+export(copydata.commands)
+QMAKE_EXTRA_TARGETS += first copydata
+
+
+message($$install_it.files)
+
+
+
 # You can make your code fail to compile if it uses deprecated APIs.
 # In order to do so, uncomment the following line.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
