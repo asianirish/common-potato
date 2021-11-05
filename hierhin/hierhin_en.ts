@@ -19,5 +19,10 @@
             <numerusform>%n objects</numerusform>
         </translation>
     </message>
+    <message>
+        <location filename="main.cpp" line="51"/>
+        <source>pi is %1 of conventional units</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>

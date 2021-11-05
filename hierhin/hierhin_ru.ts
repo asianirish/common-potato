@@ -20,5 +20,10 @@
             <numerusform>%n объектов</numerusform>
         </translation>
     </message>
+    <message>
+        <location filename="main.cpp" line="51"/>
+        <source>pi is %1 of conventional units</source>
+        <translation type="unfinished">pi составляет %1 условных единиц</translation>
+    </message>
 </context>
 </TS>

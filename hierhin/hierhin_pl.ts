@@ -20,5 +20,10 @@
             <numerusform>%n obiektów</numerusform>
         </translation>
     </message>
+    <message>
+        <location filename="main.cpp" line="51"/>
+        <source>pi is %1 of conventional units</source>
+        <translation type="unfinished">wartość pi wynosi %1 jednostek warunkowych</translation>
+    </message>
 </context>
 </TS>

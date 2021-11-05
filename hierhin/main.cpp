@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
     QCoreApplication a(argc, argv);
 
     QTranslator translator;
-    translator.load("hierhin_en");
+    translator.load("hierhin_pl");
 
     a.installTranslator(&translator);
 
@@ -46,9 +46,17 @@ int main(int argc, char *argv[])
         qDebug() << object;
     }
 
+    {
+        n = 3.14;
+        QString object(QObject::tr("pi is %1 of conventional units").arg(n));
+        qDebug() << object;
+    }
 
     qDebug() << "3,14 is number: " << util::isNumber(3.14);
     qDebug() << "3,14 is integer: " << util::isInteger(3.14);
+
+    qDebug() << "3,0 is number: " << util::isNumber(3.);
+    qDebug() << "3,0 is integer: " << util::isInteger(3.);
 
     float fpi = 3.14;
     qDebug() << "float is number: " << util::isNumber(fpi);
