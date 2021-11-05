@@ -4,15 +4,15 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="main.cpp" line="23"/>
+        <location filename="main.cpp" line="24"/>
         <source>hi</source>
         <translation type="unfinished">cześć</translation>
     </message>
     <message numerus="yes">
-        <location filename="main.cpp" line="29"/>
-        <location filename="main.cpp" line="34"/>
-        <location filename="main.cpp" line="39"/>
-        <location filename="main.cpp" line="44"/>
+        <location filename="main.cpp" line="30"/>
+        <location filename="main.cpp" line="35"/>
+        <location filename="main.cpp" line="40"/>
+        <location filename="main.cpp" line="45"/>
         <source>%n object(s)</source>
         <translation type="unfinished">
             <numerusform>%n obiekt</numerusform>
