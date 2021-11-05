@@ -74,4 +74,17 @@ bool isInteger(const QVariant &arg)
     return false;
 }
 
+int varToInt(const QVariant &arg)
+{
+    if (isInteger(arg)) {
+
+        return arg.toInt();
+
+    } /*else*/ { //implied a string type
+        QString numStr = arg.toString();
+        bool ok;
+        return numStr.toInt(&ok, 16);
+    }
+}
+
 } // namespace util

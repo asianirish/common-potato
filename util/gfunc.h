@@ -21,6 +21,8 @@ bool isNumber(const QVariant &arg);
 
 bool isInteger(const QVariant &arg);
 
+int varToInt(const QVariant &arg);
+
 } // namespace util
 
 #endif // GFUNC_H
