@@ -3,6 +3,7 @@
 #include "Menu/TestItem.h"
 
 #include <menu/Console.h>
+#include <util/gfunc.h>
 
 #include <QCoreApplication>
 #include <QDebug>
@@ -22,7 +23,7 @@ int main(int argc, char *argv[])
 
     QString hi(QObject::tr("hi"));
     qDebug() << hi;
-    int n;
+    double n;
 
     {
         n = 0;
@@ -35,7 +36,7 @@ int main(int argc, char *argv[])
         qDebug() << object;
     }
     {
-        n = 3;
+        n = 3.14;
         QString object(QObject::tr("%n object(s)", "", n));
         qDebug() << object;
     }
@@ -44,6 +45,22 @@ int main(int argc, char *argv[])
         QString object(QObject::tr("%n object(s)", "", n));
         qDebug() << object;
     }
+
+
+    qDebug() << "3,14 is number: " << util::isNumber(3.14);
+    qDebug() << "3,14 is integer: " << util::isInteger(3.14);
+
+    float fpi = 3.14;
+    qDebug() << "float is number: " << util::isNumber(fpi);
+    qDebug() << "float is integer: " << util::isInteger(fpi);
+
+    double dpi = 3.14;
+    qDebug() << "double is number: " << util::isNumber(dpi);
+    qDebug() << "double is integer: " << util::isInteger(dpi);
+
+    int num = 100;
+    qDebug() << "int is number: " << util::isNumber(num);
+    qDebug() << "int is integer: " << util::isInteger(num);
 
 
     menu::Console console(new HierhinClassRegistry());

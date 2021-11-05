@@ -40,4 +40,38 @@ QString uint64_t2qstring_ext(uint64_t value, uint64_t radix)
     return result;
 }
 
+bool isNumber(const QVariant &arg)
+{
+    auto tp = arg.type();
+    if (static_cast<int>(tp) == static_cast<int>(QMetaType::Int) ||
+        static_cast<int>(tp) == static_cast<int>(QMetaType::UInt) ||
+        static_cast<int>(tp) == static_cast<int>(QMetaType::LongLong) ||
+        static_cast<int>(tp) == static_cast<int>(QMetaType::ULongLong) ||
+        static_cast<int>(tp) == static_cast<int>(QMetaType::Double) ||
+        static_cast<int>(tp) == static_cast<int>(QMetaType::Float) ||
+        static_cast<int>(tp) == static_cast<int>(QMetaType::Short) ||
+        static_cast<int>(tp) == static_cast<int>(QMetaType::UShort)) {
+
+        return true;
+    }
+
+    return false;
+}
+
+bool isInteger(const QVariant &arg)
+{
+    auto tp = arg.type();
+    if (static_cast<int>(tp) == static_cast<int>(QMetaType::Int) ||
+        static_cast<int>(tp) == static_cast<int>(QMetaType::UInt) ||
+        static_cast<int>(tp) == static_cast<int>(QMetaType::LongLong) ||
+        static_cast<int>(tp) == static_cast<int>(QMetaType::ULongLong) ||
+        static_cast<int>(tp) == static_cast<int>(QMetaType::Short) ||
+        static_cast<int>(tp) == static_cast<int>(QMetaType::UShort)) {
+
+        return true;
+    }
+
+    return false;
+}
+
 } // namespace util
