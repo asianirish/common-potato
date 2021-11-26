@@ -21,7 +21,7 @@ bool AbstractRegex::validate(const QVariant &value) const
 
 QString AbstractRegex::errorMessage() const
 {
-    return QString(tr("pattern doesn't match"));
+    return QString("pattern doesn't match");
 }
 
 } // namespace val
