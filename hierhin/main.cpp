@@ -52,6 +52,12 @@ int main(int argc, char *argv[])
         qDebug() << object;
     }
 
+    QByteArray testEmailMsg("wrong email format");
+
+    qDebug() << "1. email error msg:" << QObject::tr(testEmailMsg.data());
+    qDebug() << "2. email error msg:" << QObject::tr("wrong email format");
+    qDebug() << "3. email error msg:" << QByteArray("wrong email format");
+
     qDebug() << "3,14 is number: " << util::isNumber(3.14);
     qDebug() << "3,14 is integer: " << util::isInteger(3.14);
 

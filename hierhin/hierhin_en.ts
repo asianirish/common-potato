@@ -24,5 +24,10 @@
         <source>pi is %1 of conventional units</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="main.cpp" line="58"/>
+        <source>wrong email format</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>

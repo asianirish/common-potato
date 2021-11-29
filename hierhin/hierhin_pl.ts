@@ -25,5 +25,10 @@
         <source>pi is %1 of conventional units</source>
         <translation type="unfinished">wartość pi wynosi %1 jednostek warunkowych</translation>
     </message>
+    <message>
+        <location filename="main.cpp" line="58"/>
+        <source>wrong email format</source>
+        <translation type="unfinished">zły format adresu e-mail</translation>
+    </message>
 </context>
 </TS>
