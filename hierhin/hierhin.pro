@@ -3,7 +3,7 @@ QT -= gui
 CONFIG += c++11 console
 CONFIG -= app_bundle
 
-LIBS +=  -L$$PWD/../build/lib/ -lpotato-util -lmenu -luniq -lhierhin
+LIBS +=  -L$$PWD/../build/lib/ -lpotato-util -lmenu -luniq -lhierhin -lval
 INCLUDEPATH += $$PWD/../
 
 
@@ -28,6 +28,7 @@ TRANSLATIONS += hierhin_en.ts
 
 SOURCES += main.cpp \
     HierhinClassRegistry.cpp \
+    Menu/ItemVal.cpp \
     Menu/TestItem.cpp \
     Test/TestEssenceA.cpp \
     Test/TestEssenceB.cpp
@@ -40,6 +41,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     HierhinClassRegistry.h \
+    Menu/ItemVal.h \
     Menu/TestItem.h \
     Test/TestEssenceA.h \
     Test/TestEssenceB.h
