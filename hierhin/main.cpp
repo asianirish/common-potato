@@ -19,8 +19,11 @@ int main(int argc, char *argv[])
 
     QTranslator translator;
     translator.load("hierhin_pl");
-
     a.installTranslator(&translator);
+
+    QTranslator translator1;
+    translator1.load("vallib_pl");
+    a.installTranslator(&translator1);
 
     QString hi(QObject::tr("hi"));
     qDebug() << hi;

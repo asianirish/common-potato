@@ -4,15 +4,15 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="main.cpp" line="24"/>
+        <location filename="main.cpp" line="25"/>
         <source>hi</source>
         <translation type="unfinished">привет</translation>
     </message>
     <message numerus="yes">
-        <location filename="main.cpp" line="30"/>
-        <location filename="main.cpp" line="35"/>
-        <location filename="main.cpp" line="40"/>
-        <location filename="main.cpp" line="45"/>
+        <location filename="main.cpp" line="31"/>
+        <location filename="main.cpp" line="36"/>
+        <location filename="main.cpp" line="41"/>
+        <location filename="main.cpp" line="46"/>
         <source>%n object(s)</source>
         <translation type="unfinished">
             <numerusform>%n объект</numerusform>
@@ -21,12 +21,12 @@
         </translation>
     </message>
     <message>
-        <location filename="main.cpp" line="51"/>
+        <location filename="main.cpp" line="52"/>
         <source>pi is %1 of conventional units</source>
         <translation type="unfinished">pi составляет %1 условных единиц</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="58"/>
+        <location filename="main.cpp" line="59"/>
         <source>wrong email format</source>
         <translation type="unfinished"></translation>
     </message>
