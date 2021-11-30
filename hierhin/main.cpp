@@ -1,6 +1,7 @@
 
 #include "HierhinClassRegistry.h"
 #include "Menu/TestItem.h"
+#include "Menu/ItemVal.h"
 
 #include <menu/Console.h>
 #include <util/gfunc.h>
@@ -81,6 +82,7 @@ int main(int argc, char *argv[])
 
     //TODO: add items here
     console.addMenuItem("testi", menu::ActionPtr(new TestItem()));
+    console.addMenuItem("testval", menu::ActionPtr(new ItemVal()));
 
     console.run();
     QObject::connect(&console, SIGNAL(quit()), &a, SLOT(quit()));
