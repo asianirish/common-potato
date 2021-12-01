@@ -21,10 +21,14 @@ QVariant ItemVal::simplyAct(const QVariantList &args)
     qDebug() << "EMAIL ERROR MSG:" << emailMsg;
 
     Length *lengthVal = new Length();
+
+    QString lengthMsg = lengthVal->errorMessage();
+    qDebug() << "LENGTH ERROR MSG:" << lengthVal->errorMessage();
+
     lengthVal->setMinLength(7);
     lengthVal->setMaxLength(12);
 
-    QString lengthMsg = lengthVal->errorMessage();
+    lengthMsg = lengthVal->errorMessage();
     qDebug() << "LENGTH ERROR MSG1:" << lengthVal->errorMessage();
 
     qDebug() << "HI:" << Email::tr("hi");
