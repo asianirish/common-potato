@@ -1,4 +1,4 @@
-#include "ItemVal.h"
+#include "ValidatorTest.h"
 
 #include <val/Email.h>
 #include <val/Length.h>
@@ -10,12 +10,12 @@
 
 using namespace val;
 
-ItemVal::ItemVal()
+ValidatorTest::ValidatorTest()
 {
 
 }
 
-QVariant ItemVal::simplyAct(const QVariantList &args)
+QVariant ValidatorTest::simplyAct(const QVariantList &args)
 {
     Q_UNUSED(args);
     Email *emailVal = new Email();

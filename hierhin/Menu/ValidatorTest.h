@@ -1,12 +1,12 @@
-#ifndef ITEMVAL_H
-#define ITEMVAL_H
+#ifndef VALIDATORTEST_H
+#define VALIDATORTEST_H
 
 #include <menu/SimpleAction.h>
 
-class ItemVal : public menu::SimpleAction
+class ValidatorTest : public menu::SimpleAction
 {
 public:
-    ItemVal();
+    ValidatorTest();
 
 protected:
     QVariant simplyAct(const QVariantList &args) override;
@@ -18,4 +18,4 @@ private:
     }
 };
 
-#endif // ITEMVAL_H
+#endif // VALIDATORTEST_H

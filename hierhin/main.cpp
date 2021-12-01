@@ -1,7 +1,7 @@
 
 #include "HierhinClassRegistry.h"
 #include "Menu/TestItem.h"
-#include "Menu/ItemVal.h"
+#include "Menu/ValidatorTest.h"
 
 #include <menu/Console.h>
 #include <menu/util/SetLanguage.h>
@@ -87,7 +87,7 @@ int main(int argc, char *argv[])
 
     //TODO: add items here
     console.addMenuItem("testi", menu::ActionPtr(new TestItem()));
-    console.addMenuItem("testval", menu::ActionPtr(new ItemVal()));
+    console.addMenuItem("testval", menu::ActionPtr(new ValidatorTest()));
 
     menu::util::SetLanguage *setLanItem = new menu::util::SetLanguage();
     setLanItem->setFiles(QStringList{"hierhin", "vallib"});
