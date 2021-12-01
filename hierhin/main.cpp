@@ -4,6 +4,8 @@
 #include "Menu/ItemVal.h"
 
 #include <menu/Console.h>
+#include <menu/util/SetLanguage.h>
+
 #include <util/gfunc.h>
 
 #include <QCoreApplication>
@@ -18,12 +20,12 @@ int main(int argc, char *argv[])
     QCoreApplication a(argc, argv);
 
     QTranslator translator;
-    translator.load("hierhin_pl");
-    a.installTranslator(&translator);
+    translator.load("hierhin_en");
+    QCoreApplication::installTranslator(&translator);
 
     QTranslator translator1;
-    translator1.load("vallib_pl");
-    a.installTranslator(&translator1);
+    translator1.load("vallib_en");
+    QCoreApplication::installTranslator(&translator1);
 
     QString hi(QObject::tr("hi"));
     qDebug() << hi;
@@ -86,6 +88,10 @@ int main(int argc, char *argv[])
     //TODO: add items here
     console.addMenuItem("testi", menu::ActionPtr(new TestItem()));
     console.addMenuItem("testval", menu::ActionPtr(new ItemVal()));
+
+    menu::util::SetLanguage *setLanItem = new menu::util::SetLanguage();
+    setLanItem->setFiles(QStringList{"hierhin", "vallib"});
+    console.addMenuItem("setlan", menu::ActionPtr(setLanItem));
 
     console.run();
     QObject::connect(&console, SIGNAL(quit()), &a, SLOT(quit()));
