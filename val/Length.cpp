@@ -53,7 +53,7 @@ QString Length::errorMessage() const
     }
 
     if (_minLength.isValid() && _maxLength.isValid()) {
-        QString firstPart(tr("the string must contain more than %n ", "", _minLength.toInt()));
+        QString firstPart(tr("the string must contain more than %n", "", _minLength.toInt()));
         QString secondPart(tr("and less then %n characters", "", _maxLength.toInt()));
         return firstPart + secondPart;
     }
