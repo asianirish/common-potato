@@ -2,6 +2,7 @@
 
 #include <val/Email.h>
 #include <val/Length.h>
+#include <val/List.h>
 
 #include <QDebug>
 
@@ -31,9 +32,18 @@ QVariant ItemVal::simplyAct(const QVariantList &args)
     lengthMsg = lengthVal->errorMessage();
     qDebug() << "LENGTH ERROR MSG1:" << lengthVal->errorMessage();
 
+    List *listVal = new List();
+    listVal->addValue(12);
+    listVal->addValue(13);
+    listVal->addValue(31);
+    listVal->addValue(7);
+
+    QString listMsg = listVal->errorMessage();
+    qDebug() << "LIST ERROR MSG" << listMsg;
+
     qDebug() << "HI:" << Email::tr("hi");
     qDebug() << "HI:" << QObject::tr("hi");
     qDebug() << "HI:" << tr("hi");
 
-    return emailMsg + "\n" + lengthMsg;
+    return emailMsg + "\n" + lengthMsg + "\n" + listMsg;
 }

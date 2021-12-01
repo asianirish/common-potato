@@ -58,4 +58,12 @@
         <translation type="unfinished"></translation>
     </message>
 </context>
+<context>
+    <name>List</name>
+    <message>
+        <location filename="List.cpp" line="22"/>
+        <source>should be one of the specified values</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
 </TS>

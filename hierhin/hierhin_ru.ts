@@ -4,7 +4,7 @@
 <context>
     <name>Email</name>
     <message>
-        <location filename="Menu/ItemVal.cpp" line="32"/>
+        <location filename="Menu/ItemVal.cpp" line="34"/>
         <source>hi</source>
         <translation type="unfinished">привет</translation>
     </message>
@@ -12,7 +12,7 @@
 <context>
     <name>ItemVal</name>
     <message>
-        <location filename="Menu/ItemVal.cpp" line="34"/>
+        <location filename="Menu/ItemVal.cpp" line="36"/>
         <source>hi</source>
         <translation type="unfinished">привет</translation>
     </message>
@@ -20,7 +20,7 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="Menu/ItemVal.cpp" line="33"/>
+        <location filename="Menu/ItemVal.cpp" line="35"/>
         <location filename="main.cpp" line="28"/>
         <source>hi</source>
         <translation type="unfinished">привет</translation>

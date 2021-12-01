@@ -59,6 +59,14 @@
     </message>
 </context>
 <context>
+    <name>List</name>
+    <message>
+        <location filename="List.cpp" line="22"/>
+        <source>should be one of the specified values</source>
+        <translation type="unfinished">powinna być jedną z podanych wartości</translation>
+    </message>
+</context>
+<context>
     <name>QObject</name>
     <message>
         <source>hi</source>
