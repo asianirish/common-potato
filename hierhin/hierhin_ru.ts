@@ -45,7 +45,7 @@
     <message>
         <location filename="main.cpp" line="62"/>
         <source>wrong email format</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">дурацкий формат электронной почты</translation>
     </message>
 </context>
 </TS>
