@@ -9,7 +9,7 @@ Phone::Phone()
 
 QString Phone::errorMessage() const
 {
-    return QString("wrong phone number format");
+    return tr("wrong phone number format");
 }
 
 QString Phone::pattern() const

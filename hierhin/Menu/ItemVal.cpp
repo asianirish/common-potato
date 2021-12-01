@@ -3,6 +3,7 @@
 #include <val/Email.h>
 #include <val/Length.h>
 #include <val/List.h>
+#include <val/Phone.h>
 
 #include <QDebug>
 
@@ -40,6 +41,11 @@ QVariant ItemVal::simplyAct(const QVariantList &args)
 
     QString listMsg = listVal->errorMessage();
     qDebug() << "LIST ERROR MSG" << listMsg;
+
+    Phone *phoneVal = new Phone();
+    QString phoneMsg = phoneVal->errorMessage();
+
+    qDebug() << "PHONE ERROR MSG" << phoneMsg;
 
     qDebug() << "HI:" << Email::tr("hi");
     qDebug() << "HI:" << QObject::tr("hi");

@@ -62,4 +62,12 @@
         <translation type="unfinished"></translation>
     </message>
 </context>
+<context>
+    <name>Phone</name>
+    <message>
+        <location filename="Phone.cpp" line="12"/>
+        <source>wrong phone number format</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
 </TS>

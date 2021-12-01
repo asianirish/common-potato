@@ -67,6 +67,14 @@
     </message>
 </context>
 <context>
+    <name>Phone</name>
+    <message>
+        <location filename="Phone.cpp" line="12"/>
+        <source>wrong phone number format</source>
+        <translation type="unfinished">zły format numeru telefonu</translation>
+    </message>
+</context>
+<context>
     <name>QObject</name>
     <message>
         <source>hi</source>
