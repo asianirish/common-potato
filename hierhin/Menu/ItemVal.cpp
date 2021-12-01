@@ -4,6 +4,7 @@
 #include <val/Length.h>
 #include <val/List.h>
 #include <val/Phone.h>
+#include <val/NotEqualTo.h>
 
 #include <QDebug>
 
@@ -46,6 +47,12 @@ QVariant ItemVal::simplyAct(const QVariantList &args)
     QString phoneMsg = phoneVal->errorMessage();
 
     qDebug() << "PHONE ERROR MSG" << phoneMsg;
+
+    NotEqualTo *notEqualToVal = new NotEqualTo();
+    notEqualToVal->setValue(234);
+    QString notEqualToMsg = notEqualToVal->errorMessage();
+
+    qDebug() << "NOT EQUAL TO MSG" << notEqualToMsg;
 
     qDebug() << "HI:" << Email::tr("hi");
     qDebug() << "HI:" << QObject::tr("hi");

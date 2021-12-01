@@ -67,6 +67,14 @@
     </message>
 </context>
 <context>
+    <name>NotEqualTo</name>
+    <message>
+        <location filename="NotEqualTo.cpp" line="31"/>
+        <source>should not be equal to</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>Phone</name>
     <message>
         <location filename="Phone.cpp" line="12"/>

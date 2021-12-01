@@ -28,7 +28,7 @@ bool NotEqualTo::validate(const QVariant &value) const
 
 QString NotEqualTo::errorMessage() const
 {
-    return QString("should not be equal to %1").arg(_value.toString());
+    return tr("should not be equal to") + " " + _value.toString();
 }
 
 QVariant NotEqualTo::value() const

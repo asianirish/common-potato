@@ -7,6 +7,7 @@ namespace val {
 
 class NotEqualTo : public Validator
 {
+    Q_DECLARE_TR_FUNCTIONS(NotEqualTo)
 public:
     NotEqualTo();
 
