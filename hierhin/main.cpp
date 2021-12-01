@@ -2,6 +2,7 @@
 #include "HierhinClassRegistry.h"
 #include "Menu/NodeTest.h"
 #include "Menu/ValidatorTest.h"
+#include "Menu/TransTest.h"
 
 #include <menu/Console.h>
 #include <menu/util/SetLanguage.h>
@@ -26,43 +27,6 @@ int main(int argc, char *argv[])
     QTranslator translator1;
     translator1.load("vallib_en");
     QCoreApplication::installTranslator(&translator1);
-
-    QString hi(QObject::tr("hi"));
-    qDebug() << hi;
-    double n;
-
-    {
-        n = 0;
-        QString object(QObject::tr("%n object(s)", "", n));
-        qDebug() << object;
-    }
-    {
-        n = 1;
-        QString object(QObject::tr("%n object(s)", "", n));
-        qDebug() << object;
-    }
-    {
-        n = 3.14;
-        QString object(QObject::tr("%n object(s)", "", n));
-        qDebug() << object;
-    }
-    {
-        n = 50;
-        QString object(QObject::tr("%n object(s)", "", n));
-        qDebug() << object;
-    }
-
-    {
-        n = 3.14;
-        QString object(QObject::tr("pi is %1 of conventional units").arg(n));
-        qDebug() << object;
-    }
-
-    QByteArray testEmailMsg("wrong email format");
-
-    qDebug() << "1. email error msg:" << QObject::tr(testEmailMsg.data());
-    qDebug() << "2. email error msg:" << QObject::tr("wrong email format");
-    qDebug() << "3. email error msg:" << QByteArray("wrong email format");
 
     qDebug() << "3,14 is number: " << util::isNumber(3.14);
     qDebug() << "3,14 is integer: " << util::isInteger(3.14);
@@ -92,6 +56,8 @@ int main(int argc, char *argv[])
     menu::util::SetLanguage *setLanItem = new menu::util::SetLanguage();
     setLanItem->setFiles(QStringList{"hierhin", "vallib"});
     console.addMenuItem("setlan", menu::ActionPtr(setLanItem));
+
+    console.addMenuItem("testtr", menu::ActionPtr(new TransTest()));
 
     console.run();
     QObject::connect(&console, SIGNAL(quit()), &a, SLOT(quit()));
