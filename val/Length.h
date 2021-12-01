@@ -7,6 +7,7 @@ namespace val {
 
 class Length : public Validator
 {
+    Q_DECLARE_TR_FUNCTIONS(Length)
 public:
     Length();
 

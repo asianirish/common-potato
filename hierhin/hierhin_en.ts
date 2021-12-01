@@ -2,8 +2,25 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="en_US">
 <context>
+    <name>Email</name>
+    <message>
+        <location filename="Menu/ItemVal.cpp" line="32"/>
+        <source>hi</source>
+        <translation type="unfinished">hello</translation>
+    </message>
+</context>
+<context>
+    <name>ItemVal</name>
+    <message>
+        <location filename="Menu/ItemVal.cpp" line="34"/>
+        <source>hi</source>
+        <translation type="unfinished">hello</translation>
+    </message>
+</context>
+<context>
     <name>QObject</name>
     <message>
+        <location filename="Menu/ItemVal.cpp" line="33"/>
         <location filename="main.cpp" line="28"/>
         <source>hi</source>
         <translation type="unfinished">hello</translation>

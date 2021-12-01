@@ -2,15 +2,20 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="en_US">
 <context>
-    <name>val::Email</name>
+    <name>Email</name>
     <message>
         <location filename="Email.cpp" line="12"/>
+        <source>hi</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="Email.cpp" line="13"/>
         <source>wrong email format</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
-    <name>val::Length</name>
+    <name>Length</name>
     <message numerus="yes">
         <location filename="Length.cpp" line="48"/>
         <source>the string must contain more than %n characters</source>
@@ -29,7 +34,7 @@
     </message>
     <message numerus="yes">
         <location filename="Length.cpp" line="56"/>
-        <source>the string must contain more than %n </source>
+        <source>the string must contain more than %n</source>
         <translation type="unfinished">
             <numerusform></numerusform>
             <numerusform></numerusform>

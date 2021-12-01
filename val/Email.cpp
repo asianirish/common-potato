@@ -9,6 +9,7 @@ Email::Email()
 
 QString Email::errorMessage() const
 {
+    tr("hi");
     return tr("wrong email format");
 }
 
