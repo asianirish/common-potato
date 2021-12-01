@@ -22,6 +22,7 @@ QVariant ItemVal::simplyAct(const QVariantList &args)
 
     Length *lengthVal = new Length();
     lengthVal->setMinLength(7);
+    lengthVal->setMaxLength(12);
 
     QString lengthMsg = lengthVal->errorMessage();
     qDebug() << "LENGTH ERROR MSG1:" << lengthVal->errorMessage();
