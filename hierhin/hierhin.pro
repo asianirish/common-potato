@@ -28,7 +28,7 @@ TRANSLATIONS += hierhin_en.ts
 
 SOURCES += main.cpp \
     HierhinClassRegistry.cpp \
-    Menu/TestItem.cpp \
+    Menu/NodeTest.cpp \
     Menu/ValidatorTest.cpp \
     Test/TestEssenceA.cpp \
     Test/TestEssenceB.cpp
@@ -41,7 +41,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     HierhinClassRegistry.h \
-    Menu/TestItem.h \
+    Menu/NodeTest.h \
     Menu/ValidatorTest.h \
     Test/TestEssenceA.h \
     Test/TestEssenceB.h

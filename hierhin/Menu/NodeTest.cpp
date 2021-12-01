@@ -1,4 +1,4 @@
-#include "TestItem.h"
+#include "NodeTest.h"
 #include "Test/TestEssenceA.h"
 #include "Test/TestEssenceB.h"
 
@@ -9,12 +9,12 @@
 
 using namespace hierhin;
 
-TestItem::TestItem()
+NodeTest::NodeTest()
 {
 
 }
 
-QVariant TestItem::simplyAct(const QVariantList &args)
+QVariant NodeTest::simplyAct(const QVariantList &args)
 {
     Q_UNUSED(args);
     Item::setIdGenClassName("uniq::UuidValue");

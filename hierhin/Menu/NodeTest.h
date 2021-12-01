@@ -1,12 +1,12 @@
-#ifndef TESTITEM_H
-#define TESTITEM_H
+#ifndef NODETEST_H
+#define NODETEST_H
 
 #include <menu/SimpleAction.h>
 
-class TestItem : public menu::SimpleAction
+class NodeTest : public menu::SimpleAction
 {
 public:
-    TestItem();
+    NodeTest();
 
 protected:
     QVariant simplyAct(const QVariantList &args) override;
@@ -18,4 +18,4 @@ private:
     }
 };
 
-#endif // TESTITEM_H
+#endif // NODETEST_H

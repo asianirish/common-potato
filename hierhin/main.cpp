@@ -1,6 +1,6 @@
 
 #include "HierhinClassRegistry.h"
-#include "Menu/TestItem.h"
+#include "Menu/NodeTest.h"
 #include "Menu/ValidatorTest.h"
 
 #include <menu/Console.h>
@@ -86,7 +86,7 @@ int main(int argc, char *argv[])
     menu::Console console(new HierhinClassRegistry());
 
     //TODO: add items here
-    console.addMenuItem("testi", menu::ActionPtr(new TestItem()));
+    console.addMenuItem("testi", menu::ActionPtr(new NodeTest()));
     console.addMenuItem("testval", menu::ActionPtr(new ValidatorTest()));
 
     menu::util::SetLanguage *setLanItem = new menu::util::SetLanguage();
