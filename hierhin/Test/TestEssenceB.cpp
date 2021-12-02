@@ -21,8 +21,8 @@ NodeDef TestEssenceB::nodeDef() const
     PropertyDef propDefValue;
     PropertyDef propDefPi;
 
-    nd.insertPropertyDef("value", {propDefValue});
-    nd.insertPropertyDef("pi", {propDefPi});
+    nd.insertPropertyDef("value", propDefValue);
+    nd.insertPropertyDef("pi", propDefPi);
 
     return nd;
 }

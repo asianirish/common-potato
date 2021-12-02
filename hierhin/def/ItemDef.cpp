@@ -18,17 +18,17 @@ void ItemDef::setIsLimitedPropertyList(bool isLimitedPropertyList)
     _isLimitedPropertyList = isLimitedPropertyList;
 }
 
-PropertyDefs ItemDef::propertyDefs() const
+QMap<QString, PropertyDef> ItemDef::propertyDefs() const
 {
     return _propertyDefs;
 }
 
-void ItemDef::setPropertyDefs(const PropertyDefs &propertyDefs)
+void ItemDef::setPropertyDefs(const QMap<QString, PropertyDef> &propertyDefs)
 {
     _propertyDefs = propertyDefs;
 }
 
-void ItemDef::insertPropertyDef(const QString &name, const PropertyDefList &propertyDef)
+void ItemDef::insertPropertyDef(const QString &name, const PropertyDef &propertyDef)
 {
     _propertyDefs.insert(name, propertyDef);
 }
