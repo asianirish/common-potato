@@ -104,8 +104,13 @@ void Item::execute()
 
 NodeDef Item::definition() const
 {
-    //TODO: empty NodeDef
-    return essencePtr()->nodeDef();
+    EssencePtr essPtr = essencePtr();
+
+    if (essPtr) {
+        return essPtr->nodeDef();
+    }
+
+    return {};
 }
 
 } // namespace hierhin
