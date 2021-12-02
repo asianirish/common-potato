@@ -9,6 +9,10 @@
 namespace hierhin {
 namespace def {
 
+typedef QList<PropertyDef> PropertyDefList;
+
+typedef QMap<QString, PropertyDefList> PropertyDefs;
+
 class ItemDef
 {
 public:
@@ -17,16 +21,16 @@ public:
     bool isLimitedPropertyList() const;
     void setIsLimitedPropertyList(bool isLimitedPropertyList);
 
-    QMap<QString, PropertyDef> propertyDefs() const;
-    void setPropertyDefs(const QMap<QString, PropertyDef> &propertyDefs);
-    void insertPropertyDef(const QString &name, const PropertyDef &propertyDef);
+    PropertyDefs propertyDefs() const;
+    void setPropertyDefs(const PropertyDefs &propertyDefs);
+    void insertPropertyDef(const QString &name, const PropertyDefList &propertyDef);
 
     //'false' means 'no limitations'
     operator bool() const;
 
 private:
     bool _isLimitedPropertyList; // limited to the specified set of definitions
-    QMap<QString, PropertyDef> _propertyDefs;
+    PropertyDefs _propertyDefs; //TODO: several property definition per every property!
 
     virtual bool toBool() const;
 };

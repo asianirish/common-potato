@@ -20,7 +20,7 @@ NodeDef TestEssenceA::nodeDef() const
     NodeDef nd;
 
     PropertyDef propDefValue;
-    nd.insertPropertyDef("value", propDefValue);
+    nd.insertPropertyDef("value", {propDefValue});
 
     return nd;
 }
