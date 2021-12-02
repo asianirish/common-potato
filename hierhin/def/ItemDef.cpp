@@ -43,5 +43,19 @@ void ItemDef::insertPropertyDef(const QString &name, const PropertyDef &property
     _propertyDefs.insert(name, propertyDef);
 }
 
+ItemDef::operator bool() const
+{
+    return toBool();
+}
+
+bool ItemDef::toBool() const
+{
+    if (!_isLimitedPropertyList) {
+        return false;
+    }
+
+    return !_propertyDefs.isEmpty();
+}
+
 } // namespace def
 } // namespace hierhin

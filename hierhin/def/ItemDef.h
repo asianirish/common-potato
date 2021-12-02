@@ -24,10 +24,15 @@ public:
     void setPropertyDefs(const QMap<QString, PropertyDef> &propertyDefs);
     void insertPropertyDef(const QString &name, const PropertyDef &propertyDef);
 
+    //'false' means 'no limitations'
+    operator bool() const;
+
 private:
     QString _essenceClass;
     bool _isLimitedPropertyList; // limited to the specified set of definitions
     QMap<QString, PropertyDef> _propertyDefs;
+
+    virtual bool toBool() const;
 };
 
 } // namespace def
