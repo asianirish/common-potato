@@ -1,4 +1,5 @@
 #include "NodeTest.h"
+#include "NodeTest.h"
 #include "Test/TestEssenceA.h"
 #include "Test/TestEssenceB.h"
 
@@ -17,7 +18,7 @@ NodeTest::NodeTest()
 QVariant NodeTest::simplyAct(const QVariantList &args)
 {
     Q_UNUSED(args);
-    Item::setIdGenClassName("uniq::UuidValue");
+//    Item::setIdGenClassName("uniq::UuidValue");
     direct::ItemImpl item;
 
     QString value = "ID: " + item.id() + "\n";
@@ -25,6 +26,11 @@ QVariant NodeTest::simplyAct(const QVariantList &args)
 
     auto nd1 = NodePtr(new direct::NodeHashImpl());
     auto nd2 = NodePtr(new direct::NodeHashImpl());
+    auto nd3 = NodePtr(new direct::NodeHashImpl());
+
+    nd1->setEssenceClassName("TestEssenceA");
+    nd2->setEssenceClassName("TestEssenceB");
+    nd3->setEssenceClassName("TestEssenceA");
 
     nd1->setProperty("value", 13);
     nd2->setProperty("value", 37);
@@ -36,7 +42,7 @@ QVariant NodeTest::simplyAct(const QVariantList &args)
     value += "NODE2 ID: " + nd2->id() + "\n";
     value += "NODE2'S PARENT ID: " + nd2->parentNode()->id() + "\n";
 
-    auto nd3 = NodePtr(new direct::NodeHashImpl());
+
     nd3->setProperty("value", 1337);
     nd1->addChild(nd3);
 
@@ -53,10 +59,6 @@ QVariant NodeTest::simplyAct(const QVariantList &args)
     for (auto &id : ids) {
         value += id + "\n";
     }
-
-    nd1->setEssenceClassName("TestEssenceA");
-    nd2->setEssenceClassName("TestEssenceB");
-    nd3->setEssenceClassName("TestEssenceA");
 
     nd1->execute();
     nd2->execute();
