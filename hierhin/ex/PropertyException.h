@@ -11,8 +11,8 @@ class PropertyException : public Exception
 public:
     PropertyException(const QString &name);
 
-    QByteArray cause() const override {
-        return QByteArray("unknown set property exception");
+    QString cause() const override {
+        return QObject::tr("unknown set property exception");
     }
 
     QString name() const;

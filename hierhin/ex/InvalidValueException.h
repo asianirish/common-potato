@@ -11,8 +11,8 @@ class InvalidValueException : public PropertyException
 public:
     InvalidValueException(const QString &name);
 
-    QByteArray cause() const override {
-        return QByteArray("invalid value");
+    QString cause() const override {
+        return QObject::tr("invalid value");
     }
 };
 

@@ -11,8 +11,8 @@ class ValidatorException : public PropertyException
 public:
     ValidatorException(const QString &name, const QString &validatorErrorMsg);
 
-    QByteArray cause() const override {
-        return _validatorErrorMsg.toLatin1();
+    QString cause() const override {
+        return _validatorErrorMsg;
     }
 private:
     QString _validatorErrorMsg;

@@ -2,6 +2,7 @@
 #define HIERHIN_EXCEPTION_H
 
 #include <QException>
+#include <QObject>
 
 namespace hierhin {
 namespace ex {
@@ -14,8 +15,8 @@ public:
     void raise() const override { throw *this; }
     Exception *clone() const override { return new Exception(*this); }
 
-    virtual QByteArray cause() const {
-        return QByteArray("unknown hierhin lib exception");
+    virtual QString cause() const {
+        return QObject::tr("unknown hierhin lib exception");
     }
 };
 

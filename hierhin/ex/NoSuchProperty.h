@@ -11,8 +11,8 @@ class NoSuchProperty : public PropertyException
 public:
     NoSuchProperty(const QString &name);
 
-    QByteArray cause() const override {
-        return QByteArray("no such a property");
+    QString cause() const override {
+        return QObject::tr("no such a property");
     }
 };
 
