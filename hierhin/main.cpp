@@ -18,14 +18,6 @@ int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
 
-    QTranslator translator;
-    translator.load("hierhin_en");
-    QCoreApplication::installTranslator(&translator);
-
-    QTranslator translator1;
-    translator1.load("vallib_en");
-    QCoreApplication::installTranslator(&translator1);
-
     menu::Console console(new HierhinClassRegistry());
 
     //TODO: add items here
@@ -41,9 +33,6 @@ int main(int argc, char *argv[])
 
     console.run();
     QObject::connect(&console, SIGNAL(quit()), &a, SLOT(quit()));
-
-//TRY IT: simpleTest();
-
 
     return a.exec();
 }
