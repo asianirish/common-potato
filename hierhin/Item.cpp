@@ -89,8 +89,16 @@ QVariant Item::property(const QString &name) const
 
 void Item::setProperty(const QString &name, const QVariant &value)
 {
-    //TODO: check constraints
-    _properties.insert(name, value);
+    auto def = definition();
+
+    if (!def) { //no constraints
+        _properties.insert(name, value);
+    } else {
+        //TODO: check constraints
+
+
+        _properties.insert(name, value);
+    }
 }
 
 void Item::execute()
