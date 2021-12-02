@@ -14,9 +14,6 @@ class ItemDef
 public:
     ItemDef();
 
-    QString essenceClass() const;
-    void setEssenceClass(const QString &essenceClass);
-
     bool isLimitedPropertyList() const;
     void setIsLimitedPropertyList(bool isLimitedPropertyList);
 
@@ -28,7 +25,6 @@ public:
     operator bool() const;
 
 private:
-    QString _essenceClass;
     bool _isLimitedPropertyList; // limited to the specified set of definitions
     QMap<QString, PropertyDef> _propertyDefs;
 

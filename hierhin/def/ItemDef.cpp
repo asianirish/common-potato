@@ -8,16 +8,6 @@ ItemDef::ItemDef() : _isLimitedPropertyList(false)
 
 }
 
-QString ItemDef::essenceClass() const
-{
-    return _essenceClass;
-}
-
-void ItemDef::setEssenceClass(const QString &essenceClass)
-{
-    _essenceClass = essenceClass;
-}
-
 bool ItemDef::isLimitedPropertyList() const
 {
     return _isLimitedPropertyList;
