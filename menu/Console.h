@@ -47,7 +47,7 @@ private slots:
     void readCommand();
 
     void onReady(const QVariant &result);
-    void onError(const Error &err);
+    void onError(const menu::Error &err);
 
 private:
     Menu *_menu;
