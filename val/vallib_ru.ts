@@ -62,7 +62,8 @@
     <name>List</name>
     <message>
         <location filename="List.cpp" line="22"/>
-        <source>should be one of the specified values</source>
+        <source>the value should be one of the specified values</source>
+        <oldsource>should be one of the specified values</oldsource>
         <translation type="unfinished">должен быть одним из следующих значений</translation>
     </message>
 </context>
@@ -70,7 +71,8 @@
     <name>NotEqualTo</name>
     <message>
         <location filename="NotEqualTo.cpp" line="31"/>
-        <source>should not be equal to</source>
+        <source>the value should not be equal to</source>
+        <oldsource>should not be equal to</oldsource>
         <translation type="unfinished">не должно быть равно</translation>
     </message>
 </context>

@@ -4,7 +4,7 @@
 <context>
     <name>Email</name>
     <message>
-        <location filename="Menu/ItemVal.cpp" line="50"/>
+        <location filename="Menu/ValidatorTest.cpp" line="57"/>
         <source>hi</source>
         <translation type="unfinished">hello</translation>
     </message>
@@ -12,24 +12,23 @@
 <context>
     <name>ItemVal</name>
     <message>
-        <location filename="Menu/ItemVal.cpp" line="52"/>
         <source>hi</source>
-        <translation type="unfinished">hello</translation>
+        <translation type="obsolete">hello</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="Menu/ItemVal.cpp" line="51"/>
-        <location filename="main.cpp" line="28"/>
+        <location filename="Menu/TransTest.cpp" line="14"/>
+        <location filename="Menu/ValidatorTest.cpp" line="58"/>
         <source>hi</source>
         <translation type="unfinished">hello</translation>
     </message>
     <message numerus="yes">
-        <location filename="main.cpp" line="34"/>
-        <location filename="main.cpp" line="39"/>
-        <location filename="main.cpp" line="44"/>
-        <location filename="main.cpp" line="49"/>
+        <location filename="Menu/TransTest.cpp" line="20"/>
+        <location filename="Menu/TransTest.cpp" line="25"/>
+        <location filename="Menu/TransTest.cpp" line="30"/>
+        <location filename="Menu/TransTest.cpp" line="35"/>
         <source>%n object(s)</source>
         <translation type="unfinished">
             <numerusform>%n object</numerusform>
@@ -37,14 +36,22 @@
         </translation>
     </message>
     <message>
-        <location filename="main.cpp" line="55"/>
+        <location filename="Menu/TransTest.cpp" line="41"/>
         <source>pi is %1 of conventional units</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="main.cpp" line="62"/>
+        <location filename="Menu/TransTest.cpp" line="48"/>
         <source>wrong email format</source>
         <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ValidatorTest</name>
+    <message>
+        <location filename="Menu/ValidatorTest.cpp" line="59"/>
+        <source>hi</source>
+        <translation type="unfinished">hello</translation>
     </message>
 </context>
 </TS>
