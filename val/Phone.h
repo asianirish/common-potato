@@ -7,7 +7,7 @@ namespace val {
 
 class Phone : public AbstractRegex
 {
-    Q_DECLARE_TR_FUNCTIONS(Phone)
+    Q_DECLARE_TR_FUNCTIONS(val)
 public:
     Phone();
 

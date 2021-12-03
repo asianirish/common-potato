@@ -7,7 +7,7 @@ namespace val {
 
 class Email : public AbstractRegex
 {
-    Q_DECLARE_TR_FUNCTIONS(Email)
+    Q_DECLARE_TR_FUNCTIONS(val)
 public:
     Email();
 

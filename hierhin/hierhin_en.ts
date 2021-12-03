@@ -4,9 +4,8 @@
 <context>
     <name>Email</name>
     <message>
-        <location filename="Menu/ValidatorTest.cpp" line="57"/>
         <source>hi</source>
-        <translation type="unfinished">hello</translation>
+        <translation type="obsolete">hello</translation>
     </message>
 </context>
 <context>
@@ -50,6 +49,14 @@
     <name>ValidatorTest</name>
     <message>
         <location filename="Menu/ValidatorTest.cpp" line="59"/>
+        <source>hi</source>
+        <translation type="unfinished">hello</translation>
+    </message>
+</context>
+<context>
+    <name>val</name>
+    <message>
+        <location filename="Menu/ValidatorTest.cpp" line="57"/>
         <source>hi</source>
         <translation type="unfinished">hello</translation>
     </message>

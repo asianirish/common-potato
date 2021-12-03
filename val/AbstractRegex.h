@@ -7,6 +7,7 @@ namespace val {
 
 class AbstractRegex : public Validator
 {
+    Q_DECLARE_TR_FUNCTIONS(val)
 public:
     AbstractRegex();
 

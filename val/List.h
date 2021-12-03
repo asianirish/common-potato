@@ -7,7 +7,7 @@ namespace val {
 
 class List : public Validator
 {
-    Q_DECLARE_TR_FUNCTIONS(List)
+    Q_DECLARE_TR_FUNCTIONS(val)
 public:
     List();
 

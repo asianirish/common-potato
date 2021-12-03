@@ -10,7 +10,7 @@ namespace val {
 
 class Validator
 {
-    Q_DECLARE_TR_FUNCTIONS(Validator)
+    Q_DECLARE_TR_FUNCTIONS(val)
 public:
     Validator();
 
