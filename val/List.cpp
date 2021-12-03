@@ -19,7 +19,7 @@ bool List::validate(const QVariant &value) const
 
 QString List::errorMessage() const
 {
-    QString msg(tr("should be one of the specified values"));
+    QString msg(tr("the value should be one of the specified values"));
 
     msg += " [";
     int i = 0;
