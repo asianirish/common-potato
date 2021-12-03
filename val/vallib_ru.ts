@@ -91,5 +91,33 @@
         <source>the value should be less than %1</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="LessThanOrEqualTo.h" line="47"/>
+        <source>the value should be less than or equal to %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="MoreThan.h" line="55"/>
+        <source>the value should be more than %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="MoreThanOrEqualTo.h" line="55"/>
+        <source>the value should be more than or equal to %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="Range.h" line="53"/>
+        <source>the value should be within a range of %1 and %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>val::AbstractRegex</name>
+    <message>
+        <location filename="AbstractRegex.cpp" line="24"/>
+        <source>pattern doesn&apos;t match</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>
