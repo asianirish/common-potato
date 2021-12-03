@@ -45,7 +45,7 @@ bool LessThanOrEqualTo<T>::validate(const QVariant &value) const
 template <typename T>
 QString LessThanOrEqualTo<T>::errorMessage() const
 {
-    return tr("the value should be less than or equal to") + " " + _value.toString();
+    return tr("the value should be less than or equal to %n", "", _value.toInt());
 }
 
 template <typename T>

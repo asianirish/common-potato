@@ -118,18 +118,22 @@
 <context>
     <name>val</name>
     <message>
-        <location filename="LessThan.h" line="47"/>
+        <location filename="LessThan.h" line="48"/>
         <source>the value should be less than %1</source>
         <translation type="unfinished">wartość powinna być mniejsza niż %1</translation>
     </message>
-    <message>
+    <message numerus="yes">
         <location filename="LessThanOrEqualTo.h" line="48"/>
-        <source>the value should be less than or equal to</source>
-        <oldsource>the value should be less than or equal to %1</oldsource>
-        <translation type="unfinished">wartość powinna być mniejsza lub równa</translation>
+        <source>the value should be less than or equal to %n</source>
+        <oldsource>the value should be less than or equal to</oldsource>
+        <translation type="unfinished">
+            <numerusform>wartość powinna być mniejsza lub równa %n</numerusform>
+            <numerusform>wartość powinna być mniejsza lub równa %n</numerusform>
+            <numerusform>wartość powinna być mniejsza lub równa %n</numerusform>
+        </translation>
     </message>
     <message>
-        <location filename="MoreThan.h" line="55"/>
+        <location filename="MoreThan.h" line="56"/>
         <source>the value should be more than %1</source>
         <translation type="unfinished">wartość powinna być większa niż %1</translation>
     </message>
@@ -140,7 +144,7 @@
         <translation type="unfinished">wartość powinna być większa lub równa</translation>
     </message>
     <message>
-        <location filename="Range.h" line="53"/>
+        <location filename="Range.h" line="54"/>
         <source>the value should be within a range of %1 and %2</source>
         <translation type="unfinished"></translation>
     </message>

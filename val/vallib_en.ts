@@ -83,12 +83,12 @@
 <context>
     <name>val</name>
     <message>
-        <location filename="LessThan.h" line="47"/>
+        <location filename="LessThan.h" line="48"/>
         <source>the value should be less than %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="MoreThan.h" line="55"/>
+        <location filename="MoreThan.h" line="56"/>
         <source>the value should be more than %1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -99,14 +99,18 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="Range.h" line="53"/>
+        <location filename="Range.h" line="54"/>
         <source>the value should be within a range of %1 and %2</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
+    <message numerus="yes">
         <location filename="LessThanOrEqualTo.h" line="48"/>
-        <source>the value should be less than or equal to</source>
-        <translation type="unfinished"></translation>
+        <source>the value should be less than or equal to %n</source>
+        <oldsource>the value should be less than or equal to</oldsource>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
     </message>
 </context>
 <context>
