@@ -8,6 +8,7 @@ namespace val {
 template <typename T>
 class MoreThanOrEqualTo : public Validator
 {
+    Q_DECLARE_TR_FUNCTIONS(val)
 public:
     MoreThanOrEqualTo();
 
@@ -52,7 +53,7 @@ bool MoreThanOrEqualTo<T>::validate(const QVariant &value) const
 template <typename T>
 QString MoreThanOrEqualTo<T>::errorMessage() const
 {
-    return tr("the value should be more than or equal to %1").arg(_value.toString());
+    return tr("the value should be more than or equal to") + " " + _value.toString();
 }
 
 template <typename T>
