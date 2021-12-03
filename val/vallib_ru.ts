@@ -98,8 +98,8 @@
     </message>
     <message numerus="yes">
         <location filename="MoreThanOrEqualTo.h" line="56"/>
-        <source>the value should be more than or equal to</source>
-        <oldsource>the value should be more than or equal to %1</oldsource>
+        <source>the value should be more than or equal to %n</source>
+        <oldsource>the value should be more than or equal to</oldsource>
         <translation type="unfinished">
             <numerusform></numerusform>
             <numerusform></numerusform>
