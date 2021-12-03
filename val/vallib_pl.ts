@@ -112,9 +112,9 @@
         <source>the value should be less than %n</source>
         <oldsource>the value should be less than %1</oldsource>
         <translation type="unfinished">
-            <numerusform>wartość powinna być mniejsza niż %1</numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>wartość powinna być mniejsza niż %n</numerusform>
+            <numerusform>wartość powinna być mniejsza niż %n</numerusform>
+            <numerusform>wartość powinna być mniejsza niż %n</numerusform>
         </translation>
     </message>
     <message numerus="yes">
@@ -132,9 +132,9 @@
         <source>the value should be more than %n</source>
         <oldsource>the value should be more than %1</oldsource>
         <translation type="unfinished">
-            <numerusform>wartość powinna być większa niż %1</numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>wartość powinna być większa niż %n</numerusform>
+            <numerusform>wartość powinna być większa niż %n</numerusform>
+            <numerusform>wartość powinna być większa niż %n</numerusform>
         </translation>
     </message>
     <message numerus="yes">
@@ -213,9 +213,9 @@
         <source>the value should not be equal to %n</source>
         <oldsource>the value should not be equal to</oldsource>
         <translation type="unfinished">
-            <numerusform>wartość nie powinna być równa</numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>wartość nie powinna być równa %n</numerusform>
+            <numerusform>wartość nie powinna być równa %n</numerusform>
+            <numerusform>wartość nie powinna być równa %n</numerusform>
         </translation>
     </message>
     <message>
@@ -228,9 +228,9 @@
         <source>the value should be within a range of %n</source>
         <comment>range</comment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>wartość powinna mieścić się w zakresie od %n</numerusform>
+            <numerusform>wartość powinna mieścić się w zakresie od %n</numerusform>
+            <numerusform>wartość powinna mieścić się w zakresie od %n</numerusform>
         </translation>
     </message>
     <message numerus="yes">
@@ -239,9 +239,9 @@
         <oldsource> and %n</oldsource>
         <comment>range</comment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>do %n</numerusform>
+            <numerusform>do %n</numerusform>
+            <numerusform>do %n</numerusform>
         </translation>
     </message>
 </context>
