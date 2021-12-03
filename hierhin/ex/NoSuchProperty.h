@@ -12,7 +12,7 @@ public:
     NoSuchProperty(const QString &name);
 
     QString cause() const override {
-        return QObject::tr("no such a property");
+        return QObject::tr("no such a property") + " '" + name() + "'";
     }
 };
 
