@@ -51,7 +51,9 @@ bool Range<T>::validate(const QVariant &value) const
 template <typename T>
 QString Range<T>::errorMessage() const
 {
-    return tr("the value should be within a range of %1 and %2").arg(_minValue.toString(), _maxValue.toString());
+    return tr("the value should be within a range of %n", "range", _minValue.toInt()) +
+            " " +
+            tr(" and %n", "range", _maxValue.toInt());
 }
 
 template <typename T>

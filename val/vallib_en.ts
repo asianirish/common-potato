@@ -30,11 +30,6 @@
             <numerusform></numerusform>
         </translation>
     </message>
-    <message>
-        <location filename="Range.h" line="54"/>
-        <source>the value should be within a range of %1 and %2</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message numerus="yes">
         <location filename="LessThanOrEqualTo.h" line="48"/>
         <source>the value should be less than or equal to %n</source>
@@ -114,6 +109,24 @@
         <location filename="Phone.cpp" line="12"/>
         <source>wrong phone number format</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message numerus="yes">
+        <location filename="Range.h" line="54"/>
+        <source>the value should be within a range of %n</source>
+        <comment>range</comment>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
+    <message numerus="yes">
+        <location filename="Range.h" line="56"/>
+        <source> and %n</source>
+        <comment>range</comment>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
     </message>
 </context>
 </TS>
