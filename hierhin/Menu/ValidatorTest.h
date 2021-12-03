@@ -5,6 +5,7 @@
 
 class ValidatorTest : public menu::SimpleAction
 {
+    Q_OBJECT
 public:
     ValidatorTest();
 
