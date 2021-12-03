@@ -21,15 +21,15 @@ int main(int argc, char *argv[])
     menu::Console console(new HierhinClassRegistry());
 
     //TODO: add items here
-    console.addMenuItem("testnode", menu::ActionPtr(new NodeTest()));
-    console.addMenuItem("testval", menu::ActionPtr(new ValidatorTest()));
+    console.addMenuItem("tnode", menu::ActionPtr(new NodeTest()));
+    console.addMenuItem("tval", menu::ActionPtr(new ValidatorTest()));
 
     menu::util::SetLanguage *setLanItem = new menu::util::SetLanguage();
     setLanItem->setFiles(QStringList{"hierhin", "vallib"});
     console.addMenuItem("setlan", menu::ActionPtr(setLanItem));
 
-    console.addMenuItem("testtr", menu::ActionPtr(new TransTest()));
-    console.addMenuItem("testnum", menu::ActionPtr(new NumberTest()));
+    console.addMenuItem("ttr", menu::ActionPtr(new TransTest()));
+    console.addMenuItem("tnum", menu::ActionPtr(new NumberTest()));
 
     console.run();
     QObject::connect(&console, SIGNAL(quit()), &a, SLOT(quit()));
