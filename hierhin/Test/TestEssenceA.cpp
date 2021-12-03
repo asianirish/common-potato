@@ -3,6 +3,7 @@
 #include <hierhin/Item.h>
 #include <val/LessThanOrEqualTo.h>
 #include <val/MoreThanOrEqualTo.h>
+#include <val/Range.h>
 
 #include <QDebug>
 
@@ -24,10 +25,8 @@ NodeDef TestEssenceA::nodeDef() const
     nd.setIsLimitedPropertyList(true);
 
     PropertyDef propDefValue;
-    ValidatorPtr ltoet = ValidatorPtr(new val::LessThanOrEqualTo<int>(1337 * 2));
+    ValidatorPtr ltoet = ValidatorPtr(new val::Range<int>(13, 1337 * 2));
     propDefValue.addValidator(ltoet);
-    ValidatorPtr mtoet = ValidatorPtr(new val::MoreThanOrEqualTo<int>(13));
-    propDefValue.addValidator(mtoet);
 
     nd.insertPropertyDef("value", propDefValue);
 
