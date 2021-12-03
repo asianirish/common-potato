@@ -53,7 +53,7 @@ bool MoreThanOrEqualTo<T>::validate(const QVariant &value) const
 template <typename T>
 QString MoreThanOrEqualTo<T>::errorMessage() const
 {
-    return tr("the value should be more than or equal to") + " " + _value.toString();
+    return tr("the value should be more than or equal to", "", + _value.toInt());
 }
 
 template <typename T>

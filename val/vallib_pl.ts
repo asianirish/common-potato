@@ -137,11 +137,15 @@
         <source>the value should be more than %1</source>
         <translation type="unfinished">wartość powinna być większa niż %1</translation>
     </message>
-    <message>
+    <message numerus="yes">
         <location filename="MoreThanOrEqualTo.h" line="56"/>
         <source>the value should be more than or equal to</source>
         <oldsource>the value should be more than or equal to %1</oldsource>
-        <translation type="unfinished">wartość powinna być większa lub równa</translation>
+        <translation type="unfinished">
+            <numerusform>wartość powinna być większa lub równa %n</numerusform>
+            <numerusform>wartość powinna być większa lub równa %n</numerusform>
+            <numerusform>wartość powinna być większa lub równa %n</numerusform>
+        </translation>
     </message>
     <message>
         <location filename="Range.h" line="54"/>
