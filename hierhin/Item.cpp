@@ -94,8 +94,8 @@ void Item::setProperty(const QString &name, const QVariant &value)
     if (!def) { //no constraints
         _properties.insert(name, value);
     } else {
-        //TODO: check constraints
 
+        definition().validateProperty(name, value);
 
         _properties.insert(name, value);
     }

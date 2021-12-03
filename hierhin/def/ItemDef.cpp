@@ -1,5 +1,7 @@
 #include "ItemDef.h"
 
+#include "ex/NoSuchProperty.h"
+
 namespace hierhin {
 namespace def {
 
@@ -36,6 +38,20 @@ void ItemDef::insertPropertyDef(const QString &name, const PropertyDef &property
 ItemDef::operator bool() const
 {
     return toBool();
+}
+
+void ItemDef::validateProperty(const QString &name, const QVariant &value)
+{
+    if (!*this) {
+        return; //nothing to validate
+    }
+
+    if (!_propertyDefs.contains(name)) {
+        throw ex::NoSuchProperty(name);
+    }
+
+    auto propDef = _propertyDefs.value(name);
+    propDef.validate(name, value);
 }
 
 bool ItemDef::toBool() const

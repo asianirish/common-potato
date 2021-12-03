@@ -24,6 +24,8 @@ public:
     //'false' means 'no limitations'
     operator bool() const;
 
+    void validateProperty(const QString &name, const QVariant &value);
+
 private:
     bool _isLimitedPropertyList; // limited to the specified set of definitions
     QMap<QString, PropertyDef> _propertyDefs;
