@@ -33,6 +33,8 @@ public:
 
     void showMenu() const;
 
+    static int readInt();
+
 signals:
     void quit();
 

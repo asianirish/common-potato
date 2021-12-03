@@ -10,6 +10,7 @@
 #include <util/Factory.h>
 
 #include <iostream>
+#include <QTextStream>
 
 namespace menu {
 
@@ -78,7 +79,7 @@ void Console::onReady(const QVariant &result)
     std::cout << "> " << std::flush;
 }
 
-void Console::onError(const Error &err)
+void Console::onError(const menu::Error &err)
 {
     std::cout << "Error: " << err.description().toStdString() << std::endl; //TODO: use error context
     auto keys = err.context().keys();
@@ -106,6 +107,13 @@ void Console::showMenu() const
 //TODO:     std::cout << "quit" << std::endl;
 
     std::cout << "> " << std::flush;
+}
+
+int Console::readInt()
+{
+    QTextStream qtin(stdin);
+    QString line = qtin.readLine();
+    return line.toInt();
 }
 
 

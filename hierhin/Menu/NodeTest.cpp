@@ -7,9 +7,10 @@
 
 #include <util/SingletonRegistry.h>
 #include <hierhin/direct/NodeImpl.h>
+#include <menu/Console.h>
 
 #include <QDebug>
-#include <iostream>
+
 
 using namespace hierhin;
 
@@ -38,14 +39,15 @@ QVariant NodeTest::simplyAct(const QVariantList &args)
         nd2->setEssenceClassName("TestEssenceB");
         nd3->setEssenceClassName("TestEssenceA");
 
-        int n;
+        int nnn;
+        QTextStream qtin(stdin);
         qDebug() << "enter nd1 value:";
-        std::cin >> n;
-        nd1->setProperty("value", n);
+        nnn = menu::Console::readInt();
+        nd1->setProperty("value", nnn);
 
         qDebug() << "enter nd2 value:";
-        std::cin >> n;
-        nd2->setProperty("value", n);
+        nnn = menu::Console::readInt();
+        nd2->setProperty("value", nnn);
         //TODO: uncomment this line to test a NoSuchProperty exception
 //        nd1->setProperty("color", "red");
 
