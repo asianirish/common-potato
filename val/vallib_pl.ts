@@ -235,7 +235,8 @@
     </message>
     <message numerus="yes">
         <location filename="Range.h" line="56"/>
-        <source> and %n</source>
+        <source>and %n</source>
+        <oldsource> and %n</oldsource>
         <comment>range</comment>
         <translation type="unfinished">
             <numerusform></numerusform>

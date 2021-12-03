@@ -53,7 +53,7 @@ QString Range<T>::errorMessage() const
 {
     return tr("the value should be within a range of %n", "range", _minValue.toInt()) +
             " " +
-            tr(" and %n", "range", _maxValue.toInt());
+            tr("and %n", "range", _maxValue.toInt());
 }
 
 template <typename T>
