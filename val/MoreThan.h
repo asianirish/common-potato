@@ -8,6 +8,7 @@ namespace val {
 template <typename T>
 class MoreThan : public Validator
 {
+    Q_DECLARE_TR_FUNCTIONS(val)
 public:
     MoreThan();
 

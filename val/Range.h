@@ -8,6 +8,7 @@ namespace val {
 template <typename T>
 class Range : public Validator
 {
+    Q_DECLARE_TR_FUNCTIONS(val)
 public:
     Range();
 

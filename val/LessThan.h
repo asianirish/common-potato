@@ -8,6 +8,7 @@ namespace val {
 template <typename T>
 class LessThan : public Validator
 {
+    Q_DECLARE_TR_FUNCTIONS(val)
 public:
     LessThan();
 
