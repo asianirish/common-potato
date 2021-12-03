@@ -19,6 +19,8 @@ NodeDef TestEssenceA::nodeDef() const
 {
     NodeDef nd;
 
+    nd.setIsLimitedPropertyList(true);
+
     PropertyDef propDefValue;
     nd.insertPropertyDef("value", propDefValue);
 
