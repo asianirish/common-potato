@@ -9,6 +9,7 @@
 #include <hierhin/direct/NodeImpl.h>
 
 #include <QDebug>
+#include <iostream>
 
 using namespace hierhin;
 
@@ -37,8 +38,14 @@ QVariant NodeTest::simplyAct(const QVariantList &args)
         nd2->setEssenceClassName("TestEssenceB");
         nd3->setEssenceClassName("TestEssenceA");
 
-        nd1->setProperty("value", 13);
-        nd2->setProperty("value", 37);
+        int n;
+        qDebug() << "enter nd1 value:";
+        std::cin >> n;
+        nd1->setProperty("value", n);
+
+        qDebug() << "enter nd2 value:";
+        std::cin >> n;
+        nd2->setProperty("value", n);
         //TODO: uncomment this line to test a NoSuchProperty exception
 //        nd1->setProperty("color", "red");
 
