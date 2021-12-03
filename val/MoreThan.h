@@ -53,7 +53,7 @@ bool MoreThan<T>::validate(const QVariant &value) const
 template <typename T>
 QString MoreThan<T>::errorMessage() const
 {
-    return tr("the value should be more than %1").arg(_value.toString());
+    return tr("the value should be more than %n", "", _value.toInt());
 }
 
 template <typename T>

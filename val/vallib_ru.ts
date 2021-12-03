@@ -86,10 +86,15 @@
             <numerusform></numerusform>
         </translation>
     </message>
-    <message>
+    <message numerus="yes">
         <location filename="MoreThan.h" line="56"/>
-        <source>the value should be more than %1</source>
-        <translation type="unfinished"></translation>
+        <source>the value should be more than %n</source>
+        <oldsource>the value should be more than %1</oldsource>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
     </message>
     <message numerus="yes">
         <location filename="MoreThanOrEqualTo.h" line="56"/>
