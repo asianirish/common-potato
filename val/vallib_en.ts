@@ -88,23 +88,24 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="LessThanOrEqualTo.h" line="47"/>
-        <source>the value should be less than or equal to %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="MoreThan.h" line="55"/>
         <source>the value should be more than %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="MoreThanOrEqualTo.h" line="55"/>
-        <source>the value should be more than or equal to %1</source>
+        <location filename="MoreThanOrEqualTo.h" line="56"/>
+        <source>the value should be more than or equal to</source>
+        <oldsource>the value should be more than or equal to %1</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="Range.h" line="53"/>
         <source>the value should be within a range of %1 and %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="LessThanOrEqualTo.h" line="48"/>
+        <source>the value should be less than or equal to</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

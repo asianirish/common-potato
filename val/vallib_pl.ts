@@ -64,7 +64,7 @@
         <location filename="List.cpp" line="22"/>
         <source>the value should be one of the specified values</source>
         <oldsource>should be one of the specified values</oldsource>
-        <translation type="unfinished">powinna być jedną z podanych wartości</translation>
+        <translation type="unfinished">wartość powinna być jedną z podanych wartości</translation>
     </message>
 </context>
 <context>
@@ -73,7 +73,7 @@
         <location filename="NotEqualTo.cpp" line="31"/>
         <source>the value should not be equal to</source>
         <oldsource>should not be equal to</oldsource>
-        <translation type="unfinished">nie powinna być równa</translation>
+        <translation type="unfinished">wartość nie powinna być równa</translation>
     </message>
 </context>
 <context>
@@ -110,28 +110,34 @@
             <numerusform>tekst musi zawierać mniej niż %n znaków</numerusform>
         </translation>
     </message>
+    <message>
+        <source>the value should be less than or equal to</source>
+        <translation type="obsolete">wartość powinna być mniejsza lub równa</translation>
+    </message>
 </context>
 <context>
     <name>val</name>
     <message>
         <location filename="LessThan.h" line="47"/>
         <source>the value should be less than %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">wartość powinna być mniejsza niż %1</translation>
     </message>
     <message>
-        <location filename="LessThanOrEqualTo.h" line="47"/>
-        <source>the value should be less than or equal to %1</source>
-        <translation type="unfinished"></translation>
+        <location filename="LessThanOrEqualTo.h" line="48"/>
+        <source>the value should be less than or equal to</source>
+        <oldsource>the value should be less than or equal to %1</oldsource>
+        <translation type="unfinished">wartość powinna być mniejsza lub równa</translation>
     </message>
     <message>
         <location filename="MoreThan.h" line="55"/>
         <source>the value should be more than %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">wartość powinna być większa niż %1</translation>
     </message>
     <message>
-        <location filename="MoreThanOrEqualTo.h" line="55"/>
-        <source>the value should be more than or equal to %1</source>
-        <translation type="unfinished"></translation>
+        <location filename="MoreThanOrEqualTo.h" line="56"/>
+        <source>the value should be more than or equal to</source>
+        <oldsource>the value should be more than or equal to %1</oldsource>
+        <translation type="unfinished">wartość powinna być większa lub równa</translation>
     </message>
     <message>
         <location filename="Range.h" line="53"/>
@@ -144,7 +150,7 @@
     <message>
         <location filename="AbstractRegex.cpp" line="24"/>
         <source>pattern doesn&apos;t match</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">wzór nie pasuje</translation>
     </message>
 </context>
 <context>
