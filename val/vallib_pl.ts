@@ -213,10 +213,15 @@
         <source>the value should be one of the specified values</source>
         <translation type="unfinished">wartość powinna być jedną z podanych wartości</translation>
     </message>
-    <message>
+    <message numerus="yes">
         <location filename="NotEqualTo.cpp" line="31"/>
-        <source>the value should not be equal to</source>
-        <translation type="unfinished">wartość nie powinna być równa</translation>
+        <source>the value should not be equal to %n</source>
+        <oldsource>the value should not be equal to</oldsource>
+        <translation type="unfinished">
+            <numerusform>wartość nie powinna być równa</numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
     </message>
     <message>
         <location filename="Phone.cpp" line="12"/>

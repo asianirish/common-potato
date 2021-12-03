@@ -182,10 +182,15 @@
         <source>the value should be one of the specified values</source>
         <translation type="unfinished">должен быть одним из следующих значений</translation>
     </message>
-    <message>
+    <message numerus="yes">
         <location filename="NotEqualTo.cpp" line="31"/>
-        <source>the value should not be equal to</source>
-        <translation type="unfinished">не должно быть равно</translation>
+        <source>the value should not be equal to %n</source>
+        <oldsource>the value should not be equal to</oldsource>
+        <translation type="unfinished">
+            <numerusform>не должно быть равно</numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
     </message>
     <message>
         <location filename="Phone.cpp" line="12"/>
