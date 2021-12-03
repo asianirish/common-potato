@@ -107,10 +107,15 @@
 </context>
 <context>
     <name>val</name>
-    <message>
+    <message numerus="yes">
         <location filename="LessThan.h" line="48"/>
-        <source>the value should be less than %1</source>
-        <translation type="unfinished">wartość powinna być mniejsza niż %1</translation>
+        <source>the value should be less than %n</source>
+        <oldsource>the value should be less than %1</oldsource>
+        <translation type="unfinished">
+            <numerusform>wartość powinna być mniejsza niż %1</numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
     </message>
     <message numerus="yes">
         <location filename="LessThanOrEqualTo.h" line="48"/>

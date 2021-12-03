@@ -3,10 +3,14 @@
 <TS version="2.1" language="en_US">
 <context>
     <name>val</name>
-    <message>
+    <message numerus="yes">
         <location filename="LessThan.h" line="48"/>
-        <source>the value should be less than %1</source>
-        <translation type="unfinished"></translation>
+        <source>the value should be less than %n</source>
+        <oldsource>the value should be less than %1</oldsource>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
     </message>
     <message>
         <location filename="MoreThan.h" line="56"/>
