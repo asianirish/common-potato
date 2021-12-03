@@ -80,4 +80,12 @@
         <translation type="unfinished"></translation>
     </message>
 </context>
+<context>
+    <name>val</name>
+    <message>
+        <location filename="LessThan.h" line="47"/>
+        <source>the value should be less than %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
 </TS>

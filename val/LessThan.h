@@ -44,7 +44,7 @@ bool LessThan<T>::validate(const QVariant &value) const
 template <typename T>
 QString LessThan<T>::errorMessage() const
 {
-    return QString("the value should be less than %1").arg(_value.toString());
+    return tr("the value should be less than %1").arg(_value.toString());
 }
 
 template <typename T>
