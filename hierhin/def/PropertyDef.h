@@ -22,6 +22,8 @@ public:
     QVariant defaultValue() const;
     void setDefaultValue(const QVariant &defaultValue);
 
+    void validate(const QString &name, const QVariant &value);
+
 private:
     QList<ValidatorPtr> _validators;
     QVariant _defaultValue;

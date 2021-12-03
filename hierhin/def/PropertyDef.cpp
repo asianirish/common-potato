@@ -1,4 +1,5 @@
 #include "PropertyDef.h"
+#include "ex/ValidatorException.h"
 
 namespace hierhin {
 namespace def {
@@ -31,6 +32,15 @@ QVariant PropertyDef::defaultValue() const
 void PropertyDef::setDefaultValue(const QVariant &defaultValue)
 {
     _defaultValue = defaultValue;
+}
+
+void PropertyDef::validate(const QString &name, const QVariant &value)
+{
+    for (auto &validator : _validators) {
+        if (!validator->validate(value)) {
+            throw ex::ValidatorException(name, validator->errorMessage());
+        }
+    }
 }
 
 } // namespace def
