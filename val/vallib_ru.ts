@@ -81,9 +81,9 @@
         <source>the value should be less than %n</source>
         <oldsource>the value should be less than %1</oldsource>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>значение должно быть меньше %n</numerusform>
+            <numerusform>значение должно быть меньше %n</numerusform>
+            <numerusform>значение должно быть меньше %n</numerusform>
         </translation>
     </message>
     <message numerus="yes">
@@ -91,9 +91,9 @@
         <source>the value should be more than %n</source>
         <oldsource>the value should be more than %1</oldsource>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>значение должно быть больше %n</numerusform>
+            <numerusform>значение должно быть больше %n</numerusform>
+            <numerusform>значение должно быть больше %n</numerusform>
         </translation>
     </message>
     <message numerus="yes">
@@ -101,9 +101,9 @@
         <source>the value should be more than or equal to %n</source>
         <oldsource>the value should be more than or equal to</oldsource>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>значение должно быть больше или равно %n</numerusform>
+            <numerusform>значение должно быть больше или равно %n</numerusform>
+            <numerusform>значение должно быть больше или равно %n</numerusform>
         </translation>
     </message>
     <message numerus="yes">
@@ -111,15 +111,15 @@
         <source>the value should be less than or equal to %n</source>
         <oldsource>the value should be less than or equal to</oldsource>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>значение должно быть меньше или равно %n</numerusform>
+            <numerusform>значение должно быть меньше или равно %n</numerusform>
+            <numerusform>значение должно быть меньше или равно %n</numerusform>
         </translation>
     </message>
     <message>
         <location filename="AbstractRegex.cpp" line="24"/>
         <source>pattern doesn&apos;t match</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">не соответствует шаблону</translation>
     </message>
     <message>
         <location filename="Email.cpp" line="12"/>
@@ -182,9 +182,9 @@
         <source>the value should not be equal to %n</source>
         <oldsource>the value should not be equal to</oldsource>
         <translation type="unfinished">
-            <numerusform>не должно быть равно</numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>значение не должно быть равно %n</numerusform>
+            <numerusform>значение не должно быть равно %n</numerusform>
+            <numerusform>значение не должно быть равно %n</numerusform>
         </translation>
     </message>
     <message>
@@ -197,9 +197,9 @@
         <source>the value should be within a range of %n</source>
         <comment>range</comment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>значение должно быть в диапазоне от %n</numerusform>
+            <numerusform>значение должно быть в диапазоне от %n</numerusform>
+            <numerusform>значение должно быть в диапазоне от %n</numerusform>
         </translation>
     </message>
     <message numerus="yes">
@@ -208,9 +208,9 @@
         <oldsource> and %n</oldsource>
         <comment>range</comment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>до %n</numerusform>
+            <numerusform>до %n</numerusform>
+            <numerusform>до %n</numerusform>
         </translation>
     </message>
 </context>
