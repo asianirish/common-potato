@@ -43,7 +43,6 @@ bool Length::validate(const QVariant &value) const
 
 QString Length::errorMessage() const
 {
-    //TODO: what if it's a float?
     if (_minLength.isValid() && !_maxLength.isValid()) {
         return tr("the string must contain more than %n characters", "", _minLength.toInt());
     }
