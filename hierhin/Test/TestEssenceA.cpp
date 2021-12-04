@@ -6,6 +6,7 @@
 #include <val/Range.h>
 #include <val/Email.h>
 #include <val/Phone.h>
+#include <val/Length.h>
 
 #include <QDebug>
 
@@ -36,6 +37,7 @@ NodeDef TestEssenceA::nodeDef() const
     {
         PropertyDef propDefValue;
         propDefValue.addValidator(ValidatorPtr(new val::Email()));
+        propDefValue.addValidator(ValidatorPtr(new val::Length(12, 32)));
         nd.insertPropertyDef("email", propDefValue);
     }
 
