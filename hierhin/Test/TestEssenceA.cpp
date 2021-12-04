@@ -5,6 +5,7 @@
 #include <val/MoreThanOrEqualTo.h>
 #include <val/Range.h>
 #include <val/Email.h>
+#include <val/Phone.h>
 
 #include <QDebug>
 
@@ -38,6 +39,11 @@ NodeDef TestEssenceA::nodeDef() const
         nd.insertPropertyDef("email", propDefValue);
     }
 
+    {
+        PropertyDef propDefValue;
+        propDefValue.addValidator(ValidatorPtr(new val::Phone()));
+        nd.insertPropertyDef("phone", propDefValue);
+    }
 
     return nd;
 }

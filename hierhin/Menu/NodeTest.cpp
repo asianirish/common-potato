@@ -49,6 +49,10 @@ QVariant NodeTest::simplyAct(const QVariantList &args)
         QString email = qtin.readLine();
         nd1->setProperty("email", email);
 
+        qDebug() << "enter nd1 phone:";
+        QString phone = qtin.readLine();
+        nd1->setProperty("phone", phone);
+
         qDebug() << "enter nd2 value:";
         nnn = menu::Console::readInt();
         nd2->setProperty("value", nnn);
