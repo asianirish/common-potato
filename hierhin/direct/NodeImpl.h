@@ -16,9 +16,9 @@ class NodeImpl : public virtual Node, public ItemImpl
 public:
     static const QString CHILDREN_KEY;
 
-    bool containsId(const QString &id) final;
+    bool containsId(const Id &id) final;
 
-    ItemPtr child(const QString &id) const final;
+    ItemPtr child(const Id &id) const final;
 
     IdList idList() const final;
 
@@ -36,13 +36,13 @@ template<typename C>
 const QString NodeImpl<C>::CHILDREN_KEY("children");
 
 template<typename C>
-bool NodeImpl<C>::containsId(const QString &id)
+bool NodeImpl<C>::containsId(const Id &id)
 {
     return _children.contains(id);
 }
 
 template<typename C>
-ItemPtr NodeImpl<C>::child(const QString &id) const
+ItemPtr NodeImpl<C>::child(const Id &id) const
 {
     return _children.value(id);
 }
