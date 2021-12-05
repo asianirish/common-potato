@@ -17,7 +17,7 @@ public:
 
     virtual ItemPtr child(const QString &id) const = 0;
 
-    virtual void addChild(ItemPtr item) = 0;
+    void addChild(ItemPtr item);
 
     virtual IdList idList() const = 0;
 
@@ -33,6 +33,8 @@ public:
 
 protected:
     virtual void nodeImplToMap(QVariantMap &mp) const = 0;
+
+    virtual void addChildImpl(ItemPtr item) = 0;
 
 private:
     void nodeToMap(QVariantMap &mp) const final;

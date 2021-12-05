@@ -20,13 +20,11 @@ public:
 
     ItemPtr child(const QString &id) const final;
 
-    void addChild(ItemPtr item) final;
-
     IdList idList() const final;
 
 protected:
     void nodeImplToMap(QVariantMap &mp) const final;
-
+    void addChildImpl(ItemPtr item) final;
 private:
     C _children;
 };
@@ -50,7 +48,7 @@ ItemPtr NodeImpl<C>::child(const QString &id) const
 }
 
 template<typename C>
-void NodeImpl<C>::addChild(ItemPtr item)
+void NodeImpl<C>::addChildImpl(ItemPtr item)
 {
     _children.insert(item->id(), item);
     item->setParentNode(this);
