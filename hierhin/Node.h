@@ -32,7 +32,7 @@ public:
     }
 
 protected:
-    virtual void toMapNodeImplSpecific(QVariantMap &mp) const = 0;
+    virtual void nodeImplToMap(QVariantMap &mp) const = 0;
 
 private:
     void nodeToMap(QVariantMap &mp) const final;

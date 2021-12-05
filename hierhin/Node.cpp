@@ -11,7 +11,7 @@ void Node::nodeToMap(QVariantMap &mp) const
 {
     //TODO: implement
     //TODO: write links and named items
-    toMapNodeImplSpecific(mp);
+    nodeImplToMap(mp);
 }
 
 } // namespace hierhin

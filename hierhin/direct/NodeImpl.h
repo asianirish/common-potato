@@ -25,7 +25,7 @@ public:
     IdList idList() const final;
 
 protected:
-    void toMapNodeImplSpecific(QVariantMap &mp) const final;
+    void nodeImplToMap(QVariantMap &mp) const final;
 
 private:
     C _children;
@@ -63,7 +63,7 @@ IdList NodeImpl<C>::idList() const
 }
 
 template<typename C>
-void NodeImpl<C>::toMapNodeImplSpecific(QVariantMap &mp) const
+void NodeImpl<C>::nodeImplToMap(QVariantMap &mp) const
 {
     if (!_children.isEmpty()) {
         QVariantMap childrenMap;
