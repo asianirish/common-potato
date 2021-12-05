@@ -28,7 +28,8 @@ SOURCES += main.cpp \
     Menu/TransTest.cpp \
     Menu/ValidatorTest.cpp \
     Test/TestEssenceA.cpp \
-    Test/TestEssenceB.cpp
+    Test/TestEssenceB.cpp \
+    stock_v0/Exchange.cpp
 
 
 # Default rules for deployment.
@@ -43,6 +44,7 @@ HEADERS += \
     Menu/TransTest.h \
     Menu/ValidatorTest.h \
     Test/TestEssenceA.h \
-    Test/TestEssenceB.h
+    Test/TestEssenceB.h \
+    stock_v0/Exchange.h
 
 
