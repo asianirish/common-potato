@@ -95,7 +95,7 @@ void Item::setProperty(const QString &name, const QVariant &value)
         _properties.insert(name, value);
     } else {
 
-        definition().validateProperty(name, value);
+        def.validateProperty(name, value);
 
         _properties.insert(name, value);
     }
