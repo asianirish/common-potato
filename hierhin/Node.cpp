@@ -7,7 +7,7 @@ Node::Node()
 
 }
 
-void Node::toMapNodeSpecific(QVariantMap &mp) const
+void Node::nodeToMap(QVariantMap &mp) const
 {
     //TODO: implement
     //TODO: write links and named items

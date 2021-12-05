@@ -35,7 +35,7 @@ protected:
     virtual void toMapNodeImplSpecific(QVariantMap &mp) const = 0;
 
 private:
-    void toMapNodeSpecific(QVariantMap &mp) const final;
+    void nodeToMap(QVariantMap &mp) const final;
 
 };
 

@@ -71,7 +71,7 @@ private:
     static util::LazyPointer<uniq::Value<Id>> _idGen;
     QString _essenceClassName;
 
-    virtual void toMapNodeSpecific(QVariantMap &mp) const {
+    virtual void nodeToMap(QVariantMap &mp) const {
         Q_UNUSED(mp);
     }
 
