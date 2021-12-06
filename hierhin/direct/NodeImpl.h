@@ -27,6 +27,7 @@ protected:
     void addChildImpl(ItemPtr item, const Role &role) final;
 private:
     C _children;
+    QMap<Role, ItemWeakPtr> _roles;
 };
 
 typedef NodeImpl<QMap<Id, ItemPtr> > NodeMapImpl;
@@ -50,7 +51,10 @@ ItemPtr NodeImpl<C>::child(const Id &id) const
 template<typename C>
 void NodeImpl<C>::addChildImpl(ItemPtr item, const Role &role)
 {
-    Q_UNUSED(role); //TODO: use role
+    if (!role.isEmpty()) {
+        _roles.insert(item->id(), item.toWeakRef());
+    }
+
     _children.insert(item->id(), item);
     item->setParentNode(this);
 }
