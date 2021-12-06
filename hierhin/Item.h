@@ -21,6 +21,8 @@ typedef QSharedPointer<Essence> EssencePtr;
 class Item;
 typedef QSharedPointer<Item> ItemPtr;
 
+typedef QWeakPointer<Item> ItemWeakPtr;
+
 class Node;
 typedef QSharedPointer<Node> NodePtr;
 
