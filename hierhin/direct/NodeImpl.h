@@ -20,6 +20,8 @@ public:
 
     ItemPtr child(const Id &id) const final;
 
+    ItemPtr childByRole(const Role &role) final;
+
     IdList idList() const final;
 
 protected:
@@ -46,6 +48,12 @@ template<typename C>
 ItemPtr NodeImpl<C>::child(const Id &id) const
 {
     return _children.value(id);
+}
+
+template<typename C>
+ItemPtr NodeImpl<C>::childByRole(const Role &role)
+{
+    return _roles.value(role).lock();
 }
 
 template<typename C>

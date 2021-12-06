@@ -19,6 +19,8 @@ public:
 
     virtual ItemPtr child(const Id &id) const = 0;
 
+    virtual ItemPtr childByRole(const Role &role) = 0;
+
     void addChild(ItemPtr item, const Role &role = Role());
 
     virtual IdList idList() const = 0;
