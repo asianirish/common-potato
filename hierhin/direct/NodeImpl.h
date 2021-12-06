@@ -60,10 +60,11 @@ template<typename C>
 void NodeImpl<C>::addChildImpl(ItemPtr item, const Role &role)
 {
     if (!role.isEmpty()) {
-        _roles.insert(item->id(), item.toWeakRef());
+        _roles.insert(role, item.toWeakRef());
     }
 
     _children.insert(item->id(), item);
+
     item->setParentNode(this);
 }
 
