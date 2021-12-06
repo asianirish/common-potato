@@ -8,6 +8,8 @@ namespace hierhin {
 typedef QList<Id> IdList;
 typedef QList<QString> NameList;
 
+typedef QString Role;
+
 class Node : public virtual Item
 {
 public:
