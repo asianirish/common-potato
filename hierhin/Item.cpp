@@ -63,7 +63,10 @@ QVariantMap Item::toMap() const
 {
     QVariantMap mp;
     mp.insert(ID_KEY, id());
-    mp.insert(ESSENCE_CLASS_KEY, _essenceClassName);
+
+    if (!_essenceClassName.isEmpty()) {
+        mp.insert(ESSENCE_CLASS_KEY, _essenceClassName);
+    }
 
     if (!_properties.isEmpty()) {
         mp.insert(PROPERTIES_KEY, _properties);
