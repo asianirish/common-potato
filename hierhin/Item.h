@@ -25,6 +25,7 @@ class Node;
 typedef QSharedPointer<Node> NodePtr;
 
 typedef QString Id;
+typedef QString Role;
 
 class Item
 {
