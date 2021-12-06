@@ -24,7 +24,7 @@ public:
 
 protected:
     void nodeImplToMap(QVariantMap &mp) const final;
-    void addChildImpl(ItemPtr item) final;
+    void addChildImpl(ItemPtr item, const Role &role) final;
 private:
     C _children;
 };
@@ -48,8 +48,9 @@ ItemPtr NodeImpl<C>::child(const Id &id) const
 }
 
 template<typename C>
-void NodeImpl<C>::addChildImpl(ItemPtr item)
+void NodeImpl<C>::addChildImpl(ItemPtr item, const Role &role)
 {
+    Q_UNUSED(role); //TODO: use role
     _children.insert(item->id(), item);
     item->setParentNode(this);
 }

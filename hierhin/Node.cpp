@@ -7,11 +7,11 @@ Node::Node()
 
 }
 
-void Node::addChild(ItemPtr item)
+void Node::addChild(ItemPtr item, const Role &role)
 {
     //TODO: validate item
 
-    addChildImpl(item);
+    addChildImpl(item, role);
 }
 
 void Node::nodeToMap(QVariantMap &mp) const
