@@ -97,6 +97,14 @@ QVariant NodeTest::simplyAct(const QVariantList &args)
         auto rightNode = nd1->childByRole("right");
         value += "RIGHT NODE AS JSON: " + rightNode->toJson() + "\n";
 
+        auto ndWithouEssence = NodePtr(new direct::NodeHashImpl());
+        auto ndWithouEssence1 = NodePtr(new direct::NodeHashImpl());
+        ndWithouEssence->setProperty("spell", "abracadabra");
+        ndWithouEssence1->setProperty("spell", "mutabor");
+        ndWithouEssence->addChild(ndWithouEssence1);
+
+        value += "NODE WITHOUT ESSENCE AS JSON: " + ndWithouEssence->toJson() + "\n";
+
     }  catch (ex::Exception &e) {
         qDebug() << "AN ERROR HAS OCCURRED:" << e.cause();
     }
