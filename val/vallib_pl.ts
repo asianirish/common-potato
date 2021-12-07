@@ -163,7 +163,7 @@
         <translation type="unfinished">nieprawidłowy format email</translation>
     </message>
     <message numerus="yes">
-        <location filename="Length.cpp" line="48"/>
+        <location filename="Length.cpp" line="47"/>
         <source>the string must contain more than %n characters</source>
         <translation type="unfinished">
             <numerusform>tekst musi zawierać więcej niż %n znak</numerusform>
@@ -172,7 +172,7 @@
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="Length.cpp" line="52"/>
+        <location filename="Length.cpp" line="51"/>
         <source>the string must contain less than %n characters</source>
         <translation type="unfinished">
             <numerusform>tekst musi zawierać mniej niż %n znak</numerusform>
@@ -181,7 +181,7 @@
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="Length.cpp" line="56"/>
+        <location filename="Length.cpp" line="55"/>
         <source>the string must contain more than %n</source>
         <translation type="unfinished">
             <numerusform>tekst musi zawierać więcej niż %n</numerusform>
@@ -190,7 +190,7 @@
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="Length.cpp" line="57"/>
+        <location filename="Length.cpp" line="56"/>
         <source>and less then %n characters</source>
         <translation type="unfinished">
             <numerusform>i mniej niż %n znak</numerusform>
@@ -199,7 +199,7 @@
         </translation>
     </message>
     <message>
-        <location filename="Length.cpp" line="61"/>
+        <location filename="Length.cpp" line="60"/>
         <source>wrong length validator format</source>
         <translation type="unfinished">zły format</translation>
     </message>
