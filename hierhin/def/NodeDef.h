@@ -22,7 +22,8 @@ public:
     void setRoles(const QList<Role> &newRoles);
     void addRole(const Role &role);
 
-    void validateChildRole(const Role &role);
+    void validateChildRole(const Role &role) const;
+//    void validateClassName(const QString &className);
 
 private:
     //maps roles onto class names

@@ -40,7 +40,7 @@ void NodeDef::addRole(const Role &role)
     _roles.append(role);
 }
 
-void NodeDef::validateChildRole(const Role &role)
+void NodeDef::validateChildRole(const Role &role) const
 {
     if (!role.isEmpty() && !_roles.contains(role)) {
         ex::NoSuchRoleExceptin ex;
