@@ -23,6 +23,8 @@ public:
 
     virtual NodeDef nodeDef() const = 0;
 
+    QString className() const;
+
     QStringList classNames() const;
 
     bool isKindOf(const QString &className) const;

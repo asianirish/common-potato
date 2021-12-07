@@ -67,6 +67,8 @@ public:
 
     def::NodeDef definition() const;
 
+    QString essenceClassName() const;
+
     QStringList essenceClassNames() const;
 
     bool isKindOf(const QString &className) const;

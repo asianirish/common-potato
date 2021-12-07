@@ -9,10 +9,10 @@ Essence::Essence() : QObject(nullptr)
 
 }
 
-//QString Essence::essenceClassName() const
-//{
-//    return this->metaObject()->className();
-//}
+QString Essence::className() const
+{
+    return metaObject()->className();
+}
 
 QStringList Essence::classNames() const
 {

@@ -124,6 +124,11 @@ NodeDef Item::definition() const
     return {};
 }
 
+QString Item::essenceClassName() const
+{
+    return essencePtr()->className();
+}
+
 QStringList Item::essenceClassNames() const
 {
     return essencePtr()->classNames();
