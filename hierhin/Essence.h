@@ -22,6 +22,11 @@ public:
     virtual void execute(Item *item) = 0;
 
     virtual NodeDef nodeDef() const = 0;
+
+    QStringList classNames() const;
+
+    bool isKindOf(const QString &className) const;
+
 private:
 
 signals:
