@@ -7,6 +7,7 @@ using namespace hierhin::def;
 
 class TestEssenceB : public hierhin::Essence
 {
+    Q_OBJECT
 public:
     TestEssenceB();
 
