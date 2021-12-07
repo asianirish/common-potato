@@ -1,4 +1,6 @@
 #include "NodeDef.h"
+#include "ex/NoSuchRoleExceptin.h"
+#include "ex/IncompatibleEssenceClass.h"
 
 namespace hierhin {
 namespace def {
@@ -36,6 +38,15 @@ void NodeDef::setRoles(const QList<Role> &newRoles)
 void NodeDef::addRole(const Role &role)
 {
     _roles.append(role);
+}
+
+void NodeDef::validateChildRole(const Role &role)
+{
+    if (!role.isEmpty() && !_roles.contains(role)) {
+        ex::NoSuchRoleExceptin ex;
+        ex.setRole(role);
+        throw ex;
+    }
 }
 
 } // namespace def

@@ -9,6 +9,7 @@ Node::Node()
 
 void Node::addChild(ItemPtr item, const Role &role)
 {
+    definition().validateChildRole(role);
     //TODO: validate item
 
     addChildImpl(item, role);
