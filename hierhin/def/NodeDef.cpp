@@ -46,17 +46,14 @@ void NodeDef::addRole(const Role &role)
     _roles.append(role);
 }
 
-void NodeDef::validateChildRole(const Role &role) const
+void NodeDef::validateChild(ItemPtr item, const Role &role) const
 {
     if (!role.isEmpty() && !_roles.contains(role)) {
         ex::NoSuchRoleExceptin ex;
         ex.setRole(role);
         throw ex;
     }
-}
 
-void NodeDef::validateChild(ItemPtr item, const Role &role) const
-{
     if (!item->isKindOf(childEssenceClassName(role))) {
         ex::IncompatibleEssenceClass ex;
         //TODO: ...

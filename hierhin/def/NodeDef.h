@@ -26,7 +26,6 @@ public:
     void setRoles(const QList<Role> &newRoles);
     void addRole(const Role &role);
 
-    void validateChildRole(const Role &role) const;
     void validateChild(ItemPtr item, const Role &role) const;
 
 private:
