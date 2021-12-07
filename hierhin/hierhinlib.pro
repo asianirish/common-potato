@@ -31,6 +31,7 @@ HEADERS += \
     def/PropertyDef.h \
     direct/ItemImpl.h \
     direct/NodeImpl.h \
+    ex/ChildItemException.h \
     ex/Exception.h \
     ex/InvalidValueException.h \
     ex/NoSuchProperty.h \
@@ -45,6 +46,7 @@ SOURCES += \
     def/NodeDef.cpp \
     def/PropertyDef.cpp \
     direct/ItemImpl.cpp \
+    ex/ChildItemException.cpp \
     ex/Exception.cpp \
     ex/InvalidValueException.cpp \
     ex/NoSuchProperty.cpp \
