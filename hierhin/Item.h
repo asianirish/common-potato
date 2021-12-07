@@ -67,6 +67,10 @@ public:
 
     def::NodeDef definition() const;
 
+    QStringList essenceClassNames() const;
+
+    bool isKindOf(const QString &className) const;
+
 private:
     mutable Id _id;
     QVariantMap _properties;

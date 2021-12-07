@@ -124,4 +124,14 @@ NodeDef Item::definition() const
     return {};
 }
 
+QStringList Item::essenceClassNames() const
+{
+    return essencePtr()->classNames();
+}
+
+bool Item::isKindOf(const QString &className) const
+{
+    return essencePtr()->isKindOf(className);
+}
+
 } // namespace hierhin
