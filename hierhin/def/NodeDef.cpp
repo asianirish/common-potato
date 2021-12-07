@@ -1,6 +1,7 @@
 #include "NodeDef.h"
 #include "ex/NoSuchRoleExceptin.h"
 #include "ex/IncompatibleEssenceClass.h"
+#include "../Item.h"
 
 namespace hierhin {
 namespace def {
@@ -13,6 +14,11 @@ NodeDef::NodeDef()
 const QMap<Role, QString> &NodeDef::childEssenceClassNames() const
 {
     return _childEssenceClassNames;
+}
+
+QString NodeDef::childEssenceClassName(const Role &role) const
+{
+    return _childEssenceClassNames.value(role);
 }
 
 void NodeDef::setChildEssenceClassNames(const QMap<Role, QString> &newChildEssenceClassNames)
@@ -45,6 +51,15 @@ void NodeDef::validateChildRole(const Role &role) const
     if (!role.isEmpty() && !_roles.contains(role)) {
         ex::NoSuchRoleExceptin ex;
         ex.setRole(role);
+        throw ex;
+    }
+}
+
+void NodeDef::validateChild(ItemPtr item, const Role &role) const
+{
+    if (!item->isKindOf(childEssenceClassName(role))) {
+        ex::IncompatibleEssenceClass ex;
+        //TODO: ...
         throw ex;
     }
 }

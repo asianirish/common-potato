@@ -7,6 +7,9 @@ namespace hierhin {
 
 typedef QString Role;
 
+class Item;
+typedef QSharedPointer<Item> ItemPtr;
+
 namespace def {
 
 class NodeDef : public ItemDef
@@ -15,6 +18,7 @@ public:
     NodeDef();
 
     const QMap<Role, QString> &childEssenceClassNames() const;
+    QString childEssenceClassName(const Role &role = Role()) const;
     void setChildEssenceClassNames(const QMap<Role, QString> &newChildEssenceClassNames);
     void setChildEssenceClassName(const QString &className, const Role &role = "");
 
@@ -23,7 +27,7 @@ public:
     void addRole(const Role &role);
 
     void validateChildRole(const Role &role) const;
-//    void validateClassName(const QString &className);
+    void validateChild(ItemPtr item, const Role &role) const;
 
 private:
     //maps roles onto class names
