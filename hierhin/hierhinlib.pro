@@ -35,6 +35,7 @@ HEADERS += \
     ex/Exception.h \
     ex/InvalidValueException.h \
     ex/NoSuchProperty.h \
+    ex/NoSuchRoleExceptin.h \
     ex/PropertyException.h \
     ex/ValidatorException.h
 
@@ -50,6 +51,7 @@ SOURCES += \
     ex/Exception.cpp \
     ex/InvalidValueException.cpp \
     ex/NoSuchProperty.cpp \
+    ex/NoSuchRoleExceptin.cpp \
     ex/PropertyException.cpp \
     ex/ValidatorException.cpp
 
