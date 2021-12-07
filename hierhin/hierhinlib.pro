@@ -33,6 +33,7 @@ HEADERS += \
     direct/NodeImpl.h \
     ex/ChildItemException.h \
     ex/Exception.h \
+    ex/IncompatibleEssenceClass.h \
     ex/InvalidValueException.h \
     ex/NoSuchProperty.h \
     ex/NoSuchRoleExceptin.h \
@@ -49,6 +50,7 @@ SOURCES += \
     direct/ItemImpl.cpp \
     ex/ChildItemException.cpp \
     ex/Exception.cpp \
+    ex/IncompatibleEssenceClass.cpp \
     ex/InvalidValueException.cpp \
     ex/NoSuchProperty.cpp \
     ex/NoSuchRoleExceptin.cpp \
