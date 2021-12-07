@@ -22,14 +22,13 @@ NodeTest::NodeTest()
 QVariant NodeTest::simplyAct(const QVariantList &args)
 {
     Q_UNUSED(args);
-    QString value;
 
 //    Item::setIdGenClassName("uniq::UuidValue");
     try {
         direct::ItemImpl item;
 
-        value = "ID: " + item.id() + "\n";
-        value += "ID second time: " + item.id() + "\n";
+        qDebug() << "ID: " << item.id();
+        qDebug() << "ID second time: " << item.id();
 
         auto nd1 = NodePtr(new direct::NodeHashImpl());
         auto nd2 = NodePtr(new direct::NodeHashImpl());
@@ -63,39 +62,39 @@ QVariant NodeTest::simplyAct(const QVariantList &args)
     //    nd2->setParentNode(nd1.data());
         nd1->addChild(nd2, "left");
 
-        value += "NODE1 ID: " + nd1->id() + "\n";
-        value += "NODE2 ID: " + nd2->id() + "\n";
-        value += "NODE2'S PARENT ID: " + nd2->parentNode()->id() + "\n";
+        qDebug() << "NODE1 ID: " << nd1->id();
+        qDebug() << "NODE2 ID: " << nd2->id();
+        qDebug() << "NODE2'S PARENT ID: " << nd2->parentNode()->id();
 
 
         nd3->setProperty("value", 1337);
         nd1->addChild(nd3, "right");
 
         if (nd1->containsId(nd2->id())) {
-            value += "NODE1 CONTAINS NODE2\n";
+            qDebug() << "NODE1 CONTAINS NODE2";
         }
 
-        value += "NODE3 ID: " + nd3->id() + "\n";
+        qDebug() << "NODE3 ID: " << nd3->id();
 
-        value += "\nNODE1 CHILDREN IDS:\n";
+        qDebug() << "\nNODE1 CHILDREN IDS:\n";
 
         auto ids = nd1->idList();
 
         for (auto &id : ids) {
-            value += id + "\n";
+            qDebug() << "ID:" << id;
         }
 
         nd1->execute();
         nd2->execute();
         nd3->execute();
 
-        value += "NODE1 AS A JSON: " + nd1->toJson() + "\n";
+        qDebug().noquote() << "NODE1 AS A JSON: " << nd1->toJson();
 
         auto leftNode = nd1->childByRole("left");
-        value += "LEFT NODE AS JSON: " + leftNode->toJson() + "\n";
+        qDebug().noquote() << "LEFT NODE AS JSON: " << leftNode->toJson();
 
         auto rightNode = nd1->childByRole("right");
-        value += "RIGHT NODE AS JSON: " + rightNode->toJson() + "\n";
+        qDebug().noquote() << "RIGHT NODE AS JSON: " << rightNode->toJson();
 
         auto ndWithouEssence = NodePtr(new direct::NodeHashImpl());
         auto ndWithouEssence1 = NodePtr(new direct::NodeHashImpl());
@@ -103,11 +102,22 @@ QVariant NodeTest::simplyAct(const QVariantList &args)
         ndWithouEssence1->setProperty("spell", "mutabor");
         ndWithouEssence->addChild(ndWithouEssence1);
 
-        value += "NODE WITHOUT ESSENCE AS JSON: " + ndWithouEssence->toJson() + "\n";
+        qDebug().noquote() << "NODE WITHOUT ESSENCE AS JSON: " << ndWithouEssence->toJson();
+
+        qDebug() << "NODE1 CLASS NAMES:\n";
+        auto clnms = nd1->essenceClassNames();
+        for (auto &clnm : clnms) {
+            qDebug() << clnm;
+        }
+
+        qDebug() << "NODE1 KIND OF QOBJECT: " << nd1->isKindOf("QObject");
+        qDebug() << "NODE1 KIND OF hierhin::Essence: " << nd1->isKindOf("hierhin::Essence");
+        qDebug() << "NODE1 KIND OF TestEssenceA: " << nd1->isKindOf("TestEssenceA");
+        qDebug() << "NODE1 KIND OF TestEssenceB: " << nd1->isKindOf("TestEssenceB");
 
     }  catch (ex::Exception &e) {
         qDebug() << "AN ERROR HAS OCCURRED:" << e.cause();
     }
 
-    return value;
+    return true;
 }
