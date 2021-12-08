@@ -13,7 +13,7 @@ public:
     NoSuchRoleExceptin();
 
     QString cause() const override {
-        return QObject::tr("no such a role") + " '" + _role + "'";
+        return tr("no such a role") + " '" + _role + "'";
     }
 
     const QString &role() const;

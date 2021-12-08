@@ -13,7 +13,7 @@ public:
     ChildItemException();
 
     QString cause() const override {
-        return QObject::tr("unknown child item exception");
+        return tr("unknown child item exception");
     }
 };
 

@@ -19,7 +19,7 @@ public:
     Exception *clone() const override { return new Exception(*this); }
 
     virtual QString cause() const {
-        return QObject::tr("unknown hierhin lib exception");
+        return tr("unknown hierhin lib exception");
     }
 };
 

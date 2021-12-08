@@ -13,7 +13,7 @@ public:
     InvalidValueException(const QString &name);
 
     QString cause() const override {
-        return QObject::tr("invalid value");
+        return tr("invalid value");
     }
 };
 

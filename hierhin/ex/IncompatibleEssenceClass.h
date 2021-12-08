@@ -13,7 +13,7 @@ public:
     IncompatibleEssenceClass();
 
     QString cause() const override {
-        return QObject::tr("incompatible essence class")/* + " '" + _role + "'"*/;
+        return tr("incompatible essence class")/* + " '" + _role + "'"*/;
     }
 };
 

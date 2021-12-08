@@ -13,7 +13,7 @@ public:
     PropertyException(const QString &name);
 
     QString cause() const override {
-        return QObject::tr("unknown set property exception");
+        return tr("unknown set property exception");
     }
 
     QString name() const;
