@@ -8,6 +8,7 @@ you are welcome to use them in your project as a submodule
 * util
   * Factory template
   * LazyPointer template
+  * SingletonRegistry
   * uint to string global functions
 * uniq
   * unique value generators
