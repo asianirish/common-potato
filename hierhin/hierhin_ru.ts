@@ -37,47 +37,50 @@
         <source>wrong email format</source>
         <translation type="obsolete">дурацкий формат электронной почты</translation>
     </message>
-    <message>
-        <location filename="ex/ChildItemException.h" line="16"/>
-        <source>unknown child item exception</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="ex/Exception.h" line="22"/>
-        <source>unknown hierhin lib exception</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="ex/IncompatibleEssenceClass.h" line="16"/>
-        <source>incompatible essence class</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="ex/InvalidValueException.h" line="16"/>
-        <source>invalid value</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="ex/NoSuchProperty.h" line="16"/>
-        <source>no such a property</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="ex/NoSuchRoleExceptin.h" line="16"/>
-        <source>no such a role</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="ex/PropertyException.h" line="16"/>
-        <source>unknown set property exception</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>ValidatorTest</name>
     <message>
         <source>hi</source>
         <translation type="obsolete">привет</translation>
+    </message>
+</context>
+<context>
+    <name>ex</name>
+    <message>
+        <location filename="ex/ChildItemException.h" line="16"/>
+        <source>unknown child item exception</source>
+        <translation type="unfinished">неизвестное исключение дочернего элемента</translation>
+    </message>
+    <message>
+        <location filename="ex/Exception.h" line="22"/>
+        <source>unknown hierhin lib exception</source>
+        <translation type="unfinished">неизвестное исключение библиотеки hierhin</translation>
+    </message>
+    <message>
+        <location filename="ex/IncompatibleEssenceClass.h" line="16"/>
+        <source>incompatible essence class</source>
+        <translation type="unfinished">несовместимый класс essence</translation>
+    </message>
+    <message>
+        <location filename="ex/InvalidValueException.h" line="16"/>
+        <source>invalid value</source>
+        <translation type="unfinished">недопустимое значение</translation>
+    </message>
+    <message>
+        <location filename="ex/NoSuchProperty.h" line="16"/>
+        <source>no such a property</source>
+        <translation type="unfinished">нет такого свойства</translation>
+    </message>
+    <message>
+        <location filename="ex/NoSuchRoleExceptin.h" line="16"/>
+        <source>no such a role</source>
+        <translation type="unfinished">нет такой роли</translation>
+    </message>
+    <message>
+        <location filename="ex/PropertyException.h" line="16"/>
+        <source>unknown set property exception</source>
+        <translation type="unfinished">неизвестное исключение установки свойства</translation>
     </message>
 </context>
 <context>
