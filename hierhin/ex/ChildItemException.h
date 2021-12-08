@@ -8,6 +8,7 @@ namespace ex {
 
 class ChildItemException : public Exception
 {
+    Q_DECLARE_TR_FUNCTIONS(ex)
 public:
     ChildItemException();
 

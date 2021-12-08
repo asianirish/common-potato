@@ -8,6 +8,7 @@ namespace ex {
 
 class NoSuchRoleExceptin : public ChildItemException
 {
+    Q_DECLARE_TR_FUNCTIONS(ex)
 public:
     NoSuchRoleExceptin();
 

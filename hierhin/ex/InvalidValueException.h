@@ -8,6 +8,7 @@ namespace ex {
 
 class InvalidValueException : public PropertyException
 {
+    Q_DECLARE_TR_FUNCTIONS(ex)
 public:
     InvalidValueException(const QString &name);
 

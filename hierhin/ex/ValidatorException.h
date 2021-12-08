@@ -8,6 +8,7 @@ namespace ex {
 
 class ValidatorException : public PropertyException
 {
+    Q_DECLARE_TR_FUNCTIONS(ex)
 public:
     ValidatorException(const QString &name, const QString &validatorErrorMsg);
 

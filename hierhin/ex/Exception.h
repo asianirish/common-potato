@@ -4,11 +4,14 @@
 #include <QException>
 #include <QObject>
 
+#include <QCoreApplication>
+
 namespace hierhin {
 namespace ex {
 
 class Exception : public QException
 {
+    Q_DECLARE_TR_FUNCTIONS(ex)
 public:
     Exception();
 

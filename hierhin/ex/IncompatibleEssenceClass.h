@@ -8,6 +8,7 @@ namespace ex {
 
 class IncompatibleEssenceClass : public ChildItemException
 {
+    Q_DECLARE_TR_FUNCTIONS(ex)
 public:
     IncompatibleEssenceClass();
 

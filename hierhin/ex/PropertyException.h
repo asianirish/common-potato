@@ -8,6 +8,7 @@ namespace ex {
 
 class PropertyException : public Exception
 {
+    Q_DECLARE_TR_FUNCTIONS(ex)
 public:
     PropertyException(const QString &name);
 
