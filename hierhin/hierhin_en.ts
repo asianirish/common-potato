@@ -28,6 +28,16 @@
             <numerusform>%n objects</numerusform>
         </translation>
     </message>
+</context>
+<context>
+    <name>ValidatorTest</name>
+    <message>
+        <source>hi</source>
+        <translation type="obsolete">hello</translation>
+    </message>
+</context>
+<context>
+    <name>ex</name>
     <message>
         <location filename="ex/ChildItemException.h" line="16"/>
         <source>unknown child item exception</source>
@@ -62,13 +72,6 @@
         <location filename="ex/PropertyException.h" line="16"/>
         <source>unknown set property exception</source>
         <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>ValidatorTest</name>
-    <message>
-        <source>hi</source>
-        <translation type="obsolete">hello</translation>
     </message>
 </context>
 <context>
