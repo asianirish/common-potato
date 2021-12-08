@@ -37,40 +37,43 @@
         <source>wrong email format</source>
         <translation type="obsolete">zły format adresu e-mail</translation>
     </message>
+</context>
+<context>
+    <name>ex</name>
     <message>
         <location filename="ex/ChildItemException.h" line="16"/>
         <source>unknown child item exception</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">nieznany wyjątek elementu potomnego</translation>
     </message>
     <message>
         <location filename="ex/Exception.h" line="22"/>
         <source>unknown hierhin lib exception</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">nieznany wyjątek biblioteki hierhin</translation>
     </message>
     <message>
         <location filename="ex/IncompatibleEssenceClass.h" line="16"/>
         <source>incompatible essence class</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">niekompatybilna klasa essence</translation>
     </message>
     <message>
         <location filename="ex/InvalidValueException.h" line="16"/>
         <source>invalid value</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">nieprawidłowa wartość</translation>
     </message>
     <message>
         <location filename="ex/NoSuchProperty.h" line="16"/>
         <source>no such a property</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">nie ma takiej właściwości</translation>
     </message>
     <message>
         <location filename="ex/NoSuchRoleExceptin.h" line="16"/>
         <source>no such a role</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">nie ma takiej roli</translation>
     </message>
     <message>
         <location filename="ex/PropertyException.h" line="16"/>
         <source>unknown set property exception</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">nieznany wyjątek ustawienia właściwości</translation>
     </message>
 </context>
 </TS>
