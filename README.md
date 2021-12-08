@@ -13,8 +13,8 @@ you are welcome to use them in your project as a submodule
   * unique value generators
 * menu
   * command menu and Console
-* hi
-  * hierarchical object cloning and serialization *(coming soon)*
+* hierhin
+  * hierarchical object cloning and serialization *(in progress)*
 
 ## donate
 
