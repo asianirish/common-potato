@@ -3,7 +3,12 @@
 namespace hierhin {
 namespace ex {
 
-UnregisteredClassException::UnregisteredClassException()
+UnregisteredClassException::UnregisteredClassException() : UnregisteredClassException(QString())
+{
+
+}
+
+UnregisteredClassException::UnregisteredClassException(const QString &className) : _className(className)
 {
 
 }
