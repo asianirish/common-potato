@@ -131,12 +131,24 @@ QString Item::essenceClassName() const
 
 QStringList Item::essenceClassNames() const
 {
-    return essencePtr()->classNames();
+    EssencePtr essPtr = essencePtr();
+
+    if (essPtr) {
+        return essPtr->classNames();
+    }
+
+    return {};
 }
 
 bool Item::isKindOf(const QString &className) const
 {
-    return essencePtr()->isKindOf(className);
+    EssencePtr essPtr = essencePtr();
+
+    if (essPtr) {
+        return essPtr->isKindOf(className);
+    }
+
+    return false;
 }
 
 } // namespace hierhin
