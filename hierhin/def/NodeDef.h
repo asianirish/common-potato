@@ -22,16 +22,13 @@ public:
     void setChildEssenceClassNames(const QMap<Role, QString> &newChildEssenceClassNames);
     void setChildEssenceClassName(const QString &className, const Role &role = "");
 
-    const QList<Role> &roles() const;
-    void setRoles(const QList<Role> &newRoles);
-    void addRole(const Role &role);
+    QList<Role> roles() const;
 
     void validateChild(ItemPtr item, const Role &role) const;
 
 private:
     //maps roles onto class names
     QMap<Role, QString> _childEssenceClassNames;
-    QList<Role> _roles;
 };
 
 } // namespace def

@@ -31,24 +31,14 @@ void NodeDef::setChildEssenceClassName(const QString &className, const Role &rol
     _childEssenceClassNames.insert(role, className);
 }
 
-const QList<Role> &NodeDef::roles() const
+QList<Role> NodeDef::roles() const
 {
-    return _roles;
-}
-
-void NodeDef::setRoles(const QList<Role> &newRoles)
-{
-    _roles = newRoles;
-}
-
-void NodeDef::addRole(const Role &role)
-{
-    _roles.append(role);
+    return _childEssenceClassNames.keys();
 }
 
 void NodeDef::validateChild(ItemPtr item, const Role &role) const
 {
-    if (!role.isEmpty() && !_roles.contains(role)) {
+    if (!role.isEmpty() && !roles().contains(role)) {
         ex::NoSuchRoleExceptin ex;
         ex.setRole(role);
         throw ex;

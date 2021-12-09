@@ -25,8 +25,6 @@ NodeDef TestEssenceA::nodeDef() const
 {
     NodeDef nd;
 
-    nd.setRoles({"left", "right"});
-
     nd.setChildEssenceClassName("TestEssenceB", "left");
     nd.setChildEssenceClassName("TestEssenceA", "right");
 
