@@ -25,6 +25,8 @@ NodeDef TestEssenceA::nodeDef() const
 {
     NodeDef nd;
 
+    nd.setRoles({"left", "right"});
+
     nd.setIsLimitedPropertyList(true);
 
     {
