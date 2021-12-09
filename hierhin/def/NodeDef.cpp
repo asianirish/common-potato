@@ -8,7 +8,7 @@ namespace def {
 
 NodeDef::NodeDef()
 {
-    setChildEssenceClassName(Role(), "hierhin::Essence");
+    setChildEssenceClassName("hierhin::Essence", Role());
 }
 
 const QMap<Role, QString> &NodeDef::childEssenceClassNames() const
