@@ -96,13 +96,14 @@ QVariant NodeTest::simplyAct(const QVariantList &args)
         auto rightNode = nd1->childByRole("right");
         qDebug().noquote() << "RIGHT NODE AS JSON: " << rightNode->toJson();
 
-        auto ndWithouEssence = NodePtr(new direct::NodeHashImpl());
-        auto ndWithouEssence1 = NodePtr(new direct::NodeHashImpl());
-        ndWithouEssence->setProperty("spell", "abracadabra");
-        ndWithouEssence1->setProperty("spell", "mutabor");
-        ndWithouEssence->addChild(ndWithouEssence1);
+        //TODO: error:
+//        auto ndWithouEssence = NodePtr(new direct::NodeHashImpl());
+//        auto ndWithouEssence1 = NodePtr(new direct::NodeHashImpl());
+//        ndWithouEssence->setProperty("spell", "abracadabra");
+//        ndWithouEssence1->setProperty("spell", "mutabor");
+//        ndWithouEssence->addChild(ndWithouEssence1);
 
-        qDebug().noquote() << "NODE WITHOUT ESSENCE AS JSON: " << ndWithouEssence->toJson();
+//        qDebug().noquote() << "NODE WITHOUT ESSENCE AS JSON: " << ndWithouEssence->toJson();
 
         qDebug() << "NODE1 CLASS NAMES:\n";
         auto clnms = nd1->essenceClassNames();
