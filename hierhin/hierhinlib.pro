@@ -41,6 +41,7 @@ HEADERS += \
     ex/NoSuchProperty.h \
     ex/NoSuchRoleExceptin.h \
     ex/PropertyException.h \
+    ex/UnregisteredClassException.h \
     ex/ValidatorException.h
 
 SOURCES += \
@@ -48,6 +49,7 @@ SOURCES += \
     Item.cpp \
     Node.cpp \
     def/ItemDef.cpp \
+    def/ItemReq.cpp \
     def/NodeDef.cpp \
     def/PropertyDef.cpp \
     direct/ItemImpl.cpp \
@@ -58,6 +60,7 @@ SOURCES += \
     ex/NoSuchProperty.cpp \
     ex/NoSuchRoleExceptin.cpp \
     ex/PropertyException.cpp \
+    ex/UnregisteredClassException.cpp \
     ex/ValidatorException.cpp
 
 
