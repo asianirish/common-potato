@@ -1,6 +1,7 @@
 #include "Item.h"
 #include "Essence.h"
 #include "Node.h"
+#include "ex/UnregisteredClassException.h"
 
 #include <util/SingletonRegistry.h>
 
@@ -60,7 +61,11 @@ EssencePtr Item::essencePtr() const
         return {};
     }
 
-    return util::SingletonRegistry<hierhin::Essence>::ptr(_essenceClassName);
+    try {
+        return util::SingletonRegistry<hierhin::Essence>::ptr(_essenceClassName);
+    }  catch (util::UnregisteredClassException &e) {
+        throw UnregisteredClassException(e.className());
+    }
 }
 
 QVariantMap Item::toMap() const
