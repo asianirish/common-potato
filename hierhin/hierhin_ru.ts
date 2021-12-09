@@ -85,7 +85,7 @@
     <message>
         <location filename="ex/UnregisteredClassException.h" line="18"/>
         <source>unregistered class name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">незарегистрированное имя класса</translation>
     </message>
 </context>
 <context>
