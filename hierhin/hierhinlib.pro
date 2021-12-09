@@ -30,6 +30,7 @@ HEADERS += \
     Item.h \
     Node.h \
     def/ItemDef.h \
+    def/ItemReq.h \
     def/NodeDef.h \
     def/PropertyDef.h \
     direct/ItemImpl.h \

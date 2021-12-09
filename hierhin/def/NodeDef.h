@@ -2,13 +2,11 @@
 #define HIERHIN_DEF_NODEDEF_H
 
 #include "ItemDef.h"
+#include "ItemReq.h"
 
 namespace hierhin {
 
 typedef QString Role;
-
-class Item;
-typedef QSharedPointer<Item> ItemPtr;
 
 namespace def {
 
@@ -28,7 +26,7 @@ public:
 
 private:
     //maps roles onto class names
-    QMap<Role, QString> _childEssenceClassNames;
+    QMap<Role, QString> _childEssenceClassNames; //TODO: use a map of ItemReqs instead
 };
 
 } // namespace def
