@@ -8,6 +8,21 @@ using namespace std;
 
 namespace util {
 
+class UnregisteredClassException
+{
+public:
+    UnregisteredClassException(const std::string &className) : _className(className) {
+
+    }
+
+    std::string className() const {
+        return _className;
+    }
+
+private:
+    std::string _className;
+};
+
 template <typename BaseClass>
 class AbstractCreator
 {
@@ -53,7 +68,7 @@ public:
 
     static BaseClass *create(const string &className) {
         if (_creators.count(className) == 0) {
-            return nullptr;
+            throw UnregisteredClassException(className);
         }
 
         AbstractCreator<BaseClass>* creator = _creators.at(className);
