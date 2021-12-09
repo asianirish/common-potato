@@ -82,6 +82,11 @@
         <source>unknown set property exception</source>
         <translation type="unfinished">неизвестное исключение установки свойства</translation>
     </message>
+    <message>
+        <location filename="ex/UnregisteredClassException.h" line="16"/>
+        <source>unregistered class name: </source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>val</name>
