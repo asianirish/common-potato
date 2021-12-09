@@ -56,6 +56,10 @@ void Item::setEssenceClassName(const QString &className)
 
 EssencePtr Item::essencePtr() const
 {
+    if (_essenceClassName.isEmpty()) {
+        return {};
+    }
+
     return util::SingletonRegistry<hierhin::Essence>::ptr(_essenceClassName);
 }
 
