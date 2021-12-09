@@ -64,7 +64,7 @@ EssencePtr Item::essencePtr() const
     try {
         return util::SingletonRegistry<hierhin::Essence>::ptr(_essenceClassName);
     }  catch (util::UnregisteredClassException &e) {
-        throw UnregisteredClassException(e.className());
+        throw ex::UnregisteredClassException(QString::fromStdString(e.className()));
     }
 }
 
