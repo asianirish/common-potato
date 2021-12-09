@@ -38,6 +38,11 @@ QVariant NodeTest::simplyAct(const QVariantList &args)
         nd2->setEssenceClassName("TestEssenceB");
         nd3->setEssenceClassName("TestEssenceA");
 
+        //test ex::UnregisteredClassExceptin
+        auto nd4 = NodePtr(new direct::NodeHashImpl());
+        nd4->setEssenceClassName("TestEssenceC");
+        nd1->addChild(nd4);
+
         int nnn;
         QTextStream qtin(stdin);
 //        qDebug() << "enter nd1 value:";
