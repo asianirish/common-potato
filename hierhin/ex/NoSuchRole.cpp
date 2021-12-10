@@ -1,9 +1,9 @@
-#include "NoSuchRoleExceptin.h"
+#include "NoSuchRole.h"
 
 namespace hierhin {
 namespace ex {
 
-NoSuchRoleExceptin::NoSuchRoleExceptin()
+NoSuchRole::NoSuchRole()
 {
 
 }

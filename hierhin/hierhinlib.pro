@@ -41,7 +41,7 @@ HEADERS += \
     ex/IncompatibleEssenceClass.h \
     ex/InvalidValueException.h \
     ex/NoSuchProperty.h \
-    ex/NoSuchRoleExceptin.h \
+    ex/NoSuchRole.h \
     ex/PropertyException.h \
     ex/UnregisteredClassException.h \
     ex/ValidatorException.h
@@ -61,7 +61,7 @@ SOURCES += \
     ex/IncompatibleEssenceClass.cpp \
     ex/InvalidValueException.cpp \
     ex/NoSuchProperty.cpp \
-    ex/NoSuchRoleExceptin.cpp \
+    ex/NoSuchRole.cpp \
     ex/PropertyException.cpp \
     ex/UnregisteredClassException.cpp \
     ex/ValidatorException.cpp

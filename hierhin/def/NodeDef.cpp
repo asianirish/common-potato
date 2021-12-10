@@ -1,5 +1,5 @@
 #include "NodeDef.h"
-#include "ex/NoSuchRoleExceptin.h"
+#include "ex/NoSuchRole.h"
 #include "ex/IncompatibleEssenceClass.h"
 #include "../Item.h"
 
@@ -19,7 +19,7 @@ QList<Role> NodeDef::roles() const
 void NodeDef::validateChild(ItemPtr item, const Role &role) const
 {
     if (!role.isEmpty() && !roles().contains(role)) {
-        ex::NoSuchRoleExceptin ex;
+        ex::NoSuchRole ex;
         ex.setRole(role);
         throw ex;
     }

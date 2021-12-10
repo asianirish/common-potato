@@ -6,11 +6,11 @@
 namespace hierhin {
 namespace ex {
 
-class NoSuchRoleExceptin : public ChildItemException
+class NoSuchRole : public ChildItemException
 {
     Q_DECLARE_TR_FUNCTIONS(ex)
 public:
-    NoSuchRoleExceptin();
+    NoSuchRole();
 
     QString cause() const override {
         return tr("no such a role") + " '" + role() + "'";
