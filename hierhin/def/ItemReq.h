@@ -15,7 +15,7 @@ namespace def {
 class ItemReq
 {
 public:
-    static const QString BASE_ITEM_CLASS;
+    static const QString BASE_ESSENCE_CLASS;
 
     ItemReq();
 
