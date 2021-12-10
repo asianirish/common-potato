@@ -1,6 +1,9 @@
 #include "ItemReq.h"
 #include "Item.h"
 
+#include "ex/CanNotBeEssenceless.h"
+#include "ex/IncompatibleEssenceClass.h"
+
 namespace hierhin {
 namespace def {
 
@@ -43,8 +46,19 @@ void ItemReq::setCanBeEssenceless(bool newCanBeEssenceless)
 
 void ItemReq::validate(ItemPtr item) const
 {
-//TODO: implement
-    Q_UNUSED(item)
+    if (item->essenceClassName().isEmpty()) {
+        if (!_canBeEssenceless) {
+            throw ex::CanNotBeEssenceless();
+        }
+    }
+
+    for (auto &clName : _classNames) {
+        if (item->isKindOf(clName)) {
+            return;
+        }
+    }
+
+    throw ex::IncompatibleEssenceClass();
 }
 
 } // namespace def
