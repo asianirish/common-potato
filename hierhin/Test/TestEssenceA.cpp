@@ -25,8 +25,8 @@ NodeDef TestEssenceA::nodeDef() const
 {
     NodeDef nd;
 
-    nd.setChildEssenceClassName("TestEssenceB", "left");
-    nd.setChildEssenceClassName("TestEssenceA", "right");
+    nd.setChildRequirement(ItemReq("TestEssenceB"), "left");
+    nd.setChildRequirement(ItemReq("TestEssenceA"), "right");
 
     nd.setIsLimitedPropertyList(true);
 

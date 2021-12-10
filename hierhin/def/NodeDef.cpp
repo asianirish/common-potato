@@ -8,32 +8,12 @@ namespace def {
 
 NodeDef::NodeDef()
 {
-    setChildEssenceClassName("hierhin::Essence", Role());
-}
-
-const QMap<Role, QString> &NodeDef::childEssenceClassNames() const
-{
-    return _childEssenceClassNames;
-}
-
-QString NodeDef::childEssenceClassName(const Role &role) const
-{
-    return _childEssenceClassNames.value(role);
-}
-
-void NodeDef::setChildEssenceClassNames(const QMap<Role, QString> &newChildEssenceClassNames)
-{
-    _childEssenceClassNames = newChildEssenceClassNames;
-}
-
-void NodeDef::setChildEssenceClassName(const QString &className, const Role &role)
-{
-    _childEssenceClassNames.insert(role, className);
+    setChildRequirement(ItemReq("hierhin::Essence"), Role());
 }
 
 QList<Role> NodeDef::roles() const
 {
-    return _childEssenceClassNames.keys();
+    return _childRequirements.keys();
 }
 
 void NodeDef::validateChild(ItemPtr item, const Role &role) const
@@ -47,6 +27,21 @@ void NodeDef::validateChild(ItemPtr item, const Role &role) const
     auto req = _childRequirements.value(role);
     req.validate(item); //TODO: display role on exception
 
+}
+
+const QMap<Role, ItemReq> &NodeDef::childRequirements() const
+{
+    return _childRequirements;
+}
+
+void NodeDef::setChildRequirements(const QMap<Role, ItemReq> &newChildRequirements)
+{
+    _childRequirements = newChildRequirements;
+}
+
+void NodeDef::setChildRequirement(const ItemReq &req, const Role &role)
+{
+    _childRequirements.insert(role, req);
 }
 
 } // namespace def
