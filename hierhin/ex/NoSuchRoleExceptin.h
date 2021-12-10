@@ -13,14 +13,9 @@ public:
     NoSuchRoleExceptin();
 
     QString cause() const override {
-        return tr("no such a role") + " '" + _role + "'";
+        return tr("no such a role") + " '" + role() + "'";
     }
 
-    const QString &role() const;
-    void setRole(const QString &newRole);
-
-private:
-    QString _role;
 };
 
 } // namespace ex
