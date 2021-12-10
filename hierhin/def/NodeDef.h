@@ -26,7 +26,11 @@ public:
 
 private:
     //maps roles onto class names
+    [[deprecated]]
     QMap<Role, QString> _childEssenceClassNames; //TODO: use a map of ItemReqs instead
+
+    //maps roles onto item requirements
+    QMap<Role, ItemReq> _childRequirements;
 };
 
 } // namespace def

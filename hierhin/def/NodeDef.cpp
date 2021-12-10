@@ -44,11 +44,8 @@ void NodeDef::validateChild(ItemPtr item, const Role &role) const
         throw ex;
     }
 
-    auto clName = childEssenceClassName(role);
-    if (!item->isKindOf(clName)) {
-        ex::IncompatibleEssenceClass ex;
-        //TODO: ...
-        throw ex;
+    for (auto req : _childRequirements) {
+        req.validate(item); //TODO: take into account the role
     }
 }
 
