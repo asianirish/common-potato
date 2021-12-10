@@ -13,6 +13,10 @@ public:
     CanNotBeEssenceless();
 
     QString cause() const override {
+        if (!role().isEmpty()) {
+            return tr("the child item can not be essenceless");
+        }
+
         return tr("the child item can not be essenceless for role") + " '" + role() + "'";
     }
 };
