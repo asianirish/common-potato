@@ -13,7 +13,7 @@ public:
     IncompatibleEssenceClass();
 
     QString cause() const override {
-        if (!role().isEmpty()) {
+        if (role().isEmpty()) {
             return tr("incompatible essence class");
         }
 

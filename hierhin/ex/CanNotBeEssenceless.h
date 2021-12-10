@@ -13,7 +13,7 @@ public:
     CanNotBeEssenceless();
 
     QString cause() const override {
-        if (!role().isEmpty()) {
+        if (role().isEmpty()) {
             return tr("the child item can not be essenceless");
         }
 
