@@ -58,9 +58,14 @@
         <translation type="unfinished">неизвестное исключение библиотеки hierhin</translation>
     </message>
     <message>
-        <location filename="ex/IncompatibleEssenceClass.h" line="16"/>
+        <location filename="ex/IncompatibleEssenceClass.h" line="17"/>
         <source>incompatible essence class</source>
         <translation type="unfinished">несовместимый класс essence</translation>
+    </message>
+    <message>
+        <location filename="ex/IncompatibleEssenceClass.h" line="20"/>
+        <source>incompatible essence class for role</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="ex/InvalidValueException.h" line="16"/>
@@ -73,7 +78,7 @@
         <translation type="unfinished">нет такого свойства</translation>
     </message>
     <message>
-        <location filename="ex/NoSuchRoleExceptin.h" line="16"/>
+        <location filename="ex/NoSuchRole.h" line="16"/>
         <source>no such a role</source>
         <translation type="unfinished">нет такой роли</translation>
     </message>
@@ -86,6 +91,16 @@
         <location filename="ex/UnregisteredClassException.h" line="18"/>
         <source>unregistered class name</source>
         <translation type="unfinished">незарегистрированное имя класса</translation>
+    </message>
+    <message>
+        <location filename="ex/CanNotBeEssenceless.h" line="17"/>
+        <source>the child item can not be essenceless</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ex/CanNotBeEssenceless.h" line="20"/>
+        <source>the child item can not be essenceless for role</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

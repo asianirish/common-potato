@@ -39,6 +39,16 @@
 <context>
     <name>ex</name>
     <message>
+        <location filename="ex/CanNotBeEssenceless.h" line="17"/>
+        <source>the child item can not be essenceless</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ex/CanNotBeEssenceless.h" line="20"/>
+        <source>the child item can not be essenceless for role</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="ex/ChildItemException.h" line="16"/>
         <source>unknown child item exception</source>
         <translation type="unfinished"></translation>
@@ -49,8 +59,13 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ex/IncompatibleEssenceClass.h" line="16"/>
+        <location filename="ex/IncompatibleEssenceClass.h" line="17"/>
         <source>incompatible essence class</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ex/IncompatibleEssenceClass.h" line="20"/>
+        <source>incompatible essence class for role</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -64,7 +79,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ex/NoSuchRoleExceptin.h" line="16"/>
+        <location filename="ex/NoSuchRole.h" line="16"/>
         <source>no such a role</source>
         <translation type="unfinished"></translation>
     </message>
