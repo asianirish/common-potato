@@ -65,7 +65,7 @@
     <message>
         <location filename="ex/IncompatibleEssenceClass.h" line="20"/>
         <source>incompatible essence class for role</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">несовместимый класс essence для роли</translation>
     </message>
     <message>
         <location filename="ex/InvalidValueException.h" line="16"/>
@@ -95,12 +95,12 @@
     <message>
         <location filename="ex/CanNotBeEssenceless.h" line="17"/>
         <source>the child item can not be essenceless</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">дочерний объект не может быть без объекта essence</translation>
     </message>
     <message>
         <location filename="ex/CanNotBeEssenceless.h" line="20"/>
         <source>the child item can not be essenceless for role</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">дочерний объект не может быть без объекта essence для роли</translation>
     </message>
 </context>
 <context>
