@@ -14,7 +14,7 @@ ItemReq::ItemReq() : ItemReq(BASE_ITEM_CLASS)
 
 }
 
-ItemReq::ItemReq(const QString &className) : _canBeEssenceless(false)
+ItemReq::ItemReq(const QString &className, bool canBeEssenceless) : _canBeEssenceless(canBeEssenceless)
 {
     addClassName(className);
 }

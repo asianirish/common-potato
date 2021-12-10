@@ -19,7 +19,7 @@ public:
 
     ItemReq();
 
-    ItemReq(const QString &className);
+    ItemReq(const QString &className, bool canBeEssenceless = false);
 
     const QStringList &classNames() const;
     void setClassNames(const QStringList &newClassNames);
