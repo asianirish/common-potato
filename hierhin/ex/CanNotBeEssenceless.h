@@ -13,7 +13,7 @@ public:
     CanNotBeEssenceless();
 
     QString cause() const override {
-        return tr("the child item can not be essenceless")/* + " '" + _role + "'"*/;
+        return tr("the child item can not be essenceless for role") + " '" + role() + "'";
     }
 };
 

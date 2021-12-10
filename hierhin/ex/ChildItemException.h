@@ -15,6 +15,12 @@ public:
     QString cause() const override {
         return tr("unknown child item exception");
     }
+
+    const QString &role() const;
+    void setRole(const QString &newRole);
+
+private:
+    QString _role;
 };
 
 } //namespace ex
