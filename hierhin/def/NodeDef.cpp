@@ -44,9 +44,9 @@ void NodeDef::validateChild(ItemPtr item, const Role &role) const
         throw ex;
     }
 
-    for (auto req : _childRequirements) {
-        req.validate(item); //TODO: take into account the role
-    }
+    auto req = _childRequirements.value(role);
+    req.validate(item); //TODO: display role on exception
+
 }
 
 } // namespace def
