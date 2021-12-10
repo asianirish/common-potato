@@ -35,6 +35,7 @@ HEADERS += \
     def/PropertyDef.h \
     direct/ItemImpl.h \
     direct/NodeImpl.h \
+    ex/CanNotBeEssenceless.h \
     ex/ChildItemException.h \
     ex/Exception.h \
     ex/IncompatibleEssenceClass.h \
@@ -54,6 +55,7 @@ SOURCES += \
     def/NodeDef.cpp \
     def/PropertyDef.cpp \
     direct/ItemImpl.cpp \
+    ex/CanNotBeEssenceless.cpp \
     ex/ChildItemException.cpp \
     ex/Exception.cpp \
     ex/IncompatibleEssenceClass.cpp \
