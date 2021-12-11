@@ -1,16 +1,12 @@
 #ifndef HIERHIN_DEF_ITEMREQ_H
 #define HIERHIN_DEF_ITEMREQ_H
 
+#include "../type.h"
+
 #include <QStringList>
 #include <QSharedPointer>
 
 namespace hierhin {
-
-class Item;
-typedef QSharedPointer<Item> ItemPtr;
-
-typedef QString Role;
-
 namespace def {
 
 
