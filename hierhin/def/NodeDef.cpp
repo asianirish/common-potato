@@ -19,8 +19,7 @@ QList<Role> NodeDef::roles() const
 void NodeDef::validateChild(ItemPtr item, const Role &role) const
 {
     if (!role.isEmpty() && !roles().contains(role)) {
-        ex::NoSuchRole ex;
-        ex.setRole(role);
+        ex::NoSuchRole ex(role);
         throw ex;
     }
 
