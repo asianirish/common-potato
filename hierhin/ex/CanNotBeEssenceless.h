@@ -12,6 +12,8 @@ class CanNotBeEssenceless : public ChildItemException
 public:
     CanNotBeEssenceless();
 
+    CanNotBeEssenceless(const Role &role);
+
     QString cause() const override {
         if (role().isEmpty()) {
             return tr("the child item can not be essenceless");
