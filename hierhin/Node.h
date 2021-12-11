@@ -5,9 +5,6 @@
 
 namespace hierhin {
 
-typedef QList<Id> IdList;
-typedef QList<QString> NameList;
-
 class Node : public virtual Item
 {
 public:

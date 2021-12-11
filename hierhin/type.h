@@ -23,6 +23,9 @@ typedef QSharedPointer<Node> NodePtr;
 
 typedef QString Id;
 
+typedef QList<Id> IdList;
+typedef QList<QString> NameList;
+
 } // namespace hierhin
 
 #endif // TYPE_H
