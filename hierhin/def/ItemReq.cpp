@@ -46,12 +46,10 @@ void ItemReq::setCanBeEssenceless(bool newCanBeEssenceless)
 
 void ItemReq::validate(ItemPtr item, const Role &role) const
 {
-    //TODO: use role
-    Q_UNUSED(role)
 
     if (item->essenceClassName().isEmpty()) {
         if (!_canBeEssenceless) {
-            throw ex::CanNotBeEssenceless();
+            throw ex::CanNotBeEssenceless(role);
         }
 
         return;
@@ -63,7 +61,7 @@ void ItemReq::validate(ItemPtr item, const Role &role) const
         }
     }
 
-    throw ex::IncompatibleEssenceClass();
+    throw ex::IncompatibleEssenceClass(role);
 }
 
 } // namespace def
