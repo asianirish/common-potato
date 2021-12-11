@@ -48,7 +48,7 @@
 <context>
     <name>ex</name>
     <message>
-        <location filename="ex/ChildItemException.h" line="16"/>
+        <location filename="ex/ChildItemException.h" line="18"/>
         <source>unknown child item exception</source>
         <translation type="unfinished">неизвестное исключение дочернего элемента</translation>
     </message>
@@ -58,12 +58,12 @@
         <translation type="unfinished">неизвестное исключение библиотеки hierhin</translation>
     </message>
     <message>
-        <location filename="ex/IncompatibleEssenceClass.h" line="17"/>
+        <location filename="ex/IncompatibleEssenceClass.h" line="18"/>
         <source>incompatible essence class</source>
         <translation type="unfinished">несовместимый класс essence</translation>
     </message>
     <message>
-        <location filename="ex/IncompatibleEssenceClass.h" line="20"/>
+        <location filename="ex/IncompatibleEssenceClass.h" line="21"/>
         <source>incompatible essence class for role</source>
         <translation type="unfinished">несовместимый класс essence для роли</translation>
     </message>
@@ -78,7 +78,7 @@
         <translation type="unfinished">нет такого свойства</translation>
     </message>
     <message>
-        <location filename="ex/NoSuchRole.h" line="16"/>
+        <location filename="ex/NoSuchRole.h" line="17"/>
         <source>no such a role</source>
         <translation type="unfinished">нет такой роли</translation>
     </message>
@@ -93,14 +93,18 @@
         <translation type="unfinished">незарегистрированное имя класса</translation>
     </message>
     <message>
-        <location filename="ex/CanNotBeEssenceless.h" line="17"/>
+        <location filename="ex/CanNotBeEssenceless.h" line="19"/>
         <source>the child item can not be essenceless</source>
         <translation type="unfinished">дочерний объект не может быть без объекта essence</translation>
     </message>
     <message>
-        <location filename="ex/CanNotBeEssenceless.h" line="20"/>
+        <location filename="ex/CanNotBeEssenceless.h" line="22"/>
+        <source>the child item of the role &apos;%1&apos; can not be essenceless</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>the child item can not be essenceless for role</source>
-        <translation type="unfinished">дочерний объект не может быть без объекта essence для роли</translation>
+        <translation type="obsolete">дочерний объект не может быть без объекта essence для роли</translation>
     </message>
 </context>
 <context>
