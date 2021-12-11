@@ -19,7 +19,7 @@ public:
             return tr("the child item can not be essenceless");
         }
 
-        return tr("the child item can not be essenceless for role") + " '" + role() + "'";
+        return tr("the child item of the role '%1' can not be essenceless").arg(role());
     }
 };
 
