@@ -100,7 +100,7 @@
     <message>
         <location filename="ex/CanNotBeEssenceless.h" line="22"/>
         <source>the child item of the role &apos;%1&apos; can not be essenceless</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">дочерний элемент роли „%1” не может быть без объекта essence</translation>
     </message>
     <message>
         <source>the child item can not be essenceless for role</source>
