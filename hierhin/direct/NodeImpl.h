@@ -15,6 +15,7 @@ class NodeImpl : public virtual Node, public ItemImpl
 {
 public:
     static const QString CHILDREN_KEY;
+    static const QString ROLES_KEY;
 
     bool containsId(const Id &id) final;
 
@@ -37,6 +38,9 @@ typedef NodeImpl<QHash<Id, ItemPtr> > NodeHashImpl;
 
 template<typename C>
 const QString NodeImpl<C>::CHILDREN_KEY("children");
+
+template<typename C>
+const QString NodeImpl<C>::ROLES_KEY("roles");
 
 template<typename C>
 bool NodeImpl<C>::containsId(const Id &id)
@@ -83,6 +87,16 @@ void NodeImpl<C>::nodeImplToMap(QVariantMap &mp) const
             childrenMap.insert(child->id(), child->toMap());
         }
         mp.insert(CHILDREN_KEY, childrenMap);
+    }
+
+    if (!_roles.isEmpty()) {
+        QVariantMap rolesMap;
+        auto keys = _roles.keys();
+        for (auto &key : keys) {
+            auto role = _roles.value(key).lock();
+            rolesMap.insert(key, role->id());
+        }
+        mp.insert(ROLES_KEY, rolesMap);
     }
 }
 
