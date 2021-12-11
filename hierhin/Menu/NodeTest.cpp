@@ -121,6 +121,10 @@ QVariant NodeTest::simplyAct(const QVariantList &args)
 
         qDebug().noquote() << "NODE WITHOUT ESSENCE AS JSON: " << ndWithouEssence->toJson();
 
+        qDebug() << "----------------test an essenceless child------------------";
+        nd1->addChild(ndWithouEssence);
+        qDebug().noquote() << "NODE1 AS A JSON: " << nd1->toJson();
+
     }  catch (ex::Exception &e) {
         qDebug() << "AN ERROR HAS OCCURRED:" << e.cause();
     }
