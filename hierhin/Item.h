@@ -2,6 +2,7 @@
 #define HIERHIN_ITEM_H
 
 #include "def/NodeDef.h"
+#include "type.h"
 
 #include <util/LazyPointer.h>
 #include <uniq/Value.h>

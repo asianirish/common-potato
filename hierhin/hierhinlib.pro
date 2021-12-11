@@ -44,7 +44,8 @@ HEADERS += \
     ex/NoSuchRole.h \
     ex/PropertyException.h \
     ex/UnregisteredClassException.h \
-    ex/ValidatorException.h
+    ex/ValidatorException.h \
+    type.h
 
 SOURCES += \
     Essence.cpp \
