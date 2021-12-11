@@ -15,17 +15,6 @@ using namespace util;
 
 namespace hierhin {
 
-class Essence;
-
-typedef QSharedPointer<Essence> EssencePtr;
-
-typedef QWeakPointer<Item> ItemWeakPtr;
-
-class Node;
-typedef QSharedPointer<Node> NodePtr;
-
-typedef QString Id;
-
 class Item
 {
 public:
