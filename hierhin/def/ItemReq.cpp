@@ -50,6 +50,8 @@ void ItemReq::validate(ItemPtr item) const
         if (!_canBeEssenceless) {
             throw ex::CanNotBeEssenceless();
         }
+
+        return;
     }
 
     for (auto &clName : _classNames) {
