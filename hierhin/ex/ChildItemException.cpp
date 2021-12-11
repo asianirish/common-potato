@@ -3,7 +3,12 @@
 namespace hierhin {
 namespace ex {
 
-ChildItemException::ChildItemException()
+ChildItemException::ChildItemException() : ChildItemException(Role())
+{
+
+}
+
+ChildItemException::ChildItemException(const Role &role) : _role(role)
 {
 
 }
