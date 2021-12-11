@@ -25,7 +25,7 @@ void NodeDef::validateChild(ItemPtr item, const Role &role) const
     }
 
     auto req = _childRequirements.value(role);
-    req.validate(item); //TODO: display role on exception
+    req.validate(item, role);
 
 }
 

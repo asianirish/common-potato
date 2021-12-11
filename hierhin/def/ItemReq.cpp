@@ -44,8 +44,11 @@ void ItemReq::setCanBeEssenceless(bool newCanBeEssenceless)
     _canBeEssenceless = newCanBeEssenceless;
 }
 
-void ItemReq::validate(ItemPtr item) const
+void ItemReq::validate(ItemPtr item, const Role &role) const
 {
+    //TODO: use role
+    Q_UNUSED(role)
+
     if (item->essenceClassName().isEmpty()) {
         if (!_canBeEssenceless) {
             throw ex::CanNotBeEssenceless();

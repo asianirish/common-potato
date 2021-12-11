@@ -6,8 +6,6 @@
 
 namespace hierhin {
 
-typedef QString Role;
-
 namespace def {
 
 class NodeDef : public ItemDef

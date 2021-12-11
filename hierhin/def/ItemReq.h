@@ -9,6 +9,8 @@ namespace hierhin {
 class Item;
 typedef QSharedPointer<Item> ItemPtr;
 
+typedef QString Role;
+
 namespace def {
 
 
@@ -28,7 +30,7 @@ public:
     bool canBeEssenceless() const;
     void setCanBeEssenceless(bool newCanBeEssenceless);
 
-    void validate(ItemPtr item) const;
+    void validate(ItemPtr item, const Role &role) const;
 
 private:
     QStringList _classNames;
