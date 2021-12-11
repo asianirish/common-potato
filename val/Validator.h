@@ -21,6 +21,8 @@ public:
     virtual QString errorMessage() const = 0;
 };
 
+typedef QSharedPointer<val::Validator> ValidatorPtr;
+
 } // namespace val
 
 #endif // VAL_VALIDATOR_H

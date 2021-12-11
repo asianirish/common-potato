@@ -9,17 +9,17 @@ PropertyDef::PropertyDef()
 
 }
 
-QList<ValidatorPtr> PropertyDef::validators() const
+QList<val::ValidatorPtr> PropertyDef::validators() const
 {
     return _validators;
 }
 
-void PropertyDef::setValidators(const QList<ValidatorPtr> &validators)
+void PropertyDef::setValidators(const QList<val::ValidatorPtr> &validators)
 {
     _validators = validators;
 }
 
-void PropertyDef::addValidator(const ValidatorPtr &vptr)
+void PropertyDef::addValidator(const val::ValidatorPtr &vptr)
 {
     _validators.append(vptr);
 }

@@ -8,16 +8,14 @@
 namespace hierhin {
 namespace def {
 
-typedef QSharedPointer<val::Validator> ValidatorPtr;
-
 class PropertyDef
 {
 public:
     PropertyDef();
 
-    QList<ValidatorPtr> validators() const;
-    void setValidators(const QList<ValidatorPtr> &validators);
-    void addValidator(const ValidatorPtr &vptr);
+    QList<val::ValidatorPtr> validators() const;
+    void setValidators(const QList<val::ValidatorPtr> &validators);
+    void addValidator(const val::ValidatorPtr &vptr);
 
     QVariant defaultValue() const;
     void setDefaultValue(const QVariant &defaultValue);
@@ -25,7 +23,7 @@ public:
     void validate(const QString &name, const QVariant &value);
 
 private:
-    QList<ValidatorPtr> _validators;
+    QList<val::ValidatorPtr> _validators;
     QVariant _defaultValue;
 };
 
