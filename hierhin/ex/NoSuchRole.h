@@ -11,6 +11,7 @@ class NoSuchRole : public ChildItemException
     Q_DECLARE_TR_FUNCTIONS(ex)
 public:
     NoSuchRole();
+    NoSuchRole(const Role &role);
 
     QString cause() const override {
         return tr("no such a role") + " '" + role() + "'";
