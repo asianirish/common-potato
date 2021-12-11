@@ -11,6 +11,7 @@ class IncompatibleEssenceClass : public ChildItemException
     Q_DECLARE_TR_FUNCTIONS(ex)
 public:
     IncompatibleEssenceClass();
+    IncompatibleEssenceClass(const Role &role);
 
     QString cause() const override {
         if (role().isEmpty()) {
