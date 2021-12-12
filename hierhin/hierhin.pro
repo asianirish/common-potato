@@ -29,6 +29,7 @@ SOURCES += main.cpp \
     Menu/ValidatorTest.cpp \
     Test/TestEssenceA.cpp \
     Test/TestEssenceB.cpp \
+    Test/TestEssenceC.cpp \
     stock_v0/Exchange.cpp
 
 
@@ -45,6 +46,7 @@ HEADERS += \
     Menu/ValidatorTest.h \
     Test/TestEssenceA.h \
     Test/TestEssenceB.h \
+    Test/TestEssenceC.h \
     stock_v0/Exchange.h
 
 
