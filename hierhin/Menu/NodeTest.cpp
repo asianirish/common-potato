@@ -120,12 +120,12 @@ QVariant NodeTest::simplyAct(const QVariantList &args)
         ndWithouEssence->addChild(ndWithouEssence1);
 
         qDebug().noquote() << "NODE WITHOUT ESSENCE AS JSON: " << ndWithouEssence->toJson();
-
+        qDebug() << "----------------test an essenceless child 1------------------";
         nd1->addChild(ndWithouEssence, "middle");
-        qDebug().noquote() << "(2) NODE1 AS A JSON: " << nd1->toJson();
-        qDebug() << "----------------test an essenceless child------------------";
+        qDebug().noquote() << "(1) NODE1 AS A JSON: " << nd1->toJson();
+        qDebug() << "----------------test an essenceless child 2------------------";
         nd1->addChild(ndWithouEssence);
-        qDebug().noquote() << "(3) NODE1 AS A JSON: " << nd1->toJson();
+        qDebug().noquote() << "(2) NODE1 AS A JSON: " << nd1->toJson();
 
     }  catch (ex::Exception &e) {
         qDebug() << "AN ERROR HAS OCCURRED:" << e.cause();

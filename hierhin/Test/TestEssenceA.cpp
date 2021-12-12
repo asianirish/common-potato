@@ -29,11 +29,11 @@ NodeDef TestEssenceA::nodeDef() const
 
     nd.setChildRequirement(ItemReq("TestEssenceB"), "left");
     nd.setChildRequirement(ItemReq("TestEssenceA"), "right");
+    nd.setChildRequirement(ItemReq(), "middle");
 
-    ItemReq defReq;
-    defReq.setCanBeEssenceless(false);
-    nd.setChildRequirement(defReq, "middle");
-    nd.setChildRequirement(defReq);
+//    ItemReq defReq;
+//    defReq.setCanBeEssenceless(false);
+//    nd.setChildRequirement(defReq);
 
     nd.setIsLimitedPropertyList(true);
 
