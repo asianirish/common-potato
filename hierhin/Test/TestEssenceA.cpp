@@ -30,6 +30,7 @@ NodeDef TestEssenceA::nodeDef() const
     nd.setChildRequirement(ItemReq("TestEssenceB"), "left");
     nd.setChildRequirement(ItemReq("TestEssenceA"), "right");
     nd.setChildRequirement(ItemReq(), "middle");
+    nd.setChildRequirement(ItemReq("TestEssenceB"), "top");
 
 //    ItemReq defReq;
 //    defReq.setCanBeEssenceless(false);

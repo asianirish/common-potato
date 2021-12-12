@@ -127,6 +127,13 @@ QVariant NodeTest::simplyAct(const QVariantList &args)
         nd1->addChild(ndWithouEssence);
         qDebug().noquote() << "(2) NODE1 AS A JSON: " << nd1->toJson();
 
+        qDebug() << "----------------test incompatible essence------------------";
+        auto ndC = NodePtr(new direct::NodeHashImpl);
+        ndC->setEssenceClassName("TestEssenceC");
+
+        nd1->addChild(ndC, "top");
+        qDebug().noquote() << "(3) NODE1 AS A JSON: " << nd1->toJson();
+
     }  catch (ex::Exception &e) {
         qDebug() << "AN ERROR HAS OCCURRED:" << e.cause();
     }
