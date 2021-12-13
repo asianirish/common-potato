@@ -88,6 +88,15 @@ QVariantMap Item::toMap() const
     return mp;
 }
 
+void Item::fromMap(const QVariantMap &mp)
+{
+    _id = mp.value(ID_KEY).value<Id>();
+    _essenceClassName = mp.value(ESSENCE_CLASS_KEY).value<QString>();
+    mp.value(PROPERTIES_KEY).value<QVariantMap>();
+
+    //TODO: nodeFromMap(mp);
+}
+
 QByteArray Item::toJson()
 {
     QJsonObject jObj = QJsonObject::fromVariantMap(toMap());

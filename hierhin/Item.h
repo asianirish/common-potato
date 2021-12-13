@@ -35,8 +35,10 @@ public:
     void setEssenceClassName(const QString &className);
 
     QVariantMap toMap() const;
+    void fromMap(const QVariantMap &mp);
 
     QByteArray toJson();
+
 
     virtual bool isNode() const {
         return false;
