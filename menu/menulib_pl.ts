@@ -6,7 +6,7 @@
     <message>
         <location filename="Menu.cpp" line="73"/>
         <source>no such a command</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">brak komendy</translation>
     </message>
 </context>
 </TS>
