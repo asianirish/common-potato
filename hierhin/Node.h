@@ -24,7 +24,7 @@ public:
 
 protected:
     virtual void nodeImplToMap(QVariantMap &mp) const = 0;
-    virtual void nodeImplFromMap(const QVariantMap &mp) const = 0;
+    virtual void nodeImplFromMap(const QVariantMap &mp) = 0;
 
     virtual void addChildImpl(ItemPtr item, const Role &role) = 0;
 
