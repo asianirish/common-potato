@@ -12,6 +12,8 @@ public:
 
     virtual ~ItemCreator() = default;
 
+    ItemPtr createItem(const QVariantMap &mp);
+
     ItemPtr createItem(const BaseType &baseType);
 
 private:
