@@ -72,7 +72,7 @@ void Menu::exec(const CommandInfo &commandInfo)
         err.setType(Error::ERROR_TYPE::MENU);
         err.setDescription(tr("no such a command"));
         QVariantMap mp;
-        mp.insert("action", commandName);
+        mp.insert(tr("command"), commandName);
         err.setContext(mp);
         emit error(err);
     }
