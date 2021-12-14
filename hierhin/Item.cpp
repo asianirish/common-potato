@@ -92,7 +92,7 @@ void Item::fromMap(const QVariantMap &mp)
 {
     _id = mp.value(ID_KEY).value<Id>();
     _essenceClassName = mp.value(ESSENCE_CLASS_KEY).value<QString>();
-    mp.value(PROPERTIES_KEY).value<QVariantMap>();
+    _properties = mp.value(PROPERTIES_KEY).value<QVariantMap>();
 
     //TODO: nodeFromMap(mp);
 }
