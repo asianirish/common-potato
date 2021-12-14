@@ -58,7 +58,7 @@ void Console::readCommand()
     std::string line;
     std::getline(std::cin, line);
     if (std::cin.eof() || line == "quit" || line.empty()) { //TODO: just eof doesn't work to quit on Enter. Why?
-        std::cout << "Good bye!" << std::endl;
+        std::cout << tr("Good bye!").toStdString() << std::endl;
 
         delete m_notifier;
 
@@ -66,7 +66,7 @@ void Console::readCommand()
     } else if(line == "menu") {
         showMenu();
     } else if (line == "uniq") {
-        std::cout << "Unique value: " << Menu::newTaskId().toStdString() << std::endl;
+        std::cout << tr("Unique value").toStdString() << " :" << Menu::newTaskId().toStdString() << std::endl;
         std::cout << "> " << std::flush;
     } else {
         _menu->exec(QString(line.data()));
@@ -81,7 +81,7 @@ void Console::onReady(const QVariant &result)
 
 void Console::onError(const menu::Error &err)
 {
-    std::cout << "Error: " << err.description().toStdString() << std::endl; //TODO: use error context
+    std::cout << tr("Error").toStdString() << ": " << err.description().toStdString() << std::endl; //TODO: use error context
     auto keys = err.context().keys();
     for (auto &key : keys) {
         std::cout << key.toStdString() << ": " << err.context().value(key).toString().toStdString() << std::endl;
