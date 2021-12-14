@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
     console.addMenuItem("tval", menu::ActionPtr(new ValidatorTest()));
 
     menu::util::SetLanguage *setLanItem = new menu::util::SetLanguage();
-    setLanItem->setFiles(QStringList{"hierhin", "vallib"});
+    setLanItem->setFiles(QStringList{"hierhin", "vallib", "menulib"});
     console.addMenuItem("setlan", menu::ActionPtr(setLanItem));
 
     console.addMenuItem("ttr", menu::ActionPtr(new TransTest()));
