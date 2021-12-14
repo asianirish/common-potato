@@ -3,6 +3,7 @@
 
 #include "def/NodeDef.h"
 #include "type.h"
+#include "ItemCreator.h"
 
 #include <util/LazyPointer.h>
 #include <uniq/Value.h>
@@ -71,8 +72,7 @@ private:
 
     EssencePtr essencePtr() const;
 
-//TODO:
-//    virtual ImplCreator *createCreator() const = 0;
+    virtual ItemCreator *createCreator() const = 0;
 };
 
 } // namespace hierhin

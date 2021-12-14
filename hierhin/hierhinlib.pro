@@ -34,6 +34,7 @@ HEADERS += \
     def/ItemReq.h \
     def/NodeDef.h \
     def/PropertyDef.h \
+    direct/ItemCreatorImpl.h \
     direct/ItemImpl.h \
     direct/NodeImpl.h \
     ex/CanNotBeEssenceless.h \

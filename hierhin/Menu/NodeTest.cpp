@@ -25,7 +25,7 @@ QVariant NodeTest::simplyAct(const QVariantList &args)
 
 //    Item::setIdGenClassName("uniq::UuidValue");
     try {
-        direct::ItemImpl item;
+        direct::ItemHashImpl item;
 
         qDebug() << "ID: " << item.id();
         qDebug() << "ID second time: " << item.id();

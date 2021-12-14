@@ -11,7 +11,7 @@ namespace hierhin {
 namespace direct {
 
 template <typename C>
-class NodeImpl : public virtual Node, public ItemImpl
+class NodeImpl : public virtual Node, public ItemImpl<C>
 {
 public:
     static const QString CHILDREN_KEY;
