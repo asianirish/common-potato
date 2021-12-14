@@ -62,6 +62,8 @@ public:
 
     bool isKindOf(const QString &className) const;
 
+    virtual BaseType baseType() const;
+
 private:
     mutable Id _id;
     QVariantMap _properties;
@@ -73,6 +75,9 @@ private:
     }
 
     EssencePtr essencePtr() const;
+
+//TODO:
+//    virtual ImplCreator *createCreator() const = 0;
 };
 
 } // namespace hierhin

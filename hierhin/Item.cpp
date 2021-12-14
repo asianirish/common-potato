@@ -169,4 +169,9 @@ bool Item::isKindOf(const QString &className) const
     return false;
 }
 
+BaseType Item::baseType() const
+{
+    return BaseType::ITEM;
+}
+
 } // namespace hierhin
