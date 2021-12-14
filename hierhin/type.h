@@ -26,6 +26,12 @@ typedef QString Id;
 typedef QList<Id> IdList;
 typedef QList<QString> NameList;
 
+enum class BaseType {
+    ITEM,
+    NODE,
+    LINK
+};
+
 } // namespace hierhin
 
 #endif // TYPE_H
