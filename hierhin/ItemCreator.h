@@ -14,12 +14,12 @@ public:
 
     ItemPtr createItem(const QVariantMap &mp);
 
-    ItemPtr createItem(const BaseType &baseType);
-
 private:
     virtual ItemPtr createItem() = 0;
     virtual NodePtr createNode() = 0;
 //TODO:    virtual LinkPtr createLink() = 0;
+
+    ItemPtr createItem(const BaseType &baseType);
 
 };
 

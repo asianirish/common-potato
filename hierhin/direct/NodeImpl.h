@@ -108,11 +108,12 @@ void NodeImpl<C>::nodeImplFromMap(const QVariantMap &mp)
 
     auto childrenMap = mp.value(CHILDREN_KEY).toMap();
     for (auto &childVar : childrenMap) {
-        auto baseType = static_cast<BaseType>(childVar.toMap().value(BASE_TYPE_KEY).toInt());
-        auto child = cc->createItem(baseType);
+        auto child = cc->createItem(childVar.toMap());
         child->fromMap(childVar.toMap());
         _children.insert(child->id(), child);
     }
+
+    //TODO: roles
 }
 
 } // namespace direct

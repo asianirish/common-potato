@@ -178,8 +178,7 @@ ItemPtr Item::clone() const
 {
     QScopedPointer<ItemCreator> cr(createCreator());
     auto mp = this->toMap();
-    BaseType bt = static_cast<BaseType>(mp.value(BASE_TYPE_KEY).toInt());
-    auto cloneItem = cr->createItem(bt);
+    auto cloneItem = cr->createItem(mp);
     cloneItem->fromMap(mp);
     return cloneItem;
 }
