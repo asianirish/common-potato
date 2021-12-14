@@ -10,6 +10,8 @@ class ItemCreator
 public:
     ItemCreator();
 
+    virtual ~ItemCreator() = default;
+
     ItemPtr createItem(const BaseType &baseType);
 
 private:
