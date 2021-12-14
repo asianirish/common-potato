@@ -28,6 +28,7 @@ public:
 protected:
     void nodeImplToMap(QVariantMap &mp) const final;
     void addChildImpl(ItemPtr item, const Role &role) final;
+    void nodeImplFromMap(const QVariantMap &mp) const final;
 private:
     C _children;
     QMap<Role, ItemWeakPtr> _roles;
@@ -98,6 +99,12 @@ void NodeImpl<C>::nodeImplToMap(QVariantMap &mp) const
         }
         mp.insert(ROLES_KEY, rolesMap);
     }
+}
+
+template<typename C>
+void NodeImpl<C>::nodeImplFromMap(const QVariantMap &mp) const
+{
+    //TODO: read children and roles
 }
 
 } // namespace direct

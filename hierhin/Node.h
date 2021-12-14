@@ -24,11 +24,13 @@ public:
 
 protected:
     virtual void nodeImplToMap(QVariantMap &mp) const = 0;
+    virtual void nodeImplFromMap(const QVariantMap &mp) const = 0;
 
     virtual void addChildImpl(ItemPtr item, const Role &role) = 0;
 
 private:
     void nodeToMap(QVariantMap &mp) const final;
+    void nodeFromMap(const QVariantMap &mp) final;
 
 };
 

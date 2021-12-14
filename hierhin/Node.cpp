@@ -26,4 +26,10 @@ void Node::nodeToMap(QVariantMap &mp) const
     nodeImplToMap(mp);
 }
 
+void Node::nodeFromMap(const QVariantMap &mp)
+{
+    //TODO: read links
+    nodeImplFromMap(mp);
+}
+
 } // namespace hierhin
