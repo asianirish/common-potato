@@ -72,6 +72,10 @@ private:
         Q_UNUSED(mp);
     }
 
+    virtual void nodeFromMap(const QVariantMap &mp) {
+        Q_UNUSED(mp);
+    }
+
     EssencePtr essencePtr() const;
 
     virtual ItemCreator *createCreator() const = 0;

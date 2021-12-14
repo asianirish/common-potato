@@ -94,7 +94,7 @@ void Item::fromMap(const QVariantMap &mp)
     _essenceClassName = mp.value(ESSENCE_CLASS_KEY).value<QString>();
     _properties = mp.value(PROPERTIES_KEY).value<QVariantMap>();
 
-    //TODO: nodeFromMap(mp);
+    nodeFromMap(mp);
 }
 
 QByteArray Item::toJson()
