@@ -23,6 +23,7 @@ TRANSLATIONS += hierhin_en.ts
 
 SOURCES += main.cpp \
     HierhinClassRegistry.cpp \
+    Menu/CloneTest.cpp \
     Menu/NodeTest.cpp \
     Menu/NumberTest.cpp \
     Menu/TransTest.cpp \
@@ -40,6 +41,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     HierhinClassRegistry.h \
+    Menu/CloneTest.h \
     Menu/NodeTest.h \
     Menu/NumberTest.h \
     Menu/TransTest.h \
