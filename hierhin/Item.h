@@ -60,6 +60,8 @@ public:
 
     virtual BaseType baseType() const;
 
+    ItemPtr clone() const;
+
 private:
     mutable Id _id;
     QVariantMap _properties;

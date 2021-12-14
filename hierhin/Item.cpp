@@ -174,4 +174,14 @@ BaseType Item::baseType() const
     return BaseType::ITEM;
 }
 
+ItemPtr Item::clone() const
+{
+    QScopedPointer<ItemCreator> cr(createCreator());
+    auto mp = this->toMap();
+    BaseType bt = static_cast<BaseType>(mp.value(BASE_TYPE_KEY).toInt());
+    auto cloneItem = cr->createItem(bt);
+    cloneItem->fromMap(mp);
+    return cloneItem;
+}
+
 } // namespace hierhin
