@@ -113,7 +113,15 @@ void NodeImpl<C>::nodeImplFromMap(const QVariantMap &mp)
         _children.insert(child->id(), child);
     }
 
-    //TODO: roles
+    QVariantMap rolesMap = mp.value(ROLES_KEY).toMap();
+    auto roleNames = rolesMap.keys();
+
+    for (auto &roleName : roleNames) {
+        auto id = rolesMap.value(roleName);
+        ItemPtr child = _children.value(id.toString());
+        auto weakChild = child.toWeakRef();
+        _roles.insert(roleName, weakChild);
+    }
 }
 
 } // namespace direct
