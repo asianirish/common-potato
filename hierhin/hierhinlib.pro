@@ -58,7 +58,6 @@ SOURCES += \
     def/ItemReq.cpp \
     def/NodeDef.cpp \
     def/PropertyDef.cpp \
-    direct/ItemImpl.cpp \
     ex/CanNotBeEssenceless.cpp \
     ex/ChildItemException.cpp \
     ex/Exception.cpp \
