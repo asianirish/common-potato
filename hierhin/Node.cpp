@@ -14,6 +14,11 @@ void Node::addChild(ItemPtr item, const Role &role)
     addChildImpl(item, role);
 }
 
+BaseType Node::baseType() const
+{
+    return BaseType::NODE;
+}
+
 void Node::nodeToMap(QVariantMap &mp) const
 {
     //TODO: implement

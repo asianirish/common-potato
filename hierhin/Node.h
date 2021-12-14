@@ -30,6 +30,8 @@ public:
         return true;
     }
 
+    BaseType baseType() const final;
+
 protected:
     virtual void nodeImplToMap(QVariantMap &mp) const = 0;
 
