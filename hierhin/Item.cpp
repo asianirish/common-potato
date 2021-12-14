@@ -83,6 +83,7 @@ QVariantMap Item::toMap() const
     }
 
     mp.insert(IS_NODE_KEY, isNode());
+    mp.insert(BASE_TYPE_KEY, baseType());
 
     //TODO: implement
     nodeToMap(mp);
