@@ -33,7 +33,7 @@ QVariant CloneTest::simplyAct(const QVariantList &args)
 
     auto cloneNode = nd->clone();
 
-    qDebug().noquote() << "ORIGINAL NODE:" << cloneNode->toJson();
+    qDebug().noquote() << "CLONE NODE:" << cloneNode->toJson();
 
 
 
