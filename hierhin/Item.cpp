@@ -15,7 +15,6 @@ const QString Item::DEFAULT_ID_GEN_CLASS_NAME("uniq::TimeQStringValue");
 const QString Item::ID_KEY("id");
 const QString Item::ESSENCE_CLASS_KEY("essenceClass");
 const QString Item::PROPERTIES_KEY("prop");
-const QString Item::IS_NODE_KEY("isNode");
 const QString Item::BASE_TYPE_KEY("baseType");
 
 util::LazyPointer<uniq::Value<Id>> Item::_idGen(Item::DEFAULT_ID_GEN_CLASS_NAME);
@@ -82,8 +81,7 @@ QVariantMap Item::toMap() const
         mp.insert(PROPERTIES_KEY, _properties);
     }
 
-    mp.insert(IS_NODE_KEY, isNode());
-    mp.insert(BASE_TYPE_KEY, baseType());
+    mp.insert(BASE_TYPE_KEY, static_cast<int>(baseType()));
 
     //TODO: implement
     nodeToMap(mp);

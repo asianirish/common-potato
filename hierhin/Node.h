@@ -26,10 +26,6 @@ public:
 
 //    virtual NameList nameList() const = 0;
 
-    bool isNode() const {
-        return true;
-    }
-
     BaseType baseType() const final;
 
 protected:
