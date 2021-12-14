@@ -11,9 +11,19 @@ INCLUDEPATH += $$PWD/../
 
 DESTDIR = $$PWD/../build/lib/
 
+copydata.commands = $(COPY_DIR) $$PWD/*.qm $$OUT_PWD/../hierhin/
+first.depends = $(first) copydata
+export(first.depends)
+export(copydata.commands)
+QMAKE_EXTRA_TARGETS += first copydata
+
 # You can make your code fail to compile if it uses deprecated APIs.
 # In order to do so, uncomment the following line.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
+
+TRANSLATIONS += menulib_ru.ts
+TRANSLATIONS += menulib_pl.ts
+TRANSLATIONS += menulib_en.ts
 
 
 # Default rules for deployment.
