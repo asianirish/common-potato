@@ -11,7 +11,7 @@
     <message>
         <location filename="Menu.cpp" line="75"/>
         <source>command</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">komenda</translation>
     </message>
 </context>
 </TS>
