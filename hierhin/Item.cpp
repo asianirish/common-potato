@@ -16,6 +16,7 @@ const QString Item::ID_KEY("id");
 const QString Item::ESSENCE_CLASS_KEY("essenceClass");
 const QString Item::PROPERTIES_KEY("prop");
 const QString Item::IS_NODE_KEY("isNode");
+const QString Item::BASE_TYPE_KEY("baseType");
 
 util::LazyPointer<uniq::Value<Id>> Item::_idGen(Item::DEFAULT_ID_GEN_CLASS_NAME);
 

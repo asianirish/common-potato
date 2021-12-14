@@ -24,6 +24,7 @@ public:
     static const QString ESSENCE_CLASS_KEY;
     static const QString PROPERTIES_KEY;
     static const QString IS_NODE_KEY;
+    static const QString BASE_TYPE_KEY;
 
     Item();
 
