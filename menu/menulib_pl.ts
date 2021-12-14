@@ -8,5 +8,10 @@
         <source>no such a command</source>
         <translation type="unfinished">brak komendy</translation>
     </message>
+    <message>
+        <location filename="Menu.cpp" line="75"/>
+        <source>command</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>
