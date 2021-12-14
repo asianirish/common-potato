@@ -5,10 +5,10 @@
 
 namespace hierhin {
 
-class ImplCreator
+class ItemCreator
 {
 public:
-    ImplCreator();
+    ItemCreator();
 
     ItemPtr createItem(const BaseType &baseType);
 

@@ -1,14 +1,14 @@
-#include "ImplCreator.h"
+#include "ItemCreator.h"
 #include "Node.h"
 
 namespace hierhin {
 
-ImplCreator::ImplCreator()
+ItemCreator::ItemCreator()
 {
 
 }
 
-ItemPtr ImplCreator::createItem(const BaseType &baseType)
+ItemPtr ItemCreator::createItem(const BaseType &baseType)
 {
     switch (baseType) {
     case BaseType::ITEM:
