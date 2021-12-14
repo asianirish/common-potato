@@ -27,6 +27,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     Essence.h \
+    ImplCreator.h \
     Item.h \
     Node.h \
     def/ItemDef.h \
@@ -49,6 +50,7 @@ HEADERS += \
 
 SOURCES += \
     Essence.cpp \
+    ImplCreator.cpp \
     Item.cpp \
     Node.cpp \
     def/ItemDef.cpp \
