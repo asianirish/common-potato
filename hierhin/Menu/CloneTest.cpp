@@ -29,6 +29,11 @@ QVariant CloneTest::simplyAct(const QVariantList &args)
     QString phone = "+49000333444";
     nd->setProperty("phone", phone);
 
+    auto child = NodePtr(new direct::NodeHashImpl());
+    child->setEssenceClassName("TestEssenceB");
+    child->setProperty("value", nnn);
+    nd->addChild(child, "left");
+
     qDebug().noquote() << "ORIGINAL NODE:" << nd->toJson();
 
     auto cloneNode = nd->clone();

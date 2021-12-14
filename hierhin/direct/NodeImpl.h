@@ -28,7 +28,7 @@ public:
 protected:
     void nodeImplToMap(QVariantMap &mp) const final;
     void addChildImpl(ItemPtr item, const Role &role) final;
-    void nodeImplFromMap(const QVariantMap &mp) const final;
+    void nodeImplFromMap(const QVariantMap &mp) final;
 private:
     C _children;
     QMap<Role, ItemWeakPtr> _roles;
@@ -102,9 +102,17 @@ void NodeImpl<C>::nodeImplToMap(QVariantMap &mp) const
 }
 
 template<typename C>
-void NodeImpl<C>::nodeImplFromMap(const QVariantMap &mp) const
+void NodeImpl<C>::nodeImplFromMap(const QVariantMap &mp)
 {
-    //TODO: read children and roles
+    QScopedPointer<ItemCreator> cc(createCreator());
+
+    auto childrenMap = mp.value(CHILDREN_KEY).toMap();
+    for (auto &childVar : childrenMap) {
+        auto baseType = static_cast<BaseType>(childVar.toMap().value(BASE_TYPE_KEY).toInt());
+        auto child = cc->createItem(baseType);
+        child->fromMap(childVar.toMap());
+        _children.insert(child->id(), child);
+    }
 }
 
 } // namespace direct
