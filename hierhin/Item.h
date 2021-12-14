@@ -62,6 +62,9 @@ public:
 
     ItemPtr clone() const;
 
+protected:
+    virtual ItemCreator *createCreator() const = 0;
+
 private:
     mutable Id _id;
     QVariantMap _properties;
@@ -77,8 +80,6 @@ private:
     }
 
     EssencePtr essencePtr() const;
-
-    virtual ItemCreator *createCreator() const = 0;
 };
 
 } // namespace hierhin
