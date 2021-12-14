@@ -84,7 +84,7 @@ void Console::onError(const menu::Error &err)
     std::cout << "Error: " << err.description().toStdString() << std::endl; //TODO: use error context
     auto keys = err.context().keys();
     for (auto &key : keys) {
-        std::cout << key.toStdString() << " : " << err.context().value(key).toString().toStdString() << std::endl;
+        std::cout << key.toStdString() << ": " << err.context().value(key).toString().toStdString() << std::endl;
     }
     std::cout << "> " << std::flush;
 }
