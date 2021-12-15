@@ -34,6 +34,8 @@ public:
 
     void fromString(const QString &str);
 
+    Step &operator=(const QString &str);
+
 private:
     Action _action;
     QString _arg; //Id or Role

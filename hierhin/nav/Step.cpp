@@ -82,6 +82,12 @@ void Step::fromString(const QString &str)
     }
 }
 
+Step &Step::operator=(const QString &str)
+{
+    fromString(str);
+    return *this;
+}
+
 QString Step::actionToString() const
 {
     switch (_action) {
