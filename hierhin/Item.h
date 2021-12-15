@@ -11,13 +11,11 @@
 #include <QString>
 #include <QVariantMap>
 
-
 using namespace util;
 
 namespace hierhin {
 
-//TODO: from QEnableSharedFromThis?
-class Item
+class Item : public QEnableSharedFromThis<Item>
 {
 public:
     static const QString DEFAULT_ID_GEN_CLASS_NAME;
@@ -41,9 +39,9 @@ public:
 
     QByteArray toJson();
 
-    virtual Node *parentNode() const = 0; //TODO: or use a weak pointer?
+    virtual NodeWeakPtr parentNode() const = 0; //TODO: or use a weak pointer?
 
-    virtual void setParentNode(Node *parentNode) = 0;
+    virtual void setParentNode(NodeWeakPtr parentNode) = 0;
 
     QVariant property(const QString &name) const;
 

@@ -69,7 +69,7 @@ QVariant NodeTest::simplyAct(const QVariantList &args)
 
         qDebug() << "NODE1 ID: " << nd1->id();
         qDebug() << "NODE2 ID: " << nd2->id();
-        qDebug() << "NODE2'S PARENT ID: " << nd2->parentNode()->id();
+        qDebug() << "NODE2'S PARENT ID: " << nd2->parentNode().lock()->id();
 
 
         nd3->setProperty("value", 1337);

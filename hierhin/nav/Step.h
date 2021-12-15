@@ -24,7 +24,7 @@ public:
     const QString &arg() const;
     void setArg(const QString &newArg);
 
-    Item *go(Item *item) const;
+    ItemWeakPtr go(Item *item) const;
 
 private:
     Action _action;

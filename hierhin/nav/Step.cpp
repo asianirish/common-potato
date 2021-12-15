@@ -29,7 +29,7 @@ void Step::setArg(const QString &newArg)
     _arg = newArg;
 }
 
-Item *Step::go(Item *item) const
+ItemWeakPtr Step::go(Item *item) const
 {
     Node *node = dynamic_cast<Node *>(item);
 
@@ -38,12 +38,12 @@ Item *Step::go(Item *item) const
         return item->parentNode();
     case CHILD_ID:
         if (node) {
-            return node->child(_arg).data(); //TODO: a pointer or a shared one?
+            return node->child(_arg).toWeakRef();
         }
 
     case CHILD_ROLE:
         if (node) {
-            return node->childByRole(_arg).get();
+            return node->childByRole(_arg).toWeakRef();
         }
     case ROOT:
         ; //TODO: get root

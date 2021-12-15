@@ -20,31 +20,31 @@ public:
 
     virtual ~ItemImpl() = default;
 
-    Node *parentNode() const override;
-    void setParentNode(Node *parentNode) override;
+    NodeWeakPtr parentNode() const override;
+    void setParentNode(NodeWeakPtr parentNode) override;
 
     ItemCreator *createCreator() const;
 
 private:
-    Node *_parentNode;
+    NodeWeakPtr _parentNode;
 };
 
 template <typename C>
-ItemImpl<C>::ItemImpl() : _parentNode(nullptr)
+ItemImpl<C>::ItemImpl() /*: _parentNode(nullptr)*/
 {
 
 }
 
 template <typename C>
-Node *ItemImpl<C>::parentNode() const
+NodeWeakPtr ItemImpl<C>::parentNode() const
 {
     return _parentNode;
 }
 
 template <typename C>
-void ItemImpl<C>::setParentNode(Node *parentNode)
+void ItemImpl<C>::setParentNode(NodeWeakPtr parentNode)
 {
-    if (parentNode && parentNode->containsId(this->id())) {
+    if (parentNode && parentNode.lock()->containsId(this->id())) {
         _parentNode = parentNode;
     }
 }
