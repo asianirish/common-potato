@@ -18,7 +18,7 @@ QVariant LinkTest::simplyAct(const QVariantList &args)
     Step step1("CHILD_ID:test1");
     Step step2;
 
-    step2 = QString("CHILD_ROLE:test2");
+    step2 = "CHILD_ROLE:test2";
 
     qDebug() << "STEP_0:" << step0.toString();
     qDebug() << "STEP_1:" << step1.toString();

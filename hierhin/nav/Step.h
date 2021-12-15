@@ -36,6 +36,8 @@ public:
 
     Step &operator=(const QString &str);
 
+    Step &operator=(const char *str);
+
 private:
     Action _action;
     QString _arg; //Id or Role
