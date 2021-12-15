@@ -5,6 +5,7 @@
 #include "Menu/TransTest.h"
 #include "Menu/NumberTest.h"
 #include "Menu/CloneTest.h"
+#include "Menu/LinkTest.h"
 
 #include <menu/Console.h>
 #include <menu/util/SetLanguage.h>
@@ -32,6 +33,7 @@ int main(int argc, char *argv[])
     console.addMenuItem("ttr", menu::ActionPtr(new TransTest()));
     console.addMenuItem("tnum", menu::ActionPtr(new NumberTest()));
     console.addMenuItem("tclone", menu::ActionPtr(new CloneTest()));
+    console.addMenuItem("tlink", menu::ActionPtr(new LinkTest()));
 
     console.run();
     QObject::connect(&console, SIGNAL(quit()), &a, SLOT(quit()));
