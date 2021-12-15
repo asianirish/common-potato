@@ -20,10 +20,16 @@ QVariant LinkTest::simplyAct(const QVariantList &args)
 
     step2 = "CHILD_ROLE:test2";
 
-    qDebug() << "STEP_0:" << step0.toString();
-    qDebug() << "STEP_1:" << step1.toString();
-    qDebug() << "STEP_2:" << step2.toString();
+    qDebug() << "STEP_0:" << step0;
+    qDebug() << "STEP_1:" << step1;
+    qDebug() << "STEP_2:" << step2;
 
+    QStringList lst;
+    lst << step0 << step1 << step2;
+
+    for (auto &strStep : lst) {
+        qDebug() << strStep;
+    }
 
     return true;
 }

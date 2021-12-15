@@ -88,6 +88,11 @@ Step &Step::operator=(const QString &str)
     return *this;
 }
 
+Step::operator QString() const
+{
+    return toString();
+}
+
 Step &Step::operator=(const char *str)
 {
     fromString(QString(str));
