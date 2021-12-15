@@ -31,6 +31,7 @@ private:
     QString _arg; //Id or Role
 
     QString actionToString() const;
+    void stringToAction(const QString &str);
 };
 
 } // namespace nav

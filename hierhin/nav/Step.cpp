@@ -77,5 +77,18 @@ QString Step::actionToString() const
     return {};
 }
 
+void Step::stringToAction(const QString &str)
+{
+    if (str == "PARENT") {
+        setAction(PARENT);
+    } else if (str == "CHILD_ID") {
+        setAction(CHILD_ID);
+    } else if (str == "CHILD_ROLE") {
+        setAction(CHILD_ROLE);
+    } else if (str == "ROOT") {
+        setAction(ROOT);
+    }
+}
+
 } // namespace nav
 } // namespace hierhin
