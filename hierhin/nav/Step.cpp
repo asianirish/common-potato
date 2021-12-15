@@ -57,6 +57,11 @@ ItemWeakPtr Step::go(Item *item) const
     return {};
 }
 
+QString Step::toString() const
+{
+    return actionToString() + ":" + _arg;
+}
+
 QString Step::actionToString() const
 {
     switch (_action) {

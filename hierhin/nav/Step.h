@@ -26,6 +26,8 @@ public:
 
     ItemWeakPtr go(Item *item) const;
 
+    QString toString() const;
+
 private:
     Action _action;
     QString _arg; //Id or Role
