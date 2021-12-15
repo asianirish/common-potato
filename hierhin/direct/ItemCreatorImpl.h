@@ -19,8 +19,8 @@ public:
     ItemCreatorImpl();
 
 private:
-    ItemPtr createItem() final;
-    NodePtr createNode() final;
+    ItemPtr createItem() const final;
+    NodePtr createNode() const final;
 //TODO:    LinkPtr createLink() final;
 };
 
@@ -31,13 +31,13 @@ ItemCreatorImpl<C>::ItemCreatorImpl()
 }
 
 template <typename C>
-ItemPtr ItemCreatorImpl<C>::createItem()
+ItemPtr ItemCreatorImpl<C>::createItem() const
 {
     return ItemPtr(new ItemImpl<C>());
 }
 
 template<typename C>
-NodePtr ItemCreatorImpl<C>::createNode()
+NodePtr ItemCreatorImpl<C>::createNode() const
 {
     return NodePtr(new NodeImpl<C>());
 }

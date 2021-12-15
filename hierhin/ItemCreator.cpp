@@ -8,7 +8,7 @@ ItemCreator::ItemCreator()
 
 }
 
-ItemPtr ItemCreator::createItem(const QVariantMap &mp)
+ItemPtr ItemCreator::createItem(const QVariantMap &mp) const
 {
     BaseType bt = static_cast<BaseType>(mp.value(Item::BASE_TYPE_KEY).toInt());
     auto item = createItem(bt);
@@ -16,7 +16,7 @@ ItemPtr ItemCreator::createItem(const QVariantMap &mp)
     return item;
 }
 
-ItemPtr ItemCreator::createItem(const BaseType &baseType)
+ItemPtr ItemCreator::createItem(const BaseType &baseType) const
 {
     switch (baseType) {
     case BaseType::ITEM:
