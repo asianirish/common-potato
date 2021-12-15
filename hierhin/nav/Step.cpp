@@ -41,13 +41,20 @@ ItemWeakPtr Step::go(Item *item) const
             return node->child(_arg).toWeakRef();
         }
 
+        break;
+
     case CHILD_ROLE:
         if (node) {
             return node->childByRole(_arg).toWeakRef();
         }
+
+        break;
+
     case ROOT:
         ; //TODO: get root
     }
+
+    return {};
 }
 
 } // namespace nav
