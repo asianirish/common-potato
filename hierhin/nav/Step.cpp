@@ -57,5 +57,25 @@ ItemWeakPtr Step::go(Item *item) const
     return {};
 }
 
+QString Step::actionToString() const
+{
+    switch (_action) {
+
+    case PARENT:
+        return QString("PARENT");
+
+    case CHILD_ID:
+        return QString("CHILD_ID");
+
+    case CHILD_ROLE:
+        return QString("CHILD_ROLE");
+
+    case ROOT:
+        return QString("CHILD_ROLE");
+    }
+
+    return {};
+}
+
 } // namespace nav
 } // namespace hierhin

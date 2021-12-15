@@ -29,6 +29,8 @@ public:
 private:
     Action _action;
     QString _arg; //Id or Role
+
+    QString actionToString() const;
 };
 
 } // namespace nav
