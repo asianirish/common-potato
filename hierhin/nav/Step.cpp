@@ -4,7 +4,7 @@
 namespace hierhin {
 namespace nav {
 
-Step::Step()
+Step::Step() : _action(PARENT) //TODO: UNDEFINED (?)
 {
 
 }
