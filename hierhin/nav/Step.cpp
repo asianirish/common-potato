@@ -9,6 +9,11 @@ Step::Step() : _action(PARENT) //TODO: UNDEFINED (?)
 
 }
 
+Step::Step(const QString &str)
+{
+    fromString(str);
+}
+
 Step::Action Step::action() const
 {
     return _action;

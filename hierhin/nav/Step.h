@@ -18,6 +18,8 @@ public:
 
     Step();
 
+    Step(const QString &str);
+
     Action action() const;
     void setAction(Action newAction);
 
