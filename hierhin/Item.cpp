@@ -171,6 +171,10 @@ bool Item::isKindOf(const QString &className) const
 
 BaseType Item::baseType() const
 {
+    if (dynamic_cast<const Node *>(this)) {
+        return BaseType::NODE;
+    }
+    //TODO: <Link>
     return BaseType::ITEM;
 }
 

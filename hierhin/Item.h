@@ -58,7 +58,7 @@ public:
 
     bool isKindOf(const QString &className) const;
 
-    virtual BaseType baseType() const;
+    BaseType baseType() const;
 
     ItemPtr clone() const;
 

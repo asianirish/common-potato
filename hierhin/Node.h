@@ -20,8 +20,6 @@ public:
 
     virtual IdList idList() const = 0;
 
-    BaseType baseType() const final;
-
 protected:
     virtual void nodeImplToMap(QVariantMap &mp) const = 0;
     virtual void nodeImplFromMap(const QVariantMap &mp) = 0;
