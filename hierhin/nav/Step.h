@@ -28,6 +28,8 @@ public:
 
     QString toString() const;
 
+    void fromString(const QString &str);
+
 private:
     Action _action;
     QString _arg; //Id or Role

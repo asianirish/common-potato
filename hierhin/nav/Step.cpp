@@ -62,6 +62,16 @@ QString Step::toString() const
     return actionToString() + ":" + _arg;
 }
 
+void Step::fromString(const QString &str)
+{
+    auto lst = str.split(":");
+    stringToAction(lst.at(0));
+
+    if (lst.size() > 1) {
+        _arg = lst.at(1);
+    }
+}
+
 QString Step::actionToString() const
 {
     switch (_action) {
