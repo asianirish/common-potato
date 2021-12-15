@@ -47,6 +47,7 @@ HEADERS += \
     ex/PropertyException.h \
     ex/UnregisteredClassException.h \
     ex/ValidatorException.h \
+    nav/Step.h \
     type.h
 
 SOURCES += \
@@ -67,6 +68,7 @@ SOURCES += \
     ex/NoSuchRole.cpp \
     ex/PropertyException.cpp \
     ex/UnregisteredClassException.cpp \
-    ex/ValidatorException.cpp
+    ex/ValidatorException.cpp \
+    nav/Step.cpp
 
 

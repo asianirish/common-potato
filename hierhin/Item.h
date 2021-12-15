@@ -16,6 +16,7 @@ using namespace util;
 
 namespace hierhin {
 
+//TODO: from QEnableSharedFromThis?
 class Item
 {
 public:
@@ -40,7 +41,7 @@ public:
 
     QByteArray toJson();
 
-    virtual Node *parentNode() const = 0;
+    virtual Node *parentNode() const = 0; //TODO: or use a weak pointer?
 
     virtual void setParentNode(Node *parentNode) = 0;
 
