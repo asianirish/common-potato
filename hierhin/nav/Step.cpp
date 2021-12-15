@@ -14,6 +14,11 @@ Step::Step(const QString &str)
     fromString(str);
 }
 
+Step::Step(const char *str) : Step(QString(str))
+{
+
+}
+
 Step::Action Step::action() const
 {
     return _action;

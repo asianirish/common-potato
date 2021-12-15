@@ -20,6 +20,8 @@ public:
 
     Step(const QString &str);
 
+    Step(const char *str);
+
     Action action() const;
     void setAction(Action newAction);
 
