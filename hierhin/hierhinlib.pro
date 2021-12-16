@@ -47,6 +47,7 @@ HEADERS += \
     ex/PropertyException.h \
     ex/UnregisteredClassException.h \
     ex/ValidatorException.h \
+    nav/ItemRef.h \
     nav/Path.h \
     nav/Step.h \
     type.h
@@ -70,6 +71,7 @@ SOURCES += \
     ex/PropertyException.cpp \
     ex/UnregisteredClassException.cpp \
     ex/ValidatorException.cpp \
+    nav/ItemRef.cpp \
     nav/Path.cpp \
     nav/Step.cpp
 
