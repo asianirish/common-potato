@@ -39,7 +39,7 @@ void Step::setArg(const QString &newArg)
     _arg = newArg;
 }
 
-ItemWeakPtr Step::go(ItemPtr item) const
+ItemPtr Step::go(ItemPtr item) const
 {
     NodePtr node = item.dynamicCast<Node>();
 
@@ -48,14 +48,14 @@ ItemWeakPtr Step::go(ItemPtr item) const
         return item->parentNode();
     case CHILD_ID:
         if (node) {
-            return node->child(_arg).toWeakRef();
+            return node->child(_arg);
         }
 
         break;
 
     case CHILD_ROLE:
         if (node) {
-            return node->childByRole(_arg).toWeakRef();
+            return node->childByRole(_arg);
         }
 
         break;
