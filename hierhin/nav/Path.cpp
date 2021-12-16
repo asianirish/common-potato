@@ -72,8 +72,14 @@ QString Path::toString() const
     QStringList lst = toStringList();
     QString retStr;
 
+    int i = 0;
+
     foreach (const QString &str, lst) {
-        retStr += str + "/";
+        if (i) {
+            retStr += "/";
+        }
+        retStr += str;
+        i++;
     }
 
     return retStr;
