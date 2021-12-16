@@ -13,6 +13,11 @@ Path::Path(const QStringList &lst)
     fromStringList(lst);
 }
 
+Path::Path(const QString &pathStr)
+{
+    fromString(pathStr);
+}
+
 const QList<Step> &Path::steps() const
 {
     return _steps;
