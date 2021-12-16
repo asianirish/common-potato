@@ -1,6 +1,7 @@
 #include "LinkTest.h"
 #include <hierhin/nav/Step.h>
 #include <hierhin/nav/Path.h>
+#include <hierhin/nav/ItemRef.h>
 
 #include <QDebug>
 
@@ -39,5 +40,36 @@ QVariant LinkTest::simplyAct(const QVariantList &args)
     Path copy2Path("/CHILD_ID:aaa/CHILD_ROLE:bbb");
     qDebug() << "COPY2 PATH:" << copy2Path;
 
+    {
+        hierhin::nav::ItemRef nodeRef;
+        QVariant var = QVariant::fromValue<hierhin::nav::ItemRef>(nodeRef);
+
+        auto tp = var.userType();
+        qDebug() << var << "NODE_REF TYPE:" << tp;
+    }
+
+    {
+        TestType tt;
+        QVariant var = QVariant::fromValue<TestType>(tt);
+
+        auto tp = var.userType();
+        qDebug() << var << "TEST_TYPE REF TYPE:" << tp;
+    }
+
+    {
+        menu::Result result;
+        QVariant var = QVariant::fromValue<menu::Result>(result);
+
+        auto tp = var.userType();
+        qDebug() << var << "MENU RESULT REF TYPE:" << tp;
+    }
+
+    {
+        menu::Error error;
+        QVariant var = QVariant::fromValue<menu::Error>(error);
+
+        auto tp = var.userType();
+        qDebug() << var << "MENU RESULT REF TYPE:" << tp;
+    }
     return true;
 }

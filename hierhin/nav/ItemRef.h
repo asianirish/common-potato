@@ -33,4 +33,9 @@ private:
 
 Q_DECLARE_METATYPE(hierhin::nav::ItemRef)
 
+class TestType
+{};
+
+Q_DECLARE_METATYPE(TestType)
+
 #endif // HIERHIN_NAV_ITEMREF_H

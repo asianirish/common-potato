@@ -18,6 +18,8 @@ HierhinClassRegistry::HierhinClassRegistry()
 
 void HierhinClassRegistry::registerAllClasses() const
 {
+    qRegisterMetaType<TestType>();
+
     qRegisterMetaType<hierhin::nav::ItemRef>();
 
     REGISTER_CLASS_FOR_UTIL_FACTORY(hierhin::Essence, TestEssenceA);
