@@ -69,7 +69,7 @@ ItemPtr Step::go(ItemPtr item) const
 
 QString Step::toString() const
 {
-    if (_action == PARENT || _action == ROOT) {
+    if (_action == PARENT || _action == ROOT || _action == UNDEFINED) {
         return actionToString();
     }
 
