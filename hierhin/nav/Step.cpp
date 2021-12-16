@@ -4,12 +4,12 @@
 namespace hierhin {
 namespace nav {
 
-Step::Step() : _action(PARENT) //TODO: UNDEFINED (?)
+Step::Step() : Step(QString())
 {
 
 }
 
-Step::Step(const QString &str)
+Step::Step(const QString &str): _action(PARENT) //TODO: UNDEFINED (?)
 {
     fromString(str);
 }
