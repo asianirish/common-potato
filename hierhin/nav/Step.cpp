@@ -107,6 +107,9 @@ QString Step::actionToString() const
 {
     switch (_action) {
 
+    case UNDEFINED:
+        return QString(".");
+
     case PARENT:
         return QString("..");
 
@@ -125,13 +128,15 @@ QString Step::actionToString() const
 
 void Step::stringToAction(const QString &str)
 {
-    if (str == "..") {
+    if (str == ".") {
+        setAction(UNDEFINED);
+    } if (str == "..") {
         setAction(PARENT);
     } else if (str == "CHILD_ID") {
         setAction(CHILD_ID);
     } else if (str == "CHILD_ROLE") {
         setAction(CHILD_ROLE);
-    } else if (str.isEmpty()) {
+    } else if (str.isEmpty() || str == "/") {
         setAction(ROOT);
     }
 }
