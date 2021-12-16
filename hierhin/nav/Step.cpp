@@ -39,9 +39,9 @@ void Step::setArg(const QString &newArg)
     _arg = newArg;
 }
 
-ItemWeakPtr Step::go(Item *item) const
+ItemWeakPtr Step::go(ItemPtr item) const
 {
-    Node *node = dynamic_cast<Node *>(item);
+    NodePtr node = item.dynamicCast<Node>();
 
     switch (_action) {
     case PARENT:
