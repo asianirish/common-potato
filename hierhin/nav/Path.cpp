@@ -25,9 +25,28 @@ void Path::addStep(const Step &newStep)
 
 ItemPtr Path::go(ItemPtr item) const
 {
+    ItemPtr curItem = item;
     for (const auto &step : _steps) {
-        //TODO: implement
+        curItem = step.go(curItem);
+
+        if (!curItem) {
+            return {};
+        }
     }
+
+    return curItem;
+}
+
+QStringList Path::toStringList() const
+{
+    QStringList lst;
+
+    for (auto &str : lst) {
+        Step step(str);
+        lst.append(step);
+    }
+
+    return lst;
 }
 
 

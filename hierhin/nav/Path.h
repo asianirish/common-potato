@@ -19,6 +19,8 @@ public:
 
     ItemPtr go(ItemPtr item) const;
 
+    QStringList toStringList() const;
+
 private:
     QList<Step> _steps;
 };
