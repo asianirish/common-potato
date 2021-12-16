@@ -10,6 +10,7 @@ class Step
 {
 public:
     enum Action {
+        UNDEFINED,
         PARENT,
         CHILD_ROLE,
         CHILD_ID,
