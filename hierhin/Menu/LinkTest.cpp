@@ -36,5 +36,8 @@ QVariant LinkTest::simplyAct(const QVariantList &args)
 
     qDebug() << "COPY PATH:" << copyPath;
 
+    Path copy2Path("/CHILD_ID:aaa/CHILD_ROLE:bbb");
+    qDebug() << "COPY2 PATH:" << copy2Path;
+
     return true;
 }
