@@ -1,5 +1,6 @@
 #include "LinkTest.h"
 #include <hierhin/nav/Step.h>
+#include <hierhin/nav/Path.h>
 
 #include <QDebug>
 
@@ -26,10 +27,10 @@ QVariant LinkTest::simplyAct(const QVariantList &args)
 
     QStringList lst;
     lst << step0 << step1 << step2;
+    Path path(lst);
 
-    for (auto &strStep : lst) {
-        qDebug() << strStep;
-    }
+    QString pathStr = path.toString();
+    qDebug() << "PATH:" << pathStr;
 
     return true;
 }
