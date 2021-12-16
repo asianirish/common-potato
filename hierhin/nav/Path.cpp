@@ -50,6 +50,8 @@ QStringList Path::toStringList() const
 
 void Path::fromStringList(const QStringList &lst)
 {
+    _steps.clear();
+
     for (auto &str : lst) {
         Step step(str);
         _steps.append(step);
