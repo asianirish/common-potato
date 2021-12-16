@@ -31,4 +31,6 @@ private:
 } // namespace nav
 } // namespace hierhin
 
+Q_DECLARE_METATYPE(hierhin::nav::ItemRef)
+
 #endif // HIERHIN_NAV_ITEMREF_H
