@@ -5,6 +5,8 @@
 
 #include "stock_v0/Exchange.h"
 
+#include <hierhin/nav/ItemRef.h>
+
 #include <util/Factory.h>
 
 #include <QString>
@@ -16,6 +18,8 @@ HierhinClassRegistry::HierhinClassRegistry()
 
 void HierhinClassRegistry::registerAllClasses() const
 {
+    qRegisterMetaType<hierhin::nav::ItemRef>();
+
     REGISTER_CLASS_FOR_UTIL_FACTORY(hierhin::Essence, TestEssenceA);
     REGISTER_CLASS_FOR_UTIL_FACTORY(hierhin::Essence, TestEssenceB);
     REGISTER_CLASS_FOR_UTIL_FACTORY(hierhin::Essence, TestEssenceC);
