@@ -32,6 +32,7 @@ SOURCES += \
         List.cpp \
         NotEqualTo.cpp \
         Phone.cpp \
+        TypeValidator.cpp \
         Validator.cpp
 
 # Default rules for deployment.
@@ -51,4 +52,5 @@ HEADERS += \
     NotEqualTo.h \
     Phone.h \
     Range.h \
+    TypeValidator.h \
     Validator.h
