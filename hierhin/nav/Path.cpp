@@ -48,6 +48,14 @@ QStringList Path::toStringList() const
     return lst;
 }
 
+void Path::fromStringList(const QStringList &lst)
+{
+    for (auto &str : lst) {
+        Step step(str);
+        _steps.append(step);
+    }
+}
+
 
 } // namespace nav
 } // namespace hierhin
