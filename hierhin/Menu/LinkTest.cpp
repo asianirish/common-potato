@@ -15,7 +15,7 @@ QVariant LinkTest::simplyAct(const QVariantList &args)
 {
     Q_UNUSED(args);
 
-    Step step0 = "PARENT";
+    Step step0 = "/";
     Step step1("CHILD_ID:test1");
     Step step2;
 
