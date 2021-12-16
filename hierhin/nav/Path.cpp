@@ -63,6 +63,22 @@ void Path::fromStringList(const QStringList &lst)
     }
 }
 
+QString Path::toString() const
+{
+    if (_steps.isEmpty()) {
+        return QString();
+    }
+
+    QStringList lst = toStringList();
+    QString retStr;
+
+    foreach (const QString &str, lst) {
+        retStr += str + "/";
+    }
+
+    return retStr;
+}
+
 
 } // namespace nav
 } // namespace hierhin

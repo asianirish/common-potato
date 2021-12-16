@@ -24,6 +24,8 @@ public:
 
     void fromStringList(const QStringList &lst);
 
+    QString toString() const;
+
 private:
     QList<Step> _steps;
 };
