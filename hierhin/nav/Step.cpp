@@ -61,7 +61,7 @@ ItemPtr Step::go(ItemPtr item) const
         break;
 
     case ROOT:
-        ; //TODO: get root
+        return goRoot(item);
     }
 
     return {};
@@ -129,6 +129,20 @@ void Step::stringToAction(const QString &str)
         setAction(CHILD_ROLE);
     } else if (str == "ROOT") {
         setAction(ROOT);
+    }
+}
+
+ItemPtr Step::goRoot(ItemPtr item) const
+{
+    ItemPtr curItem = item;
+
+    while (1) {
+        auto tmpItem = curItem->parentNode();
+
+        if (!tmpItem) {
+            //the first parentless is the root
+            return curItem;
+        }
     }
 }
 

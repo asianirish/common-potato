@@ -46,6 +46,8 @@ private:
 
     QString actionToString() const;
     void stringToAction(const QString &str);
+
+    ItemPtr goRoot(ItemPtr item) const;
 };
 
 } // namespace nav
