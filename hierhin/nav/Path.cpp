@@ -41,8 +41,7 @@ QStringList Path::toStringList() const
 {
     QStringList lst;
 
-    for (auto &str : lst) {
-        Step step(str);
+    for (auto &step : _steps) {
         lst.append(step);
     }
 
