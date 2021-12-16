@@ -17,7 +17,7 @@ public:
     void setSteps(const QList<Step> &newSteps);
     void addStep(const Step &newStep);
 
-    ItemWeakPtr go(Item *item) const;
+    ItemWeakPtr go(ItemPtr item) const;
 
 private:
     QList<Step> _steps;

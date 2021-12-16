@@ -23,7 +23,7 @@ void Path::addStep(const Step &newStep)
     _steps.append(newStep);
 }
 
-ItemWeakPtr Path::go(Item *item) const
+ItemWeakPtr Path::go(ItemPtr item) const
 {
     for (auto step : _steps) {
         //TODO: implement
