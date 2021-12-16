@@ -23,9 +23,9 @@ void Path::addStep(const Step &newStep)
     _steps.append(newStep);
 }
 
-ItemWeakPtr Path::go(ItemPtr item) const
+ItemPtr Path::go(ItemPtr item) const
 {
-    for (auto step : _steps) {
+    for (const auto &step : _steps) {
         //TODO: implement
     }
 }
