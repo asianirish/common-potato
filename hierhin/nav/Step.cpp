@@ -113,7 +113,7 @@ QString Step::actionToString() const
         return QString("CHILD_ROLE");
 
     case ROOT:
-        return QString("CHILD_ROLE");
+        return QString("CHILD_ROOT");
     }
 
     return {};
