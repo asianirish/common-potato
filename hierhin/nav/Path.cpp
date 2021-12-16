@@ -85,6 +85,12 @@ QString Path::toString() const
     return retStr;
 }
 
+void Path::fromString(const QString &pathStr)
+{
+    QStringList lst = pathStr.split("/");
+    fromStringList(lst);
+}
+
 
 } // namespace nav
 } // namespace hierhin
