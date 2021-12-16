@@ -3,9 +3,14 @@
 namespace hierhin {
 namespace nav {
 
-Path::Path()
+Path::Path() : Path(QStringList())
 {
 
+}
+
+Path::Path(const QStringList &lst)
+{
+    fromStringList(lst);
 }
 
 const QList<Step> &Path::steps() const
