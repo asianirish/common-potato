@@ -53,8 +53,8 @@ QVariant LinkTest::simplyAct(const QVariantList &args)
         qDebug() << "QSTRING CAN CONVERT TO NODE_REF:" << var.canConvert<hierhin::nav::ItemRef>();
 
         hierhin::nav::ItemRef itemRef;
-        itemRef = pathStr;
-        qDebug() << "ITEM_REF:" << itemRef;
+        itemRef = qvariant_cast<hierhin::nav::ItemRef>(var);
+        qDebug() << "ITEM_REF:" << itemRef << var;
 
     }
     qDebug() << "\n";
