@@ -46,8 +46,14 @@ QVariant LinkTest::simplyAct(const QVariantList &args)
 
         auto tp = var.userType();
         qDebug() << var << "NODE_REF TYPE:" << tp;
-    }
 
+        qDebug() << "NODE_REF CAN CONVERT TO QSTRING:" << var.canConvert<QString>();
+        QString pathStr("/CHILD_ID:aaa/CHILD_ROLE:bbb");
+        var = pathStr;
+        qDebug() << "QSTRING CAN CONVERT TO NODE_REF:" << var.canConvert<hierhin::nav::ItemRef>();
+
+    }
+    qDebug() << "\n";
     {
         TestType tt;
         QVariant var = QVariant::fromValue<TestType>(tt);
@@ -55,7 +61,7 @@ QVariant LinkTest::simplyAct(const QVariantList &args)
         auto tp = var.userType();
         qDebug() << var << "TEST_TYPE REF TYPE:" << tp;
     }
-
+    qDebug() << "\n";
     {
         menu::Result result;
         QVariant var = QVariant::fromValue<menu::Result>(result);
@@ -63,7 +69,7 @@ QVariant LinkTest::simplyAct(const QVariantList &args)
         auto tp = var.userType();
         qDebug() << var << "MENU RESULT REF TYPE:" << tp;
     }
-
+    qDebug() << "\n";
     {
         menu::Error error;
         QVariant var = QVariant::fromValue<menu::Error>(error);
