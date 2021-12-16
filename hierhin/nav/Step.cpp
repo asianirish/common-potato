@@ -44,6 +44,8 @@ ItemPtr Step::go(ItemPtr item) const
     NodePtr node = item.dynamicCast<Node>();
 
     switch (_action) {
+    case UNDEFINED:
+        return item;
     case PARENT:
         return item->parentNode();
     case CHILD_ID:
