@@ -29,6 +29,8 @@ public:
 
     void fromString(const QString &pathStr);
 
+    operator QString() const;
+
 private:
     QList<Step> _steps;
 };

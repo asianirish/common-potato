@@ -34,7 +34,7 @@ QVariant LinkTest::simplyAct(const QVariantList &args)
 
     Path copyPath(pathStr);
 
-    qDebug() << "COPY PATH:" << copyPath.toString();
+    qDebug() << "COPY PATH:" << copyPath;
 
     return true;
 }

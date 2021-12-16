@@ -96,6 +96,11 @@ void Path::fromString(const QString &pathStr)
     fromStringList(lst);
 }
 
+Path::operator QString() const
+{
+    return toString();
+}
+
 
 } // namespace nav
 } // namespace hierhin
