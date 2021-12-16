@@ -69,6 +69,10 @@ ItemPtr Step::go(ItemPtr item) const
 
 QString Step::toString() const
 {
+    if (_action == CHILD_ID || _action == ROOT) {
+        return actionToString();
+    }
+
     return actionToString() + ":" + _arg;
 }
 
