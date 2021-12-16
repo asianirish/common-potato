@@ -13,6 +13,8 @@ class ItemRef
 public:
     ItemRef();
 
+    ItemRef(const QString &pathStr);
+
     const Path &path() const;
     void setPath(const Path &newPath);
 
@@ -21,6 +23,8 @@ public:
     void setSource(ItemPtr newSource);
 
     ItemPtr ptr() const;
+
+    operator QString() const;
 
 private:
     Path _path;

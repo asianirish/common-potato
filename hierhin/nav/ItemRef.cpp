@@ -3,7 +3,12 @@
 namespace hierhin {
 namespace nav {
 
-ItemRef::ItemRef()
+ItemRef::ItemRef() : ItemRef(QString())
+{
+
+}
+
+ItemRef::ItemRef(const QString &pathStr) : _path(pathStr)
 {
 
 }
@@ -40,6 +45,11 @@ ItemPtr ItemRef::ptr() const
 
     _ptr = _path.go(_source);
     return _ptr;
+}
+
+ItemRef::operator QString() const
+{
+    return _path.toString();
 }
 
 } // namespace nav
