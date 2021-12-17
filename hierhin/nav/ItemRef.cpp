@@ -52,6 +52,11 @@ QString ItemRef::toString() const
     return _path.toString();
 }
 
+void ItemRef::fromString(const QString &pathStr)
+{
+    return _path.fromString(pathStr);
+}
+
 ItemRef::operator QString() const
 {
     return toString();

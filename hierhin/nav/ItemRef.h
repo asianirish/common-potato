@@ -25,6 +25,7 @@ public:
     ItemPtr ptr() const;
 
     QString toString() const;
+    void fromString(const QString &pathStr);
 
     operator QString() const;
 
