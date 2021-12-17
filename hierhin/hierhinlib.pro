@@ -29,6 +29,7 @@ HEADERS += \
     Essence.h \
     Item.h \
     ItemCreator.h \
+    LinkedEssence.h \
     Node.h \
     def/CommandDef.h \
     def/ItemDef.h \
@@ -58,6 +59,7 @@ SOURCES += \
     Essence.cpp \
     Item.cpp \
     ItemCreator.cpp \
+    LinkedEssence.cpp \
     Node.cpp \
     def/CommandDef.cpp \
     def/ItemDef.cpp \
