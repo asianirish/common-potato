@@ -1,4 +1,5 @@
 #include "Essence.h"
+#include "Item.h"
 
 namespace hierhin {
 
@@ -11,8 +12,11 @@ Essence::Essence() : QObject(nullptr)
 
 void Essence::execute(Item *item) const
 {
-    //TODO: validate item
-    executeImpl(item);
+    if (className() == item->essenceClassName()) {
+        executeImpl(item);
+    } else {
+        //TODO: exception?
+    }
 }
 
 QString Essence::className() const

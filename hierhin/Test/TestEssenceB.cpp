@@ -24,5 +24,5 @@ NodeDef TestEssenceB::nodeDef() const
 
 void TestEssenceB::executeImpl(hierhin::Item *item) const
 {
-    item->setProperty("pi", 3.1415926535);
+    item->setProperty("pi", 3.1415926535 * 2);
 }
