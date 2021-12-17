@@ -4,7 +4,7 @@
 
 namespace hierhin {
 
-
+const QString Essence::DEFAULT_COMMAND("command");
 
 Essence::Essence() : QObject(nullptr)
 {
@@ -42,6 +42,11 @@ QStringList Essence::classNames() const
 bool Essence::isKindOf(const QString &className) const
 {
     return classNames().contains(className);
+}
+
+QMap<QString, CommandDef> Essence::commandDefs() const
+{
+    return {{DEFAULT_COMMAND, CommandDef(DEFAULT_COMMAND)}};
 }
 
 
