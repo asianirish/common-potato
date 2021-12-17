@@ -15,7 +15,7 @@ public:
     NodeDef nodeDef() const override;
 
 protected:
-    void executeImpl(Item *item) const override;
+    void executeImpl(Item *item, const QString &command, const QVariantList &args) const override;
 };
 
 } // namespace stock_v0

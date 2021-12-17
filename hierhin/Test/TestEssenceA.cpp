@@ -55,8 +55,11 @@ NodeDef TestEssenceA::nodeDef() const
     return nd;
 }
 
-void TestEssenceA::executeImpl(hierhin::Item *item) const
+void TestEssenceA::executeImpl(hierhin::Item *item, const QString &command, const QVariantList &args) const
 {
+    Q_UNUSED(command)
+    Q_UNUSED(args)
+
     int value = item->property("value").toInt();
     item->setProperty("value", value * 2);
 }

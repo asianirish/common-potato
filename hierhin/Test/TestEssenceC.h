@@ -15,8 +15,10 @@ public:
     }
 
 protected:
-    void executeImpl(hierhin::Item *item) const override {
+    void executeImpl(hierhin::Item *item, const QString &command, const QVariantList &args) const override {
         Q_UNUSED(item)
+        Q_UNUSED(command)
+        Q_UNUSED(args)
     }
 };
 

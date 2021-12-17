@@ -13,10 +13,13 @@ NodeDef Exchange::nodeDef() const
     return NodeDef();
 }
 
-void Exchange::executeImpl(Item *item) const
+void Exchange::executeImpl(Item *item, const QString &command, const QVariantList &args) const
 {
     //TODO: implement
-    Q_UNUSED(item);
+    Q_UNUSED(item)
+    Q_UNUSED(command)
+    Q_UNUSED(args)
+
 }
 
 } // namespace stock_v0

@@ -11,10 +11,11 @@ Essence::Essence() : QObject(nullptr)
 
 }
 
-void Essence::execute(Item *item) const
+void Essence::execute(Item *item, const QString &command, const QVariantList &args) const
 {
+    //TODO: supported commands and throw UnsupportedCommand
     if (className() == item->essenceClassName()) {
-        executeImpl(item);
+        executeImpl(item, command, args);
     } else {
         throw ex::IncompatibleEssenceExecution(className(), item->essenceClassName());
     }

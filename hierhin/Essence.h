@@ -19,7 +19,7 @@ public:
 
     virtual ~Essence() = default;
 
-    void execute(Item *item) const;
+    void execute(Item *item, const QString &command = QString("defaultCommand"), const QVariantList &args = QVariantList()) const;
 
     virtual NodeDef nodeDef() const = 0;
 
@@ -30,7 +30,7 @@ public:
     bool isKindOf(const QString &className) const;
 
 protected:
-    virtual void executeImpl(Item *item) const = 0;
+    virtual void executeImpl(Item *item, const QString &command, const QVariantList &args) const = 0;
 
 signals:
 
