@@ -19,7 +19,7 @@ public:
 
     virtual ~Essence() = default;
 
-    virtual void execute(Item *item) const = 0;
+    void execute(Item *item) const;
 
     virtual NodeDef nodeDef() const = 0;
 
@@ -30,7 +30,7 @@ public:
     bool isKindOf(const QString &className) const;
 
 protected:
-//TODO:    virtual void executeImpl(Item *item) const = 0;
+    virtual void executeImpl(Item *item) const = 0;
 
 signals:
 

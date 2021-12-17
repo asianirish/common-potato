@@ -9,11 +9,6 @@ TestEssenceB::TestEssenceB()
 
 }
 
-void TestEssenceB::execute(hierhin::Item *item) const
-{
-    item->setProperty("pi", 3.1415926535);
-}
-
 NodeDef TestEssenceB::nodeDef() const
 {
     NodeDef nd;
@@ -25,4 +20,9 @@ NodeDef TestEssenceB::nodeDef() const
     nd.insertPropertyDef("pi", propDefPi);
 
     return nd;
+}
+
+void TestEssenceB::executeImpl(hierhin::Item *item) const
+{
+    item->setProperty("pi", 3.1415926535);
 }

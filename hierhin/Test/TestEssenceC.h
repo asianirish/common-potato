@@ -10,12 +10,13 @@ class TestEssenceC : public hierhin::Essence
 public:
     TestEssenceC();
 
-    void execute(hierhin::Item *item) const override {
-        Q_UNUSED(item)
-    }
-
     NodeDef nodeDef() const override {
         return NodeDef();
+    }
+
+protected:
+    void executeImpl(hierhin::Item *item) const override {
+        Q_UNUSED(item)
     }
 };
 

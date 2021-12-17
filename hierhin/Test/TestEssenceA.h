@@ -11,9 +11,11 @@ class TestEssenceA : public hierhin::Essence
 public:
     TestEssenceA();
 
-    void execute(hierhin::Item *item) const override;
-
     NodeDef nodeDef() const override;
+
+protected:
+    void executeImpl(hierhin::Item *item) const override;
+
 };
 
 #endif // TESTESSENCEA_H

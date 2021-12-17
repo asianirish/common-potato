@@ -17,12 +17,6 @@ TestEssenceA::TestEssenceA()
 
 }
 
-void TestEssenceA::execute(hierhin::Item *item) const
-{
-    int value = item->property("value").toInt();
-    item->setProperty("value", value * 2);
-}
-
 NodeDef TestEssenceA::nodeDef() const
 {
     NodeDef nd;
@@ -59,4 +53,10 @@ NodeDef TestEssenceA::nodeDef() const
     }
 
     return nd;
+}
+
+void TestEssenceA::executeImpl(hierhin::Item *item) const
+{
+    int value = item->property("value").toInt();
+    item->setProperty("value", value * 2);
 }

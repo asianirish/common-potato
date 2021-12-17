@@ -12,9 +12,10 @@ class Exchange : public Essence
 public:
     Exchange();
 
-    void execute(Item *item) const override;
-
     NodeDef nodeDef() const override;
+
+protected:
+    void executeImpl(Item *item) const override;
 };
 
 } // namespace stock_v0

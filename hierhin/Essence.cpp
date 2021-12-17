@@ -9,6 +9,12 @@ Essence::Essence() : QObject(nullptr)
 
 }
 
+void Essence::execute(Item *item) const
+{
+    //TODO: validate item
+    executeImpl(item);
+}
+
 QString Essence::className() const
 {
     return metaObject()->className();

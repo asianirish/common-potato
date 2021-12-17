@@ -7,16 +7,16 @@ Exchange::Exchange()
 
 }
 
-void Exchange::execute(Item *item) const
-{
-    //TODO: implement
-    Q_UNUSED(item);
-}
-
 NodeDef Exchange::nodeDef() const
 {
     //TODO: implement
     return NodeDef();
+}
+
+void Exchange::executeImpl(Item *item) const
+{
+    //TODO: implement
+    Q_UNUSED(item);
 }
 
 } // namespace stock_v0
