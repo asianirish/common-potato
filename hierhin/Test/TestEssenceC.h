@@ -10,7 +10,7 @@ class TestEssenceC : public hierhin::Essence
 public:
     TestEssenceC();
 
-    void execute(hierhin::Item *item) override {
+    void execute(hierhin::Item *item) const override {
         Q_UNUSED(item)
     }
 

@@ -7,7 +7,7 @@ Exchange::Exchange()
 
 }
 
-void Exchange::execute(Item *item)
+void Exchange::execute(Item *item) const
 {
     //TODO: implement
     Q_UNUSED(item);

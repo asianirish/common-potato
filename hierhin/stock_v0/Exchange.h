@@ -12,7 +12,7 @@ class Exchange : public Essence
 public:
     Exchange();
 
-    void execute(Item *item) override;
+    void execute(Item *item) const override;
 
     NodeDef nodeDef() const override;
 };

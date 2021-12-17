@@ -9,7 +9,7 @@ TestEssenceB::TestEssenceB()
 
 }
 
-void TestEssenceB::execute(hierhin::Item *item)
+void TestEssenceB::execute(hierhin::Item *item) const
 {
     item->setProperty("pi", 3.1415926535);
 }
