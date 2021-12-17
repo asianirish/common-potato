@@ -3,6 +3,10 @@
 namespace hierhin {
 namespace nav {
 
+ItemRef stringToItemRef(const QString str) {
+    return hierhin::nav::ItemRef(str);
+}
+
 ItemRef::ItemRef() : ItemRef(QString())
 {
 

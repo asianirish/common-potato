@@ -35,6 +35,9 @@ private:
     mutable ItemPtr _ptr;
 };
 
+//from converters:
+ItemRef stringToItemRef(const QString str);
+
 } // namespace nav
 } // namespace hierhin
 
