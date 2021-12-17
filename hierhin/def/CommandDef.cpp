@@ -3,7 +3,14 @@
 namespace hierhin {
 namespace def {
 
-CommandDef::CommandDef()
+CommandDef::CommandDef() : CommandDef(QString())
+{
+
+}
+
+CommandDef::CommandDef(const QString &name, const QList<ArgDef> &argDefs) :
+    _name(name),
+    _argDefs(argDefs)
 {
 
 }
