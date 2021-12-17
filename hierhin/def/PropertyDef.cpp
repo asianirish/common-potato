@@ -34,13 +34,23 @@ void PropertyDef::setDefaultValue(const QVariant &defaultValue)
     _defaultValue = defaultValue;
 }
 
-void PropertyDef::validate(const QString &name, const QVariant &value)
+void PropertyDef::validate(const QVariant &value)
 {
     for (auto &validator : _validators) {
         if (!validator->validate(value)) {
-            throw ex::ValidatorException(name, validator->errorMessage());
+            throw ex::ValidatorException(_name, validator->errorMessage());
         }
     }
+}
+
+const QString &PropertyDef::name() const
+{
+    return _name;
+}
+
+void PropertyDef::setName(const QString &newName)
+{
+    _name = newName;
 }
 
 } // namespace def

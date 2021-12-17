@@ -19,7 +19,7 @@ public:
 
     QMap<QString, PropertyDef> propertyDefs() const;
     void setPropertyDefs(const QMap<QString, PropertyDef> &propertyDefs);
-    void insertPropertyDef(const QString &name, const PropertyDef &propertyDef);
+    void insertPropertyDef(const PropertyDef &propertyDef);
 
     //'false' means 'no limitations'
     operator bool() const;

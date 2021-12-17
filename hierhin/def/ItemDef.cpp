@@ -30,9 +30,12 @@ void ItemDef::setPropertyDefs(const QMap<QString, PropertyDef> &propertyDefs)
     _propertyDefs = propertyDefs;
 }
 
-void ItemDef::insertPropertyDef(const QString &name, const PropertyDef &propertyDef)
+void ItemDef::insertPropertyDef(const PropertyDef &propertyDef)
 {
-    _propertyDefs.insert(name, propertyDef);
+    if (propertyDef.name().isEmpty()) {
+        throw "EmptyPropertyException"; //TODO: Exception class
+    }
+    _propertyDefs.insert(propertyDef.name(), propertyDef);
 }
 
 ItemDef::operator bool() const
@@ -51,7 +54,8 @@ void ItemDef::validateProperty(const QString &name, const QVariant &value)
     }
 
     auto propDef = _propertyDefs.value(name);
-    propDef.validate(name, value);
+    propDef.setName(name);
+    propDef.validate(value);
 }
 
 bool ItemDef::toBool() const

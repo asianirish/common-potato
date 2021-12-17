@@ -36,20 +36,23 @@ NodeDef TestEssenceA::nodeDef() const
         PropertyDef propDefValue;
         ValidatorPtr ltoet = ValidatorPtr(new val::Range<int>(13, 1337 * 2));
         propDefValue.addValidator(ltoet);
-        nd.insertPropertyDef("value", propDefValue);
+        propDefValue.setName("value");
+        nd.insertPropertyDef(propDefValue);
     }
 
     {
         PropertyDef propDefValue;
         propDefValue.addValidator(ValidatorPtr(new val::Email()));
         propDefValue.addValidator(ValidatorPtr(new val::Length(12, 32)));
-        nd.insertPropertyDef("email", propDefValue);
+        propDefValue.setName("email");
+        nd.insertPropertyDef(propDefValue);
     }
 
     {
         PropertyDef propDefValue;
         propDefValue.addValidator(ValidatorPtr(new val::Phone()));
-        nd.insertPropertyDef("phone", propDefValue);
+        propDefValue.setName("phone");
+        nd.insertPropertyDef(propDefValue);
     }
 
     return nd;

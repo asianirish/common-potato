@@ -14,10 +14,13 @@ NodeDef TestEssenceB::nodeDef() const
     NodeDef nd;
 
     PropertyDef propDefValue;
-    PropertyDef propDefPi;
+    propDefValue.setName("value");
 
-    nd.insertPropertyDef("value", propDefValue);
-    nd.insertPropertyDef("pi", propDefPi);
+    PropertyDef propDefPi;
+    propDefPi.setName("pi");
+
+    nd.insertPropertyDef(propDefValue);
+    nd.insertPropertyDef(propDefPi);
 
     return nd;
 }

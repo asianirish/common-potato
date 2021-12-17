@@ -20,11 +20,15 @@ public:
     QVariant defaultValue() const;
     void setDefaultValue(const QVariant &defaultValue);
 
-    void validate(const QString &name, const QVariant &value); //TODO: use name as a class member
+    void validate(const QVariant &value);
+
+    const QString &name() const;
+    void setName(const QString &newName);
 
 private:
     QList<val::ValidatorPtr> _validators;
     QVariant _defaultValue;
+    QString _name;
 };
 
 } // namespace def
