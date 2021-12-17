@@ -24,6 +24,8 @@ public:
 
     ItemPtr ptr() const;
 
+    QString toString() const;
+
     operator QString() const;
 
 private:

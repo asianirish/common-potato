@@ -47,9 +47,14 @@ ItemPtr ItemRef::ptr() const
     return _ptr;
 }
 
-ItemRef::operator QString() const
+QString ItemRef::toString() const
 {
     return _path.toString();
+}
+
+ItemRef::operator QString() const
+{
+    return toString();
 }
 
 } // namespace nav
