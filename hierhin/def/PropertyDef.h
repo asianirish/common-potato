@@ -20,7 +20,7 @@ public:
     QVariant defaultValue() const;
     void setDefaultValue(const QVariant &defaultValue);
 
-    void validate(const QString &name, const QVariant &value);
+    void validate(const QString &name, const QVariant &value); //TODO: use name as a class member
 
 private:
     QList<val::ValidatorPtr> _validators;

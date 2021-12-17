@@ -30,6 +30,7 @@ HEADERS += \
     Item.h \
     ItemCreator.h \
     Node.h \
+    def/CommandDef.h \
     def/ItemDef.h \
     def/ItemReq.h \
     def/NodeDef.h \
@@ -58,6 +59,7 @@ SOURCES += \
     Item.cpp \
     ItemCreator.cpp \
     Node.cpp \
+    def/CommandDef.cpp \
     def/ItemDef.cpp \
     def/ItemReq.cpp \
     def/NodeDef.cpp \
