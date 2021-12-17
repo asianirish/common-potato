@@ -13,9 +13,19 @@ Essence::Essence() : QObject(nullptr)
 
 void Essence::execute(Item *item, const QString &command, const QVariantList &args) const
 {
-    //TODO: supported commands and throw UnsupportedCommand
+
+    auto cmdDefs = commandDefs();
+
+    if (!cmdDefs.contains(command)) {
+    //TODO: throw UnsupportedCommand
+        throw "UnsupportedCommand";
+    }
+
+    auto cmdDef = cmdDefs.value(command);
+    auto validatedArgs = cmdDef.validate(args);
+
     if (className() == item->essenceClassName()) {
-        executeImpl(item, command, args);
+        executeImpl(item, command, validatedArgs);
     } else {
         throw ex::IncompatibleEssenceExecution(className(), item->essenceClassName());
     }
