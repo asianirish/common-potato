@@ -41,6 +41,7 @@ HEADERS += \
     ex/ChildItemException.h \
     ex/Exception.h \
     ex/IncompatibleEssenceClass.h \
+    ex/IncompatibleEssenceExecution.h \
     ex/InvalidValueException.h \
     ex/NoSuchProperty.h \
     ex/NoSuchRole.h \
@@ -65,6 +66,7 @@ SOURCES += \
     ex/ChildItemException.cpp \
     ex/Exception.cpp \
     ex/IncompatibleEssenceClass.cpp \
+    ex/IncompatibleEssenceExecution.cpp \
     ex/InvalidValueException.cpp \
     ex/NoSuchProperty.cpp \
     ex/NoSuchRole.cpp \

@@ -1,5 +1,6 @@
 #include "Essence.h"
 #include "Item.h"
+#include <hierhin/ex/IncompatibleEssenceExecution.h>
 
 namespace hierhin {
 
@@ -15,7 +16,7 @@ void Essence::execute(Item *item) const
     if (className() == item->essenceClassName()) {
         executeImpl(item);
     } else {
-        //TODO: exception?
+        throw ex::IncompatibleEssenceExecution(className(), item->essenceClassName());
     }
 }
 
