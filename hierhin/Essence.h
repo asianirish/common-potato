@@ -35,7 +35,7 @@ public:
 protected:
     virtual void executeImpl(Item *item, const QString &command, const QVariantList &args) const = 0;
 
-   virtual QMap<QString, def::CommandDef> commandDefs() const; //TODO: or inside def::EssenceDef
+    virtual QMap<QString, def::CommandDef> commandDefs() const; //TODO: or inside def::EssenceDef
 
 signals:
 
