@@ -154,6 +154,7 @@ ItemPtr Step::goRoot(ItemPtr item) const
             //the first parentless is the root
             return curItem;
         }
+        curItem = tmpItem.lock();
     }
 }
 
