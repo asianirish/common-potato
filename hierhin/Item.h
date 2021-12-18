@@ -40,7 +40,7 @@ public:
 
     QByteArray toJson();
 
-    virtual NodeWeakPtr parentNode() const = 0; //TODO: or use a weak pointer?
+    virtual NodeWeakPtr parentNode() const = 0;
 
     virtual void setParentNode(NodeWeakPtr parentNode) = 0;
 
