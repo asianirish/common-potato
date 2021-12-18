@@ -32,19 +32,9 @@ void ItemRef::setPath(const Path &newPath)
     _path = newPath;
 }
 
-ItemPtr ItemRef::source() const
+ItemPtr ItemRef::ptr(ItemPtr source) const
 {
-    return _source;
-}
-
-void ItemRef::setSource(ItemPtr newSource)
-{
-    _source = newSource;
-}
-
-ItemPtr ItemRef::ptr() const
-{
-    if (!_source) {
+    if (!source) {
         return {};
     }
 
@@ -52,7 +42,7 @@ ItemPtr ItemRef::ptr() const
         return _ptr;
     }
 
-    _ptr = _path.go(_source);
+    _ptr = _path.go(source);
     return _ptr;
 }
 
