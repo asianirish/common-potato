@@ -64,6 +64,8 @@ public:
 
     nav::Path absPath() const;
 
+    bool isRoot() const;
+
 protected:
     virtual ItemCreator *createCreator() const = 0;
 

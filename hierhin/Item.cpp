@@ -209,4 +209,9 @@ nav::Path Item::absPath() const
     return nav::Path(lst);
 }
 
+bool Item::isRoot() const
+{
+    return !parentNode();
+}
+
 } // namespace hierhin
