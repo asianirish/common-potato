@@ -206,10 +206,7 @@ nav::Path Item::absPath() const
     rootStep.setAction(nav::Step::ROOT);
     lst.prepend(rootStep);
 
-    nav::Path path;
-    path.setSteps(lst);
-
-    return path;
+    return nav::Path(lst);
 }
 
 } // namespace hierhin

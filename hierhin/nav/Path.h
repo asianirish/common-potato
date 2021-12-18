@@ -14,6 +14,7 @@ public:
     Path();
     Path(const QStringList &lst);
     Path(const QString &pathStr);
+    Path(const QList<Step> &steps);
 
     const QList<Step> &steps() const;
     void setSteps(const QList<Step> &newSteps);

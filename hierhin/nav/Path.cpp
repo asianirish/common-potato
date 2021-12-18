@@ -18,6 +18,11 @@ Path::Path(const QString &pathStr)
     fromString(pathStr);
 }
 
+Path::Path(const QList<Step> &steps) : _steps(steps)
+{
+
+}
+
 const QList<Step> &Path::steps() const
 {
     return _steps;
