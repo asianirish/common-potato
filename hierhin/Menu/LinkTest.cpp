@@ -99,7 +99,15 @@ QVariant LinkTest::simplyAct(const QVariantList &args)
 
     qDebug().noquote() << "NODE:" << nd->toJson();
 
-    qDebug() << "NODE_C ABS PATH:" << ndC->absPath();
+    Path pathC = ndC->absPath();
+    ItemRef nodeRefC(pathC);
+    nodeRefC.setSource(nd);
+
+    qDebug() << "NODE_C ABS PATH:" << path;
+
+    qDebug().noquote() << "NODE:" << nd->toJson();
+
+    qDebug().noquote() << "NODE C:" << nodeRefC.ptr()->toJson();
 
 
     return true;
