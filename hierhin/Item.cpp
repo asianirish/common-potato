@@ -192,7 +192,7 @@ nav::Path Item::absPath() const
     ConstItemPtr item = sharedFromThis();
     QList<nav::Step> lst;
 
-    while (item) {
+    while (!item->isRoot()) {
         nav::Step step;
         step.setAction(nav::Step::CHILD_ID);
         step.setArg(item->id());
