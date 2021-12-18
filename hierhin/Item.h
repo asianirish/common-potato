@@ -4,6 +4,7 @@
 #include "def/NodeDef.h"
 #include "type.h"
 #include "ItemCreator.h"
+#include "nav/Path.h"
 
 #include <util/LazyPointer.h>
 #include <uniq/Value.h>
@@ -60,6 +61,8 @@ public:
     BaseType baseType() const;
 
     ItemPtr clone() const;
+
+    nav::Path absPath() const;
 
 protected:
     virtual ItemCreator *createCreator() const = 0;

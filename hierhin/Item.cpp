@@ -187,4 +187,29 @@ ItemPtr Item::clone() const
     return cloneItem;
 }
 
+nav::Path Item::absPath() const
+{
+    ConstItemPtr item = sharedFromThis();
+    QList<nav::Step> lst;
+
+    while (item) {
+        nav::Step step;
+        step.setAction(nav::Step::CHILD_ID);
+        step.setArg(item->id());
+
+        lst.prepend(step);
+
+        item = item->parentNode().lock();
+    }
+
+    nav::Step rootStep;
+    rootStep.setAction(nav::Step::ROOT);
+    lst.prepend(rootStep);
+
+    nav::Path path;
+    path.setSteps(lst);
+
+    return path;
+}
+
 } // namespace hierhin
