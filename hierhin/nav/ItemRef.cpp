@@ -44,7 +44,7 @@ void ItemRef::setSource(ItemPtr newSource)
 
 ItemPtr ItemRef::ptr() const
 {
-    if (_source) {
+    if (!_source) {
         return {};
     }
 
