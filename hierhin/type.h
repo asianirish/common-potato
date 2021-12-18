@@ -13,6 +13,7 @@ typedef QSharedPointer<Essence> EssencePtr;
 class Item;
 
 typedef QSharedPointer<Item> ItemPtr;
+typedef QSharedPointer<const Item> ConstItemPtr;
 
 typedef QString Role;
 
