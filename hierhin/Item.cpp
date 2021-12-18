@@ -2,6 +2,7 @@
 #include "Essence.h"
 #include "Node.h"
 #include "ex/UnregisteredClassException.h"
+#include "nav/ItemRef.h"
 
 #include <util/SingletonRegistry.h>
 
@@ -212,6 +213,13 @@ nav::Path Item::absPath() const
 bool Item::isRoot() const
 {
     return !parentNode();
+}
+
+ItemPtr Item::itemByProperty(const QString &name)
+{
+    QVariant var = property(name);
+    nav::ItemRef ref = var.value<nav::ItemRef>();
+    return ref.ptr(sharedFromThis());
 }
 
 } // namespace hierhin

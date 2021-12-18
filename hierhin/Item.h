@@ -66,6 +66,8 @@ public:
 
     bool isRoot() const;
 
+    ItemPtr itemByProperty(const QString &name);
+
 protected:
     virtual ItemCreator *createCreator() const = 0;
 
