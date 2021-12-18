@@ -38,7 +38,7 @@ public:
     QVariantMap toMap() const;
     void fromMap(const QVariantMap &mp);
 
-    QByteArray toJson();
+    QByteArray toJson() const;
 
     virtual NodeWeakPtr parentNode() const = 0;
 

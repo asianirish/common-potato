@@ -97,7 +97,7 @@ void Item::fromMap(const QVariantMap &mp)
     nodeFromMap(mp);
 }
 
-QByteArray Item::toJson()
+QByteArray Item::toJson() const
 {
     QJsonObject jObj = QJsonObject::fromVariantMap(toMap());
     return QJsonDocument(jObj).toJson();
