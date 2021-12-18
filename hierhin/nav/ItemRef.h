@@ -12,8 +12,8 @@ class ItemRef
 {
 public:
     ItemRef();
-
     ItemRef(const QString &pathStr);
+    ItemRef(const Path &path);
 
     const Path &path() const;
     void setPath(const Path &newPath);

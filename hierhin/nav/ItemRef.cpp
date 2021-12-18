@@ -17,6 +17,11 @@ ItemRef::ItemRef(const QString &pathStr) : _path(pathStr)
 
 }
 
+ItemRef::ItemRef(const Path &path) : _path(path)
+{
+
+}
+
 const Path &ItemRef::path() const
 {
     return _path;
