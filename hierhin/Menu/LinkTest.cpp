@@ -91,6 +91,8 @@ QVariant LinkTest::simplyAct(const QVariantList &args)
     auto ndA = NodePtr(new NodeHashImpl());
     auto ndB = NodePtr(new NodeHashImpl());
     auto ndC = NodePtr(new NodeHashImpl());
+    auto ndD = NodePtr(new NodeHashImpl());
+
     ndC->setProperty("value", 1337);
 
     nd->addChild(ndA);
@@ -101,6 +103,8 @@ QVariant LinkTest::simplyAct(const QVariantList &args)
 
     Path pathC = ndC->absPath();
     ItemRef nodeRefC(pathC);
+    ndD->setProperty("ref", QVariant::fromValue<ItemRef>(nodeRefC));
+    nd->addChild(ndD);
 
     qDebug() << "NODE_C ABS PATH:" << path;
 
