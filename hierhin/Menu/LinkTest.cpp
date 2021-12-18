@@ -3,9 +3,14 @@
 #include <hierhin/nav/Path.h>
 #include <hierhin/nav/ItemRef.h>
 
+#include <type.h>
+#include <hierhin/direct/NodeImpl.h>
+
 #include <QDebug>
 
+using namespace hierhin;
 using namespace hierhin::nav;
+using namespace hierhin::direct;
 
 LinkTest::LinkTest()
 {
@@ -81,5 +86,21 @@ QVariant LinkTest::simplyAct(const QVariantList &args)
         auto tp = var.userType();
         qDebug() << var << "MENU RESULT REF TYPE:" << tp;
     }
+    qDebug() << "\n======================================================\n";
+    auto nd = NodePtr(new NodeHashImpl());
+    auto ndA = NodePtr(new NodeHashImpl());
+    auto ndB = NodePtr(new NodeHashImpl());
+    auto ndC = NodePtr(new NodeHashImpl());
+    ndC->setProperty("value", 1337);
+
+    nd->addChild(ndA);
+    ndA->addChild(ndB);
+    ndB->addChild(ndC);
+
+    qDebug().noquote() << "NODE:" << nd->toJson();
+
+    qDebug() << "NODE_C ABS PATH:" << ndC->absPath();
+
+
     return true;
 }
