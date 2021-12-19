@@ -13,6 +13,12 @@ ItemPtr Node::child(const Id &id)
     return cnode->child(id).constCast<Item>();
 }
 
+ItemPtr Node::childByRole(const Role &role)
+{
+    const Node *cnode = dynamic_cast<const Node*>(this);
+    return cnode->childByRole(role).constCast<Item>();
+}
+
 void Node::addChild(ItemPtr item, const Role &role)
 {
     definition().validateChild(item, role);

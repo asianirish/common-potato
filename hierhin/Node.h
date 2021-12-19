@@ -15,7 +15,8 @@ public:
     ItemPtr child(const Id &id);
     virtual ConstItemPtr child(const Id &id) const = 0;
 
-    virtual ItemPtr childByRole(const Role &role) = 0;
+    ItemPtr childByRole(const Role &role);
+    virtual ConstItemPtr childByRole(const Role &role) const = 0;
 
     void addChild(ItemPtr item, const Role &role = Role());
 

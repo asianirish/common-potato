@@ -21,7 +21,7 @@ public:
 
     ConstItemPtr child(const Id &id) const final;
 
-    ItemPtr childByRole(const Role &role) final;
+    ConstItemPtr childByRole(const Role &role) const final;
 
     IdList idList() const final;
 
@@ -56,7 +56,7 @@ ConstItemPtr NodeImpl<C>::child(const Id &id) const
 }
 
 template<typename C>
-ItemPtr NodeImpl<C>::childByRole(const Role &role)
+ConstItemPtr NodeImpl<C>::childByRole(const Role &role) const
 {
     return _roles.value(role).lock();
 }
