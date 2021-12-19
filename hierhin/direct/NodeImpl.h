@@ -19,7 +19,7 @@ public:
 
     bool containsId(const Id &id) final;
 
-    ItemPtr child(const Id &id) const final;
+    ConstItemPtr child(const Id &id) const final;
 
     ItemPtr childByRole(const Role &role) final;
 
@@ -50,7 +50,7 @@ bool NodeImpl<C>::containsId(const Id &id)
 }
 
 template<typename C>
-ItemPtr NodeImpl<C>::child(const Id &id) const
+ConstItemPtr NodeImpl<C>::child(const Id &id) const
 {
     return _children.value(id);
 }

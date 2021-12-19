@@ -12,7 +12,8 @@ public:
 
     virtual bool containsId(const Id &id) = 0;
 
-    virtual ItemPtr child(const Id &id) const = 0;
+    ItemPtr child(const Id &id);
+    virtual ConstItemPtr child(const Id &id) const = 0;
 
     virtual ItemPtr childByRole(const Role &role) = 0;
 
