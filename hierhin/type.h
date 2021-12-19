@@ -22,6 +22,7 @@ typedef QWeakPointer<Item> ItemWeakPtr;
 class Node;
 typedef QSharedPointer<Node> NodePtr;
 typedef QWeakPointer<Node> NodeWeakPtr;
+typedef QSharedPointer<const Node> ConstNodePtr;
 
 typedef QString Id;
 
