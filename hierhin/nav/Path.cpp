@@ -38,9 +38,15 @@ void Path::addStep(const Step &newStep)
     _steps.append(newStep);
 }
 
-ItemPtr Path::go(ItemPtr item) const
+ItemPtr Path::go(ItemPtr item)
 {
-    ItemPtr curItem = item;
+    ConstItemPtr constItem = item.staticCast<const Item>();
+    return go(constItem).constCast<Item>();
+}
+
+ConstItemPtr Path::go(ConstItemPtr item) const
+{
+    ConstItemPtr curItem = item;
     for (const auto &step : _steps) {
         curItem = step.go(curItem);
 

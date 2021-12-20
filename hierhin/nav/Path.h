@@ -20,7 +20,8 @@ public:
     void setSteps(const QList<Step> &newSteps);
     void addStep(const Step &newStep);
 
-    ItemPtr go(ItemPtr item) const;
+    ItemPtr go(ItemPtr item);
+    ConstItemPtr go(ConstItemPtr item) const;
 
     QStringList toStringList() const;
 

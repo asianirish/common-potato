@@ -29,7 +29,8 @@ public:
     const QString &arg() const;
     void setArg(const QString &newArg);
 
-    ItemPtr go(ItemPtr item) const;
+    ItemPtr go(ItemPtr item);
+    ConstItemPtr go(ConstItemPtr item) const;
 
     QString toString() const;
 
@@ -48,7 +49,8 @@ private:
     QString actionToString() const;
     void stringToAction(const QString &str);
 
-    ItemPtr goRoot(ItemPtr item) const;
+    ItemPtr goRoot(ItemPtr item);
+    ConstItemPtr goRoot(ConstItemPtr item) const;
 };
 
 } // namespace nav

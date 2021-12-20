@@ -39,9 +39,15 @@ void Step::setArg(const QString &newArg)
     _arg = newArg;
 }
 
-ItemPtr Step::go(ItemPtr item) const
+ItemPtr Step::go(ItemPtr item)
 {
-    NodePtr node = item.dynamicCast<Node>();
+    ConstItemPtr constItem = item.staticCast<const Item>();
+    return go(constItem).constCast<Item>();
+}
+
+ConstItemPtr Step::go(ConstItemPtr item) const
+{
+    ConstNodePtr node = item.dynamicCast<const Node>();
 
     switch (_action) {
     case UNDEFINED:
@@ -143,9 +149,15 @@ void Step::stringToAction(const QString &str)
     }
 }
 
-ItemPtr Step::goRoot(ItemPtr item) const
+ItemPtr Step::goRoot(ItemPtr item)
 {
-    ItemPtr curItem = item;
+    ConstItemPtr constItem = item.staticCast<const Item>();
+    return goRoot(constItem).constCast<Item>();
+}
+
+ConstItemPtr Step::goRoot(ConstItemPtr item) const
+{
+    ConstItemPtr curItem = item;
 
     while (1) {
         auto tmpItem = curItem->parentNode();
