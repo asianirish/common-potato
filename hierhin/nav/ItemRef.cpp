@@ -34,30 +34,17 @@ void ItemRef::setPath(const Path &newPath)
 
 ItemPtr ItemRef::ptr(ItemPtr source)
 {
+    ConstItemPtr constItem = source.staticCast<const Item>();
+    return ptr(constItem).constCast<Item>();
+}
+
+ConstItemPtr ItemRef::ptr(ConstItemPtr source) const
+{
     if (!source) {
         return {};
     }
 
-    if (_ptr) {
-        return _ptr;
-    }
-
-    _ptr = _path.go(source);
-    return _ptr;
-}
-
-ConstItemPtr ItemRef::ptr() const
-{
-//    if (!source) {
-//        return {};
-//    }
-
-//    if (_ptr) {
-//        return _ptr;
-//    }
-
-//    _ptr = _path.go(source);
-    return _ptr;
+    return _path.go(source);
 }
 
 QString ItemRef::toString() const
