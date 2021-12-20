@@ -46,10 +46,20 @@ QVariantList CommandDef::validate(const QVariantList &args)
 {
     int argsSz = args.size();
     int argDefSz = _argDefs.size();
+    int mandatoryArgDefNum = 0;
+
+    for (auto &argDef : _argDefs) {
+        if (argDef.defaultValue().isValid()) { //Do not count definitions with a default value
+            break;
+        }
+
+        mandatoryArgDefNum++;
+    }
+
     QVariantList retArgs;
 
-    if (argsSz > argDefSz) {
-        throw ex::IncompatibleArgNumber(argsSz, argDefSz);
+    if (argsSz != mandatoryArgDefNum) {
+        throw ex::IncompatibleArgNumber(argsSz, mandatoryArgDefNum);
     }
 
     for (int i = 0; i < argDefSz; i++) {
