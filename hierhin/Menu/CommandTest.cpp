@@ -21,11 +21,17 @@ QVariant CommandTest::simplyAct(const QVariantList &args)
     nd->setEssenceClassName("TestEssenceA");
     nd->setProperty("value", 13);
 
+    nd->execute();
+
+    qDebug().noquote() << nd->toJson();
+
     nd->execute("doubleValue");
 
     qDebug().noquote() << nd->toJson();
 
-    nd->execute("doubleValue", {23});
+    nd->execute("multValue", {3});
+
+    qDebug().noquote() << nd->toJson();
     } catch (ex::Exception &e) {
         qDebug() << "AN ERROR HAS OCCURRED:" << e.cause();
     }

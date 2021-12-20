@@ -66,13 +66,21 @@ void TestEssenceA::executeImpl(hierhin::Item *item, const QString &command, cons
     if (command == "doubleValue") {
         int value = item->property("value").toInt();
         item->setProperty("value", value * 2);
+    } else if (command == "multValue") {
+        int value = item->property("value").toInt();
+        int arg = args.at(0).toInt();
+        item->setProperty("value", value * arg);
     }
 }
 
 QMap<QString, CommandDef> TestEssenceA::commandDefs() const
 {
     auto mp = Essence::commandDefs();
+//    ArgDef multArgDef;
+//    multArgDef.setName("rightArg");
+    CommandDef multCommandDef("multValue", {ArgDef()});
 
     mp.insert("doubleValue", CommandDef("doubleValue"));
+    mp.insert("multValue", multCommandDef);
     return mp;
 }
