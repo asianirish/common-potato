@@ -49,6 +49,7 @@ HEADERS += \
     ex/NoSuchRole.h \
     ex/PropertyException.h \
     ex/UnregisteredClassException.h \
+    ex/UnsupportedCommand.h \
     ex/ValidatorException.h \
     nav/ItemRef.h \
     nav/Path.h \
@@ -76,6 +77,7 @@ SOURCES += \
     ex/NoSuchRole.cpp \
     ex/PropertyException.cpp \
     ex/UnregisteredClassException.cpp \
+    ex/UnsupportedCommand.cpp \
     ex/ValidatorException.cpp \
     nav/ItemRef.cpp \
     nav/Path.cpp \

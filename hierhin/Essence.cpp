@@ -1,5 +1,7 @@
 #include "Essence.h"
 #include "Item.h"
+
+#include <hierhin/ex/UnsupportedCommand.h>
 #include <hierhin/ex/IncompatibleEssenceExecution.h>
 
 namespace hierhin {
@@ -13,12 +15,10 @@ Essence::Essence() : QObject(nullptr)
 
 void Essence::execute(Item *item, const QString &command, const QVariantList &args) const
 {
-
     auto cmdDefs = commandDefs();
 
     if (!cmdDefs.contains(command)) {
-    //TODO: throw UnsupportedCommand
-        throw "UnsupportedCommand";
+        throw ex::UnsupportedCommand(command);
     }
 
     auto cmdDef = cmdDefs.value(command);
