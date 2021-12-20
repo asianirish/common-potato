@@ -18,7 +18,8 @@ public:
     const Path &path() const;
     void setPath(const Path &newPath);
 
-    ItemPtr ptr(ItemPtr source) const;
+    ItemPtr ptr(ItemPtr source);
+    ConstItemPtr ptr() const;
 
     QString toString() const;
     void fromString(const QString &pathStr);
@@ -27,6 +28,8 @@ public:
 
 private:
     Path _path;
+
+    [[deprecated]]
     mutable ItemPtr _ptr;
 };
 
