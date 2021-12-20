@@ -1,5 +1,7 @@
 #include "CommandDef.h"
 
+#include "ex/IncompatibleArgNumber.h"
+
 namespace hierhin {
 namespace def {
 
@@ -47,7 +49,7 @@ QVariantList CommandDef::validate(const QVariantList &args)
     QVariantList retArgs;
 
     if (argsSz > argDefSz) {
-        //TODO: throw IncompatibleArgNumber
+        throw ex::IncompatibleArgNumber(argsSz, argDefSz);
     }
 
     for (int i = 0; i < argDefSz; i++) {

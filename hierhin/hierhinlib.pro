@@ -42,6 +42,7 @@ HEADERS += \
     ex/CanNotBeEssenceless.h \
     ex/ChildItemException.h \
     ex/Exception.h \
+    ex/IncompatibleArgNumber.h \
     ex/IncompatibleEssenceClass.h \
     ex/IncompatibleEssenceExecution.h \
     ex/InvalidValueException.h \
@@ -70,6 +71,7 @@ SOURCES += \
     ex/CanNotBeEssenceless.cpp \
     ex/ChildItemException.cpp \
     ex/Exception.cpp \
+    ex/IncompatibleArgNumber.cpp \
     ex/IncompatibleEssenceClass.cpp \
     ex/IncompatibleEssenceExecution.cpp \
     ex/InvalidValueException.cpp \
