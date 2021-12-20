@@ -63,6 +63,16 @@ void TestEssenceA::executeImpl(hierhin::Item *item, const QString &command, cons
     Q_UNUSED(command)
     Q_UNUSED(args)
 
-    int value = item->property("value").toInt();
-    item->setProperty("value", value * 2);
+    if (command == "doubleValue") {
+        int value = item->property("value").toInt();
+        item->setProperty("value", value * 2);
+    }
+}
+
+QMap<QString, CommandDef> TestEssenceA::commandDefs() const
+{
+    auto mp = Essence::commandDefs();
+
+    mp.insert("doubleValue", CommandDef("doubleValue"));
+    return mp;
 }
