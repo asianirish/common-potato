@@ -70,6 +70,11 @@ void TestEssenceA::executeImpl(hierhin::Item *item, const QString &command, cons
         int value = item->property("value").toInt();
         int arg = args.at(0).toInt();
         item->setProperty("value", value * arg);
+    } else if (command == "sumValue") {
+        int arg0 = args.at(0).toInt();
+        int arg1 = args.at(1).toInt();
+
+        item->setProperty("value", arg0 + arg1);
     }
 }
 
@@ -80,8 +85,11 @@ QMap<QString, CommandDef> TestEssenceA::commandDefs() const
     multArgDef.setDefaultValue(10);
 //    multArgDef.setName("rightArg");
     CommandDef multCommandDef("multValue", {multArgDef});
+    CommandDef sumCommandDef("sumValue", 2);
 
     mp.insert("doubleValue", CommandDef("doubleValue"));
     mp.insert("multValue", multCommandDef);
+    mp.insert("sumValue", sumCommandDef);
+
     return mp;
 }

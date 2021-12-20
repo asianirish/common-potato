@@ -32,6 +32,11 @@ QVariant CommandTest::simplyAct(const QVariantList &args)
     nd->execute("multValue");
 
     qDebug().noquote() << nd->toJson();
+
+    nd->execute("sumValue", {12, 13});
+
+    qDebug().noquote() << nd->toJson();
+
     } catch (ex::Exception &e) {
         qDebug() << "AN ERROR HAS OCCURRED:" << e.cause();
     }

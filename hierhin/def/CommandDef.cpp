@@ -17,6 +17,14 @@ CommandDef::CommandDef(const QString &name, const QList<ArgDef> &argDefs) :
 
 }
 
+CommandDef::CommandDef(const QString &name, int argNum) :
+    _name(name)
+{
+    for (int i = 0; i < argNum; i++) {
+        _argDefs.append(ArgDef());
+    }
+}
+
 const QString &CommandDef::name() const
 {
     return _name;

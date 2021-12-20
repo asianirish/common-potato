@@ -15,6 +15,7 @@ class CommandDef
 public:
     CommandDef();
     CommandDef(const QString &name, const QList<ArgDef> &argDefs = {});
+    CommandDef(const QString &name, int argNum);
 
     const QString &name() const;
     void setName(const QString &newName);
