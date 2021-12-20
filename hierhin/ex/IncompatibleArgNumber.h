@@ -21,8 +21,8 @@ public:
 
     QString cause() const override {
         return tr("Incompatible arg number") +
-                "\n" + tr("Actual arg number:", "", _actualArgNum) +
-                "\n" + tr("Defined arg number:", "", _definedArgNum);
+                " " + tr("Actual arg number: %n", "", _actualArgNum) +
+                " " + tr("Defined arg number: %n", "", _definedArgNum);
     }
 
 private:

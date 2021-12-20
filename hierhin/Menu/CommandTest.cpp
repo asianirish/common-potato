@@ -25,7 +25,7 @@ QVariant CommandTest::simplyAct(const QVariantList &args)
 
     qDebug().noquote() << nd->toJson();
 
-    nd->execute("doubleValue");
+    nd->execute("doubleValue", {23});
     } catch (ex::Exception &e) {
         qDebug() << "AN ERROR HAS OCCURRED:" << e.cause();
     }
