@@ -29,7 +29,7 @@ QVariant CommandTest::simplyAct(const QVariantList &args)
 
     qDebug().noquote() << nd->toJson();
 
-    nd->execute("multValue", {3});
+    nd->execute("multValue");
 
     qDebug().noquote() << nd->toJson();
     } catch (ex::Exception &e) {

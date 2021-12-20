@@ -76,9 +76,10 @@ void TestEssenceA::executeImpl(hierhin::Item *item, const QString &command, cons
 QMap<QString, CommandDef> TestEssenceA::commandDefs() const
 {
     auto mp = Essence::commandDefs();
-//    ArgDef multArgDef;
+    ArgDef multArgDef;
+    multArgDef.setDefaultValue(10);
 //    multArgDef.setName("rightArg");
-    CommandDef multCommandDef("multValue", {ArgDef()});
+    CommandDef multCommandDef("multValue", {multArgDef});
 
     mp.insert("doubleValue", CommandDef("doubleValue"));
     mp.insert("multValue", multCommandDef);
