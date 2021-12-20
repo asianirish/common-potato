@@ -5,6 +5,7 @@
 #include "type.h"
 #include "ItemCreator.h"
 #include "nav/Path.h"
+#include "Essence.h"
 
 #include <util/LazyPointer.h>
 #include <uniq/Value.h>
@@ -48,7 +49,7 @@ public:
 
     void setProperty(const QString &name, const QVariant &value);
 
-    void execute();
+    void execute(const QString &command = Essence::DEFAULT_COMMAND, const QVariantList &args = QVariantList());
 
     def::NodeDef definition() const;
 

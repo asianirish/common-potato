@@ -123,12 +123,12 @@ void Item::setProperty(const QString &name, const QVariant &value)
     }
 }
 
-void Item::execute()
+void Item::execute(const QString &command, const QVariantList &args)
 {
     auto ptr = essencePtr();
 
     if (ptr) {
-        ptr->execute(this);
+        ptr->execute(this, command, args);
     }
 }
 
