@@ -67,7 +67,7 @@ QVariantList CommandDef::validate(const QVariantList &args)
         if (i >= argsSz) {
             retArgs.append(def.defaultValue());
         } else {
-            retArgs.append(args.at(0));
+            retArgs.append(args.at(i));
         }
     }
 
