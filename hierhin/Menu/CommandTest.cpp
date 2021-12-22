@@ -37,6 +37,10 @@ QVariant CommandTest::simplyAct(const QVariantList &args)
 
     qDebug().noquote() << nd->toJson();
 
+    nd->execute("invoke");
+
+    qDebug().noquote() << nd->toJson();
+
     } catch (ex::Exception &e) {
         qDebug() << "AN ERROR HAS OCCURRED:" << e.cause();
     }

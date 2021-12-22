@@ -14,10 +14,15 @@ public:
 
     NodeDef nodeDef() const override;
 
+    void testInvoke(hierhin::Item *item);
+
 protected:
     void executeImpl(hierhin::Item *item, const QString &command, const QVariantList &args) const override;
 
     QMap<QString, CommandDef> commandDefs() const override;
+
+private:
+    Q_INVOKABLE void setElite(hierhin::Item *item);
 
 };
 

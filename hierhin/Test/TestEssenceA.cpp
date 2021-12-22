@@ -9,12 +9,13 @@
 #include <val/Length.h>
 
 #include <QDebug>
+#include <QMetaObject>
 
 using namespace val;
 
 TestEssenceA::TestEssenceA()
 {
-
+//    setMethod(&TestEssenceA::testInvoke);
 }
 
 NodeDef TestEssenceA::nodeDef() const
@@ -58,6 +59,11 @@ NodeDef TestEssenceA::nodeDef() const
     return nd;
 }
 
+void TestEssenceA::testInvoke(hierhin::Item *item)
+{
+    QMetaObject::invokeMethod(this, "setElite", Qt::DirectConnection, Q_ARG(hierhin::Item*, item));
+}
+
 void TestEssenceA::executeImpl(hierhin::Item *item, const QString &command, const QVariantList &args) const
 {
     Q_UNUSED(command)
@@ -75,6 +81,9 @@ void TestEssenceA::executeImpl(hierhin::Item *item, const QString &command, cons
         int arg1 = args.at(1).toInt();
 
         item->setProperty("value", arg0 + arg1);
+    } else if (command == "invoke") {
+        TestEssenceA *nonConstItem = (TestEssenceA *)this;
+        QMetaObject::invokeMethod(nonConstItem, "setElite", Qt::DirectConnection, Q_ARG(hierhin::Item*, item));
     }
 }
 
@@ -90,6 +99,12 @@ QMap<QString, CommandDef> TestEssenceA::commandDefs() const
     mp.insert("doubleValue", CommandDef("doubleValue"));
     mp.insert("multValue", multCommandDef);
     mp.insert("sumValue", sumCommandDef);
+    mp.insert("invoke", CommandDef("invoke"));
 
     return mp;
+}
+
+void TestEssenceA::setElite(hierhin::Item *item)
+{
+    item->setProperty("value", 1337);
 }
