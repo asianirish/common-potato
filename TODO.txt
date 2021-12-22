@@ -1,0 +1,6 @@
+
+* treat a Link as an Item with an Essence with source & target properties with ItemRef
+* class LinkedEssence : public Essence
+* class LinkOwnerEssence : public Essence
+* class LinkEssence : public Essence
+* use LinkEssences as child items of LinkOwnerEssence and LInkOwnerEssence as a role child ("children") LinkedEssence
