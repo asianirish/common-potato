@@ -12,11 +12,13 @@ INCLUDEPATH += $$PWD/../
 
 DESTDIR = $$PWD/../build/lib/
 
+linux-g++ | linux-g++-64 | linux-g++-32 {
 copydata.commands = $(COPY_DIR) $$PWD/*.qm $$OUT_PWD/../hierhin/
 first.depends = $(first) copydata
 export(first.depends)
 export(copydata.commands)
 QMAKE_EXTRA_TARGETS += first copydata
+}
 
 # You can make your code fail to compile if it uses deprecated APIs.
 # In order to do so, uncomment the following line.
