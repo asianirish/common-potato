@@ -1,4 +1,5 @@
 TEMPLATE = lib
+CONFIG += staticlib
 TARGET = uniq
 
 QT -= gui
