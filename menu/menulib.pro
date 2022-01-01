@@ -41,6 +41,7 @@ HEADERS += \
     Console.h \
     Error.h \
     JsonCommandTranslator.h \
+    Launcher.h \
     LineCommandTranslator.h \
     Menu.h \
     Result.h \
@@ -62,6 +63,7 @@ SOURCES += \
     Console.cpp \
     Error.cpp \
     JsonCommandTranslator.cpp \
+    Launcher.cpp \
     LineCommandTranslator.cpp \
     Menu.cpp \
     Result.cpp \
