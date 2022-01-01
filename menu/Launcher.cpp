@@ -6,6 +6,11 @@
 
 namespace menu {
 
+const QString Launcher::DEFAULT_ACTION_ID_GENERATOR_CLASS_NAME("uniq::TimeQStringValue");
+
+util::LazyPointer<uniq::Value<QString>> Launcher::_actionIdGen(Launcher::DEFAULT_ACTION_ID_GENERATOR_CLASS_NAME);
+
+
 Launcher::Launcher(QObject *parent) : QObject(parent),
     _contextSetter(nullptr)
 {
@@ -21,7 +26,8 @@ void Launcher::launch(const QString &actionClassName, QVariantList &args)
         _contextSetter->setActionContext(actionPtr);
     }
 
-//TODO:    _pendingActions.insert(actionId, actionPtr);
+    QString actionId = _actionIdGen->value();
+    _pendingActions.insert(actionId, actionPtr);
     launchImpl(actionPtr, args);
 }
 

@@ -4,6 +4,9 @@
 #include "Result.h"
 #include "type.h"
 
+#include <util/LazyPointer.h>
+#include <uniq/Value.h>
+
 #include <QObject>
 
 namespace menu {
@@ -14,6 +17,8 @@ class Launcher : public QObject
 {
     Q_OBJECT
 public:
+    static const QString DEFAULT_ACTION_ID_GENERATOR_CLASS_NAME;
+
     explicit Launcher(QObject *parent = nullptr);
 
     void launch(const QString &actionClassName, QVariantList &args);
@@ -30,6 +35,7 @@ signals:
 private:
     ContextSetter *_contextSetter;
     QMap<QString, ActionPtr> _pendingActions;
+    static util::LazyPointer<uniq::Value<QString>> _actionIdGen;
 
 };
 
