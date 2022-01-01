@@ -1,5 +1,5 @@
-#ifndef TYPE_H
-#define TYPE_H
+#ifndef HIERHIN_TYPE_H
+#define HIERHIN_TYPE_H
 
 #include <QSharedPointer>
 #include <QList>
@@ -37,4 +37,4 @@ enum class BaseType {
 
 } // namespace hierhin
 
-#endif // TYPE_H
+#endif // HIERHIN_TYPE_H
