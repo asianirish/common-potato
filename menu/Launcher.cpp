@@ -22,7 +22,7 @@ void Launcher::launch(const QString &actionClassName, QVariantList &args)
     }
 
 //TODO:    _pendingActions.insert(actionId, actionPtr);
-//TODO:    launchImpl(actionPtr, args);
+    launchImpl(actionPtr, args);
 }
 
 ContextSetter *Launcher::contextSetter() const
