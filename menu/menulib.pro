@@ -54,6 +54,7 @@ HEADERS += \
     math/Div.h \
     math/Inc.h \
     test/BuildPhrase.h \
+    type.h \
     util/SetLanguage.h
 
 SOURCES += \

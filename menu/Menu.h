@@ -1,6 +1,7 @@
 #ifndef MENU_MENU_H
 #define MENU_MENU_H
 
+#include "type.h"
 #include "Action.h"
 #include "CommandTranslator.h"
 
@@ -14,8 +15,6 @@
 #include <QSet>
 
 namespace menu {
-
-typedef QSharedPointer<Action> ActionPtr;
 
 class Menu : public QObject
 {
