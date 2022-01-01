@@ -53,7 +53,12 @@ void Launcher::onActionComplete(const QString &actionId, const Result &result)
     }
 
     _pendingActions.remove(actionId);
-    emit ready(result); //TODO: success and error
+
+    if (result.errorCode() == Result::SUCCESSFUL_RESULT) {
+        emit ready(result.value());
+    } else {
+        emit error(result.error());
+    }
 }
 
 } // namespace menu

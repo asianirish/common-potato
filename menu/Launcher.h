@@ -37,7 +37,8 @@ private:
     static util::LazyPointer<uniq::Value<QString>> _actionIdGen;
 
 signals:
-    void ready(const Result &result);
+    void ready(const QVariant &result);
+    void error(const Error &error);
 
 protected:
     void onActionComplete(const QString &actionId, const Result &result);
