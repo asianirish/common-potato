@@ -41,4 +41,9 @@ void Launcher::setContextSetter(ContextSetter *contextSetter)
     _contextSetter = contextSetter;
 }
 
+void Launcher::setTaskIdGenClassName(const QString &className)
+{
+    _actionIdGen.setClassName(className);
+}
+
 } // namespace menu
