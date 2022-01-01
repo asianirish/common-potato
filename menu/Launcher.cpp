@@ -41,7 +41,7 @@ void Launcher::setContextSetter(ContextSetter *contextSetter)
     _contextSetter = contextSetter;
 }
 
-void Launcher::setTaskIdGenClassName(const QString &className)
+void Launcher::setActionIdGenClassName(const QString &className)
 {
     _actionIdGen.setClassName(className);
 }

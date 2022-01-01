@@ -26,7 +26,7 @@ public:
     ContextSetter *contextSetter() const;
     void setContextSetter(ContextSetter *contextSetter);
 
-    static void setTaskIdGenClassName(const QString &className);
+    static void setActionIdGenClassName(const QString &className);
 
 protected:
     virtual void launchImpl(ActionPtr action, QVariantList &args) = 0;
