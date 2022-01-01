@@ -2,6 +2,7 @@
 #define MENU_LAUNCHER_H
 
 #include "Result.h"
+#include "type.h"
 
 #include <QObject>
 
@@ -21,7 +22,7 @@ public:
     void setContextSetter(ContextSetter *contextSetter);
 
 protected:
-//TODO:    virtual void launchImpl(ActionPtr action, QVariantList &args) = 0;
+    virtual void launchImpl(ActionPtr action, QVariantList &args) = 0;
 
 signals:
     void ready(const Result &result);

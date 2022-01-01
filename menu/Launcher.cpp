@@ -13,8 +13,8 @@ Launcher::Launcher(QObject *parent) : QObject(parent),
 
 void Launcher::launch(const QString &actionClassName, QVariantList &args)
 {
-    /*Action *action = */util::Factory<Action>::create(actionClassName.toStdString());
-//TODO:    ActionPtr actionPtr(action);
+    Action *action = util::Factory<Action>::create(actionClassName.toStdString());
+    ActionPtr actionPtr(action);
 //TODO:    if (_contextSetter) _contextSetter->setActionContext(actionPtr);
 //TODO:    registerAction(actionPtr);
 //TODO:    launchImpl(actionPtr, args);
