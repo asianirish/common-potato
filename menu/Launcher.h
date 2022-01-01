@@ -29,6 +29,7 @@ signals:
 
 private:
     ContextSetter *_contextSetter;
+    QMap<QString, ActionPtr> _pendingActions;
 
 };
 

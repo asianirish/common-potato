@@ -21,7 +21,7 @@ void Launcher::launch(const QString &actionClassName, QVariantList &args)
         _contextSetter->setActionContext(actionPtr);
     }
 
-//TODO:    registerAction(actionPtr);
+//TODO:    _pendingActions.insert(actionId, actionPtr);
 //TODO:    launchImpl(actionPtr, args);
 }
 
