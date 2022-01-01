@@ -1,5 +1,6 @@
 #include "Launcher.h"
 #include "Action.h"
+#include "ContextSetter.h"
 
 #include <util/Factory.h>
 
@@ -15,7 +16,11 @@ void Launcher::launch(const QString &actionClassName, QVariantList &args)
 {
     Action *action = util::Factory<Action>::create(actionClassName.toStdString());
     ActionPtr actionPtr(action);
-//TODO:    if (_contextSetter) _contextSetter->setActionContext(actionPtr);
+
+    if (_contextSetter) {
+        _contextSetter->setActionContext(actionPtr);
+    }
+
 //TODO:    registerAction(actionPtr);
 //TODO:    launchImpl(actionPtr, args);
 }

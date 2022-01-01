@@ -39,6 +39,7 @@ HEADERS += \
     CommandInfo.h \
     CommandTranslator.h \
     Console.h \
+    ContextSetter.h \
     Error.h \
     JsonCommandTranslator.h \
     Launcher.h \
@@ -62,6 +63,7 @@ SOURCES += \
     CommandInfo.cpp \
     CommandTranslator.cpp \
     Console.cpp \
+    ContextSetter.cpp \
     Error.cpp \
     JsonCommandTranslator.cpp \
     Launcher.cpp \
