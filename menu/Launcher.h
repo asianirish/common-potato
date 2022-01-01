@@ -26,16 +26,18 @@ public:
     ContextSetter *contextSetter() const;
     void setContextSetter(ContextSetter *contextSetter);
 
+    static void setTaskIdGenClassName(const QString &className);
+
 protected:
     virtual void launchImpl(ActionPtr action, QVariantList &args) = 0;
-
-signals:
-    void ready(const Result &result);
 
 private:
     ContextSetter *_contextSetter;
     QMap<QString, ActionPtr> _pendingActions;
     static util::LazyPointer<uniq::Value<QString>> _actionIdGen;
+
+signals:
+    void ready(const Result &result);
 
 };
 
