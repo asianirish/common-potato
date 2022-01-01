@@ -39,6 +39,9 @@ private:
 signals:
     void ready(const Result &result);
 
+protected:
+    void onActionComplete(const QString &actionId, const Result &result);
+
 };
 
 } // namespace menu

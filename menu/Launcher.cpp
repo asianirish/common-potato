@@ -46,4 +46,14 @@ void Launcher::setActionIdGenClassName(const QString &className)
     _actionIdGen.setClassName(className);
 }
 
+void Launcher::onActionComplete(const QString &actionId, const Result &result)
+{
+    if (!_pendingActions.contains(actionId)) {
+        throw "NO SUCH AN ACTION_ID"; //TODO: exception class
+    }
+
+    _pendingActions.remove(actionId);
+    emit ready(result); //TODO: success and error
+}
+
 } // namespace menu
