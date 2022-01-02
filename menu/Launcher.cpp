@@ -4,6 +4,8 @@
 
 #include <util/Factory.h>
 
+#include <QDebug>
+
 namespace menu {
 
 const QString Launcher::DEFAULT_ACTION_ID_GENERATOR_CLASS_NAME("uniq::TimeQStringValue");
@@ -63,6 +65,7 @@ void Launcher::onActionComplete(const Result &result)
     action->deleteLater();
 
     if (result.errorCode() == Result::SUCCESSFUL_RESULT) {
+        qDebug() << "ACTION COMPLETE WITH RESULT:" << result.value().toString();
         emit ready(result.value());
     } else {
         emit error(result.error());
