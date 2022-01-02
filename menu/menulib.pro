@@ -47,6 +47,7 @@ HEADERS += \
     Menu.h \
     Result.h \
     SimpleAction.h \
+    SyncLauncher.h \
     ThisAppClassRegistry.h \
     def/ActionDef.h \
     def/ArgDef.h \
@@ -71,6 +72,7 @@ SOURCES += \
     Menu.cpp \
     Result.cpp \
     SimpleAction.cpp \
+    SyncLauncher.cpp \
     ThisAppClassRegistry.cpp \
     def/ActionDef.cpp \
     def/ArgDef.cpp \
