@@ -21,7 +21,7 @@ public:
 
     explicit Launcher(QObject *parent = nullptr);
 
-    void launch(const QString &actionClassName, QVariantList &args);
+    void launch(const QString &actionClassName, const QVariantList &args);
 
     ContextSetter *contextSetter() const;
     void setContextSetter(ContextSetter *contextSetter);
@@ -29,7 +29,7 @@ public:
     static void setActionIdGenClassName(const QString &className);
 
 protected:
-    virtual void launchImpl(ActionPtr action, QVariantList &args, const QString &actionId) = 0;
+    virtual void launchImpl(ActionPtr action, const QVariantList &args, const QString &actionId) = 0;
 
 private:
     ContextSetter *_contextSetter;

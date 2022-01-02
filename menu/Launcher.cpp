@@ -17,7 +17,7 @@ Launcher::Launcher(QObject *parent) : QObject(parent),
 
 }
 
-void Launcher::launch(const QString &actionClassName, QVariantList &args)
+void Launcher::launch(const QString &actionClassName, const QVariantList &args)
 {
     Action *action = util::Factory<Action>::create(actionClassName.toStdString());
     ActionPtr actionPtr(action);
