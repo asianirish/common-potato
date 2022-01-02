@@ -31,7 +31,10 @@ private:
     QString _taskId;
 
 signals:
-    void ready(const Result &result);
+    void ready(const menu::Result &result);
+
+private slots:
+    void onTestReady(const Result &result);
 };
 
 } // namespace menu

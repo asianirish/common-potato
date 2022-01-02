@@ -20,7 +20,7 @@ public:
     void act(const QVariantMap &namedArgs, const QString &taskId);
 
 signals:
-    void ready(const Result &result);
+    void ready(const menu::Result &result);
 
 private:
     virtual void actSpecific(const QVariantList &args, const QString &taskId) = 0;
