@@ -26,6 +26,7 @@ SOURCES += main.cpp \
     HierhinClassRegistry.cpp \
     Menu/CloneTest.cpp \
     Menu/CommandTest.cpp \
+    Menu/LauncherTest.cpp \
     Menu/LinkTest.cpp \
     Menu/NodeTest.cpp \
     Menu/NumberTest.cpp \
@@ -46,6 +47,7 @@ HEADERS += \
     HierhinClassRegistry.h \
     Menu/CloneTest.h \
     Menu/CommandTest.h \
+    Menu/LauncherTest.h \
     Menu/LinkTest.h \
     Menu/NodeTest.h \
     Menu/NumberTest.h \
