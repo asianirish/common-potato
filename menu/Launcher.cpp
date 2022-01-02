@@ -49,7 +49,7 @@ void Launcher::setActionIdGenClassName(const QString &className)
 void Launcher::onActionComplete(const Result &result)
 {
     if (!_pendingActions.contains(result.taskId())) {
-        throw "NO SUCH AN ACTION_ID"; //TODO: exception class
+        throw "NO SUCH AN ACTION_ID"; //TODO: use Error class instead
     }
 
     _pendingActions.remove(result.taskId());
