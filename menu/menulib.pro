@@ -50,6 +50,7 @@ HEADERS += \
     SimpleAction.h \
     SyncLauncher.h \
     ThisAppClassRegistry.h \
+    ThreadLauncher.h \
     def/ActionDef.h \
     def/ArgDef.h \
     def/Constraint.h \
@@ -76,6 +77,7 @@ SOURCES += \
     SimpleAction.cpp \
     SyncLauncher.cpp \
     ThisAppClassRegistry.cpp \
+    ThreadLauncher.cpp \
     def/ActionDef.cpp \
     def/ArgDef.cpp \
     def/Constraint.cpp \
