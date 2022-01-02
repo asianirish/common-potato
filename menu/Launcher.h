@@ -41,7 +41,7 @@ signals:
     void error(const Error &error);
 
 protected:
-    void onActionComplete(const QString &actionId, const Result &result);
+    void onActionComplete(const Result &result);
 
 };
 

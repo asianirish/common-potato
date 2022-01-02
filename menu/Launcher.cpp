@@ -46,13 +46,13 @@ void Launcher::setActionIdGenClassName(const QString &className)
     _actionIdGen.setClassName(className);
 }
 
-void Launcher::onActionComplete(const QString &actionId, const Result &result)
+void Launcher::onActionComplete(const Result &result)
 {
-    if (!_pendingActions.contains(actionId)) {
+    if (!_pendingActions.contains(result.taskId())) {
         throw "NO SUCH AN ACTION_ID"; //TODO: exception class
     }
 
-    _pendingActions.remove(actionId);
+    _pendingActions.remove(result.taskId());
 
     if (result.errorCode() == Result::SUCCESSFUL_RESULT) {
         emit ready(result.value());
