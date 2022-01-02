@@ -18,7 +18,7 @@ void ThreadLauncher::launchImpl(Action *action, const QVariantList &args, const 
     thread->setTaskId(actionId);
 
     bool isValid = connect(thread, &ActionThread::ready, this, &ThreadLauncher::onActionComplete, Qt::QueuedConnection);
-//    bool isValid = connect(action.get(), &Action::ready, this, &ThreadLauncher::onActionComplete, Qt::QueuedConnection);
+//    bool isValid = connect(action, &Action::ready, this, &ThreadLauncher::onActionComplete, Qt::QueuedConnection);
 
     if (isValid) {
         qDebug() << "CONNECTION IS VALID";
