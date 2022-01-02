@@ -1,5 +1,7 @@
 #include "ActionThread.h"
 
+#include <QDebug>
+
 namespace menu {
 
 ActionThread::ActionThread()
@@ -26,7 +28,7 @@ void ActionThread::setAction(const ActionPtr &action)
     _action = action;
     _action->moveToThread(this);
 
-    connect(_action.get(), &Action::ready, this, &ActionThread::ready);
+    connect(_action.get(), &Action::ready, this, &ActionThread::onTestReady);
 }
 
 QVariantList ActionThread::args() const
@@ -47,6 +49,12 @@ QString ActionThread::taskId() const
 void ActionThread::setTaskId(const QString &taskId)
 {
     _taskId = taskId;
+}
+
+void ActionThread::onTestReady(const Result &result)
+{
+    qDebug() << "ON_TEST_READY" << result.value().toString();
+    emit ready(result);
 }
 
 } // namespace menu
