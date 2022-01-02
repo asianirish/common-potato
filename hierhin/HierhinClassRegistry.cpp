@@ -9,6 +9,10 @@
 
 #include <util/Factory.h>
 
+#include <menu/math/Div.h>
+#include <menu/math/Inc.h>
+
+
 #include <QString>
 
 
@@ -30,6 +34,9 @@ void HierhinClassRegistry::registerAllClasses() const
     REGISTER_CLASS_FOR_UTIL_FACTORY(hierhin::Essence, TestEssenceC);
 
     REGISTER_CLASS_FOR_UTIL_FACTORY(hierhin::Essence, stock_v0::Exchange);
+
+    REGISTER_CLASS_FOR_UTIL_FACTORY(menu::Action, menu::math::Div);
+    REGISTER_CLASS_FOR_UTIL_FACTORY(menu::Action, menu::math::Inc);
 
     //TODO: add your code here
 }
