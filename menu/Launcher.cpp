@@ -20,15 +20,14 @@ Launcher::Launcher(QObject *parent) : QObject(parent),
 void Launcher::launch(const QString &actionClassName, const QVariantList &args)
 {
     Action *action = util::Factory<Action>::create(actionClassName.toStdString());
-    ActionPtr actionPtr(action);
 
     if (_contextSetter) {
-        _contextSetter->setActionContext(actionPtr);
+        _contextSetter->setActionContext(action);
     }
 
     QString actionId = _actionIdGen->value();
-    _pendingActions.insert(actionId, actionPtr);
-    launchImpl(actionPtr, args, actionId);
+    _pendingActions.insert(actionId, action);
+    launchImpl(action, args, actionId);
 }
 
 ContextSetter *Launcher::contextSetter() const
@@ -59,7 +58,9 @@ void Launcher::onActionComplete(const Result &result)
         emit error(err);
     }
 
+    auto action = _pendingActions.value(result.taskId());
     _pendingActions.remove(result.taskId());
+    action->deleteLater();
 
     if (result.errorCode() == Result::SUCCESSFUL_RESULT) {
         emit ready(result.value());

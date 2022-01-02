@@ -10,7 +10,7 @@ ThreadLauncher::ThreadLauncher()
 
 }
 
-void ThreadLauncher::launchImpl(ActionPtr action, const QVariantList &args, const QString &actionId)
+void ThreadLauncher::launchImpl(Action *action, const QVariantList &args, const QString &actionId)
 {
     ActionThread *thread = new ActionThread();
     thread->setAction(action);

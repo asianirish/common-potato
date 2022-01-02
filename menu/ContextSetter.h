@@ -10,7 +10,7 @@ class ContextSetter
 public:
     ContextSetter();
 
-    virtual void setActionContext(ActionPtr actionPtr) = 0;
+    virtual void setActionContext(Action *actionPtr) = 0;
 };
 
 } // namespace menu

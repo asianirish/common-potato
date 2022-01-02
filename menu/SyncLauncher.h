@@ -11,7 +11,7 @@ public:
     SyncLauncher();
 
 protected:
-    void launchImpl(ActionPtr action, const QVariantList &args, const QString &actionId) override;
+    void launchImpl(Action *action, const QVariantList &args, const QString &actionId) override;
 };
 
 } // namespace menu

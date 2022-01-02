@@ -16,8 +16,8 @@ public:
 
     void run() override;
 
-    ActionPtr action() const;
-    void setAction(const ActionPtr &action);
+    Action *action() const;
+    void setAction(Action *action);
 
     QVariantList args() const;
     void setArgs(const QVariantList &args);
@@ -26,7 +26,7 @@ public:
     void setTaskId(const QString &taskId);
 
 private:
-    ActionPtr _action;
+    Action *_action;
     QVariantList _args;
     QString _taskId;
 

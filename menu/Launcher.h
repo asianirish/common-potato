@@ -29,11 +29,11 @@ public:
     static void setActionIdGenClassName(const QString &className);
 
 protected:
-    virtual void launchImpl(ActionPtr action, const QVariantList &args, const QString &actionId) = 0;
+    virtual void launchImpl(Action *action, const QVariantList &args, const QString &actionId) = 0;
 
 private:
     ContextSetter *_contextSetter;
-    QMap<QString, ActionPtr> _pendingActions;
+    QMap<QString, Action *> _pendingActions;
     static util::LazyPointer<uniq::Value<QString>> _actionIdGen;
 
 signals:

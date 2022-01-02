@@ -4,7 +4,7 @@
 
 namespace menu {
 
-ActionThread::ActionThread()
+ActionThread::ActionThread() : _action(nullptr)
 {
 
 }
@@ -14,12 +14,12 @@ void ActionThread::run()
     _action->act(_args, _taskId);
 }
 
-ActionPtr ActionThread::action() const
+Action *ActionThread::action() const
 {
     return _action;
 }
 
-void ActionThread::setAction(const ActionPtr &action)
+void ActionThread::setAction(Action *action)
 {
     if (_action) {
         return;
@@ -28,7 +28,7 @@ void ActionThread::setAction(const ActionPtr &action)
     _action = action;
     _action->moveToThread(this);
 
-    connect(_action.get(), &Action::ready, this, &ActionThread::onTestReady);
+    connect(_action, &Action::ready, this, &ActionThread::onTestReady);
 }
 
 QVariantList ActionThread::args() const
