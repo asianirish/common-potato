@@ -49,7 +49,14 @@ void Launcher::setActionIdGenClassName(const QString &className)
 void Launcher::onActionComplete(const Result &result)
 {
     if (!_pendingActions.contains(result.taskId())) {
-        throw "NO SUCH AN ACTION_ID"; //TODO: use Error class instead
+        Error err;
+        err.setCode(-1);
+        err.setType(Error::ERROR_TYPE::LAUNCHER);
+        err.setDescription(tr("no such an actionId"));
+        QVariantMap mp;
+        mp.insert(tr("actionId"), result.taskId());
+        err.setContext(mp);
+        emit error(err);
     }
 
     _pendingActions.remove(result.taskId());
