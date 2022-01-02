@@ -28,7 +28,7 @@ void Launcher::launch(const QString &actionClassName, QVariantList &args)
 
     QString actionId = _actionIdGen->value();
     _pendingActions.insert(actionId, actionPtr);
-    launchImpl(actionPtr, args);
+    launchImpl(actionPtr, args, actionId);
 }
 
 ContextSetter *Launcher::contextSetter() const
