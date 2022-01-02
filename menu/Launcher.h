@@ -29,7 +29,7 @@ public:
     static void setActionIdGenClassName(const QString &className);
 
 protected:
-    virtual void launchImpl(ActionPtr action, QVariantList &args) = 0;
+    virtual void launchImpl(ActionPtr action, QVariantList &args, const QString &actionId) = 0;
 
 private:
     ContextSetter *_contextSetter;
