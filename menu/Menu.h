@@ -48,6 +48,8 @@ public:
 
 private:
     [[deprecated]] QMap<QString, ActionPtr> _items;
+
+
     [[deprecated]] static util::LazyPointer<uniq::Value<QString>> _taskIdGen;
     static util::LazyPointer<menu::CommandTranslator> _commandTranslator;
     [[deprecated]] QSet<QString> _pendingTasks;
@@ -55,6 +57,8 @@ private:
     Launcher *_launcher;
 
     void exec(const CommandInfo &commandInfo);
+
+    void execAlt(const CommandInfo &commandInfo);
 
 signals:
     void ready(const QVariant &result);

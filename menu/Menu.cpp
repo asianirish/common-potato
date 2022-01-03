@@ -90,6 +90,15 @@ void Menu::exec(const CommandInfo &commandInfo)
     }
 }
 
+void Menu::execAlt(const CommandInfo &commandInfo)
+{
+//    if (commandInfo.isNamedArgs()) {
+//        _launcher->launch(actionClassName, commandInfo.namedArgs());
+//    } else {
+//        _launcher->launch(actionClassName, commandInfo.args());
+//    }
+}
+
 void Menu::onTaskComplete(const Result &result)
 {
     auto taskId = result.taskId();
