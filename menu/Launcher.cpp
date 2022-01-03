@@ -21,14 +21,17 @@ Launcher::Launcher(QObject *parent) : QObject(parent),
 
 void Launcher::launch(const QString &actionClassName, const QVariantList &args)
 {
-    Action *action = util::Factory<Action>::create(actionClassName.toStdString());
+    QString actionId = initAction(actionClassName);
+    Action *action = _pendingActions.value(actionId);
+    launchImpl(action, args, actionId);
+}
 
-    if (_contextSetter) {
-        _contextSetter->setActionContext(action);
-    }
-
-    QString actionId = _actionIdGen->value();
-    _pendingActions.insert(actionId, action);
+void Launcher::launch(const QString &actionClassName, const QVariantMap &namedArgs)
+{
+    QString actionId = initAction(actionClassName);
+    Action *action = _pendingActions.value(actionId);
+    QVariantList args;
+    action->toPositionalArguments(namedArgs, args);
     launchImpl(action, args, actionId);
 }
 
@@ -45,6 +48,20 @@ void Launcher::setContextSetter(ContextSetter *contextSetter)
 void Launcher::setActionIdGenClassName(const QString &className)
 {
     _actionIdGen.setClassName(className);
+}
+
+QString Launcher::initAction(const QString &actionClassName)
+{
+    Action *action = util::Factory<Action>::create(actionClassName.toStdString());
+
+    if (_contextSetter) {
+        _contextSetter->setActionContext(action);
+    }
+
+    QString actionId = _actionIdGen->value();
+    _pendingActions.insert(actionId, action);
+
+    return actionId;
 }
 
 void Launcher::onActionComplete(const Result &result)

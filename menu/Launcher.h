@@ -22,6 +22,7 @@ public:
     explicit Launcher(QObject *parent = nullptr);
 
     void launch(const QString &actionClassName, const QVariantList &args);
+    void launch(const QString &actionClassName, const QVariantMap &namedArgs);
 
     ContextSetter *contextSetter() const;
     void setContextSetter(ContextSetter *contextSetter);
@@ -35,6 +36,8 @@ private:
     ContextSetter *_contextSetter;
     QMap<QString, Action *> _pendingActions;
     static util::LazyPointer<uniq::Value<QString>> _actionIdGen;
+
+    QString initAction(const QString &actionClassName);
 
 signals:
     void ready(const QVariant &result);
