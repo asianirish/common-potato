@@ -22,9 +22,6 @@ private:
     menu::def::ActionDef actionDef() const override {
         return menu::def::ActionDef();
     }
-
-private slots:
-    void onReady(const QVariant &result);
 };
 
 #endif // LAUNCHERTEST_H

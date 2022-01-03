@@ -27,7 +27,6 @@ HierhinClassRegistry::HierhinClassRegistry()
 void HierhinClassRegistry::registerAllClasses() const
 {
     qRegisterMetaType<TestType>();
-    qRegisterMetaType<menu::Result>();
 
     qRegisterMetaType<hierhin::nav::ItemRef>();
     QMetaType::registerConverter<hierhin::nav::ItemRef, QString>(&hierhin::nav::ItemRef::toString);
