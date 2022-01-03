@@ -1,25 +1,28 @@
 #include "LauncherTest.h"
 
 #include <menu/SyncLauncher.h>
-#include <menu/ThreadLauncher.h>
 
 #include <QDebug>
 
-using namespace menu;
 
-LauncherTest::LauncherTest()
+LauncherTest::LauncherTest() : _threadLauncher(nullptr)
 {
+    _threadLauncher = new ThreadLauncher();
+}
 
+LauncherTest::~LauncherTest()
+{
+    if (_threadLauncher) {
+        _threadLauncher->deleteLater();
+    }
 }
 
 QVariant LauncherTest::simplyAct(const QVariantList &args)
 {
     Q_UNUSED(args)
-
-    ThreadLauncher threadLauncher;
-    connect(&threadLauncher, &ThreadLauncher::ready, this, &LauncherTest::onReady);
-    threadLauncher.launch("menu::math::Inc", {120});
-    threadLauncher.launch("menu::math::Div", {132, 4});
+//    connect(_threadLauncher, &ThreadLauncher::ready, this, &LauncherTest::onReady);
+    _threadLauncher->launch("menu::math::Inc", {120});
+    _threadLauncher->launch("menu::math::Div", {132, 4});
 
 //    SyncLauncher syncLauncher;
 //    connect(&syncLauncher, &SyncLauncher::ready, this, &LauncherTest::onReady);
