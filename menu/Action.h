@@ -19,6 +19,8 @@ public:
 
     void act(const QVariantMap &namedArgs, const QString &taskId);
 
+    void toPositionalArguments(const QVariantMap &namedArgs, QVariantList &posArgs);
+
 signals:
     void ready(const menu::Result &result);
 

@@ -36,5 +36,10 @@ void Action::act(const QVariantMap &namedArgs, const QString &taskId)
     act(args, taskId);
 }
 
+void Action::toPositionalArguments(const QVariantMap &namedArgs, QVariantList &posArgs)
+{
+    actionDef().toPositionalArguments(namedArgs, posArgs);
+}
+
 
 } // namespace menu
