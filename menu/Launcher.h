@@ -41,7 +41,7 @@ private:
 
 signals:
     void ready(const QVariant &result);
-    void error(const Error &error);
+    void error(const menu::Error &error);
 
 protected:
     void onActionComplete(const Result &result);
