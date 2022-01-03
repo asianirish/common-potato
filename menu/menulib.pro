@@ -36,6 +36,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     Action.h \
+    ActionListener.h \
     ActionThread.h \
     CommandInfo.h \
     CommandTranslator.h \
@@ -63,6 +64,7 @@ HEADERS += \
 
 SOURCES += \
     Action.cpp \
+    ActionListener.cpp \
     ActionThread.cpp \
     CommandInfo.cpp \
     CommandTranslator.cpp \
