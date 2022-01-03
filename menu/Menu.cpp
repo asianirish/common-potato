@@ -1,4 +1,5 @@
 #include "Menu.h"
+#include "Launcher.h"
 
 #include <util/Factory.h>
 
@@ -11,7 +12,8 @@ util::LazyPointer<uniq::Value<QString>> Menu::_taskIdGen(Menu::DEFAULT_TASK_ID_G
 
 util::LazyPointer<menu::CommandTranslator> Menu::_commandTranslator(Menu::DEFAULT_COMMAND_TRANSLATOR_CLASS_NAME);
 
-Menu::Menu(QObject *parent) : QObject(parent)
+Menu::Menu(QObject *parent) : QObject(parent),
+    _launcher(nullptr)
 {
 
 }
@@ -51,6 +53,16 @@ void Menu::addItem(const QString &command, ActionPtr action)
 QList<QString> Menu::itemKeys() const
 {
     return _items.keys();
+}
+
+Launcher *Menu::launcher() const
+{
+    return _launcher;
+}
+
+void Menu::setLauncher(Launcher *newLauncher)
+{
+    _launcher = newLauncher;
 }
 
 void Menu::exec(const CommandInfo &commandInfo)

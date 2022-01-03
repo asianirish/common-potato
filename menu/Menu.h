@@ -16,6 +16,8 @@
 
 namespace menu {
 
+class Launcher;
+
 class Menu : public QObject
 {
     Q_OBJECT
@@ -41,11 +43,16 @@ public:
 
     QList<QString> itemKeys() const;
 
+    Launcher *launcher() const;
+    void setLauncher(Launcher *newLauncher);
+
 private:
     [[deprecated]] QMap<QString, ActionPtr> _items;
     [[deprecated]] static util::LazyPointer<uniq::Value<QString>> _taskIdGen;
     static util::LazyPointer<menu::CommandTranslator> _commandTranslator;
     [[deprecated]] QSet<QString> _pendingTasks;
+
+    Launcher *_launcher;
 
     void exec(const CommandInfo &commandInfo);
 
