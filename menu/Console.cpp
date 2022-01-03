@@ -20,8 +20,8 @@ Console::Console(const ThisAppClassRegistry *registry, QObject *parent) : QObjec
 {
     registry->registerAllClasses();
 
-    qRegisterMetaType<menu::Result>();
-    qRegisterMetaType<menu::Error>();
+    qRegisterMetaType<Result>();
+    qRegisterMetaType<Error>();
 
 #ifdef Q_OS_WIN
     m_notifier = new QWinEventNotifier(GetStdHandle(STD_INPUT_HANDLE));
