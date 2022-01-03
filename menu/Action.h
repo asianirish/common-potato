@@ -9,15 +9,17 @@
 
 namespace menu {
 
+class ActionListener;
+
 class Action : public QObject
 {
     Q_OBJECT
 public:
     explicit Action(QObject *parent = nullptr);
 
-    void act(const QVariantList &args, const QString &taskId);
+    void act(const QVariantList &args, const QString &taskId, ActionListener *listener = nullptr);
 
-    void act(const QVariantMap &namedArgs, const QString &taskId);
+    void act(const QVariantMap &namedArgs, const QString &taskId, ActionListener *listener = nullptr);
 
     void toPositionalArguments(const QVariantMap &namedArgs, QVariantList &posArgs);
 

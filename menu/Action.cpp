@@ -1,4 +1,5 @@
 #include "Action.h"
+#include "ActionListener.h"
 
 namespace menu {
 
@@ -7,10 +8,15 @@ Action::Action(QObject *parent) : QObject(parent)
 
 }
 
-void Action::act(const QVariantList &args, const QString &taskId)
+void Action::act(const QVariantList &args, const QString &taskId, ActionListener *listener)
 {
     auto actionDef = this->actionDef();
     auto err = actionDef.validate(args);
+
+    if (listener) {
+        connect(this, &Action::ready, listener, &ActionListener::onReady);
+        //TODO: connect error
+    }
 
     if (err) {
         Result result;
@@ -28,12 +34,12 @@ void Action::act(const QVariantList &args, const QString &taskId)
 
 }
 
-void Action::act(const QVariantMap &namedArgs, const QString &taskId)
+void Action::act(const QVariantMap &namedArgs, const QString &taskId, ActionListener *listener)
 {
     QVariantList args;
     actionDef().toPositionalArguments(namedArgs, args);
 
-    act(args, taskId);
+    act(args, taskId, listener);
 }
 
 void Action::toPositionalArguments(const QVariantMap &namedArgs, QVariantList &posArgs)
