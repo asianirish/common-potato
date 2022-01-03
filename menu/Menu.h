@@ -51,10 +51,10 @@ private:
 
 signals:
     void ready(const QVariant &result);
-    void error(const Error &error);
+    void error(const menu::Error &error);
 
 public slots:
-    void onTaskComplete(const Result &result);
+    void onTaskComplete(const menu::Result &result);
 };
 
 } // namespace menu
