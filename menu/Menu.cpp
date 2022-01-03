@@ -55,6 +55,12 @@ void Menu::addItem(const QString &command, ActionPtr action)
     connect(action.get(), &Action::ready, this, &Menu::onTaskComplete);
 }
 
+void Menu::addItem(const QString &command, const QString &actionClassName)
+{
+    _commands.insert(command, actionClassName);
+    //TODO: where to connect an action
+}
+
 QList<QString> Menu::itemKeys() const
 {
     return _items.keys();

@@ -39,6 +39,21 @@ int main(int argc, char *argv[])
     console.addMenuItem("tcmd", menu::ActionPtr(new CommandTest()));
     console.addMenuItem("tlaunch", menu::ActionPtr(new LauncherTest()));
 
+    //TODO:
+//    {
+//        console.addMenuItem("tnode", "NodeTest");
+//        console.addMenuItem("tval", "ValidatorTest");
+
+//        console.addMenuItem("setlan", "menu::util::SetLanguage");
+
+//        console.addMenuItem("ttr", "TransTest");
+//        console.addMenuItem("tnum", "NumberTest");
+//        console.addMenuItem("tclone", "CloneTest");
+//        console.addMenuItem("tlink", "LinkTest");
+//        console.addMenuItem("tcmd", "CommandTest");
+//        console.addMenuItem("tlaunch", "LauncherTest");
+//    }
+
     console.run();
     QObject::connect(&console, SIGNAL(quit()), &a, SLOT(quit()));
 
