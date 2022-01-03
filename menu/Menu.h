@@ -42,10 +42,10 @@ public:
     QList<QString> itemKeys() const;
 
 private:
-    QMap<QString, ActionPtr> _items;
-    static util::LazyPointer<uniq::Value<QString>> _taskIdGen;
+    [[deprecated]] QMap<QString, ActionPtr> _items;
+    [[deprecated]] static util::LazyPointer<uniq::Value<QString>> _taskIdGen;
     static util::LazyPointer<menu::CommandTranslator> _commandTranslator;
-    QSet<QString> _pendingTasks;
+    [[deprecated]] QSet<QString> _pendingTasks;
 
     void exec(const CommandInfo &commandInfo);
 
