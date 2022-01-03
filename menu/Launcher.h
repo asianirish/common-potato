@@ -44,7 +44,7 @@ signals:
     void error(const menu::Error &error);
 
 protected:
-    void onActionComplete(const Result &result);
+    void onActionComplete(const menu::Result &result);
 
 };
 
