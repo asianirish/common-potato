@@ -24,6 +24,11 @@ void Menu::registerCommand(const QString &itemKey, ActionPtr action)
     //TODO: connect
 }
 
+void Menu::registerCommand(const QString &cmd, const QString actionClass)
+{
+    _commands.insert(cmd, actionClass);
+}
+
 void Menu::setTaskIdGenClassName(const QString &className)
 {
     if (_taskIdGen) {
@@ -92,11 +97,13 @@ void Menu::exec(const CommandInfo &commandInfo)
 
 void Menu::execAlt(const CommandInfo &commandInfo)
 {
-//    if (commandInfo.isNamedArgs()) {
-//        _launcher->launch(actionClassName, commandInfo.namedArgs());
-//    } else {
-//        _launcher->launch(actionClassName, commandInfo.args());
-//    }
+    QString actionClassName = _commands.value(commandInfo.name());
+
+    if (commandInfo.isNamedArgs()) {
+        _launcher->launch(actionClassName, commandInfo.namedArgs());
+    } else {
+        _launcher->launch(actionClassName, commandInfo.args());
+    }
 }
 
 void Menu::onTaskComplete(const Result &result)

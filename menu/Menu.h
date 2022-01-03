@@ -32,6 +32,7 @@ public:
 //                  QObject *parent=nullptr);
 
     void registerCommand(const QString &itemKey, ActionPtr action);
+    void registerCommand(const QString &cmd, const QString actionClass);
 
     static void setTaskIdGenClassName(const QString &className);
 
@@ -49,6 +50,7 @@ public:
 private:
     [[deprecated]] QMap<QString, ActionPtr> _items;
 
+    QMap<QString, QString> _commands;
 
     [[deprecated]] static util::LazyPointer<uniq::Value<QString>> _taskIdGen;
     static util::LazyPointer<menu::CommandTranslator> _commandTranslator;
