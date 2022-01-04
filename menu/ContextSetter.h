@@ -10,6 +10,8 @@ class ContextSetter
 public:
     ContextSetter();
 
+    virtual ~ContextSetter() = default;
+
     virtual void setActionContext(Action *action) = 0;
 };
 
