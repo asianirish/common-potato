@@ -23,5 +23,6 @@ public slots:
 
 } // namespace potato_util
 
+typedef potato_util::Destructor AppDestructor;
 
 #endif // UTIL_DESTRUCTOR_H
