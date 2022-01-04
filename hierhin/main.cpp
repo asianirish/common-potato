@@ -25,33 +25,30 @@ int main(int argc, char *argv[])
     QCoreApplication a(argc, argv);
 
     menu::Menu *menu = new menu::Menu();
-    menu::Launcher *launcher = new menu::ThreadLauncher();
+    menu::Launcher *launcher = new menu::ThreadLauncher(); //TODO: set HierhinContextSetter
     menu->setLauncher(launcher);
 
     new HierhinDestructor(&a, menu, launcher);
 
     menu::Console console(new HierhinClassRegistry(), menu);
 
-    {
-        console.addMenuItem("tnode", "NodeTest");
+    ADD_MENU_ITEM(console, tnode, NodeTest)
 
-        console.addMenuItem("tval", "ValidatorTest");
+    ADD_MENU_ITEM(console, tval, ValidatorTest)
 
-        console.addMenuItem("setlan", "menu::util::SetLanguage");
+    ADD_MENU_ITEM(console, setlan, menu::util::SetLanguage)
 
-        console.addMenuItem("ttr", "TransTest");
-        console.addMenuItem("tnum", "NumberTest");
+    ADD_MENU_ITEM(console, ttr, TransTest)
 
-//        console.addMenuItem("tclone", "CloneTest");
-        ADD_MENU_ITEM(console, tclone, CloneTest)
+    ADD_MENU_ITEM(console, tnum, NumberTest)
 
-        console.addMenuItem("tlink", "LinkTest");
+    ADD_MENU_ITEM(console, tclone, CloneTest)
 
-//        console.addMenuItem("tcmd", "CommandTest");
-        ADD_MENU_ITEM(console, tcmd, CommandTest)
+    ADD_MENU_ITEM(console, tlink, LinkTest)
 
-        console.addMenuItem("tlaunch", "LauncherTest");
-    }
+    ADD_MENU_ITEM(console, tcmd, CommandTest)
+
+    ADD_MENU_ITEM(console, tlaunch, LauncherTest)
 
     console.run();
     QObject::connect(&console, SIGNAL(quit()), &a, SLOT(quit()));
