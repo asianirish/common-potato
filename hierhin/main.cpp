@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
 
     new HierhinDestructor(&a, menu, launcher);
 
-    menu::Console console(new HierhinClassRegistry());
+    menu::Console console(new HierhinClassRegistry(), menu);
 
     //TODO: add items here
     console.addMenuItem("tnode", menu::ActionPtr(new NodeTest()));

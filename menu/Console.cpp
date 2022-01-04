@@ -15,8 +15,8 @@
 namespace menu {
 
 
-Console::Console(const ThisAppClassRegistry *registry, QObject *parent) : QObject(parent),
-    _menu(new Menu(this))
+Console::Console(const ThisAppClassRegistry *registry, Menu *menu, QObject *parent) : QObject(parent),
+    _menu(menu)
 {
     registry->registerAllClasses();
 

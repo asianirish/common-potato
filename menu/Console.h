@@ -24,7 +24,7 @@ class Console : public QObject
     Q_OBJECT;
 
 public:
-    explicit Console(const ThisAppClassRegistry* registry, QObject *parent = nullptr);
+    explicit Console(const ThisAppClassRegistry* registry, Menu *menu, QObject *parent = nullptr);
     ~Console();
 
     void run();
