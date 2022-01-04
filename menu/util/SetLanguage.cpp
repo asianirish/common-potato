@@ -1,14 +1,22 @@
 #include "SetLanguage.h"
 
 #include <QCoreApplication>
+#include <QDebug>
 
 
 namespace menu {
 namespace util {
 
+QList<QSharedPointer<QTranslator>> SetLanguage::_translators;
+
 SetLanguage::SetLanguage()
 {
 
+}
+
+SetLanguage::~SetLanguage()
+{
+    qDebug() << "SET_LANGUAGE DESTRUCTOR";
 }
 
 QVariant SetLanguage::simplyAct(const QVariantList &args)
@@ -48,7 +56,8 @@ QVariant SetLanguage::simplyAct(const QVariantList &args)
             }
 
             _translators.append(translator);
-            QCoreApplication::installTranslator(translator.data());
+            bool yes = QCoreApplication::installTranslator(translator.data());
+            qDebug() << "TRANSLATION" << transFile << "STATUS:" << yes;
         }
     } else if (args.size() == 0) {
         return false;

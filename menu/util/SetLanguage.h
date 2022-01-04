@@ -13,6 +13,8 @@ class SetLanguage : public SimpleAction
 public:
     SetLanguage();
 
+    ~SetLanguage();
+
     QStringList files() const;
     void setFiles(const QStringList &files);
 
@@ -23,7 +25,7 @@ private:
     def::ActionDef actionDef() const final;
 
     QStringList _files;
-    QList<QSharedPointer<QTranslator>> _translators;
+    static QList<QSharedPointer<QTranslator>> _translators;
 
 };
 
