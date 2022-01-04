@@ -52,6 +52,7 @@ void Launcher::setActionIdGenClassName(const QString &className)
 
 QString Launcher::initAction(const QString &actionClassName)
 {
+    // will delete in Launcher::onActionComplete
     Action *action = potato_util::Factory<Action>::create(actionClassName.toStdString());
 
     if (_contextSetter) {
@@ -80,6 +81,7 @@ void Launcher::onActionComplete(const Result &result)
     auto action = _pendingActions.value(result.taskId());
     _pendingActions.remove(result.taskId());
     action->deleteLater();
+//    delete action;
 
     if (result.errorCode() == Result::SUCCESSFUL_RESULT) {
         qDebug() << "ACTION COMPLETE WITH RESULT:" << result.value().toString();
