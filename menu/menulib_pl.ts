@@ -9,12 +9,11 @@
         <translation type="unfinished">Do widzenia!</translation>
     </message>
     <message>
-        <location filename="Console.cpp" line="69"/>
         <source>Unique value</source>
-        <translation type="unfinished">Unikalna wartość</translation>
+        <translation type="obsolete">Unikalna wartość</translation>
     </message>
     <message>
-        <location filename="Console.cpp" line="84"/>
+        <location filename="Console.cpp" line="81"/>
         <source>Error</source>
         <translation type="unfinished">Błąd</translation>
     </message>
@@ -35,14 +34,12 @@
 <context>
     <name>menu::Menu</name>
     <message>
-        <location filename="Menu.cpp" line="102"/>
         <source>no such a command</source>
-        <translation type="unfinished">brak komendy</translation>
+        <translation type="obsolete">brak komendy</translation>
     </message>
     <message>
-        <location filename="Menu.cpp" line="104"/>
         <source>command</source>
-        <translation type="unfinished">komenda</translation>
+        <translation type="obsolete">komenda</translation>
     </message>
 </context>
 </TS>

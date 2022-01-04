@@ -9,12 +9,11 @@
         <translation type="unfinished">До свидания!</translation>
     </message>
     <message>
-        <location filename="Console.cpp" line="69"/>
         <source>Unique value</source>
-        <translation type="unfinished">Уникальное значение</translation>
+        <translation type="obsolete">Уникальное значение</translation>
     </message>
     <message>
-        <location filename="Console.cpp" line="84"/>
+        <location filename="Console.cpp" line="81"/>
         <source>Error</source>
         <translation type="unfinished">Ошибка</translation>
     </message>
@@ -35,14 +34,12 @@
 <context>
     <name>menu::Menu</name>
     <message>
-        <location filename="Menu.cpp" line="102"/>
         <source>no such a command</source>
-        <translation type="unfinished">нет такой команды</translation>
+        <translation type="obsolete">нет такой команды</translation>
     </message>
     <message>
-        <location filename="Menu.cpp" line="104"/>
         <source>command</source>
-        <translation type="unfinished">команда</translation>
+        <translation type="obsolete">команда</translation>
     </message>
 </context>
 </TS>
