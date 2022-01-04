@@ -13,6 +13,7 @@ namespace menu {
 
 class ContextSetter;
 
+//TODO: make ActionListener (?)
 class Launcher : public QObject
 {
     Q_OBJECT
