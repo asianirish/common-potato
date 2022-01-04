@@ -68,7 +68,9 @@ signals:
     void error(const menu::Error &error);
 
 public slots:
-    void onTaskComplete(const menu::Result &result);
+    [[deprecated]] void onTaskComplete(const menu::Result &result);
+    void onResult(const QVariant &value); //Launcher based
+    //TODO: onError
 };
 
 } // namespace menu

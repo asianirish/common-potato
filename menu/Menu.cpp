@@ -3,6 +3,8 @@
 
 #include <util/Factory.h>
 
+#include <QDebug>
+
 namespace menu {
 
 const QString Menu::DEFAULT_TASK_ID_GENERATOR_CLASS_NAME("uniq::TimeQStringValue");
@@ -73,7 +75,12 @@ Launcher *Menu::launcher() const
 
 void Menu::setLauncher(Launcher *newLauncher)
 {
+    if (_launcher) {
+        return;
+    }
+
     _launcher = newLauncher;
+    connect(_launcher, &Launcher::ready, this, &Menu::onResult);
 }
 
 void Menu::exec(const CommandInfo &commandInfo)
@@ -127,6 +134,12 @@ void Menu::onTaskComplete(const Result &result)
 
 
     }
+}
+
+void Menu::onResult(const QVariant &value)
+{
+    qDebug() << "RESULT:" << value.toString();
+    emit ready(value);
 }
 
 } // namespace menu
