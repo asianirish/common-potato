@@ -11,6 +11,7 @@ class Destructor : public QObject
 public:
     explicit Destructor(QCoreApplication *app);
 
+protected:
     virtual void cleanUp() = 0;
 
 signals:
