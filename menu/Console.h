@@ -29,7 +29,6 @@ public:
 
     void run();
 
-    [[deprecated]] void addMenuItem(const QString &command, ActionPtr action);
     void addMenuItem(const QString &command, const QString &actionClassName);
 
     void showMenu() const;

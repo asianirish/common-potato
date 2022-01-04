@@ -65,9 +65,6 @@ void Console::readCommand()
         emit quit();
     } else if(line == "menu") {
         showMenu();
-    } else if (line == "uniq") {
-        std::cout << tr("Unique value").toStdString() << " :" << Menu::newTaskId().toStdString() << std::endl;
-        std::cout << "> " << std::flush;
     } else {
         _menu->exec(QString(line.data()));
     }
@@ -87,11 +84,6 @@ void Console::onError(const menu::Error &err)
         std::cout << key.toStdString() << ": " << err.context().value(key).toString().toStdString() << std::endl;
     }
     std::cout << "> " << std::flush;
-}
-
-void Console::addMenuItem(const QString &command, ActionPtr action)
-{
-    _menu->addItem(command, action);
 }
 
 void Console::addMenuItem(const QString &command, const QString &actionClassName)
