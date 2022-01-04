@@ -30,7 +30,9 @@ int main(int argc, char *argv[])
 
     new HierhinDestructor(&a, menu, launcher);
 
-    menu::Console console(new HierhinClassRegistry(), menu);
+    auto registry = new HierhinClassRegistry();
+    menu::Console console(registry, menu);
+    delete registry;
 
     ADD_MENU_ITEM(console, tnode, NodeTest)
 
