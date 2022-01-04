@@ -61,3 +61,5 @@ private:
 
 } // namespace menu
 
+#define ADD_MENU_ITEM(console, item, actionClass) REGISTER_CLASS_FOR_UTIL_FACTORY(menu::Action, actionClass); \
+    console.addMenuItem(#item, #actionClass);

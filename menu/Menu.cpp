@@ -47,7 +47,7 @@ QString Menu::newTaskId()
 void Menu::exec(const QString &command)
 {
     auto commandInfo = Menu::_commandTranslator->translate(command);
-    exec(commandInfo);
+    execAlt(commandInfo);
 }
 
 void Menu::addItem(const QString &command, ActionPtr action)

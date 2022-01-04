@@ -42,7 +42,7 @@ int main(int argc, char *argv[])
 
     console.addMenuItem("ttr", menu::ActionPtr(new TransTest()));
     console.addMenuItem("tnum", menu::ActionPtr(new NumberTest()));
-    console.addMenuItem("tclone", menu::ActionPtr(new CloneTest()));
+//    console.addMenuItem("tclone", menu::ActionPtr(new CloneTest()));
     console.addMenuItem("tlink", menu::ActionPtr(new LinkTest()));
     console.addMenuItem("tcmd", menu::ActionPtr(new CommandTest()));
     console.addMenuItem("tlaunch", menu::ActionPtr(new LauncherTest()));
@@ -55,9 +55,15 @@ int main(int argc, char *argv[])
 
         console.addMenuItem("ttr", "TransTest");
         console.addMenuItem("tnum", "NumberTest");
-        console.addMenuItem("tclone", "CloneTest");
+
+//        console.addMenuItem("tclone", "CloneTest");
+        ADD_MENU_ITEM(console, tclone, CloneTest)
+
         console.addMenuItem("tlink", "LinkTest");
-        console.addMenuItem("tcmd", "CommandTest");
+
+//        console.addMenuItem("tcmd", "CommandTest");
+        ADD_MENU_ITEM(console, tcmd, CommandTest)
+
         console.addMenuItem("tlaunch", "LauncherTest");
     }
 
