@@ -94,6 +94,11 @@ void Console::addMenuItem(const QString &command, ActionPtr action)
     _menu->addItem(command, action);
 }
 
+void Console::addMenuItem(const QString &command, const QString &actionClassName)
+{
+    _menu->addItem(command, actionClassName);
+}
+
 void Console::showMenu() const
 {
     auto itemKeys = _menu->itemKeys();

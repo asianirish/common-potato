@@ -40,7 +40,7 @@ public:
 
     void exec(const QString &command);
 
-    void addItem(const QString &command, ActionPtr action);
+    [[deprecated]] void addItem(const QString &command, ActionPtr action);
     void addItem(const QString &command, const QString &actionClassName);
 
     QList<QString> itemKeys() const;

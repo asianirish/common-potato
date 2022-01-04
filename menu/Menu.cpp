@@ -60,7 +60,6 @@ void Menu::addItem(const QString &command, ActionPtr action)
 void Menu::addItem(const QString &command, const QString &actionClassName)
 {
     _commands.insert(command, actionClassName);
-    //TODO: connect Launcher, not Action
 }
 
 QList<QString> Menu::itemKeys() const
