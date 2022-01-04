@@ -9,7 +9,7 @@ class Destructor : public QObject
 {
     Q_OBJECT
 public:
-    explicit Destructor(QCoreApplication *app = nullptr);
+    explicit Destructor(QCoreApplication *app);
 
     virtual void cleanUp() = 0;
 
