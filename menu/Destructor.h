@@ -8,7 +8,7 @@
 
 namespace menu {
 
-class Destructor : public util::Destructor
+class Destructor : public potato_util::Destructor
 {
     Q_OBJECT
 public:

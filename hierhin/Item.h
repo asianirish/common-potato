@@ -13,7 +13,7 @@
 #include <QString>
 #include <QVariantMap>
 
-using namespace util;
+using namespace potato_util;
 
 namespace hierhin {
 
@@ -75,7 +75,7 @@ protected:
 private:
     mutable Id _id;
     QVariantMap _properties;
-    static util::LazyPointer<uniq::Value<Id>> _idGen;
+    static potato_util::LazyPointer<uniq::Value<Id>> _idGen;
     QString _essenceClassName;
 
     virtual void nodeToMap(QVariantMap &mp) const {

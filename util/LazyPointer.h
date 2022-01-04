@@ -6,7 +6,7 @@
 #include <QString>
 #include <QSharedPointer>
 
-namespace util {
+namespace potato_util {
 
 template <class Base>
 class LazyPointer

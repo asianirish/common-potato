@@ -10,7 +10,7 @@ namespace menu {
 
 const QString Launcher::DEFAULT_ACTION_ID_GENERATOR_CLASS_NAME("uniq::TimeQStringValue");
 
-util::LazyPointer<uniq::Value<QString>> Launcher::_actionIdGen(Launcher::DEFAULT_ACTION_ID_GENERATOR_CLASS_NAME);
+potato_util::LazyPointer<uniq::Value<QString>> Launcher::_actionIdGen(Launcher::DEFAULT_ACTION_ID_GENERATOR_CLASS_NAME);
 
 
 Launcher::Launcher(QObject *parent) : QObject(parent),
@@ -52,7 +52,7 @@ void Launcher::setActionIdGenClassName(const QString &className)
 
 QString Launcher::initAction(const QString &actionClassName)
 {
-    Action *action = util::Factory<Action>::create(actionClassName.toStdString());
+    Action *action = potato_util::Factory<Action>::create(actionClassName.toStdString());
 
     if (_contextSetter) {
         _contextSetter->setActionContext(action);

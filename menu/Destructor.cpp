@@ -2,7 +2,7 @@
 
 namespace menu {
 
-Destructor::Destructor(QCoreApplication *app, Menu *menu, Launcher *launcher) : util::Destructor(app),
+Destructor::Destructor(QCoreApplication *app, Menu *menu, Launcher *launcher) : potato_util::Destructor(app),
     _menu(menu),
     _launcher(launcher)
 {

@@ -6,7 +6,7 @@
 
 using namespace std;
 
-namespace util {
+namespace potato_util {
 
 class UnregisteredClassException
 {
@@ -90,6 +90,6 @@ map<string, AbstractCreator<BaseClass>*> Factory<BaseClass>::_creators;
 
 } // namespace util
 
-#define REGISTER_CLASS_FOR_UTIL_FACTORY(BaseClass, DevClass) util::Factory<BaseClass>::registerClass<DevClass>(#DevClass);
+#define REGISTER_CLASS_FOR_UTIL_FACTORY(BaseClass, DevClass) potato_util::Factory<BaseClass>::registerClass<DevClass>(#DevClass);
 
 #endif // FACTORY_H

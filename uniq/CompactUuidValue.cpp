@@ -25,7 +25,7 @@ QString CompactUuidValue::value() const
 
 //    qDebug() << "leftNum:" << leftNum << "rightNum:" << rightNum;
 
-    return util::uint64_t2qstring_ext(leftNum) + util::uint64_t2qstring_ext(rightNum);
+    return potato_util::uint64_t2qstring_ext(leftNum) + potato_util::uint64_t2qstring_ext(rightNum);
 }
 
 } // namespace uniq

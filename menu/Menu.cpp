@@ -10,9 +10,9 @@ namespace menu {
 const QString Menu::DEFAULT_TASK_ID_GENERATOR_CLASS_NAME("uniq::TimeQStringValue");
 const QString Menu::DEFAULT_COMMAND_TRANSLATOR_CLASS_NAME("menu::LineCommandTranslator");
 
-util::LazyPointer<uniq::Value<QString>> Menu::_taskIdGen(Menu::DEFAULT_TASK_ID_GENERATOR_CLASS_NAME);
+potato_util::LazyPointer<uniq::Value<QString>> Menu::_taskIdGen(Menu::DEFAULT_TASK_ID_GENERATOR_CLASS_NAME);
 
-util::LazyPointer<menu::CommandTranslator> Menu::_commandTranslator(Menu::DEFAULT_COMMAND_TRANSLATOR_CLASS_NAME);
+potato_util::LazyPointer<menu::CommandTranslator> Menu::_commandTranslator(Menu::DEFAULT_COMMAND_TRANSLATOR_CLASS_NAME);
 
 Menu::Menu(QObject *parent) : QObject(parent),
     _launcher(nullptr)

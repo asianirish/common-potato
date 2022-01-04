@@ -1,6 +1,6 @@
 #include "gfunc.h"
 
-namespace util
+namespace potato_util
 {
 
 const char BASE_36[] = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";

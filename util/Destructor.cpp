@@ -1,6 +1,6 @@
 #include "Destructor.h"
 
-namespace util {
+namespace potato_util {
 
 Destructor::Destructor(QCoreApplication *app)
     : QObject{app}

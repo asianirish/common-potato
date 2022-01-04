@@ -3,7 +3,7 @@
 
 #include <QCoreApplication>
 
-namespace util {
+namespace potato_util {
 
 class Destructor : public QObject
 {
@@ -21,6 +21,7 @@ public slots:
 
 };
 
-} // namespace util
+} // namespace potato_util
+
 
 #endif // UTIL_DESTRUCTOR_H

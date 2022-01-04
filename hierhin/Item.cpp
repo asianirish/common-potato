@@ -18,7 +18,7 @@ const QString Item::ESSENCE_CLASS_KEY("essenceClass");
 const QString Item::PROPERTIES_KEY("prop");
 const QString Item::BASE_TYPE_KEY("baseType");
 
-util::LazyPointer<uniq::Value<Id>> Item::_idGen(Item::DEFAULT_ID_GEN_CLASS_NAME);
+potato_util::LazyPointer<uniq::Value<Id>> Item::_idGen(Item::DEFAULT_ID_GEN_CLASS_NAME);
 
 Item::Item()
 {
@@ -63,8 +63,8 @@ EssencePtr Item::essencePtr() const
     }
 
     try {
-        return util::SingletonRegistry<hierhin::Essence>::ptr(_essenceClassName);
-    }  catch (util::UnregisteredClassException &e) {
+        return potato_util::SingletonRegistry<hierhin::Essence>::ptr(_essenceClassName);
+    }  catch (potato_util::UnregisteredClassException &e) {
         throw ex::UnregisteredClassException(QString::fromStdString(e.className()));
     }
 }

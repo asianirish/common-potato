@@ -7,7 +7,7 @@
 #include <QString>
 #include <QVariant>
 
-namespace util
+namespace potato_util
 {
 
 // maximum radix - base36

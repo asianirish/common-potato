@@ -53,8 +53,8 @@ private:
 
     QMap<QString, QString> _commands;
 
-    [[deprecated]] static util::LazyPointer<uniq::Value<QString>> _taskIdGen;
-    static util::LazyPointer<menu::CommandTranslator> _commandTranslator;
+    [[deprecated]] static potato_util::LazyPointer<uniq::Value<QString>> _taskIdGen;
+    static potato_util::LazyPointer<menu::CommandTranslator> _commandTranslator;
     [[deprecated]] QSet<QString> _pendingTasks;
 
     Launcher *_launcher;

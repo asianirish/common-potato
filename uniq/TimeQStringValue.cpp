@@ -2,7 +2,7 @@
 
 #include <util/gfunc.h>
 
-using namespace util;
+using namespace potato_util;
 
 namespace uniq {
 

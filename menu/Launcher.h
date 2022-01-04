@@ -36,7 +36,7 @@ protected:
 private:
     ContextSetter *_contextSetter;
     QMap<QString, Action *> _pendingActions;
-    static util::LazyPointer<uniq::Value<QString>> _actionIdGen;
+    static potato_util::LazyPointer<uniq::Value<QString>> _actionIdGen;
 
     QString initAction(const QString &actionClassName);
 

@@ -4,7 +4,7 @@
 #include <QString>
 #include <QMap>
 
-namespace util {
+namespace potato_util {
 
 
 template <typename BaseClass>
