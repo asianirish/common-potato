@@ -75,6 +75,7 @@ void Launcher::onActionComplete(const Result &result)
         mp.insert(tr("actionId"), result.taskId());
         err.setContext(mp);
         emit error(err);
+        return;
     }
 
     auto action = _pendingActions.value(result.taskId());
