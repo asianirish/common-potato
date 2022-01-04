@@ -64,7 +64,7 @@ void Menu::addItem(const QString &command, const QString &actionClassName)
 
 QList<QString> Menu::itemKeys() const
 {
-    return _items.keys();
+    return _commands.keys();
 }
 
 Launcher *Menu::launcher() const

@@ -32,23 +32,9 @@ int main(int argc, char *argv[])
 
     menu::Console console(new HierhinClassRegistry(), menu);
 
-    //TODO: add items here
-    console.addMenuItem("tnode", menu::ActionPtr(new NodeTest()));
-    console.addMenuItem("tval", menu::ActionPtr(new ValidatorTest()));
-
-    menu::util::SetLanguage *setLanItem = new menu::util::SetLanguage();
-    setLanItem->setFiles(QStringList{"hierhin", "vallib", "menulib"});
-    console.addMenuItem("setlan", menu::ActionPtr(setLanItem));
-
-    console.addMenuItem("ttr", menu::ActionPtr(new TransTest()));
-    console.addMenuItem("tnum", menu::ActionPtr(new NumberTest()));
-//    console.addMenuItem("tclone", menu::ActionPtr(new CloneTest()));
-    console.addMenuItem("tlink", menu::ActionPtr(new LinkTest()));
-    console.addMenuItem("tcmd", menu::ActionPtr(new CommandTest()));
-    console.addMenuItem("tlaunch", menu::ActionPtr(new LauncherTest()));
-
     {
         console.addMenuItem("tnode", "NodeTest");
+
         console.addMenuItem("tval", "ValidatorTest");
 
         console.addMenuItem("setlan", "menu::util::SetLanguage");
