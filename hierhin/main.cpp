@@ -1,5 +1,7 @@
 
 #include "HierhinClassRegistry.h"
+#include "HierhinDestructor.h"
+
 #include "Menu/NodeTest.h"
 #include "Menu/ValidatorTest.h"
 #include "Menu/TransTest.h"
@@ -21,6 +23,12 @@
 int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
+
+    menu::Menu *menu = new menu::Menu();
+    menu::Launcher *launcher = new menu::ThreadLauncher();
+    menu->setLauncher(launcher);
+
+    new HierhinDestructor(&a, menu, launcher);
 
     menu::Console console(new HierhinClassRegistry());
 

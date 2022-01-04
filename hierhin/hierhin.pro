@@ -25,6 +25,7 @@ TRANSLATIONS += hierhin_en.ts
 SOURCES += main.cpp \
     HierhinClassRegistry.cpp \
     HierhinContextSetter.cpp \
+    HierhinDestructor.cpp \
     Menu/CloneTest.cpp \
     Menu/CommandTest.cpp \
     Menu/LauncherTest.cpp \
@@ -47,6 +48,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 HEADERS += \
     HierhinClassRegistry.h \
     HierhinContextSetter.h \
+    HierhinDestructor.h \
     Menu/CloneTest.h \
     Menu/CommandTest.h \
     Menu/LauncherTest.h \
