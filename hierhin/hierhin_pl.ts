@@ -18,86 +18,99 @@
 <context>
     <name>QObject</name>
     <message>
+        <location filename="Menu/TransTest.cpp" line="14"/>
+        <location filename="Menu/ValidatorTest.cpp" line="58"/>
         <source>hi</source>
-        <translation type="obsolete">cześć</translation>
+        <translation type="unfinished">cześć</translation>
     </message>
     <message numerus="yes">
+        <location filename="Menu/TransTest.cpp" line="20"/>
+        <location filename="Menu/TransTest.cpp" line="25"/>
+        <location filename="Menu/TransTest.cpp" line="30"/>
+        <location filename="Menu/TransTest.cpp" line="35"/>
         <source>%n object(s)</source>
-        <translation type="obsolete">
+        <translation type="unfinished">
             <numerusform>%n obiekt</numerusform>
             <numerusform>%n obiekty</numerusform>
             <numerusform>%n obiektów</numerusform>
         </translation>
     </message>
     <message>
+        <location filename="Menu/TransTest.cpp" line="41"/>
         <source>pi is %1 of conventional units</source>
-        <translation type="obsolete">wartość pi wynosi %1 jednostek warunkowych</translation>
+        <translation type="unfinished">wartość pi wynosi %1 jednostek warunkowych</translation>
     </message>
     <message>
+        <location filename="Menu/TransTest.cpp" line="48"/>
         <source>wrong email format</source>
-        <translation type="obsolete">zły format adresu e-mail</translation>
+        <translation type="unfinished">zły format adresu e-mail</translation>
+    </message>
+</context>
+<context>
+    <name>ValidatorTest</name>
+    <message>
+        <location filename="Menu/ValidatorTest.cpp" line="59"/>
+        <source>hi</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>ex</name>
     <message>
-        <location filename="ex/ChildItemException.h" line="18"/>
         <source>unknown child item exception</source>
-        <translation type="unfinished">nieznany wyjątek elementu potomnego</translation>
+        <translation type="obsolete">nieznany wyjątek elementu potomnego</translation>
     </message>
     <message>
-        <location filename="ex/Exception.h" line="22"/>
         <source>unknown hierhin lib exception</source>
-        <translation type="unfinished">nieznany wyjątek biblioteki hierhin</translation>
+        <translation type="obsolete">nieznany wyjątek biblioteki hierhin</translation>
     </message>
     <message>
-        <location filename="ex/IncompatibleEssenceClass.h" line="18"/>
         <source>incompatible essence class</source>
-        <translation type="unfinished">niekompatybilna klasa essence</translation>
+        <translation type="obsolete">niekompatybilna klasa essence</translation>
     </message>
     <message>
-        <location filename="ex/IncompatibleEssenceClass.h" line="21"/>
         <source>incompatible essence class for role</source>
-        <translation type="unfinished">niekompatybilna klasa essence dla roli</translation>
+        <translation type="obsolete">niekompatybilna klasa essence dla roli</translation>
     </message>
     <message>
-        <location filename="ex/InvalidValueException.h" line="16"/>
         <source>invalid value</source>
-        <translation type="unfinished">nieprawidłowa wartość</translation>
+        <translation type="obsolete">nieprawidłowa wartość</translation>
     </message>
     <message>
-        <location filename="ex/NoSuchProperty.h" line="16"/>
         <source>no such a property</source>
-        <translation type="unfinished">nie ma takiej właściwości</translation>
+        <translation type="obsolete">nie ma takiej właściwości</translation>
     </message>
     <message>
-        <location filename="ex/NoSuchRole.h" line="17"/>
         <source>no such a role</source>
-        <translation type="unfinished">nie ma takiej roli</translation>
+        <translation type="obsolete">nie ma takiej roli</translation>
     </message>
     <message>
-        <location filename="ex/PropertyException.h" line="16"/>
         <source>unknown set property exception</source>
-        <translation type="unfinished">nieznany wyjątek ustawienia właściwości</translation>
+        <translation type="obsolete">nieznany wyjątek ustawienia właściwości</translation>
     </message>
     <message>
-        <location filename="ex/UnregisteredClassException.h" line="18"/>
         <source>unregistered class name</source>
-        <translation type="unfinished">niezarejestrowana nazwa klasy</translation>
+        <translation type="obsolete">niezarejestrowana nazwa klasy</translation>
     </message>
     <message>
-        <location filename="ex/CanNotBeEssenceless.h" line="19"/>
         <source>the child item can not be essenceless</source>
-        <translation type="unfinished">element potomny nie może być bez obiektu essence</translation>
+        <translation type="obsolete">element potomny nie może być bez obiektu essence</translation>
     </message>
     <message>
-        <location filename="ex/CanNotBeEssenceless.h" line="22"/>
         <source>the child item of the role &apos;%1&apos; can not be essenceless</source>
-        <translation type="unfinished">element potomny roli „%1” nie może być bez obiektu essence</translation>
+        <translation type="obsolete">element potomny roli „%1” nie może być bez obiektu essence</translation>
     </message>
     <message>
         <source>the child item can not be essenceless for role</source>
         <translation type="obsolete">element potomny nie może być bez obiektu essence dla roli</translation>
+    </message>
+</context>
+<context>
+    <name>val</name>
+    <message>
+        <location filename="Menu/ValidatorTest.cpp" line="57"/>
+        <source>hi</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

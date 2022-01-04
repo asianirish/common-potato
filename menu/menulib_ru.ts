@@ -20,14 +20,27 @@
     </message>
 </context>
 <context>
+    <name>menu::Launcher</name>
+    <message>
+        <location filename="Launcher.cpp" line="73"/>
+        <source>no such an actionId</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="Launcher.cpp" line="75"/>
+        <source>actionId</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>menu::Menu</name>
     <message>
-        <location filename="Menu.cpp" line="73"/>
+        <location filename="Menu.cpp" line="102"/>
         <source>no such a command</source>
         <translation type="unfinished">нет такой команды</translation>
     </message>
     <message>
-        <location filename="Menu.cpp" line="75"/>
+        <location filename="Menu.cpp" line="104"/>
         <source>command</source>
         <translation type="unfinished">команда</translation>
     </message>

@@ -18,89 +18,87 @@
 <context>
     <name>QObject</name>
     <message>
+        <location filename="Menu/TransTest.cpp" line="14"/>
+        <location filename="Menu/ValidatorTest.cpp" line="58"/>
         <source>hi</source>
-        <translation type="obsolete">привет</translation>
+        <translation type="unfinished">привет</translation>
     </message>
     <message numerus="yes">
+        <location filename="Menu/TransTest.cpp" line="20"/>
+        <location filename="Menu/TransTest.cpp" line="25"/>
+        <location filename="Menu/TransTest.cpp" line="30"/>
+        <location filename="Menu/TransTest.cpp" line="35"/>
         <source>%n object(s)</source>
-        <translation type="obsolete">
+        <translation type="unfinished">
             <numerusform>%n объект</numerusform>
             <numerusform>%n объекта</numerusform>
             <numerusform>%n объектов</numerusform>
         </translation>
     </message>
     <message>
+        <location filename="Menu/TransTest.cpp" line="41"/>
         <source>pi is %1 of conventional units</source>
-        <translation type="obsolete">pi составляет %1 условных единиц</translation>
+        <translation type="unfinished">pi составляет %1 условных единиц</translation>
     </message>
     <message>
+        <location filename="Menu/TransTest.cpp" line="48"/>
         <source>wrong email format</source>
-        <translation type="obsolete">дурацкий формат электронной почты</translation>
+        <translation type="unfinished">дурацкий формат электронной почты</translation>
     </message>
 </context>
 <context>
     <name>ValidatorTest</name>
     <message>
+        <location filename="Menu/ValidatorTest.cpp" line="59"/>
         <source>hi</source>
-        <translation type="obsolete">привет</translation>
+        <translation type="unfinished">привет</translation>
     </message>
 </context>
 <context>
     <name>ex</name>
     <message>
-        <location filename="ex/ChildItemException.h" line="18"/>
         <source>unknown child item exception</source>
-        <translation type="unfinished">неизвестное исключение дочернего элемента</translation>
+        <translation type="obsolete">неизвестное исключение дочернего элемента</translation>
     </message>
     <message>
-        <location filename="ex/Exception.h" line="22"/>
         <source>unknown hierhin lib exception</source>
-        <translation type="unfinished">неизвестное исключение библиотеки hierhin</translation>
+        <translation type="obsolete">неизвестное исключение библиотеки hierhin</translation>
     </message>
     <message>
-        <location filename="ex/IncompatibleEssenceClass.h" line="18"/>
         <source>incompatible essence class</source>
-        <translation type="unfinished">несовместимый класс essence</translation>
+        <translation type="obsolete">несовместимый класс essence</translation>
     </message>
     <message>
-        <location filename="ex/IncompatibleEssenceClass.h" line="21"/>
         <source>incompatible essence class for role</source>
-        <translation type="unfinished">несовместимый класс essence для роли</translation>
+        <translation type="obsolete">несовместимый класс essence для роли</translation>
     </message>
     <message>
-        <location filename="ex/InvalidValueException.h" line="16"/>
         <source>invalid value</source>
-        <translation type="unfinished">недопустимое значение</translation>
+        <translation type="obsolete">недопустимое значение</translation>
     </message>
     <message>
-        <location filename="ex/NoSuchProperty.h" line="16"/>
         <source>no such a property</source>
-        <translation type="unfinished">нет такого свойства</translation>
+        <translation type="obsolete">нет такого свойства</translation>
     </message>
     <message>
-        <location filename="ex/NoSuchRole.h" line="17"/>
         <source>no such a role</source>
-        <translation type="unfinished">нет такой роли</translation>
+        <translation type="obsolete">нет такой роли</translation>
     </message>
     <message>
-        <location filename="ex/PropertyException.h" line="16"/>
         <source>unknown set property exception</source>
-        <translation type="unfinished">неизвестное исключение установки свойства</translation>
+        <translation type="obsolete">неизвестное исключение установки свойства</translation>
     </message>
     <message>
-        <location filename="ex/UnregisteredClassException.h" line="18"/>
         <source>unregistered class name</source>
-        <translation type="unfinished">незарегистрированное имя класса</translation>
+        <translation type="obsolete">незарегистрированное имя класса</translation>
     </message>
     <message>
-        <location filename="ex/CanNotBeEssenceless.h" line="19"/>
         <source>the child item can not be essenceless</source>
-        <translation type="unfinished">дочерний объект не может быть без объекта essence</translation>
+        <translation type="obsolete">дочерний объект не может быть без объекта essence</translation>
     </message>
     <message>
-        <location filename="ex/CanNotBeEssenceless.h" line="22"/>
         <source>the child item of the role &apos;%1&apos; can not be essenceless</source>
-        <translation type="unfinished">дочерний элемент роли „%1” не может быть без объекта essence</translation>
+        <translation type="obsolete">дочерний элемент роли „%1” не может быть без объекта essence</translation>
     </message>
     <message>
         <source>the child item can not be essenceless for role</source>
@@ -110,8 +108,9 @@
 <context>
     <name>val</name>
     <message>
+        <location filename="Menu/ValidatorTest.cpp" line="57"/>
         <source>hi</source>
-        <translation type="obsolete">привет</translation>
+        <translation type="unfinished">привет</translation>
     </message>
 </context>
 </TS>

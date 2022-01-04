@@ -1,6 +1,7 @@
 
 #include "HierhinClassRegistry.h"
 #include "HierhinDestructor.h"
+#include "HierhinContextSetter.h"
 
 #include "Menu/NodeTest.h"
 #include "Menu/ValidatorTest.h"
@@ -26,6 +27,8 @@ int main(int argc, char *argv[])
 
     menu::Menu *menu = new menu::Menu();
     menu::Launcher *launcher = new menu::ThreadLauncher(); //TODO: set HierhinContextSetter
+    HierhinContextSetter *cntx = new HierhinContextSetter();
+    launcher->setContextSetter(cntx);
     menu->setLauncher(launcher);
 
     new HierhinDestructor(&a, menu, launcher);
