@@ -14,6 +14,7 @@
 
 #include <menu/Console.h>
 #include <menu/util/SetLanguage.h>
+#include <menu/SyncLauncher.h>
 
 #include <QCoreApplication>
 
@@ -26,7 +27,10 @@ int main(int argc, char *argv[])
     QCoreApplication a(argc, argv);
 
     menu::Menu *menu = new menu::Menu();
-    menu::Launcher *launcher = new menu::ThreadLauncher(); //TODO: set HierhinContextSetter
+
+//    menu::Launcher *launcher = new menu::ThreadLauncher();
+    menu::Launcher *launcher = new menu::SyncLauncher();
+
     HierhinContextSetter *cntx = new HierhinContextSetter();
     launcher->setContextSetter(cntx);
     menu->setLauncher(launcher);
