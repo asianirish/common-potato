@@ -58,6 +58,25 @@ void ItemDef::validateProperty(const QString &name, const QVariant &value)
     propDef.validate(value);
 }
 
+const QMap<QString, CommandDef> &ItemDef::commandDefs() const
+{
+    return _commandDefs;
+}
+
+void ItemDef::setCommandDefs(const QMap<QString, CommandDef> &newCommandDefs)
+{
+    _commandDefs = newCommandDefs;
+}
+
+void ItemDef::insertCommandDef(const CommandDef &commandDef)
+{
+    if (commandDef.name().isEmpty()) {
+        throw "EmptyCommandException"; //TODO: Exception class
+    }
+
+    _commandDefs.insert(commandDef.name(), commandDef);
+}
+
 bool ItemDef::toBool() const
 {
     if (!_isLimitedPropertyList) {

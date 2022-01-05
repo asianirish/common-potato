@@ -14,7 +14,7 @@ using namespace def;
 
 class Item;
 
-class Essence : public QObject
+class [[deprecated("use ItemDef::_commandDefs instead")]] Essence : public QObject
 {
     Q_OBJECT
 public:
