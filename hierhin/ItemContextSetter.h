@@ -5,12 +5,20 @@
 
 namespace hierhin {
 
+class Item;
+
 class ItemContextSetter : public menu::ContextSetter
 {
 public:
     ItemContextSetter();
 
     void setActionContext(menu::Action *action) override;
+
+    Item *item() const;
+    void setItem(Item *newItem);
+
+private:
+    Item *_item;
 };
 
 } // namespace hierhin
