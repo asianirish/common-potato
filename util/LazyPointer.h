@@ -17,9 +17,9 @@ public:
 
     LazyPointer(const QString &defaultClassName) : _className(defaultClassName) {}
 
-    ~LazyPointer() {
-        _ptr.clear();
-    }
+//    ~LazyPointer() {
+//        _ptr.clear();
+//    }
 
     QString className() const {
         return _className;
