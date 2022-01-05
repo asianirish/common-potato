@@ -40,7 +40,7 @@ protected:
     virtual QMap<QString, def::CommandDef> commandDefs() const; //TODO: or inside def::EssenceDef
 
 private:
-    static menu::ThreadLauncher *_launcher; //where to delete?
+    static menu::ThreadLauncher *_launcher; //TODO: where to delete _launcher?
 
 signals:
 
