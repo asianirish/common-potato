@@ -16,6 +16,8 @@
 #include <menu/util/SetLanguage.h>
 #include <menu/SyncLauncher.h>
 
+#include <hierhin/ItemContextSetter.h>
+
 #include <QCoreApplication>
 
 #include <QTranslator>
@@ -34,6 +36,8 @@ int main(int argc, char *argv[])
     HierhinContextSetter *cntx = new HierhinContextSetter();
     launcher->setContextSetter(cntx);
     menu->setLauncher(launcher);
+
+    hierhin::ItemContextSetter *itemContextSetter = new hierhin::ItemContextSetter();
 
     new HierhinDestructor(&a, menu, launcher);
 
