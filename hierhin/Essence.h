@@ -4,6 +4,8 @@
 #include "def/NodeDef.h"
 #include "def/CommandDef.h"
 
+#include <menu/ThreadLauncher.h>
+
 #include <QObject>
 
 namespace hierhin {
@@ -36,6 +38,9 @@ protected:
     virtual void executeImpl(Item *item, const QString &command, const QVariantList &args) const = 0;
 
     virtual QMap<QString, def::CommandDef> commandDefs() const; //TODO: or inside def::EssenceDef
+
+private:
+    static menu::ThreadLauncher *_launcher; //where to delete?
 
 signals:
 

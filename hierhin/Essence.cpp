@@ -7,10 +7,13 @@
 namespace hierhin {
 
 const QString Essence::DEFAULT_COMMAND("command");
+menu::ThreadLauncher *Essence::_launcher = nullptr;
 
 Essence::Essence() : QObject(nullptr)
 {
-
+    if (!_launcher) {
+        _launcher = new menu::ThreadLauncher();
+    }
 }
 
 void Essence::execute(Item *item, const QString &command, const QVariantList &args) const
@@ -25,6 +28,7 @@ void Essence::execute(Item *item, const QString &command, const QVariantList &ar
     auto validatedArgs = cmdDef.validate(args);
 
     if (className() == item->essenceClassName()) {
+        //TODO: use _launcher to connect & execute
         executeImpl(item, command, validatedArgs);
     } else {
         throw ex::IncompatibleEssenceExecution(className(), item->essenceClassName());
