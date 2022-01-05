@@ -29,6 +29,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 HEADERS += \
     Essence.h \
     Item.h \
+    ItemAction.h \
     ItemContextSetter.h \
     ItemCreator.h \
     LinkedEssence.h \
@@ -62,6 +63,7 @@ HEADERS += \
 SOURCES += \
     Essence.cpp \
     Item.cpp \
+    ItemAction.cpp \
     ItemContextSetter.cpp \
     ItemCreator.cpp \
     LinkedEssence.cpp \
