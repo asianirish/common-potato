@@ -34,6 +34,7 @@ SOURCES += main.cpp \
     Menu/NumberTest.cpp \
     Menu/TransTest.cpp \
     Menu/ValidatorTest.cpp \
+    Test/PlusValue.cpp \
     Test/TestEssenceA.cpp \
     Test/TestEssenceB.cpp \
     Test/TestEssenceC.cpp \
@@ -57,6 +58,7 @@ HEADERS += \
     Menu/NumberTest.h \
     Menu/TransTest.h \
     Menu/ValidatorTest.h \
+    Test/PlusValue.h \
     Test/TestEssenceA.h \
     Test/TestEssenceB.h \
     Test/TestEssenceC.h \
