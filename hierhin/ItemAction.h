@@ -16,7 +16,7 @@ public:
     void setItem(Item *item);
 
 protected:
-    QVariant simplyAct(const QVariantList &args) override;
+    QVariant simplyAct(const QVariantList &args) final;
 
 private:
     Item *_item;
