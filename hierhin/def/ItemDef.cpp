@@ -58,23 +58,23 @@ void ItemDef::validateProperty(const QString &name, const QVariant &value)
     propDef.validate(value);
 }
 
-const QMap<QString, MethodDef> &ItemDef::commandDefs() const
+const QMap<QString, MethodDef> &ItemDef::methodDefs() const
 {
-    return _commandDefs;
+    return _methodDefs;
 }
 
-void ItemDef::setCommandDefs(const QMap<QString, MethodDef> &newCommandDefs)
+void ItemDef::setMethodDefs(const QMap<QString, MethodDef> &newMethodDefs)
 {
-    _commandDefs = newCommandDefs;
+    _methodDefs = newMethodDefs;
 }
 
-void ItemDef::insertCommandDef(const MethodDef &commandDef)
+void ItemDef::insertMethodDef(const MethodDef &methodDef)
 {
-    if (commandDef.name().isEmpty()) {
-        throw "EmptyCommandException"; //TODO: Exception class
+    if (methodDef.name().isEmpty()) {
+        throw "EmptyMethodException"; //TODO: Exception class
     }
 
-    _commandDefs.insert(commandDef.name(), commandDef);
+    _methodDefs.insert(methodDef.name(), methodDef);
 }
 
 bool ItemDef::toBool() const

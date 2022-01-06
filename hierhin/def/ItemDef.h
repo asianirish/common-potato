@@ -27,14 +27,14 @@ public:
 
     void validateProperty(const QString &name, const QVariant &value);
 
-    const QMap<QString, MethodDef> &commandDefs() const;
-    void setCommandDefs(const QMap<QString, MethodDef> &newCommandDefs);
-    void insertCommandDef(const MethodDef &commandDef);
+    const QMap<QString, MethodDef> &methodDefs() const;
+    void setMethodDefs(const QMap<QString, MethodDef> &newMethodDefs);
+    void insertMethodDef(const MethodDef &methodDef);
 
 private:
     bool _isLimitedPropertyList; // limited to the specified set of definitions
     QMap<QString, PropertyDef> _propertyDefs;
-    QMap<QString, MethodDef> _commandDefs;
+    QMap<QString, MethodDef> _methodDefs;
 
     virtual bool toBool() const;
 };
