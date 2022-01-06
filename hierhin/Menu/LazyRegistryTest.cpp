@@ -27,9 +27,9 @@ QVariant LazyRegistryTest::simplyAct(const QVariantList &args)
         qDebug() << "str:" << lr.obj(0);
         lr.obj(1) = "HI";
         qDebug() << "str:" << lr.obj(1);
-
+        lr.ptr(1)->append(" THERE");
+        qDebug() << "str:" << lr.obj(1);
     }
-
 
     return true;
 }
