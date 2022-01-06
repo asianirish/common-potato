@@ -22,11 +22,8 @@ public:
 
     explicit Launcher(QObject *parent = nullptr);
 
-    void launch(const QString &actionClassName, const QVariantList &args);
-    void launch(const QString &actionClassName, const QVariantMap &namedArgs);
-
-    ContextSetter *contextSetter() const;
-    void setContextSetter(ContextSetter *contextSetter);
+    void launch(const QString &actionClassName, const QVariantList &args, ContextSetter *cnxtSetter);
+    void launch(const QString &actionClassName, const QVariantMap &namedArgs, ContextSetter *cnxtSetter);
 
     static void setActionIdGenClassName(const QString &className);
 
@@ -34,11 +31,10 @@ protected:
     virtual void launchImpl(Action *action, const QVariantList &args, const QString &actionId) = 0;
 
 private:
-    ContextSetter *_contextSetter; //TODO: use as an arg of launch() not as a member
     QMap<QString, Action *> _pendingActions;
     static potato_util::LazyPointer<uniq::Value<QString>> _actionIdGen;
 
-    QString initAction(const QString &actionClassName);
+    QString initAction(const QString &actionClassName, ContextSetter *cnxtSetter);
 
 signals:
     void ready(const QVariant &result);

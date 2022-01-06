@@ -13,36 +13,25 @@ const QString Launcher::DEFAULT_ACTION_ID_GENERATOR_CLASS_NAME("uniq::TimeQStrin
 potato_util::LazyPointer<uniq::Value<QString>> Launcher::_actionIdGen(Launcher::DEFAULT_ACTION_ID_GENERATOR_CLASS_NAME);
 
 
-Launcher::Launcher(QObject *parent) : QObject(parent),
-    _contextSetter(nullptr)
+Launcher::Launcher(QObject *parent) : QObject(parent)
 {
 
 }
 
-void Launcher::launch(const QString &actionClassName, const QVariantList &args)
+void Launcher::launch(const QString &actionClassName, const QVariantList &args, ContextSetter *cnxtSetter)
 {
-    QString actionId = initAction(actionClassName);
+    QString actionId = initAction(actionClassName, cnxtSetter);
     Action *action = _pendingActions.value(actionId);
     launchImpl(action, args, actionId);
 }
 
-void Launcher::launch(const QString &actionClassName, const QVariantMap &namedArgs)
+void Launcher::launch(const QString &actionClassName, const QVariantMap &namedArgs, ContextSetter *cnxtSetter)
 {
-    QString actionId = initAction(actionClassName);
+    QString actionId = initAction(actionClassName, cnxtSetter);
     Action *action = _pendingActions.value(actionId);
     QVariantList args;
     action->toPositionalArguments(namedArgs, args);
     launchImpl(action, args, actionId);
-}
-
-ContextSetter *Launcher::contextSetter() const
-{
-    return _contextSetter;
-}
-
-void Launcher::setContextSetter(ContextSetter *contextSetter)
-{
-    _contextSetter = contextSetter;
 }
 
 void Launcher::setActionIdGenClassName(const QString &className)
@@ -50,13 +39,13 @@ void Launcher::setActionIdGenClassName(const QString &className)
     _actionIdGen.setClassName(className);
 }
 
-QString Launcher::initAction(const QString &actionClassName)
+QString Launcher::initAction(const QString &actionClassName, ContextSetter *cnxtSetter)
 {
     // will delete in Launcher::onActionComplete
     Action *action = potato_util::Factory<Action>::create(actionClassName.toStdString());
 
-    if (_contextSetter) {
-        _contextSetter->setActionContext(action);
+    if (cnxtSetter) {
+        cnxtSetter->setActionContext(action);
     }
 
     QString actionId = _actionIdGen->value();

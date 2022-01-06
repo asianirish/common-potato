@@ -69,9 +69,9 @@ void Menu::exec(const CommandInfo &commandInfo)
     QString actionClassName = _commands.value(commandInfo.name());
 
     if (commandInfo.isNamedArgs()) {
-        _launcher->launch(actionClassName, commandInfo.namedArgs());
+        _launcher->launch(actionClassName, commandInfo.namedArgs(), _contextSetter);
     } else {
-        _launcher->launch(actionClassName, commandInfo.args());
+        _launcher->launch(actionClassName, commandInfo.args(), _contextSetter);
     }
 }
 

@@ -21,12 +21,12 @@ QVariant LauncherTest::simplyAct(const QVariantList &args)
 {
     Q_UNUSED(args)
 
-    _threadLauncher->launch("menu::math::Inc", {120});
-    _threadLauncher->launch("menu::math::Div", {132, 4});
+    _threadLauncher->launch("menu::math::Inc", {120}, nullptr);
+    _threadLauncher->launch("menu::math::Div", {132, 4}, nullptr);
 
     SyncLauncher syncLauncher;
-    syncLauncher.launch("menu::math::Inc", {12});
-    syncLauncher.launch("menu::math::Div", {13, 4});
+    syncLauncher.launch("menu::math::Inc", {12}, nullptr);
+    syncLauncher.launch("menu::math::Div", {13, 4}, nullptr);
 
     return true;
 }

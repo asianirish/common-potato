@@ -34,8 +34,6 @@ int main(int argc, char *argv[])
 
 //    menu::Launcher *launcher = new menu::ThreadLauncher();
     menu::Launcher *launcher = new menu::SyncLauncher();
-
-    launcher->setContextSetter(cntx);
     menu->setLauncher(launcher);
 
     hierhin::ItemContextSetter *itemContextSetter = new hierhin::ItemContextSetter();
