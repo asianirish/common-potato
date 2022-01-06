@@ -12,7 +12,7 @@ template <typename Base>
 class SingletonRegistry
 {
 public:
-    static QSharedPointer<Base> ptr(const QString className);
+    static QSharedPointer<Base> ptr(const QString &className);
 private:
     static QMap<QString, LazyPointer<Base> > _objects;
 };
@@ -21,7 +21,7 @@ template<typename Base>
 QMap<QString, LazyPointer<Base> > SingletonRegistry<Base>::_objects;
 
 template<typename Base>
-QSharedPointer<Base> SingletonRegistry<Base>::ptr(const QString className)
+QSharedPointer<Base> SingletonRegistry<Base>::ptr(const QString &className)
 {
     if (!_objects.contains(className)) {
         LazyPointer<Base> lptr(className);
