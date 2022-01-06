@@ -59,8 +59,6 @@ int main(int argc, char *argv[])
 
     ADD_MENU_ITEM(console, tlink, LinkTest)
 
-    ADD_MENU_ITEM(console, tcmd, CommandTest)
-
     ADD_MENU_ITEM(console, tlaunch, LauncherTest)
 
     ADD_MENU_ITEM(console, tlazy, LazyRegistryTest)

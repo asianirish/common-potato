@@ -15,7 +15,7 @@ CommandTest::CommandTest()
 QVariant CommandTest::simplyAct(const QVariantList &args)
 {
     Q_UNUSED(args)
-
+/*
     try {
     auto nd = NodePtr(new direct::NodeHashImpl());
     nd->setEssenceClassName("TestEssenceA");
@@ -44,6 +44,6 @@ QVariant CommandTest::simplyAct(const QVariantList &args)
     } catch (ex::Exception &e) {
         qDebug() << "AN ERROR HAS OCCURRED:" << e.cause();
     }
-
+*/
     return true;
 }
