@@ -27,5 +27,6 @@ HEADERS += \
     Destructor.h \
     Factory.h \
     LazyPointer.h \
+    LazyRegistry.h \
     SingletonRegistry.h \
     gfunc.h
