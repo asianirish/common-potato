@@ -29,11 +29,12 @@ int main(int argc, char *argv[])
     QCoreApplication a(argc, argv);
 
     menu::Menu *menu = new menu::Menu();
+    HierhinContextSetter *cntx = new HierhinContextSetter();
+    menu->setContextSetter(cntx);
 
 //    menu::Launcher *launcher = new menu::ThreadLauncher();
     menu::Launcher *launcher = new menu::SyncLauncher();
 
-    HierhinContextSetter *cntx = new HierhinContextSetter();
     launcher->setContextSetter(cntx);
     menu->setLauncher(launcher);
 
