@@ -58,17 +58,17 @@ void ItemDef::validateProperty(const QString &name, const QVariant &value)
     propDef.validate(value);
 }
 
-const QMap<QString, CommandDef> &ItemDef::commandDefs() const
+const QMap<QString, MethodDef> &ItemDef::commandDefs() const
 {
     return _commandDefs;
 }
 
-void ItemDef::setCommandDefs(const QMap<QString, CommandDef> &newCommandDefs)
+void ItemDef::setCommandDefs(const QMap<QString, MethodDef> &newCommandDefs)
 {
     _commandDefs = newCommandDefs;
 }
 
-void ItemDef::insertCommandDef(const CommandDef &commandDef)
+void ItemDef::insertCommandDef(const MethodDef &commandDef)
 {
     if (commandDef.name().isEmpty()) {
         throw "EmptyCommandException"; //TODO: Exception class

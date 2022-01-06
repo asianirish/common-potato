@@ -34,9 +34,9 @@ HEADERS += \
     ItemCreator.h \
     LinkedEssence.h \
     Node.h \
-    def/CommandDef.h \
     def/ItemDef.h \
     def/ItemReq.h \
+    def/MethodDef.h \
     def/NodeDef.h \
     def/PropertyDef.h \
     direct/ItemCreatorImpl.h \
@@ -68,9 +68,9 @@ SOURCES += \
     ItemCreator.cpp \
     LinkedEssence.cpp \
     Node.cpp \
-    def/CommandDef.cpp \
     def/ItemDef.cpp \
     def/ItemReq.cpp \
+    def/MethodDef.cpp \
     def/NodeDef.cpp \
     def/PropertyDef.cpp \
     ex/CanNotBeEssenceless.cpp \

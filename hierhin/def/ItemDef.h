@@ -2,7 +2,7 @@
 #define HIERHIN_DEF_ITEMDEF_H
 
 #include "PropertyDef.h"
-#include "CommandDef.h"
+#include "MethodDef.h"
 
 #include <QString>
 #include <QMap>
@@ -27,14 +27,14 @@ public:
 
     void validateProperty(const QString &name, const QVariant &value);
 
-    const QMap<QString, CommandDef> &commandDefs() const;
-    void setCommandDefs(const QMap<QString, CommandDef> &newCommandDefs);
-    void insertCommandDef(const CommandDef &commandDef);
+    const QMap<QString, MethodDef> &commandDefs() const;
+    void setCommandDefs(const QMap<QString, MethodDef> &newCommandDefs);
+    void insertCommandDef(const MethodDef &commandDef);
 
 private:
     bool _isLimitedPropertyList; // limited to the specified set of definitions
     QMap<QString, PropertyDef> _propertyDefs;
-    QMap<QString, CommandDef> _commandDefs;
+    QMap<QString, MethodDef> _commandDefs;
 
     virtual bool toBool() const;
 };

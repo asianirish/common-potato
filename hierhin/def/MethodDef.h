@@ -10,12 +10,12 @@ namespace def {
 
 typedef PropertyDef ArgDef;
 
-class CommandDef
+class MethodDef
 {
 public:
-    CommandDef();
-    CommandDef(const QString &name, const QList<ArgDef> &argDefs = {});
-    CommandDef(const QString &name, int argNum);
+    MethodDef();
+    MethodDef(const QString &name, const QList<ArgDef> &argDefs = {});
+    MethodDef(const QString &name, int argNum);
 
     const QString &name() const;
     void setName(const QString &newName);

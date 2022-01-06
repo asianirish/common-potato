@@ -19,14 +19,14 @@ void LinkedEssence::executeImpl(Item *item, const QString &command, const QVaria
     executeLinkedEssence(item, command, args);
 }
 
-QMap<QString, CommandDef> LinkedEssence::commandDefs() const
+QMap<QString, MethodDef> LinkedEssence::commandDefs() const
 {
     auto mp = Essence::commandDefs();
 
     ArgDef linkTargetArgDef;
     linkTargetArgDef.setName("target");
 //TODO:    linkTargetArgDef.addValidator()
-    CommandDef linkCommandDef("link", {linkTargetArgDef});
+    MethodDef linkCommandDef("link", {linkTargetArgDef});
     mp.insert("link", linkCommandDef);
 
     return mp;

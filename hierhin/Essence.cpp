@@ -58,9 +58,9 @@ bool Essence::isKindOf(const QString &className) const
     return classNames().contains(className);
 }
 
-QMap<QString, CommandDef> Essence::commandDefs() const
+QMap<QString, MethodDef> Essence::commandDefs() const
 {
-    return {{DEFAULT_COMMAND, CommandDef(DEFAULT_COMMAND)}};
+    return {{DEFAULT_COMMAND, MethodDef(DEFAULT_COMMAND)}};
 }
 
 

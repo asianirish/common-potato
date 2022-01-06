@@ -17,7 +17,7 @@ public:
 protected:
     void executeImpl(Item *item, const QString &command, const QVariantList &args) const final;
 
-    QMap<QString, def::CommandDef> commandDefs() const override;
+    QMap<QString, def::MethodDef> commandDefs() const override;
 
     void linkItem(Item *item, const nav::ItemRef &iRef) const;
 

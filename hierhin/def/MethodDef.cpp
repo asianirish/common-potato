@@ -1,23 +1,23 @@
-#include "CommandDef.h"
+#include "MethodDef.h"
 
 #include "ex/IncompatibleArgNumber.h"
 
 namespace hierhin {
 namespace def {
 
-CommandDef::CommandDef() : CommandDef(QString())
+MethodDef::MethodDef() : MethodDef(QString())
 {
 
 }
 
-CommandDef::CommandDef(const QString &name, const QList<ArgDef> &argDefs) :
+MethodDef::MethodDef(const QString &name, const QList<ArgDef> &argDefs) :
     _name(name),
     _argDefs(argDefs)
 {
 
 }
 
-CommandDef::CommandDef(const QString &name, int argNum) :
+MethodDef::MethodDef(const QString &name, int argNum) :
     _name(name)
 {
     for (int i = 0; i < argNum; i++) {
@@ -25,32 +25,32 @@ CommandDef::CommandDef(const QString &name, int argNum) :
     }
 }
 
-const QString &CommandDef::name() const
+const QString &MethodDef::name() const
 {
     return _name;
 }
 
-void CommandDef::setName(const QString &newName)
+void MethodDef::setName(const QString &newName)
 {
     _name = newName;
 }
 
-const QList<ArgDef> &CommandDef::argDefs() const
+const QList<ArgDef> &MethodDef::argDefs() const
 {
     return _argDefs;
 }
 
-void CommandDef::setArgDefs(const QList<ArgDef> &newArgDefs)
+void MethodDef::setArgDefs(const QList<ArgDef> &newArgDefs)
 {
     _argDefs = newArgDefs;
 }
 
-void CommandDef::addArgDef(const ArgDef argDef)
+void MethodDef::addArgDef(const ArgDef argDef)
 {
     _argDefs.append(argDef);
 }
 
-QVariantList CommandDef::validate(const QVariantList &args)
+QVariantList MethodDef::validate(const QVariantList &args)
 {
     int argsSz = args.size();
     int argDefSz = _argDefs.size();

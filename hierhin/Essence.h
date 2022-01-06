@@ -2,7 +2,7 @@
 #define HIERHIN_ESSENCE_H
 
 #include "def/NodeDef.h"
-#include "def/CommandDef.h"
+#include "def/MethodDef.h"
 
 #include <menu/ThreadLauncher.h>
 
@@ -37,7 +37,7 @@ public:
 protected:
     virtual void executeImpl(Item *item, const QString &command, const QVariantList &args) const = 0;
 
-    virtual QMap<QString, def::CommandDef> commandDefs() const; //TODO: or inside def::EssenceDef
+    virtual QMap<QString, def::MethodDef> commandDefs() const; //TODO: or inside def::EssenceDef
 
 private:
     static menu::ThreadLauncher *_launcher; //TODO: where to delete _launcher?
