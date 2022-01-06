@@ -19,7 +19,7 @@ HierhinDestructor::~HierhinDestructor()
 void HierhinDestructor::cleanUp()
 {
     qDebug() << "CLEANING UP...";
-    menu::ContextSetter *cntx = _launcher->contextSetter();
+    menu::ContextSetter *cntx = _menu->contextSetter();
     delete cntx;
     delete _menu;
     delete _launcher;
