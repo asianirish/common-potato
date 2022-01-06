@@ -1,6 +1,7 @@
 #include "Item.h"
 #include "Essence.h"
 #include "Node.h"
+#include "ItemContextSetter.h"
 #include "ex/UnregisteredClassException.h"
 #include "nav/ItemRef.h"
 
@@ -126,11 +127,16 @@ void Item::setProperty(const QString &name, const QVariant &value)
 
 void Item::execute(const QString &command, const QVariantList &args)
 {
-    auto ptr = essencePtr();
+    auto lnch = launcher();
 
-    if (ptr) {
-        ptr->execute(this, command, args);
-    }
+    ItemContextSetter cntx;
+    cntx.setItem(this);
+
+    //TODO: connect (?)
+
+    lnch->launch(command, args, &cntx);
+
+    //TODO: return taskId (?)
 }
 
 NodeDef Item::definition() const
