@@ -11,6 +11,8 @@ class LazyRegistry
 {
 public:
     static QSharedPointer<T> ptr(const K &k);
+    static T &obj(const K &k);
+
 private:
     static QMap<K, QSharedPointer<T> > _objects;
 };
@@ -27,6 +29,12 @@ QSharedPointer<T> LazyRegistry<K,T>::ptr(const K &k)
     }
 
     return _objects.value(k);
+}
+
+template<typename K, typename T>
+T &LazyRegistry<K,T>::obj(const K &k)
+{
+    return *ptr(k);
 }
 
 } // namespace potato_util

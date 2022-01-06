@@ -22,7 +22,12 @@ QVariant LazyRegistryTest::simplyAct(const QVariantList &args)
     }
 
     {
-        qDebug() << "str:" << *lr.ptr(0);
+        qDebug() << "str:" << lr.obj(0);
+        lr.obj(0) = "BYE";
+        qDebug() << "str:" << lr.obj(0);
+        lr.obj(1) = "HI";
+        qDebug() << "str:" << lr.obj(1);
+
     }
 
 
