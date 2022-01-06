@@ -72,6 +72,8 @@ public:
     int launcherIndex() const;
     void setLauncherIndex(int launcherIndex);
 
+    QSharedPointer<menu::ThreadLauncher> launcher() const;
+
 protected:
     virtual ItemCreator *createCreator() const = 0;
 

@@ -5,6 +5,7 @@
 #include "nav/ItemRef.h"
 
 #include <util/SingletonRegistry.h>
+#include <util/LazyRegistry.h>
 
 #include <QJsonDocument>
 #include <QJsonObject>
@@ -230,6 +231,11 @@ int Item::launcherIndex() const
 void Item::setLauncherIndex(int launcherIndex)
 {
     _launcherIndex = launcherIndex;
+}
+
+QSharedPointer<menu::ThreadLauncher> Item::launcher() const
+{
+    return LazyRegistry<int, menu::ThreadLauncher>::ptr(_launcherIndex);
 }
 
 } // namespace hierhin
