@@ -34,7 +34,7 @@ protected:
     virtual void launchImpl(Action *action, const QVariantList &args, const QString &actionId) = 0;
 
 private:
-    ContextSetter *_contextSetter;
+    ContextSetter *_contextSetter; //TODO: use as an arg of launch() not as a member
     QMap<QString, Action *> _pendingActions;
     static potato_util::LazyPointer<uniq::Value<QString>> _actionIdGen;
 

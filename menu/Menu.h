@@ -4,6 +4,7 @@
 #include "type.h"
 #include "Action.h"
 #include "CommandTranslator.h"
+#include "ContextSetter.h"
 
 #include <uniq/Value.h>
 #include <util/LazyPointer.h>
@@ -41,8 +42,12 @@ public:
     Launcher *launcher() const;
     void setLauncher(Launcher *newLauncher);
 
+    ContextSetter *contextSetter() const;
+    void setContextSetter(ContextSetter *contextSetter);
+
 private:
     QMap<QString, QString> _commands;
+    ContextSetter *_contextSetter;
     Launcher *_launcher;
 
     static potato_util::LazyPointer<menu::CommandTranslator> _commandTranslator;
