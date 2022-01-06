@@ -25,7 +25,7 @@ void Menu::registerCommand(const QString &cmd, const QString actionClass)
 void Menu::exec(const QString &command)
 {
     auto commandInfo = Menu::_commandTranslator->translate(command);
-    execAlt(commandInfo);
+    exec(commandInfo);
 }
 
 void Menu::addItem(const QString &command, const QString &actionClassName)
@@ -53,7 +53,7 @@ void Menu::setLauncher(Launcher *newLauncher)
     connect(_launcher, &Launcher::ready, this, &Menu::onResult);
 }
 
-void Menu::execAlt(const CommandInfo &commandInfo)
+void Menu::exec(const CommandInfo &commandInfo)
 {
     QString actionClassName = _commands.value(commandInfo.name());
 

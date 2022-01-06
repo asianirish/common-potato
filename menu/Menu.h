@@ -47,7 +47,7 @@ private:
 
     static potato_util::LazyPointer<menu::CommandTranslator> _commandTranslator;
 
-    void execAlt(const CommandInfo &commandInfo);
+    void exec(const CommandInfo &commandInfo);
 
 signals:
     void ready(const QVariant &result);
