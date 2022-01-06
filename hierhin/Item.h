@@ -69,6 +69,9 @@ public:
 
     ItemPtr itemByProperty(const QString &name);
 
+    int launcherIndex() const;
+    void setLauncherIndex(int launcherIndex);
+
 protected:
     virtual ItemCreator *createCreator() const = 0;
 
@@ -77,6 +80,7 @@ private:
     QVariantMap _properties;
     static potato_util::LazyPointer<uniq::Value<Id>> _idGen;
     [[deprecated]] QString _essenceClassName;
+    int _launcherIndex;
 
     virtual void nodeToMap(QVariantMap &mp) const {
         Q_UNUSED(mp);

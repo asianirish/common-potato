@@ -20,7 +20,7 @@ const QString Item::BASE_TYPE_KEY("baseType");
 
 potato_util::LazyPointer<uniq::Value<Id>> Item::_idGen(Item::DEFAULT_ID_GEN_CLASS_NAME);
 
-Item::Item()
+Item::Item() : _launcherIndex(0)
 {
 
 }
@@ -220,6 +220,16 @@ ItemPtr Item::itemByProperty(const QString &name)
     QVariant var = property(name);
     nav::ItemRef ref = var.value<nav::ItemRef>();
     return ref.ptr(sharedFromThis());
+}
+
+int Item::launcherIndex() const
+{
+    return _launcherIndex;
+}
+
+void Item::setLauncherIndex(int launcherIndex)
+{
+    _launcherIndex = launcherIndex;
 }
 
 } // namespace hierhin
