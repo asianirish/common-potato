@@ -1,7 +1,8 @@
 #include "HierhinDestructor.h"
 
 #include <menu/ContextSetter.h>
-#include <util/LazyRegistry.h>
+#include <util/SingletonRegistry.h>
+#include <hierhin/Essence.h>
 
 #include <QDebug>
 
@@ -26,4 +27,5 @@ void HierhinDestructor::cleanUp()
     delete _launcher;
 
 //    potato_util::LazyRegistry<int, menu::SyncLauncher>::destruct();
+    potato_util::SingletonRegistry<hierhin::Essence>::destruct();
 }

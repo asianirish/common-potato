@@ -13,6 +13,10 @@ class SingletonRegistry
 {
 public:
     static QSharedPointer<Base> ptr(const QString &className);
+
+    static void destruct() {
+        _objects.clear();
+    }
 private:
     static QMap<QString, LazyPointer<Base> > _objects;
 };
