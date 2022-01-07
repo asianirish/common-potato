@@ -81,7 +81,7 @@ private:
     mutable Id _id;
     QVariantMap _properties;
     static potato_util::LazyPointer<uniq::Value<Id>> _idGen;
-    [[deprecated]] QString _essenceClassName;
+    QString _essenceClassName;
     int _launcherIndex;
 
     virtual void nodeToMap(QVariantMap &mp) const {
