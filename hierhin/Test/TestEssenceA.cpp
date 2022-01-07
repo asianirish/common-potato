@@ -67,10 +67,10 @@ void TestEssenceA::testInvoke(hierhin::Item *item)
 QMap<QString, MethodDef> TestEssenceA::commandDefs() const
 {
     auto mp = Essence::commandDefs();
-//    ArgDef argDef;
-//    argDef.setDefaultValue(10);
-    MethodDef methodDef("PlusValue", 1);
-//    methodDef.addArgDef(argDef);
+    ArgDef argDef;
+    argDef.setDefaultValue(10);
+    MethodDef methodDef("PlusValue");
+    methodDef.addArgDef(argDef);
 
 //    MethodDef sumCommandDef("sumValue", 2);
 

@@ -66,7 +66,7 @@ QVariantList MethodDef::validate(const QVariantList &args)
 
     QVariantList retArgs;
 
-    if (argsSz != mandatoryArgDefNum) {
+    if (argsSz < mandatoryArgDefNum) {
         throw ex::IncompatibleArgNumber(argsSz, mandatoryArgDefNum);
     }
 

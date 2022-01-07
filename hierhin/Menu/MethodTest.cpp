@@ -23,6 +23,10 @@ QVariant MethodTest::simplyAct(const QVariantList &args)
 
     nd->execute("PlusValue", {12});
 
-    qDebug().noquote() << "AFTER:" << nd->toJson();
+    qDebug().noquote() << "AFTER ARG == 12:" << nd->toJson();
+
+    nd->execute("PlusValue");
+
+    qDebug().noquote() << "AFTER EMPTY ARG LIST:" << nd->toJson();
     return true;
 }
