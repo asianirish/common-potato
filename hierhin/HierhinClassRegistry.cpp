@@ -14,6 +14,11 @@
 #include <menu/math/Div.h>
 #include <menu/math/Inc.h>
 
+#include <menu/SyncLauncher.h>
+#include <menu/ThreadLauncher.h>
+
+#include <util/ObjectRegistry.h>
+
 
 #include <QString>
 
@@ -33,6 +38,9 @@ void HierhinClassRegistry::registerAllClasses() const
     qRegisterMetaType<hierhin::nav::ItemRef>();
     QMetaType::registerConverter<hierhin::nav::ItemRef, QString>(&hierhin::nav::ItemRef::toString);
     QMetaType::registerConverter<QString, hierhin::nav::ItemRef>(hierhin::nav::stringToItemRef);
+
+    potato_util::ObjectRegistry<int, Launcher>::createObject<SyncLauncher>(0);
+    potato_util::ObjectRegistry<int, Launcher>::createObject<ThreadLauncher>(1);
 
     REGISTER_CLASS_FOR_UTIL_FACTORY(hierhin::Essence, TestEssenceA);
     REGISTER_CLASS_FOR_UTIL_FACTORY(hierhin::Essence, TestEssenceB);

@@ -2,6 +2,7 @@
 
 #include <menu/ContextSetter.h>
 #include <util/SingletonRegistry.h>
+#include <util/ObjectRegistry.h>
 #include <hierhin/Essence.h>
 
 #include <QDebug>
@@ -28,4 +29,5 @@ void HierhinDestructor::cleanUp()
 
 //    potato_util::LazyRegistry<int, menu::SyncLauncher>::destruct();
     potato_util::SingletonRegistry<hierhin::Essence>::destruct();
+    potato_util::ObjectRegistry<int, menu::Launcher>::destruct();
 }
