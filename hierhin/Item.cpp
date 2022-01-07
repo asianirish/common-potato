@@ -127,14 +127,12 @@ void Item::setProperty(const QString &name, const QVariant &value)
 
 void Item::execute(const QString &command, const QVariantList &args)
 {
+    auto ptr = essencePtr();
     auto lnch = launcher();
 
-    ItemContextSetter cntx;
-    cntx.setItem(this);
-
-    //TODO: connect (?)
-
-    lnch->launch(command, args, &cntx);
+    if (ptr) {
+        ptr->execute(this, command, args);
+    }
 
     //TODO: return taskId (?)
 }

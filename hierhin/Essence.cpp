@@ -1,5 +1,6 @@
 #include "Essence.h"
 #include "Item.h"
+#include "ItemContextSetter.h"
 
 #include <hierhin/ex/UnsupportedCommand.h>
 #include <hierhin/ex/IncompatibleEssenceExecution.h>
@@ -28,8 +29,13 @@ void Essence::execute(Item *item, const QString &command, const QVariantList &ar
     auto validatedArgs = cmdDef.validate(args);
 
     if (className() == item->essenceClassName()) {
-        //TODO: use _launcher to connect & execute
-        executeImpl(item, command, validatedArgs);
+        auto launcher = item->launcher();
+
+        ItemContextSetter cntx;
+        cntx.setItem(item);
+        //TODO: connect launcher
+        launcher->launch(command, args, &cntx);
+//        executeImpl(item, command, validatedArgs);
     } else {
         throw ex::IncompatibleEssenceExecution(className(), item->essenceClassName());
     }
