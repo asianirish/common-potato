@@ -2,10 +2,12 @@
 #include "Test/TestEssenceA.h"
 #include "Test/TestEssenceB.h"
 #include "Test/TestEssenceC.h"
+#include "Test/PlusValue.h"
 
 #include "stock_v0/Exchange.h"
 
 #include <hierhin/nav/ItemRef.h>
+#include <hierhin/ItemAction.h>
 
 #include <util/Factory.h>
 
@@ -40,6 +42,8 @@ void HierhinClassRegistry::registerAllClasses() const
 
     REGISTER_CLASS_FOR_UTIL_FACTORY(menu::Action, menu::math::Div);
     REGISTER_CLASS_FOR_UTIL_FACTORY(menu::Action, menu::math::Inc);
+
+    REGISTER_CLASS_FOR_UTIL_FACTORY(hierhin::ItemAction, PlusValue);
 
     //TODO: add your code here
 }
