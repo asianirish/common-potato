@@ -43,7 +43,7 @@ void HierhinClassRegistry::registerAllClasses() const
     REGISTER_CLASS_FOR_UTIL_FACTORY(menu::Action, menu::math::Div);
     REGISTER_CLASS_FOR_UTIL_FACTORY(menu::Action, menu::math::Inc);
 
-    REGISTER_CLASS_FOR_UTIL_FACTORY(hierhin::ItemAction, PlusValue);
+    REGISTER_CLASS_FOR_UTIL_FACTORY(menu::Action, PlusValue);
 
     //TODO: add your code here
 }
