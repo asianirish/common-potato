@@ -37,8 +37,6 @@ int main(int argc, char *argv[])
     menu::Launcher *launcher = new menu::SyncLauncher();
     menu->setLauncher(launcher);
 
-    hierhin::ItemContextSetter *itemContextSetter = new hierhin::ItemContextSetter();
-
     new HierhinDestructor(&a, menu, launcher);
 
     auto registry = new HierhinClassRegistry();
