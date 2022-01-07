@@ -13,6 +13,10 @@ public:
     static QSharedPointer<T> ptr(const K &k);
     static T &obj(const K &k);
 
+    static void destruct() {
+        _objects.clear();
+    }
+
 private:
     static QMap<K, QSharedPointer<T> > _objects;
 };

@@ -1,6 +1,7 @@
 #include "HierhinDestructor.h"
 
 #include <menu/ContextSetter.h>
+#include <util/LazyRegistry.h>
 
 #include <QDebug>
 
@@ -23,4 +24,6 @@ void HierhinDestructor::cleanUp()
     delete cntx;
     delete _menu;
     delete _launcher;
+
+//    potato_util::LazyRegistry<int, menu::SyncLauncher>::destruct();
 }
