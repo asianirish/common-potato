@@ -4,6 +4,7 @@
 #include "ItemContextSetter.h"
 #include "ex/UnregisteredClassException.h"
 #include "nav/ItemRef.h"
+#include "menu/SyncLauncher.h"
 
 #include <util/SingletonRegistry.h>
 #include <util/LazyRegistry.h>
@@ -237,9 +238,10 @@ void Item::setLauncherIndex(int launcherIndex)
     _launcherIndex = launcherIndex;
 }
 
-QSharedPointer<menu::ThreadLauncher> Item::launcher() const
+QSharedPointer<menu::Launcher> Item::launcher() const
 {
-    return LazyRegistry<int, menu::ThreadLauncher>::ptr(_launcherIndex);
+    //TODO: define a launcher class here (not LazyRegistry)
+    return LazyRegistry<int, menu::SyncLauncher>::ptr(_launcherIndex);
 }
 
 } // namespace hierhin
