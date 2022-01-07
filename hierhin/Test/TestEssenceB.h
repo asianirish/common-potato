@@ -13,8 +13,6 @@ public:
 
     NodeDef nodeDef() const override;
 
-protected:
-    void executeImpl(hierhin::Item *item, const QString &command, const QVariantList &args) const override;
 };
 
 #endif // TESTESSENCEB_H

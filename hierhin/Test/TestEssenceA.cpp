@@ -64,29 +64,6 @@ void TestEssenceA::testInvoke(hierhin::Item *item)
     QMetaObject::invokeMethod(this, "setElite", Qt::DirectConnection, Q_ARG(hierhin::Item*, item));
 }
 
-void TestEssenceA::executeImpl(hierhin::Item *item, const QString &command, const QVariantList &args) const
-{
-    Q_UNUSED(command)
-    Q_UNUSED(args)
-
-    if (command == "doubleValue") {
-        int value = item->property("value").toInt();
-        item->setProperty("value", value * 2);
-    } else if (command == "multValue") {
-        int value = item->property("value").toInt();
-        int arg = args.at(0).toInt();
-        item->setProperty("value", value * arg);
-    } else if (command == "sumValue") {
-        int arg0 = args.at(0).toInt();
-        int arg1 = args.at(1).toInt();
-
-        item->setProperty("value", arg0 + arg1);
-    } else if (command == "invoke") {
-        TestEssenceA *nonConstItem = (TestEssenceA *)this;
-        QMetaObject::invokeMethod(nonConstItem, "setElite", Qt::DirectConnection, Q_ARG(hierhin::Item*, item));
-    }
-}
-
 QMap<QString, MethodDef> TestEssenceA::commandDefs() const
 {
     auto mp = Essence::commandDefs();

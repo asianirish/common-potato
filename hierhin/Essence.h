@@ -35,8 +35,6 @@ public:
     bool isKindOf(const QString &className) const;
 
 protected:
-    virtual void executeImpl(Item *item, const QString &command, const QVariantList &args) const = 0;
-
     virtual QMap<QString, def::MethodDef> commandDefs() const; //TODO: or inside def::EssenceDef
 
 private:

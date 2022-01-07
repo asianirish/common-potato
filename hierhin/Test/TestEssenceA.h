@@ -17,8 +17,6 @@ public:
     void testInvoke(hierhin::Item *item);
 
 protected:
-    void executeImpl(hierhin::Item *item, const QString &command, const QVariantList &args) const override;
-
     QMap<QString, MethodDef> commandDefs() const override;
 
 private:

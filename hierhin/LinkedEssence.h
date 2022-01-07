@@ -15,13 +15,9 @@ public:
     LinkedEssence();
 
 protected:
-    void executeImpl(Item *item, const QString &command, const QVariantList &args) const final;
-
     QMap<QString, def::MethodDef> commandDefs() const override;
 
     void linkItem(Item *item, const nav::ItemRef &iRef) const;
-
-    virtual void executeLinkedEssence(Item *item, const QString &command, const QVariantList &args) const = 0;
 };
 
 } // namespace def

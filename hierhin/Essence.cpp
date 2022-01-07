@@ -36,7 +36,6 @@ void Essence::execute(Item *item, const QString &command, const QVariantList &ar
 
         //TODO: connect launcher
         launcher->launch(command, validatedArgs, &cntx);
-//        executeImpl(item, command, validatedArgs);
     } else {
         throw ex::IncompatibleEssenceExecution(className(), item->essenceClassName());
     }
