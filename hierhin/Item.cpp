@@ -7,7 +7,7 @@
 #include "menu/SyncLauncher.h"
 
 #include <util/SingletonRegistry.h>
-#include <util/LazyRegistry.h>
+#include <util/ObjectRegistry.h>
 
 #include <QJsonDocument>
 #include <QJsonObject>
@@ -241,7 +241,7 @@ void Item::setLauncherIndex(int launcherIndex)
 QSharedPointer<menu::Launcher> Item::launcher() const
 {
     //TODO: define a launcher class here (not LazyRegistry)
-    return LazyRegistry<int, menu::SyncLauncher>::ptr(_launcherIndex);
+    return ObjectRegistry<int, menu::Launcher>::ptr(_launcherIndex);
 }
 
 } // namespace hierhin
