@@ -40,8 +40,7 @@ SOURCES += main.cpp \
     Test/PlusValue.cpp \
     Test/TestEssenceA.cpp \
     Test/TestEssenceB.cpp \
-    Test/TestEssenceC.cpp \
-    stock_v0/Exchange.cpp
+    Test/TestEssenceC.cpp
 
 
 # Default rules for deployment.
@@ -67,7 +66,6 @@ HEADERS += \
     Test/PlusValue.h \
     Test/TestEssenceA.h \
     Test/TestEssenceB.h \
-    Test/TestEssenceC.h \
-    stock_v0/Exchange.h
+    Test/TestEssenceC.h
 
 
