@@ -24,8 +24,6 @@ public:
 
     virtual ~Essence() = default;
 
-    void execute(Item *item, const QString &command = DEFAULT_COMMAND, const QVariantList &args = QVariantList()) const;
-
     virtual NodeDef nodeDef() const = 0; //TODO: non-virtual
 
     QString className() const;

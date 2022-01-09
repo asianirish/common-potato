@@ -2,9 +2,6 @@
 #include "Item.h"
 #include "ItemContextSetter.h"
 
-#include <hierhin/ex/UnsupportedCommand.h>
-#include <hierhin/ex/IncompatibleEssenceExecution.h>
-
 namespace hierhin {
 
 const QString Essence::DEFAULT_COMMAND("command");
@@ -14,30 +11,6 @@ Essence::Essence() : QObject(nullptr)
 {
     if (!_launcher) {
         _launcher = new menu::ThreadLauncher();
-    }
-}
-
-void Essence::execute(Item *item, const QString &command, const QVariantList &args) const
-{
-    auto cmdDefs = methodDefs();
-
-    if (!cmdDefs.contains(command)) {
-        throw ex::UnsupportedCommand(command);
-    }
-
-    auto cmdDef = cmdDefs.value(command);
-    auto validatedArgs = cmdDef.validate(args);
-
-    if (className() == item->essenceClassName()) {
-        auto launcher = item->launcher();
-
-        ItemContextSetter cntx;
-        cntx.setItem(item);
-
-        //TODO: connect launcher
-        launcher->launch(command, validatedArgs, &cntx);
-    } else {
-        throw ex::IncompatibleEssenceExecution(className(), item->essenceClassName());
     }
 }
 

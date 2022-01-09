@@ -9,6 +9,9 @@
 #include <util/SingletonRegistry.h>
 #include <util/ObjectRegistry.h>
 
+#include <hierhin/ex/UnsupportedCommand.h>
+#include <hierhin/ex/IncompatibleEssenceExecution.h>
+
 #include <QJsonDocument>
 #include <QJsonObject>
 
@@ -128,12 +131,28 @@ void Item::setProperty(const QString &name, const QVariant &value)
 
 void Item::execute(const QString &command, const QVariantList &args)
 {
-    auto ptr = essencePtr();
+    auto essence = essencePtr();
     auto lnch = launcher();
+    auto def = definition();
+    auto cmdDefs = def.methodDefs();
 
-    if (ptr) {
-        ptr->execute(this, command, args);
+    if (!cmdDefs.contains(command)) {
+        throw ex::UnsupportedCommand(command);
     }
+
+    auto cmdDef = cmdDefs.value(command);
+    auto validatedArgs = cmdDef.validate(args);
+
+    if (essence->className() == essenceClassName()) {
+
+        ItemContextSetter cntx;
+        cntx.setItem(this);
+
+        lnch->launch(command, validatedArgs, &cntx);
+    } else {
+        throw ex::IncompatibleEssenceExecution(essence->className(), essenceClassName());
+    }
+
 
     //TODO: return taskId (?)
 }
