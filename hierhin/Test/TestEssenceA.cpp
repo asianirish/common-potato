@@ -30,6 +30,9 @@ NodeDef TestEssenceA::nodeDef() const
     auto propDefs = propertyDefs();
     nd.setPropertyDefs(propDefs); //TODO: in parent class
 
+    auto mthdDefs = methodDefs();
+    nd.setMethodDefs(mthdDefs); //TODO: in parent class
+
     return nd;
 }
 
