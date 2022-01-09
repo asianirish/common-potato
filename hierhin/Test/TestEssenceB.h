@@ -13,6 +13,9 @@ public:
 
     NodeDef nodeDef() const override;
 
+protected:
+    QMap<QString, PropertyDef> propertyDefs() const override;
+
 };
 
 #endif // TESTESSENCEB_H

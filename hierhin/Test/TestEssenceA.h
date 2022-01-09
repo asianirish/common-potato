@@ -17,6 +17,7 @@ public:
     void testInvoke(hierhin::Item *item);
 
 protected:
+    QMap<QString, PropertyDef> propertyDefs() const override;
     QMap<QString, MethodDef> methodDefs() const override;
 
 private:

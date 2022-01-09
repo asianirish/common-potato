@@ -33,28 +33,8 @@ NodeDef TestEssenceA::nodeDef() const
 
     nd.setIsLimitedPropertyList(true);
 
-    {
-        PropertyDef propDefValue;
-        ValidatorPtr ltoet = ValidatorPtr(new val::Range<int>(13, 1337 * 2));
-        propDefValue.addValidator(ltoet);
-        propDefValue.setName("value");
-        nd.insertPropertyDef(propDefValue);
-    }
-
-    {
-        PropertyDef propDefValue;
-        propDefValue.addValidator(ValidatorPtr(new val::Email()));
-        propDefValue.addValidator(ValidatorPtr(new val::Length(12, 32)));
-        propDefValue.setName("email");
-        nd.insertPropertyDef(propDefValue);
-    }
-
-    {
-        PropertyDef propDefValue;
-        propDefValue.addValidator(ValidatorPtr(new val::Phone()));
-        propDefValue.setName("phone");
-        nd.insertPropertyDef(propDefValue);
-    }
+    auto propDefs = propertyDefs();
+    nd.setPropertyDefs(propDefs); //TODO: in parent class
 
     return nd;
 }
@@ -62,6 +42,36 @@ NodeDef TestEssenceA::nodeDef() const
 void TestEssenceA::testInvoke(hierhin::Item *item)
 {
     QMetaObject::invokeMethod(this, "setElite", Qt::DirectConnection, Q_ARG(hierhin::Item*, item));
+}
+
+QMap<QString, PropertyDef> TestEssenceA::propertyDefs() const
+{
+    QMap<QString, PropertyDef> propDefs;
+
+    {
+        PropertyDef propDefValue;
+        ValidatorPtr ltoet = ValidatorPtr(new val::Range<int>(13, 1337 * 2));
+        propDefValue.addValidator(ltoet);
+        propDefValue.setName("value");
+        propDefs.insert("value", propDefValue);
+    }
+
+    {
+        PropertyDef propDefValue;
+        propDefValue.addValidator(ValidatorPtr(new val::Email()));
+        propDefValue.addValidator(ValidatorPtr(new val::Length(12, 32)));
+        propDefValue.setName("email");
+        propDefs.insert("email", propDefValue);
+    }
+
+    {
+        PropertyDef propDefValue;
+        propDefValue.addValidator(ValidatorPtr(new val::Phone()));
+        propDefValue.setName("phone");
+        propDefs.insert("phone", propDefValue);
+    }
+
+    return propDefs;
 }
 
 QMap<QString, MethodDef> TestEssenceA::methodDefs() const
