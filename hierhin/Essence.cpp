@@ -69,6 +69,11 @@ void Essence::nodeDef(NodeDef &nd) const
     Q_UNUSED(nd)
 }
 
+QMap<Role, ItemReq> Essence::childRequirements() const
+{
+    return {};
+}
+
 QMap<QString, PropertyDef> Essence::propertyDefs() const
 {
     PropertyDef nameDef;

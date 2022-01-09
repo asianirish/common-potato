@@ -24,6 +24,9 @@ NodeDef TestEssenceA::nodeDef() const
 
     nodeDef(nd); //TODO: in parent class
 
+    auto chReq = childRequirements(); //TODO: in parent class
+    nd.setChildRequirements(chReq);
+
     auto propDefs = propertyDefs();
     nd.setPropertyDefs(propDefs); //TODO: in parent class
 
@@ -37,17 +40,22 @@ void TestEssenceA::testInvoke(hierhin::Item *item)
 
 void TestEssenceA::nodeDef(NodeDef &nd) const
 {
-    //virtual QMap<Role, ItemReq> childRequirements();
-    nd.setChildRequirement(ItemReq("TestEssenceB"), "left");
-    nd.setChildRequirement(ItemReq("TestEssenceA"), "right");
-    nd.setChildRequirement(ItemReq(), "middle");
-    nd.setChildRequirement(ItemReq("TestEssenceB"), "top");
-
 //    ItemReq defReq;
 //    defReq.setCanBeEssenceless(false);
 //    nd.setChildRequirement(defReq);
 
     nd.setIsLimitedPropertyList(true);
+}
+
+QMap<hierhin::Role, ItemReq> TestEssenceA::childRequirements() const
+{
+    QMap<hierhin::Role, ItemReq> chReq;
+    chReq.insert("left", ItemReq("TestEssenceB"));
+    chReq.insert("right", ItemReq("TestEssenceA"));
+    chReq.insert("middle", ItemReq());
+    chReq.insert("top", ItemReq("TestEssenceB"));
+
+    return chReq;
 }
 
 QMap<QString, PropertyDef> TestEssenceA::propertyDefs() const
