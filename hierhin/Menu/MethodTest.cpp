@@ -18,6 +18,7 @@ QVariant MethodTest::simplyAct(const QVariantList &args)
     auto nd = NodePtr(new direct::NodeHashImpl());
     nd->setEssenceClassName("TestEssenceA");
     nd->setProperty("value", 13);
+    nd->setProperty("name", "programA");
 
     qDebug().noquote() << "BEFORE:" << nd->toJson();
 
@@ -28,5 +29,7 @@ QVariant MethodTest::simplyAct(const QVariantList &args)
     nd->execute("PlusValue");
 
     qDebug().noquote() << "AFTER EMPTY ARG LIST:" << nd->toJson();
+
+    nd->execute("sys::GetName");
     return true;
 }

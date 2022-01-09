@@ -1,6 +1,7 @@
 #include "Essence.h"
 #include "Item.h"
 #include "ItemContextSetter.h"
+#include "sys/GetName.h"
 
 namespace hierhin {
 
@@ -11,6 +12,12 @@ Essence::Essence() : QObject(nullptr)
 {
     if (!_launcher) {
         _launcher = new menu::ThreadLauncher();
+    }
+
+    static bool yes = false;
+    if (!yes) {
+        REGISTER_CLASS_FOR_UTIL_FACTORY(menu::Action, sys::GetName);
+        yes = true;
     }
 }
 
@@ -74,7 +81,7 @@ QMap<QString, PropertyDef> Essence::propertyDefs() const
 
 QMap<QString, MethodDef> Essence::methodDefs() const
 {
-    return {{DEFAULT_COMMAND, MethodDef(DEFAULT_COMMAND)}};
+    return {{"sys::GetName", MethodDef("sys::GetName")}};
 }
 
 
