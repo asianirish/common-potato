@@ -30,6 +30,7 @@ QVariant MethodTest::simplyAct(const QVariantList &args)
 
     qDebug().noquote() << "AFTER EMPTY ARG LIST:" << nd->toJson();
 
-    nd->execute("sys::GetName");
+//    nd->execute("sys::GetName");
+    nd->execute("sys::GetProperty", {"value"});
     return true;
 }
