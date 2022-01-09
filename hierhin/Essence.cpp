@@ -64,6 +64,11 @@ bool Essence::isKindOf(const QString &className) const
     return classNames().contains(className);
 }
 
+void Essence::nodeDef(NodeDef &nd) const
+{
+    Q_UNUSED(nd)
+}
+
 QMap<QString, PropertyDef> Essence::propertyDefs() const
 {
     PropertyDef nameDef;

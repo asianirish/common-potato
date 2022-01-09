@@ -35,6 +35,7 @@ public:
     bool isKindOf(const QString &className) const;
 
 protected:
+    virtual void nodeDef(NodeDef &nd) const;
     virtual QMap<QString, def::PropertyDef> propertyDefs() const;
     virtual QMap<QString, def::MethodDef> methodDefs() const;
 

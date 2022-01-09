@@ -22,16 +22,7 @@ NodeDef TestEssenceA::nodeDef() const
 {
     NodeDef nd;
 
-    nd.setChildRequirement(ItemReq("TestEssenceB"), "left");
-    nd.setChildRequirement(ItemReq("TestEssenceA"), "right");
-    nd.setChildRequirement(ItemReq(), "middle");
-    nd.setChildRequirement(ItemReq("TestEssenceB"), "top");
-
-//    ItemReq defReq;
-//    defReq.setCanBeEssenceless(false);
-//    nd.setChildRequirement(defReq);
-
-    nd.setIsLimitedPropertyList(true);
+    nodeDef(nd); //TODO: in parent class
 
     auto propDefs = propertyDefs();
     nd.setPropertyDefs(propDefs); //TODO: in parent class
@@ -42,6 +33,21 @@ NodeDef TestEssenceA::nodeDef() const
 void TestEssenceA::testInvoke(hierhin::Item *item)
 {
     QMetaObject::invokeMethod(this, "setElite", Qt::DirectConnection, Q_ARG(hierhin::Item*, item));
+}
+
+void TestEssenceA::nodeDef(NodeDef &nd) const
+{
+    //virtual QMap<Role, ItemReq> childRequirements();
+    nd.setChildRequirement(ItemReq("TestEssenceB"), "left");
+    nd.setChildRequirement(ItemReq("TestEssenceA"), "right");
+    nd.setChildRequirement(ItemReq(), "middle");
+    nd.setChildRequirement(ItemReq("TestEssenceB"), "top");
+
+//    ItemReq defReq;
+//    defReq.setCanBeEssenceless(false);
+//    nd.setChildRequirement(defReq);
+
+    nd.setIsLimitedPropertyList(true);
 }
 
 QMap<QString, PropertyDef> TestEssenceA::propertyDefs() const
