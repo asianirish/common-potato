@@ -12,8 +12,6 @@ class TestEssenceA : public hierhin::Essence
 public:
     TestEssenceA();
 
-    void testInvoke(hierhin::Item *item);
-
 protected:
     void nodeDef(NodeDef &nd) const override;
     QMap<hierhin::Role, ItemReq> childRequirements() const override;

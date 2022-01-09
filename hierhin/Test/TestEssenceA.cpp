@@ -18,11 +18,6 @@ TestEssenceA::TestEssenceA()
 //    setMethod(&TestEssenceA::testInvoke);
 }
 
-void TestEssenceA::testInvoke(hierhin::Item *item)
-{
-    QMetaObject::invokeMethod(this, "setElite", Qt::DirectConnection, Q_ARG(hierhin::Item*, item));
-}
-
 void TestEssenceA::nodeDef(NodeDef &nd) const
 {
 //    ItemReq defReq;
