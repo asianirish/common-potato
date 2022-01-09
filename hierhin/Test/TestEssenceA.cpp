@@ -45,7 +45,7 @@ QMap<hierhin::Role, ItemReq> TestEssenceA::childRequirements() const
 
 QMap<QString, PropertyDef> TestEssenceA::propertyDefs() const
 {
-    QMap<QString, PropertyDef> propDefs;
+    QMap<QString, PropertyDef> propDefs = Essence::propertyDefs();
 
     {
         PropertyDef propDefValue;
