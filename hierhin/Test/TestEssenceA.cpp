@@ -18,24 +18,6 @@ TestEssenceA::TestEssenceA()
 //    setMethod(&TestEssenceA::testInvoke);
 }
 
-NodeDef TestEssenceA::nodeDef() const
-{
-    NodeDef nd;
-
-    nodeDef(nd); //TODO: in parent class
-
-    auto chReq = childRequirements(); //TODO: in parent class
-    nd.setChildRequirements(chReq);
-
-    auto propDefs = propertyDefs();
-    nd.setPropertyDefs(propDefs); //TODO: in parent class
-
-    auto mthdDefs = methodDefs();
-    nd.setMethodDefs(mthdDefs); //TODO: in parent class
-
-    return nd;
-}
-
 void TestEssenceA::testInvoke(hierhin::Item *item)
 {
     QMetaObject::invokeMethod(this, "setElite", Qt::DirectConnection, Q_ARG(hierhin::Item*, item));

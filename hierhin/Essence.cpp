@@ -14,6 +14,23 @@ Essence::Essence() : QObject(nullptr)
     }
 }
 
+NodeDef Essence::nodeDef() const
+{
+    NodeDef nd;
+    nodeDef(nd);
+
+    auto chReq = childRequirements();
+    nd.setChildRequirements(chReq);
+
+    auto propDefs = propertyDefs();
+    nd.setPropertyDefs(propDefs);
+
+    auto mthdDefs = methodDefs();
+    nd.setMethodDefs(mthdDefs);
+
+    return nd;
+}
+
 QString Essence::className() const
 {
     return metaObject()->className();

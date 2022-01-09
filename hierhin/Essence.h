@@ -24,7 +24,7 @@ public:
 
     virtual ~Essence() = default;
 
-    virtual NodeDef nodeDef() const = 0; //TODO: non-virtual
+    NodeDef nodeDef() const;
 
     QString className() const;
 

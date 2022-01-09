@@ -9,16 +9,6 @@ TestEssenceB::TestEssenceB()
 
 }
 
-NodeDef TestEssenceB::nodeDef() const
-{
-    NodeDef nd;
-
-    auto propDefs = propertyDefs();
-    nd.setPropertyDefs(propDefs); //TODO: in parent class
-
-    return nd;
-}
-
 QMap<QString, PropertyDef> TestEssenceB::propertyDefs() const
 {
     QMap<QString, PropertyDef> propDefs;

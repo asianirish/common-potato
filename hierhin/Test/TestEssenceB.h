@@ -11,8 +11,6 @@ class TestEssenceB : public hierhin::Essence
 public:
     TestEssenceB();
 
-    NodeDef nodeDef() const override;
-
 protected:
     QMap<QString, PropertyDef> propertyDefs() const override;
 

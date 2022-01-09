@@ -12,8 +12,6 @@ class TestEssenceA : public hierhin::Essence
 public:
     TestEssenceA();
 
-    NodeDef nodeDef() const override;
-
     void testInvoke(hierhin::Item *item);
 
 protected:

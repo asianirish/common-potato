@@ -9,10 +9,6 @@ class TestEssenceC : public hierhin::Essence
 {
 public:
     TestEssenceC();
-
-    NodeDef nodeDef() const override {
-        return NodeDef();
-    }
 };
 
 #endif // TESTESSENCEC_H
