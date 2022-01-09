@@ -59,6 +59,7 @@ HEADERS += \
     nav/Path.h \
     nav/Step.h \
     sys/GetName.h \
+    sys/GetProperty.h \
     type.h
 
 SOURCES += \
@@ -90,6 +91,7 @@ SOURCES += \
     nav/ItemRef.cpp \
     nav/Path.cpp \
     nav/Step.cpp \
-    sys/GetName.cpp
+    sys/GetName.cpp \
+    sys/GetProperty.cpp
 
 
