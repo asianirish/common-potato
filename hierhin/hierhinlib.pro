@@ -58,6 +58,7 @@ HEADERS += \
     nav/ItemRef.h \
     nav/Path.h \
     nav/Step.h \
+    sys/GetName.h \
     type.h
 
 SOURCES += \
@@ -88,6 +89,7 @@ SOURCES += \
     ex/ValidatorException.cpp \
     nav/ItemRef.cpp \
     nav/Path.cpp \
-    nav/Step.cpp
+    nav/Step.cpp \
+    sys/GetName.cpp
 
 
