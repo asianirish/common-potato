@@ -19,7 +19,7 @@ Essence::Essence() : QObject(nullptr)
 
 void Essence::execute(Item *item, const QString &command, const QVariantList &args) const
 {
-    auto cmdDefs = commandDefs();
+    auto cmdDefs = methodDefs();
 
     if (!cmdDefs.contains(command)) {
         throw ex::UnsupportedCommand(command);
@@ -64,7 +64,7 @@ bool Essence::isKindOf(const QString &className) const
     return classNames().contains(className);
 }
 
-QMap<QString, MethodDef> Essence::commandDefs() const
+QMap<QString, MethodDef> Essence::methodDefs() const
 {
     return {{DEFAULT_COMMAND, MethodDef(DEFAULT_COMMAND)}};
 }

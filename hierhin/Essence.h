@@ -26,7 +26,7 @@ public:
 
     void execute(Item *item, const QString &command = DEFAULT_COMMAND, const QVariantList &args = QVariantList()) const;
 
-    virtual NodeDef nodeDef() const = 0;
+    virtual NodeDef nodeDef() const = 0; //TODO: non-virtual
 
     QString className() const;
 
@@ -35,7 +35,7 @@ public:
     bool isKindOf(const QString &className) const;
 
 protected:
-    virtual QMap<QString, def::MethodDef> commandDefs() const; //TODO: or inside def::EssenceDef
+    virtual QMap<QString, def::MethodDef> methodDefs() const;
 
 private:
     static menu::ThreadLauncher *_launcher; //TODO: where to delete _launcher?

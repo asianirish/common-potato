@@ -17,7 +17,7 @@ public:
     void testInvoke(hierhin::Item *item);
 
 protected:
-    QMap<QString, MethodDef> commandDefs() const override;
+    QMap<QString, MethodDef> methodDefs() const override;
 
 private:
     Q_INVOKABLE void setElite(hierhin::Item *item);

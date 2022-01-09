@@ -64,9 +64,9 @@ void TestEssenceA::testInvoke(hierhin::Item *item)
     QMetaObject::invokeMethod(this, "setElite", Qt::DirectConnection, Q_ARG(hierhin::Item*, item));
 }
 
-QMap<QString, MethodDef> TestEssenceA::commandDefs() const
+QMap<QString, MethodDef> TestEssenceA::methodDefs() const
 {
-    auto mp = Essence::commandDefs();
+    auto mp = Essence::methodDefs();
     ArgDef argDef;
     argDef.setDefaultValue(10);
     MethodDef methodDef("PlusValue");
@@ -74,7 +74,7 @@ QMap<QString, MethodDef> TestEssenceA::commandDefs() const
 
 //    MethodDef sumCommandDef("sumValue", 2);
 
-    mp.insert("PlusValue", methodDef);
+    mp.insert(methodDef.name(), methodDef);
 
 
     return mp;

@@ -8,9 +8,9 @@ LinkedEssence::LinkedEssence()
 
 }
 
-QMap<QString, MethodDef> LinkedEssence::commandDefs() const
+QMap<QString, MethodDef> LinkedEssence::methodDefs() const
 {
-    auto mp = Essence::commandDefs();
+    auto mp = Essence::methodDefs();
 
     ArgDef linkTargetArgDef;
     linkTargetArgDef.setName("target");
