@@ -2,6 +2,7 @@
 #include "Item.h"
 #include "ItemContextSetter.h"
 #include "sys/GetName.h"
+#include "sys/GetProperty.h"
 
 namespace hierhin {
 
@@ -17,6 +18,7 @@ Essence::Essence() : QObject(nullptr)
     static bool yes = false;
     if (!yes) {
         REGISTER_CLASS_FOR_UTIL_FACTORY(menu::Action, sys::GetName);
+        REGISTER_CLASS_FOR_UTIL_FACTORY(menu::Action, sys::GetProperty);
         yes = true;
     }
 }
@@ -81,7 +83,8 @@ QMap<QString, PropertyDef> Essence::propertyDefs() const
 
 QMap<QString, MethodDef> Essence::methodDefs() const
 {
-    return {{"sys::GetName", MethodDef("sys::GetName")}};
+    return {{"sys::GetName", MethodDef("sys::GetName")},
+    {"sys::GetProperty", MethodDef("sys::GetProperty")}};
 }
 
 
