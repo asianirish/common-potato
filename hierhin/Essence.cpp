@@ -34,8 +34,7 @@ NodeDef Essence::nodeDef() const
     auto propDefs = propertyDefs();
     nd.setPropertyDefs(propDefs);
 
-    auto mthdDefs = methodDefs();
-    nd.setMethodDefs(mthdDefs);
+    //TODO: nd.setMethodNames();
 
     return nd;
 }
@@ -81,19 +80,9 @@ QMap<QString, PropertyDef> Essence::propertyDefs() const
     return {{"name", nameDef}};
 }
 
-QMap<QString, MethodDef> Essence::methodDefs() const
-{
-    MethodDef getPropertyDef("sys::GetProperty");
-    getPropertyDef.addArgDef(ArgDef());
-
-    return {{"sys::GetName", MethodDef("sys::GetName")},
-        {"sys::GetProperty", MethodDef("sys::GetProperty")}};
-}
-
 QStringList Essence::methodNames() const
 {
     return {"sys::GetName", "sys::GetProperty"};
 }
-
 
 } // namespace hierhin

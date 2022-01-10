@@ -68,22 +68,6 @@ QMap<QString, PropertyDef> TestEssenceA::propertyDefs() const
     return propDefs;
 }
 
-QMap<QString, MethodDef> TestEssenceA::methodDefs() const
-{
-    auto mp = Essence::methodDefs();
-    ArgDef argDef;
-    argDef.setDefaultValue(10);
-    MethodDef methodDef("PlusValue");
-    methodDef.addArgDef(argDef);
-
-//    MethodDef sumCommandDef("sumValue", 2);
-
-    mp.insert(methodDef.name(), methodDef);
-
-
-    return mp;
-}
-
 QStringList TestEssenceA::methodNames() const
 {
     QStringList lst = Essence::methodNames();

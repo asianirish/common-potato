@@ -16,7 +16,6 @@ protected:
     void nodeDef(NodeDef &nd) const override;
     QMap<hierhin::Role, ItemReq> childRequirements() const override;
     QMap<QString, PropertyDef> propertyDefs() const override;
-    QMap<QString, MethodDef> methodDefs() const override;
     QStringList methodNames() const override;
 
 private:

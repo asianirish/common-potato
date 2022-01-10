@@ -38,7 +38,6 @@ protected:
     virtual void nodeDef(NodeDef &nd) const;
     virtual QMap<Role, ItemReq> childRequirements() const;
     virtual QMap<QString, def::PropertyDef> propertyDefs() const;
-    virtual QMap<QString, def::MethodDef> methodDefs() const;
     virtual QStringList methodNames() const;
 
 private:

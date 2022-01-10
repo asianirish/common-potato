@@ -8,19 +8,6 @@ LinkedEssence::LinkedEssence()
 
 }
 
-QMap<QString, MethodDef> LinkedEssence::methodDefs() const
-{
-    auto mp = Essence::methodDefs();
-
-    ArgDef linkTargetArgDef;
-    linkTargetArgDef.setName("target");
-//TODO:    linkTargetArgDef.addValidator()
-    MethodDef linkCommandDef("link", {linkTargetArgDef});
-    mp.insert("link", linkCommandDef);
-
-    return mp;
-}
-
 QStringList LinkedEssence::methodNames() const
 {
     QStringList lst = Essence::methodNames();
