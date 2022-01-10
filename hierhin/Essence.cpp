@@ -87,7 +87,12 @@ QMap<QString, MethodDef> Essence::methodDefs() const
     getPropertyDef.addArgDef(ArgDef());
 
     return {{"sys::GetName", MethodDef("sys::GetName")},
-    {"sys::GetProperty", getPropertyDef}};
+        {"sys::GetProperty", MethodDef("sys::GetProperty")}};
+}
+
+QStringList Essence::methodNames() const
+{
+    return {"sys::GetName", "sys::GetProperty"};
 }
 
 

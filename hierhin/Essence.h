@@ -2,7 +2,9 @@
 #define HIERHIN_ESSENCE_H
 
 #include "def/NodeDef.h"
-#include "def/MethodDef.h"
+#include "def/MethodDef.h" //TODO: delete this include
+#include "menu/def/ActionDef.h"
+
 
 #include <menu/ThreadLauncher.h>
 
@@ -37,6 +39,7 @@ protected:
     virtual QMap<Role, ItemReq> childRequirements() const;
     virtual QMap<QString, def::PropertyDef> propertyDefs() const;
     virtual QMap<QString, def::MethodDef> methodDefs() const;
+    virtual QStringList methodNames() const;
 
 private:
     static menu::ThreadLauncher *_launcher; //TODO: where to delete _launcher?
