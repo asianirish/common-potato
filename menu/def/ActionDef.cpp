@@ -36,6 +36,7 @@ void ActionDef::setArgMaxNum(int argMaxNum)
 
 Error ActionDef::validate(const QVariantList &args) const
 {
+    //TODO: compare with MethodDef::validate
     QVariantList localArgs;
 
     addDefaultArgs(args, localArgs);
