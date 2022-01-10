@@ -34,7 +34,8 @@ NodeDef Essence::nodeDef() const
     auto propDefs = propertyDefs();
     nd.setPropertyDefs(propDefs);
 
-    //TODO: nd.setMethodNames();
+    auto mthNames = methodNames();
+    nd.setMethodNames(mthNames);
 
     return nd;
 }
