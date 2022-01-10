@@ -89,10 +89,6 @@ QVariant NodeTest::simplyAct(const QVariantList &args)
             qDebug() << "ID:" << id;
         }
 
-        nd1->execute();
-        nd2->execute();
-        nd3->execute();
-
         qDebug().noquote() << "NODE1 AS A JSON: " << nd1->toJson();
 
         auto leftNode = nd1->childByRole("left");
