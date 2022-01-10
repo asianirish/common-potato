@@ -3,6 +3,7 @@
 #include "ItemContextSetter.h"
 #include "sys/GetName.h"
 #include "sys/GetProperty.h"
+#include "sys/SetProperty.h"
 
 namespace hierhin {
 
@@ -18,6 +19,7 @@ Essence::Essence() : QObject(nullptr)
     if (!yes) {
         REGISTER_CLASS_FOR_UTIL_FACTORY(menu::Action, sys::GetName);
         REGISTER_CLASS_FOR_UTIL_FACTORY(menu::Action, sys::GetProperty);
+        REGISTER_CLASS_FOR_UTIL_FACTORY(menu::Action, sys::SetProperty);
         yes = true;
     }
 }
@@ -82,7 +84,7 @@ QMap<QString, PropertyDef> Essence::propertyDefs() const
 
 QStringList Essence::methodNames() const
 {
-    return {"sys::GetName", "sys::GetProperty"};
+    return {"sys::GetName", "sys::GetProperty", "sys::SetProperty"};
 }
 
 } // namespace hierhin

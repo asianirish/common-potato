@@ -32,5 +32,10 @@ QVariant MethodTest::simplyAct(const QVariantList &args)
 
     nd->execute("sys::GetName");
     nd->execute("sys::GetProperty", {"value"});
+    nd->execute("sys::SetProperty", {"value", 1337});
+    nd->execute("sys::SetProperty", {"name", "Elite"});
+
+    qDebug().noquote() << "AFTER sys::SetProperty:" << nd->toJson();
+
     return true;
 }
