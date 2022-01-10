@@ -20,8 +20,6 @@ class Essence : public QObject
 {
     Q_OBJECT
 public:
-    static const QString DEFAULT_COMMAND;
-
     Essence();
 
     virtual ~Essence() = default;

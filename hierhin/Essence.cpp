@@ -6,7 +6,6 @@
 
 namespace hierhin {
 
-const QString Essence::DEFAULT_COMMAND("command");
 menu::ThreadLauncher *Essence::_launcher = nullptr;
 
 Essence::Essence() : QObject(nullptr)

@@ -49,7 +49,7 @@ public:
 
     void setProperty(const QString &name, const QVariant &value);
 
-    void execute(const QString &method = Essence::DEFAULT_COMMAND, const QVariantList &args = QVariantList());
+    void execute(const QString &method, const QVariantList &args = QVariantList());
 
     def::NodeDef definition() const;
 
