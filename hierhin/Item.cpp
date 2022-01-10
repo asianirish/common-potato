@@ -140,15 +140,15 @@ void Item::execute(const QString &command, const QVariantList &args)
         throw ex::UnsupportedCommand(command);
     }
 
-    auto cmdDef = cmdDefs.value(command);
-    auto validatedArgs = cmdDef.validate(args);
+//    def::MethodDef cmdDef = cmdDefs.value(command);
+//    auto validatedArgs = cmdDef.validate(args);
 
     if (essence->className() == essenceClassName()) {
 
         ItemContextSetter cntx;
         cntx.setItem(this);
 
-        lnch->launch(command, validatedArgs, &cntx);
+        lnch->launch(command, args, &cntx);
     } else {
         throw ex::IncompatibleEssenceExecution(essence->className(), essenceClassName());
     }
