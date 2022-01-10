@@ -134,9 +134,9 @@ void Item::execute(const QString &command, const QVariantList &args)
     auto essence = essencePtr();
     auto lnch = launcher();
     auto def = definition();
-    auto cmdDefs = def.methodDefs();
+    auto cmdNames = def.methodNames();
 
-    if (!cmdDefs.contains(command)) {
+    if (!cmdNames.contains(command)) {
         throw ex::UnsupportedCommand(command);
     }
 
