@@ -10,7 +10,7 @@ namespace def {
 
 typedef PropertyDef ArgDef;
 
-class MethodDef
+class [[deprecated("use ActionDef instead")]] MethodDef
 {
 public:
     MethodDef();
