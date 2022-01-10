@@ -16,6 +16,7 @@ public:
 
 protected:
     QMap<QString, def::MethodDef> methodDefs() const override;
+    QStringList methodNames() const override;
 
     void linkItem(Item *item, const nav::ItemRef &iRef) const;
 };

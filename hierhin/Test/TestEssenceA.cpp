@@ -84,6 +84,13 @@ QMap<QString, MethodDef> TestEssenceA::methodDefs() const
     return mp;
 }
 
+QStringList TestEssenceA::methodNames() const
+{
+    QStringList lst = Essence::methodNames();
+    lst.append("PlusValue");
+    return lst;
+}
+
 void TestEssenceA::setElite(hierhin::Item *item)
 {
     item->setProperty("value", 1337);

@@ -21,6 +21,13 @@ QMap<QString, MethodDef> LinkedEssence::methodDefs() const
     return mp;
 }
 
+QStringList LinkedEssence::methodNames() const
+{
+    QStringList lst = Essence::methodNames();
+    //TODO: add a sys::Link action
+    return lst;
+}
+
 void LinkedEssence::linkItem(Item *item, const nav::ItemRef &iRef) const
 {
     //TODO: implement
