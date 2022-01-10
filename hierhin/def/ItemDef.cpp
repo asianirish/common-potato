@@ -77,6 +77,21 @@ void ItemDef::insertMethodDef(const MethodDef &methodDef)
     _methodDefs.insert(methodDef.name(), methodDef);
 }
 
+const QStringList &ItemDef::methodNames() const
+{
+    return _methodNames;
+}
+
+void ItemDef::setMethodNames(const QStringList &newMethodNames)
+{
+    _methodNames = newMethodNames;
+}
+
+void ItemDef::insertMethodName(const QString &methodName)
+{
+    _methodNames.append(methodName);
+}
+
 bool ItemDef::toBool() const
 {
     if (!_isLimitedPropertyList) {

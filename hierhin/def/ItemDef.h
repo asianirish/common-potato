@@ -31,10 +31,16 @@ public:
     void setMethodDefs(const QMap<QString, MethodDef> &newMethodDefs);
     void insertMethodDef(const MethodDef &methodDef);
 
+
+    const QStringList &methodNames() const;
+    void setMethodNames(const QStringList &newMethodNames);
+    void insertMethodName(const QString &methodName);
+
 private:
     bool _isLimitedPropertyList; // limited to the specified set of definitions
     QMap<QString, PropertyDef> _propertyDefs;
     QMap<QString, MethodDef> _methodDefs;
+    QStringList _methodNames;
 
     virtual bool toBool() const;
 };
