@@ -13,9 +13,7 @@ public:
 private:
     QVariant actImpl(const QVariantList &args, Item *item) final;
 
-    menu::def::ActionDef actionDef() const {
-        return menu::def::ActionDef();
-    }
+    menu::def::ActionDef actionDef() const;
 };
 
 #endif // PLUSVALUE_H
