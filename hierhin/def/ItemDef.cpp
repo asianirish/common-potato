@@ -58,25 +58,6 @@ void ItemDef::validateProperty(const QString &name, const QVariant &value)
     propDef.validate(value);
 }
 
-const QMap<QString, MethodDef> &ItemDef::methodDefs() const
-{
-    return _methodDefs;
-}
-
-void ItemDef::setMethodDefs(const QMap<QString, MethodDef> &newMethodDefs)
-{
-    _methodDefs = newMethodDefs;
-}
-
-void ItemDef::insertMethodDef(const MethodDef &methodDef)
-{
-    if (methodDef.name().isEmpty()) {
-        throw "EmptyMethodException"; //TODO: Exception class
-    }
-
-    _methodDefs.insert(methodDef.name(), methodDef);
-}
-
 const QStringList &ItemDef::methodNames() const
 {
     return _methodNames;
