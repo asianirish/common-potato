@@ -28,6 +28,7 @@ SOURCES += main.cpp \
     HierhinDestructor.cpp \
     Menu/CloneTest.cpp \
     Menu/CommandTest.cpp \
+    Menu/ConvTest.cpp \
     Menu/LauncherTest.cpp \
     Menu/LazyRegistryTest.cpp \
     Menu/LinkTest.cpp \
@@ -54,6 +55,7 @@ HEADERS += \
     HierhinDestructor.h \
     Menu/CloneTest.h \
     Menu/CommandTest.h \
+    Menu/ConvTest.h \
     Menu/LauncherTest.h \
     Menu/LazyRegistryTest.h \
     Menu/LinkTest.h \

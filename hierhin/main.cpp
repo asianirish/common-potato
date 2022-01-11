@@ -14,6 +14,7 @@
 #include "Menu/LazyRegistryTest.h"
 #include "Menu/MethodTest.h"
 #include <Menu/RegTest.h>
+#include <Menu/ConvTest.h>
 
 #include <menu/Console.h>
 #include <menu/util/SetLanguage.h>
@@ -66,6 +67,8 @@ int main(int argc, char *argv[])
     ADD_MENU_ITEM(console, tmethod, MethodTest)
 
     ADD_MENU_ITEM(console, treg, RegTest)
+
+    ADD_MENU_ITEM(console, tconv, ConvTest)
 
     console.run();
     QObject::connect(&console, SIGNAL(quit()), &a, SLOT(quit()));
