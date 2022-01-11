@@ -1,13 +1,13 @@
 #ifndef SETPROPERTY_H
 #define SETPROPERTY_H
 
-#include <ItemAction.h>
+#include <Method.h>
 
 namespace hierhin {
 namespace sys {
 
 
-class SetProperty : public hierhin::ItemAction
+class SetProperty : public hierhin::Method
 {
 public:
     SetProperty();

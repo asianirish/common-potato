@@ -1,12 +1,12 @@
 #ifndef HIERHIN_SYS_GETNAME_H
 #define HIERHIN_SYS_GETNAME_H
 
-#include <ItemAction.h>
+#include <Method.h>
 
 namespace hierhin {
 namespace sys {
 
-class GetName : public hierhin::ItemAction
+class GetName : public hierhin::Method
 {
 public:
     GetName();

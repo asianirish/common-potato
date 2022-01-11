@@ -1,11 +1,11 @@
 #ifndef PLUSVALUE_H
 #define PLUSVALUE_H
 
-#include <ItemAction.h>
+#include <Method.h>
 
 using namespace hierhin;
 
-class PlusValue : public ItemAction
+class PlusValue : public Method
 {
 public:
     PlusValue();

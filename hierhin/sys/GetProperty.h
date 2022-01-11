@@ -1,12 +1,12 @@
 #ifndef SYS_GETPROPERTY_H
 #define SYS_GETPROPERTY_H
 
-#include <ItemAction.h>
+#include <Method.h>
 
 namespace hierhin {
 namespace sys {
 
-class GetProperty : public hierhin::ItemAction
+class GetProperty : public hierhin::Method
 {
 public:
     GetProperty();

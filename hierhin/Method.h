@@ -7,10 +7,10 @@
 
 namespace hierhin {
 
-class ItemAction : public menu::SimpleAction
+class Method : public menu::SimpleAction
 {
 public:
-    ItemAction();
+    Method();
 
     Item *item() const;
     void setItem(Item *item);
