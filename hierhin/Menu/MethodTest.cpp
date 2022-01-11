@@ -39,6 +39,7 @@ QVariant MethodTest::simplyAct(const QVariantList &args)
 
     nd->execute("sys::GetClassName");
     nd->execute("sys::GetMethodNames");
+    nd->execute("sys::GetClassNames");
 
     return true;
 }

@@ -59,6 +59,7 @@ HEADERS += \
     nav/Path.h \
     nav/Step.h \
     sys/GetClassName.h \
+    sys/GetClassNames.h \
     sys/GetMethodNames.h \
     sys/GetName.h \
     sys/GetProperty.h \
@@ -95,6 +96,7 @@ SOURCES += \
     nav/Path.cpp \
     nav/Step.cpp \
     sys/GetClassName.cpp \
+    sys/GetClassNames.cpp \
     sys/GetMethodNames.cpp \
     sys/GetName.cpp \
     sys/GetProperty.cpp \
