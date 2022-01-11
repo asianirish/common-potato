@@ -23,6 +23,7 @@ TRANSLATIONS += hierhin_pl.ts
 TRANSLATIONS += hierhin_en.ts
 
 SOURCES += main.cpp \
+    GetMethodNames.cpp \
     HierhinClassRegistry.cpp \
     HierhinContextSetter.cpp \
     HierhinDestructor.cpp \
@@ -50,6 +51,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
+    GetMethodNames.h \
     HierhinClassRegistry.h \
     HierhinContextSetter.h \
     HierhinDestructor.h \

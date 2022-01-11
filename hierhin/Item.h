@@ -76,6 +76,8 @@ public:
 
     ItemPtr refPtr(const QString &refName);
 
+    QStringList essenceMethodNames() const;
+
 protected:
     virtual ItemCreator *createCreator() const = 0;
 
