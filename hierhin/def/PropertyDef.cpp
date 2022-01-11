@@ -37,6 +37,10 @@ void PropertyDef::setDefaultValue(const QVariant &defaultValue)
 
 void PropertyDef::validate(const QVariant &value)
 {
+    if (!value.canConvert(_typeId)) {
+        throw "Uncompatible Type"; //TODO: Exception Class
+    }
+
     for (auto &validator : _validators) {
         if (!validator->validate(value)) {
             throw ex::ValidatorException(_name, validator->errorMessage());
