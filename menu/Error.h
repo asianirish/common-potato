@@ -12,7 +12,7 @@ class Error
 public:
     static const int NO_ERROR;
 
-    enum class ERROR_TYPE{UNDEFINED, MENU, LAUNCHER, ARG_NUM, ARG_VAL};
+    enum class ERROR_TYPE{UNDEFINED, MENU, LAUNCHER, ARG_NUM, ARG_VAL, ARG_TYPE};
 
     Error();
 
