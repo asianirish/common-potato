@@ -5,7 +5,6 @@
 #include "Test/PlusValue.h"
 
 #include <hierhin/nav/ItemRef.h>
-#include <hierhin/ItemAction.h>
 
 #include <util/Factory.h>
 
