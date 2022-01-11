@@ -6,6 +6,22 @@
 
 #include <QDebug>
 
+QString stringListToString(const QStringList &lst) {
+    int i = 0;
+    QString retStr;
+
+    for (auto &str : lst) {
+        if (i) {
+            retStr += ", ";
+        }
+
+        retStr += str;
+        i++;
+    }
+
+    return retStr;
+}
+
 namespace menu {
 
 const QString Launcher::DEFAULT_ACTION_ID_GENERATOR_CLASS_NAME("uniq::TimeQStringValue");
