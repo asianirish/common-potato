@@ -4,7 +4,6 @@
 #include "Essence.h"
 
 namespace hierhin {
-namespace def {
 
 class LinkEssence : public Essence
 {
@@ -17,7 +16,6 @@ public:
 //    QStringList methodNames() const override;
 };
 
-} // namespace def
 } // namespace hierhin
 
 #endif // HIERHIN_DEF_LINKESSENCE_H

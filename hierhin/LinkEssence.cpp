@@ -2,7 +2,6 @@
 #include <nav/ItemRef.h>
 
 namespace hierhin {
-namespace def {
 
 LinkEssence::LinkEssence()
 {
@@ -27,5 +26,4 @@ QMap<QString, PropertyDef> LinkEssence::propertyDefs() const
     };
 }
 
-} // namespace def
 } // namespace hierhin
