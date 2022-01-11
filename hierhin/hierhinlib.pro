@@ -32,6 +32,7 @@ HEADERS += \
     ItemContextSetter.h \
     ItemCreator.h \
     LinkEssence.h \
+    LinkOwnerEssence.h \
     LinkedEssence.h \
     Method.h \
     Node.h \
@@ -73,6 +74,7 @@ SOURCES += \
     ItemContextSetter.cpp \
     ItemCreator.cpp \
     LinkEssence.cpp \
+    LinkOwnerEssence.cpp \
     LinkedEssence.cpp \
     Method.cpp \
     Node.cpp \
