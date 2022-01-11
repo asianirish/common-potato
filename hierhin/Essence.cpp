@@ -5,6 +5,7 @@
 #include "sys/GetProperty.h"
 #include "sys/SetProperty.h"
 #include "sys/GetClassName.h"
+#include "sys/GetMethodNames.h"
 
 namespace hierhin {
 
@@ -22,6 +23,7 @@ Essence::Essence() : QObject(nullptr)
         REGISTER_CLASS_FOR_UTIL_FACTORY(menu::Action, sys::GetProperty);
         REGISTER_CLASS_FOR_UTIL_FACTORY(menu::Action, sys::SetProperty);
         REGISTER_CLASS_FOR_UTIL_FACTORY(menu::Action, sys::GetClassName);
+        REGISTER_CLASS_FOR_UTIL_FACTORY(menu::Action, sys::GetMethodNames);
         yes = true;
     }
 }
@@ -86,7 +88,7 @@ QMap<QString, PropertyDef> Essence::propertyDefs() const
 
 QStringList Essence::methodNames() const
 {
-    return {"sys::GetName", "sys::GetProperty", "sys::SetProperty", "sys::GetClassName"};
+    return {"sys::GetName", "sys::GetProperty", "sys::SetProperty", "sys::GetClassName", "sys::GetMethodNames"};
 }
 
 } // namespace hierhin
