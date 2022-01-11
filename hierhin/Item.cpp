@@ -277,7 +277,7 @@ ItemPtr Item::refPtr(const QString &refName)
 
 QStringList Item::essenceMethodNames() const
 {
-    return essencePtr()->classNames();
+    return essencePtr()->methodNames();
 }
 
 } // namespace hierhin
