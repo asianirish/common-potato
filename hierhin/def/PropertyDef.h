@@ -25,10 +25,14 @@ public:
     const QString &name() const;
     void setName(const QString &newName);
 
+    int typeId() const;
+    void setTypeId(int newTypeId);
+
 private:
     QList<val::ValidatorPtr> _validators;
     QVariant _defaultValue;
     QString _name;
+    int _typeId;
 };
 
 } // namespace def

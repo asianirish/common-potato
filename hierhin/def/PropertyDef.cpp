@@ -4,7 +4,7 @@
 namespace hierhin {
 namespace def {
 
-PropertyDef::PropertyDef()
+PropertyDef::PropertyDef() : _typeId(QMetaType::UnknownType)
 {
 
 }
@@ -51,6 +51,16 @@ const QString &PropertyDef::name() const
 void PropertyDef::setName(const QString &newName)
 {
     _name = newName;
+}
+
+int PropertyDef::typeId() const
+{
+    return _typeId;
+}
+
+void PropertyDef::setTypeId(int newTypeId)
+{
+    _typeId = newTypeId;
 }
 
 } // namespace def
