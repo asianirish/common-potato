@@ -7,7 +7,6 @@
 #include <QObject>
 
 namespace hierhin {
-namespace def {
 
 class LinkedEssence : public Essence
 {
@@ -20,7 +19,6 @@ protected:
     void linkItem(Item *item, const nav::ItemRef &iRef) const;
 };
 
-} // namespace def
 } // namespace hierhin
 
 #endif // HIERHIN_DEF_LINKEDESSENCE_H

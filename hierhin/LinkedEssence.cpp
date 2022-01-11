@@ -1,7 +1,6 @@
 #include "LinkedEssence.h"
 
 namespace hierhin {
-namespace def {
 
 LinkedEssence::LinkedEssence()
 {
@@ -22,5 +21,4 @@ void LinkedEssence::linkItem(Item *item, const nav::ItemRef &iRef) const
     Q_UNUSED(iRef)
 }
 
-} // namespace def
 } // namespace hierhin
