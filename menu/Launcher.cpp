@@ -74,7 +74,12 @@ void Launcher::onActionComplete(const Result &result)
 //    delete action;
 
     if (result.errorCode() == Result::SUCCESSFUL_RESULT) {
-        qDebug() << "ACTION COMPLETE WITH RESULT:" << result.value().toString();
+        if (result.value().type() == QMetaType::QStringList) {
+            QStringList lst = result.value().toStringList();
+            qDebug() << "ACTION COMPLETE WITH RESULT:" << stringListToString(lst);
+        } else {
+            qDebug() << "ACTION COMPLETE WITH RESULT:" << result.value().toString();
+        }
         emit ready(result.value());
     } else {
         emit error(result.error());
