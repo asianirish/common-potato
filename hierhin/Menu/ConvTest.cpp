@@ -41,5 +41,9 @@ QVariant ConvTest::simplyAct(const QVariantList &args)
         qDebug() << "String can NOT convert ot TestType";
     }
 
+
+    int typeId = QMetaType::type("hierhin::nav::ItemRef");
+    qDebug() << itemRefVar << "ITEM_REF TYPE FROM META_TYPE:" << typeId;
+
     return true;
 }
