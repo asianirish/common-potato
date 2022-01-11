@@ -29,11 +29,15 @@ public:
     QString description() const;
     void setDescription(const QString &description);
 
+    int typeId() const;
+    void setTypeId(int newTypeId);
+
 private:
     QVariant _defaultValue;
     QList<QSharedPointer<Constraint>> _constraints;
     QString _name;
     QString _description;
+    int _typeId;
 };
 
 } // namespace def

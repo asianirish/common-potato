@@ -3,7 +3,7 @@
 namespace menu {
 namespace def {
 
-ArgDef::ArgDef()
+ArgDef::ArgDef() : _typeId(QMetaType::UnknownType)
 {
 
 }
@@ -58,6 +58,16 @@ QString ArgDef::description() const
 void ArgDef::setDescription(const QString &description)
 {
     _description = description;
+}
+
+int ArgDef::typeId() const
+{
+    return _typeId;
+}
+
+void ArgDef::setTypeId(int newTypeId)
+{
+    _typeId = newTypeId;
 }
 
 } // namespace def
