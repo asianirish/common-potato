@@ -4,3 +4,5 @@
 * class LinkOwnerEssence : public Essence
 * class LinkEssence : public Essence
 * use LinkEssences as child items of LinkOwnerEssence and LInkOwnerEssence as a role child ("children") LinkedEssence
+
+* ArgDef vs. PropertyDef
