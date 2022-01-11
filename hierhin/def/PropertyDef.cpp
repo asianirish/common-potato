@@ -37,8 +37,10 @@ void PropertyDef::setDefaultValue(const QVariant &defaultValue)
 
 void PropertyDef::validate(const QVariant &value)
 {
-    if (!value.canConvert(_typeId)) {
-        throw "Uncompatible Type"; //TODO: Exception Class
+    if (_typeId != QMetaType::UnknownType) {
+        if (!value.canConvert(_typeId)) {
+            throw "Uncompatible Type"; //TODO: Exception Class
+        }
     }
 
     for (auto &validator : _validators) {
