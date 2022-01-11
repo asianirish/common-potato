@@ -62,5 +62,10 @@ ItemRef::operator QString() const
     return toString();
 }
 
+int ItemRef::typeId()
+{
+    return QMetaType::type("hierhin::nav::ItemRef");
+}
+
 } // namespace nav
 } // namespace hierhin

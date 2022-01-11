@@ -26,6 +26,8 @@ public:
 
     operator QString() const;
 
+    static int typeId();
+
 private:
     Path _path;
 };
