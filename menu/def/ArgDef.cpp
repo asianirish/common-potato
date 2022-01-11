@@ -16,6 +16,7 @@ QVariant ArgDef::defaultValue() const
 void ArgDef::setDefaultValue(const QVariant &defaultValue)
 {
     _defaultValue = defaultValue;
+    _typeId = _defaultValue.userType();
 }
 
 bool ArgDef::isDefaultValue() const
