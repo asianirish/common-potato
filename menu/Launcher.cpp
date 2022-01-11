@@ -90,7 +90,7 @@ void Launcher::onActionComplete(const Result &result)
 //    delete action;
 
     if (result.errorCode() == Result::SUCCESSFUL_RESULT) {
-        if (result.value().type() == QMetaType::QStringList) {
+        if (static_cast<QMetaType::Type>(result.value().type()) == QMetaType::QStringList) {
             QStringList lst = result.value().toStringList();
             qDebug() << "ACTION COMPLETE WITH RESULT:" << stringListToString(lst);
         } else {
