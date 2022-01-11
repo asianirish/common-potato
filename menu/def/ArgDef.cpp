@@ -31,6 +31,12 @@ void ArgDef::addConstraint(QSharedPointer<Constraint> constraint)
 
 Error ArgDef::validate(const QVariant &arg) const
 {
+    if (_typeId != QMetaType::UnknownType) {
+        if (!arg.canConvert(_typeId)) {
+            throw "Uncompatible Type"; //TODO: Exception Class
+        }
+    }
+
     for (auto &cn : _constraints) {
         Error err = cn->validate(arg);
         if (err) {
