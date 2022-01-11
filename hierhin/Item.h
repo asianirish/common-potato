@@ -74,6 +74,8 @@ public:
 
     QSharedPointer<menu::Launcher> launcher() const;
 
+    ItemPtr refPtr(const QString &refName);
+
 protected:
     virtual ItemCreator *createCreator() const = 0;
 

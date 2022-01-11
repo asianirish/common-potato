@@ -34,21 +34,17 @@ QVariant LinkTest::simplyAct(const QVariantList &args)
     ndA->addChild(ndB);
     ndB->addChild(ndC);
 
-    qDebug().noquote() << "NODE:" << nd->toJson();
-
     Path pathC = ndC->absPath();
     ItemRef refToC(pathC);
     ndD->setProperty("ref", QVariant::fromValue<ItemRef>(refToC));
     nd->addChild(ndD);
-
-//    qDebug() << "NODE_C ABS PATH:" << path;
 
     qDebug().noquote() << "NODE:" << nd->toJson();
 
     QVariant refVar = ndD->property("ref");
     auto ref = refVar.value<ItemRef>();
 
-    qDebug().noquote() << "D.ref:" << ref.ptr(ndD)->toJson();
+    qDebug().noquote() << "NODE_D.ref:" << ndD->refPtr("ref")->toJson();
 
 
     return true;

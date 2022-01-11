@@ -263,4 +263,16 @@ QSharedPointer<menu::Launcher> Item::launcher() const
     return ObjectRegistry<int, menu::Launcher>::ptr(_launcherIndex);
 }
 
+ItemPtr Item::refPtr(const QString &refName)
+{
+    QVariant refVar = property(refName);
+
+    if (refVar.canConvert<nav::ItemRef>()) {
+        auto ref = refVar.value<nav::ItemRef>();
+        return ref.ptr(sharedFromThis());
+    }
+
+    return {};
+}
+
 } // namespace hierhin
