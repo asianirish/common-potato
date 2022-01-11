@@ -32,6 +32,7 @@ QVariant PropertyDef::defaultValue() const
 void PropertyDef::setDefaultValue(const QVariant &defaultValue)
 {
     _defaultValue = defaultValue;
+    _typeId = _defaultValue.userType();
 }
 
 void PropertyDef::validate(const QVariant &value)
