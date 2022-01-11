@@ -32,7 +32,7 @@ public:
 
     bool isKindOf(const QString &className) const;
 
-protected:
+//protected:
     virtual void nodeDef(NodeDef &nd) const;
     virtual QMap<Role, ItemReq> childRequirements() const;
     virtual QMap<QString, def::PropertyDef> propertyDefs() const;
