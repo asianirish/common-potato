@@ -37,5 +37,7 @@ QVariant MethodTest::simplyAct(const QVariantList &args)
 
     qDebug().noquote() << "AFTER sys::SetProperty:" << nd->toJson();
 
+    nd->execute("sys::GetClassName");
+
     return true;
 }
