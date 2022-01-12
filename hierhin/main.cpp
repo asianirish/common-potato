@@ -15,6 +15,7 @@
 #include "Menu/MethodTest.h"
 #include <Menu/RegTest.h>
 #include <Menu/ConvTest.h>
+#include <Menu/ChildTest.h>
 
 #include <menu/Console.h>
 #include <menu/util/SetLanguage.h>
@@ -69,6 +70,8 @@ int main(int argc, char *argv[])
     ADD_MENU_ITEM(console, treg, RegTest)
 
     ADD_MENU_ITEM(console, tconv, ConvTest)
+
+    ADD_MENU_ITEM(console, tch, ChildTest)
 
     console.run();
     QObject::connect(&console, SIGNAL(quit()), &a, SLOT(quit()));

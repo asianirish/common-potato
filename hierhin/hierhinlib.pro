@@ -60,6 +60,7 @@ HEADERS += \
     nav/ItemRef.h \
     nav/Path.h \
     nav/Step.h \
+    sys/GetChildren.h \
     sys/GetClassName.h \
     sys/GetClassNames.h \
     sys/GetMethodNames.h \
@@ -99,6 +100,7 @@ SOURCES += \
     nav/ItemRef.cpp \
     nav/Path.cpp \
     nav/Step.cpp \
+    sys/GetChildren.cpp \
     sys/GetClassName.cpp \
     sys/GetClassNames.cpp \
     sys/GetMethodNames.cpp \
