@@ -25,6 +25,11 @@ ChildTest::ChildTest()
     _nd->addChild(ndC);
     _nd->addChild(ndD);
 
+    ndA->setProperty("name", "Alina");
+    ndB->setProperty("name", "Boris");
+    ndC->setProperty("name", "Charlie");
+    ndD->setProperty("name", "Daisy");
+
     connect(_nd->launcher().get(), &menu::Launcher::ready, this, &ChildTest::onReady);
 }
 
@@ -47,6 +52,8 @@ void ChildTest::onReady(const QVariant value)
     QStringList lst = value.value<hierhin::IdList>();
 
     for (auto &id : lst) {
-        qDebug() << "CHILD ID:" << id;
+//        qDebug() << "CHILD ID:" << id;
+        auto child = _nd->child(id);
+        qDebug().noquote() << "CHILD:" << child->toJson();
     }
 }
