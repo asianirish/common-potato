@@ -19,6 +19,9 @@ private:
     }
 
     hierhin::NodePtr _nd;
+
+private slots:
+    void onReady(const QVariant value);
 };
 
 #endif // CHILDTEST_H

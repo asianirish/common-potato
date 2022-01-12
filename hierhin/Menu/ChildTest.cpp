@@ -2,6 +2,7 @@
 
 #include <type.h>
 #include <hierhin/direct/NodeImpl.h>
+#include <menu/Launcher.h>
 
 #include <QDebug>
 
@@ -23,6 +24,8 @@ ChildTest::ChildTest()
     _nd->addChild(ndB);
     _nd->addChild(ndC);
     _nd->addChild(ndD);
+
+    connect(_nd->launcher().get(), &menu::Launcher::ready, this, &ChildTest::onReady);
 }
 
 QVariant ChildTest::simplyAct(const QVariantList &args)
@@ -36,4 +39,14 @@ QVariant ChildTest::simplyAct(const QVariantList &args)
     _nd->execute("sys::GetChildren");
 
     return true;
+}
+
+void ChildTest::onReady(const QVariant value)
+{
+
+    QStringList lst = value.value<hierhin::IdList>();
+
+    for (auto &id : lst) {
+        qDebug() << "CHILD ID:" << id;
+    }
 }
