@@ -2,6 +2,7 @@
 #define CHILDTEST_H
 
 #include <menu/SimpleAction.h>
+#include <hierhin/type.h>
 
 class ChildTest : public menu::SimpleAction
 {
@@ -16,6 +17,8 @@ private:
     menu::def::ActionDef actionDef() const override {
         return menu::def::ActionDef();
     }
+
+    hierhin::NodePtr _nd;
 };
 
 #endif // CHILDTEST_H
