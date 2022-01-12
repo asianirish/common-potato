@@ -1,4 +1,4 @@
-#include "LinkTest.h"
+#include "RefTest.h"
 #include <hierhin/nav/Step.h>
 #include <hierhin/nav/Path.h>
 #include <hierhin/nav/ItemRef.h>
@@ -12,12 +12,12 @@ using namespace hierhin;
 using namespace hierhin::nav;
 using namespace hierhin::direct;
 
-LinkTest::LinkTest()
+RefTest::RefTest()
 {
 
 }
 
-QVariant LinkTest::simplyAct(const QVariantList &args)
+QVariant RefTest::simplyAct(const QVariantList &args)
 {
     Q_UNUSED(args);
 

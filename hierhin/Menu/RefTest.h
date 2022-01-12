@@ -1,12 +1,12 @@
-#ifndef LINKTEST_H
-#define LINKTEST_H
+#ifndef REFTEST_H
+#define REFTEST_H
 
 #include <menu/SimpleAction.h>
 
-class LinkTest : public menu::SimpleAction
+class RefTest : public menu::SimpleAction
 {
 public:
-    LinkTest();
+    RefTest();
 
 protected:
     QVariant simplyAct(const QVariantList &args) override;
@@ -18,4 +18,4 @@ private:
     }
 };
 
-#endif // LINKTEST_H
+#endif // REFTEST_H

@@ -8,7 +8,7 @@
 #include "Menu/TransTest.h"
 #include "Menu/NumberTest.h"
 #include "Menu/CloneTest.h"
-#include "Menu/LinkTest.h"
+#include "Menu/RefTest.h"
 #include "Menu/CommandTest.h"
 #include "Menu/LauncherTest.h"
 #include "Menu/LazyRegistryTest.h"
@@ -58,7 +58,7 @@ int main(int argc, char *argv[])
 
     ADD_MENU_ITEM(console, tclone, CloneTest)
 
-    ADD_MENU_ITEM(console, tlink, LinkTest)
+    ADD_MENU_ITEM(console, tref, RefTest)
 
     ADD_MENU_ITEM(console, tlaunch, LauncherTest)
 
