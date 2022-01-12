@@ -3,6 +3,7 @@
 #include "ContextSetter.h"
 
 #include <util/Factory.h>
+#include <hierhin/type.h>
 
 #include <QDebug>
 
@@ -93,6 +94,9 @@ void Launcher::onActionComplete(const Result &result)
         if (static_cast<QMetaType::Type>(result.value().type()) == QMetaType::QStringList) {
             QStringList lst = result.value().toStringList();
             qDebug() << "ACTION COMPLETE WITH RESULT:" << stringListToString(lst);
+        } else if (result.value().userType() == QMetaType::type("hierhin::IdList")) {
+            QStringList lst = result.value().value<hierhin::IdList>();
+            qDebug() << "ACTION COMPLETE WITH RESULT (IdList):" << stringListToString(lst);
         } else {
             qDebug() << "ACTION COMPLETE WITH RESULT:" << result.value().toString();
         }
