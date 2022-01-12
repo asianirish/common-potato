@@ -13,10 +13,11 @@ class LinkedEssence : public Essence
 public:
     LinkedEssence();
 
-protected:
-    QStringList methodNames() const override;
+//    void nodeDef(NodeDef &nd) const override;
+//TODO:    QMap<Role, ItemReq> childRequirements() const override;
+//    QMap<QString, def::PropertyDef> propertyDefs() const override;
+//TODO:    QStringList methodNames() const override;
 
-    void linkItem(Item *item, const nav::ItemRef &iRef) const;
 };
 
 } // namespace hierhin

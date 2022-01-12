@@ -14,11 +14,5 @@ QStringList LinkedEssence::methodNames() const
     return lst;
 }
 
-void LinkedEssence::linkItem(Item *item, const nav::ItemRef &iRef) const
-{
-    //TODO: implement
-    Q_UNUSED(item)
-    Q_UNUSED(iRef)
-}
 
 } // namespace hierhin
