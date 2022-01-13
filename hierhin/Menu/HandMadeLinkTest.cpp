@@ -42,9 +42,6 @@ HandMadeLinkTest::HandMadeLinkTest()
 
     link->setProperty("source", QVariant::fromValue(source));
     link->setProperty("target", QVariant::fromValue(target));
-
-//    ndLeft->execute("sys::GetChildByRole", {"links"}); //TODO: return TaskId
-
 }
 
 QVariant HandMadeLinkTest::simplyAct(const QVariantList &args)
@@ -52,13 +49,20 @@ QVariant HandMadeLinkTest::simplyAct(const QVariantList &args)
     Q_UNUSED(args)
 
     auto leftNode = _nd->childByRole("left");
-    qDebug().noquote() << "NODE:" << leftNode->toJson();
+    qDebug().noquote() << "NODE_A ID:" << leftNode->id();
+
+    _getLinkOwnerId = leftNode->execute("sys::GetChildByRole", {"links"});
+    qDebug() << "GET_LINK_OWNER_ID:" << _getLinkOwnerId;
 
     return true;
 }
 
 void HandMadeLinkTest::onReady(const QVariant value, const menu::TaskId &taskId)
 {
-    //TODO: implement
-    qDebug() << "ON_READY" << value << taskId;
+    qDebug() << taskId << "VS." << _getLinkOwnerId;
+    if (taskId == _getLinkOwnerId) {
+        ItemRef ref(value.toString());
+
+        qDebug() << "ON_READY" << value << taskId;
+    }
 }
