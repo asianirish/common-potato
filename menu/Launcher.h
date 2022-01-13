@@ -22,8 +22,8 @@ public:
 
     explicit Launcher(QObject *parent = nullptr);
 
-    void launch(const QString &actionClassName, const QVariantList &args, ContextSetter *cnxtSetter);
-    void launch(const QString &actionClassName, const QVariantMap &namedArgs, ContextSetter *cnxtSetter);
+    TaskId launch(const QString &actionClassName, const QVariantList &args, ContextSetter *cnxtSetter);
+    TaskId launch(const QString &actionClassName, const QVariantMap &namedArgs, ContextSetter *cnxtSetter);
 
     static void setTaskIdGenClassName(const QString &className);
 
