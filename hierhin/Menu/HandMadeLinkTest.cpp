@@ -61,8 +61,9 @@ void HandMadeLinkTest::onReady(const QVariant value, const menu::TaskId &taskId)
 {
     qDebug() << taskId << "VS." << _getLinkOwnerId;
     if (taskId == _getLinkOwnerId) {
-        ItemRef ref(value.toString());
 
-        qDebug() << "ON_READY" << value << taskId;
+        ItemRef ref(value.value<nav::ItemRef>());
+        auto linkOwnerNode = ref.ptr(_nd);
+        qDebug().noquote() << "ON_READY" << linkOwnerNode->toJson() << taskId;
     }
 }

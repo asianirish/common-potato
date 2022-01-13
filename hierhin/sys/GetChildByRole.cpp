@@ -1,6 +1,7 @@
 #include "GetChildByRole.h"
 
 #include "Node.h"
+#include "nav/ItemRef.h"
 
 namespace hierhin {
 namespace sys {
@@ -36,7 +37,8 @@ QVariant GetChildByRole::actImpl(const QVariantList &args, Item *item)
     auto child = node->childByRole(role);
 
     if (child) {
-        return child->id();
+        nav::ItemRef itemRef(child->absPath());
+        return QVariant::fromValue(itemRef);
     }
 
     return QVariant(); //TODO: or exception?
