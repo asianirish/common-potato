@@ -18,6 +18,8 @@ HandMadeLinkTest::HandMadeLinkTest()
     auto linkOwner = NodePtr(new NodeHashImpl());
     auto link = NodePtr(new NodeHashImpl());
 
+    connect(_nd->launcher().get(), &menu::Launcher::ready, this, &HandMadeLinkTest::onReady);
+
     _nd->setEssenceClassName("TestEssenceA");
     ndA->setEssenceClassName("hierhin::LinkedEssence");
     linkOwner->setEssenceClassName("hierhin::LinkOwnerEssence");
