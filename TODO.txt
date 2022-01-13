@@ -6,3 +6,4 @@
 * use LinkEssences as child items of LinkOwnerEssence and LinkOwnerEssence as a role child ("links") LinkedEssence
 
 * ArgDef vs. PropertyDef
+* TaskId class with func name and args
