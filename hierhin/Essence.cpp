@@ -26,10 +26,10 @@ Essence::Essence() : QObject(nullptr)
         REGISTER_CLASS_FOR_UTIL_FACTORY(menu::Action, sys::SetProperty);
         REGISTER_CLASS_FOR_UTIL_FACTORY(menu::Action, sys::GetClassName);
         REGISTER_CLASS_FOR_UTIL_FACTORY(menu::Action, sys::GetMethodNames);
-        REGISTER_CLASS_FOR_UTIL_FACTORY(menu::Action, sys::GetChildren);
+        REGISTER_CLASS_FOR_UTIL_FACTORY(menu::Action, sys::GetClassNames);
 
         //Node actions
-        REGISTER_CLASS_FOR_UTIL_FACTORY(menu::Action, sys::GetClassNames);
+        REGISTER_CLASS_FOR_UTIL_FACTORY(menu::Action, sys::GetChildren);
 
         yes = true;
     }
