@@ -7,7 +7,7 @@ SimpleAction::SimpleAction()
 
 }
 
-void SimpleAction::actSpecific(const QVariantList &args, const QString &taskId)
+void SimpleAction::actSpecific(const QVariantList &args, const TaskId &taskId)
 {
     Result result(simplyAct(args));
     result.setTaskId(taskId);

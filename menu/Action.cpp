@@ -8,7 +8,7 @@ Action::Action(QObject *parent) : QObject(parent)
 
 }
 
-void Action::act(const QVariantList &args, const QString &taskId, ActionListener *listener)
+void Action::act(const QVariantList &args, const TaskId &taskId, ActionListener *listener)
 {
     auto actionDef = this->actionDef();
     auto err = actionDef.validate(args);
@@ -34,7 +34,7 @@ void Action::act(const QVariantList &args, const QString &taskId, ActionListener
 
 }
 
-void Action::act(const QVariantMap &namedArgs, const QString &taskId, ActionListener *listener)
+void Action::act(const QVariantMap &namedArgs, const TaskId &taskId, ActionListener *listener)
 {
     QVariantList args;
     actionDef().toPositionalArguments(namedArgs, args);

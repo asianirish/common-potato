@@ -10,12 +10,12 @@ ThreadLauncher::ThreadLauncher()
 
 }
 
-void ThreadLauncher::launchImpl(Action *action, const QVariantList &args, const QString &actionId)
+void ThreadLauncher::launchImpl(Action *action, const QVariantList &args, const TaskId &taskId)
 {
     ActionThread *thread = new ActionThread();
     thread->setAction(action);
     thread->setArgs(args);
-    thread->setTaskId(actionId);
+    thread->setTaskId(taskId);
 
     bool isValid = connect(thread, &ActionThread::ready, this, &ThreadLauncher::onActionComplete, Qt::QueuedConnection);
 //    bool isValid = connect(action, &Action::ready, this, &ThreadLauncher::onActionComplete, Qt::QueuedConnection);

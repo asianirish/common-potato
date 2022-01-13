@@ -14,7 +14,7 @@ protected:
     virtual QVariant simplyAct(const QVariantList &args) = 0;
 
 private:
-    void actSpecific(const QVariantList &args, const QString &taskId) final;
+    void actSpecific(const QVariantList &args, const TaskId &taskId) final;
 
 };
 

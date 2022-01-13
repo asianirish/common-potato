@@ -22,19 +22,19 @@ public:
     QVariantList args() const;
     void setArgs(const QVariantList &args);
 
-    QString taskId() const;
-    void setTaskId(const QString &taskId);
+    TaskId taskId() const;
+    void setTaskId(const TaskId &taskId);
 
 private:
     Action *_action;
     QVariantList _args;
-    QString _taskId;
+    TaskId _taskId;
 
 signals:
     void ready(const menu::Result &result);
 
 private slots:
-    void onTestReady(const Result &result);
+    void onTestReady(const Result &result); //TODO: fully-qualified
 };
 
 } // namespace menu

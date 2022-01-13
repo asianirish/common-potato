@@ -21,14 +21,14 @@
 <context>
     <name>menu::Launcher</name>
     <message>
-        <location filename="Launcher.cpp" line="73"/>
-        <source>no such an actionId</source>
-        <translation type="unfinished"></translation>
+        <location filename="Launcher.cpp" line="81"/>
+        <source>no such an taskId</source>
+        <translation type="unfinished">нет такой id задачи</translation>
     </message>
     <message>
-        <location filename="Launcher.cpp" line="75"/>
-        <source>actionId</source>
-        <translation type="unfinished"></translation>
+        <location filename="Launcher.cpp" line="83"/>
+        <source>taskId</source>
+        <translation type="unfinished">id задачи</translation>
     </message>
 </context>
 <context>

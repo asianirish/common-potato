@@ -62,12 +62,12 @@ Result &Result::operator =(const QVariant &value)
     return *this;
 }
 
-QString Result::taskId() const
+TaskId Result::taskId() const
 {
     return _taskId;
 }
 
-void Result::setTaskId(const QString &taskId)
+void Result::setTaskId(const TaskId &taskId)
 {
     _taskId = taskId;
 }

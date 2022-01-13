@@ -3,6 +3,8 @@
 
 #include "Error.h"
 
+#include "type.h"
+
 #include <QVariant>
 #include <QString>
 #include <QMap>
@@ -34,8 +36,8 @@ public:
 
     operator QVariant();
 
-    QString taskId() const;
-    void setTaskId(const QString &taskId);
+    TaskId taskId() const;
+    void setTaskId(const TaskId &taskId);
 
     Error error() const;
     void setError(const Error &error);
@@ -43,7 +45,7 @@ public:
 private:
     QVariant _value;
 
-    QString _taskId; //TODO: TaskId class (?)
+    TaskId _taskId; //TODO: TaskId class (?)
 
     Error _error;
 };

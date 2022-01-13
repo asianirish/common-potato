@@ -17,9 +17,9 @@ class Action : public QObject
 public:
     explicit Action(QObject *parent = nullptr);
 
-    void act(const QVariantList &args, const QString &taskId, ActionListener *listener = nullptr);
+    void act(const QVariantList &args, const TaskId &taskId, ActionListener *listener = nullptr);
 
-    void act(const QVariantMap &namedArgs, const QString &taskId, ActionListener *listener = nullptr);
+    void act(const QVariantMap &namedArgs, const TaskId &taskId, ActionListener *listener = nullptr);
 
     void toPositionalArguments(const QVariantMap &namedArgs, QVariantList &posArgs);
 
@@ -27,7 +27,7 @@ signals:
     void ready(const menu::Result &result);
 
 private:
-    virtual void actSpecific(const QVariantList &args, const QString &taskId) = 0;
+    virtual void actSpecific(const QVariantList &args, const TaskId &taskId) = 0;
 
     virtual def::ActionDef actionDef() const = 0;
 

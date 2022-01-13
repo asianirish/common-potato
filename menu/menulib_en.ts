@@ -17,14 +17,14 @@
 <context>
     <name>menu::Launcher</name>
     <message>
-        <location filename="Launcher.cpp" line="73"/>
-        <source>no such an actionId</source>
-        <translation type="unfinished"></translation>
+        <location filename="Launcher.cpp" line="81"/>
+        <source>no such an taskId</source>
+        <translation type="unfinished">no such an task id</translation>
     </message>
     <message>
-        <location filename="Launcher.cpp" line="75"/>
-        <source>actionId</source>
-        <translation type="unfinished"></translation>
+        <location filename="Launcher.cpp" line="83"/>
+        <source>taskId</source>
+        <translation type="unfinished">task id</translation>
     </message>
 </context>
 </TS>

@@ -27,7 +27,7 @@ namespace menu {
 
 const QString Launcher::DEFAULT_ACTION_ID_GENERATOR_CLASS_NAME("uniq::TimeQStringValue");
 
-potato_util::LazyPointer<uniq::Value<QString>> Launcher::_actionIdGen(Launcher::DEFAULT_ACTION_ID_GENERATOR_CLASS_NAME);
+potato_util::LazyPointer<uniq::Value<QString>> Launcher::_taskIdGen(Launcher::DEFAULT_ACTION_ID_GENERATOR_CLASS_NAME);
 
 
 Launcher::Launcher(QObject *parent) : QObject(parent)
@@ -37,26 +37,26 @@ Launcher::Launcher(QObject *parent) : QObject(parent)
 
 void Launcher::launch(const QString &actionClassName, const QVariantList &args, ContextSetter *cnxtSetter)
 {
-    QString actionId = initAction(actionClassName, cnxtSetter);
-    Action *action = _pendingActions.value(actionId);
-    launchImpl(action, args, actionId);
+    TaskId taskId = initAction(actionClassName, cnxtSetter);
+    Action *action = _pendingActions.value(taskId);
+    launchImpl(action, args, taskId);
 }
 
 void Launcher::launch(const QString &actionClassName, const QVariantMap &namedArgs, ContextSetter *cnxtSetter)
 {
-    QString actionId = initAction(actionClassName, cnxtSetter);
-    Action *action = _pendingActions.value(actionId);
+    TaskId taskId = initAction(actionClassName, cnxtSetter);
+    Action *action = _pendingActions.value(taskId);
     QVariantList args;
     action->toPositionalArguments(namedArgs, args);
-    launchImpl(action, args, actionId);
+    launchImpl(action, args, taskId);
 }
 
-void Launcher::setActionIdGenClassName(const QString &className)
+void Launcher::setTaskIdGenClassName(const QString &className)
 {
-    _actionIdGen.setClassName(className);
+    _taskIdGen.setClassName(className);
 }
 
-QString Launcher::initAction(const QString &actionClassName, ContextSetter *cnxtSetter)
+TaskId Launcher::initAction(const QString &actionClassName, ContextSetter *cnxtSetter)
 {
     // will delete in Launcher::onActionComplete
     Action *action = potato_util::Factory<Action>::create(actionClassName.toStdString());
@@ -65,10 +65,11 @@ QString Launcher::initAction(const QString &actionClassName, ContextSetter *cnxt
         cnxtSetter->setActionContext(action);
     }
 
-    QString actionId = _actionIdGen->value();
-    _pendingActions.insert(actionId, action);
+    QString taskId = _taskIdGen->value();
+    //TODO: convert string taskId to TaskId class here
+    _pendingActions.insert(taskId, action);
 
-    return actionId;
+    return taskId;
 }
 
 void Launcher::onActionComplete(const Result &result)
@@ -77,9 +78,9 @@ void Launcher::onActionComplete(const Result &result)
         Error err;
         err.setCode(-1);
         err.setType(Error::ERROR_TYPE::LAUNCHER);
-        err.setDescription(tr("no such an actionId"));
+        err.setDescription(tr("no such an taskId"));
         QVariantMap mp;
-        mp.insert(tr("actionId"), result.taskId());
+        mp.insert(tr("taskId"), result.taskId());
         err.setContext(mp);
         emit error(err);
         return;

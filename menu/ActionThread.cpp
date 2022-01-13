@@ -41,12 +41,12 @@ void ActionThread::setArgs(const QVariantList &args)
     _args = args;
 }
 
-QString ActionThread::taskId() const
+TaskId ActionThread::taskId() const
 {
     return _taskId;
 }
 
-void ActionThread::setTaskId(const QString &taskId)
+void ActionThread::setTaskId(const TaskId &taskId)
 {
     _taskId = taskId;
 }

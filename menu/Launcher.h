@@ -25,16 +25,18 @@ public:
     void launch(const QString &actionClassName, const QVariantList &args, ContextSetter *cnxtSetter);
     void launch(const QString &actionClassName, const QVariantMap &namedArgs, ContextSetter *cnxtSetter);
 
-    static void setActionIdGenClassName(const QString &className);
+    static void setTaskIdGenClassName(const QString &className);
 
 protected:
-    virtual void launchImpl(Action *action, const QVariantList &args, const QString &actionId) = 0;
+    virtual void launchImpl(Action *action, const QVariantList &args, const TaskId &taskId) = 0;
 
 private:
-    QMap<QString, Action *> _pendingActions;
-    static potato_util::LazyPointer<uniq::Value<QString>> _actionIdGen;
+    QMap<TaskId, Action *> _pendingActions;
 
-    QString initAction(const QString &actionClassName, ContextSetter *cnxtSetter);
+    //TODO: use QString as generated value but convert to TaskId
+    static potato_util::LazyPointer<uniq::Value<QString>> _taskIdGen;
+
+    TaskId initAction(const QString &actionClassName, ContextSetter *cnxtSetter);
 
 signals:
     void ready(const QVariant &result);

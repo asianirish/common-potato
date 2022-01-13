@@ -9,10 +9,10 @@ SyncLauncher::SyncLauncher()
 
 }
 
-void SyncLauncher::launchImpl(Action *action, const QVariantList &args, const QString &actionId)
+void SyncLauncher::launchImpl(Action *action, const QVariantList &args, const TaskId &taskId)
 {
     connect(action, &Action::ready, this, &SyncLauncher::onActionComplete, Qt::DirectConnection); //emphasize that this is direct one
-    action->act(args, actionId);
+    action->act(args, taskId);
 }
 
 } // namespace menu
