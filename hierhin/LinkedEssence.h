@@ -10,6 +10,7 @@ namespace hierhin {
 
 class LinkedEssence : public Essence
 {
+    Q_OBJECT
 public:
     LinkedEssence();
 

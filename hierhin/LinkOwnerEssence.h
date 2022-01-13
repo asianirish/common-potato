@@ -7,6 +7,7 @@ namespace hierhin {
 
 class LinkOwnerEssence : public Essence
 {
+    Q_OBJECT
 public:
     LinkOwnerEssence();
 
