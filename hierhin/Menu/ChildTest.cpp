@@ -46,9 +46,9 @@ QVariant ChildTest::simplyAct(const QVariantList &args)
     return true;
 }
 
-void ChildTest::onReady(const QVariant value)
+void ChildTest::onReady(const QVariant value, const menu::TaskId &taskId)
 {
-
+    qDebug() << "TEST IS READY:" << taskId;
     QStringList lst = value.value<hierhin::IdList>();
 
     for (auto &id : lst) {

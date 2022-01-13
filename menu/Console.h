@@ -48,7 +48,7 @@ private:
 private slots:
     void readCommand();
 
-    void onReady(const QVariant &result);
+    void onReady(const QVariant &result, const menu::TaskId &taskId);
     void onError(const menu::Error &err);
 
 private:

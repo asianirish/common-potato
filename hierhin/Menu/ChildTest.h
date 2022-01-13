@@ -21,7 +21,7 @@ private:
     hierhin::NodePtr _nd;
 
 private slots:
-    void onReady(const QVariant value);
+    void onReady(const QVariant value, const menu::TaskId &taskId);
 };
 
 #endif // CHILDTEST_H

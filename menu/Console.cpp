@@ -70,9 +70,9 @@ void Console::readCommand()
     }
 }
 
-void Console::onReady(const QVariant &result)
+void Console::onReady(const QVariant &result, const menu::TaskId &taskId)
 {
-    std::cout << result.toString().toStdString() << std::endl;
+    std::cout << result.toString().toStdString() << " (" << taskId.toStdString() << ")" << std::endl;
     std::cout << "> " << std::flush;
 }
 

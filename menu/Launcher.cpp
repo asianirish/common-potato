@@ -101,7 +101,7 @@ void Launcher::onActionComplete(const Result &result)
         } else {
             qDebug() << "ACTION COMPLETE WITH RESULT:" << result.value().toString();
         }
-        emit ready(result.value());
+        emit ready(result.value(), result.taskId());
     } else {
         emit error(result.error());
     }

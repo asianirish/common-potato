@@ -39,7 +39,7 @@ private:
     TaskId initAction(const QString &actionClassName, ContextSetter *cnxtSetter);
 
 signals:
-    void ready(const QVariant &result);
+    void ready(const QVariant &result, const menu::TaskId &taskId);
     void error(const menu::Error &error);
 
 protected:

@@ -75,10 +75,10 @@ void Menu::exec(const CommandInfo &commandInfo)
     }
 }
 
-void Menu::onResult(const QVariant &value)
+void Menu::onResult(const QVariant &value, const TaskId &taskId)
 {
     qDebug() << "RESULT:" << value.toString();
-    emit ready(value);
+    emit ready(value, taskId);
 }
 
 } // namespace menu

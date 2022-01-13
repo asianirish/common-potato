@@ -55,11 +55,11 @@ private:
     void exec(const CommandInfo &commandInfo);
 
 signals:
-    void ready(const QVariant &result);
+    void ready(const QVariant &result, const TaskId &taskId);
     void error(const menu::Error &error);
 
 public slots:
-    void onResult(const QVariant &value); //Launcher based
+    void onResult(const QVariant &value, const menu::TaskId &taskId); //Launcher based
     //TODO: onError
 };
 
