@@ -142,7 +142,7 @@ void Item::setProperty(const QString &name, const QVariant &value)
     }
 }
 
-menu::TaskId Item::execute(const QString &command, const QVariantList &args, menu::TaskId *taskIdOut)
+void Item::execute(const QString &command, const QVariantList &args, menu::TaskId *taskIdOut)
 {
     auto essence = essencePtr();
     auto lnch = launcher();
@@ -161,10 +161,10 @@ menu::TaskId Item::execute(const QString &command, const QVariantList &args, men
         ItemContextSetter cntx;
         cntx.setItem(this);
 
-        return lnch->launch(command, args, &cntx, taskIdOut);
+        lnch->launch(command, args, &cntx, taskIdOut);
+    } else {
+        throw ex::IncompatibleEssenceExecution(essence->className(), essenceClassName());
     }
-
-    throw ex::IncompatibleEssenceExecution(essence->className(), essenceClassName());
 }
 
 NodeDef Item::definition() const
