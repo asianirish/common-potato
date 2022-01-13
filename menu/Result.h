@@ -43,7 +43,7 @@ public:
 private:
     QVariant _value;
 
-    QString _taskId; //TODO: implement
+    QString _taskId; //TODO: TaskId class (?)
 
     Error _error;
 };
