@@ -142,7 +142,7 @@ void Item::setProperty(const QString &name, const QVariant &value)
     }
 }
 
-menu::TaskId Item::execute(const QString &command, const QVariantList &args)
+menu::TaskId Item::execute(const QString &command, const QVariantList &args, menu::TaskId *taskIdOut)
 {
     auto essence = essencePtr();
     auto lnch = launcher();
@@ -161,7 +161,7 @@ menu::TaskId Item::execute(const QString &command, const QVariantList &args)
         ItemContextSetter cntx;
         cntx.setItem(this);
 
-        return lnch->launch(command, args, &cntx);
+        return lnch->launch(command, args, &cntx, taskIdOut);
     }
 
     throw ex::IncompatibleEssenceExecution(essence->className(), essenceClassName());

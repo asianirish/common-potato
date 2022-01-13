@@ -35,17 +35,27 @@ Launcher::Launcher(QObject *parent) : QObject(parent)
 
 }
 
-TaskId Launcher::launch(const QString &actionClassName, const QVariantList &args, ContextSetter *cnxtSetter)
+TaskId Launcher::launch(const QString &actionClassName, const QVariantList &args, ContextSetter *cnxtSetter, TaskId *taskIdOut)
 {
     TaskId taskId = initAction(actionClassName, cnxtSetter);
+
+    if (taskIdOut) {
+        *taskIdOut = taskId;
+    }
+
     Action *action = _pendingActions.value(taskId);
     launchImpl(action, args, taskId);
     return taskId;
 }
 
-TaskId Launcher::launch(const QString &actionClassName, const QVariantMap &namedArgs, ContextSetter *cnxtSetter)
+TaskId Launcher::launch(const QString &actionClassName, const QVariantMap &namedArgs, ContextSetter *cnxtSetter, TaskId *taskIdOut)
 {
     TaskId taskId = initAction(actionClassName, cnxtSetter);
+
+    if (taskIdOut) {
+        *taskIdOut = taskId;
+    }
+
     Action *action = _pendingActions.value(taskId);
     QVariantList args;
     action->toPositionalArguments(namedArgs, args);

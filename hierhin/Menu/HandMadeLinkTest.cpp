@@ -51,7 +51,7 @@ QVariant HandMadeLinkTest::simplyAct(const QVariantList &args)
     auto leftNode = _nd->childByRole("left");
     qDebug().noquote() << "NODE_A ID:" << leftNode->id();
 
-    _getLinkOwnerId = leftNode->execute("sys::GetChildByRole", {"links"});
+    leftNode->execute("sys::GetChildByRole", {"links"}, &_getLinkOwnerId);
     qDebug() << "GET_LINK_OWNER_ID:" << _getLinkOwnerId;
 
     return true;
