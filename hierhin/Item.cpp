@@ -12,6 +12,10 @@
 #include <hierhin/ex/UnsupportedCommand.h>
 #include <hierhin/ex/IncompatibleEssenceExecution.h>
 
+#include <hierhin/LinkEssence.h>
+#include <hierhin/LinkOwnerEssence.h>
+#include <hierhin/LinkedEssence.h>
+
 #include <QJsonDocument>
 #include <QJsonObject>
 
@@ -28,7 +32,16 @@ potato_util::LazyPointer<uniq::Value<Id>> Item::_idGen(Item::DEFAULT_ID_GEN_CLAS
 
 Item::Item() : _launcherIndex(0)
 {
+    static bool yes = false;
+    if (!yes) {
 
+        //register system Essences
+        REGISTER_CLASS_FOR_UTIL_FACTORY(hierhin::Essence, hierhin::LinkEssence);
+        REGISTER_CLASS_FOR_UTIL_FACTORY(hierhin::Essence, hierhin::LinkOwnerEssence);
+        REGISTER_CLASS_FOR_UTIL_FACTORY(hierhin::Essence, hierhin::LinkedEssence);
+
+        yes = true;
+    }
 }
 
 Id Item::id() const
