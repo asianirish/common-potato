@@ -13,31 +13,37 @@ using namespace hierhin::direct;
 HandMadeLinkTest::HandMadeLinkTest()
 {
     _nd = NodePtr(new NodeHashImpl());
-    auto ndA = NodePtr(new NodeHashImpl());
-    auto ndB = NodePtr(new NodeHashImpl());
+    auto ndLeft = NodePtr(new NodeHashImpl());
+    auto ndRight = NodePtr(new NodeHashImpl());
     auto linkOwner = NodePtr(new NodeHashImpl());
     auto link = NodePtr(new NodeHashImpl());
 
     connect(_nd->launcher().get(), &menu::Launcher::ready, this, &HandMadeLinkTest::onReady);
 
     _nd->setEssenceClassName("TestEssenceA");
-    ndA->setEssenceClassName("hierhin::LinkedEssence");
+    ndLeft->setEssenceClassName("TestEssenceB");
+    ndRight->setEssenceClassName("TestEssenceA");
+
+    ndLeft->setProperty("name", "Alla");
+    ndRight->setProperty("name", "Boris");
+
+    ndLeft->setEssenceClassName("hierhin::LinkedEssence");
     linkOwner->setEssenceClassName("hierhin::LinkOwnerEssence");
     link->setEssenceClassName("hierhin::LinkEssence");
 
-    _nd->addChild(ndA);
-    _nd->addChild(ndB);
+    _nd->addChild(ndLeft, "left");
+    _nd->addChild(ndRight, "right");
 
-    ndA->addChild(linkOwner, "links");
+    ndLeft->addChild(linkOwner, "links");
     linkOwner->addChild(link);
 
-    ItemRef source(ndA->absPath());
-    ItemRef target(ndB->absPath());
+    ItemRef source(ndLeft->absPath());
+    ItemRef target(ndRight->absPath());
 
     link->setProperty("source", QVariant::fromValue(source));
     link->setProperty("target", QVariant::fromValue(target));
 
-    ndA->execute("sys::GetChildByRole", {"links"}); //TODO: return TaskId
+//    ndLeft->execute("sys::GetChildByRole", {"links"}); //TODO: return TaskId
 
 }
 
@@ -45,7 +51,8 @@ QVariant HandMadeLinkTest::simplyAct(const QVariantList &args)
 {
     Q_UNUSED(args)
 
-    qDebug().noquote() << "NODE:" << _nd->toJson();
+    auto leftNode = _nd->childByRole("left");
+    qDebug().noquote() << "NODE:" << leftNode->toJson();
 
     return true;
 }
