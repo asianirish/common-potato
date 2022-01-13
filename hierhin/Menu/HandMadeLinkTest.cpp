@@ -35,7 +35,7 @@ HandMadeLinkTest::HandMadeLinkTest()
     link->setProperty("source", QVariant::fromValue(source));
     link->setProperty("target", QVariant::fromValue(target));
 
-//TODO    ndA->execute("")
+    ndA->execute("sys::GetChildByRole", {"links"}); //TODO: return TaskId
 
 }
 
@@ -51,7 +51,5 @@ QVariant HandMadeLinkTest::simplyAct(const QVariantList &args)
 void HandMadeLinkTest::onReady(const QVariant value, const menu::TaskId &taskId)
 {
     //TODO: implement
-    Q_UNUSED(value)
-    Q_UNUSED(taskId)
-    qDebug() << "ON_READY";
+    qDebug() << "ON_READY" << value << taskId;
 }

@@ -60,6 +60,7 @@ HEADERS += \
     nav/ItemRef.h \
     nav/Path.h \
     nav/Step.h \
+    sys/GetChildByRole.h \
     sys/GetChildren.h \
     sys/GetClassName.h \
     sys/GetClassNames.h \
@@ -100,6 +101,7 @@ SOURCES += \
     nav/ItemRef.cpp \
     nav/Path.cpp \
     nav/Step.cpp \
+    sys/GetChildByRole.cpp \
     sys/GetChildren.cpp \
     sys/GetClassName.cpp \
     sys/GetClassNames.cpp \

@@ -8,6 +8,7 @@
 #include "sys/GetMethodNames.h"
 #include "sys/GetClassNames.h"
 #include "sys/GetChildren.h"
+#include "sys/GetChildByRole.h"
 
 namespace hierhin {
 
@@ -30,6 +31,7 @@ Essence::Essence() : QObject(nullptr)
 
         //Node actions
         REGISTER_CLASS_FOR_UTIL_FACTORY(menu::Action, sys::GetChildren);
+        REGISTER_CLASS_FOR_UTIL_FACTORY(menu::Action, sys::GetChildByRole);
 
         yes = true;
     }
@@ -101,7 +103,8 @@ QStringList Essence::methodNames() const
         "sys::GetClassName",
         "sys::GetMethodNames",
         "sys::GetClassNames",
-        "sys::GetChildren"
+        "sys::GetChildren",
+        "sys::GetChildByRole"
     };
 }
 
