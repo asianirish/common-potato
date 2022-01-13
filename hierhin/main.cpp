@@ -16,6 +16,7 @@
 #include <Menu/RegTest.h>
 #include <Menu/ConvTest.h>
 #include <Menu/ChildTest.h>
+#include <Menu/HandMadeLinkTest.h>
 
 #include <menu/Console.h>
 #include <menu/util/SetLanguage.h>
@@ -72,6 +73,8 @@ int main(int argc, char *argv[])
     ADD_MENU_ITEM(console, tconv, ConvTest)
 
     ADD_MENU_ITEM(console, tch, ChildTest)
+
+    ADD_MENU_ITEM(console, thmlink, HandMadeLinkTest)
 
     console.run();
     QObject::connect(&console, SIGNAL(quit()), &a, SLOT(quit()));
