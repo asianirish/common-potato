@@ -13,7 +13,7 @@ QMap<Role, ItemReq> LinkedEssence::childRequirements() const
     req.addClassName("hierhin::LinkOwnerEssence");
     req.setCanBeEssenceless(false);
 
-    return {{"links", req}}; //without a role
+    return {{"links", req}}; //links role for the link owner
 }
 
 QStringList LinkedEssence::methodNames() const
