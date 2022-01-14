@@ -26,6 +26,20 @@ void Node::addChild(ItemPtr item, const Role &role)
     addChildImpl(item, role);
 }
 
+QList<nav::ItemRef> Node::childRefs() const
+{
+    QList<nav::ItemRef> lst;
+    IdList ids = idList();
+
+    for (auto &id : ids) {
+        auto item = child(id);
+        nav::ItemRef ref(item->absPath());
+        lst.append(ref);
+    }
+
+    return lst;
+}
+
 void Node::nodeToMap(QVariantMap &mp) const
 {
     //TODO: implement

@@ -2,6 +2,7 @@
 #define HIERHIN_NODE_H
 
 #include <Item.h>
+#include <nav/ItemRef.h>
 
 namespace hierhin {
 
@@ -21,6 +22,8 @@ public:
     void addChild(ItemPtr item, const Role &role = Role());
 
     virtual IdList idList() const = 0;
+
+    QList<nav::ItemRef> childRefs() const;
 
 protected:
     virtual void nodeImplToMap(QVariantMap &mp) const = 0;
