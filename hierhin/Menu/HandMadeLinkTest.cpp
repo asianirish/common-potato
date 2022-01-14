@@ -75,17 +75,8 @@ void HandMadeLinkTest::onReady(const QVariant value, const menu::TaskId &taskId)
             auto link = linkRef.ptr(_nd);
             qDebug().noquote() << "LINK:" << link->toJson();
 
-            auto sourceRefVar = link->property("source");
-            auto targetRefVar = link->property("target");
-
-            auto sourceRef = sourceRefVar.value<nav::ItemRef>();
-            auto targetRef = targetRefVar.value<nav::ItemRef>();
-
-            qDebug() << "SOURCE_REF:" << sourceRef;
-            qDebug() << "TARGET_REF:" << targetRef;
-
-            auto source = sourceRef.ptr(_nd);
-            auto target = targetRef.ptr(_nd);
+            auto source = link->refPtr("source");
+            auto target = link->refPtr("target");
 
             qDebug().noquote() << "SOURCE:" << source->toJson();
             qDebug().noquote() << "TARGET:" << target->toJson();
