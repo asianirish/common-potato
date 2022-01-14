@@ -38,9 +38,6 @@ public:
     virtual QMap<QString, def::PropertyDef> propertyDefs() const;
     virtual QStringList methodNames() const;
 
-private:
-    static menu::ThreadLauncher *_launcher; //TODO: where to delete _launcher?
-
 signals:
 
 };
