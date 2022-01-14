@@ -49,7 +49,7 @@ public:
 
     void setProperty(const QString &name, const QVariant &value);
 
-    void execute(const QString &method, const QVariantList &args = QVariantList(), menu::TaskId *taskIdOut = nullptr);
+    menu::TaskId execute(const QString &method, const QVariantList &args = QVariantList(), menu::TaskId *taskIdOut = nullptr);
 
     def::NodeDef definition() const;
 
