@@ -37,8 +37,17 @@ QVariant ChildTest::simplyAct(const QVariantList &args)
 {
     Q_UNUSED(args);
 
-    qDebug() << "\n======================================================\n";
+    qDebug() << "conversion:";
+    QList<nav::ItemRef> childRefs = _nd->childRefs();
+    QVariant childRefsVar = QVariant::fromValue(childRefs);
+    QList<nav::ItemRef> strChildRefs = childRefsVar.value<QList<nav::ItemRef>>();
 
+    for (auto &refStr : strChildRefs) {
+        qDebug() << "REF_STR:" << refStr;
+    }
+
+    qDebug() << "\n======================================================\n";
+    qDebug() << "to json:";
     qDebug().noquote() << "NODE:" << _nd->toJson();
 
     _nd->execute("sys::GetChildren");
@@ -48,6 +57,8 @@ QVariant ChildTest::simplyAct(const QVariantList &args)
 
 void ChildTest::onReady(const QVariant value, const menu::TaskId &taskId)
 {
+    qDebug() << "\n======================================================\n";
+    qDebug() << "on GetChildren:";
     qDebug() << "TEST IS READY:" << taskId;
     QStringList lst = value.value<hierhin::IdList>();
 
