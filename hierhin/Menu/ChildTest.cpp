@@ -18,8 +18,8 @@ ChildTest::ChildTest()
     auto ndC = NodePtr(new NodeHashImpl());
     auto ndD = NodePtr(new NodeHashImpl());
 
-    _nd->setEssenceClassName("TestEssenceA");
-    ndA->setEssenceClassName("TestEssenceA");
+    _nd->setEssenceClassName("TestEssenceAExt");
+    ndA->setEssenceClassName("TestEssenceAExt");
     ndB->setEssenceClassName("TestEssenceB");
 
     _nd->addChild(ndA, "right");

@@ -3,6 +3,7 @@
 #include "Test/TestEssenceB.h"
 #include "Test/TestEssenceC.h"
 #include "Test/PlusValue.h"
+#include "Test/TestEssenceAExt.h"
 
 #include <hierhin/nav/ItemRef.h>
 
@@ -41,6 +42,7 @@ void HierhinClassRegistry::registerAllClasses() const
     potato_util::ObjectRegistry<int, Launcher>::createObject<ThreadLauncher>(1);
 
     REGISTER_CLASS_FOR_UTIL_FACTORY(hierhin::Essence, TestEssenceA);
+    REGISTER_CLASS_FOR_UTIL_FACTORY(hierhin::Essence, TestEssenceAExt);
     REGISTER_CLASS_FOR_UTIL_FACTORY(hierhin::Essence, TestEssenceB);
     REGISTER_CLASS_FOR_UTIL_FACTORY(hierhin::Essence, TestEssenceC);
 
