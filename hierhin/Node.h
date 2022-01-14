@@ -25,6 +25,8 @@ public:
 
     QList<nav::ItemRef> childRefs() const;
 
+    void setLink(const QString &name, const nav::ItemRef &ref);
+
 protected:
     virtual void nodeImplToMap(QVariantMap &mp) const = 0;
     virtual void nodeImplFromMap(const QVariantMap &mp) = 0;

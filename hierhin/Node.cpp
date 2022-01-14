@@ -40,6 +40,17 @@ QList<nav::ItemRef> Node::childRefs() const
     return lst;
 }
 
+void Node::setLink(const QString &name, const nav::ItemRef &ref)
+{
+    if (isKindOf("hierhin::LinkedEssence")) {
+        auto linkOwner = childByRole("links");
+
+        if (!linkOwner) {
+            //TODO: create LinkOwnerEssence subclass
+        }
+    }
+}
+
 void Node::nodeToMap(QVariantMap &mp) const
 {
     //TODO: implement
