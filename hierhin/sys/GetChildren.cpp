@@ -19,7 +19,7 @@ QVariant GetChildren::actImpl(const QVariantList &args, Item *item)
         return QVariant(); //TODO: or exception?
     }
 
-    return QVariant::fromValue(node->idList());
+    return QVariant::fromValue(node->childRefs());
 }
 
 } // namespace sys
