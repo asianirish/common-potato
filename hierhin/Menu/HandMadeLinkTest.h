@@ -20,6 +20,7 @@ private:
     hierhin::NodePtr _nd;
 
     menu::TaskId _getLinkOwnerId;
+    menu::TaskId _getLinksId;
 
 private slots:
     void onReady(const QVariant value, const menu::TaskId &taskId);
