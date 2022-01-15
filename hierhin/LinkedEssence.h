@@ -15,9 +15,10 @@ public:
     LinkedEssence();
 
 //    void nodeDef(NodeDef &nd) const override;
-    QMap<Role, ItemReq> childRequirements() const override;
+//    QMap<Role, ItemReq> childRequirements() const override;
 //    QMap<QString, def::PropertyDef> propertyDefs() const override;
     QStringList methodNames() const override;
+    ItemReq everyChildRequirement() const override;
 
 };
 
