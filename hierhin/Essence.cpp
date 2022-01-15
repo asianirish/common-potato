@@ -40,6 +40,9 @@ NodeDef Essence::nodeDef() const
     auto chReq = childRequirements();
     nd.setChildRequirements(chReq);
 
+    auto itemReq = everyChildRequirement();
+    nd.setEveryChildRequirement(itemReq);
+
     auto propDefs = propertyDefs();
     nd.setPropertyDefs(propDefs);
 
