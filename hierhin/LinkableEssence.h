@@ -8,11 +8,11 @@
 
 namespace hierhin {
 
-class LinkedEssence : public Essence
+class LinkableEssence : public Essence
 {
     Q_OBJECT
 public:
-    LinkedEssence();
+    LinkableEssence();
 
 //    void nodeDef(NodeDef &nd) const override;
 //    QMap<Role, ItemReq> childRequirements() const override;

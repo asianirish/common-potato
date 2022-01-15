@@ -14,7 +14,7 @@
 
 #include <hierhin/LinkEssence.h>
 #include <hierhin/LinkOwnerEssence.h>
-#include <hierhin/LinkedEssence.h>
+#include <hierhin/LinkableEssence.h>
 
 #include <QJsonDocument>
 #include <QJsonObject>
@@ -38,7 +38,7 @@ Item::Item() : _launcherIndex(0)
         //register system Essences
         REGISTER_CLASS_FOR_UTIL_FACTORY(hierhin::Essence, hierhin::LinkEssence);
         REGISTER_CLASS_FOR_UTIL_FACTORY(hierhin::Essence, hierhin::LinkOwnerEssence);
-        REGISTER_CLASS_FOR_UTIL_FACTORY(hierhin::Essence, hierhin::LinkedEssence);
+        REGISTER_CLASS_FOR_UTIL_FACTORY(hierhin::Essence, hierhin::LinkableEssence);
 
         yes = true;
     }

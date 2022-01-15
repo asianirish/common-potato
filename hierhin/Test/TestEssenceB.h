@@ -2,11 +2,11 @@
 #define TESTESSENCEB_H
 
 #include <Essence.h>
-#include <LinkedEssence.h>
+#include <LinkableEssence.h>
 
 using namespace hierhin::def;
 
-class TestEssenceB : public hierhin::LinkedEssence
+class TestEssenceB : public hierhin::LinkableEssence
 {
     Q_OBJECT
 public:

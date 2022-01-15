@@ -1,20 +1,20 @@
-#include "LinkedEssence.h"
+#include "LinkableEssence.h"
 
 namespace hierhin {
 
-LinkedEssence::LinkedEssence()
+LinkableEssence::LinkableEssence()
 {
 
 }
 
-QStringList LinkedEssence::methodNames() const
+QStringList LinkableEssence::methodNames() const
 {
     QStringList lst = Essence::methodNames();
     //TODO: add a sys::Link action
     return lst;
 }
 
-ItemReq LinkedEssence::everyChildRequirement() const
+ItemReq LinkableEssence::everyChildRequirement() const
 {
     ItemReq req;
     req.addClassName("hierhin::LinkOwnerEssence");

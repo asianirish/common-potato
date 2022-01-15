@@ -33,7 +33,7 @@ HEADERS += \
     ItemCreator.h \
     LinkEssence.h \
     LinkOwnerEssence.h \
-    LinkedEssence.h \
+    LinkableEssence.h \
     Method.h \
     Node.h \
     def/ItemDef.h \
@@ -77,7 +77,7 @@ SOURCES += \
     ItemCreator.cpp \
     LinkEssence.cpp \
     LinkOwnerEssence.cpp \
-    LinkedEssence.cpp \
+    LinkableEssence.cpp \
     Method.cpp \
     Node.cpp \
     def/ItemDef.cpp \
