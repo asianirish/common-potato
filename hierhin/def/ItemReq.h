@@ -28,9 +28,13 @@ public:
 
     void validate(ItemPtr item, const Role &role) const;
 
+    bool alwaysValid() const;
+    void setAlwaysValid(bool alwaysValid);
+
 private:
     QStringList _classNames;
     bool _canBeEssenceless;
+    bool _alwaysValid;
 };
 
 } // namespace def

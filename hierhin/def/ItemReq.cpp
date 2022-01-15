@@ -14,7 +14,8 @@ ItemReq::ItemReq() : ItemReq(BASE_ESSENCE_CLASS)
 
 }
 
-ItemReq::ItemReq(const QString &className, bool canBeEssenceless) : _canBeEssenceless(canBeEssenceless)
+ItemReq::ItemReq(const QString &className, bool canBeEssenceless) : _canBeEssenceless(canBeEssenceless),
+    _alwaysValid(false)
 {
     addClassName(className);
 }
@@ -46,6 +47,9 @@ void ItemReq::setCanBeEssenceless(bool newCanBeEssenceless)
 
 void ItemReq::validate(ItemPtr item, const Role &role) const
 {
+    if (_alwaysValid) {
+        return;
+    }
 
     if (item->essenceClassName().isEmpty()) {
         if (!_canBeEssenceless) {
@@ -62,6 +66,16 @@ void ItemReq::validate(ItemPtr item, const Role &role) const
     }
 
     throw ex::IncompatibleEssenceClass(role);
+}
+
+bool ItemReq::alwaysValid() const
+{
+    return _alwaysValid;
+}
+
+void ItemReq::setAlwaysValid(bool alwaysValid)
+{
+    _alwaysValid = alwaysValid;
 }
 
 } // namespace def
