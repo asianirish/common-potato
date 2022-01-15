@@ -103,4 +103,11 @@ QStringList Essence::methodNames() const
     };
 }
 
+ItemReq Essence::everyChildRequirement() const
+{
+    ItemReq req;
+    req.setAlwaysValid(true);
+    return req;
+}
+
 } // namespace hierhin

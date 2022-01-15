@@ -37,6 +37,7 @@ public:
     virtual QMap<Role, ItemReq> childRequirements() const;
     virtual QMap<QString, def::PropertyDef> propertyDefs() const;
     virtual QStringList methodNames() const;
+    virtual ItemReq everyChildRequirement() const;
 
 signals:
 
