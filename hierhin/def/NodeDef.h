@@ -21,10 +21,15 @@ public:
     void setChildRequirements(const QMap<Role, ItemReq> &newChildRequirements);
     void setChildRequirement(const ItemReq &req, const Role &role = Role());
 
+    ItemReq everyChildRequirement() const;
+    void setEveryChildRequirement(const ItemReq &everyChildRequirement);
+
 private:
 
     //maps roles onto item requirements
     QMap<Role, ItemReq> _childRequirements;
+
+    ItemReq _everyChildRequirement;
 };
 
 } // namespace def

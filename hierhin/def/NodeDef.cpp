@@ -9,6 +9,7 @@ namespace def {
 NodeDef::NodeDef()
 {
     setChildRequirement(ItemReq("hierhin::Essence"), Role());
+    _everyChildRequirement.setAlwaysValid(true);
 }
 
 QList<Role> NodeDef::roles() const
@@ -22,6 +23,8 @@ void NodeDef::validateChild(ItemPtr item, const Role &role) const
         ex::NoSuchRole ex(role);
         throw ex;
     }
+
+    _everyChildRequirement.validate(item, role);
 
     auto req = _childRequirements.value(role);
     req.validate(item, role);
@@ -41,6 +44,16 @@ void NodeDef::setChildRequirements(const QMap<Role, ItemReq> &newChildRequiremen
 void NodeDef::setChildRequirement(const ItemReq &req, const Role &role)
 {
     _childRequirements.insert(role, req);
+}
+
+ItemReq NodeDef::everyChildRequirement() const
+{
+    return _everyChildRequirement;
+}
+
+void NodeDef::setEveryChildRequirement(const ItemReq &everyChildRequirement)
+{
+    _everyChildRequirement = everyChildRequirement;
 }
 
 } // namespace def
