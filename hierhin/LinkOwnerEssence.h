@@ -15,6 +15,7 @@ public:
     QMap<Role, ItemReq> childRequirements() const override;
 //    QMap<QString, def::PropertyDef> propertyDefs() const override;
 //    QStringList methodNames() const override;
+    ItemReq everyChildRequirement() const override;
 };
 
 } // namespace hierhin
