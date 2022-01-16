@@ -19,28 +19,14 @@ ItemPtr Node::childByRole(const Role &role)
     auto childItem = cnode->childByRole(role).constCast<Item>();
 
     if (!childItem) {
-        auto ess = essencePtr();
+        QString mandatoryClassName = childMandatoryClassName(role);
 
-        if (ess) {
-            auto nd = ess->nodeDef();
-
-            auto req = nd.childRequirement(role);
+        if (!mandatoryClassName.isEmpty()) {
 
             //create and add mandatory child
-            if (req.isMandatory()) {
-                auto classNames = req.classNames();
-
-                if (classNames.isEmpty()) {
-                    throw "empty class name list"; //TODO: Exception class
-                }
-
-                //only one class available for the mandatory one
-                QString mandatoryClassName = classNames.at(0);
-
-                auto newItem = createImpl(mandatoryClassName);
-                addChild(newItem, role);
-                return newItem;
-            }
+            auto newItem = createImpl(mandatoryClassName);
+            addChild(newItem, role);
+            return newItem;
         }
     }
 
@@ -90,6 +76,28 @@ void Node::nodeFromMap(const QVariantMap &mp)
 {
     //TODO: read links
     nodeImplFromMap(mp);
+}
+
+QString Node::childMandatoryClassName(const Role &role) const
+{
+    auto ess = essencePtr();
+
+    if (ess) {
+        auto nd = ess->nodeDef();
+
+        auto req = nd.childRequirement(role);
+        if (req.isMandatory()) {
+            auto classNames = req.classNames();
+
+            if (classNames.isEmpty()) {
+                throw "empty class name list"; //TODO: Exception class
+            }
+            //only one class available for the mandatory one
+           return classNames.at(0);
+        }
+    }
+
+    return QString();
 }
 
 } // namespace hierhin

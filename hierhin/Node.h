@@ -37,7 +37,8 @@ private:
     void nodeToMap(QVariantMap &mp) const final;
     void nodeFromMap(const QVariantMap &mp) final;
 
-//TODO:    bool isChildMandatory(const Role &role) const;
+    //returns QString() if not mandatory
+    QString childMandatoryClassName(const Role &role) const;
 
 };
 
