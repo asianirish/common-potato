@@ -24,12 +24,17 @@ public:
     ItemReq everyChildRequirement() const;
     void setEveryChildRequirement(const ItemReq &everyChildRequirement);
 
+    BaseType requiredBaseType() const final;
+    void setRequiredBaseType(const BaseType &requiredBaseType);
+
 private:
 
     //maps roles onto item requirements
     QMap<Role, ItemReq> _childRequirements;
 
     ItemReq _everyChildRequirement;
+
+    BaseType _requiredBaseType;
 };
 
 } // namespace def
