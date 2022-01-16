@@ -81,6 +81,8 @@ public:
 protected:
     virtual ItemCreator *createCreator() const = 0;
 
+    ItemPtr create();
+
     EssencePtr essencePtr() const;
 
 private:

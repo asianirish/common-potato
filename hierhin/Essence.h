@@ -39,6 +39,8 @@ public:
     virtual QStringList methodNames() const;
     virtual ItemReq everyChildRequirement() const;
 
+    virtual BaseType requiredBaseType() const;
+
 signals:
 
 };

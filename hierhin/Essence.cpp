@@ -37,11 +37,16 @@ NodeDef Essence::nodeDef() const
     NodeDef nd;
     nodeDef(nd);
 
-    auto chReq = childRequirements();
-    nd.setChildRequirements(chReq);
+    auto bsTp = requiredBaseType();
+    nd.setRequiredBaseType(bsTp);
 
-    auto itemReq = everyChildRequirement();
-    nd.setEveryChildRequirement(itemReq);
+    if (bsTp == BaseType::NODE) {
+        auto chReq = childRequirements();
+        nd.setChildRequirements(chReq);
+
+        auto itemReq = everyChildRequirement();
+        nd.setEveryChildRequirement(itemReq);
+    }
 
     auto propDefs = propertyDefs();
     nd.setPropertyDefs(propDefs);
@@ -111,6 +116,11 @@ ItemReq Essence::everyChildRequirement() const
     ItemReq req;
     req.setAlwaysValid(true);
     return req;
+}
+
+BaseType Essence::requiredBaseType() const
+{
+    return BaseType::NODE;
 }
 
 } // namespace hierhin

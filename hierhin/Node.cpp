@@ -15,6 +15,12 @@ ItemPtr Node::child(const Id &id)
 
 ItemPtr Node::childByRole(const Role &role)
 {
+//    auto ess = essencePtr();
+
+//    if (ess) {
+//        ess->nodeDef()
+//    }
+
     const Node *cnode = dynamic_cast<const Node*>(this);
     return cnode->childByRole(role).constCast<Item>();
 }
