@@ -81,6 +81,8 @@ public:
 protected:
     virtual ItemCreator *createCreator() const = 0;
 
+    EssencePtr essencePtr() const;
+
 private:
     mutable Id _id;
     QVariantMap _properties;
@@ -95,8 +97,6 @@ private:
     virtual void nodeFromMap(const QVariantMap &mp) {
         Q_UNUSED(mp);
     }
-
-    EssencePtr essencePtr() const;
 };
 
 } // namespace hierhin
