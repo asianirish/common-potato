@@ -23,8 +23,6 @@ ItemPtr ItemCreator::createItem(const BaseType &baseType) const
         return createItem();
     case BaseType::NODE:
         return createNode();
-    case BaseType::LINK:
-        /*return createLink()*/;
     }
 
     return {}; //TODO: exception

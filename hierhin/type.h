@@ -31,8 +31,7 @@ typedef QList<QString> NameList;
 
 enum class BaseType {
     ITEM,
-    NODE,
-    LINK
+    NODE
 };
 
 } // namespace hierhin

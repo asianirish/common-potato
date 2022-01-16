@@ -17,7 +17,6 @@ public:
 private:
     virtual ItemPtr createItem() const = 0;
     virtual NodePtr createNode() const = 0;
-//TODO:    virtual LinkPtr createLink() = 0;
 
     ItemPtr createItem(const BaseType &baseType) const;
 
