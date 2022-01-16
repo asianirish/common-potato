@@ -15,7 +15,8 @@ ItemReq::ItemReq() : ItemReq(BASE_ESSENCE_CLASS)
 }
 
 ItemReq::ItemReq(const QString &className, bool canBeEssenceless) : _canBeEssenceless(canBeEssenceless),
-    _alwaysValid(false)
+    _alwaysValid(false),
+    _isMandatory(false)
 {
     addClassName(className);
 }
@@ -76,6 +77,16 @@ bool ItemReq::alwaysValid() const
 void ItemReq::setAlwaysValid(bool alwaysValid)
 {
     _alwaysValid = alwaysValid;
+}
+
+bool ItemReq::isMandatory() const
+{
+    return _isMandatory;
+}
+
+void ItemReq::setIsMandatory(bool isMandatory)
+{
+    _isMandatory = isMandatory;
 }
 
 } // namespace def

@@ -31,10 +31,14 @@ public:
     bool alwaysValid() const;
     void setAlwaysValid(bool alwaysValid);
 
+    bool isMandatory() const;
+    void setIsMandatory(bool isMandatory);
+
 private:
     QStringList _classNames;
     bool _canBeEssenceless;
     bool _alwaysValid;
+    bool _isMandatory;
 };
 
 } // namespace def
