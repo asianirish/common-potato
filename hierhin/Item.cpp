@@ -291,4 +291,13 @@ QStringList Item::essenceMethodNames() const
     return essencePtr()->methodNames();
 }
 
+ItemPtr Item::createImpl(const QString &essenceClassName) const
+{
+    auto essence = potato_util::SingletonRegistry<hierhin::Essence>::ptr(essenceClassName);
+    auto bsType = essence->nodeDef().requiredBaseType();
+    QScopedPointer<ItemCreator> cr(createCreator());
+    auto itemPtrImpl = cr->createItem(bsType);
+    return itemPtrImpl;
+}
+
 } // namespace hierhin

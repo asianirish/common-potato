@@ -81,7 +81,7 @@ public:
 protected:
     virtual ItemCreator *createCreator() const = 0;
 
-    ItemPtr create();
+    ItemPtr createImpl(const QString &essenceClassName) const;
 
     EssencePtr essencePtr() const;
 
