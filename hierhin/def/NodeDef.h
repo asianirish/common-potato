@@ -20,6 +20,7 @@ public:
     const QMap<Role, ItemReq> &childRequirements() const;
     void setChildRequirements(const QMap<Role, ItemReq> &newChildRequirements);
     void setChildRequirement(const ItemReq &req, const Role &role = Role());
+    ItemReq childRequirement(const Role &role) const;
 
     ItemReq everyChildRequirement() const;
     void setEveryChildRequirement(const ItemReq &everyChildRequirement);

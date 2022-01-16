@@ -51,6 +51,11 @@ void NodeDef::setChildRequirement(const ItemReq &req, const Role &role)
     _childRequirements.insert(role, req);
 }
 
+ItemReq NodeDef::childRequirement(const Role &role) const
+{
+    return _childRequirements.value(role);
+}
+
 ItemReq NodeDef::everyChildRequirement() const
 {
     //TODO: if (_requiredBaseType == BaseType::ITEM)
