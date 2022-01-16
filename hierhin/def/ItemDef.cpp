@@ -73,6 +73,11 @@ void ItemDef::insertMethodName(const QString &methodName)
     _methodNames.append(methodName);
 }
 
+BaseType ItemDef::requiredBaseType() const
+{
+    return BaseType::ITEM;
+}
+
 bool ItemDef::toBool() const
 {
     if (!_isLimitedPropertyList) {

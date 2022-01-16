@@ -3,6 +3,7 @@
 
 #include "PropertyDef.h"
 #include "MethodDef.h"
+#include "type.h"
 
 #include <QString>
 #include <QMap>
@@ -30,6 +31,8 @@ public:
     const QStringList &methodNames() const;
     void setMethodNames(const QStringList &newMethodNames);
     void insertMethodName(const QString &methodName);
+
+    virtual BaseType requiredBaseType() const;
 
 private:
     bool _isLimitedPropertyList; // limited to the specified set of definitions
