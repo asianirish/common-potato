@@ -37,6 +37,8 @@ private:
     void nodeToMap(QVariantMap &mp) const final;
     void nodeFromMap(const QVariantMap &mp) final;
 
+//TODO:    bool isChildMandatory(const Role &role) const;
+
 };
 
 } // namespace hierhin

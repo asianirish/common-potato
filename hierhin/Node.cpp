@@ -15,14 +15,36 @@ ItemPtr Node::child(const Id &id)
 
 ItemPtr Node::childByRole(const Role &role)
 {
-//    auto ess = essencePtr();
-
-//    if (ess) {
-//        ess->nodeDef()
-//    }
-
     const Node *cnode = dynamic_cast<const Node*>(this);
-    return cnode->childByRole(role).constCast<Item>();
+    auto childItem = cnode->childByRole(role).constCast<Item>();
+
+    if (!childItem) {
+        auto ess = essencePtr();
+
+        if (ess) {
+            auto nd = ess->nodeDef();
+
+            auto req = nd.childRequirement(role);
+
+            //create and add mandatory child
+            if (req.isMandatory()) {
+                auto classNames = req.classNames();
+
+                if (classNames.isEmpty()) {
+                    throw "empty class name list"; //TODO: Exception class
+                }
+
+                //only one class available for the mandatory one
+                QString mandatoryClassName = classNames.at(0);
+
+                auto newItem = createImpl(mandatoryClassName);
+                addChild(newItem, role);
+                return newItem;
+            }
+        }
+    }
+
+    return childItem;
 }
 
 void Node::addChild(ItemPtr item, const Role &role)
