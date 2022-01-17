@@ -54,15 +54,27 @@ QList<nav::ItemRef> Node::childRefs() const
     return lst;
 }
 
-void Node::setLink(const QString &name, const nav::ItemRef &ref)
+void Node::setLink(const nav::ItemRef &targetRef, const Role &linkRole, const QString &linkClass, const Role &ownerRole)
 {
     if (isKindOf("hierhin::LinkedEssence")) {
-        auto linkOwner = childByRole("links");
-
-        if (!linkOwner) {
-            //TODO: create LinkOwnerEssence subclass
-        }
+        throw "not a hierhin::LinkedEssence class"; //TODO: exception class
     }
+
+    auto linkOwner = childByRole(ownerRole).dynamicCast<Node>();
+
+    if (!linkOwner) {
+        throw "lack of a link owner"; //TODO: exception class
+    }
+
+    auto link = createImpl(linkClass);
+
+    nav::ItemRef sourceRef(absPath());
+    auto sourceVar = QVariant::fromValue(sourceRef);
+    auto targetVar = QVariant::fromValue(targetRef);
+    link->setProperty("source", sourceVar); //TODO: const
+    link->setProperty("target", targetVar); //TODO: const
+
+    linkOwner->addChild(link, linkRole);
 }
 
 void Node::nodeToMap(QVariantMap &mp) const

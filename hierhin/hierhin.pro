@@ -33,6 +33,7 @@ SOURCES += main.cpp \
     Menu/HandMadeLinkTest.cpp \
     Menu/LauncherTest.cpp \
     Menu/LazyRegistryTest.cpp \
+    Menu/LinkTest.cpp \
     Menu/MethodTest.cpp \
     Menu/NodeTest.cpp \
     Menu/NumberTest.cpp \
@@ -63,6 +64,7 @@ HEADERS += \
     Menu/HandMadeLinkTest.h \
     Menu/LauncherTest.h \
     Menu/LazyRegistryTest.h \
+    Menu/LinkTest.h \
     Menu/MethodTest.h \
     Menu/NodeTest.h \
     Menu/NumberTest.h \
