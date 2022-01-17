@@ -21,6 +21,9 @@ QMap<Role, ItemReq> LinkableEssence::childRequirements() const
         mp.insert(pr.first, req);
     }
 
+    auto reqs = nonLinkChildRequirements();
+    mp.insert(reqs);
+
     return mp;
 }
 
@@ -42,6 +45,11 @@ ItemReq LinkableEssence::everyChildRequirement() const
 QList<std::pair<Role, QString> > LinkableEssence::linkRoles() const
 {
     return {{QString("links"), QString("hierhin::LinkOwnerEssence")}}; //TODO: const
+}
+
+QMap<Role, ItemReq> LinkableEssence::nonLinkChildRequirements() const
+{
+    return {};
 }
 
 

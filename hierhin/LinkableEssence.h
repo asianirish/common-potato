@@ -23,7 +23,7 @@ public:
 private:
 
     virtual QList<std::pair<Role, QString> > linkRoles() const;
-
+    virtual QMap<Role, ItemReq> nonLinkChildRequirements() const;
 };
 
 } // namespace hierhin
