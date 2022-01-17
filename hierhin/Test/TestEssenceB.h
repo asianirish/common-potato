@@ -1,7 +1,6 @@
 #ifndef TESTESSENCEB_H
 #define TESTESSENCEB_H
 
-#include <Essence.h>
 #include <LinkableEssence.h>
 
 using namespace hierhin::def;
