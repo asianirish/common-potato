@@ -15,7 +15,6 @@ HandMadeLinkTest::HandMadeLinkTest()
     _nd = NodePtr(new NodeHashImpl());
     auto ndLeft = NodePtr(new NodeHashImpl());
     auto ndRight = NodePtr(new NodeHashImpl());
-    auto linkOwner = NodePtr(new NodeHashImpl());
     auto link = NodePtr(new NodeHashImpl());
 
     connect(_nd->launcher().get(), &menu::Launcher::ready, this, &HandMadeLinkTest::onReady);
@@ -28,14 +27,15 @@ HandMadeLinkTest::HandMadeLinkTest()
     ndRight->setProperty("name", "Boris");
 
     ndLeft->setEssenceClassName("hierhin::LinkedEssence");
-    linkOwner->setEssenceClassName("hierhin::LinkOwnerEssence");
     link->setEssenceClassName("hierhin::LinkEssence");
+
+//    ndLeft->addChild(linkOwner, "links");
+    auto linkOwner = ndLeft->childByRole("links");
+    auto linkOwnerNd = linkOwner.dynamicCast<Node>();
+    linkOwnerNd->addChild(link);
 
     _nd->addChild(ndLeft, "left");
     _nd->addChild(ndRight, "right");
-
-    ndLeft->addChild(linkOwner, "links");
-    linkOwner->addChild(link);
 
     ItemRef source(ndLeft->absPath());
     ItemRef target(ndRight->absPath());
