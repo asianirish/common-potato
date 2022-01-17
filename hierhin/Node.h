@@ -27,6 +27,8 @@ public:
 
     void setLink(const nav::ItemRef &targetRef, const Role &linkRole = Role(), const QString &linkClass = "hierhin::LinkEssence", const Role &ownerRole = "links");
 
+    QList<nav::ItemRef> targets(const Role &linkOwnerRole = "links");
+
 protected:
     virtual void nodeImplToMap(QVariantMap &mp) const = 0;
     virtual void nodeImplFromMap(const QVariantMap &mp) = 0;

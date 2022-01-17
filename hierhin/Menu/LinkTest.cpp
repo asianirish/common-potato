@@ -28,14 +28,23 @@ LinkTest::LinkTest()
     _nd->addChild(ndRight, "right");
 
     ndLeft->setLink(ndRight->absPath());
-
 }
 
 QVariant LinkTest::simplyAct(const QVariantList &args)
 {
     Q_UNUSED(args)
 
-    qDebug().noquote() << _nd->toJson();
+    auto left = _nd->childByRole("left");
+    qDebug().noquote() << "LEFT:" << left->toJson();
+
+    auto leftNd = left.dynamicCast<Node>();
+
+    auto refs = leftNd->targets();
+
+    for (auto &ref : refs) {
+        auto target = ref.ptr(left);
+        qDebug().noquote() << "TARGET:" << target->toJson();
+    }
 
     return true;
 }
