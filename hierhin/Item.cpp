@@ -297,6 +297,7 @@ ItemPtr Item::createImpl(const QString &essenceClassName) const
     auto bsType = essence->nodeDef().requiredBaseType();
     QScopedPointer<ItemCreator> cr(createCreator());
     auto itemPtrImpl = cr->createItem(bsType);
+    itemPtrImpl->setEssenceClassName(essenceClassName);
     return itemPtrImpl;
 }
 
