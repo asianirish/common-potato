@@ -27,17 +27,6 @@ void TestEssenceA::nodeDef(NodeDef &nd) const
     nd.setIsLimitedPropertyList(true);
 }
 
-QMap<hierhin::Role, ItemReq> TestEssenceA::childRequirements() const
-{
-    QMap<hierhin::Role, ItemReq> chReq;
-    chReq.insert("left", ItemReq("TestEssenceB"));
-    chReq.insert("right", ItemReq("TestEssenceA"));
-    chReq.insert("middle", ItemReq());
-    chReq.insert("top", ItemReq("TestEssenceB"));
-
-    return chReq;
-}
-
 QMap<QString, PropertyDef> TestEssenceA::propertyDefs() const
 {
     QMap<QString, PropertyDef> propDefs = Essence::propertyDefs();
@@ -73,4 +62,15 @@ QStringList TestEssenceA::methodNames() const
     QStringList lst = Essence::methodNames();
     lst.append("PlusValue");
     return lst;
+}
+
+QMap<Role, ItemReq> TestEssenceA::nonLinkChildRequirements() const
+{
+    QMap<hierhin::Role, ItemReq> chReq;
+    chReq.insert("left", ItemReq("TestEssenceB"));
+    chReq.insert("right", ItemReq("TestEssenceA"));
+    chReq.insert("middle", ItemReq());
+    chReq.insert("top", ItemReq("TestEssenceB"));
+
+    return chReq;
 }
