@@ -1,5 +1,5 @@
-#ifndef HIERHIN_DEF_LINKEDESSENCE_H
-#define HIERHIN_DEF_LINKEDESSENCE_H
+#ifndef HIERHIN_DEF_LINKABLEESSENCE_H
+#define HIERHIN_DEF_LINKABLEESSENCE_H
 
 #include "Essence.h"
 #include "nav/ItemRef.h"
@@ -28,4 +28,4 @@ private:
 
 } // namespace hierhin
 
-#endif // HIERHIN_DEF_LINKEDESSENCE_H
+#endif // HIERHIN_DEF_LINKABLEESSENCE_H
