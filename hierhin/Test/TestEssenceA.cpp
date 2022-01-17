@@ -74,8 +74,3 @@ QStringList TestEssenceA::methodNames() const
     lst.append("PlusValue");
     return lst;
 }
-
-void TestEssenceA::setElite(hierhin::Item *item)
-{
-    item->setProperty("value", 1337);
-}

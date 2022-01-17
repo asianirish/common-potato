@@ -18,9 +18,6 @@ protected:
     QMap<QString, PropertyDef> propertyDefs() const override;
     QStringList methodNames() const override;
 
-private:
-    Q_INVOKABLE void setElite(hierhin::Item *item);
-
 };
 
 #endif // TESTESSENCEA_H
