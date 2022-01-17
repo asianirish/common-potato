@@ -132,14 +132,11 @@ void Item::setProperty(const QString &name, const QVariant &value)
 {
     auto def = definition();
 
-    if (!def) { //no constraints
-        _properties.insert(name, value);
-    } else {
-
+    if (def) {
         def.validateProperty(name, value);
-
-        _properties.insert(name, value);
     }
+
+    _properties.insert(name, value);
 }
 
 menu::TaskId Item::execute(const QString &command, const QVariantList &args, menu::TaskId *taskIdOut)
