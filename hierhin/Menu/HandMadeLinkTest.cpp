@@ -26,7 +26,7 @@ HandMadeLinkTest::HandMadeLinkTest()
     ndLeft->setProperty("name", "Alla");
     ndRight->setProperty("name", "Boris");
 
-    ndLeft->setEssenceClassName("hierhin::LinkedEssence");
+    ndLeft->setEssenceClassName("hierhin::LinkableEssence");
     link->setEssenceClassName("hierhin::LinkEssence");
 
 //    ndLeft->addChild(linkOwner, "links");

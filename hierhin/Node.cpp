@@ -56,8 +56,8 @@ QList<nav::ItemRef> Node::childRefs() const
 
 void Node::setLink(const nav::ItemRef &targetRef, const Role &linkRole, const QString &linkClass, const Role &ownerRole)
 {
-    if (isKindOf("hierhin::LinkedEssence")) {
-        throw "not a hierhin::LinkedEssence class"; //TODO: exception class
+    if (isKindOf("hierhin::LinkableEssence")) {
+        throw "not a hierhin::LinkableEssence class"; //TODO: exception class
     }
 
     auto linkOwner = childByRole(ownerRole).dynamicCast<Node>();
@@ -81,8 +81,8 @@ QList<nav::ItemRef> Node::targets(const Role &linkOwnerRole)
 {
     QList<nav::ItemRef> refLst;
 
-    if (isKindOf("hierhin::LinkedEssence")) {
-        throw "not a hierhin::LinkedEssence class"; //TODO: exception class
+    if (isKindOf("hierhin::LinkableEssence")) {
+        throw "not a hierhin::LinkableEssence class"; //TODO: exception class
     }
 
     auto linkOwner = childByRole(linkOwnerRole).dynamicCast<Node>();
