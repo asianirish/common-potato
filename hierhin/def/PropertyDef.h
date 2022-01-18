@@ -28,6 +28,8 @@ public:
     int typeId() const;
     void setTypeId(int newTypeId);
 
+    bool isListType() const;
+
 private:
     QList<val::ValidatorPtr> _validators;
     QVariant _defaultValue;
