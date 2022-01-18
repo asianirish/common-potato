@@ -20,6 +20,7 @@ public:
     void setIsLimitedPropertyList(bool isLimitedPropertyList);
 
     QMap<QString, PropertyDef> propertyDefs() const;
+    PropertyDef propertyDef(const QString &name) const;
     void setPropertyDefs(const QMap<QString, PropertyDef> &propertyDefs);
     void insertPropertyDef(const PropertyDef &propertyDef);
 

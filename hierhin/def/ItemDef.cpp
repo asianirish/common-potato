@@ -25,6 +25,11 @@ QMap<QString, PropertyDef> ItemDef::propertyDefs() const
     return _propertyDefs;
 }
 
+PropertyDef ItemDef::propertyDef(const QString &name) const
+{
+    return _propertyDefs.value(name);
+}
+
 void ItemDef::setPropertyDefs(const QMap<QString, PropertyDef> &propertyDefs)
 {
     _propertyDefs = propertyDefs;
