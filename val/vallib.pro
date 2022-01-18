@@ -30,6 +30,7 @@ TRANSLATIONS += vallib_en.ts
 
 SOURCES += \
         AbstractRegex.cpp \
+        Each.cpp \
         Email.cpp \
         Length.cpp \
         List.cpp \
@@ -45,6 +46,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     AbstractRegex.h \
+    Each.h \
     Email.h \
     Length.h \
     LessThan.h \
