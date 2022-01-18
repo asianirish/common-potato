@@ -139,6 +139,39 @@ void Item::setProperty(const QString &name, const QVariant &value)
     _properties.insert(name, value);
 }
 
+void Item::addValue(const QString &name, const QVariant &value)
+{
+    auto def = definition();
+
+
+    if (def) {
+        auto propDef = def.propertyDef(name);
+
+        if (!propDef.isListType()) {
+            throw "not a list type"; //TODO: exception class
+        }
+    }
+
+    auto propValue = _properties.value(name);
+
+    if (propValue.canConvert<QVariantList>()) {
+        auto lst = propValue.toList(); //TODO: other list types?
+
+        lst.append(value);
+
+        setProperty(name, lst);
+    } else {
+        QVariantList lst;
+
+        if (propValue.isValid()) {
+            lst.append(propValue);
+        }
+
+        lst.append(value);
+        setProperty(name, lst);
+    }
+}
+
 menu::TaskId Item::execute(const QString &command, const QVariantList &args, menu::TaskId *taskIdOut)
 {
     auto essence = essencePtr();
