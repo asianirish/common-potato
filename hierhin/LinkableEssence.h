@@ -18,7 +18,7 @@ public:
     QMap<Role, ItemReq> childRequirements() const final;
 //    QMap<QString, def::PropertyDef> propertyDefs() const override;
     QStringList methodNames() const override;
-    ItemReq everyChildRequirement() const override;
+//    ItemReq everyChildRequirement() const override;
 
 private:
 

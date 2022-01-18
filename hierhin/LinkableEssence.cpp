@@ -34,14 +34,6 @@ QStringList LinkableEssence::methodNames() const
     return lst;
 }
 
-ItemReq LinkableEssence::everyChildRequirement() const
-{
-    ItemReq req;
-    req.addClassName("hierhin::LinkOwnerEssence");
-    req.setCanBeEssenceless(false);
-    return req;
-}
-
 QList<std::pair<Role, QString> > LinkableEssence::linkRoles() const
 {
     return {{QString("links"), QString("hierhin::LinkOwnerEssence")}}; //TODO: const
