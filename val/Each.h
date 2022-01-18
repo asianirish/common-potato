@@ -20,6 +20,7 @@ public:
 
 private:
     QList<ValidatorPtr> _validators;
+    mutable QString _lastError;
 
     bool validateForEachValidator(const QVariant &value) const;
 };

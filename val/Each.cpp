@@ -26,6 +26,11 @@ bool Each::validate(const QVariant &value) const
     return validateForEachValidator(value);
 }
 
+QString Each::errorMessage() const
+{
+    return _lastError;
+}
+
 const QList<ValidatorPtr> &Each::validators() const
 {
     return _validators;
@@ -45,6 +50,7 @@ bool Each::validateForEachValidator(const QVariant &value) const
 {
     for (auto &validator : _validators) {
         if (!validator->validate(value)) {
+            _lastError = validator->errorMessage();
             return false;
         }
     }
