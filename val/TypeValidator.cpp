@@ -9,9 +9,11 @@ TypeValidator::TypeValidator()
 
 bool TypeValidator::validate(const QVariant &value) const
 {
-    //TODO: implement
-    Q_UNUSED(value)
-    return true;
+    if (static_cast<QMetaType::Type>(value.type()) >= QMetaType::User) {
+        return (value.userType() == _userType);
+    }
+
+    return value.canConvert(_type);
 }
 
 QString TypeValidator::errorMessage() const
