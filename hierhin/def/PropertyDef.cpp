@@ -70,5 +70,16 @@ void PropertyDef::setTypeId(int newTypeId)
     _typeId = newTypeId;
 }
 
+bool PropertyDef::isListType() const
+{
+    if (QMetaType::QVariantList == _typeId) {
+        return true;
+    }
+
+    //TODO: other list types
+
+    return false;
+}
+
 } // namespace def
 } // namespace hierhin

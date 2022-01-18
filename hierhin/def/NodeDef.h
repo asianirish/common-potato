@@ -35,7 +35,7 @@ private:
 
     ItemReq _everyChildRequirement;
 
-    BaseType _requiredBaseType;
+    BaseType _requiredBaseType; //node or item
 };
 
 } // namespace def
