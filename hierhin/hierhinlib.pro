@@ -36,6 +36,7 @@ HEADERS += \
     LinkableEssence.h \
     Method.h \
     Node.h \
+    const.h \
     def/ItemDef.h \
     def/ItemReq.h \
     def/MethodDef.h \
