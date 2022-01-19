@@ -45,7 +45,8 @@ SOURCES += main.cpp \
     Test/TestEssenceA.cpp \
     Test/TestEssenceAExt.cpp \
     Test/TestEssenceB.cpp \
-    Test/TestEssenceC.cpp
+    Test/TestEssenceC.cpp \
+    Test/TestEssenceMulty.cpp
 
 
 # Default rules for deployment.
@@ -76,6 +77,7 @@ HEADERS += \
     Test/TestEssenceA.h \
     Test/TestEssenceAExt.h \
     Test/TestEssenceB.h \
-    Test/TestEssenceC.h
+    Test/TestEssenceC.h \
+    Test/TestEssenceMulty.h
 
 

@@ -4,6 +4,7 @@
 #include "Test/TestEssenceC.h"
 #include "Test/PlusValue.h"
 #include "Test/TestEssenceAExt.h"
+#include "Test/TestEssenceMulty.h"
 
 #include <hierhin/nav/ItemRef.h>
 
@@ -45,6 +46,7 @@ void HierhinClassRegistry::registerAllClasses() const
     REGISTER_CLASS_FOR_UTIL_FACTORY(hierhin::Essence, TestEssenceAExt);
     REGISTER_CLASS_FOR_UTIL_FACTORY(hierhin::Essence, TestEssenceB);
     REGISTER_CLASS_FOR_UTIL_FACTORY(hierhin::Essence, TestEssenceC);
+    REGISTER_CLASS_FOR_UTIL_FACTORY(hierhin::Essence, TestEssenceMulty);
 
     REGISTER_CLASS_FOR_UTIL_FACTORY(menu::Action, menu::math::Div);
     REGISTER_CLASS_FOR_UTIL_FACTORY(menu::Action, menu::math::Inc);
