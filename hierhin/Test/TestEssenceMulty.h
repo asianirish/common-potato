@@ -9,6 +9,8 @@ using namespace hierhin::def;
 
 class TestEssenceMulty : public hierhin::LinkableEssence
 {
+    //essence classes MUST contain Q_OBJECT in this version (because of metaObject()->className())
+    Q_OBJECT
 public:
     TestEssenceMulty();
 
