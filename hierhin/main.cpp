@@ -18,6 +18,7 @@
 #include <Menu/ChildTest.h>
 #include <Menu/HandMadeLinkTest.h>
 #include <Menu/LinkTest.h>
+#include <Menu/MultyPropertyTest.h>
 
 #include <menu/Console.h>
 #include <menu/util/SetLanguage.h>
@@ -78,6 +79,8 @@ int main(int argc, char *argv[])
     ADD_MENU_ITEM(console, thmlink, HandMadeLinkTest)
 
     ADD_MENU_ITEM(console, tlink, LinkTest)
+
+    ADD_MENU_ITEM(console, tmlt, MultyPropertyTest)
 
     console.run();
     QObject::connect(&console, SIGNAL(quit()), &a, SLOT(quit()));

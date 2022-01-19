@@ -35,6 +35,7 @@ SOURCES += main.cpp \
     Menu/LazyRegistryTest.cpp \
     Menu/LinkTest.cpp \
     Menu/MethodTest.cpp \
+    Menu/MultyPropertyTest.cpp \
     Menu/NodeTest.cpp \
     Menu/NumberTest.cpp \
     Menu/RefTest.cpp \
@@ -67,6 +68,7 @@ HEADERS += \
     Menu/LazyRegistryTest.h \
     Menu/LinkTest.h \
     Menu/MethodTest.h \
+    Menu/MultyPropertyTest.h \
     Menu/NodeTest.h \
     Menu/NumberTest.h \
     Menu/RefTest.h \
