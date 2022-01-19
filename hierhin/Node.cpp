@@ -77,7 +77,7 @@ void Node::setLink(const nav::ItemRef &targetRef, const Role &linkRole, const QS
     /* TODO: (tagetRef should not be const in this case)
     QSharedPointer<Item> thisPtr = sharedFromThis();
     ItemPtr targetPtr = targetRef.ptr(thisPtr);
-    targetPtr->addValue(QString("from_") + "target", QVariant::fromValue(nav::ItemRef(link->absPath())));
+    targetPtr->addValue(Const::LINK_REF_SIGN + ownerRole, QVariant::fromValue(nav::ItemRef(link->absPath())));
     */
 
     linkOwner->addChild(link, linkRole);
