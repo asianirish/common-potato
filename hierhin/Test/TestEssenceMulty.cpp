@@ -33,7 +33,7 @@ QMap<QString, PropertyDef> TestEssenceMulty::propertyDefs() const
 
         ValidatorPtr rangeVal = ValidatorPtr(new val::Range<int>(1, 13));
         ValidatorPtr each = ValidatorPtr(new val::Each());
-//        each.dynamicCast<val::Each>()->addValidator(each);
+        each.dynamicCast<val::Each>()->addValidator(rangeVal);
 
         propDef.addValidator(each);
         propDef.setName("numbers");
