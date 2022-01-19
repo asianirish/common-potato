@@ -29,8 +29,7 @@ HandMadeLinkTest::HandMadeLinkTest()
     ndLeft->setEssenceClassName("hierhin::LinkableEssence");
     link->setEssenceClassName("hierhin::LinkEssence");
 
-//    ndLeft->addChild(linkOwner, "links");
-    auto linkOwner = ndLeft->childByRole("links");
+    auto linkOwner = ndLeft->childByRole(Const::DEFAULT_LINK_OWNER_ROLE);
     auto linkOwnerNd = linkOwner.dynamicCast<Node>();
     linkOwnerNd->addChild(link);
 
@@ -51,7 +50,7 @@ QVariant HandMadeLinkTest::simplyAct(const QVariantList &args)
     auto leftNode = _nd->childByRole("left");
     qDebug().noquote() << "NODE_A ID:" << leftNode->id();
 
-    leftNode->execute("sys::GetChildByRole", {"links"}, &_getLinkOwnerId);
+    leftNode->execute("sys::GetChildByRole", {Const::DEFAULT_LINK_OWNER_ROLE}, &_getLinkOwnerId);
 
     return true;
 }

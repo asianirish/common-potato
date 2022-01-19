@@ -27,6 +27,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
+    Const.h \
     Essence.h \
     Item.h \
     ItemContextSetter.h \
@@ -36,7 +37,6 @@ HEADERS += \
     LinkableEssence.h \
     Method.h \
     Node.h \
-    const.h \
     def/ItemDef.h \
     def/ItemReq.h \
     def/MethodDef.h \
@@ -72,6 +72,7 @@ HEADERS += \
     type.h
 
 SOURCES += \
+    Const.cpp \
     Essence.cpp \
     Item.cpp \
     ItemContextSetter.cpp \

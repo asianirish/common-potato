@@ -1,4 +1,5 @@
 #include "LinkableEssence.h"
+#include "Const.h"
 
 namespace hierhin {
 
@@ -36,7 +37,7 @@ QStringList LinkableEssence::methodNames() const
 
 QList<std::pair<Role, QString> > LinkableEssence::linkRoles() const
 {
-    return {{QString("links"), QString("hierhin::LinkOwnerEssence")}}; //TODO: const
+    return {{Const::DEFAULT_LINK_OWNER_ROLE, QString("hierhin::LinkOwnerEssence")}}; //TODO: const
 }
 
 QMap<Role, ItemReq> LinkableEssence::nonLinkChildRequirements() const

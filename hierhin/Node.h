@@ -4,6 +4,8 @@
 #include <Item.h>
 #include <nav/ItemRef.h>
 
+#include "Const.h"
+
 namespace hierhin {
 
 class Node : public virtual Item
@@ -25,9 +27,10 @@ public:
 
     QList<nav::ItemRef> childRefs() const;
 
-    void setLink(const nav::ItemRef &targetRef, const Role &linkRole = Role(), const QString &linkClass = "hierhin::LinkEssence", const Role &ownerRole = "links");
+    void setLink(const nav::ItemRef &targetRef, const Role &linkRole = Role(),
+                 const QString &linkClass = "hierhin::LinkEssence", const Role &ownerRole = Const::DEFAULT_LINK_OWNER_ROLE);
 
-    QList<nav::ItemRef> targets(const Role &linkOwnerRole = "links");
+    QList<nav::ItemRef> targets(const Role &linkOwnerRole = Const::DEFAULT_LINK_OWNER_ROLE);
 
 protected:
     virtual void nodeImplToMap(QVariantMap &mp) const = 0;
