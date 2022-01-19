@@ -28,7 +28,26 @@ QVariant MultyPropertyTest::simplyAct(const QVariantList &args)
         nd->addValue("numbers", 11);
     //try exception:    nd->addValue("numbers", 14);
 
+        NodePtr nd0 = NodePtr(new NodeHashImpl());
+        nd0->setEssenceClassName("TestEssenceMulty");
+        NodePtr nd1 = NodePtr(new NodeHashImpl());
+        nd1->setEssenceClassName("TestEssenceMulty");
+        NodePtr nd2 = NodePtr(new NodeHashImpl());
+        nd2->setEssenceClassName("TestEssenceMulty");
+        NodePtr nd3 = NodePtr(new NodeHashImpl());
+        nd3->setEssenceClassName("TestEssenceMulty");
+
+        nd->addChild(nd0);
+        nd->addChild(nd1);
+        nd->addChild(nd2);
+        nd->addChild(nd3);
+
+        nd0->addValue("refs", QVariant::fromValue(nav::ItemRef(nd1->absPath())));
+        nd0->addValue("refs", QVariant::fromValue(nav::ItemRef(nd2->absPath())));
+        nd0->addValue("refs", QVariant::fromValue(nav::ItemRef(nd3->absPath())));
+
         qDebug().noquote() << "NODE:" << nd->toJson();
+
     }  catch (ex::Exception &e) {
         qDebug() << "AN ERROR HAS OCCURRED:" << e.cause();
     } catch (const char *msg) {
