@@ -1,18 +1,21 @@
 #include "TestEssenceMulty.h"
 
 #include <hierhin/Item.h>
+#include <hierhin/type.h>
 
 #include <val/Each.h>
 #include <val/LessThanOrEqualTo.h>
 #include <val/MoreThanOrEqualTo.h>
 #include <val/Range.h>
 #include <val/Length.h>
+#include <val/TypeValidator.h>
 
 
 #include <QDebug>
 #include <QMetaObject>
 
 using namespace val;
+using namespace hierhin;
 
 TestEssenceMulty::TestEssenceMulty()
 {
@@ -39,6 +42,19 @@ QMap<QString, PropertyDef> TestEssenceMulty::propertyDefs() const
         propDef.setName("numbers");
         propDef.setTypeId(QMetaType::QVariantList);
         propDefs.insert("numbers", propDef);
+    }
+
+    {
+        PropertyDef propDef;
+
+        ValidatorPtr typeVal = ValidatorPtr(new val::TypeValidator(QMetaType::User, nav::ItemRef::typeId()));
+        ValidatorPtr each = ValidatorPtr(new val::Each());
+        each.dynamicCast<val::Each>()->addValidator(typeVal);
+
+        propDef.addValidator(each);
+        propDef.setName("refs");
+        propDef.setTypeId(QMetaType::QVariantList);
+        propDefs.insert("refs", propDef);
     }
 
 
