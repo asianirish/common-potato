@@ -1,5 +1,19 @@
 #include "TestEssenceMulty.h"
 
+#include <hierhin/Item.h>
+
+#include <val/Each.h>
+#include <val/LessThanOrEqualTo.h>
+#include <val/MoreThanOrEqualTo.h>
+#include <val/Range.h>
+#include <val/Length.h>
+
+
+#include <QDebug>
+#include <QMetaObject>
+
+using namespace val;
+
 TestEssenceMulty::TestEssenceMulty()
 {
 
@@ -12,12 +26,23 @@ void TestEssenceMulty::nodeDef(NodeDef &nd) const
 
 QMap<QString, PropertyDef> TestEssenceMulty::propertyDefs() const
 {
-    QMap<QString, PropertyDef> mp;
+    QMap<QString, PropertyDef> propDefs = Essence::propertyDefs();
 
-    //TODO: implement
+    {
+        PropertyDef propDef;
+
+        ValidatorPtr rangeVal = ValidatorPtr(new val::Range<int>(1, 13));
+        ValidatorPtr each = ValidatorPtr(new val::Each());
+        each.dynamicCast<val::Each>()->addValidator(rangeVal);
+
+        propDef.addValidator(each);
+        propDef.setName("numbers");
+        propDef.setTypeId(QMetaType::QVariantList);
+        propDefs.insert("numbers", propDef);
+    }
 
 
-    return mp;
+    return propDefs;
 }
 
 QMap<Role, ItemReq> TestEssenceMulty::nonLinkChildRequirements() const
