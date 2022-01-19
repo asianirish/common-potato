@@ -7,6 +7,12 @@ TypeValidator::TypeValidator()
 
 }
 
+TypeValidator::TypeValidator(QMetaType::Type type, int userType) : _type(type),
+    _userType(userType)
+{
+
+}
+
 bool TypeValidator::validate(const QVariant &value) const
 {
     if (static_cast<QMetaType::Type>(value.type()) >= QMetaType::User) {

@@ -13,7 +13,7 @@ class TypeValidator : public Validator
 public:
     TypeValidator();
 
-    TypeValidator(QMetaType type, int userType);
+    TypeValidator(QMetaType::Type type, int userType);
 
     bool validate(const QVariant &value) const override;
 
