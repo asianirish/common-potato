@@ -20,7 +20,7 @@ bool Each::validate(const QVariant &value) const
             }
         }
 
-        return false;
+        return true;
     }
 
     return validateForEachValidator(value);
