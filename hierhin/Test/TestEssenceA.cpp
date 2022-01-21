@@ -54,6 +54,13 @@ QMap<QString, PropertyDef> TestEssenceA::propertyDefs() const
         propDefs.insert("phone", propDefValue);
     }
 
+    {
+        PropertyDef propDefValue;
+        propDefValue.setName("@links");
+        propDefValue.setTypeId(QMetaType::QVariantList);
+        propDefs.insert("@links", propDefValue);
+    }
+
     return propDefs;
 }
 
