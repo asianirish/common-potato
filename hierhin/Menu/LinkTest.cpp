@@ -27,7 +27,8 @@ LinkTest::LinkTest()
     _nd->addChild(ndLeft, "left");
     _nd->addChild(ndRight, "right");
 
-    ndLeft->setLink(ndRight->absPath());
+    ItemRef targetRef(ndRight->absPath());
+    ndLeft->setLink(targetRef);
 }
 
 QVariant LinkTest::simplyAct(const QVariantList &args)
