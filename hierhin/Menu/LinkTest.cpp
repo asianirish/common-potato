@@ -41,14 +41,14 @@ QVariant LinkTest::simplyAct(const QVariantList &args)
         qDebug().noquote() << "LEFT:" << left->toJson();
 
         auto leftNd = left.dynamicCast<Node>();
-
-
         auto refs = leftNd->targets();
 
         for (auto &ref : refs) {
             auto target = ref.ptr(left);
             qDebug().noquote() << "TARGET:" << target->toJson();
         }
+
+        qDebug().noquote() << "NODE:" << _nd->toJson();
     } catch (ex::Exception &e) {
         qDebug() << "ex::Exception ERROR MSG:" << e.cause();
     } catch (const QString &msg) {
