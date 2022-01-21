@@ -56,7 +56,7 @@ QList<nav::ItemRef> Node::childRefs() const
 
 void Node::setLink(nav::ItemRef &targetRef, bool isBidirectional, const Role &linkRole, const QString &linkClass, const Role &ownerRole)
 {
-    if (isKindOf("hierhin::LinkableEssence")) {
+    if (!isKindOf("hierhin::LinkableEssence")) {
         throw "not a hierhin::LinkableEssence class"; //TODO: exception class
     }
 
