@@ -20,9 +20,14 @@ QMap<QString, PropertyDef> LinkEssence::propertyDefs() const
     sourceDef.setName("source"); //TODO: const
     sourceDef.setTypeId(typeId);
 
+    PropertyDef bidirDef;
+    bidirDef.setName("bidir"); //TODO: const
+    bidirDef.setTypeId(typeId);
+
     return {
         {targetDef.name(), targetDef},
-        {sourceDef.name(), sourceDef}
+        {sourceDef.name(), sourceDef},
+        {bidirDef.name(), bidirDef}
     };
 }
 
