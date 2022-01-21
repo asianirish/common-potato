@@ -54,7 +54,7 @@ QList<nav::ItemRef> Node::childRefs() const
     return lst;
 }
 
-void Node::setLink(const nav::ItemRef &targetRef, const Role &linkRole, const QString &linkClass, const Role &ownerRole)
+void Node::setLink(nav::ItemRef &targetRef, const Role &linkRole, const QString &linkClass, const Role &ownerRole)
 {
     if (isKindOf("hierhin::LinkableEssence")) {
         throw "not a hierhin::LinkableEssence class"; //TODO: exception class
