@@ -75,6 +75,7 @@ void Node::setLink(nav::ItemRef &targetRef, bool isBidirectional, const Role &li
     link->setProperty("target", targetVar); //TODO: const
     link->setProperty("bidir", isBidirectional); //TODO: const
 
+    linkOwner->addChild(link, linkRole);
 
     if (isBidirectional) {
         QSharedPointer<Item> thisPtr = sharedFromThis();
@@ -82,7 +83,6 @@ void Node::setLink(nav::ItemRef &targetRef, bool isBidirectional, const Role &li
         targetPtr->addValue(Const::LINK_REF_SIGN + ownerRole, QVariant::fromValue(nav::ItemRef(link->absPath())));
     }
 
-    linkOwner->addChild(link, linkRole);
 }
 
 QList<nav::ItemRef> Node::targets(const Role &linkOwnerRole)
