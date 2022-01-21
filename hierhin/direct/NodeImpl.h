@@ -23,6 +23,8 @@ public:
 
     ConstItemPtr childByRole(const Role &role) const final;
 
+    ConstItemPtr childByName(const QString &name) const final;
+
     IdList idList() const final;
 
 protected:
@@ -59,6 +61,13 @@ template<typename C>
 ConstItemPtr NodeImpl<C>::childByRole(const Role &role) const
 {
     return _roles.value(role).lock();
+}
+
+template<typename C>
+ConstItemPtr NodeImpl<C>::childByName(const QString &name) const
+{
+    Q_UNUSED(name)
+    throw "NOT SUPPORTED (YET?)"; //TODO:
 }
 
 template<typename C>

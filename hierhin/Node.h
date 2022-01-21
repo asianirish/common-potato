@@ -21,6 +21,9 @@ public:
     ItemPtr childByRole(const Role &role);
     virtual ConstItemPtr childByRole(const Role &role) const = 0;
 
+    ItemPtr childByName(const QString &name);
+    virtual ConstItemPtr childByName(const QString &name) const = 0;
+
     void addChild(ItemPtr item, const Role &role = Role());
 
     virtual IdList idList() const = 0;
