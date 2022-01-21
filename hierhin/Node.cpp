@@ -54,7 +54,7 @@ QList<nav::ItemRef> Node::childRefs() const
     return lst;
 }
 
-void Node::setLink(nav::ItemRef &targetRef, const Role &linkRole, const QString &linkClass, const Role &ownerRole)
+void Node::setLink(nav::ItemRef &targetRef, bool isBidirectional, const Role &linkRole, const QString &linkClass, const Role &ownerRole)
 {
     if (isKindOf("hierhin::LinkableEssence")) {
         throw "not a hierhin::LinkableEssence class"; //TODO: exception class
@@ -73,12 +73,14 @@ void Node::setLink(nav::ItemRef &targetRef, const Role &linkRole, const QString 
     auto targetVar = QVariant::fromValue(targetRef);
     link->setProperty("source", sourceVar); //TODO: const
     link->setProperty("target", targetVar); //TODO: const
+    link->setProperty("bidir", isBidirectional); //TODO: const
 
-    /* TODO: (tagetRef should not be const in this case)
-    QSharedPointer<Item> thisPtr = sharedFromThis();
-    ItemPtr targetPtr = targetRef.ptr(thisPtr);
-    targetPtr->addValue(Const::LINK_REF_SIGN + ownerRole, QVariant::fromValue(nav::ItemRef(link->absPath())));
-    */
+
+    if (isBidirectional) {
+        QSharedPointer<Item> thisPtr = sharedFromThis();
+        ItemPtr targetPtr = targetRef.ptr(thisPtr);
+        targetPtr->addValue(Const::LINK_REF_SIGN + ownerRole, QVariant::fromValue(nav::ItemRef(link->absPath())));
+    }
 
     linkOwner->addChild(link, linkRole);
 }
