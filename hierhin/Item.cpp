@@ -59,6 +59,16 @@ void Item::setId(const Id &id)
     }
 }
 
+QString Item::name() const
+{
+    return property("name").toString();
+}
+
+void Item::setName(const QString &name)
+{
+    setProperty("name", name);
+}
+
 void Item::setIdGenClassName(const QString &className)
 {
     if (_idGen) {
