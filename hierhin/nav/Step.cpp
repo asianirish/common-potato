@@ -60,7 +60,12 @@ ConstItemPtr Step::go(ConstItemPtr item) const
         }
 
         break;
+    case CHILD_NAME:
+        if (node) {
+            return node->childByName(_arg);
+        }
 
+        break;
     case CHILD_ROLE:
         if (node) {
             return node->childByRole(_arg);
