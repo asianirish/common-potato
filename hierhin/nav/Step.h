@@ -14,6 +14,7 @@ public:
         PARENT,
         CHILD_ROLE,
         CHILD_ID,
+        CHILD_NAME,
         ROOT
     };
 
@@ -44,7 +45,7 @@ public:
 
 private:
     Action _action;
-    QString _arg; //Id or Role
+    QString _arg; //Id or Role or Name
 
     QString actionToString() const;
     void stringToAction(const QString &str);
