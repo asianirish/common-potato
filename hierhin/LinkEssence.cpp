@@ -17,8 +17,8 @@ QMap<QString, PropertyDef> LinkEssence::propertyDefs() const
     targetDef.setTypeId(typeId);
 
     PropertyDef sourceDef;
-    targetDef.setName("source"); //TODO: const
-    targetDef.setTypeId(typeId);
+    sourceDef.setName("source"); //TODO: const
+    sourceDef.setTypeId(typeId);
 
     return {
         {targetDef.name(), targetDef},
