@@ -89,7 +89,7 @@ QList<nav::ItemRef> Node::targets(const Role &linkOwnerRole)
 {
     QList<nav::ItemRef> refLst;
 
-    if (isKindOf("hierhin::LinkableEssence")) {
+    if (!isKindOf("hierhin::LinkableEssence")) {
         throw "not a hierhin::LinkableEssence class"; //TODO: exception class
     }
 
