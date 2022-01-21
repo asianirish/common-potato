@@ -86,6 +86,10 @@ QString Step::toString() const
         return actionToString();
     }
 
+    if (_action == CHILD_NAME) {
+        return _arg;
+    }
+
     return actionToString() + ":" + _arg;
 }
 
@@ -128,6 +132,9 @@ QString Step::actionToString() const
 
     case CHILD_ID:
         return QString("CHILD_ID");
+
+    case CHILD_NAME:
+        return QString();
 
     case CHILD_ROLE:
         return QString("CHILD_ROLE");
