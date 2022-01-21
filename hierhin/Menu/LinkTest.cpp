@@ -3,6 +3,7 @@
 #include <hierhin/nav/ItemRef.h>
 #include <hierhin/direct/NodeImpl.h>
 #include <menu/Launcher.h>
+#include <hierhin/ex/Exception.h>
 
 #include <QDebug>
 
@@ -35,16 +36,25 @@ QVariant LinkTest::simplyAct(const QVariantList &args)
 {
     Q_UNUSED(args)
 
-    auto left = _nd->childByRole("left");
-    qDebug().noquote() << "LEFT:" << left->toJson();
+    try {
+        auto left = _nd->childByRole("left");
+        qDebug().noquote() << "LEFT:" << left->toJson();
 
-    auto leftNd = left.dynamicCast<Node>();
+        auto leftNd = left.dynamicCast<Node>();
 
-    auto refs = leftNd->targets();
 
-    for (auto &ref : refs) {
-        auto target = ref.ptr(left);
-        qDebug().noquote() << "TARGET:" << target->toJson();
+        auto refs = leftNd->targets();
+
+        for (auto &ref : refs) {
+            auto target = ref.ptr(left);
+            qDebug().noquote() << "TARGET:" << target->toJson();
+        }
+    } catch (ex::Exception &e) {
+        qDebug() << "ex::Exception ERROR MSG:" << e.cause();
+    } catch (const QString &msg) {
+        qDebug() << "QString ERROR MSG:" << msg;
+    } catch (const char *msg) {
+        qDebug() << "const char * ERROR MSG:" << msg;
     }
 
     return true;
