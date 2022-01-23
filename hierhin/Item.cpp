@@ -98,6 +98,25 @@ EssencePtr Item::essencePtr() const
     }
 }
 
+const Role &Item::role() const
+{
+    return _role;
+}
+
+void Item::setRole(const Role &newRole)
+{
+    auto weakParent = parentNode();
+    if (weakParent) {
+        auto prnt = weakParent.lock();
+
+        if (prnt) {
+//TODO:            prnt->assignChild(newRole);
+        }
+    }
+
+    _role = newRole;
+}
+
 QVariantMap Item::toMap() const
 {
     QVariantMap mp;
