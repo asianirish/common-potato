@@ -114,6 +114,11 @@ Step::operator QString() const
     return toString();
 }
 
+bool Step::operator ==(const Step &other) const
+{
+    return (_action == other._action && _arg == other._arg);
+}
+
 Step &Step::operator=(const char *str)
 {
     fromString(QString(str));

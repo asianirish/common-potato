@@ -43,6 +43,8 @@ public:
 
     operator QString() const;
 
+    bool operator ==(const Step &other) const;
+
 private:
     Action _action;
     QString _arg; //Id or Role or Name
