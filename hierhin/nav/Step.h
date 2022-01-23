@@ -9,6 +9,12 @@ namespace nav {
 class Step
 {
 public:
+    static const QString PARENT_STR;
+    static const QString CURRENT_STR;
+    static const QString CHILD_ROLE_STR;
+    static const QString CHILD_ID_STR;
+    static const QString SLASH_STR;
+
     enum Action {
         UNDEFINED,
         PARENT,

@@ -4,6 +4,12 @@
 namespace hierhin {
 namespace nav {
 
+const QString Step::PARENT_STR("..");
+const QString Step::CURRENT_STR(".");
+const QString Step::CHILD_ROLE_STR("role");
+const QString Step::CHILD_ID_STR("id");
+const QString Step::SLASH_STR("/");
+
 Step::Step() : Step(QString())
 {
 
@@ -125,16 +131,16 @@ QString Step::actionToString() const
     switch (_action) {
 
     case UNDEFINED:
-        return QString(".");
+        return CURRENT_STR;
 
     case PARENT:
-        return QString("..");
+        return PARENT_STR;
 
     case CHILD_ID:
-        return QString("CHILD_ID");
+        return CHILD_ID_STR;
 
     case CHILD_ROLE:
-        return QString("CHILD_ROLE"); //TODO: return QString(); // (see Step::toString())
+        return CHILD_ROLE_STR; //TODO: return QString(); // (see Step::toString())
 
     case ROOT:
         return QString();
@@ -145,15 +151,15 @@ QString Step::actionToString() const
 
 void Step::stringToAction(const QString &str)
 {
-    if (str == ".") {
+    if (str == CURRENT_STR) {
         setAction(UNDEFINED);
-    } if (str == "..") {
+    } if (str == PARENT_STR) {
         setAction(PARENT);
-    } else if (str == "CHILD_ID") {
+    } else if (str == CHILD_ID_STR) {
         setAction(CHILD_ID);
-    } else if (str == "CHILD_ROLE") {
+    } else if (str == CHILD_ROLE_STR) {
         setAction(CHILD_ROLE);
-    } else if (str.isEmpty() || str == "/") {
+    } else if (str.isEmpty() || str == SLASH_STR) {
         setAction(ROOT);
     }
 }
