@@ -36,6 +36,7 @@ public:
     operator bool() const;
 
     bool operator ==(const Path &other) const;
+    bool operator !=(const Path &other) const;
 
 private:
     QList<Step> _steps;
