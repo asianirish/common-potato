@@ -86,16 +86,21 @@ QString Step::toString() const
         return actionToString();
     }
 
-    //TODO:
-//    if (_action == CHILD_ROLE) {
-//        return _arg;
-//    }
+    if (_action == CHILD_ROLE) {
+        return _arg;
+    }
 
     return actionToString() + ":" + _arg;
 }
 
 void Step::fromString(const QString &str)
 {
+    if (!str.contains(":")) {
+        stringToAction(CHILD_ROLE_STR);
+        _arg = str;
+        return;
+    }
+
     auto lst = str.split(":");
     stringToAction(lst.at(0));
 
@@ -140,7 +145,7 @@ QString Step::actionToString() const
         return CHILD_ID_STR;
 
     case CHILD_ROLE:
-        return CHILD_ROLE_STR; //TODO: return QString(); // (see Step::toString())
+        return QString();
 
     case ROOT:
         return QString();
