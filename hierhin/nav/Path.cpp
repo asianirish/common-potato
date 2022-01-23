@@ -117,6 +117,11 @@ Path::operator bool() const
     return !_steps.isEmpty();
 }
 
+bool Path::operator ==(const Path &other) const
+{
+    return _steps == other._steps;
+}
+
 
 } // namespace nav
 } // namespace hierhin
