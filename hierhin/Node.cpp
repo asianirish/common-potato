@@ -44,7 +44,7 @@ void Node::addChild(ItemPtr item, const Role &role)
     definition().validateChild(item, role);
 
     if (!role.isEmpty()) {
-        item->setName(role); //name is a role
+        item->setRole(role);
     }
     addChildImpl(item, role);
 }
