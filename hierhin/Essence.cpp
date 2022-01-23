@@ -92,6 +92,7 @@ QMap<Role, ItemReq> Essence::childRequirements() const
 
 QMap<QString, PropertyDef> Essence::propertyDefs() const
 {
+    //"name" is not using as a child identifier now
     PropertyDef nameDef;
     nameDef.setName("name");
     //TODO: nameDef.setType()?

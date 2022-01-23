@@ -60,12 +60,6 @@ ConstItemPtr Step::go(ConstItemPtr item) const
         }
 
         break;
-    case CHILD_NAME:
-        if (node) {
-            return node->childByName(_arg);
-        }
-
-        break;
     case CHILD_ROLE:
         if (node) {
             return node->childByRole(_arg);
@@ -86,9 +80,10 @@ QString Step::toString() const
         return actionToString();
     }
 
-    if (_action == CHILD_NAME) {
-        return _arg;
-    }
+    //TODO:
+//    if (_action == CHILD_ROLE) {
+//        return _arg;
+//    }
 
     return actionToString() + ":" + _arg;
 }
@@ -138,11 +133,8 @@ QString Step::actionToString() const
     case CHILD_ID:
         return QString("CHILD_ID");
 
-    case CHILD_NAME:
-        return QString();
-
     case CHILD_ROLE:
-        return QString("CHILD_ROLE");
+        return QString("CHILD_ROLE"); //TODO: return QString(); // (see Step::toString())
 
     case ROOT:
         return QString();

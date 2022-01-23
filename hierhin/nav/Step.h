@@ -14,7 +14,6 @@ public:
         PARENT,
         CHILD_ROLE,
         CHILD_ID,
-        CHILD_NAME,
         ROOT
     };
 
