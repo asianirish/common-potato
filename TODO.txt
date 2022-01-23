@@ -4,6 +4,7 @@
 * ClassEssence, DynEssence and ClassNode (with 'inhertis' ref or link)
 
 * use roles as names
+    * delete name property and Step::Action::CHILD_NAME
 
 ---------------------------------------------------------
 DONE:
