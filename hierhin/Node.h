@@ -30,6 +30,8 @@ public:
 
     QList<nav::ItemRef> childRefs() const;
 
+    void assignRole(const Role &role, const Id &id);
+
     void setLink(nav::ItemRef &targetRef, bool isBidirectional = false, const Role &linkRole = Role(),
                  const QString &linkClass = "hierhin::LinkEssence", const Role &ownerRole = Const::DEFAULT_LINK_OWNER_ROLE);
 
@@ -40,6 +42,7 @@ protected:
     virtual void nodeImplFromMap(const QVariantMap &mp) = 0;
 
     virtual void addChildImpl(ItemPtr item, const Role &role) = 0;
+    virtual void assignRoleImpl(const Role &role, ItemPtr chld) = 0;
 
 private:
     void nodeToMap(QVariantMap &mp) const final;

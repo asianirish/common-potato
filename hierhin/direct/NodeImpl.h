@@ -31,6 +31,7 @@ protected:
     void nodeImplToMap(QVariantMap &mp) const final;
     void addChildImpl(ItemPtr item, const Role &role) final;
     void nodeImplFromMap(const QVariantMap &mp) final;
+    void assignRoleImpl(const Role &role, ItemPtr chld) final;
 private:
     C _children;
     QMap<Role, ItemWeakPtr> _roles;
@@ -131,6 +132,13 @@ void NodeImpl<C>::nodeImplFromMap(const QVariantMap &mp)
         auto weakChild = child.toWeakRef();
         _roles.insert(roleName, weakChild);
     }
+}
+
+template<typename C>
+void NodeImpl<C>::assignRoleImpl(const Role &role, ItemPtr chld)
+{
+    auto weakChld = chld.toWeakRef();
+    _roles.insert(role, weakChld);
 }
 
 } // namespace direct

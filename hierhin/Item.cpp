@@ -110,7 +110,7 @@ void Item::setRole(const Role &newRole)
         auto prnt = weakParent.lock();
 
         if (prnt) {
-//TODO:            prnt->assignChild(newRole);
+//TODO:            prnt->assignRole(newRole, id());
         }
     }
 
