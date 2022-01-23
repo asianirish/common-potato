@@ -3,9 +3,6 @@
 * TaskId class with func name and args
 * ClassEssence, DynEssence and ClassNode (with 'inhertis' ref or link)
 
-* use roles as names
-    * delete name property and Step::Action::CHILD_NAME
-
 ---------------------------------------------------------
 DONE:
 * treat a Link as an Item with an Essence with source & target properties with ItemRef
@@ -13,6 +10,8 @@ DONE:
 * class LinkOwnerEssence : public Essence
 * class LinkEssence : public Essence
 * use LinkEssences as child items of LinkOwnerEssence and LinkOwnerEssence as a role child ("links") LinkedEssence
+* use roles as names
+    * delete name property and Step::Action::CHILD_NAME
 
 ---------------------------------------------------------
 REJECTED:
