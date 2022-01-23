@@ -280,8 +280,16 @@ nav::Path Item::absPath() const
 
     while (!item->isRoot()) {
         nav::Step step;
-        step.setAction(nav::Step::CHILD_ID);
-        step.setArg(item->id());
+
+        auto rl = item->role();
+
+        if (rl.isEmpty()) {
+            step.setAction(nav::Step::CHILD_ID);
+            step.setArg(item->id());
+        } else {
+            step.setAction(nav::Step::CHILD_ROLE);
+            step.setArg(item->role());
+        }
 
         lst.prepend(step);
 
