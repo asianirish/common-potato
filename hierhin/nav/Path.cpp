@@ -112,6 +112,11 @@ Path::operator QString() const
     return toString();
 }
 
+Path::operator bool() const
+{
+    return !_steps.isEmpty();
+}
+
 
 } // namespace nav
 } // namespace hierhin

@@ -33,6 +33,8 @@ public:
 
     operator QString() const;
 
+    operator bool() const;
+
 private:
     QList<Step> _steps;
 };
