@@ -1,10 +1,9 @@
 
-* use item names as a part of Path
-
 * ArgDef vs. PropertyDef
 * TaskId class with func name and args
 * ClassEssence, DynEssence and ClassNode (with 'inhertis' ref or link)
 
+* use roles as names
 
 ---------------------------------------------------------
 DONE:
@@ -14,4 +13,8 @@ DONE:
 * class LinkEssence : public Essence
 * use LinkEssences as child items of LinkOwnerEssence and LinkOwnerEssence as a role child ("links") LinkedEssence
 
+---------------------------------------------------------
+REJECTED:
+* use item names as a part of Path
+    * use roles instead
 
