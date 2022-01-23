@@ -95,6 +95,8 @@ QString Step::toString() const
 
 void Step::fromString(const QString &str)
 {
+    //TODO: empty str as a root?
+
     if (!str.contains(":")) {
         stringToAction(CHILD_ROLE_STR);
         _arg = str;
