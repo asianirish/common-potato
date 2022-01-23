@@ -32,9 +32,6 @@ public:
     Id id() const;
     void setId(const Id &id);
 
-    QString name() const;
-    void setName(const QString &name);
-
     static void setIdGenClassName(const QString &className);
 
     void setEssenceClassName(const QString &className);
