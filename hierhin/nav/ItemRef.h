@@ -14,6 +14,7 @@ public:
     ItemRef();
     ItemRef(const QString &pathStr);
     ItemRef(const Path &path);
+    ItemRef(const ItemPtr &ptr);
 
     const Path &path() const;
     void setPath(const Path &newPath);
@@ -28,8 +29,11 @@ public:
 
     static int typeId();
 
+    void setPtr(ItemPtr newPtr);
+
 private:
-    Path _path;
+    mutable Path _path;
+    ItemPtr _ptr;
 };
 
 //from converters:

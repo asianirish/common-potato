@@ -1,4 +1,5 @@
 #include "ItemRef.h"
+#include "Item.h"
 
 namespace hierhin {
 namespace nav {
@@ -22,14 +23,26 @@ ItemRef::ItemRef(const Path &path) : _path(path)
 
 }
 
+ItemRef::ItemRef(const ItemPtr &ptr) : _ptr(ptr)
+{
+
+}
+
 const Path &ItemRef::path() const
 {
+    if (_ptr) {
+        if (_ptr->absPath() != _path) {
+            _path = _ptr->absPath();
+        }
+    }
+
     return _path;
 }
 
 void ItemRef::setPath(const Path &newPath)
 {
     _path = newPath;
+    _ptr.clear();
 }
 
 ItemPtr ItemRef::ptr(ItemPtr source)
@@ -40,6 +53,10 @@ ItemPtr ItemRef::ptr(ItemPtr source)
 
 ConstItemPtr ItemRef::ptr(ConstItemPtr source) const
 {
+    if (_ptr) {
+        return _ptr;
+    }
+
     if (!source) {
         return {};
     }
@@ -49,12 +66,13 @@ ConstItemPtr ItemRef::ptr(ConstItemPtr source) const
 
 QString ItemRef::toString() const
 {
-    return _path.toString();
+    return path().toString();
 }
 
 void ItemRef::fromString(const QString &pathStr)
 {
-    return _path.fromString(pathStr);
+    auto pth = path();
+    return pth.fromString(pathStr);
 }
 
 ItemRef::operator QString() const
@@ -65,6 +83,11 @@ ItemRef::operator QString() const
 int ItemRef::typeId()
 {
     return QMetaType::type("hierhin::nav::ItemRef");
+}
+
+void ItemRef::setPtr(ItemPtr newPtr)
+{
+    _ptr = newPtr;
 }
 
 } // namespace nav
