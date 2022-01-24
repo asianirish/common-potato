@@ -88,7 +88,7 @@ private:
 template <typename BaseClass>
 map<string, AbstractCreator<BaseClass>*> Factory<BaseClass>::_creators;
 
-} // namespace util
+} // namespace potato_util
 
 #define REGISTER_CLASS_FOR_UTIL_FACTORY(BaseClass, DevClass) potato_util::Factory<BaseClass>::registerClass<DevClass>(#DevClass);
 
