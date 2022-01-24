@@ -1,5 +1,5 @@
-#ifndef FACTORY_H
-#define FACTORY_H
+#ifndef POTATO_UTIL_FACTORY_H
+#define POTATO_UTIL_FACTORY_H
 
 #include <string>
 #include <map>
@@ -92,4 +92,4 @@ map<string, AbstractCreator<BaseClass>*> Factory<BaseClass>::_creators;
 
 #define REGISTER_CLASS_FOR_UTIL_FACTORY(BaseClass, DevClass) potato_util::Factory<BaseClass>::registerClass<DevClass>(#DevClass);
 
-#endif // FACTORY_H
+#endif // POTATO_UTIL_FACTORY_H
