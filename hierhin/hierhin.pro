@@ -30,6 +30,7 @@ SOURCES += main.cpp \
     Menu/CloneTest.cpp \
     Menu/CommandTest.cpp \
     Menu/ConvTest.cpp \
+    Menu/CuteContainerTest.cpp \
     Menu/HandMadeLinkTest.cpp \
     Menu/LauncherTest.cpp \
     Menu/LazyRegistryTest.cpp \
@@ -63,6 +64,7 @@ HEADERS += \
     Menu/CloneTest.h \
     Menu/CommandTest.h \
     Menu/ConvTest.h \
+    Menu/CuteContainerTest.h \
     Menu/HandMadeLinkTest.h \
     Menu/LauncherTest.h \
     Menu/LazyRegistryTest.h \
