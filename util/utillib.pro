@@ -25,6 +25,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     BaseWrapper.h \
+    CuteContainer.h \
     CuteFactory.h \
     Destructor.h \
     Factory.h \
