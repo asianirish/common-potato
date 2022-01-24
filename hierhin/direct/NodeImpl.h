@@ -121,6 +121,8 @@ void NodeImpl<C>::nodeImplFromMap(const QVariantMap &mp)
         auto child = cc->createItem(childVar.toMap());
         child->fromMap(childVar.toMap());
         _children.insert(child->id(), child);
+        child->setParentNode(sharedFromThis().template dynamicCast<Node>().toWeakRef());
+//TODO:        addChild(child); //TODO: role
     }
 
     QVariantMap rolesMap = mp.value(ROLES_KEY).toMap();

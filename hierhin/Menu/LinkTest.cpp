@@ -49,6 +49,25 @@ QVariant LinkTest::simplyAct(const QVariantList &args)
         }
 
         qDebug().noquote() << "NODE:" << _nd->toJson();
+        auto cln = _nd->clone();
+        qDebug().noquote() << "CLONE:" << cln->toJson();
+        auto clnNd = cln.dynamicCast<Node>();
+
+        {
+            auto left = clnNd->childByRole("left");
+
+            auto leftParent = left->parentNode().lock();
+
+            auto leftNd = left.dynamicCast<Node>();
+            auto refs = leftNd->targets();
+
+            for (auto &ref : refs) {
+                auto target = ref.ptr(left);
+                qDebug().noquote() << "CLONE TARGET:" << target->toJson();
+            }
+
+        }
+
     } catch (ex::Exception &e) {
         qDebug() << "ex::Exception ERROR MSG:" << e.cause();
     } catch (const QString &msg) {
