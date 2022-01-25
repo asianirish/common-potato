@@ -33,11 +33,11 @@ ItemPtr Node::childByRole(const Role &role)
     return childItem;
 }
 
-ItemPtr Node::childByName(const QString &name)
-{
-    const Node *cnode = dynamic_cast<const Node*>(this);
-    return cnode->childByName(name).constCast<Item>();
-}
+//ItemPtr Node::childByName(const QString &name)
+//{
+//    const Node *cnode = dynamic_cast<const Node*>(this);
+//    return cnode->childByName(name).constCast<Item>();
+//}
 
 void Node::addChild(ItemPtr item, const Role &role)
 {
