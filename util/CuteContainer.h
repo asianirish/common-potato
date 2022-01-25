@@ -277,7 +277,7 @@ public:
         return _keys.isEmpty();
     }
 
-    QVector<K> keys() const {
+    QList<K> keys() const {
         return _keys;
     }
 
@@ -341,7 +341,7 @@ protected:
 private:
     QHash<K, Wrapper*> _keyMap;
     QHash<QString, Wrapper*> _nameMap;
-    QVector<K> _keys;
+    QList<K> _keys;
 };
 
 template<typename K, typename T, typename Wrapper>
