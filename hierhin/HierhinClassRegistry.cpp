@@ -17,6 +17,7 @@
 #include <menu/ThreadLauncher.h>
 
 #include <util/ObjectRegistry.h>
+#include <uniq/TimeValue.h>
 
 
 #include <QString>
@@ -27,7 +28,7 @@ using namespace menu;
 
 HierhinClassRegistry::HierhinClassRegistry()
 {
-
+    uniq::TimeValue::setDurType(uniq::TimeValue::MICRO); //test microseconds
 }
 
 void HierhinClassRegistry::registerAllClasses() const
