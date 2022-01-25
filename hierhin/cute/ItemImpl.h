@@ -6,7 +6,7 @@
 namespace hierhin {
 namespace cute {
 
-class ItemImpl : public hierhin::Item
+class ItemImpl : public virtual hierhin::Item
 {
 public:
     ItemImpl();
