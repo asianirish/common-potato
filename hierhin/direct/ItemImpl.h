@@ -23,7 +23,7 @@ public:
     NodeWeakPtr parentNode() const override;
     void setParentNode(NodeWeakPtr parentNode) override;
 
-    ItemCreator *createCreator() const;
+    ItemCreator *createCreator() const override;
 
 private:
     NodeWeakPtr _parentNode;
