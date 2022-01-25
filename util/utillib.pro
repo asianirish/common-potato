@@ -31,6 +31,7 @@ HEADERS += \
     Factory.h \
     LazyPointer.h \
     LazyRegistry.h \
+    NamedArgList.h \
     ObjectRegistry.h \
     SingletonRegistry.h \
     gfunc.h
