@@ -259,7 +259,7 @@ public:
 
     T at(int index) const;
 
-    T &at(int index);
+    T at(int index);
 
     T first() const;
 
@@ -465,7 +465,7 @@ T CuteContainer<K,T,Wrapper>::at(int index) const {
 }
 
 template<typename K, typename T, typename Wrapper>
-T &CuteContainer<K,T,Wrapper>::at(int index)
+T CuteContainer<K,T,Wrapper>::at(int index)
 {
     K key = _keys.at(index);
     Wrapper *wrapper = _keyMap.value(key);
