@@ -4,6 +4,7 @@ namespace uniq {
 
 int64_t TimeValue::_curValue = 0;
 int64_t TimeValue::_lastValue = 0;
+TimeValue::DUR_TYPE TimeValue::_durType = TimeValue::MILLI;
 
 TimeValue::TimeValue()
 {
@@ -25,6 +26,16 @@ int64_t TimeValue::value() const
      _lastValue = _curValue;
 
      return _curValue;
+}
+
+TimeValue::DUR_TYPE TimeValue::durType()
+{
+    return _durType;
+}
+
+void TimeValue::setDurType(DUR_TYPE newDurType)
+{
+    _durType = newDurType;
 }
 
 void TimeValue::correctCurValue() const

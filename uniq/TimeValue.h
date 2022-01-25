@@ -21,9 +21,19 @@ public:
         return false;
     }
 
+    enum DUR_TYPE {
+        MILLI,
+        MICRO,
+        NANO
+    };
+
+    static DUR_TYPE durType();
+    static void setDurType(DUR_TYPE newDurType);
+
 private:
     static int64_t _curValue;
     static int64_t _lastValue;
+    static DUR_TYPE _durType;
 
     void correctCurValue() const;
 };
