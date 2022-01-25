@@ -26,6 +26,7 @@ public:
     static const QString ESSENCE_CLASS_KEY;
     static const QString PROPERTIES_KEY;
     static const QString BASE_TYPE_KEY;
+    static const QString ROLE_KEY;
 
     Item();
 
