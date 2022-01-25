@@ -30,6 +30,7 @@ HEADERS += \
     Const.h \
     Essence.h \
     Item.h \
+    ItemContainer.h \
     ItemContextSetter.h \
     ItemCreator.h \
     LinkEssence.h \
@@ -75,6 +76,7 @@ SOURCES += \
     Const.cpp \
     Essence.cpp \
     Item.cpp \
+    ItemContainer.cpp \
     ItemContextSetter.cpp \
     ItemCreator.cpp \
     LinkEssence.cpp \
