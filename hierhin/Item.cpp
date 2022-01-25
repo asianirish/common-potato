@@ -113,6 +113,10 @@ QVariantMap Item::toMap() const
     QVariantMap mp;
     mp.insert(ID_KEY, id());
 
+    if (!role().isEmpty()) {
+        mp.insert(ROLE_KEY, role());
+    }
+
     if (!_essenceClassName.isEmpty()) {
         mp.insert(ESSENCE_CLASS_KEY, _essenceClassName);
     }
@@ -131,6 +135,8 @@ QVariantMap Item::toMap() const
 void Item::fromMap(const QVariantMap &mp)
 {
     _id = mp.value(ID_KEY).value<Id>();
+    _role = mp.value(ROLE_KEY).value<Role>();
+
     _essenceClassName = mp.value(ESSENCE_CLASS_KEY).value<QString>();
     _properties = mp.value(PROPERTIES_KEY).value<QVariantMap>();
 
