@@ -17,7 +17,8 @@ public:
 
 protected:
 
-    virtual QString indexToKeyType(int index) {
+    virtual QString indexToKeyType(int index, const T &value) {
+        (void)value;
         return QString("$") + QString::number(index);
     }
 };

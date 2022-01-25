@@ -49,7 +49,7 @@ public:
     ItemContainer();
 
 protected:
-    Id indexToKeyType(int index) override;
+    Id indexToKeyType(int index, const ItemPtr &item) override;
 
 };
 

@@ -7,9 +7,10 @@ ItemContainer::ItemContainer()
 
 }
 
-Id ItemContainer::indexToKeyType(int index)
+Id ItemContainer::indexToKeyType(int index, const ItemPtr &item)
 {
-    return at(index)->id();
+    (void)index;
+    return item->id();
 }
 
 } // namespace hierhin

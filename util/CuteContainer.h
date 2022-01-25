@@ -324,7 +324,8 @@ public:
     }
 
 protected:
-    virtual K indexToKeyType(int index) {
+    virtual K indexToKeyType(int index, const T &value) {
+        (void)value; //TODO: use the value in case if the key depends of the value
         QVariant varKey(index);
         return varKey.value<K>();
     }
@@ -377,7 +378,7 @@ K CuteContainer<K, T, Wrapper>::append(const T &value, const QString &name) {
     wrapper->setIndex(index);
     wrapper->setValue(value);
 
-    K key = indexToKeyType(index);
+    K key = indexToKeyType(index, value);
     wrapper->setKey(key);
     if (!name.isEmpty()) {
         wrapper->setName(name);
