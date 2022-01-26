@@ -39,6 +39,7 @@ HEADERS += \
     Method.h \
     Node.h \
     cute/ItemImpl.h \
+    cute/NodeImpl.h \
     def/ItemDef.h \
     def/ItemReq.h \
     def/MethodDef.h \
@@ -86,6 +87,7 @@ SOURCES += \
     Method.cpp \
     Node.cpp \
     cute/ItemImpl.cpp \
+    cute/NodeImpl.cpp \
     def/ItemDef.cpp \
     def/ItemReq.cpp \
     def/MethodDef.cpp \
