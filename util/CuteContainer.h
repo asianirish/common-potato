@@ -269,6 +269,8 @@ public:
 
     K keyByName(const QString &name, const K &defaultKey = K()) const;
 
+    QString nameByKey(const K &key) const;
+
     int size() const {
         return _keys.size();
     }
@@ -508,6 +510,18 @@ K CuteContainer<K,T,Wrapper>::keyByName(const QString &name, const K &defaultKey
         return defaultKey;
 
     return wrapper->key();
+}
+
+template<typename K, typename T, typename Wrapper>
+QString CuteContainer<K, T, Wrapper>::nameByKey(const K &key) const
+{
+    Wrapper *wrapper = _keyMap.value(key);
+
+    if (!wrapper) {
+        return QString(); //TODO: or exception?
+    }
+
+    return wrapper->name();
 }
 
 
