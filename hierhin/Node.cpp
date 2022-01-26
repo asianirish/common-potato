@@ -46,6 +46,7 @@ void Node::addChild(ItemPtr item, const Role &role)
     if (!role.isEmpty()) {
         item->setRole(role);
     }
+    //TODO: if !child->role().isEmpty()?
     addChildImpl(item, role);
 }
 
