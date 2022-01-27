@@ -1,14 +1,21 @@
 #include "ChildTest.h"
 
 #include <type.h>
+
+//TODO: ifdef
 #include <hierhin/direct/NodeImpl.h>
+//TODO: #include <hierhin/cute/NodeImpl.h>
+
 #include <menu/Launcher.h>
 
 #include <QDebug>
 
 using namespace hierhin;
 using namespace hierhin::nav;
+
+//TODO: ifdef
 using namespace hierhin::direct;
+//TODO: using namespace hierhin::cute;
 
 ChildTest::ChildTest()
 {
