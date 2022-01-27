@@ -32,15 +32,16 @@ public:
     }
 
     QString name() const {
-        return _item->role();
+        return _role;
     }
 
     void setName(const QString &name) {
-        _item->setRole(name);
+        _role = name;
     }
 
 private:
     ItemPtr _item;
+    Role _role;
 };
 
 class ItemContainer : public potato_util::CuteContainer<Id, ItemPtr, ItemWrapper>

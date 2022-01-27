@@ -43,7 +43,11 @@ void NodeImpl::nodeImplToMap(QVariantMap &mp) const
 
     for (const auto &child : _children) {
         childrenMap.insert(child->id(), child->toMap());
-        rolesMap.insert(child->role(), child->id());
+        auto role = _children.nameByKey(child->id());
+
+        if (!role.isEmpty()) {
+            rolesMap.insert(role, child->id());
+        }
     }
 
     if (!childrenMap.isEmpty()) {

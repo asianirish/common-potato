@@ -26,7 +26,6 @@ public:
     static const QString ESSENCE_CLASS_KEY;
     static const QString PROPERTIES_KEY;
     static const QString BASE_TYPE_KEY;
-    static const QString ROLE_KEY;
 
     Item();
 
@@ -81,9 +80,6 @@ public:
 
     QStringList essenceMethodNames() const;
 
-    const Role &role() const;
-    void setRole(const Role &newRole);
-
 protected:
     virtual ItemCreator *createCreator() const = 0;
 
@@ -97,7 +93,6 @@ private:
     static potato_util::LazyPointer<uniq::Value<Id>> _idGen;
     QString _essenceClassName;
     int _launcherIndex;
-    Role _role;
 
     virtual void nodeToMap(QVariantMap &mp) const {
         Q_UNUSED(mp);

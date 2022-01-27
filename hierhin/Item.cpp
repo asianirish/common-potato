@@ -27,7 +27,6 @@ const QString Item::ID_KEY("id");
 const QString Item::ESSENCE_CLASS_KEY("essenceClass");
 const QString Item::PROPERTIES_KEY("prop");
 const QString Item::BASE_TYPE_KEY("baseType");
-const QString Item::ROLE_KEY("role");
 
 potato_util::LazyPointer<uniq::Value<Id>> Item::_idGen(Item::DEFAULT_ID_GEN_CLASS_NAME);
 
@@ -89,33 +88,10 @@ EssencePtr Item::essencePtr() const
     }
 }
 
-const Role &Item::role() const
-{
-    return _role;
-}
-
-void Item::setRole(const Role &newRole)
-{
-    auto weakParent = parentNode();
-    if (weakParent) {
-        auto prnt = weakParent.lock();
-
-        if (prnt) {
-            prnt->assignRole(newRole, id());
-        }
-    }
-
-    _role = newRole;
-}
-
 QVariantMap Item::toMap() const
 {
     QVariantMap mp;
     mp.insert(ID_KEY, id());
-
-    if (!role().isEmpty()) {
-        mp.insert(ROLE_KEY, role());
-    }
 
     if (!_essenceClassName.isEmpty()) {
         mp.insert(ESSENCE_CLASS_KEY, _essenceClassName);
@@ -135,7 +111,6 @@ QVariantMap Item::toMap() const
 void Item::fromMap(const QVariantMap &mp)
 {
     _id = mp.value(ID_KEY).value<Id>();
-    _role = mp.value(ROLE_KEY).value<Role>();
 
     _essenceClassName = mp.value(ESSENCE_CLASS_KEY).value<QString>();
     _properties = mp.value(PROPERTIES_KEY).value<QVariantMap>();
@@ -299,7 +274,7 @@ nav::Path Item::absPath() const
             step.setArg(item->id());
         } else {
             step.setAction(nav::Step::CHILD_ROLE);
-            step.setArg(item->role());
+            step.setArg(rl);
         }
 
         lst.prepend(step);
