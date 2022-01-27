@@ -288,8 +288,11 @@ nav::Path Item::absPath() const
     while (!item->isRoot()) {
         nav::Step step;
 
-        //TODO: how to get a role WITHOUT item->role()?
-        auto rl = item->role();
+        Role rl;
+        auto prnt = item->parentNode();
+        if (prnt) {
+            rl = prnt.lock()->childRoleById(item->id());
+        }
 
         if (rl.isEmpty()) {
             step.setAction(nav::Step::CHILD_ID);
