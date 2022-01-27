@@ -2,9 +2,8 @@
 
 #include <type.h>
 
-//TODO: ifdef
-#include <hierhin/direct/NodeImpl.h>
-//TODO: #include <hierhin/cute/NodeImpl.h>
+//#include <hierhin/direct/NodeImpl.h>
+#include <hierhin/cute/NodeImpl.h>
 
 #include <menu/Launcher.h>
 
@@ -13,9 +12,8 @@
 using namespace hierhin;
 using namespace hierhin::nav;
 
-//TODO: ifdef
-using namespace hierhin::direct;
-//TODO: using namespace hierhin::cute;
+//using namespace hierhin::direct;
+using namespace hierhin::cute;
 
 ChildTest::ChildTest()
 {

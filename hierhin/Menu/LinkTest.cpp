@@ -1,7 +1,10 @@
 #include "LinkTest.h"
 
 #include <hierhin/nav/ItemRef.h>
-#include <hierhin/direct/NodeImpl.h>
+
+//#include <hierhin/direct/NodeImpl.h>
+#include <hierhin/cute/NodeImpl.h>
+
 #include <menu/Launcher.h>
 #include <hierhin/ex/Exception.h>
 
@@ -9,7 +12,9 @@
 
 using namespace hierhin;
 using namespace hierhin::nav;
-using namespace hierhin::direct;
+
+//using namespace hierhin::direct;
+using namespace hierhin::cute;
 
 LinkTest::LinkTest()
 {
