@@ -20,6 +20,7 @@
 #include <Menu/LinkTest.h>
 #include <Menu/MultyPropertyTest.h>
 #include <Menu/CuteContainerTest.h>
+#include <Menu/BiMapTest.h>
 
 #include <menu/Console.h>
 #include <menu/util/SetLanguage.h>
@@ -84,6 +85,8 @@ int main(int argc, char *argv[])
     ADD_MENU_ITEM(console, tmlt, MultyPropertyTest)
 
     ADD_MENU_ITEM(console, tcc, CuteContainerTest)
+
+    ADD_MENU_ITEM(console, tbimap, BiMapTest)
 
     console.run();
     QObject::connect(&console, SIGNAL(quit()), &a, SLOT(quit()));

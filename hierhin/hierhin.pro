@@ -26,6 +26,7 @@ SOURCES += main.cpp \
     HierhinClassRegistry.cpp \
     HierhinContextSetter.cpp \
     HierhinDestructor.cpp \
+    Menu/BiMapTest.cpp \
     Menu/ChildTest.cpp \
     Menu/CloneTest.cpp \
     Menu/CommandTest.cpp \
@@ -60,6 +61,7 @@ HEADERS += \
     HierhinClassRegistry.h \
     HierhinContextSetter.h \
     HierhinDestructor.h \
+    Menu/BiMapTest.h \
     Menu/ChildTest.h \
     Menu/CloneTest.h \
     Menu/CommandTest.h \
