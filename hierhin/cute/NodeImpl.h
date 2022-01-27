@@ -22,6 +22,7 @@ public:
     bool containsId(const Id &id) override;
     ConstItemPtr child(const Id &id) const override;
     ConstItemPtr childByRole(const Role &role) const override;
+    Role childRoleById(const Id &id) const override;
     IdList idList() const override;
 
 protected:

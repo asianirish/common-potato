@@ -26,6 +26,11 @@ ConstItemPtr NodeImpl::childByRole(const Role &role) const
     return _children.valueByName(role);
 }
 
+Role NodeImpl::childRoleById(const Id &id) const
+{
+    return _children.nameByKey(id);
+}
+
 IdList NodeImpl::idList() const
 {
     return _children.keys();

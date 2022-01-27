@@ -24,6 +24,8 @@ public:
 
     ConstItemPtr childByRole(const Role &role) const final;
 
+    Role childRoleById(const Id &id) const final;
+
     IdList idList() const final;
 
 protected:
@@ -62,6 +64,12 @@ ConstItemPtr NodeImpl<C>::childByRole(const Role &role) const
 {
     auto id = _roles.value(role);
     return _children.value(id);
+}
+
+template<typename C>
+Role NodeImpl<C>::childRoleById(const Id &id) const
+{
+    return _roles.reverseValue(id);
 }
 
 template<typename C>
