@@ -4,7 +4,6 @@
 #include "Node.h"
 #include "ItemImpl.h"
 
-//TODO: use it
 #include <util/BiMap.h>
 
 #include <QHash>
@@ -34,9 +33,7 @@ protected:
     void assignRoleImpl(const Role &role, ItemPtr chld) final;
 private:
     C _children;
-    QMap<Role, Id> _roles; //TODO: use BiMap<Role, Id>
-
-
+    BiMap<Role, Id> _roles;
 };
 
 typedef NodeImpl<QMap<Id, ItemPtr> > NodeMapImpl;
