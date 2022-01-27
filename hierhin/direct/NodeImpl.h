@@ -4,7 +4,9 @@
 #include "Node.h"
 #include "ItemImpl.h"
 
-#include <QMap>
+//TODO: use it
+#include <util/BiMap.h>
+
 #include <QHash>
 
 namespace hierhin {
@@ -32,7 +34,9 @@ protected:
     void assignRoleImpl(const Role &role, ItemPtr chld) final;
 private:
     C _children;
-    QMap<Role, ItemWeakPtr> _roles;
+    QMap<Role, Id> _roles; //TODO: use BiMap<Role, Id>
+
+
 };
 
 typedef NodeImpl<QMap<Id, ItemPtr> > NodeMapImpl;
@@ -59,14 +63,15 @@ ConstItemPtr NodeImpl<C>::child(const Id &id) const
 template<typename C>
 ConstItemPtr NodeImpl<C>::childByRole(const Role &role) const
 {
-    return _roles.value(role).lock();
+    auto id = _roles.value(role);
+    return _children.value(id);
 }
 
 template<typename C>
 void NodeImpl<C>::addChildImpl(ItemPtr item, const Role &role)
 {
     if (!role.isEmpty()) {
-        _roles.insert(role, item.toWeakRef());
+        _roles.insert(role, item->id());
     }
 
     _children.insert(item->id(), item);
@@ -94,9 +99,9 @@ void NodeImpl<C>::nodeImplToMap(QVariantMap &mp) const
     if (!_roles.isEmpty()) {
         QVariantMap rolesMap;
         auto keys = _roles.keys();
-        for (auto &key : keys) {
-            auto role = _roles.value(key).lock();
-            rolesMap.insert(key, role->id());
+        for (auto &role : keys) {
+            auto child = childByRole(role);
+            rolesMap.insert(role, child->id());
         }
         mp.insert(ROLES_KEY, rolesMap);
     }
@@ -122,16 +127,14 @@ void NodeImpl<C>::nodeImplFromMap(const QVariantMap &mp)
     for (auto &roleName : roleNames) {
         auto id = rolesMap.value(roleName);
         ItemPtr child = _children.value(id.toString());
-        auto weakChild = child.toWeakRef();
-        _roles.insert(roleName, weakChild);
+        _roles.insert(roleName, child->id());
     }
 }
 
 template<typename C>
 void NodeImpl<C>::assignRoleImpl(const Role &role, ItemPtr chld)
 {
-    auto weakChld = chld.toWeakRef();
-    _roles.insert(role, weakChld);
+    _roles.insert(role, chld->id());
 }
 
 } // namespace direct
