@@ -35,6 +35,8 @@ private:
     ItemContainer _children;
 };
 
+typedef NodeImpl NodeHashImpl;
+
 } // namespace cute
 } // namespace hierhin
 
