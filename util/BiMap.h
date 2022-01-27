@@ -25,11 +25,11 @@ public:
         return _rightMap;
     }
 
-    RightType leftValue(const LeftType &key, const RightType &defaultValue = RightType()) const {
+    RightType value(const LeftType &key, const RightType &defaultValue = RightType()) const {
         return _leftMap.value(key, defaultValue);
     }
 
-    LeftType rightValue(const RightType &key, const LeftType &defaultValue = LeftType()) const {
+    LeftType reverseValue(const RightType &key, const LeftType &defaultValue = LeftType()) const {
         return _rightMap.value(key, defaultValue);
     }
 

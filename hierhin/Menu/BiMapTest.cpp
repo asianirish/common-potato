@@ -20,8 +20,8 @@ QVariant BiMapTest::simplyAct(const QVariantList &args)
         mp.insert(32, "Hi");
         mp.insert(42, "Bye");
 
-        qDebug() << mp.leftValue(32);
-        qDebug() << mp.rightValue("Hi");
+        qDebug() << mp.value(32);
+        qDebug() << mp.reverseValue("Hi");
 
 //        for (auto s : mp) {
 
