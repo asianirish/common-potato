@@ -23,7 +23,15 @@ QMap<Role, ItemReq> LinkableEssence::childRequirements() const
     }
 
     auto reqs = nonLinkChildRequirements();
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
+    auto keys = reqs.keys();
+    for (auto &role : keys) {
+        auto req = reqs.value(role);
+        mp.insert(role, req);
+    }
+#else
     mp.insert(reqs);
+#endif
 
     return mp;
 }
