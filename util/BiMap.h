@@ -54,6 +54,15 @@ public:
         return _rightMap.contains(key);
     }
 
+    typename QMap<LeftType, RightType>::const_iterator begin() const
+    {
+        return _leftMap.begin();
+    }
+    typename QMap<LeftType, RightType>::const_iterator end() const
+    {
+        return _leftMap.end();
+    }
+
 private:
     QMap<LeftType, RightType> _leftMap;
     QMap<RightType, LeftType> _rightMap;
