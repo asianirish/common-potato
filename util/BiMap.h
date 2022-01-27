@@ -67,6 +67,10 @@ public:
         return _leftMap.isEmpty();
     }
 
+    QList<LeftType> keys() const {
+        return _leftMap.keys();
+    }
+
 private:
     QMap<LeftType, RightType> _leftMap;
     QMap<RightType, LeftType> _rightMap;
