@@ -52,8 +52,6 @@ void NodeImpl::nodeImplToMap(QVariantMap &mp) const
 
 void NodeImpl::nodeImplFromMap(const QVariantMap &mp)
 {
-//    Q_UNUSED(mp)
-    //TODO: implement
     QScopedPointer<ItemCreator> cc(createCreator());
 
     auto childrenMap = mp.value(CHILDREN_KEY).toMap();
