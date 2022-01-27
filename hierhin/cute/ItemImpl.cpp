@@ -1,6 +1,6 @@
 #include "ItemImpl.h"
 #include "Node.h"
-//TODO: #include "ItemCreatorImpl.h"
+#include "ItemCreatorImpl.h"
 
 namespace hierhin {
 namespace cute {
@@ -24,9 +24,7 @@ void ItemImpl::setParentNode(NodeWeakPtr parentNode)
 
 ItemCreator *ItemImpl::createCreator() const
 {
-//TODO:    return new ItemCreatorImpl();
-    //TODO: implement
-    return nullptr; //TODO: delete this line
+    return new ItemCreatorImpl();
 }
 
 } // namespace cute
