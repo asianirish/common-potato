@@ -15,11 +15,9 @@ NodeWeakPtr ItemImpl::parentNode() const
     return _parentNode;
 }
 
-void ItemImpl::setParentNode(NodeWeakPtr parentNode)
+void ItemImpl::setParentNodeImpl(NodeWeakPtr parentNode)
 {
-    if (parentNode && parentNode.lock()->containsId(this->id())) {
-        _parentNode = parentNode;
-    }
+    _parentNode = parentNode;
 }
 
 ItemCreator *ItemImpl::createCreator() const

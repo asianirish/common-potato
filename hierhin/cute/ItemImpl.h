@@ -14,12 +14,13 @@ public:
     virtual ~ItemImpl() = default;
 
     NodeWeakPtr parentNode() const override;
-    void setParentNode(NodeWeakPtr parentNode) override;
 
     ItemCreator *createCreator() const override;
 
 private:
     NodeWeakPtr _parentNode;
+
+    void setParentNodeImpl(NodeWeakPtr parentNode) override;
 };
 
 } // namespace cute

@@ -43,7 +43,7 @@ public:
 
     virtual NodeWeakPtr parentNode() const = 0;
 
-    virtual void setParentNode(NodeWeakPtr parentNode) = 0; //TODO: generalize checking parentNode & containsId
+    void setParentNode(NodeWeakPtr parentNode);
 
     QVariant property(const QString &name) const;
 
@@ -101,6 +101,8 @@ private:
     virtual void nodeFromMap(const QVariantMap &mp) {
         Q_UNUSED(mp);
     }
+
+    virtual void setParentNodeImpl(NodeWeakPtr parentNode) = 0;
 };
 
 } // namespace hierhin

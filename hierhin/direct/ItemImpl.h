@@ -20,12 +20,13 @@ public:
     virtual ~ItemImpl() = default;
 
     NodeWeakPtr parentNode() const override;
-    void setParentNode(NodeWeakPtr parentNode) override;
 
     ItemCreator *createCreator() const override;
 
 private:
     NodeWeakPtr _parentNode;
+
+    void setParentNodeImpl(NodeWeakPtr parentNode) override;
 };
 
 template <typename C>
@@ -41,11 +42,9 @@ NodeWeakPtr ItemImpl<C>::parentNode() const
 }
 
 template <typename C>
-void ItemImpl<C>::setParentNode(NodeWeakPtr parentNode)
+void ItemImpl<C>::setParentNodeImpl(NodeWeakPtr parentNode)
 {
-    if (parentNode && parentNode.lock()->containsId(this->id())) {
-        _parentNode = parentNode;
-    }
+    _parentNode = parentNode;
 }
 
 template<typename C>

@@ -124,6 +124,13 @@ QByteArray Item::toJson() const
     return QJsonDocument(jObj).toJson();
 }
 
+void Item::setParentNode(NodeWeakPtr parentNode)
+{
+    if (parentNode && parentNode.lock()->containsId(this->id())) {
+        setParentNodeImpl(parentNode);
+    }
+}
+
 QVariant Item::property(const QString &name) const
 {
     return _properties.value(name);
