@@ -43,7 +43,7 @@ public:
 
     virtual NodeWeakPtr parentNode() const = 0;
 
-    virtual void setParentNode(NodeWeakPtr parentNode) = 0;
+    virtual void setParentNode(NodeWeakPtr parentNode) = 0; //TODO: generalize checking parentNode & containsId
 
     QVariant property(const QString &name) const;
 

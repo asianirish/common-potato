@@ -44,6 +44,7 @@ void Node::addChild(ItemPtr item, const Role &role)
     definition().validateChild(item, role);
 
     addChildImpl(item, role);
+    item->setParentNode(sharedFromThis().template dynamicCast<Node>().toWeakRef());
 }
 
 QList<nav::ItemRef> Node::childRefs() const

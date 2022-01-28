@@ -80,8 +80,6 @@ void NodeImpl<C>::addChildImpl(ItemPtr item, const Role &role)
     }
 
     _children.insert(item->id(), item);
-
-    item->setParentNode(sharedFromThis().template dynamicCast<Node>().toWeakRef());
 }
 
 template<typename C>

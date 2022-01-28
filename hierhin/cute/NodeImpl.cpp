@@ -83,7 +83,6 @@ void NodeImpl::nodeImplFromMap(const QVariantMap &mp)
 void NodeImpl::addChildImpl(ItemPtr item, const Role &role)
 {
     _children.insert(item->id(), item, role);
-    item->setParentNode(sharedFromThis().template dynamicCast<Node>().toWeakRef());
 }
 
 void NodeImpl::assignRoleImpl(const Role &role, ItemPtr chld)
