@@ -3,7 +3,7 @@
 
 #include "PropertyDef.h"
 #include "MethodDef.h"
-#include "type.h"
+#include "../type.h"
 
 #include <QString>
 #include <QMap>
