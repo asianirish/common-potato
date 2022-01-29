@@ -2,6 +2,13 @@ TEMPLATE = lib
 CONFIG += staticlib
 TARGET = hierhin
 
+message(Current QT version: $${QT_MAJOR_VERSION}.$$QT_MINOR_VERSION)
+
+equals(QT_MAJOR_VERSION, 5):lessThan(QT_MINOR_VERSION, 15) {
+    message(Qt $$QT_VERSION USING LESS THAN 5.15)
+}
+
+
 QT -= gui
 
 CONFIG += c++11 console
@@ -25,6 +32,8 @@ TRANSLATIONS += common_en.ts
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+#!versionAtLeast(QT_VERSION, 5.15.2):error("Use at least Qt version 5.15.2")
 
 HEADERS += \
     hierhin/Const.h \
