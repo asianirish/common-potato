@@ -1,11 +1,14 @@
 TEMPLATE = lib
 CONFIG += staticlib
-TARGET = hierhin
+TARGET = common-potato
+
+CONFIG += object_parallel_to_source
 
 message(Current QT version: $${QT_MAJOR_VERSION}.$$QT_MINOR_VERSION)
 
 equals(QT_MAJOR_VERSION, 5):lessThan(QT_MINOR_VERSION, 15) {
     message(Qt $$QT_VERSION USING LESS THAN 5.15)
+    include(fx.prf)
 }
 
 
@@ -13,6 +16,8 @@ QT -= gui
 
 CONFIG += c++11 console
 CONFIG -= app_bundle
+
+message($$PWD/build/lib/)
 
 DESTDIR = $$PWD/build/lib/
 
@@ -239,3 +244,6 @@ SOURCES += \
 
 SUBDIRS += \
     uniq/uniq.pro
+
+DISTFILES += \
+    fx.prf
