@@ -15,7 +15,7 @@ public:
     UnregisteredClassException(const QString &className);
 
     QString cause() const override {
-        return tr("unregistered class name") + ": '" + _className + "'";
+        return tr("unregistered class name: %1").arg(_className);
     }
 
     const QString &className() const;
