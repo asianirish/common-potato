@@ -1,6 +1,7 @@
 #include "Node.h"
 #include "ex/EmptyClassNameList.h"
 #include "ex/NoSuchLinkOwner.h"
+#include "ex/NotKindOf.h"
 
 #include <LinkableEssence.h>
 
@@ -68,7 +69,7 @@ QList<nav::ItemRef> Node::childRefs() const
 void Node::setLink(nav::ItemRef &targetRef, bool isBidirectional, const Role &linkRole, const QString &linkClass, const Role &ownerRole)
 {
     if (!isKindOf(ESSENCE_CLASS(hierhin::LinkableEssence))) {
-        throw "not a hierhin::LinkableEssence class"; //TODO: exception class
+        throw ex::NotKindOf(ESSENCE_CLASS(hierhin::LinkableEssence));
     }
 
     auto linkOwner = childByRole(ownerRole).dynamicCast<Node>();
@@ -100,7 +101,7 @@ QList<nav::ItemRef> Node::targets(const Role &linkOwnerRole)
     QList<nav::ItemRef> refLst;
 
     if (!isKindOf(ESSENCE_CLASS(hierhin::LinkableEssence))) {
-        throw "not a hierhin::LinkableEssence class"; //TODO: exception class
+        throw ex::NotKindOf(ESSENCE_CLASS(hierhin::LinkableEssence));
     }
 
     auto linkOwner = childByRole(linkOwnerRole).dynamicCast<Node>();

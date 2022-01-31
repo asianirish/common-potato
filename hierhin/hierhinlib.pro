@@ -60,6 +60,7 @@ HEADERS += \
     ex/NoSuchLinkOwner.h \
     ex/NoSuchProperty.h \
     ex/NoSuchRole.h \
+    ex/NotKindOf.h \
     ex/PropertyException.h \
     ex/UnregisteredClassException.h \
     ex/UnsupportedCommand.h \
@@ -108,6 +109,7 @@ SOURCES += \
     ex/NoSuchLinkOwner.cpp \
     ex/NoSuchProperty.cpp \
     ex/NoSuchRole.cpp \
+    ex/NotKindOf.cpp \
     ex/PropertyException.cpp \
     ex/UnregisteredClassException.cpp \
     ex/UnsupportedCommand.cpp \
