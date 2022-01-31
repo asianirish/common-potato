@@ -1,4 +1,5 @@
 #include "Node.h"
+#include "ex/EmptyClassNameList.h"
 
 namespace hierhin {
 
@@ -144,7 +145,7 @@ QString Node::childMandatoryClassName(const Role &role) const
             auto classNames = req.classNames();
 
             if (classNames.isEmpty()) {
-                throw "empty class name list"; //TODO: Exception class
+                throw ex::EmptyClassNameList();
             }
             //only one class available for the mandatory one
            return classNames.at(0);

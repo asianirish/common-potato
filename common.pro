@@ -68,6 +68,7 @@ HEADERS += \
     hierhin/direct/NodeImpl.h \
     hierhin/ex/CanNotBeEssenceless.h \
     hierhin/ex/ChildItemException.h \
+    hierhin/ex/EmptyClassNameList.h \
     hierhin/ex/Exception.h \
     hierhin/ex/IncompatibleArgNumber.h \
     hierhin/ex/IncompatibleEssenceClass.h \
@@ -176,6 +177,7 @@ SOURCES += \
     hierhin/def/PropertyDef.cpp \
     hierhin/ex/CanNotBeEssenceless.cpp \
     hierhin/ex/ChildItemException.cpp \
+    hierhin/ex/EmptyClassNameList.cpp \
     hierhin/ex/Exception.cpp \
     hierhin/ex/IncompatibleArgNumber.cpp \
     hierhin/ex/IncompatibleEssenceClass.cpp \

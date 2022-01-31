@@ -51,6 +51,7 @@ HEADERS += \
     direct/NodeImpl.h \
     ex/CanNotBeEssenceless.h \
     ex/ChildItemException.h \
+    ex/EmptyClassNameList.h \
     ex/Exception.h \
     ex/IncompatibleArgNumber.h \
     ex/IncompatibleEssenceClass.h \
@@ -97,6 +98,7 @@ SOURCES += \
     def/PropertyDef.cpp \
     ex/CanNotBeEssenceless.cpp \
     ex/ChildItemException.cpp \
+    ex/EmptyClassNameList.cpp \
     ex/Exception.cpp \
     ex/IncompatibleArgNumber.cpp \
     ex/IncompatibleEssenceClass.cpp \
