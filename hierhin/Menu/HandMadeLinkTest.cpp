@@ -39,8 +39,8 @@ HandMadeLinkTest::HandMadeLinkTest()
     ItemRef source(ndLeft->absPath());
     ItemRef target(ndRight->absPath());
 
-    link->setProperty("source", QVariant::fromValue(source));
-    link->setProperty("target", QVariant::fromValue(target));
+    link->setProperty(Const::SOURCE_PROP, QVariant::fromValue(source));
+    link->setProperty(Const::TARGET_PROP, QVariant::fromValue(target));
 }
 
 QVariant HandMadeLinkTest::simplyAct(const QVariantList &args)
@@ -74,8 +74,8 @@ void HandMadeLinkTest::onReady(const QVariant value, const menu::TaskId &taskId)
             auto link = linkRef.ptr(_nd);
             qDebug().noquote() << "LINK:" << link->toJson();
 
-            auto source = link->refPtr("source");
-            auto target = link->refPtr("target");
+            auto source = link->refPtr(Const::SOURCE_PROP);
+            auto target = link->refPtr(Const::TARGET_PROP);
 
             qDebug().noquote() << "SOURCE:" << source->toJson();
             qDebug().noquote() << "TARGET:" << target->toJson();
