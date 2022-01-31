@@ -8,6 +8,7 @@ namespace ex {
 
 class IncompatibleEssenceExecution : public hierhin::ex::Exception
 {
+    Q_DECLARE_TR_FUNCTIONS(ex)
 public:
     IncompatibleEssenceExecution();
     IncompatibleEssenceExecution(const QString &intendedClass, const QString &actualClass);
