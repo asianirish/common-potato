@@ -8,7 +8,7 @@ namespace def {
 
 NodeDef::NodeDef() : _requiredBaseType(BaseType::NODE)
 {
-    setChildRequirement(ItemReq("hierhin::Essence"), Role());
+    setChildRequirement(ItemReq(ESSENCE_CLASS(hierhin::Essence)), Role());
     _everyChildRequirement.setAlwaysValid(true);
 }
 

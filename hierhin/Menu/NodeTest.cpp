@@ -104,7 +104,7 @@ QVariant NodeTest::simplyAct(const QVariantList &args)
         }
 
         qDebug() << "NODE1 KIND OF QOBJECT: " << nd1->isKindOf("QObject");
-        qDebug() << "NODE1 KIND OF hierhin::Essence: " << nd1->isKindOf("hierhin::Essence");
+        qDebug() << "NODE1 KIND OF hierhin::Essence: " << nd1->isKindOf(ESSENCE_CLASS(hierhin::Essence));
         qDebug() << "NODE1 KIND OF TestEssenceA: " << nd1->isKindOf("TestEssenceA");
         qDebug() << "NODE1 KIND OF TestEssenceB: " << nd1->isKindOf("TestEssenceB");
 

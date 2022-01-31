@@ -7,7 +7,7 @@
 namespace hierhin {
 namespace def {
 
-const QString ItemReq::BASE_ESSENCE_CLASS("hierhin::Essence");
+const QString ItemReq::BASE_ESSENCE_CLASS(ESSENCE_CLASS(hierhin::Essence));
 
 ItemReq::ItemReq() : ItemReq(BASE_ESSENCE_CLASS)
 {
