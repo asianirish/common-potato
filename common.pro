@@ -80,6 +80,7 @@ HEADERS += \
     hierhin/ex/NoSuchProperty.h \
     hierhin/ex/NoSuchRole.h \
     hierhin/ex/NotKindOf.h \
+    hierhin/ex/NotListType.h \
     hierhin/ex/PropertyException.h \
     hierhin/ex/UnregisteredClassException.h \
     hierhin/ex/UnsupportedCommand.h \
@@ -193,6 +194,7 @@ SOURCES += \
     hierhin/ex/NoSuchProperty.cpp \
     hierhin/ex/NoSuchRole.cpp \
     hierhin/ex/NotKindOf.cpp \
+    hierhin/ex/NotListType.cpp \
     hierhin/ex/PropertyException.cpp \
     hierhin/ex/UnregisteredClassException.cpp \
     hierhin/ex/UnsupportedCommand.cpp \

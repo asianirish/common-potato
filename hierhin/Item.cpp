@@ -11,6 +11,7 @@
 
 #include <hierhin/ex/UnsupportedCommand.h>
 #include <hierhin/ex/IncompatibleEssenceExecution.h>
+#include <hierhin/ex/NotListType.h>
 
 #include <hierhin/LinkEssence.h>
 #include <hierhin/LinkOwnerEssence.h>
@@ -150,12 +151,11 @@ void Item::addValue(const QString &name, const QVariant &value)
 {
     auto def = definition();
 
-
     if (def) {
         auto propDef = def.propertyDef(name);
 
         if (!propDef.isListType()) {
-            throw "not a list type"; //TODO: exception class
+            throw ex::NotListType(name);
         }
     }
 
