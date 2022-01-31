@@ -13,7 +13,7 @@ public:
     NoSuchProperty(const QString &name);
 
     QString cause() const override {
-        return tr("no such a property") + " '" + name() + "'";
+        return tr("no such a property '%1'").arg(name());
     }
 };
 
