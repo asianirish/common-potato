@@ -8,6 +8,7 @@ namespace ex {
 
 class NoSuchLinkOwner : public ChildItemException
 {
+    Q_DECLARE_TR_FUNCTIONS(ex)
 public:
     NoSuchLinkOwner();
 
