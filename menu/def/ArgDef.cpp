@@ -1,5 +1,7 @@
 #include "ArgDef.h"
 
+#include <hierhin/ex/IncompatibleValueType.h>
+
 namespace menu {
 namespace def {
 
@@ -33,7 +35,7 @@ Error ArgDef::validate(const QVariant &arg) const
 {
     if (_typeId != QMetaType::UnknownType) {
         if (!arg.canConvert(_typeId)) {
-            throw "Uncompatible Type"; //TODO: Exception Class
+            throw hierhin::ex::IncompatibleValueType(_typeId);
         }
     }
 
