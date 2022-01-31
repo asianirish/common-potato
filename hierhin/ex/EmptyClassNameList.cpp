@@ -8,5 +8,10 @@ EmptyClassNameList::EmptyClassNameList()
 
 }
 
+EmptyClassNameList::EmptyClassNameList(const Role &role) : ChildItemException(role)
+{
+
+}
+
 } // namespace ex
 } // namespace hierhin

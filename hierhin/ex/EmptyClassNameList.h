@@ -13,6 +13,8 @@ class EmptyClassNameList : public ChildItemException
 public:
     EmptyClassNameList();
 
+    EmptyClassNameList(const Role &role);
+
     QString cause() const override {
         return tr("empty class name list for role: '%1'").arg(role());
     }

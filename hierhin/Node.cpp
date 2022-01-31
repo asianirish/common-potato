@@ -145,7 +145,7 @@ QString Node::childMandatoryClassName(const Role &role) const
             auto classNames = req.classNames();
 
             if (classNames.isEmpty()) {
-                throw ex::EmptyClassNameList();
+                throw ex::EmptyClassNameList(role);
             }
             //only one class available for the mandatory one
            return classNames.at(0);
