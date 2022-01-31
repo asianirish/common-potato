@@ -32,6 +32,11 @@ public:
 
     bool isKindOf(const QString &className) const;
 
+    //used in ESSENCE_CLASS_NAME
+    static QString checkEssenceClass(const QString &essenceClassName) {
+        return essenceClassName;
+    }
+
 //protected:
     virtual void nodeDef(NodeDef &nd) const;
     virtual QMap<Role, ItemReq> childRequirements() const;
@@ -44,6 +49,8 @@ public:
 signals:
 
 };
+
+#define ESSENCE_CLASS(className) className::checkEssenceClass(#className)
 
 } // namespace hierhin
 
