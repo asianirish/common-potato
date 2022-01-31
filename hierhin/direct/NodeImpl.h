@@ -56,6 +56,7 @@ bool NodeImpl<C>::containsId(const Id &id)
 template<typename C>
 ConstItemPtr NodeImpl<C>::child(const Id &id) const
 {
+    //TODO: if (!_children.contains(role) throw NoSuchChild?
     return _children.value(id);
 }
 

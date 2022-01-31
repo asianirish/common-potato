@@ -61,17 +61,6 @@ QList<nav::ItemRef> Node::childRefs() const
     return lst;
 }
 
-void Node::assignRole(const Role &role, const Id &id)
-{
-    ItemPtr chld = child(id);
-
-    if (!chld) {
-        throw "NO SUCH A CHILD"; //TODO: exception class
-    }
-
-    assignRoleImpl(role, chld);
-}
-
 void Node::setLink(nav::ItemRef &targetRef, bool isBidirectional, const Role &linkRole, const QString &linkClass, const Role &ownerRole)
 {
     if (!isKindOf("hierhin::LinkableEssence")) {

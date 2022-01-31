@@ -18,6 +18,7 @@ bool NodeImpl::containsId(const Id &id)
 
 ConstItemPtr NodeImpl::child(const Id &id) const
 {
+    //TODO: if (!_children.contains(role) throw NoSuchChild?
     return _children.value(id);
 }
 

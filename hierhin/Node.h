@@ -29,8 +29,6 @@ public:
 
     QList<nav::ItemRef> childRefs() const;
 
-    void assignRole(const Role &role, const Id &id);
-
     void setLink(nav::ItemRef &targetRef, bool isBidirectional = false, const Role &linkRole = Role(),
                  const QString &linkClass = "hierhin::LinkEssence", const Role &ownerRole = Const::DEFAULT_LINK_OWNER_ROLE);
 
