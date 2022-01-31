@@ -1,5 +1,6 @@
 #include "PropertyDef.h"
 #include "ex/ValidatorException.h"
+#include "ex/IncompatibleValueType.h"
 
 namespace hierhin {
 namespace def {
@@ -39,7 +40,7 @@ void PropertyDef::validate(const QVariant &value)
 {
     if (_typeId != QMetaType::UnknownType) {
         if (!value.canConvert(_typeId)) {
-            throw "Uncompatible Type"; //TODO: Exception Class
+            throw ex::IncompatibleValueType(_typeId);
         }
     }
 
