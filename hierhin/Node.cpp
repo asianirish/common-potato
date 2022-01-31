@@ -2,6 +2,7 @@
 #include "ex/EmptyClassNameList.h"
 #include "ex/NoSuchLinkOwner.h"
 
+#include <LinkableEssence.h>
 
 namespace hierhin {
 
@@ -66,7 +67,7 @@ QList<nav::ItemRef> Node::childRefs() const
 
 void Node::setLink(nav::ItemRef &targetRef, bool isBidirectional, const Role &linkRole, const QString &linkClass, const Role &ownerRole)
 {
-    if (!isKindOf("hierhin::LinkableEssence")) {
+    if (!isKindOf(ESSENCE_CLASS(hierhin::LinkableEssence))) {
         throw "not a hierhin::LinkableEssence class"; //TODO: exception class
     }
 
@@ -98,7 +99,7 @@ QList<nav::ItemRef> Node::targets(const Role &linkOwnerRole)
 {
     QList<nav::ItemRef> refLst;
 
-    if (!isKindOf("hierhin::LinkableEssence")) {
+    if (!isKindOf(ESSENCE_CLASS(hierhin::LinkableEssence))) {
         throw "not a hierhin::LinkableEssence class"; //TODO: exception class
     }
 

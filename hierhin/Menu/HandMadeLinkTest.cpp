@@ -2,6 +2,9 @@
 
 #include <hierhin/nav/ItemRef.h>
 #include <hierhin/direct/NodeImpl.h>
+
+#include <hierhin/LinkableEssence.h>
+
 #include <menu/Launcher.h>
 
 #include <QDebug>
@@ -26,7 +29,7 @@ HandMadeLinkTest::HandMadeLinkTest()
     ndLeft->setProperty("name", "Alla");
     ndRight->setProperty("name", "Boris");
 
-    ndLeft->setEssenceClassName("hierhin::LinkableEssence");
+    ndLeft->setEssenceClassName(ESSENCE_CLASS(hierhin::LinkableEssence));
     link->setEssenceClassName("hierhin::LinkEssence");
 
     auto linkOwner = ndLeft->childByRole(Const::DEFAULT_LINK_OWNER_ROLE);
