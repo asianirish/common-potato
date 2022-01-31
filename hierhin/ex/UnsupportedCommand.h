@@ -8,6 +8,7 @@ namespace ex {
 
 class UnsupportedCommand : public Exception
 {
+    Q_DECLARE_TR_FUNCTIONS(ex)
 public:
     UnsupportedCommand();
     UnsupportedCommand(const QString &command);
