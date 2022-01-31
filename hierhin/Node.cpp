@@ -75,7 +75,7 @@ void Node::setLink(nav::ItemRef &targetRef, bool isBidirectional, const Role &li
     auto linkOwner = childByRole(ownerRole).dynamicCast<Node>();
 
     if (!linkOwner) {
-        throw "lack of a link owner"; //TODO: exception class
+        throw ex::NoSuchLinkOwner(ownerRole);
     }
 
     auto link = createImpl(linkClass);
