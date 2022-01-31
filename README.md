@@ -27,3 +27,7 @@ by sending \
 **QRL**: Q0105006c4cf1793f416e1858d607bcfb28b8b161b46d08da94c4d1eb3d151d3ddd5a8a13909d87 \
 ![donate](./images/donate.svg)
 
+## third party:
+
+* fx.prf by https://gist.github.com/a12e
+* menu/Console.h BASED ON https://gist.github.com/gjorquera/2576569
