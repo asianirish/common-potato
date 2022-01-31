@@ -30,7 +30,7 @@ HandMadeLinkTest::HandMadeLinkTest()
     ndRight->setProperty("name", "Boris");
 
     ndLeft->setEssenceClassName(ESSENCE_CLASS(hierhin::LinkableEssence));
-    link->setEssenceClassName("hierhin::LinkEssence");
+    link->setEssenceClassName(ESSENCE_CLASS(hierhin::LinkEssence));
 
     auto linkOwner = ndLeft->childByRole(Const::DEFAULT_LINK_OWNER_ROLE);
     auto linkOwnerNd = linkOwner.dynamicCast<Node>();

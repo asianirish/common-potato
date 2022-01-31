@@ -4,6 +4,8 @@
 #include <Item.h>
 #include <nav/ItemRef.h>
 
+#include "LinkEssence.h"
+
 #include "Const.h"
 
 namespace hierhin {
@@ -30,7 +32,7 @@ public:
     QList<nav::ItemRef> childRefs() const;
 
     void setLink(nav::ItemRef &targetRef, bool isBidirectional = false, const Role &linkRole = Role(),
-                 const QString &linkClass = "hierhin::LinkEssence", const Role &ownerRole = Const::DEFAULT_LINK_OWNER_ROLE);
+                 const QString &linkClass = ESSENCE_CLASS(hierhin::LinkEssence), const Role &ownerRole = Const::DEFAULT_LINK_OWNER_ROLE);
 
     QList<nav::ItemRef> targets(const Role &linkOwnerRole = Const::DEFAULT_LINK_OWNER_ROLE);
 
