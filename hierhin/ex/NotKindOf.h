@@ -8,6 +8,7 @@ namespace ex {
 
 class NotKindOf : public Exception
 {
+    Q_DECLARE_TR_FUNCTIONS(ex)
 public:
     NotKindOf();
     NotKindOf(const QString &essenceClassName);
