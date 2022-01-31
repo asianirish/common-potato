@@ -14,7 +14,7 @@ public:
     NoSuchRole(const Role &role);
 
     QString cause() const override {
-        return tr("no such a role") + " '" + role() + "'";
+        return tr("no such a role '%1'").arg(role());
     }
 
 };
