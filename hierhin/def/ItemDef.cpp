@@ -1,6 +1,7 @@
 #include "ItemDef.h"
 
 #include "ex/NoSuchProperty.h"
+#include "ex/EmptyPropertyName.h"
 
 namespace hierhin {
 namespace def {
@@ -38,7 +39,7 @@ void ItemDef::setPropertyDefs(const QMap<QString, PropertyDef> &propertyDefs)
 void ItemDef::insertPropertyDef(const PropertyDef &propertyDef)
 {
     if (propertyDef.name().isEmpty()) {
-        throw "EmptyPropertyException"; //TODO: Exception class
+        throw ex::EmptyPropertyName();
     }
     _propertyDefs.insert(propertyDef.name(), propertyDef);
 }
