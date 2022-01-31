@@ -21,6 +21,7 @@
 #include <Menu/MultyPropertyTest.h>
 #include <Menu/CuteContainerTest.h>
 #include <Menu/BiMapTest.h>
+#include <Menu/EssenceClassTest.h>
 
 #include <menu/Console.h>
 #include <menu/util/SetLanguage.h>
@@ -87,6 +88,8 @@ int main(int argc, char *argv[])
     ADD_MENU_ITEM(console, tcc, CuteContainerTest)
 
     ADD_MENU_ITEM(console, tbimap, BiMapTest)
+
+    ADD_MENU_ITEM(console, tesscl, EssenceClassTest)
 
     console.run();
     QObject::connect(&console, SIGNAL(quit()), &a, SLOT(quit()));
