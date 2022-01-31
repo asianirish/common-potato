@@ -22,7 +22,6 @@
 namespace hierhin {
 
 const QString Item::DEFAULT_ID_GEN_CLASS_NAME("uniq::TimeQStringValue");
-//const QString Item::DEFAULT_ESSENCE_CLASS_NAME("hierhin::SimpleEssence");
 const QString Item::ID_KEY("id");
 const QString Item::ESSENCE_CLASS_KEY("essenceClass");
 const QString Item::PROPERTIES_KEY("prop");
