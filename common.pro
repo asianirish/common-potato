@@ -6,10 +6,10 @@ CONFIG += object_parallel_to_source
 
 message(Current QT version: $${QT_MAJOR_VERSION}.$$QT_MINOR_VERSION)
 
-equals(QT_MAJOR_VERSION, 5):lessThan(QT_MINOR_VERSION, 15) {
+#equals(QT_MAJOR_VERSION, 5):lessThan(QT_MINOR_VERSION, 15) {
     message(Qt $$QT_VERSION USING LESS THAN 5.15)
     include(fx.prf)
-}
+#}
 
 
 QT -= gui
