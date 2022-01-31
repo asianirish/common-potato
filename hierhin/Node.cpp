@@ -1,5 +1,7 @@
 #include "Node.h"
 #include "ex/EmptyClassNameList.h"
+#include "ex/NoSuchLinkOwner.h"
+
 
 namespace hierhin {
 
@@ -103,7 +105,7 @@ QList<nav::ItemRef> Node::targets(const Role &linkOwnerRole)
     auto linkOwner = childByRole(linkOwnerRole).dynamicCast<Node>();
 
     if (!linkOwner) {
-        throw "lack of a link owner"; //TODO: exception class
+        throw ex::NoSuchLinkOwner(linkOwnerRole);
     }
 
     auto idLst = linkOwner->idList();

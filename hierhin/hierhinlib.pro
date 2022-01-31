@@ -57,6 +57,7 @@ HEADERS += \
     ex/IncompatibleEssenceClass.h \
     ex/IncompatibleEssenceExecution.h \
     ex/InvalidValueException.h \
+    ex/NoSuchLinkOwner.h \
     ex/NoSuchProperty.h \
     ex/NoSuchRole.h \
     ex/PropertyException.h \
@@ -104,6 +105,7 @@ SOURCES += \
     ex/IncompatibleEssenceClass.cpp \
     ex/IncompatibleEssenceExecution.cpp \
     ex/InvalidValueException.cpp \
+    ex/NoSuchLinkOwner.cpp \
     ex/NoSuchProperty.cpp \
     ex/NoSuchRole.cpp \
     ex/PropertyException.cpp \
