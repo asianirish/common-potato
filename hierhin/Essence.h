@@ -2,10 +2,8 @@
 #define HIERHIN_ESSENCE_H
 
 #include "def/NodeDef.h"
-#include "def/MethodDef.h" //TODO: delete this include
-#include "menu/def/ActionDef.h"
 
-
+#include <menu/def/ActionDef.h>
 #include <menu/ThreadLauncher.h>
 
 #include <QObject>
