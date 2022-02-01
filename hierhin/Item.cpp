@@ -103,7 +103,6 @@ QVariantMap Item::toMap() const
 
     mp.insert(BASE_TYPE_KEY, static_cast<int>(baseType()));
 
-    //TODO: implement
     nodeToMap(mp);
     return mp;
 }
@@ -248,7 +247,7 @@ BaseType Item::baseType() const
     if (dynamic_cast<const Node *>(this)) {
         return BaseType::NODE;
     }
-    //TODO: <Link>
+
     return BaseType::ITEM;
 }
 
