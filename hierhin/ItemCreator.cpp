@@ -1,6 +1,8 @@
 #include "ItemCreator.h"
 #include "Node.h"
 
+#include "ex/NoSuchBaseType.h"
+
 namespace hierhin {
 
 ItemCreator::ItemCreator()
@@ -25,7 +27,7 @@ ItemPtr ItemCreator::createItem(const BaseType &baseType) const
         return createNode();
     }
 
-    return {}; //TODO: exception
+    throw ex::NoSuchBaseType(static_cast<int>(baseType));
 }
 
 } // namespace hierhin

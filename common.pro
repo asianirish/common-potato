@@ -76,6 +76,7 @@ HEADERS += \
     hierhin/ex/IncompatibleEssenceExecution.h \
     hierhin/ex/IncompatibleValueType.h \
     hierhin/ex/InvalidValueException.h \
+    hierhin/ex/NoSuchBaseType.h \
     hierhin/ex/NoSuchLinkOwner.h \
     hierhin/ex/NoSuchProperty.h \
     hierhin/ex/NoSuchRole.h \
@@ -190,6 +191,7 @@ SOURCES += \
     hierhin/ex/IncompatibleEssenceExecution.cpp \
     hierhin/ex/IncompatibleValueType.cpp \
     hierhin/ex/InvalidValueException.cpp \
+    hierhin/ex/NoSuchBaseType.cpp \
     hierhin/ex/NoSuchLinkOwner.cpp \
     hierhin/ex/NoSuchProperty.cpp \
     hierhin/ex/NoSuchRole.cpp \
