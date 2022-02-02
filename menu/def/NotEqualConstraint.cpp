@@ -21,7 +21,7 @@ void NotEqualConstraint::setValue(const QVariant &value)
 void NotEqualConstraint::validateSpecific(const QVariant &arg, Error &err) const
 {
     if (arg == _value) {
-        err.setCode(3); //TODO: user defined code
+        err.setCode(Error::NOT_EQUAL_CONSTRAINT);
         err.setDescription("not equal");
         err.addContext("value", _value);
     }
