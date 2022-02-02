@@ -13,8 +13,6 @@ Q_GADGET
 public:
     static const int NO_USER_ERROR;
 
-    enum class ERROR_TYPE{UNDEFINED, MENU, LAUNCHER, ARG_NUM, ARG_VAL, ARG_TYPE};
-
     enum ERROR_CODE {
         NO_ERROR = 0,
 
@@ -51,12 +49,8 @@ public:
 
     operator bool() const;
 
-    ERROR_TYPE type() const;
-    void setType(const ERROR_TYPE &type);
-
 private:
     ERROR_CODE _code;
-    ERROR_TYPE _type;
     QString _description;
     QVariantMap _context;
 };

@@ -4,8 +4,7 @@ namespace menu {
 
 const int Error::NO_USER_ERROR = 0;
 
-Error::Error() : _code(NO_ERROR),
-    _type(ERROR_TYPE::UNDEFINED)
+Error::Error() : _code(NO_ERROR)
 {
 
 }
@@ -50,18 +49,6 @@ void Error::clear()
     _code = ERROR_CODE::NO_ERROR;
     _description.clear();
     _context.clear();
-}
-
-Error::ERROR_TYPE Error::type() const
-{
-    return _type;
-}
-
-void Error::setType(const ERROR_TYPE &type)
-{
-    if (_type == ERROR_TYPE::UNDEFINED) {
-        _type = type; //do it once
-    }
 }
 
 menu::Error::operator bool() const
