@@ -318,7 +318,7 @@ void Item::setLauncherIndex(int launcherIndex)
 
 QSharedPointer<menu::Launcher> Item::launcher() const
 {
-    //TODO: define a launcher class here (not LazyRegistry)
+    //TODO: define a launcher class here (not ObjectRegistry)
     return ObjectRegistry<int, menu::Launcher>::ptr(_launcherIndex);
 }
 
