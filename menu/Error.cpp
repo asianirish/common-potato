@@ -22,12 +22,16 @@ void Error::setCode(CODE code)
 
 QString Error::description() const
 {
-    return _description;
+    if (_code == USER_DEFINED) {
+        return _userDescription;
+    }
+
+    return QVariant::fromValue(_code).toString();
 }
 
-void Error::setDescription(const QString &description)
+void Error::setUserDescription(const QString &description)
 {
-    _description = description;
+    _userDescription = description;
 }
 
 QVariantMap Error::context() const
@@ -48,7 +52,7 @@ void Error::addContext(const QString &key, const QVariant &value)
 void Error::clear()
 {
     _code = CODE::NO_ERROR;
-    _description.clear();
+    _userDescription.clear();
     _context.clear();
 }
 

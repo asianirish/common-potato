@@ -39,7 +39,7 @@ public:
     void setCode(CODE code);
 
     QString description() const;
-    void setDescription(const QString &description);
+    void setUserDescription(const QString &description);
 
     QVariantMap context() const;
     void setContext(const QVariantMap &context);
@@ -55,7 +55,7 @@ public:
 private:
     CODE _code;
     int _userCode;
-    QString _description;
+    QString _userDescription;
     QVariantMap _context;
 };
 

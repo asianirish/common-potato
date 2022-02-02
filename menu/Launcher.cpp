@@ -89,7 +89,6 @@ void Launcher::onActionComplete(const Result &result)
     if (!_pendingActions.contains(result.taskId())) {
         Error err;
         err.setCode(Error::WRONG_TASK_ID);
-        err.setDescription(tr("no such an taskId"));
         QVariantMap mp;
         mp.insert(tr("taskId"), result.taskId());
         err.setContext(mp);

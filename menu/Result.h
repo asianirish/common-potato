@@ -27,7 +27,7 @@ public:
     void setErrorCode(Error::CODE errorCode);
 
     QString errorDescription() const;
-    void setErrorDescription(const QString &errorDescription);
+    void setErrorDescription(const QString &errorDescription); //TODO: rename?
 
     QVariantMap errorContext() const;
     void setErrorContext(const QVariantMap &errorContext);

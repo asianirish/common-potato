@@ -41,7 +41,7 @@ QString Result::errorDescription() const
 
 void Result::setErrorDescription(const QString &errorDescription)
 {
-    _error.setDescription(errorDescription);
+    _error.setUserDescription(errorDescription);
 }
 
 QVariantMap Result::errorContext() const
