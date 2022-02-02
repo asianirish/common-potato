@@ -23,8 +23,8 @@ public:
     QVariant value() const;
     void setValue(const QVariant &value);
 
-    int errorCode() const;
-    void setErrorCode(int errorCode);
+    Error::ERROR_CODE errorCode() const;
+    void setErrorCode(Error::ERROR_CODE errorCode);
 
     QString errorDescription() const;
     void setErrorDescription(const QString &errorDescription);

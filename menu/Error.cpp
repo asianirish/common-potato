@@ -4,18 +4,18 @@ namespace menu {
 
 const int Error::NO_ERROR = 0;
 
-Error::Error() : _code(NO_ERROR),
+Error::Error() : _code(ERROR_NO_ERROR),
     _type(ERROR_TYPE::UNDEFINED)
 {
 
 }
 
-int Error::code() const
+Error::ERROR_CODE Error::code() const
 {
     return _code;
 }
 
-void Error::setCode(int code)
+void Error::setCode(ERROR_CODE code)
 {
     _code = code;
 }
@@ -47,7 +47,7 @@ void Error::addContext(const QString &key, const QVariant &value)
 
 void Error::clear()
 {
-    _code = NO_ERROR;
+    _code = ERROR_CODE::ERROR_NO_ERROR;
     _description.clear();
     _context.clear();
 }

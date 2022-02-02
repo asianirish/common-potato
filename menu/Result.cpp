@@ -24,12 +24,12 @@ void Result::setValue(const QVariant &value)
     _value = value;
 }
 
-int Result::errorCode() const
+Error::ERROR_CODE Result::errorCode() const
 {
     return _error.code();
 }
 
-void Result::setErrorCode(int errorCode)
+void Result::setErrorCode(Error::ERROR_CODE errorCode)
 {
     _error.setCode(errorCode);
 }

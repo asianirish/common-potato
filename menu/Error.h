@@ -37,8 +37,8 @@ public:
 
     Error();
 
-    int code() const;
-    void setCode(int code);
+    ERROR_CODE code() const;
+    void setCode(ERROR_CODE code);
 
     QString description() const;
     void setDescription(const QString &description);
@@ -55,7 +55,7 @@ public:
     void setType(const ERROR_TYPE &type);
 
 private:
-    int _code; //TODO: ERROR_CODE
+    ERROR_CODE _code;
     ERROR_TYPE _type;
     QString _description;
     QVariantMap _context;
