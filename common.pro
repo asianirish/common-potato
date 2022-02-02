@@ -96,6 +96,7 @@ HEADERS += \
     hierhin/sys/GetMethodNames.h \
     hierhin/sys/GetName.h \
     hierhin/sys/GetProperty.h \
+    hierhin/sys/SetLink.h \
     hierhin/sys/SetProperty.h \
     hierhin/type.h \
     menu/Action.h \
@@ -211,6 +212,7 @@ SOURCES += \
     hierhin/sys/GetMethodNames.cpp \
     hierhin/sys/GetName.cpp \
     hierhin/sys/GetProperty.cpp \
+    hierhin/sys/SetLink.cpp \
     hierhin/sys/SetProperty.cpp \
     menu/Action.cpp \
     menu/ActionListener.cpp \

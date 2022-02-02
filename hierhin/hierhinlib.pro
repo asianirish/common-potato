@@ -79,6 +79,7 @@ HEADERS += \
     sys/GetMethodNames.h \
     sys/GetName.h \
     sys/GetProperty.h \
+    sys/SetLink.h \
     sys/SetProperty.h \
     type.h
 
@@ -132,6 +133,7 @@ SOURCES += \
     sys/GetMethodNames.cpp \
     sys/GetName.cpp \
     sys/GetProperty.cpp \
+    sys/SetLink.cpp \
     sys/SetProperty.cpp
 
 

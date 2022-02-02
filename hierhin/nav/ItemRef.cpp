@@ -82,6 +82,7 @@ ItemRef::operator QString() const
 
 int ItemRef::typeId()
 {
+    //TODO: or use qMetaTypeId<hierhin::nav::ItemRef>())
     return QMetaType::type("hierhin::nav::ItemRef");
 }
 
