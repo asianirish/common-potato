@@ -16,10 +16,21 @@ public:
     enum class ERROR_TYPE{UNDEFINED, MENU, LAUNCHER, ARG_NUM, ARG_VAL, ARG_TYPE};
 
     enum ERROR_CODE {
-        WRONG_TASK_ID = 4,
-        ARG_NUM_LESS_THAN_MIN = 1,
-        ARG_NUM_LARGER_THAN_MAX = 2,
-        USER_DEFINED_CODE = 1024
+        ERROR_NO_ERROR = 0,
+
+        WRONG_TASK_ID = 100, //LAUNCHER
+
+        ARG_NUM_LESS_THAN_MIN = 200, //ARG NUM
+        ARG_NUM_LARGER_THAN_MAX = 201, //ARG NUM
+
+        NOT_EQUAL_CONSTRAINT = 300, //ARG_VAL
+        //TODO: other value constaint
+
+        //TODO: type constraints
+
+        //TODO: menu error codes
+
+        USER_DEFINED = 65535
     };
     Q_ENUM(ERROR_CODE)
 
