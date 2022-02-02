@@ -9,12 +9,12 @@ Error::Error() : _code(NO_ERROR)
 
 }
 
-Error::ERROR_CODE Error::code() const
+Error::CODE Error::code() const
 {
     return _code;
 }
 
-void Error::setCode(ERROR_CODE code)
+void Error::setCode(CODE code)
 {
     _code = code;
 }
@@ -46,7 +46,7 @@ void Error::addContext(const QString &key, const QVariant &value)
 
 void Error::clear()
 {
-    _code = ERROR_CODE::NO_ERROR;
+    _code = CODE::NO_ERROR;
     _description.clear();
     _context.clear();
 }

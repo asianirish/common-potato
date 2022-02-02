@@ -13,7 +13,7 @@ Q_GADGET
 public:
     static const int NO_USER_ERROR;
 
-    enum ERROR_CODE {
+    enum CODE {
         NO_ERROR = 0,
 
         WRONG_TASK_ID = 100, //LAUNCHER
@@ -31,12 +31,12 @@ public:
 
         USER_DEFINED = 65535
     };
-    Q_ENUM(ERROR_CODE)
+    Q_ENUM(CODE)
 
     Error();
 
-    ERROR_CODE code() const;
-    void setCode(ERROR_CODE code);
+    CODE code() const;
+    void setCode(CODE code);
 
     QString description() const;
     void setDescription(const QString &description);
@@ -50,7 +50,7 @@ public:
     operator bool() const;
 
 private:
-    ERROR_CODE _code;
+    CODE _code;
     QString _description;
     QVariantMap _context;
 };
