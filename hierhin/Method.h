@@ -15,6 +15,11 @@ public:
     Item *item() const;
     void setItem(Item *item);
 
+    //used in METHOD_CLASS_NAME
+    static QString checkMethodClass(const QString &methodClassName) {
+        return methodClassName;
+    }
+
 protected:
     QVariant simplyAct(const QVariantList &args) final;
 
@@ -23,6 +28,8 @@ private:
 
     virtual QVariant actImpl(const QVariantList &args, Item *item) = 0;
 };
+
+#define METHOD_CLASS(className) className::checkMethodClass(#className)
 
 } // namespace hierhin
 

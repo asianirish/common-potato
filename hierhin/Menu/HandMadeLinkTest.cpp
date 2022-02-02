@@ -3,6 +3,9 @@
 #include <hierhin/nav/ItemRef.h>
 #include <hierhin/direct/NodeImpl.h>
 
+#include <hierhin/sys/GetChildByRole.h>
+#include <hierhin/sys/GetChildren.h>
+
 #include <hierhin/LinkableEssence.h>
 
 #include <menu/Launcher.h>
@@ -53,7 +56,7 @@ QVariant HandMadeLinkTest::simplyAct(const QVariantList &args)
     auto leftNode = _nd->childByRole("left");
     qDebug().noquote() << "NODE_A ID:" << leftNode->id();
 
-    leftNode->execute("sys::GetChildByRole", {Const::DEFAULT_LINK_OWNER_ROLE}, &_getLinkOwnerId);
+    leftNode->execute(METHOD_CLASS(sys::GetChildByRole), {Const::DEFAULT_LINK_OWNER_ROLE}, &_getLinkOwnerId);
 
     return true;
 }
@@ -67,7 +70,7 @@ void HandMadeLinkTest::onReady(const QVariant value, const menu::TaskId &taskId)
         qDebug().noquote() << "ON_READY GET LINK OWNER" << linkOwnerNode->toJson() << taskId;
 
         connect(linkOwnerNode->launcher().get(), &menu::Launcher::ready, this, &HandMadeLinkTest::onReady);
-        linkOwnerNode->execute("sys::GetChildren", {}, &_getLinksId);
+        linkOwnerNode->execute(METHOD_CLASS(sys::GetChildren), {}, &_getLinksId);
     } else if (taskId == _getLinksId){
         qDebug().noquote() << "ON_READY GET LINKS" << value << taskId;
 

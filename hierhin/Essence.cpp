@@ -101,14 +101,14 @@ QMap<QString, PropertyDef> Essence::propertyDefs() const
 
 QStringList Essence::methodNames() const
 {
-    return {"sys::GetName",
-        "sys::GetProperty",
-        "sys::SetProperty",
-        "sys::GetClassName",
-        "sys::GetMethodNames",
-        "sys::GetClassNames",
-        "sys::GetChildren",
-        "sys::GetChildByRole"
+    return {METHOD_CLASS(sys::GetName),
+        METHOD_CLASS(sys::GetProperty),
+        METHOD_CLASS(sys::SetProperty),
+        METHOD_CLASS(sys::GetClassName),
+        METHOD_CLASS(sys::GetMethodNames),
+        METHOD_CLASS(sys::GetClassNames),
+        METHOD_CLASS(sys::GetChildren),
+        METHOD_CLASS(sys::GetChildByRole)
     };
 }
 

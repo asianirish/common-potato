@@ -1,11 +1,15 @@
 #include "ChildTest.h"
 
+#include <hierhin/Method.h>
+#include <hierhin/sys/GetChildren.h>
+
 #include <type.h>
 
 //#include <hierhin/direct/NodeImpl.h>
 #include <hierhin/cute/NodeImpl.h>
 
 #include <menu/Launcher.h>
+
 
 #include <QDebug>
 
@@ -57,7 +61,7 @@ QVariant ChildTest::simplyAct(const QVariantList &args)
     qDebug() << "to json:";
     qDebug().noquote() << "NODE:" << _nd->toJson();
 
-    _nd->execute("sys::GetChildren");
+    _nd->execute(METHOD_CLASS(sys::GetChildren));
 
     return true;
 }
