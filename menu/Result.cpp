@@ -39,7 +39,7 @@ QString Result::errorDescription() const
     return _error.description();
 }
 
-void Result::setErrorDescription(const QString &errorDescription)
+void Result::setUserErrorDescription(const QString &errorDescription)
 {
     _error.setUserDescription(errorDescription);
 }
