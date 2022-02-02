@@ -55,7 +55,7 @@ private:
     void exec(const CommandInfo &commandInfo);
 
 signals:
-    void ready(const QVariant &result, const TaskId &taskId);
+    void ready(const QVariant &result, const menu::TaskId &taskId);
     void error(const menu::Error &error);
 
 public slots:
