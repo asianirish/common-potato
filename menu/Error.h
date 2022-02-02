@@ -28,7 +28,8 @@ public:
 
         //TODO: type constraints
 
-        //TODO: menu error codes
+        //menu error codes
+        NO_SUCH_ACTION_CLASS = 500, //MENU
 
         USER_DEFINED = 65535
     };
