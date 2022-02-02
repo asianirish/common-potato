@@ -2,7 +2,7 @@
 
 namespace menu {
 
-const int Error::NO_ERROR = 0;
+const int Error::NO_USER_ERROR = 0;
 
 Error::Error() : _code(ERROR_NO_ERROR),
     _type(ERROR_TYPE::UNDEFINED)

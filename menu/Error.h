@@ -11,7 +11,7 @@ class Error
 {
 Q_GADGET
 public:
-    static const int NO_ERROR;
+    static const int NO_USER_ERROR;
 
     enum class ERROR_TYPE{UNDEFINED, MENU, LAUNCHER, ARG_NUM, ARG_VAL, ARG_TYPE};
 
