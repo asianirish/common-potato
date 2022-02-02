@@ -4,7 +4,8 @@ namespace menu {
 
 const int Error::NO_USER_ERROR = 0;
 
-Error::Error() : _code(NO_ERROR)
+Error::Error() : _code(NO_ERROR),
+    _userCode(NO_USER_ERROR)
 {
 
 }
@@ -53,7 +54,20 @@ void Error::clear()
 
 menu::Error::operator bool() const
 {
-    return !(_code == NO_ERROR);
+    return !(_code == NO_ERROR) && !(_userCode == NO_USER_ERROR);
+}
+
+int Error::userCode() const
+{
+    return _userCode;
+}
+
+void Error::setUserCode(int newUserCode)
+{
+    _userCode = newUserCode;
+    if (_userCode != NO_USER_ERROR) {
+        _code = USER_DEFINED;
+    }
 }
 
 } // namespace menu

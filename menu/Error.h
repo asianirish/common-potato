@@ -49,8 +49,12 @@ public:
 
     operator bool() const;
 
+    int userCode() const;
+    void setUserCode(int newUserCode);
+
 private:
     CODE _code;
+    int _userCode;
     QString _description;
     QVariantMap _context;
 };
