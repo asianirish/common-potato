@@ -27,6 +27,8 @@
 #include <menu/util/SetLanguage.h>
 #include <menu/SyncLauncher.h>
 
+#include <menu/Error.h>
+
 #include <hierhin/ItemContextSetter.h>
 
 #include <QCoreApplication>
@@ -38,6 +40,10 @@
 int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
+
+//TEST ENUM:
+    QString s = QVariant::fromValue(menu::Error::WRONG_TASK_ID).toString();
+    cout << "ENUM: " << s.toStdString() << endl;
 
     menu::Menu *menu = new menu::Menu();
     HierhinContextSetter *cntx = new HierhinContextSetter();

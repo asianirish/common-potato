@@ -9,10 +9,19 @@ namespace menu {
 
 class Error
 {
+Q_GADGET
 public:
     static const int NO_ERROR;
 
     enum class ERROR_TYPE{UNDEFINED, MENU, LAUNCHER, ARG_NUM, ARG_VAL, ARG_TYPE};
+
+    enum ERROR_CODE {
+        WRONG_TASK_ID = 4,
+        ARG_NUM_LESS_THAN_MIN = 1,
+        ARG_NUM_LARGER_THAN_MAX = 2,
+        USER_DEFINED_CODE = 1024
+    };
+    Q_ENUM(ERROR_CODE)
 
     Error();
 
@@ -34,7 +43,7 @@ public:
     void setType(const ERROR_TYPE &type);
 
 private:
-    int _code;
+    int _code; //TODO: ERROR_CODE
     ERROR_TYPE _type;
     QString _description;
     QVariantMap _context;
@@ -43,5 +52,6 @@ private:
 } // namespace menu
 
 Q_DECLARE_METATYPE(menu::Error)
+
 
 #endif // MENU_ERROR_H
