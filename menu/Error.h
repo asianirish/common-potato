@@ -16,7 +16,7 @@ public:
     enum class ERROR_TYPE{UNDEFINED, MENU, LAUNCHER, ARG_NUM, ARG_VAL, ARG_TYPE};
 
     enum ERROR_CODE {
-        ERROR_NO_ERROR = 0,
+        NO_ERROR = 0,
 
         WRONG_TASK_ID = 100, //LAUNCHER
 
