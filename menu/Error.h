@@ -20,8 +20,8 @@ public:
 
         WRONG_TASK_ID = 100, //LAUNCHER
 
-        ARG_NUM_LESS_THAN_MIN = 200, //ARG NUM
-        ARG_NUM_LARGER_THAN_MAX = 201, //ARG NUM
+        ARG_NUM_MUST_BE_LESS_THAN = 200, //ARG NUM
+        ARG_NUM_MUST_BE_GREATER_THAN = 201, //ARG NUM
 
         NOT_EQUAL_CONSTRAINT = 300, //ARG_VAL
         //TODO: other value constaint
