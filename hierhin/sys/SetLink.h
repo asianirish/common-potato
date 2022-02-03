@@ -1,13 +1,12 @@
 #ifndef HIERHIN_SYS_SETLINK_H
 #define HIERHIN_SYS_SETLINK_H
 
-#include <Method.h>
+#include <NodeMethod.h>
 
 namespace hierhin {
 namespace sys {
 
-//TODO: from NodeMethod
-class SetLink : public hierhin::Method
+class SetLink : public NodeMethod
 {
 public:
     SetLink();
@@ -16,7 +15,7 @@ private:
     menu::def::ActionDef actionDef() const override;
 
 private:
-    QVariant actImpl(const QVariantList &args, Item *item) override;
+    QVariant actNodeImpl(const QVariantList &args, Node *node) override;
 };
 
 } // namespace sys

@@ -53,14 +53,8 @@ menu::def::ActionDef SetLink::actionDef() const
     return aDef;
 }
 
-QVariant SetLink::actImpl(const QVariantList &args, Item *item)
+QVariant SetLink::actNodeImpl(const QVariantList &args, Node *node)
 {
-    Node *node = dynamic_cast<Node *>(item);
-
-    if (!node) {
-        return QVariant(); //TODO: or exception?
-    }
-
     hierhin::nav::ItemRef ref = args.at(0).value<hierhin::nav::ItemRef>();
     bool isDir = args.at(1).toBool();
     hierhin::Role linkRole = args.at(2).value<hierhin::Role>();
