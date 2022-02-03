@@ -11,7 +11,7 @@ public:
     NodeMethod();
 
 private:
-    QVariant actImpl(const QVariantList &args, Item *item);
+    QVariant actImpl(const QVariantList &args, Item *item) final;
 
     virtual QVariant actNodeImpl(const QVariantList &args, Node *node) = 0;
 };
