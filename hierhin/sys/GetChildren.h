@@ -1,13 +1,12 @@
 #ifndef HIERHIN_SYS_GETCHILDREN_H
 #define HIERHIN_SYS_GETCHILDREN_H
 
-#include <Method.h>
+#include <NodeMethod.h>
 
 namespace hierhin {
 namespace sys {
 
-//TODO: from NodeMethod
-class GetChildren : public hierhin::Method
+class GetChildren : public NodeMethod
 {
 public:
     GetChildren();
@@ -18,7 +17,7 @@ private:
     }
 
 private:
-    QVariant actImpl(const QVariantList &args, Item *item) override;
+    QVariant actNodeImpl(const QVariantList &args, Node *node) override;
 };
 
 } // namespace sys

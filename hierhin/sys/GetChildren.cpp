@@ -9,15 +9,9 @@ GetChildren::GetChildren()
 
 }
 
-QVariant GetChildren::actImpl(const QVariantList &args, Item *item)
+QVariant GetChildren::actNodeImpl(const QVariantList &args, Node *node)
 {
     Q_UNUSED(args);
-
-    Node *node = dynamic_cast<Node *>(item);
-
-    if (!node) {
-        return QVariant(); //TODO: or exception?
-    }
 
     return QVariant::fromValue(node->childRefs());
 }
