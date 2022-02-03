@@ -1,5 +1,6 @@
 #include "NodeMethod.h"
 #include "Node.h"
+#include "ex/NotANode.h"
 
 namespace hierhin {
 
@@ -13,8 +14,11 @@ QVariant NodeMethod::actImpl(const QVariantList &args, Item *item)
     Node *node = dynamic_cast<Node *>(item);
 
     if (!node) {
-//TODO:        throw ItemIsNotANode();
-        return QVariant();
+        if (item) {
+            throw ex::NotANode(item->id());
+        } else {
+            throw ex::NotANode(); //TODO: in Method::simplyAct
+        }
     }
 
     return actNodeImpl(args, node);

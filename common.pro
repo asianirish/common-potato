@@ -81,6 +81,7 @@ HEADERS += \
     hierhin/ex/NoSuchLinkOwner.h \
     hierhin/ex/NoSuchProperty.h \
     hierhin/ex/NoSuchRole.h \
+    hierhin/ex/NotANode.h \
     hierhin/ex/NotKindOf.h \
     hierhin/ex/NotListType.h \
     hierhin/ex/PropertyException.h \
@@ -198,6 +199,7 @@ SOURCES += \
     hierhin/ex/NoSuchLinkOwner.cpp \
     hierhin/ex/NoSuchProperty.cpp \
     hierhin/ex/NoSuchRole.cpp \
+    hierhin/ex/NotANode.cpp \
     hierhin/ex/NotKindOf.cpp \
     hierhin/ex/NotListType.cpp \
     hierhin/ex/PropertyException.cpp \

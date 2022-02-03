@@ -6,6 +6,7 @@
 namespace hierhin {
 namespace sys {
 
+//TODO: from NodeMethod
 class SetLink : public hierhin::Method
 {
 public:

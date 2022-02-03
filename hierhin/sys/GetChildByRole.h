@@ -6,6 +6,7 @@
 namespace hierhin {
 namespace sys {
 
+//TODO: from NodeMethod
 class GetChildByRole : public hierhin::Method
 {
 public:

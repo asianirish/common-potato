@@ -64,6 +64,7 @@ HEADERS += \
     ex/NoSuchLinkOwner.h \
     ex/NoSuchProperty.h \
     ex/NoSuchRole.h \
+    ex/NotANode.h \
     ex/NotKindOf.h \
     ex/NotListType.h \
     ex/PropertyException.h \
@@ -119,6 +120,7 @@ SOURCES += \
     ex/NoSuchLinkOwner.cpp \
     ex/NoSuchProperty.cpp \
     ex/NoSuchRole.cpp \
+    ex/NotANode.cpp \
     ex/NotKindOf.cpp \
     ex/NotListType.cpp \
     ex/PropertyException.cpp \

@@ -19,6 +19,7 @@ void Method::setItem(Item *item)
 
 QVariant Method::simplyAct(const QVariantList &args)
 {
+    //TODO: if (!_item) throw NoItem();
     return actImpl(args, _item);
 }
 
