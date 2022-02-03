@@ -55,6 +55,7 @@ HEADERS += \
     hierhin/LinkableEssence.h \
     hierhin/Method.h \
     hierhin/Node.h \
+    hierhin/NodeMethod.h \
     hierhin/cute/ItemCreatorImpl.h \
     hierhin/cute/ItemImpl.h \
     hierhin/cute/NodeImpl.h \
@@ -174,6 +175,7 @@ SOURCES += \
     hierhin/LinkableEssence.cpp \
     hierhin/Method.cpp \
     hierhin/Node.cpp \
+    hierhin/NodeMethod.cpp \
     hierhin/cute/ItemCreatorImpl.cpp \
     hierhin/cute/ItemImpl.cpp \
     hierhin/cute/NodeImpl.cpp \

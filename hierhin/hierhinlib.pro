@@ -38,6 +38,7 @@ HEADERS += \
     LinkableEssence.h \
     Method.h \
     Node.h \
+    NodeMethod.h \
     cute/ItemCreatorImpl.h \
     cute/ItemImpl.h \
     cute/NodeImpl.h \
@@ -95,6 +96,7 @@ SOURCES += \
     LinkableEssence.cpp \
     Method.cpp \
     Node.cpp \
+    NodeMethod.cpp \
     cute/ItemCreatorImpl.cpp \
     cute/ItemImpl.cpp \
     cute/NodeImpl.cpp \
