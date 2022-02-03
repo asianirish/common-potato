@@ -1,13 +1,12 @@
 #ifndef HIERHIN_SYS_GETCHILDBYROLE_H
 #define HIERHIN_SYS_GETCHILDBYROLE_H
 
-#include <Method.h>
+#include <NodeMethod.h>
 
 namespace hierhin {
 namespace sys {
 
-//TODO: from NodeMethod
-class GetChildByRole : public hierhin::Method
+class GetChildByRole : public NodeMethod
 {
 public:
     GetChildByRole();
@@ -15,7 +14,7 @@ public:
 private:
     menu::def::ActionDef actionDef() const override;
 private:
-    QVariant actImpl(const QVariantList &args, Item *item) override;
+    QVariant actNodeImpl(const QVariantList &args, Node *node) override;
 };
 
 } // namespace sys
