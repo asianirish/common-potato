@@ -42,15 +42,15 @@ int main(int argc, char *argv[])
     QCoreApplication a(argc, argv);
 
 //TEST ENUM:
-    QString s = QVariant::fromValue(menu::Error::WRONG_TASK_ID).toString();
-    cout << "ENUM: " << s.toStdString() << endl;
+    QString s = QVariant::fromValue(menu::Error::NO_ERROR).toString();
+    cout << "ENUM AS STRING: " << s.toStdString() << endl;
 
     menu::Menu *menu = new menu::Menu();
     HierhinContextSetter *cntx = new HierhinContextSetter();
     menu->setContextSetter(cntx);
 
-//    menu::Launcher *launcher = new menu::ThreadLauncher();
-    menu::Launcher *launcher = new menu::SyncLauncher();
+    menu::Launcher *launcher = new menu::ThreadLauncher();
+//    menu::Launcher *launcher = new menu::SyncLauncher();
     menu->setLauncher(launcher);
 
     new HierhinDestructor(&a, menu, launcher);
