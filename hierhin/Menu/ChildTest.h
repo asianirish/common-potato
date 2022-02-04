@@ -4,13 +4,13 @@
 #include <menu/SimpleAction.h>
 #include <hierhin/type.h>
 
-class ChildTest : public menu::SimpleAction
+class ChildTest : public menu::/*Simple*/Action
 {
 public:
     ChildTest();
 
 protected:
-    QVariant simplyAct(const QVariantList &args) override;
+    void actSpecific(const QVariantList &args, const menu::TaskId &taskId) override;
 
 private:
 
@@ -19,6 +19,7 @@ private:
     }
 
     hierhin::NodePtr _nd;
+    QString _taskId;
 
 private slots:
     void onReady(const QVariant value, const menu::TaskId &taskId);

@@ -44,11 +44,12 @@ ChildTest::ChildTest()
     connect(_nd->launcher().get(), &menu::Launcher::ready, this, &ChildTest::onReady);
 }
 
-QVariant ChildTest::simplyAct(const QVariantList &args)
+void ChildTest::actSpecific(const QVariantList &args, const menu::TaskId &taskId)
 {
     Q_UNUSED(args);
+    Q_UNUSED(taskId);
 
-    qDebug() << "conversion:";
+//    qDebug() << "conversion:";
     QList<nav::ItemRef> childRefs = _nd->childRefs();
     QVariant childRefsVar = QVariant::fromValue(childRefs);
     QList<nav::ItemRef> outChildRefs = childRefsVar.value<QList<nav::ItemRef>>();
@@ -57,20 +58,29 @@ QVariant ChildTest::simplyAct(const QVariantList &args)
         qDebug() << "REF_STR:" << refStr;
     }
 
-    qDebug() << "\n======================================================\n";
+    qDebug() << "(1)\n======================================================\n";
     qDebug() << "to json:";
     qDebug().noquote() << "NODE:" << _nd->toJson();
 
-    _nd->execute(METHOD_CLASS(sys::GetChildren));
-
-    return true;
+    _nd->execute(METHOD_CLASS(sys::GetChildren), QVariantList(), &_taskId);
 }
 
 void ChildTest::onReady(const QVariant value, const menu::TaskId &taskId)
 {
-    qDebug() << "\n======================================================\n";
+    if (_taskId != taskId) {
+        return;
+    }
+
+    qDebug() << "(2)\n======================================================\n";
     qDebug() << "on GetChildren:";
     qDebug() << "TEST IS READY:" << taskId;
+
+    qDebug() << "to json:";
+    qDebug().noquote() << "NODE:" << _nd->toJson();
+
+
+    qDebug() << "(3)\n======================================================\n\n";
+
 //    QStringList lst = value.value<hierhin::IdList>();
     QList<nav::ItemRef> lst = value.value<QList<nav::ItemRef>>();
 
@@ -79,4 +89,6 @@ void ChildTest::onReady(const QVariant value, const menu::TaskId &taskId)
         auto child = ref.ptr(_nd);
         qDebug().noquote() << "CHILD:" << child->toJson();
     }
+
+    emit ready(menu::Result(true));
 }
