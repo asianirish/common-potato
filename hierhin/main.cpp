@@ -42,7 +42,7 @@ int main(int argc, char *argv[])
     QCoreApplication a(argc, argv);
 
 //TEST ENUM:
-    QString s = QVariant::fromValue(menu::Error::NO_ERROR).toString();
+    QString s = QVariant::fromValue(menu::Error::NO_MENU_ERROR).toString();
     cout << "ENUM AS STRING: " << s.toStdString() << endl;
 
     menu::Menu *menu = new menu::Menu();

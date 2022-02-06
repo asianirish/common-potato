@@ -14,7 +14,7 @@ public:
     static const int NO_USER_ERROR;
 
     enum CODE {
-        NO_ERROR = 0,
+        NO_MENU_ERROR = 0,
 
         WRONG_TASK_ID = 100, //LAUNCHER
 

@@ -4,7 +4,7 @@ namespace menu {
 
 const int Error::NO_USER_ERROR = 0;
 
-Error::Error() : _code(NO_ERROR),
+Error::Error() : _code(NO_MENU_ERROR),
     _userCode(NO_USER_ERROR)
 {
 
@@ -51,14 +51,14 @@ void Error::addContext(const QString &key, const QVariant &value)
 
 void Error::clear()
 {
-    _code = CODE::NO_ERROR;
+    _code = CODE::NO_MENU_ERROR;
     _userDescription.clear();
     _context.clear();
 }
 
 menu::Error::operator bool() const
 {
-    return !(_code == NO_ERROR) && !(_userCode == NO_USER_ERROR);
+    return !(_code == NO_MENU_ERROR) && !(_userCode == NO_USER_ERROR);
 }
 
 int Error::userCode() const
