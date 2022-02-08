@@ -10,7 +10,8 @@ SayHi::SayHi() : _hiType(HI)
 
 QVariant SayHi::simplyAct(const QVariantList &args)
 {
-    QString name = args.at(0).toString();
+
+    QString name = args.size() ? args.at(0).toString() : "anonymous";
 
     switch(_hiType) {
         case HI:
