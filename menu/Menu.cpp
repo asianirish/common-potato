@@ -27,7 +27,7 @@ void Menu::registerCommand(const QString &cmd, const QString actionClass, Contex
 void Menu::exec(const QString &command)
 {
     auto commandInfo = Menu::_commandTranslator->translate(command);
-    exec(commandInfo);
+    execOld(commandInfo);
 }
 
 void Menu::addItem(const QString &command, const QString &actionClassName)
@@ -65,7 +65,7 @@ void Menu::setContextSetter(ContextSetter *contextSetter)
     _contextSetter = contextSetter;
 }
 
-void Menu::exec(const CommandInfo &commandInfo)
+void Menu::execOld(const CommandInfo &commandInfo)
 {   
     QString actionClassName = _commandsOld.value(commandInfo.name(), QString());
 
