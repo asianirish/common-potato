@@ -18,9 +18,10 @@ Menu::Menu(QObject *parent) : QObject(parent),
 
 }
 
-void Menu::registerCommand(const QString &cmd, const QString actionClass)
+void Menu::registerCommand(const QString &cmd, const QString actionClass, ContextSetterPtr cntx)
 {
-    _commandsOld.insert(cmd, actionClass);
+    Command command(actionClass, cntx);
+    _commands.insert(cmd, command);
 }
 
 void Menu::exec(const QString &command)

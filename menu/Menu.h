@@ -4,7 +4,7 @@
 #include "type.h"
 #include "Action.h"
 #include "CommandTranslator.h"
-#include "ContextSetter.h"
+#include "Command.h"
 
 #include <uniq/Value.h>
 #include <util/LazyPointer.h>
@@ -31,7 +31,8 @@ public:
 //                  const QString &commandTranslatorClassName,
 //                  QObject *parent=nullptr);
 
-    void registerCommand(const QString &cmd, const QString actionClass);
+    //TODO: use instead of addItem
+    void registerCommand(const QString &cmd, const QString actionClass, ContextSetterPtr cntx = {});
 
     void exec(const QString &command);
 
@@ -47,6 +48,7 @@ public:
 
 private:
     [[deprecated]] QMap<QString, QString> _commandsOld;
+    QMap<QString, Command> _commands;
 
     ContextSetter *_contextSetter;
     Launcher *_launcher;
