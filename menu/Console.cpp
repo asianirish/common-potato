@@ -86,11 +86,6 @@ void Console::onError(const menu::Error &err)
     std::cout << "> " << std::flush;
 }
 
-void Console::addMenuItem(const QString &command, const QString &actionClassName)
-{
-    _menu->addItem(command, actionClassName);
-}
-
 void Console::registerCommand(const QString &cmd, const QString &actionClassName, ContextSetterPtr cntx)
 {
     _menu->registerCommand(cmd, actionClassName, cntx);
