@@ -38,6 +38,7 @@ HEADERS += \
     Action.h \
     ActionListener.h \
     ActionThread.h \
+    Command.h \
     CommandInfo.h \
     CommandTranslator.h \
     Console.h \
@@ -67,6 +68,7 @@ SOURCES += \
     Action.cpp \
     ActionListener.cpp \
     ActionThread.cpp \
+    Command.cpp \
     CommandInfo.cpp \
     CommandTranslator.cpp \
     Console.cpp \
