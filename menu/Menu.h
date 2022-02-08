@@ -45,10 +45,9 @@ public:
     void setContextSetter(ContextSetter *contextSetter);
 
 private:
-    [[deprecated]] QMap<QString, QString> _commandsOld;
     QMap<QString, Command> _commands;
 
-    ContextSetter *_contextSetter;
+    [[deprecated]] ContextSetter *_contextSetter;
     Launcher *_launcher;
 
     static potato_util::LazyPointer<menu::CommandTranslator> _commandTranslator;
