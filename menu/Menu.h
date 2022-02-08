@@ -36,8 +36,6 @@ public:
 
     void exec(const QString &command);
 
-    [[deprecated]] void addItem(const QString &command, const QString &actionClassName);
-
     QList<QString> itemKeys() const;
 
     Launcher *launcher() const;

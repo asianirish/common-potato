@@ -30,11 +30,6 @@ void Menu::exec(const QString &command)
     exec(commandInfo);
 }
 
-void Menu::addItem(const QString &command, const QString &actionClassName)
-{
-    _commandsOld.insert(command, actionClassName);
-}
-
 QList<QString> Menu::itemKeys() const
 {
     return _commands.keys();
