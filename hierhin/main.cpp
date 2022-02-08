@@ -60,10 +60,14 @@ int main(int argc, char *argv[])
     delete registry;
 
     ADD_MENU_ITEM(console, tnode, NodeTest)
+    REGISTER_COMMAND(console, tnode, NodeTest)
 
     ADD_MENU_ITEM(console, tval, ValidatorTest)
+    REGISTER_COMMAND(console, tval, ValidatorTest)
 
+    auto cntxPtr = menu::ContextSetterPtr(new HierhinContextSetter());
     ADD_MENU_ITEM(console, setlan, menu::util::SetLanguage)
+    REGISTER_COMMAND_X(console, tnode, NodeTest, cntxPtr)
 
     ADD_MENU_ITEM(console, ttr, TransTest)
 

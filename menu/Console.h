@@ -64,4 +64,8 @@ private:
 #define ADD_MENU_ITEM(console, item, actionClass) REGISTER_CLASS_FOR_UTIL_FACTORY(menu::Action, actionClass); \
     console.addMenuItem(#item, #actionClass);
 
-//TODO: #define REGISTER_COMMAND()
+#define REGISTER_COMMAND(console, cmd, actionClass) REGISTER_CLASS_FOR_UTIL_FACTORY(menu::Action, actionClass); \
+    console.registerCommand(#cmd, #actionClass);
+
+#define REGISTER_COMMAND_X(console, cmd, actionClass, cntx) REGISTER_CLASS_FOR_UTIL_FACTORY(menu::Action, actionClass); \
+    console.registerCommand(#cmd, #actionClass, cntx);
