@@ -46,8 +46,6 @@ int main(int argc, char *argv[])
     cout << "ENUM AS STRING: " << s.toStdString() << endl;
 
     menu::Menu *menu = new menu::Menu();
-    HierhinContextSetter *cntx = new HierhinContextSetter();
-    menu->setContextSetter(cntx);
 
     menu::Launcher *launcher = new menu::ThreadLauncher();
 //    menu::Launcher *launcher = new menu::SyncLauncher();

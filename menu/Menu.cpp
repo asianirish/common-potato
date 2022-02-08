@@ -12,7 +12,6 @@ const QString Menu::DEFAULT_COMMAND_TRANSLATOR_CLASS_NAME("menu::LineCommandTran
 potato_util::LazyPointer<menu::CommandTranslator> Menu::_commandTranslator(Menu::DEFAULT_COMMAND_TRANSLATOR_CLASS_NAME);
 
 Menu::Menu(QObject *parent) : QObject(parent),
-    _contextSetter(nullptr),
     _launcher(nullptr)
 {
 
@@ -48,16 +47,6 @@ void Menu::setLauncher(Launcher *newLauncher)
 
     _launcher = newLauncher;
     connect(_launcher, &Launcher::ready, this, &Menu::onResult);
-}
-
-ContextSetter *Menu::contextSetter() const
-{
-    return _contextSetter;
-}
-
-void Menu::setContextSetter(ContextSetter *contextSetter)
-{
-    _contextSetter = contextSetter;
 }
 
 void Menu::exec(const CommandInfo &commandInfo)
