@@ -104,6 +104,7 @@ HEADERS += \
     menu/Action.h \
     menu/ActionListener.h \
     menu/ActionThread.h \
+    menu/Command.h \
     menu/CommandInfo.h \
     menu/CommandTranslator.h \
     menu/Console.h \
@@ -221,6 +222,7 @@ SOURCES += \
     menu/Action.cpp \
     menu/ActionListener.cpp \
     menu/ActionThread.cpp \
+    menu/Command.cpp \
     menu/CommandInfo.cpp \
     menu/CommandTranslator.cpp \
     menu/Console.cpp \
