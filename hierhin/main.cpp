@@ -66,38 +66,37 @@ int main(int argc, char *argv[])
     auto cntxPtr = menu::ContextSetterPtr(new HierhinContextSetter());
     REGISTER_COMMAND_X(console, setlan, menu::util::SetLanguage, cntxPtr);
 
-//    ADD_MENU_ITEM(console, ttr, TransTest)
     REGISTER_COMMAND(console, ttr, TransTest);
 
-//    ADD_MENU_ITEM(console, tnum, NumberTest)
+    REGISTER_COMMAND(console, tnum, NumberTest);
 
-//    ADD_MENU_ITEM(console, tclone, CloneTest)
+    REGISTER_COMMAND(console, tclone, CloneTest);
 
-//    ADD_MENU_ITEM(console, tref, RefTest)
+    REGISTER_COMMAND(console, tref, RefTest);
 
-//    ADD_MENU_ITEM(console, tlaunch, LauncherTest)
+    REGISTER_COMMAND(console, tlaunch, LauncherTest);
 
-//    ADD_MENU_ITEM(console, tlazy, LazyRegistryTest)
+    REGISTER_COMMAND(console, tlazy, LazyRegistryTest);
 
-//    ADD_MENU_ITEM(console, tmethod, MethodTest)
+    REGISTER_COMMAND(console, tmethod, MethodTest);
 
-//    ADD_MENU_ITEM(console, treg, RegTest)
+    REGISTER_COMMAND(console, treg, RegTest);
 
-//    ADD_MENU_ITEM(console, tconv, ConvTest)
+    REGISTER_COMMAND(console, tconv, ConvTest);
 
-//    ADD_MENU_ITEM(console, tch, ChildTest)
+    REGISTER_COMMAND(console, tch, ChildTest);
 
-//    ADD_MENU_ITEM(console, thmlink, HandMadeLinkTest)
+    REGISTER_COMMAND(console, thmlink, HandMadeLinkTest);
 
-//    ADD_MENU_ITEM(console, tlink, LinkTest)
+    REGISTER_COMMAND(console, tlink, LinkTest);
 
-//    ADD_MENU_ITEM(console, tmlt, MultyPropertyTest)
+    REGISTER_COMMAND(console, tmlt, MultyPropertyTest);
 
-//    ADD_MENU_ITEM(console, tcc, CuteContainerTest)
+    REGISTER_COMMAND(console, tcc, CuteContainerTest);
 
-//    ADD_MENU_ITEM(console, tbimap, BiMapTest)
+    REGISTER_COMMAND(console, tbimap, BiMapTest);
 
-//    ADD_MENU_ITEM(console, tesscl, EssenceClassTest)
+    REGISTER_COMMAND(console, tesscl, EssenceClassTest);
 
     console.run();
     QObject::connect(&console, SIGNAL(quit()), &a, SLOT(quit()));
