@@ -60,24 +60,6 @@ void Menu::setContextSetter(ContextSetter *contextSetter)
     _contextSetter = contextSetter;
 }
 
-void Menu::execOld(const CommandInfo &commandInfo)
-{   
-    QString actionClassName = _commandsOld.value(commandInfo.name(), QString());
-
-    if (actionClassName.isEmpty()) {
-        Error err;
-        err.setCode(Error::NO_SUCH_ACTION_CLASS);
-        err.addContext("className", commandInfo.name());
-        emit error(err);
-    }
-
-    if (commandInfo.isNamedArgs()) {
-        _launcher->launch(actionClassName, commandInfo.namedArgs(), _contextSetter);
-    } else {
-        _launcher->launch(actionClassName, commandInfo.args(), _contextSetter);
-    }
-}
-
 void Menu::exec(const CommandInfo &commandInfo)
 {
     Command command = _commands.value(commandInfo.name(), Command());
