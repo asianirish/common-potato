@@ -23,6 +23,8 @@ public:
     ContextSetterPtr contextSetter() const;
     void setContextSetter(ContextSetterPtr newContexSetter);
 
+    operator bool() const;
+
 private:
     QString _actionClass;
     ContextSetterPtr _contextSetter;

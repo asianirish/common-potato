@@ -33,4 +33,9 @@ void Command::setContextSetter(ContextSetterPtr newContexSetter)
     _contextSetter = newContexSetter;
 }
 
+Command::operator bool() const
+{
+    return !_actionClass.isEmpty();
+}
+
 } // namespace menu
