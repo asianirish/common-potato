@@ -20,7 +20,7 @@ Menu::Menu(QObject *parent) : QObject(parent),
 
 void Menu::registerCommand(const QString &cmd, const QString actionClass)
 {
-    _commands.insert(cmd, actionClass);
+    _commandsOld.insert(cmd, actionClass);
 }
 
 void Menu::exec(const QString &command)
@@ -31,12 +31,12 @@ void Menu::exec(const QString &command)
 
 void Menu::addItem(const QString &command, const QString &actionClassName)
 {
-    _commands.insert(command, actionClassName);
+    _commandsOld.insert(command, actionClassName);
 }
 
 QList<QString> Menu::itemKeys() const
 {
-    return _commands.keys();
+    return _commandsOld.keys();
 }
 
 Launcher *Menu::launcher() const
@@ -66,7 +66,7 @@ void Menu::setContextSetter(ContextSetter *contextSetter)
 
 void Menu::exec(const CommandInfo &commandInfo)
 {   
-    QString actionClassName = _commands.value(commandInfo.name(), QString());
+    QString actionClassName = _commandsOld.value(commandInfo.name(), QString());
 
     if (actionClassName.isEmpty()) {
         Error err;

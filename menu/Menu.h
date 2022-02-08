@@ -46,7 +46,8 @@ public:
     void setContextSetter(ContextSetter *contextSetter);
 
 private:
-    QMap<QString, QString> _commands;
+    [[deprecated]] QMap<QString, QString> _commandsOld;
+
     ContextSetter *_contextSetter;
     Launcher *_launcher;
 
