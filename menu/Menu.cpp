@@ -83,6 +83,24 @@ void Menu::execOld(const CommandInfo &commandInfo)
     }
 }
 
+void Menu::exec(const CommandInfo &commandInfo)
+{
+    Command command = _commands.value(commandInfo.name(), Command());
+
+    if (!command) {
+        Error err;
+        err.setCode(Error::NO_SUCH_ACTION_CLASS);
+        err.addContext("className", commandInfo.name());
+        emit error(err);
+    }
+
+    if (commandInfo.isNamedArgs()) {
+        _launcher->launch(command.actionClass(), commandInfo.namedArgs(), command.contextSetter().get());
+    } else {
+        _launcher->launch(command.actionClass(), commandInfo.args(), command.contextSetter().get());
+    }
+}
+
 void Menu::onResult(const QVariant &value, const TaskId &taskId)
 {
     qDebug() << "RESULT:" << value.toString();
