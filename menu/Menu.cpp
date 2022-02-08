@@ -27,7 +27,7 @@ void Menu::registerCommand(const QString &cmd, const QString actionClass, Contex
 void Menu::exec(const QString &command)
 {
     auto commandInfo = Menu::_commandTranslator->translate(command);
-    execOld(commandInfo);
+    exec(commandInfo);
 }
 
 void Menu::addItem(const QString &command, const QString &actionClassName)

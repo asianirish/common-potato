@@ -59,47 +59,47 @@ int main(int argc, char *argv[])
     menu::Console console(registry, menu);
     delete registry;
 
-    ADD_MENU_ITEM(console, tnode, NodeTest)
+//    ADD_MENU_ITEM(console, tnode, NodeTest)
     REGISTER_COMMAND(console, tnode, NodeTest)
 
-    ADD_MENU_ITEM(console, tval, ValidatorTest)
+//    ADD_MENU_ITEM(console, tval, ValidatorTest)
     REGISTER_COMMAND(console, tval, ValidatorTest)
 
     auto cntxPtr = menu::ContextSetterPtr(new HierhinContextSetter());
-    ADD_MENU_ITEM(console, setlan, menu::util::SetLanguage)
-    REGISTER_COMMAND_X(console, tnode, NodeTest, cntxPtr)
+//    ADD_MENU_ITEM(console, setlan, menu::util::SetLanguage)
+    REGISTER_COMMAND_X(console, setlan, menu::util::SetLanguage, cntxPtr)
 
-    ADD_MENU_ITEM(console, ttr, TransTest)
+//    ADD_MENU_ITEM(console, ttr, TransTest)
 
-    ADD_MENU_ITEM(console, tnum, NumberTest)
+//    ADD_MENU_ITEM(console, tnum, NumberTest)
 
-    ADD_MENU_ITEM(console, tclone, CloneTest)
+//    ADD_MENU_ITEM(console, tclone, CloneTest)
 
-    ADD_MENU_ITEM(console, tref, RefTest)
+//    ADD_MENU_ITEM(console, tref, RefTest)
 
-    ADD_MENU_ITEM(console, tlaunch, LauncherTest)
+//    ADD_MENU_ITEM(console, tlaunch, LauncherTest)
 
-    ADD_MENU_ITEM(console, tlazy, LazyRegistryTest)
+//    ADD_MENU_ITEM(console, tlazy, LazyRegistryTest)
 
-    ADD_MENU_ITEM(console, tmethod, MethodTest)
+//    ADD_MENU_ITEM(console, tmethod, MethodTest)
 
-    ADD_MENU_ITEM(console, treg, RegTest)
+//    ADD_MENU_ITEM(console, treg, RegTest)
 
-    ADD_MENU_ITEM(console, tconv, ConvTest)
+//    ADD_MENU_ITEM(console, tconv, ConvTest)
 
-    ADD_MENU_ITEM(console, tch, ChildTest)
+//    ADD_MENU_ITEM(console, tch, ChildTest)
 
-    ADD_MENU_ITEM(console, thmlink, HandMadeLinkTest)
+//    ADD_MENU_ITEM(console, thmlink, HandMadeLinkTest)
 
-    ADD_MENU_ITEM(console, tlink, LinkTest)
+//    ADD_MENU_ITEM(console, tlink, LinkTest)
 
-    ADD_MENU_ITEM(console, tmlt, MultyPropertyTest)
+//    ADD_MENU_ITEM(console, tmlt, MultyPropertyTest)
 
-    ADD_MENU_ITEM(console, tcc, CuteContainerTest)
+//    ADD_MENU_ITEM(console, tcc, CuteContainerTest)
 
-    ADD_MENU_ITEM(console, tbimap, BiMapTest)
+//    ADD_MENU_ITEM(console, tbimap, BiMapTest)
 
-    ADD_MENU_ITEM(console, tesscl, EssenceClassTest)
+//    ADD_MENU_ITEM(console, tesscl, EssenceClassTest)
 
     console.run();
     QObject::connect(&console, SIGNAL(quit()), &a, SLOT(quit()));
