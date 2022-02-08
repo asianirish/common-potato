@@ -2,7 +2,7 @@
 
 namespace menu {
 
-Command::Command()
+Command::Command() : Command(QString(), {})
 {
 
 }
