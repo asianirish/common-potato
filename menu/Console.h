@@ -30,6 +30,7 @@ public:
     void run();
 
     [[deprecated]] void addMenuItem(const QString &command, const QString &actionClassName);
+    void registerCommand(const QString &cmd, const QString &actionClassName, ContextSetterPtr cntx = {});
 
     void showMenu() const;
 
@@ -62,3 +63,5 @@ private:
 
 #define ADD_MENU_ITEM(console, item, actionClass) REGISTER_CLASS_FOR_UTIL_FACTORY(menu::Action, actionClass); \
     console.addMenuItem(#item, #actionClass);
+
+//TODO: #define REGISTER_COMMAND()

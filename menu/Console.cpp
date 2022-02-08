@@ -91,6 +91,11 @@ void Console::addMenuItem(const QString &command, const QString &actionClassName
     _menu->addItem(command, actionClassName);
 }
 
+void Console::registerCommand(const QString &cmd, const QString &actionClassName, ContextSetterPtr cntx)
+{
+    _menu->registerCommand(cmd, actionClassName, cntx);
+}
+
 void Console::showMenu() const
 {
     auto itemKeys = _menu->itemKeys();
