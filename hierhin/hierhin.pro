@@ -43,6 +43,8 @@ SOURCES += main.cpp \
     Menu/NumberTest.cpp \
     Menu/RefTest.cpp \
     Menu/RegTest.cpp \
+    Menu/SayHi.cpp \
+    Menu/SayHiContextSetter.cpp \
     Menu/TransTest.cpp \
     Menu/ValidatorTest.cpp \
     Test/PlusValue.cpp \
@@ -79,6 +81,8 @@ HEADERS += \
     Menu/NumberTest.h \
     Menu/RefTest.h \
     Menu/RegTest.h \
+    Menu/SayHi.h \
+    Menu/SayHiContextSetter.h \
     Menu/TransTest.h \
     Menu/ValidatorTest.h \
     Test/PlusValue.h \

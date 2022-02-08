@@ -22,6 +22,7 @@
 #include <Menu/CuteContainerTest.h>
 #include <Menu/BiMapTest.h>
 #include <Menu/EssenceClassTest.h>
+#include <Menu/SayHiContextSetter.h>
 
 #include <menu/Console.h>
 #include <menu/util/SetLanguage.h>
@@ -61,8 +62,10 @@ int main(int argc, char *argv[])
 
     REGISTER_COMMAND(console, tval, ValidatorTest);
 
-    auto cntxPtr = menu::ContextSetterPtr(new HierhinContextSetter());
-    REGISTER_COMMAND_X(console, setlan, menu::util::SetLanguage, cntxPtr);
+    {
+        auto cntxPtr = menu::ContextSetterPtr(new HierhinContextSetter());
+        REGISTER_COMMAND_X(console, setlan, menu::util::SetLanguage, cntxPtr);
+    }
 
     REGISTER_COMMAND(console, ttr, TransTest);
 
@@ -95,6 +98,19 @@ int main(int argc, char *argv[])
     REGISTER_COMMAND(console, tbimap, BiMapTest);
 
     REGISTER_COMMAND(console, tesscl, EssenceClassTest);
+
+    {
+        auto cntxPtr = menu::ContextSetterPtr(new SayHiContextSetter());
+        REGISTER_COMMAND_X(console, sayhi, SayHi, cntxPtr);
+    }
+    {
+        auto cntxPtr = menu::ContextSetterPtr(new SayHiContextSetter(SayHi::HELLO));
+        REGISTER_COMMAND_X(console, sayhello, SayHi, cntxPtr);
+    }
+    {
+        auto cntxPtr = menu::ContextSetterPtr(new SayHiContextSetter(SayHi::GOOD_DAY));
+        REGISTER_COMMAND_X(console, saygoodday, SayHi, cntxPtr);
+    }
 
     console.run();
     QObject::connect(&console, SIGNAL(quit()), &a, SLOT(quit()));
