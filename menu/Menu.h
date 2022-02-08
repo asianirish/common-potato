@@ -36,7 +36,7 @@ public:
 
     void exec(const QString &command);
 
-    void addItem(const QString &command, const QString &actionClassName);
+    [[deprecated]] void addItem(const QString &command, const QString &actionClassName);
 
     QList<QString> itemKeys() const;
 
