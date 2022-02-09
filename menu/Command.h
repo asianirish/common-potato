@@ -8,8 +8,6 @@
 
 namespace menu {
 
-typedef QSharedPointer<ContextSetter> ContextSetterPtr;
-
 class Command
 {
 public:

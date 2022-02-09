@@ -15,6 +15,8 @@ public:
     virtual void setActionContext(Action *action) = 0;
 };
 
+typedef QSharedPointer<ContextSetter> ContextSetterPtr;
+
 } // namespace menu
 
 #endif // MENU_CONTEXTSETTER_H
