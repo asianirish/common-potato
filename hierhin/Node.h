@@ -1,8 +1,8 @@
 #ifndef HIERHIN_NODE_H
 #define HIERHIN_NODE_H
 
-#include <Item.h>
-#include <nav/ItemRef.h>
+#include "Item.h"
+#include "nav/ItemRef.h"
 
 #include "LinkEssence.h"
 
