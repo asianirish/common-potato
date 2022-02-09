@@ -3,6 +3,8 @@
 
 #include "Const.h"
 
+#include "sys/SetLink.h"
+
 namespace hierhin {
 
 LinkableEssence::LinkableEssence()
@@ -41,7 +43,10 @@ QMap<Role, ItemReq> LinkableEssence::childRequirements() const
 QStringList LinkableEssence::methodNames() const
 {
     QStringList lst = Essence::methodNames();
-    //TODO: add a sys::Link action
+
+    lst.append(METHOD_CLASS(sys::SetLink));
+    //TODO: add linkable specific Methods here
+
     return lst;
 }
 
