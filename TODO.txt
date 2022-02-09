@@ -2,6 +2,7 @@
 * ArgDef vs. PropertyDef
 * TaskId class with func name and args
 * ClassEssence, DynEssence and ClassNode (with 'inhertis' ref or link)
+* Action class as a function (consisting of Action calls)
 
 ---------------------------------------------------------
 DONE:
