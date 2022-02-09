@@ -1,9 +1,9 @@
 #ifndef HIERHIN_NAV_ITEMREF_H
 #define HIERHIN_NAV_ITEMREF_H
 
-#include "nav/Path.h"
+#include "Path.h"
 
-#include <type.h>
+#include "../type.h"
 
 namespace hierhin {
 namespace nav {
