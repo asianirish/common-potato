@@ -268,4 +268,5 @@ SUBDIRS += \
     uniq/uniq.pro
 
 DISTFILES += \
+    TODO.txt \
     fx.prf
