@@ -13,9 +13,13 @@ INCLUDEPATH += $$PWD/../
 message($$PWD/../build/lib/)
 
 SOURCES += \
-        main.cpp
+        main.cpp \
+        nn/Neuron.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+HEADERS += \
+    nn/Neuron.h
