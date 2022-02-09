@@ -35,7 +35,7 @@ Launcher::Launcher(QObject *parent) : QObject(parent)
 
 }
 
-TaskId Launcher::launch(const QString &actionClassName, const QVariantList &args, ContextSetter *cnxtSetter, TaskId *taskIdOut)
+TaskId Launcher::launch(const QString &actionClassName, const QVariantList &args, ContextSetterPtr cnxtSetter, TaskId *taskIdOut)
 {
     TaskId taskId = initAction(actionClassName, cnxtSetter);
 
@@ -48,7 +48,7 @@ TaskId Launcher::launch(const QString &actionClassName, const QVariantList &args
     return taskId;
 }
 
-TaskId Launcher::launch(const QString &actionClassName, const QVariantMap &namedArgs, ContextSetter *cnxtSetter, TaskId *taskIdOut)
+TaskId Launcher::launch(const QString &actionClassName, const QVariantMap &namedArgs, ContextSetterPtr cnxtSetter, TaskId *taskIdOut)
 {
     TaskId taskId = initAction(actionClassName, cnxtSetter);
 
@@ -68,7 +68,7 @@ void Launcher::setTaskIdGenClassName(const QString &className)
     _taskIdGen.setClassName(className);
 }
 
-TaskId Launcher::initAction(const QString &actionClassName, ContextSetter *cnxtSetter)
+TaskId Launcher::initAction(const QString &actionClassName, ContextSetterPtr cnxtSetter)
 {
     // will delete in Launcher::onActionComplete
     Action *action = potato_util::Factory<Action>::create(actionClassName.toStdString());

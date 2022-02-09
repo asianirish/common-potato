@@ -61,9 +61,9 @@ void Menu::exec(const CommandInfo &commandInfo)
     }
 
     if (commandInfo.isNamedArgs()) {
-        _launcher->launch(command.actionClass(), commandInfo.namedArgs(), command.contextSetter().get());
+        _launcher->launch(command.actionClass(), commandInfo.namedArgs(), command.contextSetter());
     } else {
-        _launcher->launch(command.actionClass(), commandInfo.args(), command.contextSetter().get());
+        _launcher->launch(command.actionClass(), commandInfo.args(), command.contextSetter());
     }
 }
 

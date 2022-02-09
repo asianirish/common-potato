@@ -3,6 +3,7 @@
 
 #include "Result.h"
 #include "type.h"
+#include "ContextSetter.h"
 
 #include <util/LazyPointer.h>
 #include <uniq/Value.h>
@@ -11,7 +12,6 @@
 
 namespace menu {
 
-class ContextSetter;
 
 //TODO: make ActionListener (?)
 class Launcher : public QObject
@@ -22,8 +22,8 @@ public:
 
     explicit Launcher(QObject *parent = nullptr);
 
-    TaskId launch(const QString &actionClassName, const QVariantList &args, ContextSetter *cnxtSetter, TaskId *taskIdOut = nullptr);
-    TaskId launch(const QString &actionClassName, const QVariantMap &namedArgs, ContextSetter *cnxtSetter, TaskId *taskIdOut = nullptr);
+    TaskId launch(const QString &actionClassName, const QVariantList &args, ContextSetterPtr cnxtSetter, TaskId *taskIdOut = nullptr);
+    TaskId launch(const QString &actionClassName, const QVariantMap &namedArgs, ContextSetterPtr cnxtSetter, TaskId *taskIdOut = nullptr);
 
     static void setTaskIdGenClassName(const QString &className);
 
@@ -36,7 +36,7 @@ private:
     //TODO: use QString as generated value but convert to TaskId
     static potato_util::LazyPointer<uniq::Value<QString>> _taskIdGen;
 
-    TaskId initAction(const QString &actionClassName, ContextSetter *cnxtSetter);
+    TaskId initAction(const QString &actionClassName, ContextSetterPtr cnxtSetter);
 
 signals:
     void ready(const QVariant &result, const menu::TaskId &taskId);

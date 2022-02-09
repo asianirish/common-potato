@@ -194,10 +194,11 @@ menu::TaskId Item::execute(const QString &command, const QVariantList &args, men
 
     if (essence->className() == essenceClassName()) {
 
-        ItemContextSetter cntx;
-        cntx.setItem(this);
+        auto itemContextSetter = new ItemContextSetter();
+        itemContextSetter->setItem(this);
+        auto cntx = menu::ContextSetterPtr(itemContextSetter);
 
-        return lnch->launch(command, args, &cntx, taskIdOut);
+        return lnch->launch(command, args, cntx, taskIdOut);
     }
 
     throw ex::IncompatibleEssenceExecution(essence->className(), essenceClassName());
