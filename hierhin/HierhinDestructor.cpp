@@ -1,6 +1,5 @@
 #include "HierhinDestructor.h"
 
-#include <menu/ContextSetter.h>
 #include <util/SingletonRegistry.h>
 #include <util/ObjectRegistry.h>
 #include <hierhin/Essence.h>
