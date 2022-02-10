@@ -33,14 +33,19 @@ void Task::run()
 
         prc->addChild(layer0, "layers");
 
-        auto nd = NodePtr(new cute::NodeImpl());
+        auto nd0 = NodePtr(new cute::NodeImpl());
+        auto nd1 = NodePtr(new cute::NodeImpl());
 
-        qDebug().noquote() << nd->toJson();
+        nd0->setEssenceClassName(ESSENCE_CLASS(nn::Neuron));
+        nd0->setProperty("value", 0.5);
+        nd1->setEssenceClassName(ESSENCE_CLASS(nn::Neuron));
+        nd1->setProperty("value", 0.1);
 
-        nd->setEssenceClassName(ESSENCE_CLASS(nn::Neuron));
-        nd->setProperty("value", 0.5);
+//        nav::ItemRef ref(nd1->absPath());
+//        nd0->setLink(ref);
 
-        layer0->addChild(nd, "children");
+        layer0->addChild(nd0, "children");
+        layer0->addChild(nd1, "children");
 
         qDebug().noquote() << prc->toJson();
 
