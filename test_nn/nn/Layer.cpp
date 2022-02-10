@@ -8,17 +8,17 @@ Layer::Layer()
 
 }
 
-QMap<Role, ItemReq> Layer::nonLinkChildRequirements() const
-{
-    QMap<Role, ItemReq> mp;
+//QMap<Role, ItemReq> Layer::nonLinkChildRequirements() const
+//{
+//    QMap<Role, ItemReq> mp;
 
-    {
-        ItemReq req;
-        req.setClassNames({ESSENCE_CLASS(nn::Neuron)});
-        mp.insert("children", req);
-    }
+//    {
+//        ItemReq req;
+//        req.setClassNames({ESSENCE_CLASS(nn::Neuron)});
+//        mp.insert("children", req);
+//    }
 
-    return mp;
-}
+//    return mp;
+//}
 
 } // namespace nn

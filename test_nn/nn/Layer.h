@@ -13,8 +13,6 @@ class Layer : public hierhin::LinkableEssence
 public:
     Layer();
 
-private:
-    QMap<Role, ItemReq> nonLinkChildRequirements() const;
 };
 
 } // namespace nn
