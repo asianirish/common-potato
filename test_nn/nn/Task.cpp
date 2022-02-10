@@ -21,6 +21,10 @@ void Task::run()
 {
     qDebug() << "TASK IS RUNNING";
 
+    auto layer0 = NodePtr(new cute::NodeImpl());
+
+    layer0->setEssenceClassName("nn::Layer");
+
     auto nd = NodePtr(new cute::NodeImpl());
 
     qDebug().noquote() << nd->toJson();
@@ -28,7 +32,9 @@ void Task::run()
     nd->setEssenceClassName("nn::Neuron");
     nd->setProperty("value", 0.5);
 
-    qDebug().noquote() << nd->toJson();
+    layer0->addChild(nd, "children");
+
+    qDebug().noquote() << layer0->toJson();
 
     emit quit();
 }

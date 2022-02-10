@@ -1,5 +1,6 @@
 #include "NNClassRegistry.h"
 #include "Neuron.h"
+#include "Layer.h"
 
 #include <uniq/TimeQStringValue.h>
 
@@ -16,4 +17,5 @@ void NNClassRegistry::registerAllClasses() const
 
 
     REGISTER_CLASS_FOR_UTIL_FACTORY(hierhin::Essence, nn::Neuron);
+    REGISTER_CLASS_FOR_UTIL_FACTORY(hierhin::Essence, nn::Layer);
 }
