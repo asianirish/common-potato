@@ -26,6 +26,7 @@ void Task::run()
     qDebug().noquote() << nd->toJson();
 
     nd->setEssenceClassName("nn::Neuron");
+    nd->setProperty("value", 0.5);
 
     qDebug().noquote() << nd->toJson();
 

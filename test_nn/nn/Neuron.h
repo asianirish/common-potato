@@ -3,6 +3,8 @@
 
 #include <hierhin/LinkableEssence.h>
 
+using namespace hierhin;
+
 namespace nn {
 
 class Neuron : public hierhin::LinkableEssence
@@ -10,6 +12,8 @@ class Neuron : public hierhin::LinkableEssence
     Q_OBJECT
 public:
     Neuron();
+
+    QMap<QString, def::PropertyDef> propertyDefs() const override;
 };
 
 } // namespace nn
