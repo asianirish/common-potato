@@ -5,6 +5,7 @@
 #include <hierhin/cute/NodeImpl.h>
 
 #include <nn/Neuron.h>
+#include <nn/Layer.h>
 
 #include <QDebug>
 
@@ -23,13 +24,13 @@ void Task::run()
 
     auto layer0 = NodePtr(new cute::NodeImpl());
 
-    layer0->setEssenceClassName("nn::Layer");
+    layer0->setEssenceClassName(ESSENCE_CLASS(nn::Layer));
 
     auto nd = NodePtr(new cute::NodeImpl());
 
     qDebug().noquote() << nd->toJson();
 
-    nd->setEssenceClassName("nn::Neuron");
+    nd->setEssenceClassName(ESSENCE_CLASS(nn::Neuron));
     nd->setProperty("value", 0.5);
 
     layer0->addChild(nd, "children");
