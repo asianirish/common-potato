@@ -31,7 +31,7 @@ void Task::run()
         auto layer0 = NodePtr(new cute::NodeImpl());
         layer0->setEssenceClassName(ESSENCE_CLASS(nn::Layer));
 
-        prc->addChild(layer0, "layers");
+        prc->addChild(layer0);
 
         auto nd0 = NodePtr(new cute::NodeImpl());
         auto nd1 = NodePtr(new cute::NodeImpl());
@@ -44,8 +44,8 @@ void Task::run()
 //        nav::ItemRef ref(nd1->absPath());
 //        nd0->setLink(ref);
 
-        layer0->addChild(nd0, "children");
-        layer0->addChild(nd1, "children");
+        layer0->addChild(nd0);
+        layer0->addChild(nd1);
 
         qDebug().noquote() << prc->toJson();
 
