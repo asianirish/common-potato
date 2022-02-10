@@ -14,6 +14,7 @@ message($$PWD/../build/lib/)
 
 SOURCES += \
         main.cpp \
+        nn/NNClassRegistry.cpp \
         nn/Neuron.cpp
 
 # Default rules for deployment.
@@ -22,4 +23,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
+    nn/NNClassRegistry.h \
     nn/Neuron.h

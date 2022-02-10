@@ -1,3 +1,5 @@
+#include "nn/NNClassRegistry.h"
+
 #include <QCoreApplication>
 
 #include <iostream>
@@ -20,6 +22,9 @@ int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
     cout << "NN project" << endl;
+
+    NNClassRegistry reg;
+    reg.registerAllClasses();
 
 //    auto neuron1 = hierhin::EssencePtr(new Neuron());
 ////    auto neuron2 = hierhin::EssencePtr(new Neuron());
