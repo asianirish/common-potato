@@ -17,6 +17,7 @@ SOURCES += \
         nn/Layer.cpp \
         nn/NNClassRegistry.cpp \
         nn/Neuron.cpp \
+        nn/Perceptron.cpp \
         nn/Task.cpp
 
 # Default rules for deployment.
@@ -28,4 +29,5 @@ HEADERS += \
     nn/Layer.h \
     nn/NNClassRegistry.h \
     nn/Neuron.h \
+    nn/Perceptron.h \
     nn/Task.h

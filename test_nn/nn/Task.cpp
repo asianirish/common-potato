@@ -7,6 +7,7 @@
 
 #include <nn/Neuron.h>
 #include <nn/Layer.h>
+#include <nn/Perceptron.h>
 
 #include <QDebug>
 
@@ -24,9 +25,13 @@ void Task::run()
     try {
         qDebug() << "TASK IS RUNNING";
 
-        auto layer0 = NodePtr(new cute::NodeImpl());
+        auto prc = NodePtr(new cute::NodeImpl());
+        prc->setEssenceClassName(ESSENCE_CLASS(nn::Perceptron));
 
+        auto layer0 = NodePtr(new cute::NodeImpl());
         layer0->setEssenceClassName(ESSENCE_CLASS(nn::Layer));
+
+        prc->addChild(layer0, "layers");
 
         auto nd = NodePtr(new cute::NodeImpl());
 
@@ -37,7 +42,7 @@ void Task::run()
 
         layer0->addChild(nd, "children");
 
-        qDebug().noquote() << layer0->toJson();
+        qDebug().noquote() << prc->toJson();
 
     }  catch (ex::Exception &e) {
         qDebug() << "ERROR:" << e.cause();
