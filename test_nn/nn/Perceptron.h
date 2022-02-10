@@ -13,7 +13,7 @@ class Perceptron : public hierhin::Essence
 public:
     Perceptron();
 
-    QMap<Role, ItemReq> childRequirements() const override;
+//    QMap<Role, ItemReq> childRequirements() const override;
 };
 
 } // namespace nn

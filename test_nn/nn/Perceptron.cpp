@@ -8,17 +8,17 @@ Perceptron::Perceptron()
 
 }
 
-QMap<Role, ItemReq> Perceptron::childRequirements() const
-{
-    QMap<Role, ItemReq> mp;
+//QMap<Role, ItemReq> Perceptron::childRequirements() const
+//{
+//    QMap<Role, ItemReq> mp;
 
-    {
-        ItemReq req;
-        req.setClassNames({ESSENCE_CLASS(nn::Layer)});
-        mp.insert("layers", req);
-    }
+//    {
+//        ItemReq req;
+//        req.setClassNames({ESSENCE_CLASS(nn::Layer)});
+//        mp.insert("layers", req);
+//    }
 
-    return mp;
-}
+//    return mp;
+//}
 
 } // namespace nn
