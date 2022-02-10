@@ -15,7 +15,8 @@ message($$PWD/../build/lib/)
 SOURCES += \
         main.cpp \
         nn/NNClassRegistry.cpp \
-        nn/Neuron.cpp
+        nn/Neuron.cpp \
+        nn/Task.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -24,4 +25,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     nn/NNClassRegistry.h \
-    nn/Neuron.h
+    nn/Neuron.h \
+    nn/Task.h
