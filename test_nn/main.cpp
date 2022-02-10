@@ -29,11 +29,13 @@ int main(int argc, char *argv[])
 //    auto neuron1 = hierhin::EssencePtr(new Neuron());
 ////    auto neuron2 = hierhin::EssencePtr(new Neuron());
 
-//    cout << neuron1->toJson();
-
     auto nd = NodePtr(new NodeHashImpl());
 
-    nd->toJson();
+    qDebug().noquote() << nd->toJson();
+
+    nd->setEssenceClassName("nn::Neuron");
+
+    qDebug().noquote() << nd->toJson();
 
 
     return a.exec();
