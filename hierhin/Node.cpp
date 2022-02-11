@@ -66,7 +66,7 @@ QList<nav::ItemRef> Node::childRefs() const
     return lst;
 }
 
-void Node::setLink(nav::ItemRef &targetRef, bool isBidirectional, const Role &linkRole, const QString &linkClass, const Role &ownerRole)
+ItemPtr Node::setLink(nav::ItemRef &targetRef, bool isBidirectional, const Role &linkRole, const QString &linkClass, const Role &ownerRole)
 {
     if (!isKindOf(ESSENCE_CLASS(hierhin::LinkableEssence))) {
         throw ex::NotKindOf(ESSENCE_CLASS(hierhin::LinkableEssence));
@@ -94,9 +94,11 @@ void Node::setLink(nav::ItemRef &targetRef, bool isBidirectional, const Role &li
     }
 
     linkOwner->addChild(link, linkRole);
+
+    return link;
 }
 
-void Node::setLink(ItemPtr target, bool isBidirectional, const Role &linkRole, const QString &linkClass, const Role &ownerRole)
+ItemPtr Node::setLink(ItemPtr target, bool isBidirectional, const Role &linkRole, const QString &linkClass, const Role &ownerRole)
 {
     if (!isKindOf(ESSENCE_CLASS(hierhin::LinkableEssence))) {
         throw ex::NotKindOf(ESSENCE_CLASS(hierhin::LinkableEssence));
@@ -120,6 +122,8 @@ void Node::setLink(ItemPtr target, bool isBidirectional, const Role &linkRole, c
     }
 
     linkOwner->addChild(link, linkRole);
+
+    return link;
 }
 
 QList<nav::ItemRef> Node::targets(const Role &linkOwnerRole)
