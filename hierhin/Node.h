@@ -34,6 +34,9 @@ public:
     void setLink(nav::ItemRef &targetRef, bool isBidirectional = false, const Role &linkRole = Role(),
                  const QString &linkClass = ESSENCE_CLASS(hierhin::LinkEssence), const Role &ownerRole = Const::DEFAULT_LINK_OWNER_ROLE);
 
+    void setLink(ItemPtr target, bool isBidirectional = false, const Role &linkRole = Role(),
+                 const QString &linkClass = ESSENCE_CLASS(hierhin::LinkEssence), const Role &ownerRole = Const::DEFAULT_LINK_OWNER_ROLE);
+
     QList<nav::ItemRef> targets(const Role &linkOwnerRole = Const::DEFAULT_LINK_OWNER_ROLE);
 
 protected:

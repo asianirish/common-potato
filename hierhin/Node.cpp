@@ -96,6 +96,32 @@ void Node::setLink(nav::ItemRef &targetRef, bool isBidirectional, const Role &li
     linkOwner->addChild(link, linkRole);
 }
 
+void Node::setLink(ItemPtr target, bool isBidirectional, const Role &linkRole, const QString &linkClass, const Role &ownerRole)
+{
+    if (!isKindOf(ESSENCE_CLASS(hierhin::LinkableEssence))) {
+        throw ex::NotKindOf(ESSENCE_CLASS(hierhin::LinkableEssence));
+    }
+
+    auto linkOwner = childByRole(ownerRole).dynamicCast<Node>();
+
+    if (!linkOwner) {
+        throw ex::NoSuchLinkOwner(ownerRole);
+    }
+
+    auto link = createImpl(linkClass);
+
+    link->setProperty(Const::SOURCE_PROP, sharedFromThis());
+    link->setProperty(Const::TARGET_PROP, target);
+    link->setProperty(Const::BIDIR_PROP, isBidirectional);
+
+    if (isBidirectional) {
+        QSharedPointer<Item> thisPtr = sharedFromThis();
+        target->addValue(Const::LINK_REF_SIGN + ownerRole, QVariant::fromValue(nav::ItemRef(link/*->absPath()*/)));
+    }
+
+    linkOwner->addChild(link, linkRole);
+}
+
 QList<nav::ItemRef> Node::targets(const Role &linkOwnerRole)
 {
     QList<nav::ItemRef> refLst;
