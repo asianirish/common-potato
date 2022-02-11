@@ -15,6 +15,7 @@ QMap<QString, PropertyDef> Neuron::propertyDefs() const
         PropertyDef def;
         def.setName("value");
         def.setTypeId(QMetaType::Double);
+        //TODO: set min & max
         defs.insert("value", def);
     }
 
