@@ -12,6 +12,9 @@ NNClassRegistry::NNClassRegistry()
 
 void NNClassRegistry::registerAllClasses() const
 {
+    qRegisterMetaType<hierhin::nav::ItemRef>();
+    QMetaType::registerConverter<hierhin::nav::ItemRef, QString>(&hierhin::nav::ItemRef::toString);
+    QMetaType::registerConverter<QString, hierhin::nav::ItemRef>(hierhin::nav::stringToItemRef);
 
     //TODO: or register in Console class
     REGISTER_CLASS_FOR_UTIL_FACTORY(uniq::Value<QString>, uniq::TimeQStringValue)
