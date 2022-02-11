@@ -47,6 +47,11 @@ void Task::run()
         layer0->addChild(nd0);
         layer0->addChild(nd1);
 
+        qDebug() << "NODE1 ABS_PATH:" << nd1->absPath().toString();
+
+        nav::ItemRef ref(nd1->absPath());
+        nd0->setLink(ref); //TODO: nd0->setLink(nd1);
+
         qDebug().noquote() << prc->toJson();
 
     }  catch (ex::Exception &e) {
