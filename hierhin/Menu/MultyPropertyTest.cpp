@@ -37,14 +37,19 @@ QVariant MultyPropertyTest::simplyAct(const QVariantList &args)
         NodePtr nd3 = NodePtr(new NodeHashImpl());
         nd3->setEssenceClassName("TestEssenceMulty");
 
+        //set refs BEFORE seting children (works)
+        nd0->addValue("refs", QVariant::fromValue(nav::ItemRef(nd1)));
+        nd0->addValue("refs", QVariant::fromValue(nav::ItemRef(nd2)));
+        nd0->addValue("refs", QVariant::fromValue(nav::ItemRef(nd3)));
+
         nd->addChild(nd0);
         nd->addChild(nd1);
         nd->addChild(nd2);
         nd->addChild(nd3);
 
-        nd0->addValue("refs", QVariant::fromValue(nav::ItemRef(nd1->absPath())));
-        nd0->addValue("refs", QVariant::fromValue(nav::ItemRef(nd2->absPath())));
-        nd0->addValue("refs", QVariant::fromValue(nav::ItemRef(nd3->absPath())));
+//        nd0->addValue("refs", QVariant::fromValue(nav::ItemRef(nd1->absPath())));
+//        nd0->addValue("refs", QVariant::fromValue(nav::ItemRef(nd2->absPath())));
+//        nd0->addValue("refs", QVariant::fromValue(nav::ItemRef(nd3->absPath())));
 
         qDebug().noquote() << "NODE:" << nd->toJson();
 
