@@ -14,6 +14,7 @@ message($$PWD/../build/lib/)
 
 SOURCES += \
         main.cpp \
+        nn/Assoc.cpp \
         nn/Layer.cpp \
         nn/NNClassRegistry.cpp \
         nn/Neuron.cpp \
@@ -26,6 +27,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
+    nn/Assoc.h \
     nn/Layer.h \
     nn/NNClassRegistry.h \
     nn/Neuron.h \
