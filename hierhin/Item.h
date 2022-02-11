@@ -48,6 +48,8 @@ public:
     QVariant property(const QString &name) const;
 
     void setProperty(const QString &name, const QVariant &value);
+    void setProperty(const QString &name, ItemPtr item);
+
 
     void addValue(const QString &name, const QVariant &value); //for a list type
 

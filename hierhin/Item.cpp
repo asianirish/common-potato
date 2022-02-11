@@ -146,6 +146,12 @@ void Item::setProperty(const QString &name, const QVariant &value)
     _properties.insert(name, value);
 }
 
+void Item::setProperty(const QString &name, ItemPtr item)
+{
+    nav::ItemRef ref(item);
+    setProperty(name, QVariant::fromValue(ref));
+}
+
 void Item::addValue(const QString &name, const QVariant &value)
 {
     auto def = definition();
