@@ -1,4 +1,5 @@
 #include "Neuron.h"
+#include <val/Range.h>
 
 namespace nn {
 
@@ -15,7 +16,10 @@ QMap<QString, PropertyDef> Neuron::propertyDefs() const
         PropertyDef def;
         def.setName("value");
         def.setTypeId(QMetaType::Double);
-        //TODO: set min & max
+
+        auto range = val::ValidatorPtr(new val::Range<double>(-1., 1.));
+        def.addValidator(range);
+
         defs.insert("value", def);
     }
 
