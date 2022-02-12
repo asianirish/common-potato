@@ -24,7 +24,7 @@ QMap<QString, PropertyDef> LinkEssence::propertyDefs() const
 
     PropertyDef bidirDef;
     bidirDef.setName(Const::BIDIR_PROP);
-    bidirDef.setTypeId(typeId);
+    bidirDef.setTypeId(QMetaType::Bool);
 
     return {
         {targetDef.name(), targetDef},
