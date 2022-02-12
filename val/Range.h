@@ -53,7 +53,7 @@ QString Range<T>::errorMessage() const
 {
 //TODO: #if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
     return tr("the value should be within a range of %1 and %2",
-              "range").arg(_minValue.toInt()).arg(_maxValue.toInt());
+              "range").arg(_minValue.value<T>()).arg(_maxValue.value<T>());
 }
 
 template <typename T>
