@@ -44,11 +44,6 @@ void ItemDef::insertPropertyDef(const PropertyDef &propertyDef)
     _propertyDefs.insert(propertyDef.name(), propertyDef);
 }
 
-ItemDef::operator bool() const
-{
-    return toBool();
-}
-
 void ItemDef::validateProperty(const QString &name, const QVariant &value)
 {
     if (_isLimitedPropertyList) {
@@ -80,15 +75,6 @@ void ItemDef::insertMethodName(const QString &methodName)
 BaseType ItemDef::requiredBaseType() const
 {
     return BaseType::ITEM;
-}
-
-bool ItemDef::toBool() const
-{
-    if (!_isLimitedPropertyList) {
-        return false;
-    }
-
-    return !_propertyDefs.isEmpty();
 }
 
 } // namespace def

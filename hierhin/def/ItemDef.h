@@ -24,9 +24,6 @@ public:
     void setPropertyDefs(const QMap<QString, PropertyDef> &propertyDefs);
     void insertPropertyDef(const PropertyDef &propertyDef);
 
-    //'false' means 'no limitations'
-    operator bool() const;
-
     void validateProperty(const QString &name, const QVariant &value);
 
     const QStringList &methodNames() const;
@@ -39,8 +36,6 @@ private:
     bool _isLimitedPropertyList; // limited to the specified set of definitions
     QMap<QString, PropertyDef> _propertyDefs;
     QStringList _methodNames;
-
-    virtual bool toBool() const;
 };
 
 } // namespace def
