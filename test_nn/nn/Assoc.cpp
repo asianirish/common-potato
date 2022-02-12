@@ -1,5 +1,7 @@
 #include "Assoc.h"
 
+#include <val/Range.h>
+
 namespace nn {
 
 Assoc::Assoc()
@@ -15,7 +17,10 @@ QMap<QString, PropertyDef> Assoc::propertyDefs() const
         PropertyDef def;
         def.setName("weight");
         def.setTypeId(QMetaType::Double);
-        //TODO: set min & max
+
+        auto range = val::ValidatorPtr(new val::Range<double>(-1., 1.));
+        def.addValidator(range);
+
         defs.insert("weight", def);
     }
 
