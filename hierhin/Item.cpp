@@ -152,13 +152,10 @@ void Item::setProperty(const QString &name, ItemPtr item)
 void Item::addValue(const QString &name, const QVariant &value)
 {
     auto def = definition();
+    auto propDef = def.propertyDef(name);
 
-    if (def) {
-        auto propDef = def.propertyDef(name);
-
-        if (!propDef.isListType()) {
-            throw ex::NotListType(name);
-        }
+    if (!propDef.isListType()) {
+        throw ex::NotListType(name);
     }
 
     auto propValue = _properties.value(name);
