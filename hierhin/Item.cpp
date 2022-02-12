@@ -138,10 +138,7 @@ QVariant Item::property(const QString &name) const
 void Item::setProperty(const QString &name, const QVariant &value)
 {
     auto def = definition();
-
-    if (def) {
-        def.validateProperty(name, value);
-    }
+    def.validateProperty(name, value);
 
     _properties.insert(name, value);
 }

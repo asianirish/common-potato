@@ -51,12 +51,10 @@ ItemDef::operator bool() const
 
 void ItemDef::validateProperty(const QString &name, const QVariant &value)
 {
-    if (!*this) {
-        return; //nothing to validate
-    }
-
-    if (!_propertyDefs.contains(name)) {
-        throw ex::NoSuchProperty(name);
+    if (_isLimitedPropertyList) {
+        if (!_propertyDefs.contains(name)) {
+            throw ex::NoSuchProperty(name);
+        }
     }
 
     auto propDef = _propertyDefs.value(name);
