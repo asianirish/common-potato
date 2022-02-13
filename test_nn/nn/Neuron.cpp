@@ -5,7 +5,7 @@
 
 namespace nn {
 
-const QString Neuron::ASSOC_LINK_OWNER_ROLE(LinkableEssence::DEFAULT_LINK_OWNER_ROLE);
+const QString Neuron::ASSOC_LINK_OWNER_ROLE("assocs");
 
 Neuron::Neuron()
 {
