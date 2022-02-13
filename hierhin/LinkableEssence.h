@@ -12,6 +12,8 @@ class LinkableEssence : public Essence
 {
     Q_OBJECT
 public:
+    static const Role DEFAULT_LINK_OWNER_ROLE;
+
     LinkableEssence();
 
 //    void nodeDef(NodeDef &nd) const override;

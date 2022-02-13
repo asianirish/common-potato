@@ -7,6 +7,8 @@
 
 namespace hierhin {
 
+const Role LinkableEssence::DEFAULT_LINK_OWNER_ROLE("links");
+
 LinkableEssence::LinkableEssence()
 {
 
@@ -52,7 +54,7 @@ QStringList LinkableEssence::methodNames() const
 
 QList<std::pair<Role, QString> > LinkableEssence::linkRoles() const
 {
-    return {{Const::DEFAULT_LINK_OWNER_ROLE, QString(ESSENCE_CLASS(hierhin::LinkOwnerEssence))}};
+    return {{DEFAULT_LINK_OWNER_ROLE, QString(ESSENCE_CLASS(hierhin::LinkOwnerEssence))}};
 }
 
 QMap<Role, ItemReq> LinkableEssence::nonLinkChildRequirements() const

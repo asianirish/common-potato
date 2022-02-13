@@ -40,7 +40,7 @@ menu::def::ActionDef SetLink::actionDef() const
 
     //4
     ownerRoleDef.setTypeId(qMetaTypeId<hierhin::Role>());
-    ownerRoleDef.setDefaultValue(Const::DEFAULT_LINK_OWNER_ROLE);
+    ownerRoleDef.setDefaultValue(LinkableEssence::DEFAULT_LINK_OWNER_ROLE);
 
     aDef.setArgMinNum(1);
 
