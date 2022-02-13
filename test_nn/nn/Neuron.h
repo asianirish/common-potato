@@ -11,6 +11,7 @@ class Neuron : public hierhin::LinkableEssence
 {
     Q_OBJECT
 public:
+    static const QString ASSOC_LINK_OWNER_ROLE;
     Neuron();
 
     QMap<QString, def::PropertyDef> propertyDefs() const override;

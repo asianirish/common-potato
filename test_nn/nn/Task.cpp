@@ -42,7 +42,8 @@ void Task::run()
         nd1->setEssenceClassName(ESSENCE_CLASS(nn::Neuron));
         nd1->setProperty("value", 0.1);
 
-        nd0->setLink(nd1, true, Role(), ESSENCE_CLASS(nn::Assoc))->setProperty("weight", 0.0333);;
+        nd0->setLink(nd1, true, Role(), ESSENCE_CLASS(nn::Assoc),
+                     nn::Neuron::ASSOC_LINK_OWNER_ROLE)->setProperty("weight", 0.0333);;
 
         layer0->addChild(nd0);
         layer0->addChild(nd1);

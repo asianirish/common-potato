@@ -4,6 +4,8 @@
 
 namespace nn {
 
+const QString Neuron::ASSOC_LINK_OWNER_ROLE(LinkableEssence::DEFAULT_LINK_OWNER_ROLE);
+
 Neuron::Neuron()
 {
 
@@ -26,10 +28,10 @@ QMap<QString, PropertyDef> Neuron::propertyDefs() const
 
     {
         PropertyDef def;
-        def.setName(Node::backRef("links")); //TODO: use accocs and as Const
+        def.setName(Node::backRef(Neuron::ASSOC_LINK_OWNER_ROLE));
         def.setTypeId(QMetaType::QVariantList);
 
-        defs.insert(Node::backRef("links"), def); //TODO: use accocs and as Const
+        defs.insert(Node::backRef(Neuron::ASSOC_LINK_OWNER_ROLE), def);
     }
 
     return defs;
