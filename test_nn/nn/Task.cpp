@@ -1,20 +1,13 @@
 #include "Task.h"
-
+#include "PerceptronConstructor.h"
 
 #include <hierhin/type.h>
-#include <hierhin/cute/NodeImpl.h>
+#include <hierhin/Node.h>
 #include <hierhin/ex/Exception.h>
-
-#include <nn/Neuron.h>
-#include <nn/Layer.h>
-#include <nn/Perceptron.h>
-#include <nn/Assoc.h>
-
-#include <util/gfunc.h>
 
 #include <QDebug>
 
-using namespace hierhin;
+//using namespace hierhin;
 //using namespace hierhin::nav;
 
 Task::Task(QObject *parent)
@@ -23,41 +16,46 @@ Task::Task(QObject *parent)
 
 }
 
-double Task::dRand() const
-{
-    return potato_util::dRand(-1., 1.);
-}
+//double Task::dRand() const
+//{
+//    return potato_util::dRand(-1., 1.);
+//}
 
 void Task::run()
 {
+    qDebug() << "TASK IS RUNNING";
+
     try {
-        qDebug() << "TASK IS RUNNING";
+        nn::PerceptronConstructor constructor;
+        constructor.setLayerSizes({3,2,1});
+        auto prc = constructor.construct();
 
-        auto prc = NodePtr(new cute::NodeImpl());
-        prc->setEssenceClassName(ESSENCE_CLASS(nn::Perceptron));
 
-        auto layer0 = NodePtr(new cute::NodeImpl());
-        layer0->setEssenceClassName(ESSENCE_CLASS(nn::Layer));
+//        auto prc = NodePtr(new cute::NodeImpl());
+//        prc->setEssenceClassName(ESSENCE_CLASS(nn::Perceptron));
 
-        prc->addChild(layer0);
+//        auto layer0 = NodePtr(new cute::NodeImpl());
+//        layer0->setEssenceClassName(ESSENCE_CLASS(nn::Layer));
 
-        auto nd0 = NodePtr(new cute::NodeImpl());
-        auto nd1 = NodePtr(new cute::NodeImpl());
+//        prc->addChild(layer0);
 
-        nd0->setEssenceClassName(ESSENCE_CLASS(nn::Neuron));
-        nd0->setProperty("value", dRand());
-        nd1->setEssenceClassName(ESSENCE_CLASS(nn::Neuron));
-        nd1->setProperty("value", dRand());
+//        auto nd0 = NodePtr(new cute::NodeImpl());
+//        auto nd1 = NodePtr(new cute::NodeImpl());
 
-        nd0->setLink(nd1, true, Role(), ESSENCE_CLASS(nn::Assoc),
-                     nn::Neuron::ASSOC_LINK_OWNER_ROLE)->setProperty("weight", dRand());;
+//        nd0->setEssenceClassName(ESSENCE_CLASS(nn::Neuron));
+//        nd0->setProperty("value", dRand());
+//        nd1->setEssenceClassName(ESSENCE_CLASS(nn::Neuron));
+//        nd1->setProperty("value", dRand());
 
-        layer0->addChild(nd0);
-        layer0->addChild(nd1);
+//        nd0->setLink(nd1, true, Role(), ESSENCE_CLASS(nn::Assoc),
+//                     nn::Neuron::ASSOC_LINK_OWNER_ROLE)->setProperty("weight", dRand());;
 
-        qDebug().noquote() << prc->toJson();
+//        layer0->addChild(nd0);
+//        layer0->addChild(nd1);
 
-    }  catch (ex::Exception &e) {
+        qDebug().noquote() << "PERCEPTRON:" << prc->toJson();
+
+    }  catch (hierhin::ex::Exception &e) {
         qDebug() << "ERROR:" << e.cause();
     }
 
