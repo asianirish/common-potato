@@ -10,7 +10,7 @@ public:
     explicit Task(QObject *parent = nullptr);
 
 private:
-    double dRand(double dMin = -1., double dMax = 1.) const;
+    double dRand() const;
 
 public slots:
     void run();

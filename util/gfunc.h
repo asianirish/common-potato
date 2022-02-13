@@ -23,6 +23,8 @@ bool isInteger(const QVariant &arg);
 
 int varToInt(const QVariant &arg);
 
-} // namespace util
+double dRand(double dMin, double dMax);
+
+} // namespace potato_util
 
 #endif // GFUNC_H

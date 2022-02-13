@@ -10,6 +10,8 @@
 #include <nn/Perceptron.h>
 #include <nn/Assoc.h>
 
+#include <util/gfunc.h>
+
 #include <QDebug>
 
 using namespace hierhin;
@@ -21,10 +23,9 @@ Task::Task(QObject *parent)
 
 }
 
-double Task::dRand(double dMin, double dMax) const
+double Task::dRand() const
 {
-    double d = (double)rand() / RAND_MAX;
-    return dMin + d * (dMax - dMin);
+    return potato_util::dRand(-1., 1.);
 }
 
 void Task::run()
