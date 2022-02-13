@@ -13,6 +13,8 @@ namespace hierhin {
 class Node : public virtual Item
 {
 public:
+    static QString LINK_BACK_REF_SIGN; //TODO: use instead of Const::LINK_REF_SIGN
+
     Node();
 
     virtual bool containsId(const Id &id) = 0;
