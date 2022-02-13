@@ -7,7 +7,7 @@
 
 namespace hierhin {
 
-QString Node::LINK_BACK_REF_SIGN("@");
+const QString Node::LINK_BACK_REF_SIGN("@");
 
 QString Node::backRef(const QString &ref)
 {
