@@ -15,6 +15,8 @@ class Node : public virtual Item
 public:
     static QString LINK_BACK_REF_SIGN; //TODO: use instead of Const::LINK_REF_SIGN
 
+    static QString backRef(const QString &ref);
+
     Node();
 
     virtual bool containsId(const Id &id) = 0;

@@ -26,10 +26,10 @@ QMap<QString, PropertyDef> Neuron::propertyDefs() const
 
     {
         PropertyDef def;
-        def.setName(Node::LINK_BACK_REF_SIGN + "links"); //TODO: use accocs and as Const
+        def.setName(Node::backRef("links")); //TODO: use accocs and as Const
         def.setTypeId(QMetaType::QVariantList);
 
-        defs.insert(Node::LINK_BACK_REF_SIGN + "links", def); //TODO: use accocs and as Const
+        defs.insert(Node::backRef("links"), def); //TODO: use accocs and as Const
     }
 
     return defs;

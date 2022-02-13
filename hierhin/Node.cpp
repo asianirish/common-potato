@@ -9,6 +9,11 @@ namespace hierhin {
 
 QString Node::LINK_BACK_REF_SIGN("@");
 
+QString Node::backRef(const QString &ref)
+{
+    return LINK_BACK_REF_SIGN + ref;
+}
+
 Node::Node()
 {
 
@@ -92,7 +97,7 @@ ItemPtr Node::setLink(nav::ItemRef &targetRef, bool isBidirectional, const Role 
     if (isBidirectional) {
         QSharedPointer<Item> thisPtr = sharedFromThis();
         ItemPtr targetPtr = targetRef.ptr(thisPtr);
-        targetPtr->addValue(LINK_BACK_REF_SIGN + ownerRole, QVariant::fromValue(nav::ItemRef(link/*->absPath()*/)));
+        targetPtr->addValue(backRef(ownerRole), QVariant::fromValue(nav::ItemRef(link/*->absPath()*/)));
     }
 
     linkOwner->addChild(link, linkRole);
@@ -120,7 +125,7 @@ ItemPtr Node::setLink(ItemPtr target, bool isBidirectional, const Role &linkRole
 
     if (isBidirectional) {
         QSharedPointer<Item> thisPtr = sharedFromThis();
-        target->addValue(LINK_BACK_REF_SIGN + ownerRole, QVariant::fromValue(nav::ItemRef(link/*->absPath()*/)));
+        target->addValue(backRef(ownerRole), QVariant::fromValue(nav::ItemRef(link/*->absPath()*/)));
     }
 
     linkOwner->addChild(link, linkRole);
