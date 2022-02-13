@@ -21,6 +21,12 @@ Task::Task(QObject *parent)
 
 }
 
+double Task::dRand(double dMin, double dMax) const
+{
+    double d = (double)rand() / RAND_MAX;
+    return dMin + d * (dMax - dMin);
+}
+
 void Task::run()
 {
     try {
@@ -38,12 +44,12 @@ void Task::run()
         auto nd1 = NodePtr(new cute::NodeImpl());
 
         nd0->setEssenceClassName(ESSENCE_CLASS(nn::Neuron));
-        nd0->setProperty("value", 0.5);
+        nd0->setProperty("value", dRand());
         nd1->setEssenceClassName(ESSENCE_CLASS(nn::Neuron));
-        nd1->setProperty("value", 0.1);
+        nd1->setProperty("value", dRand());
 
         nd0->setLink(nd1, true, Role(), ESSENCE_CLASS(nn::Assoc),
-                     nn::Neuron::ASSOC_LINK_OWNER_ROLE)->setProperty("weight", 0.0333);;
+                     nn::Neuron::ASSOC_LINK_OWNER_ROLE)->setProperty("weight", dRand());;
 
         layer0->addChild(nd0);
         layer0->addChild(nd1);
