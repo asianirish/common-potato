@@ -1,6 +1,7 @@
 #include "Neuron.h"
 #include <val/Range.h>
 #include <hierhin/Node.h>
+#include <hierhin/LinkOwnerEssence.h>
 
 namespace nn {
 
@@ -35,6 +36,12 @@ QMap<QString, PropertyDef> Neuron::propertyDefs() const
     }
 
     return defs;
+}
+
+QList<std::pair<Role, QString> > Neuron::linkRoles() const
+{
+    //TODO: AssocOwner?
+    return {{ASSOC_LINK_OWNER_ROLE, QString(ESSENCE_CLASS(hierhin::LinkOwnerEssence))}};
 }
 
 } // namespace nn
