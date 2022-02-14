@@ -29,6 +29,7 @@ void Task::run()
         nn::PerceptronConstructor constructor;
         constructor.setLayerSizes({3,2,1});
         auto prc = constructor.construct();
+        qDebug() << "CONSTRUCTED";
 
 
 //        auto prc = NodePtr(new cute::NodeImpl());

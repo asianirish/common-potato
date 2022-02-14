@@ -9,6 +9,8 @@
 #include "Perceptron.h"
 #include "Assoc.h"
 
+#include <QDebug>
+
 namespace nn {
 
 PerceptronConstructor::PerceptronConstructor()
@@ -61,6 +63,7 @@ void PerceptronConstructor::constructLayers()
 
     NodePtr prevLr;
     for (int i = 0; i < sz; i++) {
+        qDebug() << "CONSTRUCT_LAYER" << i;
         auto lr = constructLayer(i);
         _prc->addChild(lr);
         if (prevLr) {
@@ -74,8 +77,11 @@ void PerceptronConstructor::linkLayers(hierhin::NodePtr first, hierhin::NodePtr 
 {
     auto refs = first->childRefs();
 
+    int i = 0;
     for (auto &ref : refs) {
+        qDebug() << "LINK_TO_REF" << i << ref;
         linkLayer(ref, second);
+        i++;
     }
 }
 
