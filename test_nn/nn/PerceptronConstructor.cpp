@@ -59,12 +59,20 @@ void PerceptronConstructor::constructLayers()
 {
     int sz = _layerSizes.size();
 
+    NodePtr prevLr;
     for (int i = 0; i < sz; i++) {
         auto lr = constructLayer(i);
         _prc->addChild(lr);
+        if (prevLr) {
+            linkLayers(prevLr, lr);
+        }
+        prevLr = lr;
     }
+}
 
-    //TODO: set links (here?)
+void PerceptronConstructor::linkLayers(hierhin::NodePtr first, hierhin::NodePtr second)
+{
+    //TODO: implement
 }
 
 

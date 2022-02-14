@@ -24,6 +24,7 @@ private:
     double dRand() const;
     hierhin::NodePtr constructLayer(int index);
     void constructLayers();
+    void linkLayers(hierhin::NodePtr first, hierhin::NodePtr second);
 };
 
 } // namespace nn
