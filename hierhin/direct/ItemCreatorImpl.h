@@ -1,7 +1,7 @@
 #ifndef HIERHIN_DIRECT_ITEMCREATORIMPL_H
 #define HIERHIN_DIRECT_ITEMCREATORIMPL_H
 
-#include <ItemCreator.h>
+#include "../ItemCreator.h"
 
 namespace hierhin {
 namespace direct {

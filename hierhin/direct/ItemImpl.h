@@ -2,7 +2,8 @@
 #define DIRECT_ITEMIMPL_H
 
 #include "ItemCreatorImpl.h"
-#include <Node.h>
+#include "../Node.h"
+
 #include <QHash>
 
 namespace hierhin {

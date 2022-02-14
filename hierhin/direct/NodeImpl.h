@@ -1,7 +1,7 @@
 #ifndef DIRECT_NODEIMPL_H
 #define DIRECT_NODEIMPL_H
 
-#include "Node.h"
+#include "../Node.h"
 #include "ItemImpl.h"
 
 #include <util/BiMap.h>
