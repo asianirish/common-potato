@@ -13,9 +13,11 @@
 
 namespace nn {
 
+using NodeImpl = cute::NodeImpl;
+
 PerceptronConstructor::PerceptronConstructor()
 {
-    _prc = NodePtr(new cute::NodeImpl());
+    _prc = NodePtr(new NodeImpl());
     _prc->setEssenceClassName(ESSENCE_CLASS(nn::Perceptron));
 }
 
@@ -42,12 +44,12 @@ double PerceptronConstructor::dRand() const
 
 NodePtr PerceptronConstructor::constructLayer(int index)
 {
-    auto lr = NodePtr(new cute::NodeImpl());
+    auto lr = NodePtr(new NodeImpl());
     lr->setEssenceClassName(ESSENCE_CLASS(nn::Layer));
     int sz = _layerSizes.at(index);
 
     for (int i = 0; i < sz; i++) {
-        auto nd = NodePtr(new cute::NodeImpl());
+        auto nd = NodePtr(new NodeImpl());
         nd->setEssenceClassName(ESSENCE_CLASS(nn::Neuron));
         nd->setProperty("value", dRand());
         //TODO: set nd links (?)
