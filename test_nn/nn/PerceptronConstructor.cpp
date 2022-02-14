@@ -38,7 +38,7 @@ double PerceptronConstructor::dRand() const
     return potato_util::dRand(-1., 1.);
 }
 
-NodePtr PerceptronConstructor::layer(int index)
+NodePtr PerceptronConstructor::constructLayer(int index)
 {
     auto lr = NodePtr(new cute::NodeImpl());
     lr->setEssenceClassName(ESSENCE_CLASS(nn::Layer));
@@ -60,7 +60,7 @@ void PerceptronConstructor::constructLayers()
     int sz = _layerSizes.size();
 
     for (int i = 0; i < sz; i++) {
-        auto lr = layer(i);
+        auto lr = constructLayer(i);
         _prc->addChild(lr);
     }
 

@@ -22,7 +22,7 @@ private:
     hierhin::NodePtr _prc;
 
     double dRand() const;
-    hierhin::NodePtr layer(int index);
+    hierhin::NodePtr constructLayer(int index);
     void constructLayers();
 };
 
