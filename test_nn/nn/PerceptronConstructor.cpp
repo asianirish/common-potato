@@ -79,9 +79,21 @@ void PerceptronConstructor::linkLayers(hierhin::NodePtr first, hierhin::NodePtr 
     }
 }
 
-void PerceptronConstructor::linkLayer(const hierhin::nav::ItemRef &targetRef, hierhin::NodePtr layer)
+void PerceptronConstructor::linkLayer(hierhin::nav::ItemRef &targetRef, hierhin::NodePtr layer)
 {
-    //TODO: implement
+    auto ids = layer->idList();
+
+    for (auto &id : ids) {
+        auto source = layer->child(id);
+        auto sourceNode = source.dynamicCast<Node>();
+
+        if (sourceNode) {
+            sourceNode->setLink(targetRef, true, Role(), ESSENCE_CLASS(nn::Assoc),
+                                nn::Neuron::ASSOC_LINK_OWNER_ROLE)->setProperty("weight", dRand());
+
+        }
+
+    }
 }
 
 
