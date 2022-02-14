@@ -4,6 +4,7 @@
 #include <QVector>
 
 #include <hierhin/type.h>
+#include <hierhin/nav/ItemRef.h>
 
 namespace nn {
 
@@ -25,6 +26,7 @@ private:
     hierhin::NodePtr constructLayer(int index);
     void constructLayers();
     void linkLayers(hierhin::NodePtr first, hierhin::NodePtr second);
+    void linkLayer(const hierhin::nav::ItemRef &targetRef, hierhin::NodePtr layer);
 };
 
 } // namespace nn

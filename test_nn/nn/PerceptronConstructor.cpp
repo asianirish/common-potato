@@ -72,6 +72,15 @@ void PerceptronConstructor::constructLayers()
 
 void PerceptronConstructor::linkLayers(hierhin::NodePtr first, hierhin::NodePtr second)
 {
+    auto refs = first->childRefs();
+
+    for (auto &ref : refs) {
+        linkLayer(ref, second);
+    }
+}
+
+void PerceptronConstructor::linkLayer(const hierhin::nav::ItemRef &targetRef, hierhin::NodePtr layer)
+{
     //TODO: implement
 }
 
