@@ -1,6 +1,11 @@
 #include "PerceptronConstructor.h"
 
+#ifdef USE_CUTE_IMPL
 #include <hierhin/cute/NodeImpl.h>
+#else
+#include <hierhin/direct/NodeImpl.h>
+#endif
+
 
 #include <util/gfunc.h>
 
@@ -13,7 +18,11 @@
 
 namespace nn {
 
+#ifdef USE_CUTE_IMPL
 using NodeImpl = cute::NodeImpl;
+#else
+using NodeImpl = direct::NodeHashImpl;
+#endif
 
 PerceptronConstructor::PerceptronConstructor()
 {
