@@ -10,8 +10,8 @@ CONFIG -= app_bundle
 LIBS +=  -L$$PWD/../build/lib/ -lcommon-potato
 INCLUDEPATH += $$PWD/../
 
-#DEFINES += USE_CUTE_IMPL
-DEFINES += USE_MAP_IMPL
+DEFINES += USE_CUTE_IMPL
+#DEFINES += USE_MAP_IMPL
 
 message($$PWD/../build/lib/)
 
