@@ -164,6 +164,7 @@ private:
     QSharedPointer<T> _pointer;
 };
 
+//TODO: optimize
 template<typename K, typename T, typename Wrapper = ObjectWrapper<K,T>>
 class CuteContainer
 {
