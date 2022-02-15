@@ -58,6 +58,8 @@ void Task::run()
 
     }  catch (hierhin::ex::Exception &e) {
         qDebug() << "ERROR:" << e.cause();
+    } catch (const QString strError) {
+        qDebug() << "STR ERROR:" << strError;
     }
 
     emit quit();
