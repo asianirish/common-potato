@@ -86,14 +86,14 @@ void PerceptronConstructor::constructLayers()
     }
 }
 
-void PerceptronConstructor::linkLayers(hierhin::NodePtr first, hierhin::NodePtr second)
+void PerceptronConstructor::linkLayers(hierhin::NodePtr targetLayer, hierhin::NodePtr sourceLayer)
 {
-    auto refs = first->childRefs();
+    auto refs = targetLayer->childRefs();
 
     int i = 0;
     for (auto &ref : refs) {
         qDebug() << "LINK_TO_REF" << i << ref;
-        linkLayer(ref, second);
+        linkLayer(ref, sourceLayer);
         i++;
     }
 }
