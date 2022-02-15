@@ -20,6 +20,8 @@ namespace nn {
 
 #ifdef USE_CUTE_IMPL
 using NodeImpl = cute::NodeImpl;
+#elif USE_MAP_IMPL
+using NodeImpl = direct::NodeMapImpl;
 #else
 using NodeImpl = direct::NodeHashImpl;
 #endif
