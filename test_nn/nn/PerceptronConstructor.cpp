@@ -98,9 +98,9 @@ void PerceptronConstructor::linkLayers(hierhin::NodePtr targetLayer, hierhin::No
     }
 }
 
-void PerceptronConstructor::linkLayer(hierhin::nav::ItemRef &targetRef, hierhin::NodePtr layer)
+void PerceptronConstructor::linkLayer(hierhin::nav::ItemRef &targetRef, hierhin::NodePtr sourceLayer)
 {
-    auto chldrn = layer->children();
+    auto chldrn = sourceLayer->children();
 
     for (auto &source : chldrn) {
         auto sourceNode = source.dynamicCast<Node>();

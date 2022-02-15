@@ -26,7 +26,7 @@ private:
     hierhin::NodePtr constructLayer(int index);
     void constructLayers();
     void linkLayers(hierhin::NodePtr targetLayer, hierhin::NodePtr sourceLayer);
-    void linkLayer(hierhin::nav::ItemRef &targetRef, hierhin::NodePtr layer);
+    void linkLayer(hierhin::nav::ItemRef &targetRef, hierhin::NodePtr sourceLayer);
 };
 
 } // namespace nn
