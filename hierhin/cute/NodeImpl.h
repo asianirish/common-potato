@@ -21,6 +21,7 @@ public:
 public:
     bool containsId(const Id &id) override;
     ConstItemPtr child(const Id &id) const override;
+    QList<ItemPtr> children() const final;
     ConstItemPtr childByRole(const Role &role) const override;
     Role childRoleById(const Id &id) const override;
     IdList idList() const override;

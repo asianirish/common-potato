@@ -22,6 +22,11 @@ ConstItemPtr NodeImpl::child(const Id &id) const
     return _children.value(id);
 }
 
+QList<ItemPtr> NodeImpl::children() const
+{
+    return _children.values();
+}
+
 ConstItemPtr NodeImpl::childByRole(const Role &role) const
 {
     return _children.valueByName(role);

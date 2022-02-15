@@ -22,6 +22,8 @@ public:
 
     ConstItemPtr child(const Id &id) const final;
 
+    QList<ItemPtr> children() const final;
+
     ConstItemPtr childByRole(const Role &role) const final;
 
     Role childRoleById(const Id &id) const final;
@@ -58,6 +60,12 @@ ConstItemPtr NodeImpl<C>::child(const Id &id) const
 {
     //TODO: if (!_children.contains(role) throw NoSuchChild?
     return _children.value(id);
+}
+
+template<typename C>
+QList<ItemPtr> NodeImpl<C>::children() const
+{
+    return _children.values();
 }
 
 template<typename C>

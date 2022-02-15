@@ -25,6 +25,10 @@ public:
     ItemPtr child(const Id &id);
     virtual ConstItemPtr child(const Id &id) const = 0;
 
+    QList<ItemPtr> children();
+    virtual QList<ItemPtr> children() const = 0;
+
+
     ItemPtr childByRole(const Role &role);
     virtual ConstItemPtr childByRole(const Role &role) const = 0;
 

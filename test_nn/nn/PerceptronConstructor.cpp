@@ -101,6 +101,7 @@ void PerceptronConstructor::linkLayers(hierhin::NodePtr first, hierhin::NodePtr 
 void PerceptronConstructor::linkLayer(hierhin::nav::ItemRef &targetRef, hierhin::NodePtr layer)
 {
     auto ids = layer->idList();
+//TODO:    layer->children();
 
     for (auto &id : ids) {
         auto source = layer->child(id);

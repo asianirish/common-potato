@@ -25,6 +25,12 @@ ItemPtr Node::child(const Id &id)
     return cnode->child(id).constCast<Item>();
 }
 
+QList<ItemPtr> Node::children()
+{
+    const Node *cnode = dynamic_cast<const Node*>(this);
+    return cnode->children();
+}
+
 ItemPtr Node::childByRole(const Role &role)
 {
     const Node *cnode = dynamic_cast<const Node*>(this);
