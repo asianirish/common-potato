@@ -266,6 +266,10 @@ public:
 
     T value(const K &key, const T &defaultValue = T()) const;
 
+    QList<T> values() const { //TODO: should return in ascending order
+        throw QString("NOT IMPLEMENTED YET");
+    }
+
     T valueByName(const QString &name, const T &defaultValue = T()) const;
 
     K keyByName(const QString &name, const K &defaultKey = K()) const;
