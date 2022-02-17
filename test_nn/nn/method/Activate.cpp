@@ -32,7 +32,9 @@ QVariant Activate::actNodeImpl(const QVariantList &args, hierhin::Node *node)
         sum += targetVal * weight;
     }
 
-    return activate(sum);
+    double result = activate(sum);
+    node->setProperty("value", result);
+    return result;
 }
 
 } // namespace nn
