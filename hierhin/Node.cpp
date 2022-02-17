@@ -202,4 +202,11 @@ QString Node::childMandatoryClassName(const Role &role) const
     return QString();
 }
 
+
+NodePtr Node::linkOwner(const Role &ownerRole)
+{
+    auto owner = this->childByRole(ownerRole).dynamicCast<hierhin::Node>();
+    return owner;
+}
+
 } // namespace hierhin

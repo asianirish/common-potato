@@ -62,6 +62,9 @@ private:
     //returns QString() if not mandatory
     QString childMandatoryClassName(const Role &role) const;
 
+    NodePtr linkOwner(const Role &ownerRole = LinkableEssence::DEFAULT_LINK_OWNER_ROLE);
+
+
 };
 
 } // namespace hierhin
