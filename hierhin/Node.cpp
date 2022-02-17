@@ -167,6 +167,17 @@ QList<nav::ItemRef> Node::targets(const Role &linkOwnerRole)
     return refLst;
 }
 
+QList<ItemPtr> Node::links(const Role &ownerRole)
+{
+
+    if (!isKindOf(ESSENCE_CLASS(hierhin::LinkableEssence))) {
+        throw ex::NotKindOf(ESSENCE_CLASS(hierhin::LinkableEssence));
+    }
+
+    auto owner = this->linkOwner(ownerRole);
+    return owner->children();
+}
+
 void Node::nodeToMap(QVariantMap &mp) const
 {
     //TODO: implement

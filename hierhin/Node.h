@@ -48,6 +48,8 @@ public:
 
     QList<nav::ItemRef> targets(const Role &linkOwnerRole = LinkableEssence::DEFAULT_LINK_OWNER_ROLE);
 
+    QList<ItemPtr> links(const Role &ownerRole = LinkableEssence::DEFAULT_LINK_OWNER_ROLE);
+
 protected:
     virtual void nodeImplToMap(QVariantMap &mp) const = 0;
     virtual void nodeImplFromMap(const QVariantMap &mp) = 0;
