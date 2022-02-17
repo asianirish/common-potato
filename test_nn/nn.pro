@@ -24,7 +24,8 @@ SOURCES += \
         nn/Perceptron.cpp \
         nn/PerceptronConstructor.cpp \
         nn/Task.cpp \
-        nn/method/Activate.cpp
+        nn/method/Activate.cpp \
+        nn/method/ThresholdActivate.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -39,4 +40,5 @@ HEADERS += \
     nn/Perceptron.h \
     nn/PerceptronConstructor.h \
     nn/Task.h \
-    nn/method/Activate.h
+    nn/method/Activate.h \
+    nn/method/ThresholdActivate.h
