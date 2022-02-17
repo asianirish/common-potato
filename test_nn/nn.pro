@@ -23,7 +23,8 @@ SOURCES += \
         nn/Neuron.cpp \
         nn/Perceptron.cpp \
         nn/PerceptronConstructor.cpp \
-        nn/Task.cpp
+        nn/Task.cpp \
+        nn/method/Activate.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -37,4 +38,5 @@ HEADERS += \
     nn/Neuron.h \
     nn/Perceptron.h \
     nn/PerceptronConstructor.h \
-    nn/Task.h
+    nn/Task.h \
+    nn/method/Activate.h
