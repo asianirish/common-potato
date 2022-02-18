@@ -4,6 +4,8 @@
 #include "Perceptron.h"
 #include "Assoc.h"
 
+#include "method/ThresholdActivate.h"
+
 #include <uniq/TimeQStringValue.h>
 
 NNClassRegistry::NNClassRegistry()
@@ -24,4 +26,7 @@ void NNClassRegistry::registerAllClasses() const
     REGISTER_CLASS_FOR_UTIL_FACTORY(hierhin::Essence, nn::Layer);
     REGISTER_CLASS_FOR_UTIL_FACTORY(hierhin::Essence, nn::Perceptron);
     REGISTER_CLASS_FOR_UTIL_FACTORY(hierhin::Essence, nn::Assoc);
+
+    //node actions
+    REGISTER_CLASS_FOR_UTIL_FACTORY(menu::Action, nn::ThresholdActivate);
 }
