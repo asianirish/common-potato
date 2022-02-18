@@ -15,6 +15,7 @@ public:
     Neuron();
 
     QMap<QString, def::PropertyDef> propertyDefs() const override;
+    QStringList methodNames() const override;
 
 private:
     QList<std::pair<Role, QString> > linkRoles() const override;

@@ -1,4 +1,6 @@
 #include "Neuron.h"
+#include "method/Activate.h"
+
 #include <val/Range.h>
 #include <hierhin/Node.h>
 #include <hierhin/LinkOwnerEssence.h>
@@ -36,6 +38,15 @@ QMap<QString, PropertyDef> Neuron::propertyDefs() const
     }
 
     return defs;
+}
+
+QStringList Neuron::methodNames() const
+{
+    QStringList lst = Essence::methodNames();
+
+    lst.append(METHOD_CLASS(nn::Activate));
+
+    return lst;
 }
 
 QList<std::pair<Role, QString> > Neuron::linkRoles() const
