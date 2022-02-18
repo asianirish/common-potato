@@ -4,6 +4,7 @@
 * ClassEssence, DynEssence and ClassNode (with 'inhertis' ref or link)
 * Action class as a function (consisting of Action calls)
 * use links for sorting Neurons and Layers
+* Action::act returning Result (maybe not ready)
 
 ---------------------------------------------------------
 DONE:
