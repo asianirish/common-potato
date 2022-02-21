@@ -91,6 +91,7 @@ HEADERS += \
     hierhin/nav/ItemRef.h \
     hierhin/nav/Path.h \
     hierhin/nav/Step.h \
+    hierhin/sys/CallChildren.h \
     hierhin/sys/GetChildByRole.h \
     hierhin/sys/GetChildren.h \
     hierhin/sys/GetClassName.h \
@@ -210,6 +211,7 @@ SOURCES += \
     hierhin/nav/ItemRef.cpp \
     hierhin/nav/Path.cpp \
     hierhin/nav/Step.cpp \
+    hierhin/sys/CallChildren.cpp \
     hierhin/sys/GetChildByRole.cpp \
     hierhin/sys/GetChildren.cpp \
     hierhin/sys/GetClassName.cpp \
