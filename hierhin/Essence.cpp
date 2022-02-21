@@ -9,6 +9,7 @@
 #include "sys/GetClassNames.h"
 #include "sys/GetChildren.h"
 #include "sys/GetChildByRole.h"
+#include "sys/CallChildren.h"
 
 namespace hierhin {
 
@@ -27,6 +28,7 @@ Essence::Essence() : QObject(nullptr)
         //Node actions
         REGISTER_CLASS_FOR_UTIL_FACTORY(menu::Action, sys::GetChildren);
         REGISTER_CLASS_FOR_UTIL_FACTORY(menu::Action, sys::GetChildByRole);
+        REGISTER_CLASS_FOR_UTIL_FACTORY(menu::Action, sys::CallChildren);
 
         yes = true;
     }
