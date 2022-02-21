@@ -110,7 +110,8 @@ QStringList Essence::methodNames() const
         METHOD_CLASS(sys::GetMethodNames),
         METHOD_CLASS(sys::GetClassNames),
         METHOD_CLASS(sys::GetChildren),
-        METHOD_CLASS(sys::GetChildByRole)
+        METHOD_CLASS(sys::GetChildByRole),
+        METHOD_CLASS(sys::CallChildren)
     };
 }
 
