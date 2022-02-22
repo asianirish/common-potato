@@ -1,4 +1,5 @@
 #include "Method.h"
+#include "ex/NoItem.h"
 
 namespace hierhin {
 
@@ -19,7 +20,10 @@ void Method::setItem(Item *item)
 
 QVariant Method::simplyAct(const QVariantList &args)
 {
-    //TODO: if (!_item) throw NoItem();
+    if (!_item) {
+        throw ex::NoItem();
+    }
+
     return actImpl(args, _item);
 }
 
