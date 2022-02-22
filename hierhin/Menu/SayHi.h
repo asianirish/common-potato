@@ -1,8 +1,6 @@
 #ifndef SAYHI_H
 #define SAYHI_H
 
-#include "SayHi.h"
-
 #include <menu/SimpleAction.h>
 
 class SayHi : public menu::SimpleAction
