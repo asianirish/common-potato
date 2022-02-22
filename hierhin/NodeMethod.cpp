@@ -16,9 +16,7 @@ QVariant NodeMethod::actImpl(const QVariantList &args, Item *item)
     if (!node) {
         if (item) {
             throw ex::NotANode(item->id());
-        } else {
-            throw ex::NotANode(); //TODO: in Method::simplyAct
-        }
+        } //'else' exception is handeld in Method::simplyAct
     }
 
     return actNodeImpl(args, node);
