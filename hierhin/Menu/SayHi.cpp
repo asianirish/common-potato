@@ -8,8 +8,9 @@ SayHi::SayHi() : _hiType(HI)
 
 }
 
-QVariant SayHi::simplyAct(const QVariantList &args)
+QVariant SayHi::simplyAct(const QVariantList &args, const menu::TaskId &taskId)
 {
+    Q_UNUSED(taskId)
 
     QString name = args.size() ? args.at(0).toString() : "anonymous";
 

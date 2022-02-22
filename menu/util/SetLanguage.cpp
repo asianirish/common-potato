@@ -19,8 +19,10 @@ SetLanguage::~SetLanguage()
     qDebug() << "SET_LANGUAGE DESTRUCTOR";
 }
 
-QVariant SetLanguage::simplyAct(const QVariantList &args)
+QVariant SetLanguage::simplyAct(const QVariantList &args, const TaskId &taskId)
 {
+    Q_UNUSED(taskId)
+
     //delete translators from the app (if any)
     for (auto &translator : _translators) {
         QCoreApplication::removeTranslator(translator.data());

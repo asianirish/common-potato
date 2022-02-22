@@ -18,7 +18,7 @@ public:
     void setHiType(HI_TYPE newHiType);
 
 protected:
-    QVariant simplyAct(const QVariantList &args) override;
+    QVariant simplyAct(const QVariantList &args, const menu::TaskId &taskId) override;
 
 private:
     HI_TYPE _hiType;

@@ -15,9 +15,11 @@ ValidatorTest::ValidatorTest()
 
 }
 
-QVariant ValidatorTest::simplyAct(const QVariantList &args)
+QVariant ValidatorTest::simplyAct(const QVariantList &args, const menu::TaskId &taskId)
 {
     Q_UNUSED(args);
+    Q_UNUSED(taskId);
+
     Email *emailVal = new Email();
 
     QString emailMsg = emailVal->errorMessage();

@@ -18,8 +18,10 @@ void Method::setItem(Item *item)
     _item = item;
 }
 
-QVariant Method::simplyAct(const QVariantList &args)
+QVariant Method::simplyAct(const QVariantList &args, const menu::TaskId &taskId)
 {
+    Q_UNUSED(taskId)
+
     if (!_item) {
         throw ex::NoItem();
     }

@@ -12,9 +12,10 @@ CuteContainerTest::CuteContainerTest()
 
 }
 
-QVariant CuteContainerTest::simplyAct(const QVariantList &args)
+QVariant CuteContainerTest::simplyAct(const QVariantList &args, const menu::TaskId &taskId)
 {
     Q_UNUSED(args)
+    Q_UNUSED(taskId)
 
     {
         CuteContainer<QString, int> cc;

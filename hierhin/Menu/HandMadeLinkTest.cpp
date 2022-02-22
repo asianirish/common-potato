@@ -49,9 +49,10 @@ HandMadeLinkTest::HandMadeLinkTest()
     link->setProperty(Const::TARGET_PROP, QVariant::fromValue(target));
 }
 
-QVariant HandMadeLinkTest::simplyAct(const QVariantList &args)
+QVariant HandMadeLinkTest::simplyAct(const QVariantList &args, const menu::TaskId &taskId)
 {
     Q_UNUSED(args)
+    Q_UNUSED(taskId)
 
     auto leftNode = _nd->childByRole("left");
     qDebug().noquote() << "NODE_A ID:" << leftNode->id();

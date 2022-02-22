@@ -7,9 +7,10 @@ TransTest::TransTest()
 
 }
 
-QVariant TransTest::simplyAct(const QVariantList &args)
+QVariant TransTest::simplyAct(const QVariantList &args, const menu::TaskId &taskId)
 {
     Q_UNUSED(args);
+    Q_UNUSED(taskId);
 
     QString hi(QObject::tr("hi"));
     qDebug() << hi;

@@ -10,9 +10,10 @@ BiMapTest::BiMapTest()
 
 }
 
-QVariant BiMapTest::simplyAct(const QVariantList &args)
+QVariant BiMapTest::simplyAct(const QVariantList &args, const menu::TaskId &taskId)
 {
     Q_UNUSED(args)
+    Q_UNUSED(taskId)
 
     {
         BiMap<int, QString> mp;

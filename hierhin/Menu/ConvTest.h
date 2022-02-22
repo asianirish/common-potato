@@ -9,7 +9,7 @@ public:
     ConvTest();
 
 protected:
-    QVariant simplyAct(const QVariantList &args) override;
+    QVariant simplyAct(const QVariantList &args, const menu::TaskId &taskId) override;
 
 private:
     menu::def::ActionDef actionDef() const override {

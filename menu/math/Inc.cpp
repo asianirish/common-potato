@@ -9,8 +9,10 @@ Inc::Inc()
 
 }
 
-QVariant Inc::simplyAct(const QVariantList &args)
+QVariant Inc::simplyAct(const QVariantList &args, const TaskId &taskId)
 {
+    Q_UNUSED(taskId)
+
     return args.at(0).toInt() + 1;
 }
 

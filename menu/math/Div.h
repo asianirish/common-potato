@@ -12,7 +12,7 @@ public:
     Div();
 
 protected:
-    QVariant simplyAct(const QVariantList &args) final;
+    QVariant simplyAct(const QVariantList &args, const menu::TaskId &taskId) final;
 
 private:
 

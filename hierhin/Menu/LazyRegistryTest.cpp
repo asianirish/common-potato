@@ -10,9 +10,10 @@ LazyRegistryTest::LazyRegistryTest()
 
 }
 
-QVariant LazyRegistryTest::simplyAct(const QVariantList &args)
+QVariant LazyRegistryTest::simplyAct(const QVariantList &args, const menu::TaskId &taskId)
 {
     Q_UNUSED(args)
+    Q_UNUSED(taskId)
 
     LazyRegistry<int, QString> lr;
 

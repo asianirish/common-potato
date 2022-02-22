@@ -17,9 +17,10 @@ LauncherTest::~LauncherTest()
     }
 }
 
-QVariant LauncherTest::simplyAct(const QVariantList &args)
+QVariant LauncherTest::simplyAct(const QVariantList &args, const TaskId &taskId)
 {
     Q_UNUSED(args)
+    Q_UNUSED(taskId)
 
     _threadLauncher->launch("menu::math::Inc", {120}, nullptr);
     _threadLauncher->launch("menu::math::Div", {132, 4}, nullptr);

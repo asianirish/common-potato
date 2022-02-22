@@ -8,8 +8,10 @@ BuildPhrase::BuildPhrase()
 
 }
 
-QVariant BuildPhrase::simplyAct(const QVariantList &args)
+QVariant BuildPhrase::simplyAct(const QVariantList &args, const TaskId &taskId)
 {
+    Q_UNUSED(taskId)
+
     QString retStr = QString("%1 %2 y.o. from %3 likes %4").arg(args.at(0).toString(),
                                                                 args.at(1).toString(),
                                                                 args.at(2).toString(),

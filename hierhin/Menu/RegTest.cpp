@@ -13,9 +13,10 @@ RegTest::RegTest()
 
 }
 
-QVariant RegTest::simplyAct(const QVariantList &args)
+QVariant RegTest::simplyAct(const QVariantList &args, const menu::TaskId &taskId)
 {
     Q_UNUSED(args)
+    Q_UNUSED(taskId)
 
     auto lnch0 = ObjectRegistry<int, menu::Launcher>::ptr(0);
     auto lnch1 = ObjectRegistry<int, menu::Launcher>::ptr(1);
