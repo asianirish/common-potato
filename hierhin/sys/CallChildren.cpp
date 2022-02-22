@@ -9,6 +9,11 @@ CallChildren::CallChildren()
 
 }
 
+bool CallChildren::isSync() const
+{
+    return false;
+}
+
 menu::def::ActionDef CallChildren::actionDef() const
 {
     menu::def::ActionDef def;
@@ -27,8 +32,18 @@ QVariant CallChildren::actNodeImpl(const QVariantList &args, Node *node)
         child->execute(innerMethod, _innerArgs);
     }
 
+
     //TODO: what to return?
     return true;
+}
+
+void CallChildren::onChildReady(const menu::TaskId &taskId)
+{
+    //TODO: implement
+    //...
+//    Result result;
+//    result.setTaskId(_taskId);
+//TODO:    emit ready(result);
 }
 
 } // namespace sys
