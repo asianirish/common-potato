@@ -10,16 +10,13 @@ class SimpleAction : public Action
 public:
     SimpleAction();
 
-    bool isSync() const;
-    void setIsSync(bool newIsSync);
-
 protected:
     virtual QVariant simplyAct(const QVariantList &args, const TaskId &taskId) = 0;
 
+    virtual bool isSync() const;
+
 private:
     void actSpecific(const QVariantList &args, const TaskId &taskId) final;
-
-    bool _isSync;
 
 };
 

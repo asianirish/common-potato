@@ -2,14 +2,19 @@
 
 namespace menu {
 
-SimpleAction::SimpleAction() : _isSync(true)
+SimpleAction::SimpleAction()
 {
 
 }
 
+bool SimpleAction::isSync() const
+{
+    return true;
+}
+
 void SimpleAction::actSpecific(const QVariantList &args, const TaskId &taskId)
 {
-    if (_isSync) {
+    if (isSync()) {
         Result result(simplyAct(args, taskId));
         result.setTaskId(taskId);
         emit ready(result);
@@ -18,14 +23,5 @@ void SimpleAction::actSpecific(const QVariantList &args, const TaskId &taskId)
     }
 }
 
-bool SimpleAction::isSync() const
-{
-    return _isSync;
-}
-
-void SimpleAction::setIsSync(bool newIsSync)
-{
-    _isSync = newIsSync;
-}
 
 } // namespace menu
