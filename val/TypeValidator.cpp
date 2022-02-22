@@ -24,8 +24,7 @@ bool TypeValidator::validate(const QVariant &value) const
 
 QString TypeValidator::errorMessage() const
 {
-    //TODO: implement
-    return QString();
+    return QString("incompatible type QMetaType::Type: %1, User type: %2").arg(_type).arg(_userType);
 }
 
 QMetaType::Type TypeValidator::type() const
