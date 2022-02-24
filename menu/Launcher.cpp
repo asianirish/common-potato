@@ -90,7 +90,7 @@ void Launcher::onActionComplete(const Result &result)
         Error err;
         err.setCode(Error::WRONG_TASK_ID);
         QVariantMap mp;
-        mp.insert(tr("taskId"), result.taskId());
+        mp.insert(QString("taskId"), result.taskId());
         err.setContext(mp);
         emit error(err);
         return;
