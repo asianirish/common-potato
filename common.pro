@@ -272,5 +272,6 @@ SUBDIRS += \
     uniq/uniq.pro
 
 DISTFILES += \
+    LICENCE.txt \
     TODO.txt \
     fx.prf
