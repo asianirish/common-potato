@@ -51,7 +51,7 @@ void ActionThread::setTaskId(const TaskId &taskId)
     _taskId = taskId;
 }
 
-void ActionThread::onTestReady(const Result &result)
+void ActionThread::onTestReady(const menu::Result &result)
 {
     qDebug() << "ON_TEST_READY" << result.value().toString();
     emit ready(result);

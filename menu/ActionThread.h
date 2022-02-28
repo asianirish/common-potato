@@ -34,7 +34,7 @@ signals:
     void ready(const menu::Result &result);
 
 private slots:
-    void onTestReady(const Result &result); //TODO: fully-qualified
+    void onTestReady(const menu::Result &result); //TODO: fully-qualified
 };
 
 } // namespace menu
