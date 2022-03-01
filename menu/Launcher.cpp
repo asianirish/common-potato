@@ -40,7 +40,9 @@ void Launcher::launch(const QString &actionClassName, const QVariantList &args, 
     TaskId taskId = initAction(actionClassName, cnxtSetter);
 
     if (taskIdOut) {
-        *taskIdOut = taskId;
+        if (taskIdOut->isEmpty()) {
+            *taskIdOut = taskId;
+        }
     }
 
     Action *action = _pendingActions.value(taskId);
@@ -52,7 +54,9 @@ void Launcher::launch(const QString &actionClassName, const QVariantMap &namedAr
     TaskId taskId = initAction(actionClassName, cnxtSetter);
 
     if (taskIdOut) {
-        *taskIdOut = taskId;
+        if (taskIdOut->isEmpty()) {
+            *taskIdOut = taskId;
+        }
     }
 
     Action *action = _pendingActions.value(taskId);
