@@ -33,6 +33,8 @@ private:
 
 };
 
+typedef QSharedPointer<Action> ActionPtr;
+
 } // namespace menu
 
 #endif // MENU_ACTION_H
