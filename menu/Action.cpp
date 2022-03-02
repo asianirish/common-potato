@@ -14,6 +14,14 @@ void Action::act(const QVariantList &args, const TaskId &taskId, const Listeners
     auto actionDef = this->actionDef();
     auto err = actionDef.validate(args);
 
+    if (err) {
+        Result result;
+        result.setTaskId(taskId);
+        result.setError(err);
+        emit ready(result);
+        return;
+    }
+
     _listenerNum = listeners.size();
 
     if (_listenerNum) {
@@ -25,13 +33,7 @@ void Action::act(const QVariantList &args, const TaskId &taskId, const Listeners
         //TODO: allListenerHandled
     }
 
-    if (err) {
-        Result result;
-        result.setTaskId(taskId);
-//        result.setError(err);
-        emit ready(result);
-        return;
-    }
+
 
     QVariantList localArgs;
 
