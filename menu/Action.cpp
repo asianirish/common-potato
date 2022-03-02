@@ -19,16 +19,16 @@ void Action::act(const QVariantList &args, const TaskId &taskId, const Listeners
     if (_listenerNum) {
         for (auto listener : listeners) {
             connect(this, &Action::ready, listener, &ActionListener::handleResult);
-            //TODO: connect onAllListenersHandled
+            connect(listener, &ActionListener::handled, this, &Action::onListenerHandled);
         }
     } else {
-        //TODO: onAllListenersHandled
+        //TODO: allListenerHandled
     }
 
     if (err) {
         Result result;
         result.setTaskId(taskId);
-        result.setError(err);
+//        result.setError(err);
         emit ready(result);
         return;
     }
@@ -52,6 +52,15 @@ void Action::act(const QVariantMap &namedArgs, const TaskId &taskId, const Liste
 void Action::toPositionalArguments(const QVariantMap &namedArgs, QVariantList &posArgs)
 {
     actionDef().toPositionalArguments(namedArgs, posArgs);
+}
+
+void Action::onListenerHandled()
+{
+    _listenerNum--;
+
+    if (_listenerNum == 0) {
+        //TODO: emit allListenerHandled
+    }
 }
 
 

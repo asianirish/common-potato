@@ -34,6 +34,9 @@ private:
 
     virtual def::ActionDef actionDef() const = 0;
 
+private slots:
+    void onListenerHandled();
+
 };
 
 typedef QSharedPointer<Action> ActionPtr;
