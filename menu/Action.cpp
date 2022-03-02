@@ -29,6 +29,8 @@ void Action::act(const QVariantList &args, const TaskId &taskId, const Listeners
             connect(this, &Action::ready, listener, &ActionListener::handleResult);
             connect(listener, &ActionListener::handled, this, &Action::onListenerHandled);
         }
+    } else {
+        connect(this, &Action::ready, this, &Action::allListenersHandled);
     }
 
     QVariantList localArgs;
@@ -36,10 +38,6 @@ void Action::act(const QVariantList &args, const TaskId &taskId, const Listeners
     actionDef.addDefaultArgs(args, localArgs);
 
     actSpecific(localArgs, taskId);
-
-    if (!_listenerNum) {
-        emit allListenersHandled();
-    }
 }
 
 void Action::act(const QVariantMap &namedArgs, const TaskId &taskId, const Listeners &listeners)
@@ -55,12 +53,12 @@ void Action::toPositionalArguments(const QVariantMap &namedArgs, QVariantList &p
     actionDef().toPositionalArguments(namedArgs, posArgs);
 }
 
-void Action::onListenerHandled()
+void Action::onListenerHandled(const Result &result)
 {
     _listenerNum--;
 
     if (_listenerNum == 0) {
-        emit allListenersHandled();
+        emit allListenersHandled(result); //will be used the last result (same for all listeners)
     }
 }
 

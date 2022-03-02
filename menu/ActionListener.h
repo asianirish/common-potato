@@ -17,7 +17,7 @@ public:
     virtual void onErrorImpl(const menu::Error &error) = 0;
 
 signals:
-    void handled();
+    void handled(const menu::Result &result);
 public slots:
     //for both success and error
     void handleResult(const menu::Result &result);

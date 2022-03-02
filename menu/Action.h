@@ -29,7 +29,7 @@ private:
 signals:
     void ready(const menu::Result &result);
 
-    void allListenersHandled();
+    void allListenersHandled(const menu::Result &result); //TODO: use outside instead of ready
 
 private:
     virtual void actSpecific(const QVariantList &args, const TaskId &taskId) = 0;
@@ -37,7 +37,7 @@ private:
     virtual def::ActionDef actionDef() const = 0;
 
 private slots:
-    void onListenerHandled();
+    void onListenerHandled(const menu::Result &result);
 
 };
 
