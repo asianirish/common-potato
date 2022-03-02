@@ -16,11 +16,12 @@ void Action::act(const QVariantList &args, const TaskId &taskId, const Listeners
 
     _listenerNum = listeners.size();
 
-    //TODO: use listeners
-//    if (listener) {
-//        connect(this, &Action::ready, listener, &ActionListener::onReady);
-//        //TODO: connect error
-//    }
+    if (_listenerNum) {
+        for (auto listener : listeners) {
+            connect(this, &Action::ready, listener, &ActionListener::onReady);
+            //TODO: connect error
+        }
+    }
 
     if (err) {
         Result result;
