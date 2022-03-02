@@ -2,6 +2,7 @@
 #define MENU_TYPE_H
 
 #include <QSharedPointer>
+#include <QList>
 
 namespace menu {
 
@@ -10,6 +11,9 @@ typedef QSharedPointer<Action> ActionPtr;
 
 //TODO: TaskId class (?)
 typedef QString TaskId;
+
+class ActionListener;
+typedef QList<ActionListener *> Listeners;
 
 } // namespace menu
 
