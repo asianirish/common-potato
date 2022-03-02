@@ -7,7 +7,7 @@ ActionListener::ActionListener(QObject *parent) : QObject(parent)
 
 }
 
-void menu::ActionListener::onReady(const menu::Result &result)
+void menu::ActionListener::handleResult(const menu::Result &result)
 {
     onReadyImpl(result);
     emit handled();
