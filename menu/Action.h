@@ -17,11 +17,14 @@ class Action : public QObject
 public:
     explicit Action(QObject *parent = nullptr);
 
-    void act(const QVariantList &args, const TaskId &taskId);
+    void act(const QVariantList &args, const TaskId &taskId, const Listeners &listeners = Listeners());
 
-    void act(const QVariantMap &namedArgs, const TaskId &taskId);
+    void act(const QVariantMap &namedArgs, const TaskId &taskId, const Listeners &listeners = Listeners());
 
     void toPositionalArguments(const QVariantMap &namedArgs, QVariantList &posArgs);
+
+private:
+    int _listenerNum;
 
 signals:
     void ready(const menu::Result &result);
