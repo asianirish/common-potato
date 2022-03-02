@@ -19,9 +19,8 @@ public:
 signals:
     void handled();
 public slots:
+    //for both success and error
     void onReady(const menu::Result &result);
-
-    void onError(const menu::Error &error);
 };
 
 } // namespace menu

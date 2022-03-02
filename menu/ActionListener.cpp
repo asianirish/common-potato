@@ -13,11 +13,5 @@ void menu::ActionListener::onReady(const menu::Result &result)
     emit handled();
 }
 
-void ActionListener::onError(const Error &error)
-{
-    onErrorImpl(error);
-    emit handled();
-}
-
 
 }
