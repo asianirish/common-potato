@@ -29,11 +29,7 @@ void Action::act(const QVariantList &args, const TaskId &taskId, const Listeners
             connect(this, &Action::ready, listener, &ActionListener::handleResult);
             connect(listener, &ActionListener::handled, this, &Action::onListenerHandled);
         }
-    } else {
-        //TODO: allListenerHandled
     }
-
-
 
     QVariantList localArgs;
 
@@ -41,6 +37,9 @@ void Action::act(const QVariantList &args, const TaskId &taskId, const Listeners
 
     actSpecific(localArgs, taskId);
 
+    if (!_listenerNum) {
+        emit allListenersHandled();
+    }
 }
 
 void Action::act(const QVariantMap &namedArgs, const TaskId &taskId, const Listeners &listeners)
@@ -61,7 +60,7 @@ void Action::onListenerHandled()
     _listenerNum--;
 
     if (_listenerNum == 0) {
-        //TODO: emit allListenerHandled
+        emit allListenersHandled();
     }
 }
 

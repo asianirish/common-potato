@@ -29,6 +29,8 @@ private:
 signals:
     void ready(const menu::Result &result);
 
+    void allListenersHandled();
+
 private:
     virtual void actSpecific(const QVariantList &args, const TaskId &taskId) = 0;
 
