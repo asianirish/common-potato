@@ -8,15 +8,16 @@ Action::Action(QObject *parent) : QObject(parent)
 
 }
 
-void Action::act(const QVariantList &args, const TaskId &taskId, ActionListener *listener)
+void Action::act(const QVariantList &args, const TaskId &taskId)
 {
     auto actionDef = this->actionDef();
     auto err = actionDef.validate(args);
 
-    if (listener) {
-        connect(this, &Action::ready, listener, &ActionListener::onReady);
-        //TODO: connect error
-    }
+    //TODO: use _listeners
+//    if (listener) {
+//        connect(this, &Action::ready, listener, &ActionListener::onReady);
+//        //TODO: connect error
+//    }
 
     if (err) {
         Result result;
@@ -34,12 +35,12 @@ void Action::act(const QVariantList &args, const TaskId &taskId, ActionListener 
 
 }
 
-void Action::act(const QVariantMap &namedArgs, const TaskId &taskId, ActionListener *listener)
+void Action::act(const QVariantMap &namedArgs, const TaskId &taskId)
 {
     QVariantList args;
     actionDef().toPositionalArguments(namedArgs, args);
 
-    act(args, taskId, listener);
+    act(args, taskId);
 }
 
 void Action::toPositionalArguments(const QVariantMap &namedArgs, QVariantList &posArgs)

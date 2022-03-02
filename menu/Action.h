@@ -17,9 +17,9 @@ class Action : public QObject
 public:
     explicit Action(QObject *parent = nullptr);
 
-    void act(const QVariantList &args, const TaskId &taskId, ActionListener *listener = nullptr);
+    void act(const QVariantList &args, const TaskId &taskId);
 
-    void act(const QVariantMap &namedArgs, const TaskId &taskId, ActionListener *listener = nullptr);
+    void act(const QVariantMap &namedArgs, const TaskId &taskId);
 
     void toPositionalArguments(const QVariantMap &namedArgs, QVariantList &posArgs);
 
