@@ -90,5 +90,5 @@ void ChildTest::onReady(const QVariant value, const menu::TaskId &taskId)
         qDebug().noquote() << "CHILD:" << child->toJson();
     }
 
-    emit ready(menu::Result(true));
+    emit done(menu::Result(true));
 }

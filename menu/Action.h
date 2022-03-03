@@ -27,7 +27,7 @@ private:
     int _listenerNum;
 
 signals:
-    void ready(const menu::Result &result);
+    void done(const menu::Result &result);
 
     void allListenersHandled(const menu::Result &result);
 

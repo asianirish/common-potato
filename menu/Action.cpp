@@ -18,7 +18,7 @@ void Action::act(const QVariantList &args, const TaskId &taskId, const Listeners
         Result result;
         result.setTaskId(taskId);
         result.setError(err);
-        emit ready(result);
+        emit done(result);
         return;
     }
 
@@ -26,11 +26,11 @@ void Action::act(const QVariantList &args, const TaskId &taskId, const Listeners
 
     if (_listenerNum) {
         for (auto listener : listeners) {
-            connect(this, &Action::ready, listener, &ActionListener::handleResult);
+            connect(this, &Action::done, listener, &ActionListener::handleResult);
             connect(listener, &ActionListener::handled, this, &Action::onListenerHandled);
         }
     } else {
-        connect(this, &Action::ready, this, &Action::allListenersHandled);
+        connect(this, &Action::done, this, &Action::allListenersHandled);
     }
 
     QVariantList localArgs;

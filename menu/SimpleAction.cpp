@@ -17,7 +17,7 @@ void SimpleAction::actSpecific(const QVariantList &args, const TaskId &taskId)
     if (isSync()) {
         Result result(simplyAct(args, taskId));
         result.setTaskId(taskId);
-        emit ready(result);
+        emit done(result);
     } else {
         simplyAct(args, taskId);
     }
