@@ -29,7 +29,7 @@ private:
 signals:
     void done(const menu::Result &result);
 
-    void allListenersHandled(const menu::Result &result);
+    void complete(const menu::Result &result);
 
 private:
     virtual void actSpecific(const QVariantList &args, const TaskId &taskId) = 0;

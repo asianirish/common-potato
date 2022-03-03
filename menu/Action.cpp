@@ -30,7 +30,7 @@ void Action::act(const QVariantList &args, const TaskId &taskId, const Listeners
             connect(listener, &ActionListener::handled, this, &Action::onListenerHandled);
         }
     } else {
-        connect(this, &Action::done, this, &Action::allListenersHandled);
+        connect(this, &Action::done, this, &Action::complete);
     }
 
     QVariantList localArgs;
@@ -58,7 +58,7 @@ void Action::onListenerHandled(const Result &result)
     _listenerNum--;
 
     if (_listenerNum == 0) {
-        emit allListenersHandled(result); //will be used the last result (same for all listeners)
+        emit complete(result); //will be used the last result (same for all listeners)
     }
 }
 
