@@ -120,6 +120,7 @@ HEADERS += \
     menu/Result.h \
     menu/SimpleAction.h \
     menu/SyncLauncher.h \
+    menu/TaskInfo.h \
     menu/ThisAppClassRegistry.h \
     menu/ThreadLauncher.h \
     menu/def/ActionDef.h \
@@ -240,6 +241,7 @@ SOURCES += \
     menu/Result.cpp \
     menu/SimpleAction.cpp \
     menu/SyncLauncher.cpp \
+    menu/TaskInfo.cpp \
     menu/ThisAppClassRegistry.cpp \
     menu/ThreadLauncher.cpp \
     menu/def/ActionDef.cpp \

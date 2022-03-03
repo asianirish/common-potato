@@ -52,6 +52,7 @@ HEADERS += \
     Result.h \
     SimpleAction.h \
     SyncLauncher.h \
+    TaskInfo.h \
     ThisAppClassRegistry.h \
     ThreadLauncher.h \
     def/ActionDef.h \
@@ -82,6 +83,7 @@ SOURCES += \
     Result.cpp \
     SimpleAction.cpp \
     SyncLauncher.cpp \
+    TaskInfo.cpp \
     ThisAppClassRegistry.cpp \
     ThreadLauncher.cpp \
     def/ActionDef.cpp \
