@@ -30,6 +30,8 @@ public:
 protected:
     virtual void launchImpl(Action *action, const QVariantList &args, const TaskId &taskId) = 0;
 
+    void onActionComplete(const menu::Result &result);
+
 private:
     QMap<TaskId, Action *> _pendingActions;
 
@@ -41,9 +43,6 @@ private:
 signals:
     void ready(const QVariant &result, const menu::TaskId &taskId);
     void error(const menu::Error &error);
-
-protected:
-    void onActionComplete(const menu::Result &result);
 
 };
 
