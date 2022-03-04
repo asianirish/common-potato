@@ -31,6 +31,9 @@ signals:
 
     void complete(const menu::Result &result);
 
+private slots:
+    void emitCompleteDebug(const menu::Result &result);
+
 private:
     virtual void actSpecific(const QVariantList &args, const TaskId &taskId) = 0;
 

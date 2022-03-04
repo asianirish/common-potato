@@ -58,7 +58,7 @@ void ChildTest::actSpecific(const QVariantList &args, const menu::TaskId &taskId
         qDebug() << "REF_STR:" << refStr;
     }
 
-    qDebug() << "(1)\n======================================================\n";
+    qDebug() << "\n(1) ======================================================\n";
     qDebug() << "to json:";
     qDebug().noquote() << "NODE:" << _nd->toJson();
 
@@ -73,7 +73,7 @@ void ChildTest::onReady(const QVariant value, const menu::TaskId &taskId)
         return;
     }
 
-    qDebug() << "(2)\n======================================================\n";
+    qDebug() << "\n(2) ======================================================\n";
     qDebug() << "on GetChildren:";
     qDebug() << "TEST IS READY:" << taskId;
 
@@ -81,7 +81,7 @@ void ChildTest::onReady(const QVariant value, const menu::TaskId &taskId)
     qDebug().noquote() << "NODE:" << _nd->toJson();
 
 
-    qDebug() << "(3)\n======================================================\n\n";
+    qDebug() << "\n(3) ======================================================\n\n";
 
 //    QStringList lst = value.value<hierhin::IdList>();
     QList<nav::ItemRef> lst = value.value<QList<nav::ItemRef>>();

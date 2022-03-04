@@ -1,6 +1,8 @@
 #include "Action.h"
 #include "ActionListener.h"
 
+#include <QDebug>
+
 namespace menu {
 
 Action::Action(QObject *parent) : QObject(parent),
@@ -30,7 +32,7 @@ void Action::act(const QVariantList &args, const TaskId &taskId, const Listeners
             connect(listener, &ActionListener::handled, this, &Action::onListenerHandled);
         }
     } else {
-        connect(this, &Action::done, this, &Action::complete);
+        connect(this, &Action::done, this, &Action::emitCompleteDebug); //TODO: connect(this, &Action::done, this, &Action::complete);
     }
 
     QVariantList localArgs;
@@ -51,6 +53,12 @@ void Action::act(const QVariantMap &namedArgs, const TaskId &taskId, const Liste
 void Action::toPositionalArguments(const QVariantMap &namedArgs, QVariantList &posArgs)
 {
     actionDef().toPositionalArguments(namedArgs, posArgs);
+}
+
+void Action::emitCompleteDebug(const menu::Result &result)
+{
+    qDebug() << "DEBUG: EMITING COMPLETE" <<  QVariant::fromValue(result).toString();
+    emit complete(result);
 }
 
 void Action::onListenerHandled(const Result &result)
