@@ -25,11 +25,6 @@ QString stringListToString(const QStringList &lst) {
 
 namespace menu {
 
-const QString Launcher::DEFAULT_ACTION_ID_GENERATOR_CLASS_NAME("uniq::TimeQStringValue");
-
-potato_util::LazyPointer<uniq::Value<QString>> Launcher::_taskIdGen(Launcher::DEFAULT_ACTION_ID_GENERATOR_CLASS_NAME);
-
-
 Launcher::Launcher(QObject *parent) : QObject(parent)
 {
 
@@ -51,11 +46,6 @@ void Launcher::launch(const QString &actionClassName, const QVariantMap &namedAr
     QVariantList args;
     action->toPositionalArguments(namedArgs, args);
     launchImpl(action, args, taskInfo);
-}
-
-void Launcher::setTaskIdGenClassName(const QString &className)
-{
-    _taskIdGen.setClassName(className);
 }
 
 TaskId Launcher::initAction(const QString &actionClassName, ContextSetterPtr cnxtSetter, const TaskInfo &taskInfo)
