@@ -57,7 +57,9 @@ QVariant HandMadeLinkTest::simplyAct(const QVariantList &args, const menu::TaskI
     auto leftNode = _nd->childByRole("left");
     qDebug().noquote() << "NODE_A ID:" << leftNode->id();
 
-    leftNode->execute(METHOD_CLASS(sys::GetChildByRole), {LinkableEssence::DEFAULT_LINK_OWNER_ROLE}, &_getLinkOwnerId);
+    menu::TaskInfo taskInfo(&_getLinkOwnerId, menu::Listeners());
+
+    leftNode->execute(METHOD_CLASS(sys::GetChildByRole), {LinkableEssence::DEFAULT_LINK_OWNER_ROLE}, taskInfo);
 
     return true;
 }
@@ -71,7 +73,10 @@ void HandMadeLinkTest::onReady(const QVariant value, const menu::TaskId &taskId)
         qDebug().noquote() << "ON_READY GET LINK OWNER" << linkOwnerNode->toJson() << taskId;
 
         connect(linkOwnerNode->launcher().get(), &menu::Launcher::ready, this, &HandMadeLinkTest::onReady);
-        linkOwnerNode->execute(METHOD_CLASS(sys::GetChildren), {}, &_getLinksId);
+
+        menu::TaskInfo taskInfo(&_getLinksId, menu::Listeners());
+
+        linkOwnerNode->execute(METHOD_CLASS(sys::GetChildren), {}, taskInfo);
     } else if (taskId == _getLinksId){
         qDebug().noquote() << "ON_READY GET LINKS" << value << taskId;
 

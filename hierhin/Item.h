@@ -6,6 +6,7 @@
 #include "ItemCreator.h"
 #include "nav/Path.h"
 #include "Essence.h"
+#include "menu/TaskInfo.h"
 
 #include <util/LazyPointer.h>
 #include <uniq/Value.h>
@@ -53,7 +54,7 @@ public:
 
     void addValue(const QString &name, const QVariant &value); //for a list type
 
-    void execute(const QString &method, const QVariantList &args = QVariantList(), menu::TaskId *taskIdOut = nullptr);
+    void execute(const QString &method, const QVariantList &args = QVariantList(), const menu::TaskInfo &taskInfo = menu::TaskInfo());
 
     def::NodeDef definition() const;
 

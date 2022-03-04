@@ -11,7 +11,7 @@ public:
     ThreadLauncher();
 
 protected:
-    void launchImpl(Action *action, const QVariantList &args, const TaskId &taskId) override;
+    void launchImpl(Action *action, const QVariantList &args, const TaskInfo &taskInfo = TaskInfo()) override;
 
 };
 

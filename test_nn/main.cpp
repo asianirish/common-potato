@@ -4,6 +4,13 @@
 #include <QCoreApplication>
 #include <QSharedPointer>
 #include <QTimer>
+#include <QDebug>
+
+QString useString(QString &str) {
+    str = "HELLO";
+    qDebug() << "STRING:" << str;
+    return str;
+}
 
 
 using namespace std;
@@ -11,6 +18,8 @@ using namespace std;
 int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
+
+    useString(QString());
 
     NNClassRegistry reg;
     reg.registerAllClasses();

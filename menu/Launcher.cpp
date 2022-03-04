@@ -35,34 +35,22 @@ Launcher::Launcher(QObject *parent) : QObject(parent)
 
 }
 
-void Launcher::launch(const QString &actionClassName, const QVariantList &args, ContextSetterPtr cnxtSetter, TaskId *taskIdOut)
+void Launcher::launch(const QString &actionClassName, const QVariantList &args, ContextSetterPtr cnxtSetter, const TaskInfo &taskInfo)
 {
-    TaskId taskId = initAction(actionClassName, cnxtSetter);
-
-    if (taskIdOut) {
-        if (taskIdOut->isEmpty()) {
-            *taskIdOut = taskId;
-        }
-    }
+    TaskId taskId = initAction(actionClassName, cnxtSetter, taskInfo);
 
     Action *action = _pendingActions.value(taskId);
-    launchImpl(action, args, taskId);
+    launchImpl(action, args, taskInfo);
 }
 
-void Launcher::launch(const QString &actionClassName, const QVariantMap &namedArgs, ContextSetterPtr cnxtSetter, TaskId *taskIdOut)
+void Launcher::launch(const QString &actionClassName, const QVariantMap &namedArgs, ContextSetterPtr cnxtSetter, const TaskInfo &taskInfo)
 {
-    TaskId taskId = initAction(actionClassName, cnxtSetter);
-
-    if (taskIdOut) {
-        if (taskIdOut->isEmpty()) {
-            *taskIdOut = taskId;
-        }
-    }
+    TaskId taskId = initAction(actionClassName, cnxtSetter, TaskInfo());
 
     Action *action = _pendingActions.value(taskId);
     QVariantList args;
     action->toPositionalArguments(namedArgs, args);
-    launchImpl(action, args, taskId);
+    launchImpl(action, args, taskInfo);
 }
 
 void Launcher::setTaskIdGenClassName(const QString &className)
@@ -70,7 +58,7 @@ void Launcher::setTaskIdGenClassName(const QString &className)
     _taskIdGen.setClassName(className);
 }
 
-TaskId Launcher::initAction(const QString &actionClassName, ContextSetterPtr cnxtSetter)
+TaskId Launcher::initAction(const QString &actionClassName, ContextSetterPtr cnxtSetter, const TaskInfo &taskInfo)
 {
     // will delete in Launcher::onActionComplete
     Action *action = potato_util::Factory<Action>::create(actionClassName.toStdString());
@@ -79,7 +67,7 @@ TaskId Launcher::initAction(const QString &actionClassName, ContextSetterPtr cnx
         cnxtSetter->setActionContext(action);
     }
 
-    QString taskId = _taskIdGen->value();
+    QString taskId = taskInfo.taskId();
     //TODO: convert string taskId to TaskId class here
     _pendingActions.insert(taskId, action);
 

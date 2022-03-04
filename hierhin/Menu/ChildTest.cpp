@@ -62,7 +62,9 @@ void ChildTest::actSpecific(const QVariantList &args, const menu::TaskId &taskId
     qDebug() << "to json:";
     qDebug().noquote() << "NODE:" << _nd->toJson();
 
-    _nd->execute(METHOD_CLASS(sys::GetChildren), QVariantList(), &_taskId);
+    menu::TaskInfo taskInfo(&_taskId, menu::Listeners());
+
+    _nd->execute(METHOD_CLASS(sys::GetChildren), QVariantList(), taskInfo);
 }
 
 void ChildTest::onReady(const QVariant value, const menu::TaskId &taskId)

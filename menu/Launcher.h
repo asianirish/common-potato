@@ -4,6 +4,7 @@
 #include "Result.h"
 #include "type.h"
 #include "ContextSetter.h"
+#include "TaskInfo.h"
 
 #include <util/LazyPointer.h>
 #include <uniq/Value.h>
@@ -22,13 +23,13 @@ public:
 
     explicit Launcher(QObject *parent = nullptr);
 
-    void launch(const QString &actionClassName, const QVariantList &args, ContextSetterPtr cnxtSetter, TaskId *taskIdOut = nullptr);
-    void launch(const QString &actionClassName, const QVariantMap &namedArgs, ContextSetterPtr cnxtSetter, TaskId *taskIdOut = nullptr);
+    void launch(const QString &actionClassName, const QVariantList &args, ContextSetterPtr cnxtSetter, const TaskInfo &taskInfo = TaskInfo());
+    void launch(const QString &actionClassName, const QVariantMap &namedArgs, ContextSetterPtr cnxtSetter, const TaskInfo &taskInfo = TaskInfo());
 
     [[deprecated]] static void setTaskIdGenClassName(const QString &className);
 
 protected:
-    virtual void launchImpl(Action *action, const QVariantList &args, const TaskId &taskId) = 0;
+    virtual void launchImpl(Action *action, const QVariantList &args, const TaskInfo &taskInfo = TaskInfo()) = 0;
 
     void onActionComplete(const menu::Result &result);
 
@@ -38,7 +39,7 @@ private:
     //TODO: use QString as generated value but convert to TaskId
     [[deprecated]] static potato_util::LazyPointer<uniq::Value<QString>> _taskIdGen;
 
-    TaskId initAction(const QString &actionClassName, ContextSetterPtr cnxtSetter);
+    TaskId initAction(const QString &actionClassName, ContextSetterPtr cnxtSetter, const TaskInfo &taskInfo);
 
 signals:
     void ready(const QVariant &result, const menu::TaskId &taskId);

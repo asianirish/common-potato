@@ -178,7 +178,7 @@ void Item::addValue(const QString &name, const QVariant &value)
     }
 }
 
-void Item::execute(const QString &command, const QVariantList &args, menu::TaskId *taskIdOut)
+void Item::execute(const QString &command, const QVariantList &args, const menu::TaskInfo &taskInfo)
 {
     auto essence = essencePtr();
     auto lnch = launcher();
@@ -198,7 +198,7 @@ void Item::execute(const QString &command, const QVariantList &args, menu::TaskI
         itemContextSetter->setItem(this);
         auto cntx = menu::ContextSetterPtr(itemContextSetter);
 
-       lnch->launch(command, args, cntx, taskIdOut);
+       lnch->launch(command, args, cntx, taskInfo);
        return;
     }
 
