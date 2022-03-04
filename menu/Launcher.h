@@ -25,7 +25,7 @@ public:
     void launch(const QString &actionClassName, const QVariantList &args, ContextSetterPtr cnxtSetter, TaskId *taskIdOut = nullptr);
     void launch(const QString &actionClassName, const QVariantMap &namedArgs, ContextSetterPtr cnxtSetter, TaskId *taskIdOut = nullptr);
 
-    static void setTaskIdGenClassName(const QString &className);
+    [[deprecated]] static void setTaskIdGenClassName(const QString &className);
 
 protected:
     virtual void launchImpl(Action *action, const QVariantList &args, const TaskId &taskId) = 0;
@@ -36,7 +36,7 @@ private:
     QMap<TaskId, Action *> _pendingActions;
 
     //TODO: use QString as generated value but convert to TaskId
-    static potato_util::LazyPointer<uniq::Value<QString>> _taskIdGen;
+    [[deprecated]] static potato_util::LazyPointer<uniq::Value<QString>> _taskIdGen;
 
     TaskId initAction(const QString &actionClassName, ContextSetterPtr cnxtSetter);
 

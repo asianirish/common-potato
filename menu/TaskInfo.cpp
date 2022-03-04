@@ -4,6 +4,8 @@ namespace menu {
 
 const QString TaskInfo::DEFAULT_ACTION_ID_GENERATOR_CLASS_NAME("uniq::TimeQStringValue");
 
+potato_util::LazyPointer<uniq::Value<QString>> TaskInfo::_taskIdGen(TaskInfo::DEFAULT_ACTION_ID_GENERATOR_CLASS_NAME);
+
 TaskInfo::TaskInfo()
 {
 
@@ -27,6 +29,11 @@ const TaskId &TaskInfo::taskId() const
 const Listeners &TaskInfo::listeners() const
 {
     return _listeners;
+}
+
+void TaskInfo::setTaskIdGenClassName(const QString &className)
+{
+    _taskIdGen.setClassName(className);
 }
 
 TaskId TaskInfo::genTaskId() const

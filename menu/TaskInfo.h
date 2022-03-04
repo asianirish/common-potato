@@ -3,6 +3,9 @@
 
 #include "type.h"
 
+#include <util/LazyPointer.h>
+#include <uniq/Value.h>
+
 namespace menu {
 
 class TaskInfo
@@ -17,9 +20,14 @@ public:
 
     const Listeners &listeners() const;
 
+    static void setTaskIdGenClassName(const QString &className);
+
 private:
     TaskId _taskId;
     Listeners _listeners;
+
+    //TODO: use QString as generated value but convert to TaskId
+    static potato_util::LazyPointer<uniq::Value<QString>> _taskIdGen;
 
     TaskId genTaskId() const;
 };
