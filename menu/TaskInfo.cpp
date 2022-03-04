@@ -17,6 +17,16 @@ TaskInfo::TaskInfo(TaskId &taskId, const Listeners &listeners) : _listeners(list
     }
 }
 
+const TaskId &TaskInfo::taskId() const
+{
+    return _taskId;
+}
+
+const Listeners &TaskInfo::listeners() const
+{
+    return _listeners;
+}
+
 TaskId TaskInfo::genTaskId() const
 {
     //TODO: implement
