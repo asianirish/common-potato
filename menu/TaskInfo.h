@@ -15,6 +15,7 @@ public:
 
     TaskInfo();
     TaskInfo(TaskId &taskId, const Listeners &listeners);
+    TaskInfo(TaskId *taskId, const Listeners &listeners);
 
     const TaskId &taskId() const;
 

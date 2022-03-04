@@ -21,6 +21,18 @@ TaskInfo::TaskInfo(TaskId &taskId, const Listeners &listeners) : _listeners(list
     }
 }
 
+TaskInfo::TaskInfo(TaskId *taskId, const Listeners &listeners) : _listeners(listeners)
+{
+    if (taskId) {
+        if (taskId->isEmpty()) {
+            _taskId = genTaskId();
+            *taskId = _taskId;
+        } else {
+            _taskId = *taskId;
+        }
+    }
+}
+
 const TaskId &TaskInfo::taskId() const
 {
     return _taskId;
