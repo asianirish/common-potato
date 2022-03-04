@@ -18,7 +18,7 @@ class Launcher : public QObject
 {
     Q_OBJECT
 public:
-    static const QString DEFAULT_ACTION_ID_GENERATOR_CLASS_NAME;
+    [[deprecated]] static const QString DEFAULT_ACTION_ID_GENERATOR_CLASS_NAME;
 
     explicit Launcher(QObject *parent = nullptr);
 

@@ -2,6 +2,8 @@
 
 namespace menu {
 
+const QString TaskInfo::DEFAULT_ACTION_ID_GENERATOR_CLASS_NAME("uniq::TimeQStringValue");
+
 TaskInfo::TaskInfo()
 {
 

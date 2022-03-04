@@ -8,6 +8,8 @@ namespace menu {
 class TaskInfo
 {
 public:
+    static const QString DEFAULT_ACTION_ID_GENERATOR_CLASS_NAME;
+
     TaskInfo();
     TaskInfo(TaskId &taskId, const Listeners &listeners);
 
