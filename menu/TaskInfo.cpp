@@ -38,8 +38,7 @@ void TaskInfo::setTaskIdGenClassName(const QString &className)
 
 TaskId TaskInfo::genTaskId() const
 {
-    //TODO: implement
-    return TaskId();
+    return _taskIdGen->value();
 }
 
 } // namespace menu
