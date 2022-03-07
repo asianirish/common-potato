@@ -49,6 +49,7 @@ HEADERS += \
     Launcher.h \
     LineCommandTranslator.h \
     Menu.h \
+    RedirectActionListener.h \
     Result.h \
     SimpleAction.h \
     SyncLauncher.h \
@@ -80,6 +81,7 @@ SOURCES += \
     Launcher.cpp \
     LineCommandTranslator.cpp \
     Menu.cpp \
+    RedirectActionListener.cpp \
     Result.cpp \
     SimpleAction.cpp \
     SyncLauncher.cpp \
