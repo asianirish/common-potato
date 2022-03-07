@@ -2,6 +2,7 @@
 #define CHILDTEST_H
 
 #include <menu/SimpleAction.h>
+#include <menu/RedirectActionListener.h>
 #include <hierhin/type.h>
 
 class ChildTest : public menu::/*Simple*/Action
@@ -20,9 +21,11 @@ private:
 
     hierhin::NodePtr _nd;
     QString _taskId;
+    menu::RedirectActionListener *_listener;
 
 private slots:
     void onReady(const QVariant value, const menu::TaskId &taskId);
+    void onReadyResult(const menu::Result &result);
 };
 
 #endif // CHILDTEST_H
