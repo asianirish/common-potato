@@ -40,7 +40,7 @@ void Launcher::launch(const QString &actionClassName, const QVariantList &args, 
 
 void Launcher::launch(const QString &actionClassName, const QVariantMap &namedArgs, ContextSetterPtr cnxtSetter, const TaskInfo &taskInfo)
 {
-    TaskId taskId = initAction(actionClassName, cnxtSetter, TaskInfo());
+    TaskId taskId = initAction(actionClassName, cnxtSetter, taskInfo);
 
     Action *action = _pendingActions.value(taskId);
     QVariantList args;
