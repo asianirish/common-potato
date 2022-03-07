@@ -1,6 +1,7 @@
 #include "Launcher.h"
 #include "Action.h"
 #include "ContextSetter.h"
+#include "ActionListener.h"
 
 #include <util/Factory.h>
 #include <hierhin/type.h>
@@ -55,6 +56,11 @@ TaskId Launcher::initAction(const QString &actionClassName, ContextSetterPtr cnx
 
     if (cnxtSetter) {
         cnxtSetter->setActionContext(action);
+    }
+
+    auto listeners = taskInfo.listeners();
+    for (auto lsr : listeners) {
+        connect(action, &Action::complete, lsr, &ActionListener::handleResult);
     }
 
     QString taskId = taskInfo.taskId();
