@@ -7,6 +7,7 @@ namespace menu {
 
 class RedirectActionListener : public ActionListener
 {
+    Q_OBJECT
 public:
     explicit RedirectActionListener(QObject *parent = nullptr);
 
