@@ -10,12 +10,12 @@ RedirectActionListener::RedirectActionListener(QObject *parent)
 
 void RedirectActionListener::onReadyImpl(const Result &result)
 {
-    emit ready(result);
+    Q_UNUSED(result)
 }
 
 void RedirectActionListener::onErrorImpl(const Error &err)
 {
-    emit error(err);
+    Q_UNUSED(err)
 }
 
 } // namespace menu
