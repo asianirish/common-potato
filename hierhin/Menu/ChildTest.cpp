@@ -42,8 +42,8 @@ ChildTest::ChildTest()
     ndD->setProperty("name", "Daisy");
 
 //    connect(_nd->launcher().get(), &menu::Launcher::ready, this, &ChildTest::onReady);
-    _listener = new menu::RedirectActionListener(this);
-    connect(_listener, &menu::RedirectActionListener::handled, this, &ChildTest::onReadyResult);
+    _listener = new menu::Redirector(this);
+    connect(_listener, &menu::Redirector::handled, this, &ChildTest::onReadyResult);
 }
 
 void ChildTest::actSpecific(const QVariantList &args, const menu::TaskId &taskId)

@@ -5,11 +5,11 @@
 
 namespace menu {
 
-class RedirectActionListener : public ActionListener
+class Redirector : public ActionListener
 {
     Q_OBJECT
 public:
-    explicit RedirectActionListener(QObject *parent = nullptr);
+    explicit Redirector(QObject *parent = nullptr);
 
     void onReadyImpl(const menu::Result &result) override;
     void onErrorImpl(const menu::Error &err) override;
