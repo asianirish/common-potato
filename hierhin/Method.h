@@ -26,7 +26,7 @@ protected:
 private:
     Item *_item;
 
-    virtual QVariant actImpl(const QVariantList &args, Item *item) = 0;
+    virtual QVariant actImpl(const QVariantList &args, Item *item, const menu::TaskId &taskId) = 0;
 };
 
 #define METHOD_CLASS(className) className::checkMethodClass(#className)

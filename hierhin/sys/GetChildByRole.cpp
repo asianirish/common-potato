@@ -25,7 +25,7 @@ menu::def::ActionDef GetChildByRole::actionDef() const
     return aDef;
 }
 
-QVariant GetChildByRole::actNodeImpl(const QVariantList &args, Node *node)
+QVariant GetChildByRole::actNodeImpl(const QVariantList &args, Node *node, const menu::TaskId &taskId)
 {
     Role role = args.at(0).toString();
     auto child = node->childByRole(role);

@@ -20,13 +20,11 @@ void Method::setItem(Item *item)
 
 QVariant Method::simplyAct(const QVariantList &args, const menu::TaskId &taskId)
 {
-    Q_UNUSED(taskId)
-
     if (!_item) {
         throw ex::NoItem();
     }
 
-    return actImpl(args, _item);
+    return actImpl(args, _item, taskId);
 }
 
 } // namespace hierhin

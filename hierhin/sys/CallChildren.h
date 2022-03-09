@@ -17,9 +17,10 @@ protected:
 private:
     menu::def::ActionDef actionDef() const override;
 private:
-    QVariant actNodeImpl(const QVariantList &args, Node *node) override;
+    QVariant actNodeImpl(const QVariantList &args, Node *node, const menu::TaskId &taskId) override;
 
     QMap<menu::TaskId, ItemPtr> _taskIdToNode;
+    menu::TaskId _taskId;
 
 private slots:
     void onChildReady(const menu::Result &childResult);

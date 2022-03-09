@@ -25,8 +25,9 @@ menu::def::ActionDef CallChildren::actionDef() const
     return def;
 }
 
-QVariant CallChildren::actNodeImpl(const QVariantList &args, Node *node)
+QVariant CallChildren::actNodeImpl(const QVariantList &args, Node *node, const menu::TaskId &taskId)
 {
+    _taskId = taskId;
     auto children = node->children();
     auto innerArgs = args;
     auto innerMethod = innerArgs.takeFirst().toString();
@@ -59,9 +60,12 @@ void CallChildren::onChildReady(const menu::Result &childResult)
 
     //TODO: handle childResult to calcualte and emit a result
     //...
-//    Result result;
-//    result.setTaskId(_taskId);
-//TODO:    emit ready(result);
+
+    if (_taskIdToNode.isEmpty()) {
+        menu::Result result;
+        result.setTaskId(_taskId);
+        emit done(result);
+    }
 }
 
 } // namespace sys

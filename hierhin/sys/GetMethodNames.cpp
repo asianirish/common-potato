@@ -8,7 +8,7 @@ GetMethodNames::GetMethodNames()
 
 }
 
-QVariant GetMethodNames::actImpl(const QVariantList &args, Item *item)
+QVariant GetMethodNames::actImpl(const QVariantList &args, Item *item, const menu::TaskId &taskId)
 {
     Q_UNUSED(args)
     return item->essenceMethodNames();

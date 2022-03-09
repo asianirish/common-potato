@@ -8,7 +8,7 @@ GetClassName::GetClassName()
 
 }
 
-QVariant GetClassName::actImpl(const QVariantList &args, Item *item)
+QVariant GetClassName::actImpl(const QVariantList &args, Item *item, const menu::TaskId &taskId)
 {
     Q_UNUSED(args)
     return item->essenceClassName();

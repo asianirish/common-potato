@@ -17,7 +17,7 @@ private:
     }
 
 private:
-    QVariant actImpl(const QVariantList &args, Item *item) override;
+    QVariant actImpl(const QVariantList &args, Item *item, const menu::TaskId &taskId) override;
 };
 
 } // namespace sys

@@ -9,7 +9,7 @@ GetChildren::GetChildren()
 
 }
 
-QVariant GetChildren::actNodeImpl(const QVariantList &args, Node *node)
+QVariant GetChildren::actNodeImpl(const QVariantList &args, Node *node, const menu::TaskId &taskId)
 {
     Q_UNUSED(args);
 
