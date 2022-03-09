@@ -24,7 +24,7 @@ private:
     QMap<menu::TaskId, ItemPtr> _taskIdToNode;
 
 private slots:
-    void onChildReady(const menu::TaskId &taskId);
+    void onChildReady(const menu::Result &childResult);
 };
 
 } // namespace sys
