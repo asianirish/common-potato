@@ -48,7 +48,7 @@ void TaskInfo::setTaskIdGenClassName(const QString &className)
     _taskIdGen.setClassName(className);
 }
 
-TaskId TaskInfo::genTaskId() const
+TaskId TaskInfo::genTaskId()
 {
     return _taskIdGen->value();
 }

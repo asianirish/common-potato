@@ -23,6 +23,8 @@ public:
 
     static void setTaskIdGenClassName(const QString &className);
 
+    static TaskId genTaskId();
+
 private:
     TaskId _taskId;
     Listeners _listeners;
@@ -30,7 +32,7 @@ private:
     //TODO: use QString as generated value but convert to TaskId
     static potato_util::LazyPointer<uniq::Value<QString>> _taskIdGen;
 
-    TaskId genTaskId() const;
+
 };
 
 } // namespace menu
