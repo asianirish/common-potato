@@ -21,6 +21,8 @@ private:
 
     QVariantList _innerArgs; //TODO: not a member
 
+    QMap<menu::TaskId, ItemPtr> _taskIdToNode;
+
 private slots:
     void onChildReady(const menu::TaskId &taskId);
 };

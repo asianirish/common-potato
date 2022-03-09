@@ -1,5 +1,6 @@
 #include "CallChildren.h"
 #include "../Node.h"
+#include "menu/Redirector.h"
 
 namespace hierhin {
 namespace sys {
@@ -29,9 +30,19 @@ QVariant CallChildren::actNodeImpl(const QVariantList &args, Node *node)
     auto innerMethod = _innerArgs.takeFirst().toString();
 
     for (auto &child : children) {
-        child->execute(innerMethod, _innerArgs);
+        menu::TaskId taskId = menu::TaskInfo::genTaskId();
+        _taskIdToNode.insert(taskId, child);
     }
 
+    auto ids = _taskIdToNode.keys();
+    for (auto &taskId : ids) {
+        menu::ActionListener *listener = new menu::Redirector(this);
+        //TODO: connect the listener
+        menu::TaskInfo taskInfo(taskId, {listener});
+        auto child = _taskIdToNode.value(taskId);
+
+        child->execute(innerMethod, _innerArgs, taskInfo);
+    }
 
     //TODO: what to return?
     return true;
