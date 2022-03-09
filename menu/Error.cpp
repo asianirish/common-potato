@@ -52,6 +52,7 @@ void Error::addContext(const QString &key, const QVariant &value)
 void Error::clear()
 {
     _code = CODE::NO_MENU_ERROR;
+    _userCode = NO_USER_ERROR;
     _userDescription.clear();
     _context.clear();
 }
