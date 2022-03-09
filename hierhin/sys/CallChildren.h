@@ -19,8 +19,6 @@ private:
 private:
     QVariant actNodeImpl(const QVariantList &args, Node *node) override;
 
-    QVariantList _innerArgs; //TODO: not a member
-
     QMap<menu::TaskId, ItemPtr> _taskIdToNode;
 
 private slots:

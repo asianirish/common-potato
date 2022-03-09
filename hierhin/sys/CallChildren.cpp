@@ -28,8 +28,8 @@ menu::def::ActionDef CallChildren::actionDef() const
 QVariant CallChildren::actNodeImpl(const QVariantList &args, Node *node)
 {
     auto children = node->children();
-    _innerArgs = args;
-    auto innerMethod = _innerArgs.takeFirst().toString();
+    auto innerArgs = args;
+    auto innerMethod = innerArgs.takeFirst().toString();
 
     for (auto &child : children) {
         menu::TaskId taskId = menu::TaskInfo::genTaskId();
@@ -43,7 +43,7 @@ QVariant CallChildren::actNodeImpl(const QVariantList &args, Node *node)
         menu::TaskInfo taskInfo(taskId, {listener});
         auto child = _taskIdToNode.value(taskId);
 
-        child->execute(innerMethod, _innerArgs, taskInfo);
+        child->execute(innerMethod, innerArgs, taskInfo);
     }
 
     //TODO: what to return?
