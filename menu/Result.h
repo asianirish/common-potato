@@ -42,6 +42,8 @@ public:
     Error error() const;
     void setError(const Error &error);
 
+    bool isError() const;
+
 private:
     QVariant _value;
 

@@ -82,6 +82,11 @@ void Result::setError(const Error &error)
     _error = error;
 }
 
+bool Result::isError() const
+{
+    return _error;
+}
+
 menu::Result::operator QVariant()
 {
     if (!_error) {
