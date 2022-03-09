@@ -19,7 +19,7 @@ private:
 private:
     QVariant actNodeImpl(const QVariantList &args, Node *node) override;
 
-    QVariantList _innerArgs;
+    QVariantList _innerArgs; //TODO: not a member
 
 private slots:
     void onChildReady(const menu::TaskId &taskId);
