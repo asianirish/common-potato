@@ -2,6 +2,8 @@
 
 #include <hierhin/Method.h>
 #include <hierhin/sys/GetChildren.h>
+#include <hierhin/sys/CallChildren.h>
+#include <hierhin/sys/SetProperty.h>
 
 #include <type.h>
 
@@ -30,6 +32,8 @@ ChildTest::ChildTest()
     _nd->setEssenceClassName("TestEssenceAExt");
     ndA->setEssenceClassName("TestEssenceAExt");
     ndB->setEssenceClassName("TestEssenceB");
+    ndC->setEssenceClassName("TestEssenceAExt");
+    ndD->setEssenceClassName("TestEssenceB");
 
     _nd->addChild(ndA, "right");
     _nd->addChild(ndB, "left");
@@ -66,7 +70,15 @@ void ChildTest::actSpecific(const QVariantList &args, const menu::TaskId &taskId
 
     menu::TaskInfo taskInfo(&_taskId, {_listener});
 
-    _nd->execute(METHOD_CLASS(sys::GetChildren), QVariantList(), taskInfo);
+    try {
+    _nd->execute(METHOD_CLASS(sys::CallChildren),
+                 {
+                     METHOD_CLASS(sys::SetProperty), "name", "Asianirish"
+                 }
+                 , taskInfo);
+    } catch (const QString &err) {
+        qDebug() << "ERROR:" << err;
+    }
 }
 
 void ChildTest::onReady(const QVariant value, const menu::TaskId &taskId)
