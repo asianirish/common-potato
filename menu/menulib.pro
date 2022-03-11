@@ -62,6 +62,7 @@ HEADERS += \
     def/NotEqualConstraint.h \
     math/Div.h \
     math/Inc.h \
+    math/Sum.h \
     test/BuildPhrase.h \
     type.h \
     util/SetLanguage.h
@@ -94,6 +95,7 @@ SOURCES += \
     def/NotEqualConstraint.cpp \
     math/Div.cpp \
     math/Inc.cpp \
+    math/Sum.cpp \
     test/BuildPhrase.cpp \
     util/SetLanguage.cpp
 

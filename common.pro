@@ -130,6 +130,7 @@ HEADERS += \
     menu/def/NotEqualConstraint.h \
     menu/math/Div.h \
     menu/math/Inc.h \
+    menu/math/Sum.h \
     menu/test/BuildPhrase.h \
     menu/type.h \
     menu/util/SetLanguage.h \
@@ -252,6 +253,7 @@ SOURCES += \
     menu/def/NotEqualConstraint.cpp \
     menu/math/Div.cpp \
     menu/math/Inc.cpp \
+    menu/math/Sum.cpp \
     menu/test/BuildPhrase.cpp \
     menu/util/SetLanguage.cpp \
     uniq/CompactUuidValue.cpp \
