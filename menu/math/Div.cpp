@@ -13,7 +13,7 @@ QVariant Div::simplyAct(const QVariantList &args, const TaskId &taskId)
 {
     Q_UNUSED(taskId)
 
-    return args.at(0).toFloat() / args.at(1).toFloat();
+    return args.at(0).toDouble() / args.at(1).toDouble();
 }
 
 def::ActionDef Div::actionDef() const
