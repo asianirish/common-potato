@@ -73,7 +73,7 @@ void ChildTest::actSpecific(const QVariantList &args, const menu::TaskId &taskId
     try {
     _nd->execute(METHOD_CLASS(sys::CallChildren),
                  {
-                     METHOD_CLASS(sys::SetProperty), "name", "Asianirish"
+                     METHOD_CLASS(sys::SetProperty), QString(), "name", "Asianirish"
                  }
                  , taskInfo);
     } catch (const QString &err) {

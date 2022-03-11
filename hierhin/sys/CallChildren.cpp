@@ -32,6 +32,10 @@ QVariant CallChildren::actNodeImpl(const QVariantList &args, Node *node, const m
     auto innerArgs = args;
     auto innerMethod = innerArgs.takeFirst().toString();
 
+    if (!innerArgs.isEmpty()) {
+        _foldMethodName = innerArgs.takeFirst().toString();
+    }
+
     for (auto &child : children) {
         menu::TaskId taskId = menu::TaskInfo::genTaskId();
         _taskIdToNode.insert(taskId, child);
@@ -58,13 +62,16 @@ void CallChildren::onChildReady(const menu::Result &childResult)
 
     qDebug() << "CHILD IS READY CHILD_ID:" << item->id() << "TASK_ID:" << taskId;
 
-    //TODO: handle childResult to calcualte and emit a result
-    //...
-
     if (_taskIdToNode.isEmpty()) {
-        menu::Result result;
-        result.setTaskId(_taskId);
-        emit done(result);
+        if (_foldMethodName.isEmpty()) {
+            menu::Result result;
+            result.setTaskId(_taskId);
+            emit done(result);
+        } else {
+            //TODO: launch _foldMethodName
+            //...
+        }
+
     }
 }
 
