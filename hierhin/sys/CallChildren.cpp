@@ -60,6 +60,8 @@ void CallChildren::onChildReady(const menu::Result &childResult)
     auto taskId = childResult.taskId();
     auto item = _taskIdToNode.take(taskId);
 
+    //TODO: what if childResult.isError?
+
     qDebug() << "CHILD IS READY CHILD_ID:" << item->id() << "TASK_ID:" << taskId;
 
     if (_taskIdToNode.isEmpty()) {
@@ -68,10 +70,11 @@ void CallChildren::onChildReady(const menu::Result &childResult)
             result.setTaskId(_taskId);
             emit done(result);
         } else {
-            //TODO: launch _foldMethodName
+            //TODO: launch _foldMethodName with _childResults
             //...
         }
-
+    } else {
+        _childResults.append(childResult.value());
     }
 }
 

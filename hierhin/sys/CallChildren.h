@@ -22,6 +22,7 @@ private:
     QMap<menu::TaskId, ItemPtr> _taskIdToNode;
     menu::TaskId _taskId;
     QString _foldMethodName;
+    QVariantList _childResults;
 
 private slots:
     void onChildReady(const menu::Result &childResult);
