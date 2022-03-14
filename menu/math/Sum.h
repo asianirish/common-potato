@@ -1,7 +1,7 @@
 #ifndef MENU_MATH_SUM_H
 #define MENU_MATH_SUM_H
 
-#include <SimpleAction.h>
+#include "../SimpleAction.h"
 
 namespace menu {
 namespace math {
