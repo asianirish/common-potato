@@ -8,7 +8,7 @@ namespace menu {
 class ThreadLauncher : public Launcher
 {
 public:
-    ThreadLauncher();
+    explicit ThreadLauncher(QObject *parent = nullptr);
 
 protected:
     void launchImpl(Action *action, const QVariantList &args, const TaskInfo &taskInfo = TaskInfo()) override;

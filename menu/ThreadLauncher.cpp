@@ -5,7 +5,7 @@
 
 namespace menu {
 
-ThreadLauncher::ThreadLauncher()
+ThreadLauncher::ThreadLauncher(QObject *parent) : Launcher(parent)
 {
 
 }

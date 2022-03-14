@@ -8,7 +8,7 @@ namespace menu {
 class SyncLauncher : public Launcher
 {
 public:
-    SyncLauncher();
+    explicit SyncLauncher(QObject *parent = nullptr);
 
 protected:
     void launchImpl(Action *action, const QVariantList &args, const TaskInfo &taskInfo = TaskInfo()) override;

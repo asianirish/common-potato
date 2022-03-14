@@ -4,7 +4,7 @@
 
 namespace menu {
 
-SyncLauncher::SyncLauncher()
+SyncLauncher::SyncLauncher(QObject *parent) : Launcher(parent)
 {
 
 }
