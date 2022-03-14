@@ -60,6 +60,7 @@ HEADERS += \
     def/ArgDef.h \
     def/Constraint.h \
     def/NotEqualConstraint.h \
+    hof/Fold.h \
     math/Div.h \
     math/Inc.h \
     math/Sum.h \
@@ -93,6 +94,7 @@ SOURCES += \
     def/ArgDef.cpp \
     def/Constraint.cpp \
     def/NotEqualConstraint.cpp \
+    hof/Fold.cpp \
     math/Div.cpp \
     math/Inc.cpp \
     math/Sum.cpp \

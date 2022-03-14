@@ -128,6 +128,7 @@ HEADERS += \
     menu/def/ArgDef.h \
     menu/def/Constraint.h \
     menu/def/NotEqualConstraint.h \
+    menu/hof/Fold.h \
     menu/math/Div.h \
     menu/math/Inc.h \
     menu/math/Sum.h \
@@ -251,6 +252,7 @@ SOURCES += \
     menu/def/ArgDef.cpp \
     menu/def/Constraint.cpp \
     menu/def/NotEqualConstraint.cpp \
+    menu/hof/Fold.cpp \
     menu/math/Div.cpp \
     menu/math/Inc.cpp \
     menu/math/Sum.cpp \
