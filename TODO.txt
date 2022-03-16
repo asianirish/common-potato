@@ -1,4 +1,5 @@
 
+* Use Essence invokable methods instead of Method classes
 * ArgDef vs. PropertyDef
 * TaskId class with func name and args
 * ClassEssence, DynEssence and ClassNode (with 'inhertis' ref or link)
