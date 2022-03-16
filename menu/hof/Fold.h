@@ -2,6 +2,7 @@
 #define MENU_HOF_FOLD_H
 
 #include "SimpleAction.h"
+#include "Launcher.h"
 
 namespace menu {
 namespace hof {
@@ -20,6 +21,7 @@ private:
 
     QVariant _acc;
     TaskId _taskId;
+    Launcher *_launcher;
 
 };
 

@@ -4,7 +4,7 @@
 namespace menu {
 namespace hof {
 
-Fold::Fold()
+Fold::Fold() : _launcher(new SyncLauncher(this))
 {
 
 }
@@ -15,8 +15,11 @@ QVariant Fold::simplyAct(const QVariantList &args, const TaskId &taskId)
     _acc = args.at(1);
     _taskId = taskId;
 
-//    Launcher *launcher = new SyncLauncher(this);
-//    launcher
+    TaskInfo info;
+    //TODO: set listeners
+//    info.setTaskIdGenClassName()
+
+    _launcher->launch(accFunc, {_acc}, ContextSetterPtr(), info);
 
     return QVariant();//not for use
 }
