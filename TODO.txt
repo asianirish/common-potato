@@ -1,5 +1,5 @@
 
-* Use Essence invokable methods instead of Method classes
+* Use Essence invokable methods instead of Method classes or do NOT inherit Method class from Action
 * ArgDef vs. PropertyDef
 * TaskId class with func name and args
 * ClassEssence, DynEssence and ClassNode (with 'inhertis' ref or link)
