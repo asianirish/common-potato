@@ -35,6 +35,8 @@ public:
         return essenceClassName;
     }
 
+    Q_INVOKABLE QVariant getProperty(hierhin::Item *item, const QString &propName);
+
 //protected:
     virtual void nodeDef(NodeDef &nd) const;
     virtual QMap<Role, ItemReq> childRequirements() const;

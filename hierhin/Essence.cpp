@@ -82,6 +82,11 @@ bool Essence::isKindOf(const QString &className) const
     return classNames().contains(className);
 }
 
+QVariant Essence::getProperty(Item *item, const QString &propName)
+{
+    return item->property(propName);
+}
+
 void Essence::nodeDef(NodeDef &nd) const
 {
     Q_UNUSED(nd)
