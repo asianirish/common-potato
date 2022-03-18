@@ -16,6 +16,7 @@ DESTDIR = $$PWD/../build/lib/
 SOURCES += \
         BaseWrapper.cpp \
         Destructor.cpp \
+        FriendlyByteArray.cpp \
         gfunc.cpp
 
 # Default rules for deployment.
@@ -30,6 +31,7 @@ HEADERS += \
     CuteFactory.h \
     Destructor.h \
     Factory.h \
+    FriendlyByteArray.h \
     LazyPointer.h \
     LazyRegistry.h \
     NamedArgList.h \

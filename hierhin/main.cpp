@@ -37,10 +37,15 @@
 #include <QTranslator>
 
 #include <iostream>
+#include <QDebug>
 
 int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
+
+    QByteArray ba("TURAMBARBARMATOR");
+
+    qDebug() << ba.mid(33,43);
 
 //TEST ENUM:
     QString s = QVariant::fromValue(menu::Error::NO_MENU_ERROR).toString();
