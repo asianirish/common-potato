@@ -9,7 +9,8 @@ FriendlyByteArray::FriendlyByteArray() : FriendlyByteArray(QByteArray())
 
 FriendlyByteArray::FriendlyByteArray(const QByteArray &data) : _data(data),
     _error(false),
-    _throwOnError(false)
+    _throwOnError(false),
+    _message("FriendlyByteArray")
 {
 
 }
@@ -27,7 +28,7 @@ void FriendlyByteArray::setData(const QByteArray &newData)
 char FriendlyByteArray::at(int i) const
 {
     if (uint(i) >= uint(size())) {
-        qDebug() << "ACCESS_ERROR";
+        qDebug() << _message << __FILE__ << __LINE__;
         setError();
         return 0;
     }
@@ -48,7 +49,7 @@ bool FriendlyByteArray::error() const
 void FriendlyByteArray::setError(bool newError) const
 {
     if (newError && _throwOnError) {
-        throw QString("FriendlyByteArray ERROR") + __FILE__ + __LINE__;
+        throw _message;
     }
 
     _error = newError;
@@ -58,4 +59,24 @@ QByteArray FriendlyByteArray::mid(int pos, int len) const
 {
     //it's safe
     return _data.mid(pos, len);
+}
+
+const QString &FriendlyByteArray::message() const
+{
+    return _message;
+}
+
+void FriendlyByteArray::setMessage(const QString &newMessage)
+{
+    _message = newMessage;
+}
+
+bool FriendlyByteArray::throwOnError() const
+{
+    return _throwOnError;
+}
+
+void FriendlyByteArray::setThrowOnError(bool newThrowOnError)
+{
+    _throwOnError = newThrowOnError;
 }

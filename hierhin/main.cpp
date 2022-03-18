@@ -24,6 +24,8 @@
 #include <Menu/EssenceClassTest.h>
 #include <Menu/SayHiContextSetter.h>
 
+#include <util/FriendlyByteArray.h>
+
 #include <menu/Console.h>
 #include <menu/util/SetLanguage.h>
 #include <menu/SyncLauncher.h>
@@ -45,7 +47,18 @@ int main(int argc, char *argv[])
 
     QByteArray ba("TURAMBARBARMATOR");
 
-    qDebug() << ba.mid(33,43);
+//    qDebug() << ba.mid(33,43);
+    FriendlyByteArray fba = ba;
+    fba.setMessage("OLIMEX");
+    fba.setThrowOnError(true);
+
+    try {
+        qDebug() << fba.at(44);
+    } catch (const QString &msg) {
+        qDebug() << "ERROR:" << msg;
+    }
+
+
 
 //TEST ENUM:
     QString s = QVariant::fromValue(menu::Error::NO_MENU_ERROR).toString();

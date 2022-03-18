@@ -2,6 +2,7 @@
 #define FRIENDLYBYTEARRAY_H
 
 #include <QByteArray>
+#include <QString>
 
 //TODO: add a namespace?
 class FriendlyByteArray
@@ -17,15 +18,23 @@ public:
 
     int size() const;
 
+    QByteArray mid(int pos, int len = -1) const;
+
+    const QString &message() const;
+    void setMessage(const QString &newMessage);
+
+    bool throwOnError() const;
+    void setThrowOnError(bool newThrowOnError);
+
+private:
     bool error() const;
     void setError(bool newError = true) const;
-
-    QByteArray mid(int pos, int len = -1) const;
 
 private:
     QByteArray _data;
     mutable bool _error;
     bool _throwOnError;
+    QString _message;
 };
 
 #endif // FRIENDLYBYTEARRAY_H
