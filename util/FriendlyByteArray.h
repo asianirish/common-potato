@@ -26,6 +26,8 @@ public:
     bool throwOnError() const;
     void setThrowOnError(bool newThrowOnError);
 
+    QByteArray toHex() const;
+    QByteArray toHex(char separator) const;
 private:
     bool error() const;
     void setError(bool newError = true) const;

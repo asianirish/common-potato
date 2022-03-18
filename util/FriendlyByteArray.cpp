@@ -80,3 +80,13 @@ void FriendlyByteArray::setThrowOnError(bool newThrowOnError)
 {
     _throwOnError = newThrowOnError;
 }
+
+QByteArray FriendlyByteArray::toHex() const
+{
+    return _data.toHex();
+}
+
+QByteArray FriendlyByteArray::toHex(char separator) const
+{
+    return _data.toHex(separator);
+}
