@@ -12,11 +12,6 @@ CallChildren::CallChildren()
 
 }
 
-bool CallChildren::isSync() const
-{
-    return false;
-}
-
 menu::def::ActionDef CallChildren::actionDef() const
 {
     menu::def::ActionDef def;

@@ -24,11 +24,6 @@ QVariant Fold::simplyAct(const QVariantList &args, const TaskId &taskId)
     return QVariant();//not for use
 }
 
-bool Fold::isSync() const
-{
-    return false;
-}
-
 def::ActionDef Fold::actionDef() const
 {
     //acc function, startValue, lst, <args of the acc function>

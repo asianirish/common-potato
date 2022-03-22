@@ -13,9 +13,6 @@ public:
 protected:
     virtual QVariant simplyAct(const QVariantList &args, const TaskId &taskId) = 0;
 
-    //TODO: delete isSync
-    virtual bool isSync() const;
-
 private:
     Result actSpecific(const QVariantList &args, const TaskId &taskId) final;
 

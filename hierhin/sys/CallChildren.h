@@ -11,9 +11,6 @@ class CallChildren : public NodeMethod
 public:
     CallChildren();
 
-protected:
-    bool isSync() const final;
-
 private:
     menu::def::ActionDef actionDef() const override;
 private:

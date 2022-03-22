@@ -14,7 +14,6 @@ public:
 
 protected:
     QVariant simplyAct(const QVariantList &args, const TaskId &taskId) override;
-    bool isSync() const override;
 
 private:
     def::ActionDef actionDef() const override;
