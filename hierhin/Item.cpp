@@ -2,10 +2,12 @@
 #include "Essence.h"
 #include "Node.h"
 #include "ItemContextSetter.h"
+#include "Method.h"
+
 #include "ex/UnregisteredClassException.h"
 #include "nav/ItemRef.h"
 #include "menu/SyncLauncher.h"
-#include "menu/Action.h"
+
 
 #include <util/SingletonRegistry.h>
 #include <util/ObjectRegistry.h>
@@ -179,7 +181,7 @@ void Item::addValue(const QString &name, const QVariant &value)
     }
 }
 
-void Item::execute(const QString &command, const QVariantList &args, const menu::TaskInfo &taskInfo)
+void Item::execute(const QString &command, const QVariantList &args)
 {
     auto essence = essencePtr();
 //    auto lnch = launcher(); //TODO: delete launcher()
@@ -196,9 +198,12 @@ void Item::execute(const QString &command, const QVariantList &args, const menu:
     if (essence->className() == essenceClassName()) {
 
        menu::Action *action = potato_util::Factory<menu::Action>::create(command.toStdString());
+       Method *method = dynamic_cast<Method *>(action);
 
-       if (action) {
-           action->act(args);
+       if (method) {
+           //TODO: how to set the item?
+           method->setItem(this);
+           method->act(args);
            //TODO: return it
        }
 

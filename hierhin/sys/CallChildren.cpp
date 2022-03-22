@@ -40,10 +40,9 @@ QVariant CallChildren::actNodeImpl(const QVariantList &args, Node *node, const m
     for (auto &taskId : ids) {
         menu::ActionListener *listener = new menu::Redirector(this);
         connect(listener, &menu::ActionListener::handled, this, &CallChildren::onChildReady);
-        menu::TaskInfo taskInfo(taskId, {listener});
         auto child = _taskIdToNode.value(taskId);
 
-        child->execute(innerMethod, innerArgs, taskInfo);
+        child->execute(innerMethod, innerArgs);
     }
 
     //TODO: what to return?

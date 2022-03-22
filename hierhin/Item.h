@@ -54,8 +54,7 @@ public:
 
     void addValue(const QString &name, const QVariant &value); //for a list type
 
-    //TODO: delete taskInfo
-    void execute(const QString &method, const QVariantList &args = QVariantList(), const menu::TaskInfo &taskInfo = menu::TaskInfo());
+    void execute(const QString &method, const QVariantList &args = QVariantList());
 
     def::NodeDef definition() const;
 
