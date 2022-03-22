@@ -180,7 +180,7 @@ void Item::addValue(const QString &name, const QVariant &value)
     }
 }
 
-void Item::execute(const QString &command, const QVariantList &args)
+menu::Result Item::execute(const QString &command, const QVariantList &args)
 {
     auto essence = essencePtr();
     auto def = definition();
@@ -199,11 +199,15 @@ void Item::execute(const QString &command, const QVariantList &args)
        Method *method = dynamic_cast<Method *>(action);
 
        if (method) {
-           method->act(this, args);
-           //TODO: return it
+           return method->act(this, args);
        }
 
-       return; //TODO: return Error Result
+       menu::Result result;
+       menu::Error error;
+       error.setCode(menu::Error::NO_SUCH_ACTION_CLASS);
+       error.addContext("className", command);
+       result.setError(error);
+       return result;
     }
 
     throw ex::IncompatibleEssenceExecution(essence->className(), essenceClassName());

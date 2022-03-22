@@ -69,14 +69,12 @@ menu::Result ChildTest::actSpecific(const QVariantList &args, const menu::TaskId
     qDebug().noquote() << "NODE:" << _nd->toJson();
 
     try {
-        //TODO: return Result
-        _nd->execute(METHOD_CLASS(sys::CallChildren),
+        return _nd->execute(METHOD_CLASS(sys::CallChildren),
                      {
                          METHOD_CLASS(sys::SetProperty), QString(), "name", "Asianirish"
                      });
 
         //TODO: call onReady here
-        return menu::Result(); //TODO: delete this one
     } catch (const QString &err) {
         qDebug() << "ERROR:" << err;
             return menu::Result(); //TODO: return error result here
