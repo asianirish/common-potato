@@ -41,6 +41,7 @@ Result Action::act(const QVariantList &args, const TaskId &taskId, const Listene
 
     //TODO: return this...
     actSpecific(localArgs, taskId);
+    return Result(); //TODO: delete this line
 }
 
 Result Action::act(const QVariantMap &namedArgs, const TaskId &taskId, const Listeners &listeners)
