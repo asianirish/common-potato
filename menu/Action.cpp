@@ -11,7 +11,7 @@ Action::Action(QObject *parent) : QObject(parent),
 
 }
 
-void Action::act(const QVariantList &args, const TaskId &taskId, const Listeners &listeners)
+Result Action::act(const QVariantList &args, const TaskId &taskId, const Listeners &listeners)
 {
     auto actionDef = this->actionDef();
     auto err = actionDef.validate(args);
@@ -21,7 +21,7 @@ void Action::act(const QVariantList &args, const TaskId &taskId, const Listeners
         result.setTaskId(taskId);
         result.setError(err);
         emit done(result);
-        return;
+        return result;
     }
 
     _listenerNum = listeners.size();
@@ -39,15 +39,16 @@ void Action::act(const QVariantList &args, const TaskId &taskId, const Listeners
 
     actionDef.addDefaultArgs(args, localArgs);
 
+    //TODO: return this...
     actSpecific(localArgs, taskId);
 }
 
-void Action::act(const QVariantMap &namedArgs, const TaskId &taskId, const Listeners &listeners)
+Result Action::act(const QVariantMap &namedArgs, const TaskId &taskId, const Listeners &listeners)
 {
     QVariantList args;
     actionDef().toPositionalArguments(namedArgs, args);
 
-    act(args, taskId, listeners);
+    return act(args, taskId, listeners);
 }
 
 void Action::toPositionalArguments(const QVariantMap &namedArgs, QVariantList &posArgs)
