@@ -74,11 +74,6 @@ public:
 
     ItemPtr itemByProperty(const QString &name);
 
-    int launcherIndex() const;
-    void setLauncherIndex(int launcherIndex);
-
-    QSharedPointer<menu::Launcher> launcher() const;
-
     ItemPtr refPtr(const QString &refName);
 
     QStringList essenceMethodNames() const;
@@ -95,7 +90,6 @@ private:
     QVariantMap _properties;
     static potato_util::LazyPointer<uniq::Value<Id>> _idGen;
     QString _essenceClassName;
-    int _launcherIndex;
 
     virtual void nodeToMap(QVariantMap &mp) const {
         Q_UNUSED(mp);

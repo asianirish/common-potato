@@ -6,7 +6,6 @@
 
 #include "ex/UnregisteredClassException.h"
 #include "nav/ItemRef.h"
-#include "menu/SyncLauncher.h"
 
 
 #include <util/SingletonRegistry.h>
@@ -33,7 +32,7 @@ const QString Item::BASE_TYPE_KEY("baseType");
 
 potato_util::LazyPointer<uniq::Value<Id>> Item::_idGen(Item::DEFAULT_ID_GEN_CLASS_NAME);
 
-Item::Item() : _launcherIndex(0)
+Item::Item()
 {
     static bool yes = false;
     if (!yes) {
@@ -184,7 +183,6 @@ void Item::addValue(const QString &name, const QVariant &value)
 void Item::execute(const QString &command, const QVariantList &args)
 {
     auto essence = essencePtr();
-//    auto lnch = launcher(); //TODO: delete launcher()
     auto def = definition();
     auto cmdNames = def.methodNames();
 
@@ -311,22 +309,6 @@ ItemPtr Item::itemByProperty(const QString &name)
     QVariant var = property(name);
     nav::ItemRef ref = var.value<nav::ItemRef>();
     return ref.ptr(sharedFromThis());
-}
-
-int Item::launcherIndex() const
-{
-    return _launcherIndex;
-}
-
-void Item::setLauncherIndex(int launcherIndex)
-{
-    _launcherIndex = launcherIndex;
-}
-
-QSharedPointer<menu::Launcher> Item::launcher() const
-{
-    //TODO: define a launcher class here (not ObjectRegistry)
-    return ObjectRegistry<int, menu::Launcher>::ptr(_launcherIndex);
 }
 
 ItemPtr Item::refPtr(const QString &refName)

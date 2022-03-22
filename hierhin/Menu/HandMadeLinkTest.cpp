@@ -23,8 +23,6 @@ HandMadeLinkTest::HandMadeLinkTest()
     auto ndRight = NodePtr(new NodeHashImpl());
     auto link = NodePtr(new NodeHashImpl());
 
-    connect(_nd->launcher().get(), &menu::Launcher::ready, this, &HandMadeLinkTest::onReady);
-
     _nd->setEssenceClassName("TestEssenceA");
     ndLeft->setEssenceClassName("TestEssenceB");
     ndRight->setEssenceClassName("TestEssenceA");
@@ -70,8 +68,6 @@ void HandMadeLinkTest::onReady(const QVariant value, const menu::TaskId &taskId)
         ItemRef ref(value.value<nav::ItemRef>());
         auto linkOwnerNode = ref.ptr(_nd);
         qDebug().noquote() << "ON_READY GET LINK OWNER" << linkOwnerNode->toJson() << taskId;
-
-        connect(linkOwnerNode->launcher().get(), &menu::Launcher::ready, this, &HandMadeLinkTest::onReady);
 
         linkOwnerNode->execute(METHOD_CLASS(sys::GetChildren), {});
     } else if (taskId == _getLinksId){
