@@ -5,6 +5,7 @@
 #include "ex/UnregisteredClassException.h"
 #include "nav/ItemRef.h"
 #include "menu/SyncLauncher.h"
+#include "menu/Action.h"
 
 #include <util/SingletonRegistry.h>
 #include <util/ObjectRegistry.h>
@@ -181,7 +182,7 @@ void Item::addValue(const QString &name, const QVariant &value)
 void Item::execute(const QString &command, const QVariantList &args, const menu::TaskInfo &taskInfo)
 {
     auto essence = essencePtr();
-    auto lnch = launcher();
+//    auto lnch = launcher(); //TODO: delete launcher()
     auto def = definition();
     auto cmdNames = def.methodNames();
 
@@ -194,12 +195,14 @@ void Item::execute(const QString &command, const QVariantList &args, const menu:
 
     if (essence->className() == essenceClassName()) {
 
-        auto itemContextSetter = new ItemContextSetter();
-        itemContextSetter->setItem(this);
-        auto cntx = menu::ContextSetterPtr(itemContextSetter);
+       menu::Action *action = potato_util::Factory<menu::Action>::create(command.toStdString());
 
-       lnch->launch(command, args, cntx, taskInfo);
-       return;
+       if (action) {
+           action->act(args);
+           //TODO: return it
+       }
+
+       return; //TODO: return Error Result
     }
 
     throw ex::IncompatibleEssenceExecution(essence->className(), essenceClassName());
