@@ -20,6 +20,9 @@ public:
         return methodClassName;
     }
 
+    menu::Result act(Item *item, const QVariantList &args);
+    menu::Result act(Item *item, const QVariantMap &namedArgs);
+
 protected:
     QVariant simplyAct(const QVariantList &args, const menu::TaskId &taskId) final;
 

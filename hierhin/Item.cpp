@@ -201,9 +201,7 @@ void Item::execute(const QString &command, const QVariantList &args)
        Method *method = dynamic_cast<Method *>(action);
 
        if (method) {
-           //TODO: how to set the item?
-           method->setItem(this);
-           method->act(args);
+           method->act(this, args);
            //TODO: return it
        }
 

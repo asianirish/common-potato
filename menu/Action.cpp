@@ -57,7 +57,6 @@ void Action::toPositionalArguments(const QVariantMap &namedArgs, QVariantList &p
 
 void Action::emitCompleteDebug(const menu::Result &result)
 {
-    qDebug() << "DEBUG: EMITING COMPLETE" <<  QVariant::fromValue(result).toString();
     emit complete(result);
 }
 
