@@ -11,7 +11,7 @@ public:
     ChildTest();
 
 protected:
-    void actSpecific(const QVariantList &args, const menu::TaskId &taskId) override;
+    menu::Result actSpecific(const QVariantList &args, const menu::TaskId &taskId) override;
 
 private:
 

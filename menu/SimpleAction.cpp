@@ -12,15 +12,17 @@ bool SimpleAction::isSync() const
     return true;
 }
 
-void SimpleAction::actSpecific(const QVariantList &args, const TaskId &taskId)
+Result SimpleAction::actSpecific(const QVariantList &args, const TaskId &taskId)
 {
+
+    Result result(simplyAct(args, taskId));
+    result.setTaskId(taskId);
+
     if (!isSync()) {
-        Result result(simplyAct(args, taskId));
-        result.setTaskId(taskId);
-        emit done(result);
-    } else {
-        simplyAct(args, taskId);
+        emit done(result);        
     }
+
+    return result;
 }
 
 

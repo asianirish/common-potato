@@ -35,7 +35,7 @@ private slots:
     void emitCompleteDebug(const menu::Result &result);
 
 private:
-    virtual void actSpecific(const QVariantList &args, const TaskId &taskId) = 0;
+    virtual Result actSpecific(const QVariantList &args, const TaskId &taskId) = 0;
 
     virtual def::ActionDef actionDef() const = 0;
 

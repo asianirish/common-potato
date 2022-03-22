@@ -50,7 +50,7 @@ ChildTest::ChildTest()
     connect(_listener, &menu::Redirector::handled, this, &ChildTest::onReadyResult);
 }
 
-void ChildTest::actSpecific(const QVariantList &args, const menu::TaskId &taskId)
+menu::Result ChildTest::actSpecific(const QVariantList &args, const menu::TaskId &taskId)
 {
     Q_UNUSED(args);
     Q_UNUSED(taskId);
@@ -71,13 +71,17 @@ void ChildTest::actSpecific(const QVariantList &args, const menu::TaskId &taskId
     menu::TaskInfo taskInfo(&_taskId, {_listener});
 
     try {
-    _nd->execute(METHOD_CLASS(sys::CallChildren),
-                 {
-                     METHOD_CLASS(sys::SetProperty), QString(), "name", "Asianirish"
-                 }
-                 , taskInfo);
+        //TODO: return Result
+        _nd->execute(METHOD_CLASS(sys::CallChildren),
+                     {
+                         METHOD_CLASS(sys::SetProperty), QString(), "name", "Asianirish"
+                     }
+                     , taskInfo);
+
+        return menu::Result(); //TODO: delete this one
     } catch (const QString &err) {
         qDebug() << "ERROR:" << err;
+            return menu::Result(); //TODO: return error result here
     }
 }
 
