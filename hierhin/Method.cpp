@@ -30,7 +30,7 @@ menu::Result Method::act(Item *item, const QVariantMap &namedArgs)
     return Action::act(namedArgs);
 }
 
-QVariant Method::simplyAct(const QVariantList &args, const menu::TaskId &taskId)
+QVariant Method::simplyAct(const QVariantList &args)
 {
     if (!_item) {
         throw ex::NoItem();

@@ -9,10 +9,9 @@ NumberTest::NumberTest()
 
 }
 
-QVariant NumberTest::simplyAct(const QVariantList &args, const menu::TaskId &taskId)
+QVariant NumberTest::simplyAct(const QVariantList &args)
 {
     Q_UNUSED(args);
-    Q_UNUSED(taskId);
 
     qDebug() << "3,14 is a number: " << potato_util::isNumber(3.14);
     qDebug() << "3,14 is an integer: " << potato_util::isInteger(3.14);

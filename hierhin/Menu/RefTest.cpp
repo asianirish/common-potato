@@ -17,10 +17,9 @@ RefTest::RefTest()
 
 }
 
-QVariant RefTest::simplyAct(const QVariantList &args, const menu::TaskId &taskId)
+QVariant RefTest::simplyAct(const QVariantList &args)
 {
     Q_UNUSED(args);
-    Q_UNUSED(taskId)
 
     qDebug() << "\n======================================================\n";
     auto nd = NodePtr(new NodeHashImpl());

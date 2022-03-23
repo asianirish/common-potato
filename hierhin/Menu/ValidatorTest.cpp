@@ -15,10 +15,9 @@ ValidatorTest::ValidatorTest()
 
 }
 
-QVariant ValidatorTest::simplyAct(const QVariantList &args, const menu::TaskId &taskId)
+QVariant ValidatorTest::simplyAct(const QVariantList &args)
 {
     Q_UNUSED(args);
-    Q_UNUSED(taskId);
 
     Email *emailVal = new Email();
 

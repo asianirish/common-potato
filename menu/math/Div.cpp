@@ -9,10 +9,8 @@ Div::Div()
 
 }
 
-QVariant Div::simplyAct(const QVariantList &args, const TaskId &taskId)
+QVariant Div::simplyAct(const QVariantList &args)
 {
-    Q_UNUSED(taskId)
-
     return args.at(0).toDouble() / args.at(1).toDouble();
 }
 

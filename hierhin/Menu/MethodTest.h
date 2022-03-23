@@ -9,7 +9,7 @@ public:
     MethodTest();
 
 protected:
-    QVariant simplyAct(const QVariantList &args, const menu::TaskId &taskId) override;
+    QVariant simplyAct(const QVariantList &args) override;
 
 private:
 

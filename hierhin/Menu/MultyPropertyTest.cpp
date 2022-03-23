@@ -14,10 +14,9 @@ MultyPropertyTest::MultyPropertyTest()
 
 }
 
-QVariant MultyPropertyTest::simplyAct(const QVariantList &args, const menu::TaskId &taskId)
+QVariant MultyPropertyTest::simplyAct(const QVariantList &args)
 {
     Q_UNUSED(args)
-    Q_UNUSED(taskId)
 
     try {
         NodePtr nd = NodePtr(new NodeHashImpl());

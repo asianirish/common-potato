@@ -37,10 +37,9 @@ LinkTest::LinkTest()
     ndLeft->setLink(targetRef, true);
 }
 
-QVariant LinkTest::simplyAct(const QVariantList &args, const menu::TaskId &taskId)
+QVariant LinkTest::simplyAct(const QVariantList &args)
 {
     Q_UNUSED(args)
-    Q_UNUSED(taskId)
 
     try {
         auto left = _nd->childByRole("left");

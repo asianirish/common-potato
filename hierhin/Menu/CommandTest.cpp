@@ -12,10 +12,9 @@ CommandTest::CommandTest()
 
 }
 
-QVariant CommandTest::simplyAct(const QVariantList &args, const menu::TaskId &taskId)
+QVariant CommandTest::simplyAct(const QVariantList &args)
 {
     Q_UNUSED(args)
-    Q_UNUSED(taskId)
 /*
     try {
     auto nd = NodePtr(new direct::NodeHashImpl());

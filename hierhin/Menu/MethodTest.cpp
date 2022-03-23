@@ -19,10 +19,9 @@ MethodTest::MethodTest()
 
 }
 
-QVariant MethodTest::simplyAct(const QVariantList &args, const menu::TaskId &taskId)
+QVariant MethodTest::simplyAct(const QVariantList &args)
 {
     Q_UNUSED(args)
-    Q_UNUSED(taskId)
 
     auto nd = NodePtr(new direct::NodeHashImpl());
     nd->setEssenceClassName("TestEssenceA");

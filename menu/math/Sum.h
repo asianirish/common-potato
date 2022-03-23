@@ -13,7 +13,7 @@ public:
     Sum();
 
 protected:
-    QVariant simplyAct(const QVariantList &args, const menu::TaskId &taskId) final;
+    QVariant simplyAct(const QVariantList &args) final;
 
 private:
 

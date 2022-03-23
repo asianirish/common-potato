@@ -8,10 +8,8 @@ Sum::Sum()
 
 }
 
-QVariant Sum::simplyAct(const QVariantList &args, const TaskId &taskId)
+QVariant Sum::simplyAct(const QVariantList &args)
 {
-    Q_UNUSED(taskId)
-
     return args.at(0).toDouble() + args.at(1).toDouble();
 }
 

@@ -13,10 +13,9 @@ EssenceClassTest::EssenceClassTest()
 
 }
 
-QVariant EssenceClassTest::simplyAct(const QVariantList &args, const menu::TaskId &taskId)
+QVariant EssenceClassTest::simplyAct(const QVariantList &args)
 {
     Q_UNUSED(args)
-    Q_UNUSED(taskId)
 
     qDebug() << ESSENCE_CLASS(hierhin::Essence);
     qDebug() << ESSENCE_CLASS(hierhin::LinkOwnerEssence);

@@ -11,10 +11,9 @@ CloneTest::CloneTest()
 
 }
 
-QVariant CloneTest::simplyAct(const QVariantList &args, const menu::TaskId &taskId)
+QVariant CloneTest::simplyAct(const QVariantList &args)
 {
     Q_UNUSED(args);
-    Q_UNUSED(taskId);
 
     auto nd = NodePtr(new direct::NodeHashImpl());
 

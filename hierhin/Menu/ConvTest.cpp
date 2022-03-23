@@ -9,10 +9,9 @@ ConvTest::ConvTest()
 
 }
 
-QVariant ConvTest::simplyAct(const QVariantList &args, const menu::TaskId &taskId)
+QVariant ConvTest::simplyAct(const QVariantList &args)
 {
     Q_UNUSED(args)
-    Q_UNUSED(taskId)
 
     hierhin::nav::ItemRef itemRef;
     QVariant itemRefVar = QVariant::fromValue<hierhin::nav::ItemRef>(itemRef);

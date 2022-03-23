@@ -24,7 +24,7 @@ public:
     menu::Result act(Item *item, const QVariantMap &namedArgs);
 
 protected:
-    QVariant simplyAct(const QVariantList &args, const menu::TaskId &taskId) final;
+    QVariant simplyAct(const QVariantList &args) final;
 
 private:
     Item *_item;

@@ -9,16 +9,18 @@ Fold::Fold() : _launcher(new SyncLauncher(this))
 
 }
 
-QVariant Fold::simplyAct(const QVariantList &args, const TaskId &taskId)
+QVariant Fold::simplyAct(const QVariantList &args)
 {
     QString accFunc = args.at(0).toString();
     _acc = args.at(1);
-    _taskId = taskId;
+//    _taskId = taskId;
 
     TaskInfo info;
     //TODO: set listeners
 //    info.setTaskIdGenClassName()
 
+
+    //TODO: sync code instead of this:
     _launcher->launch(accFunc, {_acc}, ContextSetterPtr(), info);
 
     return QVariant();//not for use

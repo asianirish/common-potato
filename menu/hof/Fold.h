@@ -13,13 +13,13 @@ public:
     Fold();
 
 protected:
-    QVariant simplyAct(const QVariantList &args, const TaskId &taskId) override;
+    QVariant simplyAct(const QVariantList &args) override;
 
 private:
     def::ActionDef actionDef() const override;
 
     QVariant _acc;
-    TaskId _taskId;
+    [[deprecated]] TaskId _taskId;
     Launcher *_launcher;
 
 };

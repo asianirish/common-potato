@@ -9,7 +9,7 @@ SimpleAction::SimpleAction()
 
 Result SimpleAction::actSpecific(const QVariantList &args, const TaskId &taskId)
 {
-    Result result(simplyAct(args, taskId));
+    Result result(simplyAct(args));
     result.setTaskId(taskId);
 
     emit done(result);

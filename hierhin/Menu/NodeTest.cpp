@@ -19,10 +19,9 @@ NodeTest::NodeTest()
 
 }
 
-QVariant NodeTest::simplyAct(const QVariantList &args, const menu::TaskId &taskId)
+QVariant NodeTest::simplyAct(const QVariantList &args)
 {
     Q_UNUSED(args);
-    Q_UNUSED(taskId);
 
 //    Item::setIdGenClassName("uniq::UuidValue");
     try {
