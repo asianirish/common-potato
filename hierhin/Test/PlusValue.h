@@ -11,7 +11,7 @@ public:
     PlusValue();
 
 private:
-    QVariant actImpl(const QVariantList &args, Item *item, const menu::TaskId &taskId) final;
+    QVariant actImpl(const QVariantList &args, Item *item) final;
 
     menu::def::ActionDef actionDef() const;
 };

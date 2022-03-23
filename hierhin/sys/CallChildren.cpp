@@ -20,9 +20,8 @@ menu::def::ActionDef CallChildren::actionDef() const
     return def;
 }
 
-QVariant CallChildren::actNodeImpl(const QVariantList &args, Node *node, const menu::TaskId &taskId)
+QVariant CallChildren::actNodeImpl(const QVariantList &args, Node *node)
 {
-    _taskId = taskId;
     auto children = node->children();
     auto innerArgs = args;
     auto innerMethod = innerArgs.takeFirst().toString();
@@ -44,6 +43,8 @@ QVariant CallChildren::actNodeImpl(const QVariantList &args, Node *node, const m
 
         child->execute(innerMethod, innerArgs);
     }
+
+    //!TODO: call onChildReady code here
 
     //TODO: what to return?
     return true;

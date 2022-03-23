@@ -53,7 +53,7 @@ menu::def::ActionDef SetLink::actionDef() const
     return aDef;
 }
 
-QVariant SetLink::actNodeImpl(const QVariantList &args, Node *node, const menu::TaskId &taskId)
+QVariant SetLink::actNodeImpl(const QVariantList &args, Node *node)
 {
     hierhin::nav::ItemRef ref = args.at(0).value<hierhin::nav::ItemRef>();
     bool isDir = args.at(1).toBool();

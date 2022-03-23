@@ -36,7 +36,7 @@ QVariant Method::simplyAct(const QVariantList &args, const menu::TaskId &taskId)
         throw ex::NoItem();
     }
 
-    return actImpl(args, _item, taskId);
+    return actImpl(args, _item);
 }
 
 } // namespace hierhin

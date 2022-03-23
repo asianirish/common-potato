@@ -9,7 +9,7 @@ NodeMethod::NodeMethod()
 
 }
 
-QVariant NodeMethod::actImpl(const QVariantList &args, Item *item, const menu::TaskId &taskId)
+QVariant NodeMethod::actImpl(const QVariantList &args, Item *item)
 {
     Node *node = dynamic_cast<Node *>(item);
 
@@ -19,7 +19,7 @@ QVariant NodeMethod::actImpl(const QVariantList &args, Item *item, const menu::T
         } //'else' exception is handeld in Method::simplyAct
     }
 
-    return actNodeImpl(args, node, taskId);
+    return actNodeImpl(args, node);
 }
 
 } // namespace hierhin

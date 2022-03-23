@@ -19,7 +19,7 @@ menu::def::ActionDef GetProperty::actionDef() const
     return aDef;
 }
 
-QVariant GetProperty::actImpl(const QVariantList &args, Item *item, const menu::TaskId &taskId)
+QVariant GetProperty::actImpl(const QVariantList &args, Item *item)
 {
     QString propName = args.at(0).toString();
     return item->property(propName);

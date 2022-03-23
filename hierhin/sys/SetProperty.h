@@ -16,7 +16,7 @@ private:
     menu::def::ActionDef actionDef() const override;
 
 private:
-    QVariant actImpl(const QVariantList &args, Item *item, const menu::TaskId &taskId) override;
+    QVariant actImpl(const QVariantList &args, Item *item) override;
 };
 
 } // namespace sys

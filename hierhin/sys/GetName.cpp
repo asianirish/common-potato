@@ -15,7 +15,7 @@ menu::def::ActionDef GetName::actionDef() const
     return aDef;
 }
 
-QVariant GetName::actImpl(const QVariantList &args, Item *item, const menu::TaskId &taskId)
+QVariant GetName::actImpl(const QVariantList &args, Item *item)
 {
     Q_UNUSED(args)
     return item->property("name");

@@ -11,9 +11,9 @@ public:
     NodeMethod();
 
 private:
-    QVariant actImpl(const QVariantList &args, Item *item, const menu::TaskId &taskId) final;
+    QVariant actImpl(const QVariantList &args, Item *item) final;
 
-    virtual QVariant actNodeImpl(const QVariantList &args, Node *node, const menu::TaskId &taskId) = 0;
+    virtual QVariant actNodeImpl(const QVariantList &args, Node *node) = 0;
 };
 
 } // namespace hierhin
