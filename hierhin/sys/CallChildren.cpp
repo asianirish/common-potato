@@ -25,28 +25,31 @@ QVariant CallChildren::actNodeImpl(const QVariantList &args, Node *node)
     auto children = node->children();
     auto innerArgs = args;
     auto innerMethod = innerArgs.takeFirst().toString();
+    QVariantList results;
+    QString foldMethodName;
 
     if (!innerArgs.isEmpty()) {
-        _foldMethodName = innerArgs.takeFirst().toString();
+        foldMethodName = innerArgs.takeFirst().toString();
     }
 
     for (auto &child : children) {
-        menu::TaskId taskId = menu::TaskInfo::genTaskId();
-        _taskIdToNode.insert(taskId, child);
+        auto result = child->execute(innerMethod, innerArgs);
+
+        if (!result.isError()) {
+            results.append(result.value());
+        }
     }
 
-    auto ids = _taskIdToNode.keys();
-    for (auto &taskId : ids) {
-        menu::ActionListener *listener = new menu::Redirector(this);
-        connect(listener, &menu::ActionListener::handled, this, &CallChildren::onChildReady);
-        auto child = _taskIdToNode.value(taskId);
+    if (!foldMethodName.isEmpty()) {
+        Action *action = potato_util::Factory<Action>::create("menu::hof::Fold");
+        //TODO: delete action on complete (?)
 
-        child->execute(innerMethod, innerArgs);
+        auto result = action->act(results);
+
+        //TODO: if (!result.isError())
+        return result.value();
     }
 
-    //!TODO: call onChildReady code here
-
-    //TODO: what to return?
     return true;
 }
 
