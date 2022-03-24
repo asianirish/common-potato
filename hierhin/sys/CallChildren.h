@@ -21,8 +21,6 @@ private:
     QString _foldMethodName;
     QVariantList _childResults;
 
-private slots:
-    void onChildReady(const menu::Result &childResult);
 };
 
 } // namespace sys
