@@ -16,11 +16,6 @@ private:
 private:
     QVariant actNodeImpl(const QVariantList &args, Node *node) override;
 
-    QMap<menu::TaskId, ItemPtr> _taskIdToNode;
-    [[deprecated]] menu::TaskId _taskId; //TODO: delete
-    QString _foldMethodName;
-    QVariantList _childResults;
-
 };
 
 } // namespace sys
