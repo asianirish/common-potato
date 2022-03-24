@@ -60,7 +60,7 @@ TaskId Launcher::initAction(const QString &actionClassName, ContextSetterPtr cnx
 
     auto listeners = taskInfo.listeners();
     for (auto lsr : listeners) {
-        connect(action, &Action::complete, lsr, &ActionListener::handleResult);
+        connect(action, &Action::allListenersComplete, lsr, &ActionListener::handleResult);
     }
 
     QString taskId = taskInfo.taskId();

@@ -28,7 +28,7 @@ void ActionThread::setAction(Action *action)
     _action = action;
     _action->moveToThread(this);
 
-    connect(_action, &Action::complete, this, &ActionThread::onTestReady);
+    connect(_action, &Action::allListenersComplete, this, &ActionThread::onTestReady);
 }
 
 QVariantList ActionThread::args() const

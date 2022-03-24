@@ -57,7 +57,7 @@ void Action::toPositionalArguments(const QVariantMap &namedArgs, QVariantList &p
 
 void Action::emitCompleteDebug(const menu::Result &result)
 {
-    emit complete(result);
+    emit allListenersComplete(result);
 }
 
 void Action::onListenerHandled(const Result &result)
@@ -65,7 +65,7 @@ void Action::onListenerHandled(const Result &result)
     _listenerNum--;
 
     if (_listenerNum == 0) {
-        emit complete(result); //will be used the last result (same for all listeners)
+        emit allListenersComplete(result); //will be used the last result (same for all listeners)
     }
 }
 

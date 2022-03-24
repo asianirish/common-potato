@@ -29,7 +29,7 @@ private:
 signals:
     void done(const menu::Result &result);
 
-    void complete(const menu::Result &result);
+    void allListenersComplete(const menu::Result &result);
 
 private slots:
     void emitCompleteDebug(const menu::Result &result);
