@@ -9,7 +9,7 @@ class FriendlyByteArray
 {
 public:
     FriendlyByteArray();
-    FriendlyByteArray(const QByteArray &data);
+    FriendlyByteArray(const QByteArray &data, bool throwOnError);
 
     const QByteArray &data() const;
     void setData(const QByteArray &newData);

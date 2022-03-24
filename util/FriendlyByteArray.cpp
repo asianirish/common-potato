@@ -2,13 +2,13 @@
 
 #include <QDebug>
 
-FriendlyByteArray::FriendlyByteArray() : FriendlyByteArray(QByteArray())
+FriendlyByteArray::FriendlyByteArray() : FriendlyByteArray(QByteArray(), true)
 {
 
 }
 
-FriendlyByteArray::FriendlyByteArray(const QByteArray &data) : _data(data),
-    _error(false),
+FriendlyByteArray::FriendlyByteArray(const QByteArray &data, bool throwOnError) : _data(data),
+    _error(throwOnError),
     _throwOnError(false),
     _message("FriendlyByteArray")
 {
