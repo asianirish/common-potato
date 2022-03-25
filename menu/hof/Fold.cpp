@@ -11,19 +11,16 @@ Fold::Fold() : _launcher(new SyncLauncher(this))
 
 QVariant Fold::simplyAct(const QVariantList &args)
 {
-    QString accFunc = args.at(0).toString();
-    _acc = args.at(1);
-//    _taskId = taskId;
+    auto innerArgs = args;
+    QString combFunc = innerArgs.takeFirst().toString();
+    QVariant startValue = innerArgs.takeFirst();
+    QVariant result = startValue;
 
-    TaskInfo info;
-    //TODO: set listeners
-//    info.setTaskIdGenClassName()
+    for (auto &curValue : innerArgs) {
+        result = SimpleAction::simpleAct(combFunc, {result, curValue});
+    }
 
-
-    //TODO: sync code instead of this:
-    _launcher->launch(accFunc, {_acc}, ContextSetterPtr(), info);
-
-    return QVariant();//not for use
+    return result;
 }
 
 def::ActionDef Fold::actionDef() const
