@@ -1,6 +1,7 @@
 #include "CallChildren.h"
 #include "../Node.h"
 #include "menu/Redirector.h"
+#include "menu/hof/Fold.h"
 
 #include <QDebug>
 
@@ -44,7 +45,7 @@ QVariant CallChildren::actNodeImpl(const QVariantList &args, Node *node)
         QVariantList foldArgs;
         foldArgs.append(combFunc);
         foldArgs.append(results);
-        return SimpleAction::simpleAct("menu::hof::Fold", foldArgs); //TODO: use ACTION_CLASS(menu::hof::Fold)
+        return SimpleAction::simpleAct(ACTION_CLASS(menu::hof::Fold), foldArgs);
     }
 
     return true;

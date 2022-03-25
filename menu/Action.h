@@ -23,6 +23,11 @@ public:
 
     void toPositionalArguments(const QVariantMap &namedArgs, QVariantList &posArgs);
 
+    //used in ACTION_CLASS_NAME
+    static QString checkActionClass(const QString &actionClassName) {
+        return actionClassName;
+    }
+
 private:
     int _listenerNum;
 
@@ -47,5 +52,7 @@ private slots:
 typedef QSharedPointer<Action> ActionPtr;
 
 } // namespace menu
+
+#define ACTION_CLASS(className) className::checkActionClass(#className)
 
 #endif // MENU_ACTION_H
