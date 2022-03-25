@@ -41,13 +41,10 @@ QVariant CallChildren::actNodeImpl(const QVariantList &args, Node *node)
     }
 
     if (!foldMethodName.isEmpty()) {
-        Action *action = potato_util::Factory<Action>::create("menu::hof::Fold");
-        //TODO: delete action on complete (?)
-
-        auto result = action->act(results);
-
-        //TODO: if (!result.isError())
-        return result.value();
+        QVariantList foldArgs;
+        foldArgs.append(foldMethodName);
+        foldArgs.append(results);
+        return SimpleAction::simpleAct("menu::hof::Fold", foldArgs);
     }
 
     return true;
