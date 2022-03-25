@@ -10,6 +10,8 @@ class SimpleAction : public Action
 public:
     SimpleAction();
 
+    static QVariant simpleAct(const QString &simpleAction, const QVariantList &args);
+
 protected:
     virtual QVariant simplyAct(const QVariantList &args) = 0;
 
