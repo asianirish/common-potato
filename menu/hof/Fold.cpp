@@ -1,10 +1,9 @@
 #include "Fold.h"
-#include "SyncLauncher.h"
 
 namespace menu {
 namespace hof {
 
-Fold::Fold() : _launcher(new SyncLauncher(this))
+Fold::Fold()
 {
 
 }

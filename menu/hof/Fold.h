@@ -17,11 +17,6 @@ protected:
 
 private:
     def::ActionDef actionDef() const override;
-
-    QVariant _acc;
-    [[deprecated]] TaskId _taskId;
-    Launcher *_launcher;
-
 };
 
 } // namespace hof
