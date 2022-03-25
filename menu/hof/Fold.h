@@ -2,7 +2,7 @@
 #define MENU_HOF_FOLD_H
 
 #include "../SimpleAction.h"
-#include "Launcher.h"
+#include "../Launcher.h"
 
 namespace menu {
 namespace hof {
