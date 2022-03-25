@@ -26,10 +26,10 @@ QVariant CallChildren::actNodeImpl(const QVariantList &args, Node *node)
     auto innerArgs = args;
     auto innerMethod = innerArgs.takeFirst().toString();
     QVariantList results;
-    QString foldMethodName;
+    QString combFunc;
 
     if (!innerArgs.isEmpty()) {
-        foldMethodName = innerArgs.takeFirst().toString();
+        combFunc = innerArgs.takeFirst().toString();
     }
 
     for (auto &child : children) {
@@ -40,9 +40,9 @@ QVariant CallChildren::actNodeImpl(const QVariantList &args, Node *node)
         }
     }
 
-    if (!foldMethodName.isEmpty()) {
+    if (!combFunc.isEmpty()) {
         QVariantList foldArgs;
-        foldArgs.append(foldMethodName);
+        foldArgs.append(combFunc);
         foldArgs.append(results);
         return SimpleAction::simpleAct("menu::hof::Fold", foldArgs);
     }
