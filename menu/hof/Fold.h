@@ -1,7 +1,7 @@
 #ifndef MENU_HOF_FOLD_H
 #define MENU_HOF_FOLD_H
 
-#include "SimpleAction.h"
+#include "../SimpleAction.h"
 #include "Launcher.h"
 
 namespace menu {
