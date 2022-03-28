@@ -14,6 +14,8 @@
 #include <menu/math/Inc.h>
 #include <menu/math/Sum.h>
 
+#include <menu/hof/Fold.h>
+
 #include <menu/SyncLauncher.h>
 #include <menu/ThreadLauncher.h>
 
@@ -53,6 +55,8 @@ void HierhinClassRegistry::registerAllClasses() const
     REGISTER_CLASS_FOR_UTIL_FACTORY(menu::Action, menu::math::Div);
     REGISTER_CLASS_FOR_UTIL_FACTORY(menu::Action, menu::math::Inc);
     REGISTER_CLASS_FOR_UTIL_FACTORY(menu::Action, menu::math::Sum);
+
+    REGISTER_CLASS_FOR_UTIL_FACTORY(menu::Action, menu::hof::Fold);
 
     REGISTER_CLASS_FOR_UTIL_FACTORY(menu::Action, PlusValue);
 
