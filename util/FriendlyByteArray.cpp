@@ -41,6 +41,18 @@ int FriendlyByteArray::size() const
     return _data.size();
 }
 
+QByteArray FriendlyByteArray::left(int len) const
+{
+    //it's safe
+    return _data.left(len);
+}
+
+QByteArray FriendlyByteArray::right(int len) const
+{
+    //it's safe
+    return _data.right(len);
+}
+
 bool FriendlyByteArray::error() const
 {
     return _error;

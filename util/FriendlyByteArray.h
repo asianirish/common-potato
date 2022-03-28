@@ -18,6 +18,9 @@ public:
 
     int size() const;
 
+    //TODO: Q_REQUIRED_RESULT
+    QByteArray left(int len) const;
+    QByteArray right(int len) const;
     QByteArray mid(int pos, int len = -1) const;
 
     const QString &message() const;
