@@ -23,6 +23,10 @@ public:
     QByteArray right(int len) const;
     QByteArray mid(int pos, int len = -1) const;
 
+    inline int length() const {
+        return _data.length();
+    }
+
     const QString &message() const;
     void setMessage(const QString &newMessage);
 
