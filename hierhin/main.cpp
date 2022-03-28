@@ -23,6 +23,7 @@
 #include <Menu/BiMapTest.h>
 #include <Menu/EssenceClassTest.h>
 #include <Menu/SayHiContextSetter.h>
+#include <Menu/FoldTest.h>
 
 #include <util/FriendlyByteArray.h>
 
@@ -121,6 +122,8 @@ int main(int argc, char *argv[])
     REGISTER_COMMAND(console, tbimap, BiMapTest);
 
     REGISTER_COMMAND(console, tesscl, EssenceClassTest);
+
+    REGISTER_COMMAND(console, tfold, FoldTest);
 
     {
         auto cntxPtr = menu::ContextSetterPtr(new SayHiContextSetter());
