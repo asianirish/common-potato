@@ -102,3 +102,8 @@ QByteArray FriendlyByteArray::toHex(char separator) const
 {
     return _data.toHex(separator);
 }
+
+FriendlyByteArray::operator QByteArray() const
+{
+    return _data;
+}

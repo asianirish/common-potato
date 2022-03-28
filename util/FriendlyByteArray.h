@@ -31,6 +31,8 @@ public:
 
     QByteArray toHex() const;
     QByteArray toHex(char separator) const;
+
+    operator QByteArray() const;
 private:
     bool error() const;
     void setError(bool newError = true) const;
