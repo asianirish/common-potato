@@ -102,3 +102,9 @@ FriendlyByteArray::operator QByteArray() const
 {
     return _data;
 }
+
+FriendlyByteArray &FriendlyByteArray::operator =(const QByteArray &newData)
+{
+    setData(newData);
+    return *this;
+}

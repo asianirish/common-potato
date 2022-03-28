@@ -47,10 +47,15 @@ int main(int argc, char *argv[])
 
     QByteArray ba("TURAMBARBARMATOR");
 
-//    qDebug() << ba.mid(33,43);
+    qDebug() << "MID" << ba.mid(4,3);
     FriendlyByteArray fba(ba, true);
     fba.setMessage("OLIMEX");
-    fba.setThrowOnError(true);
+
+    qDebug() << "1. FBA" << fba.data();
+
+    fba = fba.mid(3,4);
+
+    qDebug() << "2. FBA" << fba.data();
 
     try {
         qDebug() << fba.at(44);

@@ -9,7 +9,7 @@ class FriendlyByteArray
 {
 public:
     FriendlyByteArray();
-    FriendlyByteArray(const QByteArray &data, bool throwOnError);
+    FriendlyByteArray(const QByteArray &data, bool throwOnError/* = true*/);
 
     const QByteArray &data() const;
     void setData(const QByteArray &newData);
@@ -39,6 +39,8 @@ public:
     QByteArray toHex(char separator) const;
 
     operator QByteArray() const;
+
+    FriendlyByteArray &operator =(const QByteArray &newData);
 private:
     bool error() const;
     void setError(bool newError = true) const;
