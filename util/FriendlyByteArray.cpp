@@ -36,11 +36,6 @@ char FriendlyByteArray::at(int i) const
     return _data.at(i);
 }
 
-int FriendlyByteArray::size() const
-{
-    return _data.size();
-}
-
 QByteArray FriendlyByteArray::left(int len) const
 {
     //it's safe

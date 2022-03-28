@@ -16,7 +16,9 @@ public:
 
     char at(int i) const;
 
-    int size() const;
+    inline int size() const {
+        return _data.size();
+    }
 
     //TODO: Q_REQUIRED_RESULT
     QByteArray left(int len) const;
