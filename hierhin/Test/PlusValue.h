@@ -5,7 +5,7 @@
 
 using namespace hierhin;
 
-class PlusValue : public Method
+class PlusValue : public hierhin::Method
 {
 public:
     PlusValue();
