@@ -59,9 +59,6 @@ ChildTest::ChildTest()
     ndC->setProperty("name", "Charlie");
     ndD->setProperty("name", "Daisy");
 
-//    connect(_nd->launcher().get(), &menu::Launcher::ready, this, &ChildTest::onReady);
-    _listener = new menu::Redirector(this);
-    connect(_listener, &menu::Redirector::handled, this, &ChildTest::onReadyResult);
 }
 
 menu::Result ChildTest::actSpecific(const QVariantList &args, const menu::TaskId &taskId)
@@ -80,7 +77,7 @@ menu::Result ChildTest::actSpecific(const QVariantList &args, const menu::TaskId
         qDebug() << "REF_STR:" << refStr;
     }
 
-    qDebug() << "\n(1) ======================================================\n";
+    qDebug() << "\n======================================================\n";
     qDebug() << "to json:";
     qDebug().noquote() << "NODE:" << _nd->toJson();
 
@@ -90,69 +87,11 @@ menu::Result ChildTest::actSpecific(const QVariantList &args, const menu::TaskId
                          METHOD_CLASS(sys::GetProperty), ACTION_CLASS(menu::math::Sum), "value"
                      });
 
-        qDebug() << "RESULT:" << result.value();
-
-        //TODO: call onReady here
+        qDebug() << "RESULT:" << result.value().toInt();
     } catch (const QString &err) {
         qDebug() << "ERROR:" << err;
             return menu::Result(); //TODO: return error result here
     }
 
     return result;
-}
-
-void ChildTest::onReady(const QVariant value, const menu::TaskId &taskId)
-{
-    if (_taskId != taskId) {
-        return;
-    }
-
-    qDebug() << "\n(2) ======================================================\n";
-    qDebug() << "on GetChildren:";
-    qDebug() << "TEST IS READY:" << taskId;
-
-    qDebug() << "to json:";
-    qDebug().noquote() << "NODE:" << _nd->toJson();
-
-
-    qDebug() << "\n(3) ======================================================\n\n";
-
-//    QStringList lst = value.value<hierhin::IdList>();
-    QList<nav::ItemRef> lst = value.value<QList<nav::ItemRef>>();
-
-    for (auto &ref : lst) {
-        qDebug() << "CHILD REF:" << ref;
-        auto child = ref.ptr(_nd);
-        qDebug().noquote() << "CHILD:" << child->toJson();
-    }
-
-    emit done(menu::Result(true));
-}
-
-void ChildTest::onReadyResult(const menu::Result &result)
-{
-    if (_taskId != _taskId) {
-        return;
-    }
-
-    qDebug() << "\n!(2) ======================================================\n";
-    qDebug() << "on GetChildren:";
-    qDebug() << "TEST IS READY:" << result.taskId();
-
-    qDebug() << "to json:";
-    qDebug().noquote() << "NODE:" << _nd->toJson();
-
-
-    qDebug() << "\n!(3) ======================================================\n\n";
-
-//    QStringList lst = value.value<hierhin::IdList>();
-    QList<nav::ItemRef> lst = result.value().value<QList<nav::ItemRef>>();
-
-    for (auto &ref : lst) {
-        qDebug() << "!CHILD REF:" << ref;
-        auto child = ref.ptr(_nd);
-        qDebug().noquote() << "CHILD:" << child->toJson();
-    }
-
-    emit done(menu::Result(true));
 }
