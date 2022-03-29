@@ -180,22 +180,19 @@ void Item::addValue(const QString &name, const QVariant &value)
     }
 }
 
-menu::Result Item::execute(const QString &command, const QVariantList &args)
+menu::Result Item::execute(const QString &methodName, const QVariantList &args)
 {
-    auto essence = essencePtr();
-    auto def = definition();
-    auto cmdNames = def.methodNames();
-
-    if (!cmdNames.contains(command)) {
-        throw ex::UnsupportedCommand(command);
+    if (!definition().methodNames().contains(methodName)) {
+        throw ex::UnsupportedCommand(methodName);
     }
 
+    //the old idea:
 //    def::MethodDef cmdDef = cmdDefs.value(command);
 //    auto validatedArgs = cmdDef.validate(args);
 
-    if (essence->className() == essenceClassName()) {
+    if (essencePtr()->className() == essenceClassName()) {
 
-       menu::Action *action = potato_util::Factory<menu::Action>::create(command.toStdString());
+       menu::Action *action = potato_util::Factory<menu::Action>::create(methodName.toStdString());
        Method *method = dynamic_cast<Method *>(action);
 
        if (method) {
@@ -205,12 +202,12 @@ menu::Result Item::execute(const QString &command, const QVariantList &args)
        menu::Result result;
        menu::Error error;
        error.setCode(menu::Error::NO_SUCH_ACTION_CLASS);
-       error.addContext("className", command);
+       error.addContext("className", methodName);
        result.setError(error);
        return result;
     }
 
-    throw ex::IncompatibleEssenceExecution(essence->className(), essenceClassName());
+    throw ex::IncompatibleEssenceExecution(essencePtr()->className(), essenceClassName());
 }
 
 NodeDef Item::definition() const

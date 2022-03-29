@@ -16,6 +16,8 @@
 
 using namespace potato_util;
 
+class Method;
+
 namespace hierhin {
 
 class Item : public QEnableSharedFromThis<Item>
@@ -54,7 +56,7 @@ public:
 
     void addValue(const QString &name, const QVariant &value); //for a list type
 
-    menu::Result execute(const QString &method, const QVariantList &args = QVariantList());
+    menu::Result execute(const QString &methodName, const QVariantList &args = QVariantList());
 
     def::NodeDef definition() const;
 
