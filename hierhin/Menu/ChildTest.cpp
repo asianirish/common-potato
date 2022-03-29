@@ -5,6 +5,8 @@
 #include <hierhin/sys/CallChildren.h>
 #include <hierhin/sys/SetProperty.h>
 
+#include <hierhin/ex/Exception.h>
+
 #include <type.h>
 
 //#include <hierhin/direct/NodeImpl.h>
@@ -34,6 +36,15 @@ ChildTest::ChildTest()
     ndB->setEssenceClassName("TestEssenceB");
     ndC->setEssenceClassName("TestEssenceAExt");
     ndD->setEssenceClassName("TestEssenceB");
+
+    try {
+        ndA->setProperty("value", 121);
+        ndB->setProperty("value", 234);
+        ndC->setProperty("value", 345);
+        ndD->setProperty("value", 456);
+    } catch (hierhin::ex::Exception &ex) {
+        qDebug() << "ERROR: " << ex.cause();
+    }
 
     _nd->addChild(ndA, "right");
     _nd->addChild(ndB, "left");
