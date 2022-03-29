@@ -11,11 +11,16 @@ GetProperty::GetProperty()
 menu::def::ActionDef GetProperty::actionDef() const
 {
     menu::def::ActionDef aDef;
+
     menu::def::ArgDef argDef;
+    argDef.setName("name");
+
     aDef.setArgMinNum(1);
     aDef.setArgMaxNum(1);
+
     aDef.addArgDef(argDef);
     //TODO: aDef.set...
+
     return aDef;
 }
 
