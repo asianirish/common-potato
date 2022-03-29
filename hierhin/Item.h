@@ -57,6 +57,7 @@ public:
     void addValue(const QString &name, const QVariant &value); //for a list type
 
     menu::Result execute(const QString &methodName, const QVariantList &args = QVariantList());
+    menu::Result execute(const QString &methodName, const QVariantMap &args);
 
     def::NodeDef definition() const;
 

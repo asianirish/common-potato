@@ -39,8 +39,8 @@ QVariant MethodTest::simplyAct(const QVariantList &args)
     qDebug().noquote() << "AFTER EMPTY ARG LIST:" << nd->toJson();
 
     nd->execute(METHOD_CLASS(sys::GetName));
-    nd->execute(METHOD_CLASS(sys::GetProperty), {"value"});
     nd->execute(METHOD_CLASS(sys::SetProperty), {"value", 1337});
+    auto propValueResult = nd->execute(METHOD_CLASS(sys::GetProperty), QVariantMap{{"name", "value"}});
     nd->execute(METHOD_CLASS(sys::SetProperty), {"name", "Elite"});
 
     qDebug().noquote() << "AFTER sys::SetProperty:" << nd->toJson();
@@ -49,5 +49,6 @@ QVariant MethodTest::simplyAct(const QVariantList &args)
     nd->execute(METHOD_CLASS(sys::GetMethodNames));
     nd->execute(METHOD_CLASS(sys::GetClassNames));
 
+    qDebug() << "PROP VAlUE RESULT:" << propValueResult.value().toInt();
     return true;
 }

@@ -68,7 +68,7 @@ void HandMadeLinkTest::onReady(const QVariant value, const menu::TaskId &taskId)
         auto linkOwnerNode = ref.ptr(_nd);
         qDebug().noquote() << "ON_READY GET LINK OWNER" << linkOwnerNode->toJson() << taskId;
 
-        linkOwnerNode->execute(METHOD_CLASS(sys::GetChildren), {});
+        linkOwnerNode->execute(METHOD_CLASS(sys::GetChildren));
     } else if (taskId == _getLinksId){
         qDebug().noquote() << "ON_READY GET LINKS" << value << taskId;
 
