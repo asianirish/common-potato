@@ -4,8 +4,11 @@
 #include <hierhin/sys/GetChildren.h>
 #include <hierhin/sys/CallChildren.h>
 #include <hierhin/sys/SetProperty.h>
+#include <hierhin/sys/GetProperty.h>
 
 #include <hierhin/ex/Exception.h>
+
+#include <menu/math/Sum.h>
 
 #include <type.h>
 
@@ -66,6 +69,8 @@ menu::Result ChildTest::actSpecific(const QVariantList &args, const menu::TaskId
     Q_UNUSED(args);
     Q_UNUSED(taskId);
 
+    menu::Result result;
+
 //    qDebug() << "conversion:";
     QList<nav::ItemRef> childRefs = _nd->childRefs();
     QVariant childRefsVar = QVariant::fromValue(childRefs);
@@ -80,16 +85,20 @@ menu::Result ChildTest::actSpecific(const QVariantList &args, const menu::TaskId
     qDebug().noquote() << "NODE:" << _nd->toJson();
 
     try {
-        return _nd->execute(METHOD_CLASS(sys::CallChildren),
+        result = _nd->execute(METHOD_CLASS(sys::CallChildren),
                      {
-                         METHOD_CLASS(sys::SetProperty), QString(), "name", "Asianirish"
+                         METHOD_CLASS(sys::GetProperty), ACTION_CLASS(menu::math::Sum), "value"
                      });
+
+        qDebug() << "RESULT:" << result.value();
 
         //TODO: call onReady here
     } catch (const QString &err) {
         qDebug() << "ERROR:" << err;
             return menu::Result(); //TODO: return error result here
     }
+
+    return result;
 }
 
 void ChildTest::onReady(const QVariant value, const menu::TaskId &taskId)
