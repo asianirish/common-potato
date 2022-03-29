@@ -117,7 +117,6 @@ HEADERS += \
     menu/Launcher.h \
     menu/LineCommandTranslator.h \
     menu/Menu.h \
-    menu/RedirectActionListener.h \
     menu/Result.h \
     menu/SimpleAction.h \
     menu/SyncLauncher.h \
@@ -241,7 +240,6 @@ SOURCES += \
     menu/Launcher.cpp \
     menu/LineCommandTranslator.cpp \
     menu/Menu.cpp \
-    menu/RedirectActionListener.cpp \
     menu/Result.cpp \
     menu/SimpleAction.cpp \
     menu/SyncLauncher.cpp \
