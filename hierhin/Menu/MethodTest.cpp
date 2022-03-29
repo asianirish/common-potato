@@ -39,7 +39,7 @@ QVariant MethodTest::simplyAct(const QVariantList &args)
     qDebug().noquote() << "AFTER EMPTY ARG LIST:" << nd->toJson();
 
     nd->execute(METHOD_CLASS(sys::GetName));
-    nd->execute(METHOD_CLASS(sys::SetProperty), {"value", 1337});
+    nd->execute(METHOD_CLASS(sys::SetProperty), {{"key","value"} , {"value", 1337}});
     auto propValueResult = nd->execute(METHOD_CLASS(sys::GetProperty), QVariantMap{{"name", "value"}});
     nd->execute(METHOD_CLASS(sys::SetProperty), {"name", "Elite"});
 

@@ -12,7 +12,9 @@ menu::def::ActionDef SetProperty::actionDef() const
 {
     menu::def::ActionDef aDef;
     menu::def::ArgDef keyDef;
+    keyDef.setName("key");
     menu::def::ArgDef valueDef;
+    valueDef.setName("value");
 
     aDef.setArgMinNum(2);
 
