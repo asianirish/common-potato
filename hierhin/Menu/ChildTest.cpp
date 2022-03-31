@@ -1,5 +1,7 @@
 #include "ChildTest.h"
 
+#include <util/DoubleRandValue.h>
+
 #include <hierhin/Method.h>
 #include <hierhin/sys/GetChildren.h>
 #include <hierhin/sys/CallChildren.h>
@@ -79,12 +81,14 @@ menu::Result ChildTest::actSpecific(const QVariantList &args, const menu::TaskId
 
     qDebug() << "\n======================================================\n";
     qDebug() << "to json:";
-    qDebug().noquote() << "NODE:" << _nd->toJson();
+    qDebug().noquote() << "NODE BEFORE:" << _nd->toJson();
 
     try {
+//TODO:        DoubleRandValue dr(1336, 1338);
+
         result = _nd->execute(METHOD_CLASS(sys::CallChildren),
                      {
-                         METHOD_CLASS(sys::SetProperty), QString(), "name", "ASIANIRISH"
+                         METHOD_CLASS(sys::SetProperty), QString(), "value", 1337
                      });
         qDebug() << "RESULT:" << result.value();
 
@@ -99,7 +103,7 @@ menu::Result ChildTest::actSpecific(const QVariantList &args, const menu::TaskId
             return menu::Result(); //TODO: return error result here
     }
 
-    qDebug().noquote() << "NODE:" << _nd->toJson();
+    qDebug().noquote() << "NODE AFTER:" << _nd->toJson();
 
     return result;
 }
