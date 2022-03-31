@@ -16,6 +16,7 @@ DESTDIR = $$PWD/../build/lib/
 SOURCES += \
         BaseWrapper.cpp \
         Destructor.cpp \
+        DoubleRandValue.cpp \
         FriendlyByteArray.cpp \
         gfunc.cpp
 
@@ -30,6 +31,7 @@ HEADERS += \
     CuteContainer.h \
     CuteFactory.h \
     Destructor.h \
+    DoubleRandValue.h \
     Factory.h \
     FriendlyByteArray.h \
     LazyPointer.h \

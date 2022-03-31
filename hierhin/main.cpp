@@ -26,6 +26,7 @@
 #include <Menu/FoldTest.h>
 
 #include <util/FriendlyByteArray.h>
+#include <util/DoubleRandValue.h>
 
 #include <menu/Console.h>
 #include <menu/util/SetLanguage.h>
@@ -63,6 +64,16 @@ int main(int argc, char *argv[])
     } catch (const QString &msg) {
         qDebug() << "ERROR:" << msg;
     }
+
+    std::srand(std::time(0));
+    potato_util::DoubleRandValue dr(13, 10000);
+
+    qDebug() << "VALUES" << double(dr) << double(dr) << double(dr);
+
+    QVariant val = dr;
+
+    qDebug() << "VARIANT VALUES" << val << val << val;
+
 
 
 

@@ -145,6 +145,7 @@ HEADERS += \
     util/CuteContainer.h \
     util/CuteFactory.h \
     util/Destructor.h \
+    util/DoubleRandValue.h \
     util/Factory.h \
     util/LazyPointer.h \
     util/LazyRegistry.h \
@@ -263,6 +264,7 @@ SOURCES += \
     uniq/UuidValue.cpp \
     util/BaseWrapper.cpp \
     util/Destructor.cpp \
+    util/DoubleRandValue.cpp \
     util/gfunc.cpp \
     val/AbstractRegex.cpp \
     val/Each.cpp \
