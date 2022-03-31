@@ -84,6 +84,12 @@ menu::Result ChildTest::actSpecific(const QVariantList &args, const menu::TaskId
     try {
         result = _nd->execute(METHOD_CLASS(sys::CallChildren),
                      {
+                         METHOD_CLASS(sys::SetProperty), QString(), "name", "ASIANIRISH"
+                     });
+        qDebug() << "RESULT:" << result.value();
+
+        result = _nd->execute(METHOD_CLASS(sys::CallChildren),
+                     {
                          METHOD_CLASS(sys::GetProperty), ACTION_CLASS(menu::math::Sum), "value"
                      });
 
@@ -92,6 +98,8 @@ menu::Result ChildTest::actSpecific(const QVariantList &args, const menu::TaskId
         qDebug() << "ERROR:" << err;
             return menu::Result(); //TODO: return error result here
     }
+
+    qDebug().noquote() << "NODE:" << _nd->toJson();
 
     return result;
 }
