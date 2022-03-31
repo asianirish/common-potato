@@ -66,16 +66,6 @@ int main(int argc, char *argv[])
     }
 
     std::srand(std::time(0));
-    potato_util::DoubleRandValue dr(13, 10000);
-
-    qDebug() << "VALUES" << double(dr) << double(dr) << double(dr);
-
-    QVariant val = dr;
-
-    qDebug() << "VARIANT VALUES" << val.toDouble() << val.toDouble() << val.toDouble();
-
-
-
 
 //TEST ENUM:
     QString s = QVariant::fromValue(menu::Error::NO_MENU_ERROR).toString();
@@ -92,6 +82,14 @@ int main(int argc, char *argv[])
     auto registry = new HierhinClassRegistry();
     menu::Console console(registry, menu);
     delete registry;
+
+    potato_util::DoubleRandValue dr(13, 10000);
+
+    qDebug() << "VALUES" << double(dr) << double(dr) << double(dr);
+
+    QVariant val = QVariant::fromValue(dr);
+
+    qDebug() << "VARIANT VALUES" << val.toDouble() << val.toDouble() << val.toDouble();
 
     REGISTER_COMMAND(console, tnode, NodeTest);
 

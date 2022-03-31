@@ -25,9 +25,9 @@ DoubleRandValue::operator double() const
     return toDouble();
 }
 
-DoubleRandValue::operator QVariant() const
-{
-    return toDouble();
-}
+//DoubleRandValue::operator QVariant() const
+//{
+//    return toDouble();
+//}
 
 } // namespace potato_util

@@ -18,7 +18,7 @@ public:
 
     operator double() const;
 
-    operator QVariant() const;
+//    operator QVariant() const;
 
 private:
     double _dMin;
