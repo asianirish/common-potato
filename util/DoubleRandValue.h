@@ -14,6 +14,8 @@ public:
 
     DoubleRandValue(const double &dMin, const double &dMax);
 
+    double toDouble() const;
+
     operator double() const;
 
     operator QVariant() const;

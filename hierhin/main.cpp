@@ -72,7 +72,7 @@ int main(int argc, char *argv[])
 
     QVariant val = dr;
 
-    qDebug() << "VARIANT VALUES" << val << val << val;
+    qDebug() << "VARIANT VALUES" << val.toDouble() << val.toDouble() << val.toDouble();
 
 
 

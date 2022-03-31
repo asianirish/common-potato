@@ -15,14 +15,19 @@ DoubleRandValue::DoubleRandValue(const double &dMin, const double &dMax) : _dMin
 
 }
 
-DoubleRandValue::operator double() const
+double DoubleRandValue::toDouble() const
 {
     return dRand(_dMin, _dMax);
 }
 
+DoubleRandValue::operator double() const
+{
+    return toDouble();
+}
+
 DoubleRandValue::operator QVariant() const
 {
-    return dRand(_dMin, _dMax);
+    return toDouble();
 }
 
 } // namespace potato_util
