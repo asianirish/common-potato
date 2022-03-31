@@ -9,6 +9,7 @@
 #include <hierhin/nav/ItemRef.h>
 
 #include <util/Factory.h>
+#include <util/DoubleRandValue.h>
 
 #include <menu/math/Div.h>
 #include <menu/math/Inc.h>
@@ -44,6 +45,9 @@ void HierhinClassRegistry::registerAllClasses() const
     qRegisterMetaType<hierhin::nav::ItemRef>();
     QMetaType::registerConverter<hierhin::nav::ItemRef, QString>(&hierhin::nav::ItemRef::toString);
     QMetaType::registerConverter<QString, hierhin::nav::ItemRef>(hierhin::nav::stringToItemRef);
+
+    qRegisterMetaType<potato_util::DoubleRandValue>();
+    QMetaType::registerConverter<potato_util::DoubleRandValue, double>(&potato_util::DoubleRandValue::toDouble);
 
     potato_util::ObjectRegistry<int, Launcher>::createObject<SyncLauncher>(0);
     potato_util::ObjectRegistry<int, Launcher>::createObject<ThreadLauncher>(1);
