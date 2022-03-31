@@ -88,7 +88,7 @@ menu::Result ChildTest::actSpecific(const QVariantList &args, const menu::TaskId
 
         result = _nd->execute(METHOD_CLASS(sys::CallChildren),
                      {
-                         METHOD_CLASS(sys::SetProperty), QString(), "value", 1337
+                         METHOD_CLASS(sys::SetProperty), QString(), "value", 2
                      });
         qDebug() << "RESULT:" << result.value();
 
@@ -98,6 +98,8 @@ menu::Result ChildTest::actSpecific(const QVariantList &args, const menu::TaskId
                      });
 
         qDebug() << "RESULT:" << result.value().toInt();
+    } catch (const hierhin::ex::Exception &ex) {
+        qDebug() << "EXCEPTION:" << ex.cause();
     } catch (const QString &err) {
         qDebug() << "ERROR:" << err;
             return menu::Result(); //TODO: return error result here
