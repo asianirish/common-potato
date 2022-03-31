@@ -36,6 +36,8 @@ HierhinClassRegistry::HierhinClassRegistry()
 
 void HierhinClassRegistry::registerAllClasses() const
 {
+    std::srand(std::time(0));
+
     qRegisterMetaType<TestType>();
     qRegisterMetaType<hierhin::IdList>("hierhin::IdList");
 
