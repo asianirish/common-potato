@@ -84,11 +84,11 @@ menu::Result ChildTest::actSpecific(const QVariantList &args, const menu::TaskId
     qDebug().noquote() << "NODE BEFORE:" << _nd->toJson();
 
     try {
-//TODO:        DoubleRandValue dr(1336, 1338);
+        DoubleRandValue dr(1336, 1338);
 
         result = _nd->execute(METHOD_CLASS(sys::CallChildren),
                      {
-                         METHOD_CLASS(sys::SetProperty), QString(), "value", 2
+                         METHOD_CLASS(sys::SetProperty), QString(), "value", QVariant::fromValue(dr)
                      });
         qDebug() << "RESULT:" << result.value();
 
