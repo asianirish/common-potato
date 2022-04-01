@@ -89,8 +89,17 @@ int main(int argc, char *argv[])
 
     QVariant val = QVariant::fromValue(dr);
 
-    qDebug() << "VARIANT VALUES" << val.toDouble() << val.toDouble() << val.toDouble();
+    qDebug() << "VARIANT VALUES" << val.toDouble() << val.toDouble() << val.toDouble() << "\n";
 
+    QVariantList lst{1.2, 34.5, 678.9, QVariant::fromValue(dr)};
+
+    for (auto &var : lst) {
+        qDebug() << "VARIANT VALUE:" << var.toDouble();
+    }
+    qDebug() << "..........................";
+    for (auto &var : lst) {
+        qDebug() << "VARIANT VALUE:" << var.toDouble();
+    }
     REGISTER_COMMAND(console, tnode, NodeTest);
 
     REGISTER_COMMAND(console, tval, ValidatorTest);
