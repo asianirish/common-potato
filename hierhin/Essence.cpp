@@ -10,6 +10,7 @@
 #include "sys/GetChildren.h"
 #include "sys/GetChildByRole.h"
 #include "sys/CallChildren.h"
+#include "sys/DRandProperty.h"
 
 namespace hierhin {
 
@@ -24,6 +25,7 @@ Essence::Essence() : QObject(nullptr)
         REGISTER_CLASS_FOR_UTIL_FACTORY(menu::Action, sys::GetClassName);
         REGISTER_CLASS_FOR_UTIL_FACTORY(menu::Action, sys::GetMethodNames);
         REGISTER_CLASS_FOR_UTIL_FACTORY(menu::Action, sys::GetClassNames);
+        REGISTER_CLASS_FOR_UTIL_FACTORY(menu::Action, sys::DRandProperty);
 
         //Node actions
         REGISTER_CLASS_FOR_UTIL_FACTORY(menu::Action, sys::GetChildren);
@@ -114,6 +116,7 @@ QStringList Essence::methodNames() const
         METHOD_CLASS(sys::GetClassName),
         METHOD_CLASS(sys::GetMethodNames),
         METHOD_CLASS(sys::GetClassNames),
+        METHOD_CLASS(sys::DRandProperty),
         METHOD_CLASS(sys::GetChildren),
         METHOD_CLASS(sys::GetChildByRole),
         METHOD_CLASS(sys::CallChildren)
