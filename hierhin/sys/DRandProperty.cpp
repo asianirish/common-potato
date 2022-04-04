@@ -13,6 +13,7 @@ DRandProperty::DRandProperty()
 menu::def::ActionDef DRandProperty::actionDef() const
 {
     menu::def::ActionDef aDef;
+    aDef.setArgMinNum(3); //3 taking into account the default values
 
     menu::def::ArgDef keyDef;
     keyDef.setName("key");
