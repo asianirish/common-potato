@@ -76,6 +76,7 @@ HEADERS += \
     nav/Path.h \
     nav/Step.h \
     sys/CallChildren.h \
+    sys/DRandProperty.h \
     sys/GetChildByRole.h \
     sys/GetChildren.h \
     sys/GetClassName.h \
@@ -134,6 +135,7 @@ SOURCES += \
     nav/Path.cpp \
     nav/Step.cpp \
     sys/CallChildren.cpp \
+    sys/DRandProperty.cpp \
     sys/GetChildByRole.cpp \
     sys/GetChildren.cpp \
     sys/GetClassName.cpp \
